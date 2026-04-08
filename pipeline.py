@@ -59,8 +59,24 @@ MAX_ASSETS       = None      # set to an int to cap (useful for testing)
 SAMPLE_PER_TYPE  = None      # set to an int to sample evenly per asset type
 
 # --- Imagery ---
-BUFFER_M = 150               # meters around each asset centroid
-SOURCES  = ["sentinel2", "naip"]  # sentinel2 = global, naip = US only
+BUFFER_M     = 150
+SOURCES      = ["sentinel2", "naip"]
+MAX_WORKERS  = 16
+
+# --- GEE (recommended for global runs) ---
+# Set USE_GEE = True to use Google Earth Engine for Sentinel-2 fetching.
+# Much faster than Planetary Computer at global scale.
+# Requires: pip install earthengine-api
+#           python -c "import ee; ee.Authenticate()"
+USE_GEE          = True
+GEE_PROJECT      = "ee-towards-an-infra-fm"   # !! SET YOUR GEE PROJECT ID
+GEE_COMPOSITE    = "median"           # "median", "mosaic", or "best"
+GEE_BUFFER_M     = 300                # larger buffer fine since compute is free
+
+# --- Agentic scene selection (only used when USE_GEE = False) ---
+USE_AGENT_SCENE_SELECTOR = True
+AGENT_BACKEND            = "ollama"
+AGENT_API_KEY            = ""
 
 # --- QC thresholds ---
 MIN_VALID_RATIO = 0.80
@@ -162,8 +178,42 @@ def run_pipeline(dry_run: bool = False) -> dict:
     # ------------------------------------------------------------------
     print(f"\n[3/6] Fetching imagery tiles ({len(df_clean)} assets × {len(SOURCES)} sources)...")
 
-    fetcher = ImageryFetcher(buffer_m=BUFFER_M, sources=SOURCES)
-    tiles   = fetcher.fetch_all(df_clean)
+    print(f"\n[3/6] Fetching imagery tiles ({len(df_clean)} assets)...")
+
+    if USE_GEE:
+        from gee_imagery import GEEImageryFetcher
+        checkpoint_path = os.path.join(
+            "data", "checkpoints",
+            f"{os.path.basename(OUTPUT_DIR)}_gee_fetch.pkl"
+        )
+        fetcher = GEEImageryFetcher(
+            project=GEE_PROJECT,
+            buffer_m=GEE_BUFFER_M,
+            composite=GEE_COMPOSITE,
+            checkpoint_path=checkpoint_path,
+        )
+        tiles = fetcher.fetch_all(df_clean)
+    else:
+        # Planetary Computer path with MGRS batching
+        scene_selector = None
+        if USE_AGENT_SCENE_SELECTOR:
+            from imagery import AgentSceneSelector
+            scene_selector = AgentSceneSelector(
+                backend=AGENT_BACKEND,
+                api_key=AGENT_API_KEY or None,
+            )
+        from imagery import BatchedImageryFetcher
+        checkpoint_path = os.path.join(
+            "data", "checkpoints",
+            f"{os.path.basename(OUTPUT_DIR)}_fetch.pkl"
+        )
+        fetcher = BatchedImageryFetcher(
+            buffer_m=BUFFER_M,
+            checkpoint_path=checkpoint_path,
+            checkpoint_every=50,
+            naip_fallback="naip" in SOURCES,
+        )
+        tiles = fetcher.fetch_all(df_clean)
 
     n_ok    = sum(1 for t in tiles if t.status == "ok")
     n_fail  = sum(1 for t in tiles if t.status != "ok")
