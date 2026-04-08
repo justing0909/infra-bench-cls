@@ -1,1 +1,0 @@
-# COCO-style dataset assembly

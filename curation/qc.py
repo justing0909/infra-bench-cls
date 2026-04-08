@@ -1,1 +1,0 @@
-# basic QC checks (cloud, valid pixels, edge artifacts)
