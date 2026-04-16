@@ -130,43 +130,86 @@ class Deduplicator:
     def _deduplicate_group(self, group: pd.DataFrame) -> list:
         """
         Returns indices of assets to keep within a single asset_type group.
-        Uses a greedy approach: iterate through assets, mark any asset
-        within threshold distance of an already-kept asset as duplicate.
+
+        Uses a KDTree spatial index for O(n log n) performance instead of
+        the naive O(n²) pairwise comparison. Critical for global scale where
+        a single asset type (e.g. poles) can have millions of entries.
         """
         lats = group["lat"].values
         lons = group["lon"].values
         n    = len(group)
 
-        kept = []
-        suppressed = set()
+        if n == 1:
+            return [0]
 
-        for i in range(n):
-            if i in suppressed:
-                continue
-            kept.append(i)
-            # suppress everything within threshold of this asset
-            for j in range(i + 1, n):
-                if j in suppressed:
+        # Convert threshold from meters to approximate degrees
+        # (conservative — uses lat degrees which are constant ~111km)
+        threshold_deg = self.threshold / 111_320
+
+        try:
+            from scipy.spatial import KDTree
+            # Build KDTree on (lat, lon) coordinates
+            coords = np.column_stack([lats, lons])
+            tree   = KDTree(coords)
+
+            suppressed = set()
+            kept       = []
+
+            for i in range(n):
+                if i in suppressed:
                     continue
-                dist = _haversine_m(lats[i], lons[i], lats[j], lons[j])
-                if dist <= self.threshold:
-                    suppressed.add(j)
+                kept.append(i)
+                # Find all points within threshold_deg of this point
+                # query_ball_point returns indices of nearby points
+                nearby = tree.query_ball_point(coords[i], threshold_deg)
+                for j in nearby:
+                    if j > i:  # only suppress points after current
+                        suppressed.add(j)
 
-        return kept
+            return kept
+
+        except ImportError:
+            # scipy not available — fall back to O(n²) with a warning
+            print("  Warning: scipy not installed, using slow O(n²) dedup. "
+                  "Install with: pip install scipy")
+            kept       = []
+            suppressed = set()
+            for i in range(n):
+                if i in suppressed:
+                    continue
+                kept.append(i)
+                for j in range(i + 1, n):
+                    if j in suppressed:
+                        continue
+                    dist = _haversine_m(lats[i], lons[i], lats[j], lons[j])
+                    if dist <= self.threshold:
+                        suppressed.add(j)
+            return kept
 
     def _nearest_kept(self, removed_row: pd.Series,
                       kept_df: pd.DataFrame) -> str:
-        """Returns the asset_id of the nearest kept asset to a removed one."""
+        """
+        Returns the asset_id of the nearest kept asset to a removed one.
+        Uses KDTree for O(log n) lookup instead of O(n) linear scan.
+        """
         if kept_df.empty:
             return ""
-        dists = kept_df.apply(
-            lambda r: _haversine_m(
-                removed_row["lat"], removed_row["lon"],
-                r["lat"], r["lon"]
-            ),
-            axis=1,
-        )
-        return kept_df.iloc[dists.argmin()]["asset_id"]
+        try:
+            from scipy.spatial import KDTree
+            coords = kept_df[["lat", "lon"]].values
+            tree   = KDTree(coords)
+            _, idx = tree.query([removed_row["lat"], removed_row["lon"]])
+            return kept_df.iloc[idx]["asset_id"]
+        except ImportError:
+            # fallback
+            dists = kept_df.apply(
+                lambda r: _haversine_m(
+                    removed_row["lat"], removed_row["lon"],
+                    r["lat"], r["lon"]
+                ),
+                axis=1,
+            )
+            return kept_df.iloc[dists.argmin()]["asset_id"]
 
     def summarize(self, clean_df: pd.DataFrame,
                   removed_df: pd.DataFrame) -> pd.DataFrame:
@@ -190,8 +233,8 @@ class Deduplicator:
 if __name__ == "__main__":
     import os
 
-    INPUT_CSV  = "data/maine_all_assets.csv"
-    OUTPUT_CSV = "data/maine_deduped_assets.csv"
+    INPUT_CSV  = "data/us-northeast_all_assets.csv"
+    OUTPUT_CSV = "data/us-northeast_deduped_assets.csv"
 
     if not os.path.exists(INPUT_CSV):
         print(f"No CSV found at {INPUT_CSV} — run sources.py first.")

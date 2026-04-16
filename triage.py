@@ -29,7 +29,7 @@ import numpy as np
 import pandas as pd
 from dataclasses import dataclass, field
 from typing import List, Optional, Dict
-from imagery import TileResult
+from legacy.imagery import TileResult
 
 
 # ---------------------------------------------------------------------------
@@ -243,9 +243,31 @@ class RuleBasedTriager:
             reason=reason, signals=signals, tile=tile,
         )
 
-    def triage_all(self, tiles: List[TileResult]) -> List[TriageResult]:
-        """Triages a list of tiles. Accepts output of qc.filter_ok()."""
-        results = [self.triage_tile(t) for t in tiles]
+    def triage_all(self, tiles: List[TileResult],
+                   max_workers: int = 8) -> List[TriageResult]:
+        """Triages a list of tiles in parallel."""
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+        import threading
+
+        results   = [None] * len(tiles)
+        lock      = threading.Lock()
+        completed = 0
+
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = {executor.submit(self.triage_tile, tile): i
+                       for i, tile in enumerate(tiles)}
+            for future in as_completed(futures):
+                idx = futures[future]
+                results[idx] = future.result()
+                with lock:
+                    completed += 1
+                    if completed % 1000 == 0 or completed == len(tiles):
+                        high  = sum(1 for r in results if r and r.confidence == "high")
+                        low   = sum(1 for r in results if r and r.confidence == "low")
+                        contr = sum(1 for r in results if r and r.confidence == "contradiction")
+                        print(f"  Triage [{completed}/{len(tiles)}] "
+                              f"high={high} low={low} contradiction={contr}")
+
         high  = sum(1 for r in results if r.confidence == "high")
         low   = sum(1 for r in results if r.confidence == "low")
         contr = sum(1 for r in results if r.confidence == "contradiction")
@@ -719,11 +741,11 @@ class AgentTriager:
 if __name__ == "__main__":
     import os
     from sources import GeoFabrikSource
-    from imagery import ImageryFetcher
+    from legacy.imagery import ImageryFetcher
     from qc import QualityChecker
 
-    PBF_PATH  = "data/pbf/maine-latest.osm.pbf"
-    INPUT_CSV = "data/maine_all_assets.csv"
+    PBF_PATH  = "data/pbf/us-northeast-260407.osm_power_only.osm.pbf"
+    INPUT_CSV = "data/us-northeast_all_assets.csv"
 
     # Load assets
     if os.path.exists(INPUT_CSV):

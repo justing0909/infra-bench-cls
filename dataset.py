@@ -32,7 +32,7 @@ import numpy as np
 import pandas as pd
 from datetime import datetime
 from typing import List, Optional, Dict
-from imagery import TileResult
+from legacy.imagery import TileResult
 from triage import TriageResult
 
 
@@ -93,7 +93,7 @@ class DatasetAssembler:
         n_saved  = 0
         n_failed = 0
 
-        for tile in accepted_tiles:
+        for i, tile in enumerate(accepted_tiles):
             if tile.image is None:
                 n_failed += 1
                 continue
@@ -130,6 +130,10 @@ class DatasetAssembler:
                 "image_shape": list(tile.image.shape),
             }
             records.append(record)
+
+            if (i + 1) % 1000 == 0 or (i + 1) == len(accepted_tiles):
+                print(f"  [{i+1}/{len(accepted_tiles)}] "
+                      f"saved={n_saved} failed={n_failed}")
 
         # Write manifest.json
         manifest = {
@@ -207,13 +211,13 @@ class DatasetAssembler:
 
 if __name__ == "__main__":
     from sources import GeoFabrikSource
-    from imagery import ImageryFetcher
+    from legacy.imagery import ImageryFetcher
     from qc import QualityChecker
     from triage import RuleBasedTriager
 
     # !! CHANGE THIS for each new dataset version
-    OUTPUT_DIR = "data/dataset_maine_v1"
-    INPUT_CSV  = "data/maine_deduped_assets.csv"
+    OUTPUT_DIR = "data/dataset_us-northeast_v1"
+    INPUT_CSV  = "data/us-northeast_deduped_assets.csv"
 
     if not os.path.exists(INPUT_CSV):
         print(f"No CSV at {INPUT_CSV} — run sources.py and deduplication.py first.")

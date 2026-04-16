@@ -33,7 +33,7 @@ import numpy as np
 import pandas as pd
 from dataclasses import dataclass
 from typing import List, Optional, Dict
-from tile_types import TileResult, _centroid_to_bbox
+from helpers.tile_types import TileResult, _centroid_to_bbox
 
 
 # ---------------------------------------------------------------------------
@@ -232,26 +232,32 @@ class GEEImageryFetcher:
             # Clip to asset bbox
             image = image.clip(ee_bbox)
 
-            # Download as numpy array
-            # getDownloadURL is fine for small tiles at our scale
-            arr = image.getDownloadArray(
-                scale=self.scale,
-                crs=S2_CRS,
-                region=ee_bbox,
-            )
+            # Download tile as GeoTIFF via getDownloadURL
+            import requests, io
+            import rasterio as rio
 
-            # arr shape: (rows, cols, bands) → convert to (bands, rows, cols)
-            arr = np.array(arr)
-            if arr.ndim == 3:
-                arr = np.moveaxis(arr, -1, 0)
+            url = image.getDownloadURL({
+                "bands":  S2_RGB_BANDS,
+                "region": ee_bbox,
+                "scale":  self.scale,
+                "crs":    S2_CRS,
+                "format": "GEO_TIFF",
+            })
 
-            # Normalize to uint8 (values are 0-1 after divide(10000))
-            arr = np.clip(arr * 255, 0, 255).astype(np.uint8)
+            response = requests.get(url, timeout=120)
+            response.raise_for_status()
+
+            # Read GeoTIFF from memory with rasterio
+            with rio.open(io.BytesIO(response.content)) as src:
+                arr = src.read()   # (bands, rows, cols)
 
             if arr.shape[1] == 0 or arr.shape[2] == 0:
                 result.status    = "empty_crop"
                 result.error_msg = "GEE returned empty array"
                 return result
+
+            # Normalize to uint8 (values are 0-1 after divide(10000))
+            arr = np.clip(arr * 255, 0, 255).astype(np.uint8)
 
             result.image      = arr
             result.image_date = S2_DATE_END  # composite has no single date
@@ -260,6 +266,7 @@ class GEEImageryFetcher:
         except Exception as e:
             result.status    = "error"
             result.error_msg = str(e)
+            print(f"  ERROR [{asset_id}]: {e}")
 
         return result
 
@@ -390,7 +397,7 @@ if __name__ == "__main__":
     import sys
 
     # !! SET YOUR GEE PROJECT ID HERE
-    GEE_PROJECT = "ee-yourproject"   # e.g. "ee-justinguthrie"
+    GEE_PROJECT = "towards-an-infra-fm"   # e.g. "ee-justinguthrie"
 
     INPUT_CSV = "data/maine_deduped_assets.csv"
 
@@ -421,4 +428,5 @@ if __name__ == "__main__":
     print("\nSummary:")
     summary = fetcher.summarize(results)
     print(summary[["asset_type", "source", "status",
-                   "n_scenes_composited", "image_shape"]].to_string(index=False))
+                   "n_scenes_composited", "image_shape",
+                   "error_msg"]].to_string(index=False))

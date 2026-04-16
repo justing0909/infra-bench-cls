@@ -26,7 +26,7 @@ import pandas as pd
 from dataclasses import dataclass, field
 from typing import List, Optional
 
-from imagery import TileResult
+from legacy.imagery import TileResult
 
 
 # ---------------------------------------------------------------------------
@@ -225,14 +225,31 @@ class QualityChecker:
             tile=tile,
         )
 
-    def check_all(self, tiles: List[TileResult]) -> List[QCResult]:
+    def check_all(self, tiles: List[TileResult],
+                  max_workers: int = 8) -> List[QCResult]:
         """
-        Runs QC on a list of TileResults (output of ImageryFetcher.fetch_all).
+        Runs QC on a list of TileResults in parallel.
         Returns a list of QCResult in the same order.
         """
-        results = []
-        for tile in tiles:
-            results.append(self.check_tile(tile))
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+        import threading
+
+        results   = [None] * len(tiles)
+        lock      = threading.Lock()
+        completed = 0
+
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = {executor.submit(self.check_tile, tile): i
+                       for i, tile in enumerate(tiles)}
+            for future in as_completed(futures):
+                idx = futures[future]
+                results[idx] = future.result()
+                with lock:
+                    completed += 1
+                    if completed % 1000 == 0 or completed == len(tiles):
+                        passed = sum(1 for r in results if r and r.passed)
+                        print(f"  QC [{completed}/{len(tiles)}] "
+                              f"passed={passed}")
 
         passed = sum(1 for r in results if r.passed)
         failed = len(results) - passed
@@ -303,10 +320,10 @@ if __name__ == "__main__":
     import os
     import pandas as pd
     from sources import GeoFabrikSource
-    from imagery import ImageryFetcher
+    from legacy.imagery import ImageryFetcher
 
-    PBF_PATH  = "data/pbf/maine-latest.osm.pbf"
-    INPUT_CSV = "data/maine_all_assets.csv"
+    PBF_PATH  = "data/pbf/us-northeast-260407.osm_power_only.osm.pbf"
+    INPUT_CSV = "data/us-northeast_all_assets.csv"
 
     # Load assets
     if os.path.exists(INPUT_CSV):
