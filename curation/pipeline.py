@@ -66,7 +66,7 @@ SAMPLE_PER_TYPE = None     # set to an int to sample evenly per asset type
 # --- Imagery ---
 BUFFER_M = 150
 SOURCES = ["sentinel2"]
-MAX_WORKERS = 16
+MAX_WORKERS = 4
 
 # --- GEE (recommended for global runs) ---
 USE_GEE = True
@@ -96,129 +96,129 @@ JOB_PRESETS = {
     "north-america": {
 
         # starting input and ending output
-        "pbf_path": "data/pbf/power_only/north-america-latest.osm_power_only.osm.pbf",
-        "output_dir": "data/curated_datasets/dataset_north-america_sentinel_v1",
+        "pbf_path": "./data/pbf/power_only/north-america-latest.osm_power_only.osm.pbf",
+        "output_dir": "./data/curated_datasets/dataset_north-america_sentinel_v1",
 
         # 01-collapsed-assets
-        "assets_csv": "data/PIPELINE/01-extracted-assets/north-america_all_assets_collapsed.csv",
-        "assets_parquet": "data/PIPELINE/01-extracted-assets/north-america_all_assets_collapsed.parquet",
-        "assets_table": "data/PIPELINE/01-extracted-assets/north-america_all_assets_collapsed.parquet",
+        "assets_csv": "./data/PIPELINE/01-extracted-assets/north-america_all_assets_collapsed.csv",
+        "assets_parquet": "./data/PIPELINE/01-extracted-assets/north-america_all_assets_collapsed.parquet",
+        "assets_table": "./data/PIPELINE/01-extracted-assets/north-america_all_assets_collapsed.parquet",
 
         # 02-deduped-assets
-        "deduped_csv": "data/PIPELINE/02-deduped-assets/north-america_deduped_assets.csv",
-        "deduped_parquet": "data/PIPELINE/02-deduped-assets/north-america_deduped_assets.parquet",
-        "deduped_table": "data/PIPELINE/02-deduped-assets/north-america_deduped_assets.parquet",
+        "deduped_csv": "./data/PIPELINE/02-deduped-assets/north-america_deduped_assets.csv",
+        "deduped_parquet": "./data/PIPELINE/02-deduped-assets/north-america_deduped_assets.parquet",
+        "deduped_table": "./data/PIPELINE/02-deduped-assets/north-america_deduped_assets.parquet",
     },
     "europe": {
 
         # starting input and ending output
-        "pbf_path": "data/pbf/power_only/europe-latest.osm_power_only.osm.pbf",
-        "output_dir": "data/curated_datasets/dataset_europe_sentinel_v1",
+        "pbf_path": "./data/pbf/power_only/europe-latest.osm_power_only.osm.pbf",
+        "output_dir": "./data/curated_datasets/dataset_europe_sentinel_v1",
 
         # 01-collapsed-assets
-        "assets_csv": "data/PIPELINE/01-extracted-assets/europe_all_assets_collapsed.csv",
-        "assets_parquet": "data/PIPELINE/01-extracted-assets/europe_all_assets_collapsed.parquet",
-        "assets_table": "data/PIPELINE/01-extracted-assets/europe_all_assets_collapsed.parquet",
+        "assets_csv": "./data/PIPELINE/01-extracted-assets/europe_all_assets_collapsed.csv",
+        "assets_parquet": "./data/PIPELINE/01-extracted-assets/europe_all_assets_collapsed.parquet",
+        "assets_table": "./data/PIPELINE/01-extracted-assets/europe_all_assets_collapsed.parquet",
 
         # 02-deduped-assets
-        "deduped_csv": "data/PIPELINE/02-deduped-assets/europe_deduped_assets.csv",
-        "deduped_parquet": "data/PIPELINE/02-deduped-assets/europe_deduped_assets.parquet",
-        "deduped_table": "data/PIPELINE/02-deduped-assets/europe_deduped_assets.parquet",
+        "deduped_csv": "./data/PIPELINE/02-deduped-assets/europe_deduped_assets.csv",
+        "deduped_parquet": "./data/PIPELINE/02-deduped-assets/europe_deduped_assets.parquet",
+        "deduped_table": "./data/PIPELINE/02-deduped-assets/europe_deduped_assets.parquet",
     },
     "central-america": {
 
         # starting input and ending output
-        "pbf_path": "data/pbf/power_only/central-america-260408.osm_power_only.osm.pbf",
-        "output_dir": "data/curated_datasets/dataset_central-america_sentinel_v1",
+        "pbf_path": "./data/pbf/power_only/central-america-260408.osm_power_only.osm.pbf",
+        "output_dir": "./data/curated_datasets/dataset_central-america_sentinel_v1",
 
         # 01-collapsed-assets
-        "assets_csv": "data/PIPELINE/01-extracted-assets/central-america_all_assets_collapsed.csv",
-        "assets_parquet": "data/PIPELINE/01-extracted-assets/central-america_all_assets_collapsed.parquet",
-        "assets_table": "data/PIPELINE/01-extracted-assets/central-america_all_assets_collapsed.parquet",
+        "assets_csv": "./data/PIPELINE/01-extracted-assets/central-america_all_assets_collapsed.csv",
+        "assets_parquet": "./data/PIPELINE/01-extracted-assets/central-america_all_assets_collapsed.parquet",
+        "assets_table": "./data/PIPELINE/01-extracted-assets/central-america_all_assets_collapsed.parquet",
 
         # 02-deduped-assets
-        "deduped_csv": "data/PIPELINE/02-deduped-assets/central-america_deduped_assets.csv",
-        "deduped_parquet": "data/PIPELINE/02-deduped-assets/central-america_deduped_assets.parquet",
-        "deduped_table": "data/PIPELINE/02-deduped-assets/central-america_deduped_assets.parquet",
+        "deduped_csv": "./data/PIPELINE/02-deduped-assets/central-america_deduped_assets.csv",
+        "deduped_parquet": "./data/PIPELINE/02-deduped-assets/central-america_deduped_assets.parquet",
+        "deduped_table": "./data/PIPELINE/02-deduped-assets/central-america_deduped_assets.parquet",
     },
     "africa": {
         # starting input and ending output
-        "pbf_path": "data/pbf/power_only/africa-260408.osm_power_only.osm.pbf",
-        "output_dir": "data/curated_datasets/dataset_africa_sentinel_v1",
+        "pbf_path": "./data/pbf/power_only/africa-260408.osm_power_only.osm.pbf",
+        "output_dir": "./data/curated_datasets/dataset_africa_sentinel_v1",
 
         # 01-collapsed-assets
-        "assets_csv": "data/PIPELINE/01-extracted-assets/africa_all_assets_collapsed.csv",
-        "assets_parquet": "data/PIPELINE/01-extracted-assets/africa_all_assets_collapsed.parquet",
-        "assets_table": "data/PIPELINE/01-extracted-assets/africa_all_assets_collapsed.parquet",
+        "assets_csv": "./data/PIPELINE/01-extracted-assets/africa_all_assets_collapsed.csv",
+        "assets_parquet": "./data/PIPELINE/01-extracted-assets/africa_all_assets_collapsed.parquet",
+        "assets_table": "./data/PIPELINE/01-extracted-assets/africa_all_assets_collapsed.parquet",
 
         # 02-deduped-assets
-        "deduped_csv": "data/PIPELINE/02-deduped-assets/africa_deduped_assets.csv",
-        "deduped_parquet": "data/PIPELINE/02-deduped-assets/africa_deduped_assets.parquet",
-        "deduped_table": "data/PIPELINE/02-deduped-assets/africa_deduped_assets.parquet",
+        "deduped_csv": "./data/PIPELINE/02-deduped-assets/africa_deduped_assets.csv",
+        "deduped_parquet": "./data/PIPELINE/02-deduped-assets/africa_deduped_assets.parquet",
+        "deduped_table": "./data/PIPELINE/02-deduped-assets/africa_deduped_assets.parquet",
     },
     "australia-oceania": {
 
         # starting input and ending output
-        "pbf_path": "data/pbf/power_only/australia-oceania-260408.osm_power_only.osm.pbf",
-        "output_dir": "data/curated_datasets/dataset_australia-oceania_sentinel_v1",
+        "pbf_path": "./data/pbf/power_only/australia-oceania-260408.osm_power_only.osm.pbf",
+        "output_dir": "./data/curated_datasets/dataset_australia-oceania_sentinel_v1",
 
         # 01-collapsed-assets
-        "assets_csv": "data/PIPELINE/01-extracted-assets/australia-oceania_all_assets_collapsed.csv",
-        "assets_parquet": "data/PIPELINE/01-extracted-assets/australia-oceania_all_assets_collapsed.parquet",
-        "assets_table": "data/PIPELINE/01-extracted-assets/australia-oceania_all_assets_collapsed.parquet",
+        "assets_csv": "./data/PIPELINE/01-extracted-assets/australia-oceania_all_assets_collapsed.csv",
+        "assets_parquet": "./data/PIPELINE/01-extracted-assets/australia-oceania_all_assets_collapsed.parquet",
+        "assets_table": "./data/PIPELINE/01-extracted-assets/australia-oceania_all_assets_collapsed.parquet",
 
         # 02-deduped-assets
-        "deduped_csv": "data/PIPELINE/02-deduped-assets/australia-oceania_deduped_assets.csv",
-        "deduped_parquet": "data/PIPELINE/02-deduped-assets/australia-oceania_deduped_assets.parquet",
-        "deduped_table": "data/PIPELINE/02-deduped-assets/australia-oceania_deduped_assets.parquet",
+        "deduped_csv": "./data/PIPELINE/02-deduped-assets/australia-oceania_deduped_assets.csv",
+        "deduped_parquet": "./data/PIPELINE/02-deduped-assets/australia-oceania_deduped_assets.parquet",
+        "deduped_table": "./data/PIPELINE/02-deduped-assets/australia-oceania_deduped_assets.parquet",
     },
     "asia": {
 
         # starting input and ending output
-        "pbf_path": "data/pbf/power_only/asia-260408.osm_power_only.osm.pbf",
-        "output_dir": "data/curated_datasets/dataset_asia_sentinel_v1",
+        "pbf_path": "./data/pbf/power_only/asia-260408.osm_power_only.osm.pbf",
+        "output_dir": "./data/curated_datasets/dataset_asia_sentinel_v1",
 
         # 01-collapsed-assets
-        "assets_csv": "data/PIPELINE/01-extracted-assets/asia_all_assets_collapsed.csv",
-        "assets_parquet": "data/PIPELINE/01-extracted-assets/asia_all_assets_collapsed.parquet",
-        "assets_table": "data/PIPELINE/01-extracted-assets/asia_all_assets_collapsed.parquet",
+        "assets_csv": "./data/PIPELINE/01-extracted-assets/asia_all_assets_collapsed.csv",
+        "assets_parquet": "./data/PIPELINE/01-extracted-assets/asia_all_assets_collapsed.parquet",
+        "assets_table": "./data/PIPELINE/01-extracted-assets/asia_all_assets_collapsed.parquet",
 
         # 02-deduped-assets
-        "deduped_csv": "data/PIPELINE/02-deduped-assets/asia_deduped_assets.csv",
-        "deduped_parquet": "data/PIPELINE/02-deduped-assets/asia_deduped_assets.parquet",
-        "deduped_table": "data/PIPELINE/02-deduped-assets/asia_deduped_assets.parquet",
+        "deduped_csv": "./data/PIPELINE/02-deduped-assets/asia_deduped_assets.csv",
+        "deduped_parquet": "./data/PIPELINE/02-deduped-assets/asia_deduped_assets.parquet",
+        "deduped_table": "./data/PIPELINE/02-deduped-assets/asia_deduped_assets.parquet",
     },
     "south-america" : {
 
         # starting input and ending output
-        "pbf_path": "data/pbf/power_only/south-america-260410.osm_power_only.osm.pbf",
-        "output_dir": "data/curated_datasets/dataset_south-america_sentinel_v1",
+        "pbf_path": "./data/pbf/power_only/south-america-260410.osm_power_only.osm.pbf",
+        "output_dir": "./data/curated_datasets/dataset_south-america_sentinel_v1",
 
         # 01-collapsed-assets
-        "assets_csv": "data/PIPELINE/01-extracted-assets/south-america_all_assets_collapsed.csv",
-        "assets_parquet": "data/PIPELINE/01-extracted-assets/south-america_all_assets_collapsed.parquet",
-        "assets_table": "data/PIPELINE/01-extracted-assets/south-america_all_assets_collapsed.parquet",
+        "assets_csv": "./data/PIPELINE/01-extracted-assets/south-america_all_assets_collapsed.csv",
+        "assets_parquet": "./data/PIPELINE/01-extracted-assets/south-america_all_assets_collapsed.parquet",
+        "assets_table": "./data/PIPELINE/01-extracted-assets/south-america_all_assets_collapsed.parquet",
 
         # 02-deduped-assets
-        "deduped_csv": "data/PIPELINE/02-deduped-assets/south-america_deduped_assets.csv",
-        "deduped_parquet": "data/PIPELINE/02-deduped-assets/south-america_deduped_assets.parquet",
-        "deduped_table": "data/PIPELINE/02-deduped-assets/south-america_deduped_assets.parquet",
+        "deduped_csv": "./data/PIPELINE/02-deduped-assets/south-america_deduped_assets.csv",
+        "deduped_parquet": "./data/PIPELINE/02-deduped-assets/south-america_deduped_assets.parquet",
+        "deduped_table": "./data/PIPELINE/02-deduped-assets/south-america_deduped_assets.parquet",
     },
     "maine": {
 
         # starting input and ending output
-        "pbf_path": "data/pbf/power_only/maine-latest.osm_power_only.osm.pbf",
-        "output_dir": "data/curated_datasets/dataset_maine_v1",
+        "pbf_path": "../data/pbf/power_only/maine-latest.osm_power_only.osm.pbf",
+        "output_dir": "../data/curated_datasets/dataset_maine_v1",
 
         # 01-extracted-assets
-        "assets_csv": "data/PIPELINE/01-extracted-assets/maine_all_assets_collapsed.csv",
-        "assets_parquet": "data/PIPELINE/01-extracted-assets/maine_all_assets_collapsed.parquet",
-        "assets_table": "data/PIPELINE/01-extracted-assets/maine_all_assets_collapsed.parquet",
+        "assets_csv": "../data/PIPELINE/01-extracted-assets/maine_all_assets_collapsed.csv",
+        "assets_parquet": "../data/PIPELINE/01-extracted-assets/maine_all_assets_collapsed.parquet",
+        "assets_table": "../data/PIPELINE/01-extracted-assets/maine_all_assets_collapsed.parquet",
 
         # 02-deduped-assets
-        "deduped_csv": "data/PIPELINE/02-deduped-assets/maine_deduped_assets.csv",
-        "deduped_parquet": "data/PIPELINE/02-deduped-assets/maine_deduped_assets.parquet",
-        "deduped_table": "data/PIPELINE/02-deduped-assets/maine_deduped_assets.parquet",
+        "deduped_csv": "../data/PIPELINE/02-deduped-assets/maine_deduped_assets.csv",
+        "deduped_parquet": "../data/PIPELINE/02-deduped-assets/maine_deduped_assets.parquet",
+        "deduped_table": "../data/PIPELINE/02-deduped-assets/maine_deduped_assets.parquet",
     }
 }
 

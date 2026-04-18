@@ -740,9 +740,9 @@ class AgentTriager:
 
 if __name__ == "__main__":
     import os
-    from sources import GeoFabrikSource
-    from legacy.imagery import ImageryFetcher
-    from qc import QualityChecker
+    from curation.sources import GeoFabrikSource
+    from curation.legacy.imagery import ImageryFetcher
+    from curation.qc import QualityChecker
 
     PBF_PATH  = "data/pbf/us-northeast-260407.osm_power_only.osm.pbf"
     INPUT_CSV = "data/us-northeast_all_assets.csv"

@@ -210,10 +210,10 @@ class DatasetAssembler:
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    from sources import GeoFabrikSource
-    from legacy.imagery import ImageryFetcher
-    from qc import QualityChecker
-    from triage import RuleBasedTriager
+    from curation.sources import GeoFabrikSource
+    from curation.legacy.imagery import ImageryFetcher
+    from curation.qc import QualityChecker
+    from curation.triage import RuleBasedTriager
 
     # !! CHANGE THIS for each new dataset version
     OUTPUT_DIR = "data/dataset_us-northeast_v1"

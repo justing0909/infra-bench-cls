@@ -319,8 +319,8 @@ class QualityChecker:
 if __name__ == "__main__":
     import os
     import pandas as pd
-    from sources import GeoFabrikSource
-    from legacy.imagery import ImageryFetcher
+    from curation.sources import GeoFabrikSource
+    from curation.legacy.imagery import ImageryFetcher
 
     PBF_PATH  = "data/pbf/us-northeast-260407.osm_power_only.osm.pbf"
     INPUT_CSV = "data/us-northeast_all_assets.csv"
