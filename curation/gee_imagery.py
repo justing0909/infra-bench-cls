@@ -54,7 +54,7 @@ S2_SCALE = 10
 S2_CRS = "EPSG:4326"
 
 # Conservative settings for large global runs
-MAX_CONCURRENT = 4
+MAX_CONCURRENT = 3
 
 # Retry/backoff settings for transient EE / HTTP throttling
 MAX_RETRIES = 10
@@ -149,7 +149,7 @@ class GEEImageryFetcher:
         composite: str = "median",
         scale: int = S2_SCALE,
         checkpoint_path: Optional[str] = None,
-        checkpoint_every: int = 100,
+        checkpoint_every: int = 50,
     ):
         self.project = project
         self.buffer_m = buffer_m
@@ -496,11 +496,11 @@ class GEEImageryFetcher:
                     n_seen = len(all_results)
                     pct = n_seen / total * 100 if total else 0.0
 
-                    if n_seen <= 10 or n_seen % 25 == 0:
-                        print(
-                            f"  progress: seen={n_seen}/{total} ({pct:.0f}%) "
-                            f"ok={n_done} fail={n_fail} last_status={result.status}"
-                        )
+                    # if n_seen <= 10 or n_seen % 25 == 0:
+                        # print(
+                        #     f"  progress: seen={n_seen}/{total} ({pct:.0f}%) "
+                        #     f"ok={n_done} fail={n_fail} last_status={result.status}"
+                        # )
 
                     if n_done > 0 and n_done % self.checkpoint_every == 0:
                         self._save_checkpoint(all_results, completed_ids)
