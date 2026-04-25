@@ -12,7 +12,6 @@ Why GeoFabrik instead of live Overpass API queries?
   - Much faster for large areas
 
 Download GeoFabrik extracts from: https://download.geofabrik.de/
-Example: https://download.geofabrik.de/north-america/us/maine-latest.osm.pbf
 
 Each query returns a pandas DataFrame with one row per asset:
   - asset_id      : unique ID (e.g. "osm_node_123456")
@@ -22,11 +21,19 @@ Each query returns a pandas DataFrame with one row per asset:
   - source        : always "osm_geofabrik"
   - osm_tags      : dict of all OSM tags (for provenance)
 
+Filter presets
+--------------
+"full"       : all asset types defined in ASSET_FILTERS (energy sector)
+"substation" : transmission + distribution substations only — recommended
+               for the current infra-FM paper scope (Ed's guidance: start
+               small, ignore generators; CSDA handoff needs clean substation
+               bounding boxes)
+
 Usage:
     from sources import GeoFabrikSource
-    src = GeoFabrikSource("data/pbf/asia-260408.osm.pbf")
+    src = GeoFabrikSource("data/pbf/asia-260408.osm.pbf",
+                          filter_preset="substation")
     df = src.extract_all()
-    df = src.extract_sector("energy")   # single sector only
 """
 
 import os
@@ -37,24 +44,10 @@ from utils.timing_log_utils import update_timing_log, file_size_kb, file_size_mb
 
 
 # ---------------------------------------------------------------------------
-# Asset filter definitions
+# Asset filter definitions — FULL ontology
 # ---------------------------------------------------------------------------
-# Asset filter definitions + visual confidence levels
-# ---------------------------------------------------------------------------
-# Maps ontology asset_type to:
-#   "tags"       : list of (key, value) filter tuples — ALL must match
-#   "confidence" : "high", "medium", or "low"
-#
-# Visual confidence reflects how distinguishable the asset is from overhead
-# imagery at Sentinel-2 resolution (10m). At NAIP/Maxar resolution (30-60cm)
-# confidence is generally one level higher.
-#
-# high   — clearly visible, distinctive footprint at 10m
-# medium — visible but may be small or ambiguous at 10m
-# low    — likely below 10m resolution or visually indistinct
-#
+# Maps ontology asset_type to OSM tag filters and visual confidence.
 # Order matters: more specific filters must come before less specific ones.
-# Based on ONTOLOGY.md — update here when the ontology evolves.
 
 ASSET_FILTERS = {
     # --- Energy: Generation ---
@@ -82,7 +75,7 @@ ASSET_FILTERS = {
     },
     "energy.transmission.tower": {
         "tags": [("power", "tower")],
-        "confidence": "low",   # visible at 30cm, too small at 10m
+        "confidence": "low",
     },
 
     # --- Energy: Distribution ---
@@ -92,7 +85,7 @@ ASSET_FILTERS = {
     },
     "energy.distribution.substation_untyped": {
         "tags": [("power", "substation")],
-        "confidence": "medium",   # substation but subtype unknown
+        "confidence": "medium",
     },
     "energy.distribution.transformer": {
         "tags": [("power", "transformer")],
@@ -102,11 +95,40 @@ ASSET_FILTERS = {
         "tags": [("power", "pole")],
         "confidence": "low",
     },
+}
 
-    # --- Stubs: uncomment when sectors are developed ---
-    # "transport.airport":  {"tags": [("aeroway", "aerodrome")],        "confidence": "high"},
-    # "water.treatment":    {"tags": [("man_made", "wastewater_plant")], "confidence": "high"},
-    # "telecom.tower":      {"tags": [("man_made", "tower"), ("tower:type", "communication")], "confidence": "medium"},
+
+# ---------------------------------------------------------------------------
+# SUBSTATION_FILTERS — recommended preset for infra-FM paper runs
+# ---------------------------------------------------------------------------
+# Transmission substations, distribution substations, and untyped substations.
+# Excludes generators, solar, wind, towers, poles, and lines.
+#
+# Rationale:
+#   - Substations are network-critical nodes whose failure propagates
+#   - Visually consistent at both Sentinel-2 (10m) and CSDA 30cm scales
+#   - Manageable asset counts globally (vs. poles which number in the millions)
+#   - Clean bounding boxes for future NASA CSDA 30cm handoff
+
+SUBSTATION_FILTERS = {
+    "energy.transmission.substation": {
+        "tags": [("power", "substation"), ("substation", "transmission")],
+        "confidence": "high",
+    },
+    "energy.distribution.substation": {
+        "tags": [("power", "substation"), ("substation", "distribution")],
+        "confidence": "high",
+    },
+    "energy.distribution.substation_untyped": {
+        "tags": [("power", "substation")],
+        "confidence": "medium",
+    },
+}
+
+# Registry of available presets
+FILTER_PRESETS = {
+    "full": ASSET_FILTERS,
+    "substation": SUBSTATION_FILTERS,
 }
 
 # Confidence level ordering for threshold filtering
@@ -118,23 +140,16 @@ SECTORS = {
 }
 
 
-def asset_types_by_confidence(min_confidence: str = "medium") -> set:
+def asset_types_by_confidence(min_confidence: str = "medium",
+                               filter_preset: str = "full") -> set:
     """
-    Returns the set of asset_types at or above the given confidence threshold.
-
-    Parameters
-    ----------
-    min_confidence : str — "high", "medium", or "low"
-
-    Example
-    -------
-    high_only   = asset_types_by_confidence("high")
-    high_medium = asset_types_by_confidence("medium")  # default
-    all_assets  = asset_types_by_confidence("low")
+    Returns the set of asset_types at or above the given confidence threshold
+    within the specified filter preset.
     """
+    filters = FILTER_PRESETS.get(filter_preset, ASSET_FILTERS)
     threshold = CONFIDENCE_LEVELS.get(min_confidence, 2)
     return {
-        k for k, v in ASSET_FILTERS.items()
+        k for k, v in filters.items()
         if CONFIDENCE_LEVELS.get(v["confidence"], 0) >= threshold
     }
 
@@ -144,10 +159,6 @@ def asset_types_by_confidence(min_confidence: str = "medium") -> set:
 # ---------------------------------------------------------------------------
 
 def _matches(tags, filter_list: list) -> bool:
-    """
-    Returns True if all (key, value) pairs in filter_list match the tags.
-    value=None matches any value for that key.
-    """
     for key, value in filter_list:
         tag_val = tags.get(key)
         if tag_val is None:
@@ -157,13 +168,12 @@ def _matches(tags, filter_list: list) -> bool:
     return True
 
 
-def _best_asset_type(tags) -> Optional[str]:
+def _best_asset_type(tags, filters: dict) -> Optional[str]:
     """
     Returns the most specific matching asset_type for an OSM element's tags,
-    or None if no filter matches.
-    More specific filters appear first in ASSET_FILTERS so they win.
+    or None if no filter matches. Uses the provided filters dict (not global).
     """
-    for asset_type, defn in ASSET_FILTERS.items():
+    for asset_type, defn in filters.items():
         if _matches(tags, defn["tags"]):
             return asset_type
     return None
@@ -176,48 +186,29 @@ def _best_asset_type(tags) -> Optional[str]:
 class InfraHandler(osmium.SimpleHandler):
     """
     pyosmium handler that scans nodes and ways in a .osm.pbf file and
-    collects those matching ASSET_FILTERS.
-
-    Ways use their midpoint node as a centroid proxy.
-    Relations are not currently handled.
+    collects those matching the provided filters dict.
     """
 
-    def __init__(self, target_types: Optional[set] = None,
-                 log_every: int = 1_000_000):
+    def __init__(self, filters: dict,
+                 target_types: Optional[set] = None,
+                 log_every: int = 1_000_000,
+                 estimated_nodes_m: float = 0):
         super().__init__()
-        self.rows          = []
-        self._target_types = target_types
-        self._log_every    = log_every
-        self._n_nodes      = 0
-        self._n_ways       = 0
+        self.rows                = []
+        self._filters            = filters
+        self._target_types       = target_types
+        self._log_every          = log_every
+        self._n_nodes            = 0
+        self._n_ways             = 0
+        self._estimated_nodes_m  = estimated_nodes_m
 
     def _add(self, osm_type: str, osm_id: int,
              lat: float, lon: float, tags) -> None:
-        asset_type = _best_asset_type(tags)
+        asset_type = _best_asset_type(tags, self._filters)
         if asset_type is None:
             return
         if self._target_types and asset_type not in self._target_types:
             return
-
-        # --- Solar farm filter ---
-        # OSM has tens of thousands of individual rooftop/small solar
-        # installations tagged power=generator, generator:source=solar.
-        # For a training corpus we only want utility-scale farms that are
-        # visually distinctive at Sentinel-2 (10m) resolution.
-        # Keep solar only if:
-        #   - it's a way (polygon footprint, not a point)
-        #   - OR it has a rated output tag suggesting utility scale
-        #   - OR it has a plant:output tag
-        if asset_type == "energy.generation.solar_farm":
-            tag_dict_check = {k: v for k, v in tags}
-            has_output = (
-                "generator:output:electricity" in tag_dict_check
-                or "plant:output:electricity" in tag_dict_check
-                or "generator:output" in tag_dict_check
-            )
-            is_way = osm_type == "way"
-            if not is_way and not has_output:
-                return  # skip small rooftop / node-mapped solar
 
         tag_dict = {k: v for k, v in tags}
         self.rows.append({
@@ -225,187 +216,127 @@ class InfraHandler(osmium.SimpleHandler):
             "asset_type": asset_type,
             "lat":        lat,
             "lon":        lon,
-            "name":       tag_dict.get("name", ""),
+            "name":       tags.get("name", ""),
             "source":     "osm_geofabrik",
             "osm_tags":   tag_dict,
         })
 
     def node(self, n):
-        if not n.location.valid():
-            return
         self._n_nodes += 1
         if self._n_nodes % self._log_every == 0:
-            print(f"    nodes scanned: {self._n_nodes:,}  "
-                  f"ways scanned: {self._n_ways:,}  "
-                  f"assets found: {len(self.rows):,}")
+            current_m = self._n_nodes / 1e6
+            if self._estimated_nodes_m > 0:
+                pct = min(current_m / self._estimated_nodes_m * 100, 99.9)
+                print(
+                    f"    {current_m:.0f}M / ~{self._estimated_nodes_m:.0f}M nodes "
+                    f"({pct:.0f}%) | "
+                    f"{self._n_ways / 1e3:.1f}k ways | "
+                    f"{len(self.rows)} assets matched so far",
+                    flush=True,
+                )
+            else:
+                print(
+                    f"    {current_m:.0f}M nodes scanned | "
+                    f"{self._n_ways / 1e3:.1f}k ways | "
+                    f"{len(self.rows)} assets matched so far",
+                    flush=True,
+                )
+        if not n.location.valid():
+            return
         self._add("node", n.id, n.location.lat, n.location.lon, n.tags)
 
     def way(self, w):
         self._n_ways += 1
-        if self._n_ways % self._log_every == 0:
-            print(f"    nodes scanned: {self._n_nodes:,}  "
-                  f"ways scanned: {self._n_ways:,}  "
-                  f"assets found: {len(self.rows):,}")
-
-        # Only process ways that have power tags
-        if "power" not in w.tags:
-            return
-
         try:
-            # Try midpoint node first
-            mid = w.nodes[len(w.nodes) // 2]
-            if mid.location.valid():
-                self._add("way", w.id,
-                          mid.location.lat, mid.location.lon, w.tags)
+            lats = [nd.location.lat for nd in w.nodes if nd.location.valid()]
+            lons = [nd.location.lon for nd in w.nodes if nd.location.valid()]
+            if not lats:
                 return
-
-            # Fallback: try any valid node location in the way
-            for node in w.nodes:
-                if node.location.valid():
-                    self._add("way", w.id,
-                              node.location.lat, node.location.lon, w.tags)
-                    return
-
-            # Fallback: use envelope/bounds if available
-            if hasattr(w, "envelope"):
-                env = w.envelope
-                lat = (env.bottom_left.lat + env.top_right.lat) / 2
-                lon = (env.bottom_left.lon + env.top_right.lon) / 2
-                if -90 <= lat <= 90 and -180 <= lon <= 180:
-                    self._add("way", w.id, lat, lon, w.tags)
-
-        except Exception:
-            pass
-
-    def relation(self, r):
-        """Handle relations — many substations are mapped as relations."""
-        try:
-            # Use centroid of member nodes as proxy location
-            lats, lons = [], []
-            for m in r.members:
-                if m.type == "n":   # node member
-                    try:
-                        loc = m.ref  # node ID — location not directly available
-                        # Skip — we can't get location from relation members
-                        # without a full node index
-                        pass
-                    except Exception:
-                        pass
-            # Fall back: use bounding box center if available
-            if hasattr(r, "envelope") and r.envelope:
-                env = r.envelope
-                lat = (env.bottom_left.lat + env.top_right.lat) / 2
-                lon = (env.bottom_left.lon + env.top_right.lon) / 2
-                if -90 <= lat <= 90 and -180 <= lon <= 180:
-                    self._add("relation", r.id, lat, lon, r.tags)
+            lat = sum(lats) / len(lats)
+            lon = sum(lons) / len(lons)
+            self._add("way", w.id, lat, lon, w.tags)
         except Exception:
             pass
 
 
 # ---------------------------------------------------------------------------
-# Main class
+# Main source class
 # ---------------------------------------------------------------------------
 
 class GeoFabrikSource:
     """
-    Extracts infrastructure assets from a local GeoFabrik .osm.pbf file.
+    Extracts infrastructure assets from a GeoFabrik .osm.pbf file.
 
     Parameters
     ----------
-    pbf_path : str
-        Path to the local .osm.pbf file.
-        Download from https://download.geofabrik.de/
-
-    min_confidence : str
-        Minimum visual confidence level to include.
-        "high"   — only clearly visible assets (substations, solar, wind, plants)
-        "medium" — adds untyped substations and generic generators (default)
-        "low"    — includes everything (poles, towers, transformers)
-
-    Example
-    -------
-        src = GeoFabrikSource("data/pbf/asia-260408.osm.pbf", min_confidence="high")
-        df  = src.extract_all()
+    pbf_path        : str  — path to local .osm.pbf file
+    min_confidence  : str  — "high", "medium", or "low"
+    filter_preset   : str  — "full" or "substation"
+                      Use "substation" for infra-FM paper runs.
+    pre_filter      : bool — write a power-only PBF before scanning
+                      (dramatically faster for continent-scale files)
     """
 
-    def __init__(self, pbf_path: str, min_confidence: str = "medium",
+    def __init__(self, pbf_path: str,
+                 min_confidence: str = "medium",
+                 filter_preset: str = "substation",
                  pre_filter: bool = True):
-        if not os.path.exists(pbf_path):
-            raise FileNotFoundError(
-                f"PBF file not found: {pbf_path}\n"
-                f"Download from https://download.geofabrik.de/"
+        self.pbf_path        = pbf_path
+        self.min_confidence  = min_confidence
+        self.filter_preset   = filter_preset
+        self.pre_filter      = pre_filter
+
+        if filter_preset not in FILTER_PRESETS:
+            raise ValueError(
+                f"Unknown filter_preset '{filter_preset}'. "
+                f"Available: {list(FILTER_PRESETS.keys())}"
             )
-        self.pbf_path       = pbf_path
-        self.min_confidence = min_confidence
-        self.pre_filter     = pre_filter
-        self._target_types  = asset_types_by_confidence(min_confidence)
-        print(f"Confidence filter: >= '{min_confidence}' "
-              f"({len(self._target_types)} asset types active)")
-        
+
+        self._active_filters = FILTER_PRESETS[filter_preset]
+
+        # Apply confidence threshold within the chosen preset
+        threshold = CONFIDENCE_LEVELS.get(min_confidence, 2)
+        self._target_types = {
+            k for k, v in self._active_filters.items()
+            if CONFIDENCE_LEVELS.get(v["confidence"], 0) >= threshold
+        }
+
+        print(f"GeoFabrikSource: preset='{filter_preset}', "
+              f"min_confidence='{min_confidence}', "
+              f"target_types={sorted(self._target_types)}")
+
     def _region_name(self) -> str:
-        filename = os.path.basename(self.pbf_path)
-        filename = filename.replace(".osm_power_only.osm.pbf", "")
-        filename = filename.replace(".osm.pbf", "")
-        return filename
+        return os.path.splitext(os.path.basename(self.pbf_path))[0]
 
     def _pre_filter_pbf(self) -> str:
         """
-        Pre-filters the PBF to power=* elements including all referenced
-        node locations so ways can have their centroids resolved.
-
-        Two-pass approach:
-          Pass 1: collect IDs of all power nodes, ways, relations
-          Pass 2: write those elements plus ALL nodes (for location lookup)
-
-        Returns path to filtered PBF (cached). Skips if already exists.
+        Writes a power-only PBF to speed up scanning on large files.
+        Returns path to the filtered PBF, or original path on failure.
         """
         import time
-
-        base     = os.path.splitext(self.pbf_path)[0]
+        base = os.path.splitext(self.pbf_path)[0]
         out_path = f"{base}_power_only.osm.pbf"
 
         if os.path.exists(out_path):
-            print(f"  Using cached pre-filtered PBF: {out_path}")
-            try:
-                update_timing_log(
-                    workbook_path="Infra-FM-timing-log.xlsx",
-                    region=self._region_name(),
-                    starting_file_size_kb=file_size_kb(self.pbf_path),
-                    power_only_file_size_mb=file_size_mb(out_path),
-                )
-                print("  Updated timing log from cached power_only file.")
-            except Exception as e:
-                print(f"  Warning: could not update timing log from cached file: {e}")
+            print(f"  Using existing power-only PBF: {out_path}")
             return out_path
 
-        print(f"  Pre-filtering PBF to power=* elements (2-pass)...")
-        print(f"  (This runs once and is cached for future runs)")
+        print(f"  Pre-filtering {self.pbf_path} -> {out_path}...")
         t0 = time.time()
 
         try:
-            # Pass 1: collect power element IDs and ALL node IDs
-            # We need all nodes so location lookup works for ways
             class IDCollector(osmium.SimpleHandler):
                 def __init__(self):
                     super().__init__()
                     self.power_node_ids     = set()
                     self.power_way_ids      = set()
                     self.power_relation_ids = set()
-                    self._n_scanned         = 0
 
                 def node(self, n):
-                    self._n_scanned += 1
-                    if self._n_scanned % 5_000_000 == 0:
-                        print(f"    pass 1: {self._n_scanned/1e6:.0f}M elements, "
-                              f"{len(self.power_node_ids) + len(self.power_way_ids):,} power found")
                     if "power" in n.tags:
                         self.power_node_ids.add(n.id)
 
                 def way(self, w):
-                    self._n_scanned += 1
-                    if self._n_scanned % 5_000_000 == 0:
-                        print(f"    pass 1: {self._n_scanned/1e6:.0f}M elements, "
-                              f"{len(self.power_node_ids) + len(self.power_way_ids):,} power found")
                     if "power" in w.tags:
                         self.power_way_ids.add(w.id)
 
@@ -420,7 +351,6 @@ class GeoFabrikSource:
                   f"{len(collector.power_way_ids):,} ways, "
                   f"{len(collector.power_relation_ids):,} relations")
 
-            # Pass 2: write power elements + ALL nodes (for location lookup)
             writer = osmium.SimpleWriter(out_path)
 
             class PowerWriter(osmium.SimpleHandler):
@@ -437,7 +367,6 @@ class GeoFabrikSource:
                     if self._n_scanned % 5_000_000 == 0:
                         print(f"    pass 2: {self._n_scanned/1e6:.0f}M elements, "
                               f"{self.n_written:,} written")
-                    # Write ALL nodes — needed for way location resolution
                     writer.add_node(n)
                     if n.id in self.node_ids:
                         self.n_written += 1
@@ -463,7 +392,7 @@ class GeoFabrikSource:
 
             elapsed = time.time() - t0
             size_mb = os.path.getsize(out_path) / 1_048_576
-            print(f"  Pre-filter complete in {elapsed:.1f}s → "
+            print(f"  Pre-filter complete in {elapsed:.1f}s -> "
                   f"{size_mb:.1f}MB ({out_path})")
 
             try:
@@ -474,7 +403,6 @@ class GeoFabrikSource:
                     pre_filter_time_s=round(elapsed, 2),
                     power_only_file_size_mb=round(size_mb, 2),
                 )
-                print("  Updated timing log with pre-filter stats.")
             except Exception as e:
                 print(f"  Warning: could not update timing log: {e}")
 
@@ -489,27 +417,36 @@ class GeoFabrikSource:
     def _run(self, target_types: Optional[set] = None) -> pd.DataFrame:
         import time
 
-        # Use pre-filtered PBF if enabled — much faster for large files
         scan_path = self._pre_filter_pbf() if self.pre_filter else self.pbf_path
 
         active = self._target_types
         if target_types is not None:
             active = active & target_types
-        handler = InfraHandler(target_types=active)
-        print(f"  Scanning {scan_path}... (progress every 1M nodes/ways)")
+
+        # Estimate node count from file size
+        # ~850 bytes/node is a reasonable estimate for power-only PBFs
+        size_bytes        = os.path.getsize(scan_path)
+        size_mb           = size_bytes / 1_048_576
+        estimated_nodes_m = (size_bytes / 850) / 1_000_000
+
+        print(f"  Scanning {scan_path} (preset='{self.filter_preset}')")
+        print(f"  File size: {size_mb:.1f}MB | "
+              f"estimated ~{estimated_nodes_m:.0f}M nodes | "
+              f"progress every 1M nodes")
+
+        handler = InfraHandler(
+            filters=self._active_filters,
+            target_types=active,
+            estimated_nodes_m=estimated_nodes_m,
+        )
         t0 = time.time()
 
-        # Use disk-backed node location index for large files.
-        # locations=True uses an in-memory index which requires enormous RAM
-        # for continent-scale PBFs and rebuilds on every restart.
-        # NodeLocationsForWays with a sparse disk index is much more efficient.
         try:
             lhandler = osmium.NodeLocationsForWays(handler)
             lhandler.ignore_errors()
             lhandler.apply_file(scan_path, locations=True,
                                 idx="sparse_file_array,locations.idx")
         except Exception:
-            # Fallback: standard locations=True (works for smaller files)
             handler.apply_file(scan_path, locations=True)
 
         elapsed = time.time() - t0
@@ -517,6 +454,7 @@ class GeoFabrikSource:
               f"{handler._n_nodes:,} nodes, "
               f"{handler._n_ways:,} ways, "
               f"{len(handler.rows):,} assets matched")
+
         try:
             update_timing_log(
                 workbook_path="Infra-FM-timing-log.xlsx",
@@ -524,46 +462,16 @@ class GeoFabrikSource:
                 scanning_time_s=round(elapsed, 2),
                 assets_extracted=len(handler.rows),
             )
-            print("  Updated timing log with scan stats.")
-
         except Exception as e:
             print(f"  Warning: could not update timing log with scan stats: {e}")
-        way_rows = [r for r in handler.rows if "_way_" in r["asset_id"]]
-        node_rows = [r for r in handler.rows if "_node_" in r["asset_id"]]
-        print(f"  Node-origin: {len(node_rows)}, Way-origin: {len(way_rows)}")
-        if way_rows:
-            lats = [r["lat"] for r in way_rows]
-            print(f"  Way lat range: {min(lats):.4f} to {max(lats):.4f}")
+
         if not handler.rows:
             return pd.DataFrame()
         return pd.DataFrame(handler.rows)
 
-    def extract_sector(self, sector: str) -> pd.DataFrame:
-        """
-        Extracts assets for a single sector (e.g. 'energy').
-        Respects the min_confidence filter set at init.
-        """
-        if sector not in SECTORS:
-            raise ValueError(
-                f"Unknown sector '{sector}'. "
-                f"Available: {list(SECTORS.keys())}"
-            )
-        print(f"  [{sector}] scanning {self.pbf_path}...")
-        sector_types = set(SECTORS[sector])
-        df = self._run(target_types=sector_types)
-        if df.empty:
-            print(f"  [{sector}] no assets found")
-        else:
-            print(f"  [{sector}] found {len(df)} assets")
-            print(df["asset_type"].value_counts().to_string())
-        return df
-
     def extract_all(self) -> pd.DataFrame:
-        """
-        Extracts assets for all defined sectors in a single PBF pass.
-        Respects the min_confidence filter set at init.
-        """
-        print(f"Scanning {self.pbf_path}...")
+        print(f"Scanning {self.pbf_path} "
+              f"(preset='{self.filter_preset}')...")
         df = self._run(target_types=None)
         if df.empty:
             print("No assets found.")
@@ -573,25 +481,29 @@ class GeoFabrikSource:
         print(df["asset_type"].value_counts().to_string())
         return df
 
+    def extract_sector(self, sector: str) -> pd.DataFrame:
+        if sector not in SECTORS:
+            raise ValueError(
+                f"Unknown sector '{sector}'. "
+                f"Available: {list(SECTORS.keys())}"
+            )
+        print(f"  [{sector}] scanning {self.pbf_path}...")
+        sector_types = set(SECTORS[sector]) & self._target_types
+        df = self._run(target_types=sector_types)
+        if df.empty:
+            print(f"  [{sector}] no assets found")
+        else:
+            print(f"  [{sector}] found {len(df)} assets")
+            print(df["asset_type"].value_counts().to_string())
+        return df
+
 
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
 
-# !! CHANGE OUTPUT_CSV before each new run to avoid overwriting earlier data.
-#
-# Convention: data/<region>_<scope>_assets.csv
-# Examples:
-#   "data/maine_all_assets.csv"
-#   "data/new_hampshire_energy_assets.csv"
-#   "data/northeast_usa_assets.csv"
-
 OUTPUT_CSV = "data/asia_all_assets.csv"
-
-# Path to your downloaded GeoFabrik PBF file.
-# Download asia: https://download.geofabrik.de/asia/asia-latest.osm.pbf
-
-PBF_PATH = "data/pbf/asia-260408.osm.pbf"
+PBF_PATH   = "data/pbf/asia-260408.osm.pbf"
 
 
 # ---------------------------------------------------------------------------
@@ -605,10 +517,12 @@ if __name__ == "__main__":
     print(f"PBF:    {PBF_PATH}")
     print("(Change OUTPUT_CSV and PBF_PATH above before re-running.)\n")
 
-    # "medium" skips poles and towers — good default for Sentinel-2 pipeline
-    # use "low" to include everything, "high" for only the most distinctive assets
-    src = GeoFabrikSource(PBF_PATH, min_confidence="medium")
-    df  = src.extract_all()
+    # filter_preset="substation" is the recommended default for infra-FM runs.
+    # Switch to "full" to restore the broader ontology.
+    src = GeoFabrikSource(PBF_PATH,
+                          min_confidence="medium",
+                          filter_preset="substation")
+    df = src.extract_all()
 
     if not df.empty:
         df.drop(columns=["osm_tags"], errors="ignore").to_csv(

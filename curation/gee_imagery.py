@@ -54,7 +54,7 @@ S2_SCALE = 10
 S2_CRS = "EPSG:4326"
 
 # Conservative settings for large global runs
-MAX_CONCURRENT = 3
+MAX_CONCURRENT = 6
 
 # Retry/backoff settings for transient EE / HTTP throttling
 MAX_RETRIES = 10

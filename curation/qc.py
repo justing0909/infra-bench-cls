@@ -1,24 +1,28 @@
 """
 qc.py
 -----
-Basic imagery quality control for infrastructure asset tiles.
-Filters out tiles that are unsuitable for training before they
-enter the deduplication and label triage steps.
+Imagery quality control for infrastructure asset tiles.
 
-Three checks are applied in order:
-  1. Valid pixel ratio  — rejects tiles that are mostly nodata/black
-  2. Edge artifact      — rejects tiles clipped at the boundary of a scene
-  3. Cloud/brightness   — rejects tiles that are too bright (likely cloud)
-                          or too dark (shadow, missing data)
+Extended to support multimodal tiles (sentinel2_ms, sentinel1,
+landsat_thermal, naip) with per-modality thresholds.
 
-Each check is configurable via thresholds. Defaults are conservative —
-when in doubt, keep the tile and let triage handle edge cases.
+QC is always applied to TileResult.image — the single best composite.
+Temporal stacks (image_stack) are not QC'd individually; if the best
+composite passes, the stack is accepted.
+
+Three checks in order:
+  1. Valid pixel ratio  — rejects tiles that are mostly nodata/zero
+  2. Edge artifact      — rejects tiles clipped at scene boundary
+  3. Value range        — replaces the old brightness check with a
+                          per-modality range check (uint8 optical uses
+                          the same 15-220 defaults; SAR and thermal use
+                          modality-appropriate ranges from MODALITY_REGISTRY)
 
 Usage:
     from qc import QualityChecker
     checker = QualityChecker()
-    qc_results = checker.check_all(tile_results)   # list of TileResult
-    clean      = checker.filter_ok(qc_results)     # only passing tiles
+    qc_results = checker.check_all(tile_results)
+    clean      = checker.filter_ok(qc_results)
 """
 
 import numpy as np
@@ -26,18 +30,32 @@ import pandas as pd
 from dataclasses import dataclass, field
 from typing import List, Optional
 
-from legacy.imagery import TileResult
+from helpers.tile_types import TileResult, MODALITY_REGISTRY
 
 
 # ---------------------------------------------------------------------------
 # Default thresholds
 # ---------------------------------------------------------------------------
-# These are starting points — tune based on your imagery and region.
 
-DEFAULT_MIN_VALID_RATIO  = 0.80   # at least 80% of pixels must be non-zero
-DEFAULT_EDGE_MARGIN_PX   = 5      # flag if any border strip is >90% zero
-DEFAULT_MAX_BRIGHTNESS   = 220    # mean brightness above this = likely cloud
-DEFAULT_MIN_BRIGHTNESS   = 15     # mean brightness below this = likely nodata
+DEFAULT_MIN_VALID_RATIO = 0.80
+DEFAULT_EDGE_MARGIN_PX  = 5
+
+# Per-modality value range thresholds
+# For optical (uint8): mean pixel value must be in [min, max]
+# For SAR (float32 dB): mean must be in [min, max]
+# For thermal (float32 K): mean must be in [min, max]
+# These are intentionally loose — triage handles edge cases.
+
+MODALITY_RANGE_THRESHOLDS = {
+    "sentinel2_ms":    (15, 220),     # uint8
+    "sentinel2_rgb":   (15, 220),     # uint8
+    "naip":            (15, 220),     # uint8
+    "sentinel1":       (-28.0, 5.0),  # dB — below -28 is noise, above 5 unusual
+    "landsat_thermal": (220.0, 340.0),# Kelvin — sanity range for Earth surfaces
+}
+
+# Fallback if modality not in table
+DEFAULT_RANGE_THRESHOLD = (15, 220)
 
 
 # ---------------------------------------------------------------------------
@@ -49,25 +67,20 @@ class QCResult:
     """
     Holds the quality control outcome for one TileResult.
 
-    Attributes
-    ----------
-    asset_id      : str
-    asset_type    : str
-    source        : str   — "naip" or "sentinel2"
-    status        : str   — "pass", "fail_valid_pixels", "fail_edge",
-                            "fail_brightness", "fail_no_image"
-    valid_ratio   : float — fraction of non-zero pixels
-    mean_brightness : float
-    checks_passed : list  — which checks passed
-    checks_failed : list  — which checks failed
-    tile          : TileResult — reference to original tile
+    status values:
+        "pass"
+        "fail_valid_pixels"
+        "fail_edge"
+        "fail_value_range"
+        "fail_no_image"
     """
     asset_id        : str
     asset_type      : str
     source          : str
     status          : str
     valid_ratio     : float
-    mean_brightness : float
+    mean_value      : float
+    modalities      : List[str]
     checks_passed   : List[str] = field(default_factory=list)
     checks_failed   : List[str] = field(default_factory=list)
     tile            : Optional[TileResult] = None
@@ -78,60 +91,63 @@ class QCResult:
 
 
 # ---------------------------------------------------------------------------
-# Individual check functions
+# Check functions
 # ---------------------------------------------------------------------------
 
-def _check_valid_pixels(image: np.ndarray,
-                        min_ratio: float) -> tuple:
+def _check_valid_pixels(image: np.ndarray, min_ratio: float) -> tuple:
     """
-    Checks that enough pixels contain real data (non-zero across all bands).
-    Returns (passed: bool, valid_ratio: float).
+    Checks that enough pixels contain real data across all bands.
+    A pixel is valid if at least one band is non-zero.
     """
-    # pixel is valid if at least one band is non-zero
-    valid_mask = np.any(image > 0, axis=0)
-    valid_ratio = valid_mask.mean()
-    return valid_ratio >= min_ratio, float(valid_ratio)
+    valid_mask  = np.any(image != 0, axis=0)
+    valid_ratio = float(valid_mask.mean())
+    return valid_ratio >= min_ratio, valid_ratio
 
 
-def _check_edge_artifacts(image: np.ndarray,
-                          margin_px: int,
-                          zero_threshold: float = 0.90) -> bool:
+def _check_edge_artifacts(image: np.ndarray, margin_px: int,
+                           zero_threshold: float = 0.90) -> bool:
     """
-    Checks for edge clipping — a border strip that is mostly zero suggests
-    the tile was cut at the edge of imagery coverage.
-    Returns True if the tile passes (no significant edge artifact detected).
+    Checks for edge clipping — a border strip mostly zero/NaN
+    suggests the tile was cut at imagery coverage boundary.
     """
     _, h, w = image.shape
     if h < margin_px * 2 or w < margin_px * 2:
-        return False   # tile too small to evaluate
+        return False
 
-    # check each of the four border strips
     strips = [
-        image[:, :margin_px, :],          # top
-        image[:, -margin_px:, :],         # bottom
-        image[:, :, :margin_px],          # left
-        image[:, :, -margin_px:],         # right
+        image[:, :margin_px, :],
+        image[:, -margin_px:, :],
+        image[:, :, :margin_px],
+        image[:, :, -margin_px:],
     ]
-
     for strip in strips:
         zero_frac = (strip == 0).all(axis=0).mean()
         if zero_frac > zero_threshold:
-            return False   # this border is mostly empty
-
+            return False
     return True
 
 
-def _check_brightness(image: np.ndarray,
-                      min_brightness: float,
-                      max_brightness: float) -> tuple:
+def _check_value_range(image: np.ndarray,
+                        modalities: List[str]) -> tuple:
     """
-    Checks mean pixel brightness across all bands.
-    Too bright = cloud/overexposure. Too dark = shadow/nodata.
-    Returns (passed: bool, mean_brightness: float).
+    Checks mean value of the primary modality's bands against its expected range.
+    Uses per-modality thresholds from MODALITY_RANGE_THRESHOLDS.
+    Falls back to optical defaults for unknown modalities.
+
+    Returns (passed: bool, mean_value: float)
     """
-    mean_brightness = float(image[image > 0].mean()) if (image > 0).any() else 0.0
-    passed = min_brightness <= mean_brightness <= max_brightness
-    return passed, mean_brightness
+    # Use the first modality to determine thresholds
+    primary = modalities[0] if modalities else "sentinel2_rgb"
+    vmin, vmax = MODALITY_RANGE_THRESHOLDS.get(primary, DEFAULT_RANGE_THRESHOLD)
+
+    # Compute mean over non-zero values only
+    nonzero = image[image != 0]
+    if nonzero.size == 0:
+        return False, 0.0
+
+    mean_val = float(nonzero.mean())
+    passed   = vmin <= mean_val <= vmax
+    return passed, mean_val
 
 
 # ---------------------------------------------------------------------------
@@ -140,34 +156,26 @@ def _check_brightness(image: np.ndarray,
 
 class QualityChecker:
     """
-    Runs quality control checks on imagery tiles from imagery.py.
+    Runs QC checks on imagery tiles.
+    Modality-aware: threshold logic adapts to sentinel1, landsat_thermal, etc.
 
     Parameters
     ----------
-    min_valid_ratio  : float — minimum fraction of valid (non-zero) pixels
-    edge_margin_px   : int   — width of border strip to check for clipping
-    max_brightness   : float — upper brightness threshold (cloud rejection)
-    min_brightness   : float — lower brightness threshold (nodata rejection)
+    min_valid_ratio : float — minimum fraction of valid (non-zero) pixels
+    edge_margin_px  : int   — width of border strip to check for clipping
     """
 
     def __init__(
         self,
         min_valid_ratio : float = DEFAULT_MIN_VALID_RATIO,
         edge_margin_px  : int   = DEFAULT_EDGE_MARGIN_PX,
-        max_brightness  : float = DEFAULT_MAX_BRIGHTNESS,
-        min_brightness  : float = DEFAULT_MIN_BRIGHTNESS,
     ):
         self.min_valid_ratio = min_valid_ratio
         self.edge_margin_px  = edge_margin_px
-        self.max_brightness  = max_brightness
-        self.min_brightness  = min_brightness
 
     def check_tile(self, tile: TileResult) -> QCResult:
-        """
-        Runs all QC checks on a single TileResult.
-        Returns a QCResult with pass/fail status and diagnostic values.
-        """
-        # Handle tiles that failed at the imagery fetch stage
+        modalities = getattr(tile, "modalities", ["sentinel2_rgb"])
+
         if tile.image is None:
             return QCResult(
                 asset_id=tile.asset_id,
@@ -175,7 +183,8 @@ class QualityChecker:
                 source=tile.source,
                 status="fail_no_image",
                 valid_ratio=0.0,
-                mean_brightness=0.0,
+                mean_value=0.0,
+                modalities=modalities,
                 checks_failed=["no_image"],
                 tile=tile,
             )
@@ -184,34 +193,19 @@ class QualityChecker:
         passed_checks = []
         failed_checks = []
 
-        # --- Check 1: valid pixels ---
+        # Check 1: valid pixels
         valid_ok, valid_ratio = _check_valid_pixels(image, self.min_valid_ratio)
-        if valid_ok:
-            passed_checks.append("valid_pixels")
-        else:
-            failed_checks.append("valid_pixels")
+        (passed_checks if valid_ok else failed_checks).append("valid_pixels")
 
-        # --- Check 2: edge artifacts ---
+        # Check 2: edge artifacts
         edge_ok = _check_edge_artifacts(image, self.edge_margin_px)
-        if edge_ok:
-            passed_checks.append("edge_artifacts")
-        else:
-            failed_checks.append("edge_artifacts")
+        (passed_checks if edge_ok else failed_checks).append("edge_artifacts")
 
-        # --- Check 3: brightness ---
-        brightness_ok, mean_brightness = _check_brightness(
-            image, self.min_brightness, self.max_brightness
-        )
-        if brightness_ok:
-            passed_checks.append("brightness")
-        else:
-            failed_checks.append("brightness")
+        # Check 3: value range (modality-aware)
+        range_ok, mean_val = _check_value_range(image, modalities)
+        (passed_checks if range_ok else failed_checks).append("value_range")
 
-        # Overall status
-        if failed_checks:
-            status = f"fail_{failed_checks[0]}"
-        else:
-            status = "pass"
+        status = f"fail_{failed_checks[0]}" if failed_checks else "pass"
 
         return QCResult(
             asset_id=tile.asset_id,
@@ -219,23 +213,19 @@ class QualityChecker:
             source=tile.source,
             status=status,
             valid_ratio=valid_ratio,
-            mean_brightness=mean_brightness,
+            mean_value=mean_val,
+            modalities=modalities,
             checks_passed=passed_checks,
             checks_failed=failed_checks,
             tile=tile,
         )
 
     def check_all(self, tiles: List[TileResult],
-                  max_workers: int = 8) -> List[QCResult]:
-        """
-        Runs QC on a list of TileResults in parallel.
-        Returns a list of QCResult in the same order.
-        """
+                  max_workers: int = 8) -> List["QCResult"]:
         from concurrent.futures import ThreadPoolExecutor, as_completed
-        import threading
 
         results   = [None] * len(tiles)
-        lock      = threading.Lock()
+        lock      = __import__("threading").Lock()
         completed = 0
 
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -248,8 +238,7 @@ class QualityChecker:
                     completed += 1
                     if completed % 1000 == 0 or completed == len(tiles):
                         passed = sum(1 for r in results if r and r.passed)
-                        print(f"  QC [{completed}/{len(tiles)}] "
-                              f"passed={passed}")
+                        print(f"  QC [{completed}/{len(tiles)}] passed={passed}")
 
         passed = sum(1 for r in results if r.passed)
         failed = len(results) - passed
@@ -257,102 +246,41 @@ class QualityChecker:
               f"({len(results)} total)")
         return results
 
-    def filter_ok(self, qc_results: List[QCResult]) -> List[TileResult]:
-        """
-        Returns only the TileResults that passed all QC checks.
-        Use this to get clean tiles ready for deduplication.
-        """
+    def filter_ok(self, qc_results: List["QCResult"]) -> List[TileResult]:
         return [r.tile for r in qc_results if r.passed and r.tile is not None]
 
-    def summarize(self, qc_results: List[QCResult]) -> pd.DataFrame:
-        """
-        Converts QC results to a summary DataFrame for inspection.
-        """
+    def summarize(self, qc_results: List["QCResult"]) -> pd.DataFrame:
         rows = []
         for r in qc_results:
             rows.append({
-                "asset_id":        r.asset_id,
-                "asset_type":      r.asset_type,
-                "source":          r.source,
-                "status":          r.status,
-                "passed":          r.passed,
-                "valid_ratio":     round(r.valid_ratio, 3),
-                "mean_brightness": round(r.mean_brightness, 1),
-                "checks_failed":   ", ".join(r.checks_failed) or "none",
+                "asset_id":      r.asset_id,
+                "asset_type":    r.asset_type,
+                "source":        r.source,
+                "modalities":    "+".join(r.modalities),
+                "status":        r.status,
+                "passed":        r.passed,
+                "valid_ratio":   round(r.valid_ratio, 3),
+                "mean_value":    round(r.mean_value, 3),
+                "checks_failed": ", ".join(r.checks_failed) or "none",
             })
         return pd.DataFrame(rows)
 
-    def failure_analysis(self, qc_results: List[QCResult]) -> None:
-        """
-        Prints a breakdown of failure reasons to help tune thresholds.
-        """
+    def failure_analysis(self, qc_results: List["QCResult"]) -> None:
         df = self.summarize(qc_results)
         print("=== QC Failure Analysis ===")
-        print(f"Total tiles:  {len(df)}")
-        print(f"Passed:       {df['passed'].sum()}")
-        print(f"Failed:       {(~df['passed']).sum()}")
-        print()
-        print("Failures by reason:")
+        print(f"Total:   {len(df)}")
+        print(f"Passed:  {df['passed'].sum()}")
+        print(f"Failed:  {(~df['passed']).sum()}")
+        print("\nFailures by reason:")
         fail_df = df[~df["passed"]]
         if fail_df.empty:
             print("  None — all tiles passed!")
         else:
             print(fail_df["status"].value_counts().to_string())
-        print()
-        print("Failures by asset type:")
-        if fail_df.empty:
-            print("  None")
-        else:
+        print("\nFailures by asset type:")
+        if not fail_df.empty:
             print(fail_df["asset_type"].value_counts().to_string())
-        print()
-        print(f"Valid ratio range:     "
+        print(f"\nValid ratio range: "
               f"{df['valid_ratio'].min():.3f} – {df['valid_ratio'].max():.3f}")
-        print(f"Brightness range:      "
-              f"{df['mean_brightness'].min():.1f} – "
-              f"{df['mean_brightness'].max():.1f}")
-
-
-# ---------------------------------------------------------------------------
-# Quick demo
-# ---------------------------------------------------------------------------
-
-if __name__ == "__main__":
-    import os
-    import pandas as pd
-    from curation.sources import GeoFabrikSource
-    from curation.legacy.imagery import ImageryFetcher
-
-    PBF_PATH  = "data/pbf/us-northeast-260407.osm_power_only.osm.pbf"
-    INPUT_CSV = "data/us-northeast_all_assets.csv"
-
-    # Load assets
-    if os.path.exists(INPUT_CSV):
-        df = pd.read_csv(INPUT_CSV)
-        print(f"Loaded {len(df)} assets from {INPUT_CSV}")
-    else:
-        src = GeoFabrikSource(PBF_PATH, min_confidence="medium")
-        df  = src.extract_all()
-
-    # Sample a few per type
-    df_sample = (
-        df.groupby("asset_type", group_keys=False)
-          .apply(lambda g: g.sample(min(len(g), 2), random_state=42))
-          .reset_index(drop=True)
-    )
-
-    print(f"\nFetching tiles for {len(df_sample)} sampled assets...")
-    fetcher = ImageryFetcher(buffer_m=150, sources=["sentinel2"])
-    tiles   = fetcher.fetch_all(df_sample)
-
-    print("\nRunning QC...")
-    checker = QualityChecker()
-    qc_results = checker.check_all(tiles)
-
-    print("\nQC summary:")
-    print(checker.summarize(qc_results).to_string(index=False))
-
-    print()
-    checker.failure_analysis(qc_results)
-
-    clean_tiles = checker.filter_ok(qc_results)
-    print(f"\n{len(clean_tiles)} clean tiles ready for deduplication.")
+        print(f"Mean value range:  "
+              f"{df['mean_value'].min():.3f} – {df['mean_value'].max():.3f}")
