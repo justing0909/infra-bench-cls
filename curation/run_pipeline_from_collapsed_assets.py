@@ -7,14 +7,14 @@ from pathlib import Path
 PYTHON_EXE     = "python"
 PIPELINE_SCRIPT = Path("pipeline.py")
 
-ASSETS_DIR  = Path("data/PIPELINE/01-extracted-assets")
-DEDUPED_DIR = Path("data/PIPELINE/02-deduped-assets")
-OUTPUT_ROOT = Path("data/curated_datasets")
+ASSETS_DIR  = Path("../data/PIPELINE/01-extracted-assets")
+DEDUPED_DIR = Path("../data/PIPELINE/02-deduped-assets")
+OUTPUT_ROOT = Path("../data/curated_datasets")
 
 SKIP_REGIONS = {"europe"}   # add regions to skip here
 
-ASSET_SUFFIX  = "_all_assets_collapsed.parquet"
-DEDUPED_SUFFIX = "_deduped_assets.parquet"
+ASSET_SUFFIX  = "_all_assets_substations.parquet"
+DEDUPED_SUFFIX = "_deduped_assets_substations.parquet"
 
 # ---------------------------------------------------------------------------
 # Pipeline settings — edit these before a batch run

@@ -665,11 +665,14 @@ def run_pipeline(
         from stac_imagery import STACImageryFetcher
 
         fetcher = STACImageryFetcher(
-            buffer_m       = config.get("buffer_m", BUFFER_M),
-            modalities     = config["modalities"],
-            temporal_stack = config.get("temporal_stack", False),
-            n_years        = config.get("n_years", N_YEARS),
-            checkpoint_path= checkpoint_path,
+            buffer_m             = config.get("buffer_m", BUFFER_M),
+            modalities           = config["modalities"],
+            temporal_stack       = config.get("temporal_stack", False),
+            n_years              = config.get("n_years", N_YEARS),
+            checkpoint_path      = checkpoint_path,
+            adaptive_concurrency = True,
+            start_workers        = 16,
+            max_workers          = 64,
         )
         tiles = fetcher.fetch_all(df_clean)
 
