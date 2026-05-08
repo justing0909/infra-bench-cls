@@ -564,11 +564,7 @@ class STACImageryFetcher:
 
     def _get_catalog(self):
         import pystac_client
-        import planetary_computer
-        return pystac_client.Client.open(
-            STAC_ENDPOINT,
-            modifier=planetary_computer.sign_inplace,
-        )
+        return pystac_client.Client.open(STAC_ENDPOINT)
 
     def _build_temporal_windows(self) -> List[Tuple[str, str]]:
         end_year = int(self.date_end[:4])

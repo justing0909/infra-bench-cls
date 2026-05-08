@@ -117,9 +117,9 @@ JOB_PRESETS = {
         "assets_table":    "../data/PIPELINE/01-extracted-assets/europe_all_assets_substations.parquet",
         "assets_csv":      "../data/PIPELINE/01-extracted-assets/europe_all_assets_collapsed.csv",
         "assets_parquet":  "../data/PIPELINE/01-extracted-assets/europe_all_assets_substations.parquet",
-        "deduped_table":   "../data/PIPELINE/02-deduped-assets/europe_deduped_assets_substations.parquet",
+        "deduped_table":   "../data/PIPELINE/02-deduped-assets/europe_deduped_assets_substations_sampled.parquet",
         "deduped_csv":     "../data/PIPELINE/02-deduped-assets/europe_deduped_assets.csv",
-        "deduped_parquet": "../data/PIPELINE/02-deduped-assets/europe_deduped_assets_substations.parquet",
+        "deduped_parquet": "../data/PIPELINE/02-deduped-assets/europe_deduped_assets_substations_sampled.parquet",
     },
     "central-america": {
         # "pbf_path":        "../data/pbf/power_only/central-america-260408.osm_power_only.osm.pbf",
