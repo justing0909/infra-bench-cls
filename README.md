@@ -176,6 +176,27 @@ Core dependencies include `osmium`, `pyosmium`, `scipy`, `rasterio`, `pystac-cli
 
 The Colab notebooks handle their own setup. They clone or extract this repository under `/content/`, install PyTorch and torchvision (preinstalled on Colab), and import from the local copy. See the first few cells of any pretraining or classification notebook for the canonical setup sequence.
 
+The Colab notebooks pull this repository directly from GitHub each session. Setup is one-time per Colab user:
+
+1. **Generate a GitHub Personal Access Token (PAT):**
+   - GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token
+   - Repository access: select this repository only
+   - Permissions: Contents → Read-only
+   - Expiration: 90 days (or longer; you'll need to regenerate when it expires)
+   - Copy the token immediately — GitHub only shows it once
+
+2. **Store the PAT in Colab Secrets:**
+   - In any Colab notebook, click the key icon in the left sidebar
+   - Add a secret named `GITHUB_TOKEN`
+   - Paste the token value
+   - Toggle "Notebook access" on
+
+3. **Verify it works** by running the setup cell at the top of any notebook in `colab_notebooks/`. The cell clones the repo into `/content/infra_fm_clean/` and adds it to the Python path.
+
+The token is never written to the notebook itself — it's read from Colab's secret store at runtime.
+
+When this repository is made public (post-paper-submission), the PAT step becomes unnecessary; the clone command works without authentication.
+
 ---
 
 ## Running the curation pipeline
