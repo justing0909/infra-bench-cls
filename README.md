@@ -18,10 +18,9 @@ The current codebase supports the following flow:
 6. Run self-supervised pretraining on curated `.npy` imagery crops.
 7. Evaluate learned representations on downstream tasks.
 
-At the moment, the best-supported downstream tasks are:
+At the moment, the best-supported downstream task is:
 
 - **Asset classification**: predict infrastructure asset type from imagery.
-- **CAADD (Critical Asset Access During Disruption)**: a first-pass disruption accessibility task scaffolded around asset-level accessibility labels.
 
 ## Current sector scope
 
@@ -43,29 +42,22 @@ See `ONTOLOGY.md` for the current taxonomy and OSM tag mappings.
 
 - `sources.py`: extracts assets from GeoFabrik PBF files using pyosmium.
 - `deduplication.py`: removes spatial duplicates with a KDTree-style pass.
-- `imagery.py`: Planetary Computer imagery fetchers and batching utilities.
+- `stac_imagery.py`: Microsoft Planetary Computer multimodal STAC fetcher (Sentinel-2, Sentinel-1, Landsat thermal, NAIP).
 - `gee_imagery.py`: Google Earth Engine Sentinel-2 fetching for larger runs.
 - `qc.py`: imagery quality-control checks.
 - `triage.py`: rule-based triage plus `AgentTriager` support.
 - `dataset.py`: dataset assembly to `.npy` tiles, `manifest.json`, and `summary.csv`.
-- `triage_optimizer.py`: Optuna search for triage thresholds against a gold subset.
 - `pipeline.py`: entrypoint that wires the full six-stage curation flow together.
-- `tile_types.py`: shared tile dataclasses used across fetchers.
+- `helpers/tile_types.py`: shared tile dataclasses used across fetchers.
 
 ### Representation learning and downstream evaluation
 
 If you imported the downstream scaffold into this repository, you should also now have:
 
-- `infra_fm/common/`: shared dataset loading, transforms, model, and IO helpers.
-- `infra_fm/pretraining/train.py`: self-supervised pretraining on curated `.npy` crops.
-- `infra_fm/pretraining/export_embeddings.py`: export encoder embeddings for inspection.
-- `infra_fm/downstream/asset_classification/train.py`: downstream asset classification benchmark.
-- `infra_fm/downstream/caadd/label_generation.py`: first-pass CAADD label generation from accessibility scores.
-- `infra_fm/downstream/caadd/train.py`: first-pass CAADD image model training.
-- `infra_fm/downstream/caadd/networks.py`: placeholder hooks for future transport/network logic.
-- `infra_fm/downstream/caadd/hazards.py`: placeholder hooks for future hazard impact logic.
-- `infra_fm/downstream/caadd/dependencies.py`: placeholder hooks for future multisector dependency logic.
-- `infra_fm/scripts/inspect_dataset.py`: quick inspection of curated dataset contents.
+- `downstream/common/`: shared dataset loading, transforms, model, and IO helpers.
+- `pretraining/train.py`: self-supervised pretraining on curated `.npy` crops.
+- `downstream/asset_classification/train.py`: downstream asset classification benchmark.
+- `inspect_dataset.py`: quick inspection of curated dataset contents.
 
 ## Current repo snapshot
 
@@ -78,12 +70,10 @@ What is already operational:
 - QC and triage into curated `.npy` datasets
 - self-supervised pretraining on curated datasets
 - downstream asset classification from imagery
-- a runnable first-pass CAADD scaffold
 
 What remains intentionally incomplete:
 
 - robust multisector curation beyond the energy sector
-- a mature CAADD target derived directly from explicit road/network disruption modeling
 - stronger benchmarking on larger regional corpora
 - higher-resolution global imagery integration in a unified pipeline
 
@@ -256,87 +246,17 @@ This should be interpreted carefully:
 
 This is still a useful and honest first benchmark.
 
-### CAADD
-
-CAADD is represented here as **Critical Asset Access During Disruption**.
-
-The first runnable implementation is deliberately modest. It does **not** claim to solve full interdependent infrastructure accessibility. Instead, it provides a first path for wiring the pipeline through a disruption-aware target.
-
-Current v1 assumptions:
-
-1. You supply or create a crude `road_access_score` in `[0, 1]` for each asset.
-2. The label generator optionally applies a neutral dependency adjustment stub.
-3. The accessibility score is binned into three classes:
-   - `severely_disrupted`
-   - `partially_accessible`
-   - `mostly_accessible`
-4. A first image model is trained against those labels.
-
-#### Generate CAADD labels
-
-```bash
-python -m infra_fm.downstream.caadd.label_generation \
-  --asset-table data/caadd/asset_access_table_maine.csv \
-  --output-path outputs/caadd_labels_maine_v1.csv \
-  --scenario-id flood_demo_001
-```
-
-The asset table must currently include at least:
-
-- `asset_id`
-- `road_access_score`
-
-#### Train the CAADD model
-
-```bash
-python -m infra_fm.downstream.caadd.train \
-  --dataset-root data/curated_datasets/dataset_maine_v1 \
-  --label-table outputs/caadd_labels_maine_v1.csv \
-  --output-dir outputs/caadd_maine_v1 \
-  --checkpoint outputs/pretrain_maine_v1/checkpoint_best.pt \
-  --freeze-encoder \
-  --epochs 15 \
-  --batch-size 16 \
-  --image-size 128
-```
-
-## Why the CAADD code is scaffolded this way
-
-The long-term intent is broader than power alone. The eventual data/model trajectory includes:
-
-- power
-- water / sewer
-- road / rail / transport
-- telecom
-
-So the first working CAADD implementation is deliberately road-access-first and power-first, but the architecture leaves explicit extension points for:
-
-- hazard-specific closure logic
-- multisector network bundles
-- dependency adjustments across sectors
-- physical accessibility vs operational accessibility
-- later cascading interdependencies
-
-That trajectory is reflected in:
-
-- `infra_fm/downstream/caadd/networks.py`
-- `infra_fm/downstream/caadd/hazards.py`
-- `infra_fm/downstream/caadd/dependencies.py`
-- `infra_fm/downstream/caadd/label_generation.py`
-
 ## Known limitations
 
 - Sentinel-2 at 10 m resolution is often too coarse for confident discrimination of some substation types.
 - Solar assets can dominate raw OSM pulls without careful filtering.
 - OSM relation handling is still best-effort for some assets.
 - The current pretraining corpus for Maine is too small to draw strong conclusions about learned generality.
-- The current CAADD implementation is a scaffold and requires externally supplied first-pass accessibility scores.
 - The first downstream benchmark currently favors the scratch baseline over the frozen-pretrained encoder.
 
 ## Near-term next steps
 
 1. Run the same curation -> pretraining -> downstream flow on a larger regional corpus (for example Central America).
 2. Compare scratch, frozen-pretrained, and fine-tuned downstream asset classification more systematically.
-3. Build a crude but explicit road-network-based accessibility table for CAADD instead of hand-supplied scores.
-4. Extend the curation ontology and downstream logic toward water/sewer, transport, rail, and telecom.
-5. Revisit higher-throughput Earth Engine fetching (for example regional compositing before per-asset clipping) once the first complete pipeline benchmarks are stable.
+3. Extend the curation ontology and downstream logic toward water/sewer, transport, rail, and telecom.
+4. Revisit higher-throughput Earth Engine fetching (for example regional compositing before per-asset clipping) once the first complete pipeline benchmarks are stable.

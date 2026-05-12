@@ -29,7 +29,7 @@ import numpy as np
 import pandas as pd
 from dataclasses import dataclass, field
 from typing import List, Optional, Dict
-from legacy.imagery import TileResult
+from helpers.tile_types import TileResult
 
 
 # ---------------------------------------------------------------------------
@@ -734,56 +734,3 @@ class AgentTriager:
         return pd.DataFrame(rows)
 
 
-# ---------------------------------------------------------------------------
-# Quick demo
-# ---------------------------------------------------------------------------
-
-if __name__ == "__main__":
-    import os
-    from curation.sources import GeoFabrikSource
-    from curation.legacy.imagery import ImageryFetcher
-    from curation.qc import QualityChecker
-
-    PBF_PATH  = "data/pbf/us-northeast-260407.osm_power_only.osm.pbf"
-    INPUT_CSV = "data/us-northeast_all_assets.csv"
-
-    # Load assets
-    if os.path.exists(INPUT_CSV):
-        df = pd.read_csv(INPUT_CSV)
-        print(f"Loaded {len(df)} assets")
-    else:
-        src = GeoFabrikSource(PBF_PATH, min_confidence="medium")
-        df  = src.extract_all()
-
-    # Sample
-    df_sample = (
-        df.groupby("asset_type", group_keys=False)
-          .apply(lambda g: g.sample(min(len(g), 2), random_state=42))
-          .reset_index(drop=True)
-    )
-
-    # Fetch
-    print("\nFetching tiles...")
-    fetcher = ImageryFetcher(buffer_m=150, sources=["sentinel2"])
-    tiles   = fetcher.fetch_all(df_sample)
-
-    # QC
-    print("\nRunning QC...")
-    checker    = QualityChecker()
-    qc_results = checker.check_all(tiles)
-    clean      = checker.filter_ok(qc_results)
-
-    # Triage
-    print("\nRunning triage...")
-    triager        = RuleBasedTriager()
-    triage_results = triager.triage_all(clean)
-
-    print("\nTriage summary:")
-    summary = triager.summarize(triage_results)
-    print(summary[["asset_type", "source", "confidence",
-                   "flag_for_human", "reason"]].to_string(index=False))
-
-    accepted = triager.filter_accepted(triage_results)
-    review   = triager.filter_review(triage_results)
-    print(f"\n{len(accepted)} tiles accepted for training corpus")
-    print(f"{len(review)} tiles flagged for human review")

@@ -92,10 +92,6 @@ regions sequentially, skips completed regions via `_SUCCESS` files.
 - **Next:** Label generation for central america, then linear probe on frozen
   multi-continent encoder embeddings
 
-#### CAADD (`downstream/caadd/`)
-- Critical Asset and Dependency Detection
-- Status: Early development, separate from main classification pipeline
-
 ---
 
 ## Architecture Decisions
@@ -112,8 +108,8 @@ sentinel-1-rtc (terrain corrected). GEE remains available as fallback.
 
 ### Why SimCLR
 - Well-understood, reproducible
-- `SimCLRModel` in `common/models.py` is the canonical definition —
-  `pretraining/model.py` was unified to match key structure exactly
+- `SimCLRModel` in `downstream/common/models.py` is the canonical definition;
+  `pretraining/train.py` imports it directly (no duplicate model definition).
 - Known limitation: needs 10k+ samples and 200+ epochs for strong linear probes
 
 ### Band configuration

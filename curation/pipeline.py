@@ -293,14 +293,6 @@ def _build_sorted_assignment(ordered_df, shard_count):
 
 
 def _build_shard_assignment(df, shard_count, shard_strategy):
-    try:
-        from hypergraphs.hypergraph_scheduler import (
-            HypergraphScheduler, compute_assignment_metrics
-        )
-    except ImportError:
-        compute_assignment_metrics = None
-        HypergraphScheduler = None
-
     if shard_count <= 1:
         asset_to_shard = {aid: 0 for aid in df["asset_id"].tolist()}
         return {
@@ -308,20 +300,6 @@ def _build_shard_assignment(df, shard_count, shard_strategy):
             "metrics": None,
             "summary_lines": [],
             "schedule": None,
-        }
-
-    if shard_strategy == "hypergraph" and HypergraphScheduler:
-        scheduler = HypergraphScheduler(num_shards=shard_count)
-        schedule  = scheduler.schedule(df)
-        metrics   = compute_assignment_metrics(
-            df, schedule.asset_to_shard, num_shards=shard_count,
-            coarse_cell_km=scheduler.coarse_cell_km,
-        )
-        return {
-            "asset_to_shard": schedule.asset_to_shard,
-            "metrics": metrics,
-            "summary_lines": schedule.summary_lines(),
-            "schedule": schedule,
         }
 
     if shard_strategy == "spatial":
@@ -337,18 +315,11 @@ def _build_shard_assignment(df, shard_count, shard_strategy):
         ordered_df = df.sort_values(["asset_id"]).reset_index(drop=True)
 
     asset_to_shard = _build_sorted_assignment(ordered_df, shard_count)
-    if compute_assignment_metrics:
-        metrics = compute_assignment_metrics(df, asset_to_shard,
-                                             num_shards=shard_count)
-        summary_lines = metrics.summary_lines()
-    else:
-        metrics = None
-        summary_lines = []
 
     return {
         "asset_to_shard": asset_to_shard,
-        "metrics": metrics,
-        "summary_lines": summary_lines,
+        "metrics": None,
+        "summary_lines": [],
         "schedule": None,
     }
 
@@ -905,7 +876,7 @@ if __name__ == "__main__":
     parser.add_argument("--shard-count", type=int, default=1)
     parser.add_argument("--shard-index", type=int, default=0)
     parser.add_argument("--shard-strategy",
-                        choices=["spatial", "asset_id", "hypergraph"],
+                        choices=["spatial", "asset_id"],
                         default="spatial")
 
     args = parser.parse_args()
