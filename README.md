@@ -1,262 +1,295 @@
-# Towards an Infrastructure Foundation Model
+# Towards an Infrastructure Foundation Model (TIF-M)
 
-This repository supports an end-to-end pipeline for building curated remote-sensing datasets of infrastructure assets, pretraining an imagery encoder on those datasets, and testing the resulting representations on downstream infrastructure tasks.
+A domain-specific pretrained encoder for critical infrastructure assets, trained on multimodal satellite imagery with weak labels from OpenStreetMap.
 
-The near-term goal is not to claim a fully general foundation model. The present objective is more specific and more defensible: build a domain-specific encoder that learns useful representations from weakly labeled infrastructure imagery and then test whether those representations transfer to downstream tasks.
+The project tests a specific hypothesis: that self-supervised pretraining on a globally distributed corpus of weakly labeled infrastructure imagery produces representations that transfer to downstream infrastructure tasks better than supervised training from scratch on local data alone. The current implementation is **power-first** (substations specifically), with the pipeline and ontology designed to extend toward the water/sewer, transport, and telecom sectors.
 
-The current implementation is **power-first**, but the intended architecture is **multisector-first**. In other words, the first working pipeline centers on power assets, while the code structure and downstream task design are meant to extend toward water/sewer, transport, rail, roads, and telecom.
+This is a step toward a foundation model, not a claim of one.
 
-## What the repository does
+---
 
-The current codebase supports the following flow:
+## Headline result
 
-1. Extract infrastructure assets from GeoFabrik OSM PBF files.
-2. Deduplicate spatially proximate assets by asset type.
-3. Fetch imagery tiles from Google Earth Engine or Planetary Computer.
-4. Run QC and triage to retain usable crops.
-5. Assemble accepted tiles into a curated dataset.
-6. Run self-supervised pretraining on curated `.npy` imagery crops.
-7. Evaluate learned representations on downstream tasks.
+Self-supervised pretraining (SimCLR + ResNet-18) on a globally distributed corpus of 84,305 multimodal Sentinel-1 + Sentinel-2 tiles substantially outperforms supervised training from scratch on the same 3-class substation classification task.
 
-At the moment, the best-supported downstream task is:
+| Pretraining scope | Mode | Tail-mean val acc | Tail std |
+|---|---|---|---|
+| Random init (no pretraining) | Fine-tuned | 0.336 | 0.116 |
+| Single-region (Central America, 1,782 tiles) | Linear probe | 0.447 | 0.084 |
+| Multi-continent (22,221 tiles, 4 continents) | Fine-tuned | 0.639 | 0.016 |
+| **Global (84,305 tiles, 7 continents)** | **Fine-tuned** | **0.684** | **0.007** |
 
-- **Asset classification**: predict infrastructure asset type from imagery.
+Tail mean is the average validation accuracy across the last five epochs. It is the honest metric here — random init achieves high *best* val_acc through lucky checkpoints while collapsing to majority-class prediction across most of training. Stability (low tail std) reflects whether the encoder learned a useful representation or got lucky.
 
-## Current sector scope
+Global pretraining improves over multi-continent by +4.5 percentage points of tail mean while cutting variance roughly in half. More data and more geographic diversity both contribute.
 
-The curation pipeline currently focuses on the energy sector, with the ontology centered on:
+---
 
-- transmission substations
-- distribution substations
-- untyped substations
-- solar farms
-- wind farms
-- power plants
-- generators
+## Dataset preview
 
-See `ONTOLOGY.md` for the current taxonomy and OSM tag mappings.
+![Central America dataset preview](additional_info/figures/central_america_preview.png)
 
-## Pipeline modules
+24 tiles from the curated Central America dataset, showing the full 10-band multimodal stack (Sentinel-2 RGB + NIR, Sentinel-1 SAR VV/VH, Landsat thermal) for transmission, distribution, and untyped substations. The current production pipeline uses 9 bands (Landsat thermal dropped for cross-region consistency); the Central America v1 dataset retains thermal as a historical artifact.
 
-### Core curation pipeline
+Central America was used simply because it is the smallest file size of the 7 continental regions, yielding the dataset preview the quickest. The assets chosen are not representative of the entire data corpus.
 
-- `sources.py`: extracts assets from GeoFabrik PBF files using pyosmium.
-- `deduplication.py`: removes spatial duplicates with a KDTree-style pass.
-- `stac_imagery.py`: Microsoft Planetary Computer multimodal STAC fetcher (Sentinel-2, Sentinel-1, Landsat thermal, NAIP).
-- `gee_imagery.py`: Google Earth Engine Sentinel-2 fetching for larger runs.
-- `qc.py`: imagery quality-control checks.
-- `triage.py`: rule-based triage plus `AgentTriager` support.
-- `dataset.py`: dataset assembly to `.npy` tiles, `manifest.json`, and `summary.csv`.
-- `pipeline.py`: entrypoint that wires the full six-stage curation flow together.
-- `helpers/tile_types.py`: shared tile dataclasses used across fetchers.
+Additional preview figures in [`additional_info/figures/`](additional_info/figures/):
+- `maine_tiles_trimodal.png` — 16 Maine tiles with the full trimodal stack (S2 + SAR + Landsat thermal), used during Maine development to validate modality alignment.
+- `maine_tiles_sar_s2.png` — 16 Maine tiles with the production 9-band stack (S2 + SAR only), reflecting the current cross-region configuration.
 
-### Representation learning and downstream evaluation
+---
 
-If you imported the downstream scaffold into this repository, you should also now have:
+## What this repository does
 
-- `downstream/common/`: shared dataset loading, transforms, model, and IO helpers.
-- `pretraining/train.py`: self-supervised pretraining on curated `.npy` crops.
-- `downstream/asset_classification/train.py`: downstream asset classification benchmark.
-- `inspect_dataset.py`: quick inspection of curated dataset contents.
+1. **Extracts** infrastructure assets from GeoFabrik OSM PBF files using a 2-pass power-only pre-filter.
+2. **Deduplicates** spatially proximate assets via KDTree (200 m threshold per asset type).
+3. **Fetches** multimodal imagery tiles from Microsoft Planetary Computer (Sentinel-2 multispectral + Sentinel-1 SAR; Landsat thermal and NAIP available as optional non-fatal modalities).
+4. **QC + triage** filters tiles for valid pixel ratio, edge artifacts, and value range.
+5. **Assembles** accepted tiles into curated `.npy` datasets with COCO-style manifests.
+6. **Pretrains** a ResNet-18 encoder via SimCLR self-supervised contrastive learning.
+7. **Evaluates** learned representations on downstream asset classification.
 
-## Current repo snapshot
+Cross-sector co-location prediction is on the roadmap but not currently implemented — see [roadmap](#roadmap).
 
-This repository is further along than the earlier README implied.
+---
 
-What is already operational:
+## Repository structure
 
-- the full curation pipeline via `pipeline.py`
-- Google Earth Engine Sentinel-2 imagery fetching for regional runs
-- QC and triage into curated `.npy` datasets
-- self-supervised pretraining on curated datasets
-- downstream asset classification from imagery
+```
+curation/                         # Local / VSCode-side
+  sources.py                      #   OSM extraction (pyosmium, NodeLocationsForWays)
+  deduplication.py                #   KDTree spatial dedup
+  stac_imagery.py                 #   Planetary Computer fetcher (primary)
+  gee_imagery.py                  #   Google Earth Engine fetcher (fallback)
+  qc.py                           #   Quality control checks
+  triage.py                       #   Rule-based confidence scoring
+  dataset.py                      #   Dataset assembly (manifest + .npy tiles)
+  pipeline.py                     #   End-to-end orchestration with checkpointing
+  run_pipeline_from_collapsed_assets.py  #   Batch regional runner
+  extract_substations_all.py      #   Batch substation extraction from power-only PBFs
+  sample_europe_substations.py    #   Sample Europe down to match Asia tile count
+  sample_north_america_substations.py    #   Sample NA down to match Asia tile count
+  diagnose_stac.py                #   STAC fetcher diagnostic tool
+  visualize_tiles.py              #   Visual inspection of curated tiles
+  stac_imagery_test.py            #   Single-tile integration test
+  helpers/tile_types.py           #   Shared TileResult, MODALITY_REGISTRY
+  utils/io_utils.py               #   load_asset_table and related IO helpers
+  requirements.txt                #   Curation-side Python dependencies
 
-What remains intentionally incomplete:
+pretraining/                      # Imported by Colab notebooks
+  train.py                        #   SimCLR pretraining loop with cosine LR + resume
+  datasets.py                     #   InfrastructureImageDataset
+  augmentations.py                #   Multimodal-aware augmentations (no value jitter on SAR)
+  losses.py                       #   NT-Xent contrastive loss
+  config.py                       #   Run config dataclass + serialization
 
-- robust multisector curation beyond the energy sector
-- stronger benchmarking on larger regional corpora
-- higher-resolution global imagery integration in a unified pipeline
+downstream/                       # Imported by Colab notebooks
+  common/
+    models.py                     #   EncoderBackbone, SimCLRModel (canonical), LinearClassifier
+    comm_datasets.py              #   NpyInfrastructureDataset
+    transforms.py                 #   MultimodalResize, MultimodalAugment
+    io.py                         #   resolve_path, parse_asset_id_from_filename
+    utils.py                      #   set_seed, choose_device, save_checkpoint
+  asset_classification/
+    datasets.py                   #   AssetClassificationDataset, LabelSpace
+    train.py                      #   Classification training with tail metrics
+
+colab_notebooks/                  # Run in Google Colab, import from packages above
+  infra_fm_stac_fetch.ipynb       #   STAC imagery fetch for new regions
+  infra_fm_multicontinent_pretrain.ipynb  #   Pretraining (resumable)
+  infra_fm_global_classification.ipynb    #   Downstream classification
+  ...
+
+additional_info/
+  ONTOLOGY.md                     # Power asset taxonomy and OSM tag mappings
+
+data/                             # Local data (gitignored)
+  pbf/power_only/                 # Pre-filtered power-only PBFs (regenerable cache)
+  PIPELINE/                       # Intermediate parquets (extracted, deduped)
+  curated_datasets/               # Final .npy datasets + manifests
+  results/                        # Local pretraining / classification outputs
+
+testing/                          # Integration tests and debug scripts
+```
+
+---
+
+## Workflow
+
+The project uses a split execution model:
+
+**Curation runs locally in VSCode.** The curation pipeline is CPU-bound, involves long-running jobs over continental PBF files (tens of GB), and benefits from IDE tooling for iterative debugging. It produces curated `.npy` datasets stored under `data/curated_datasets/`.
+
+**Pretraining and classification run in Google Colab.** These are GPU-bound and well-encapsulated in single notebooks. The Colab notebooks import from this repo's `pretraining/` and `downstream/` packages — the notebooks are thin orchestration layers; the actual code lives here. Datasets flow VSCode → Google Drive → Colab.
+
+```
+   VSCode (local)              Google Drive                    Colab
+┌──────────────────┐         ┌──────────────┐         ┌──────────────────┐
+│  curation/       │ ─────►  │  datasets/   │ ─────►  │  pretraining/    │
+│  pipeline.py     │  zip    │  *.zip       │  copy   │  classification  │
+│  PBF → tiles     │ + push  │              │ /unzip  │  notebooks       │
+└──────────────────┘         └──────────────┘         └──────────────────┘
+                                                              │
+                                                              ▼
+                                                      checkpoints to Drive
+```
+
+### Dataset transfer pattern (Drive → Colab)
+
+Mounted Google Drive is slow for the many-small-files pattern that satellite tiles produce. The reliable pattern is to zip each regional dataset, upload the zip to Drive, then in Colab copy the zip to local `/content/` storage and unzip there. One large transfer is dramatically faster than tens of thousands of small file reads through the Drive mount.
+
+```python
+# In Colab, after mounting Drive:
+import glob, subprocess, os
+
+ZIP_SOURCE = '/content/drive/MyDrive/infra_fm/datasets'
+DEST = '/content'
+
+for zip_path in glob.glob(f'{ZIP_SOURCE}/*.zip'):
+    name = os.path.basename(zip_path)
+    if not os.path.exists(f'{DEST}/{name}'):
+        subprocess.run(['cp', zip_path, DEST], check=True)
+
+for f in glob.glob(f'{DEST}/*.zip'):
+    folder = f.replace('.zip', '')
+    if not os.path.exists(folder):
+        subprocess.run(['unzip', '-q', f, '-d', DEST], check=True)
+```
+
+Training and classification then point at `/content/dataset_<region>_stac_v1/` paths, not Drive paths.
+
+---
 
 ## Setup
 
-There is still no single pinned `requirements.txt` for the full original repository, so install the core curation dependencies directly as needed.
-
-### Core curation dependencies
+### Local environment (curation)
 
 ```bash
-pip install osmium scipy optuna earthengine-api mgrs requests rasterio
-pip install pystac-client planetary-computer pandas numpy matplotlib
+uv venv
+source .venv/bin/activate
+uv pip install -r curation/requirements.txt
 ```
 
-### Downstream scaffold dependencies
+Core dependencies include `osmium`, `pyosmium`, `scipy`, `rasterio`, `pystac-client`, `planetary-computer`, `polars` (preferred over pandas for large parquets), `numpy`, and `matplotlib`.
 
-If you imported the `infra_fm/` scaffold, also install:
+### Colab environment (pretraining + classification)
 
-```bash
-pip install torch torchvision pandas numpy scikit-learn matplotlib
-```
+The Colab notebooks handle their own setup. They clone or extract this repository under `/content/`, install PyTorch and torchvision (preinstalled on Colab), and import from the local copy. See the first few cells of any pretraining or classification notebook for the canonical setup sequence.
 
-Optional dependencies:
-
-- `openai` or `anthropic` if you want to use `AgentTriager`
-- any local model backend required by your Ollama setup
+---
 
 ## Running the curation pipeline
 
-Edit the configuration block at the top of `pipeline.py` before each run.
-Important settings typically include:
-
-- `PBF_PATH`
-- `OUTPUT_DIR`
-- `ASSETS_CSV`
-- `DEDUPED_CSV`
-- `USE_GEE`
-- `GEE_PROJECT`
-- `GEE_COMPOSITE`
-- `SOURCES`
-
-Then run:
+Edit the configuration block at the top of `pipeline.py` to set paths and modalities, then:
 
 ```bash
+# Dry run — verifies counts and configuration without fetching imagery
 python pipeline.py --dry-run
+
+# Full run
 python pipeline.py
 ```
 
-The dry run is the fastest way to verify counts and configuration before a longer imagery job.
-
-## Earth Engine notes
-
-For larger regional runs, the preferred imagery route is the GEE-backed Sentinel-2 fetcher in `gee_imagery.py`.
-
-Current settings include:
-
-- collection: `COPERNICUS/S2_SR_HARMONIZED`
-- composite options: `median`, `mosaic`, or `best`
-- output resolution: 10 m Sentinel-2 RGB
-- retry/backoff logic for HTTP 429 and related transient errors
-
-It is normal to see some 429 rate-limit retries during larger runs. Those do not necessarily indicate failure if successful assets continue increasing.
-
-## Curated dataset layout
-
-Typical outputs include:
-
-- `data/<region>_all_assets.csv`
-- `data/<region>_deduped_assets.csv`
-- `data/checkpoints/`
-- `data/curated_datasets/dataset_<region>_<version>/images/*.npy`
-- `data/curated_datasets/dataset_<region>_<version>/manifest.json`
-- `data/curated_datasets/dataset_<region>_<version>/summary.csv`
-
-The curated dataset intentionally stores `.npy` arrays rather than compressed image formats so downstream training uses exact pixel values and can remain agnostic to later band-handling changes.
-
-Example image filenames include:
-
-- `osm_way_<id>_sentinel2_gee.npy`
-- `osm_node_<id>_sentinel2_gee.npy`
-- `inferred_solar_cluster_<n>_sentinel2_gee.npy`
-
-## Representation learning workflow
-
-### 1. Inspect a curated dataset
+For batch processing across multiple regions, use the orchestrator:
 
 ```bash
-python -m infra_fm.scripts.inspect_dataset \
-  --dataset-root data/curated_datasets/dataset_maine_v1
+python run_pipeline_from_collapsed_assets.py
 ```
 
-### 2. Pretrain an encoder
+This auto-skips regions with existing `_SUCCESS` markers and re-runs only when the filter preset has changed.
+
+### Filter preset
+
+The recommended preset is `"substation"`, which extracts:
+- `energy.transmission.substation` (high confidence)
+- `energy.distribution.substation` (high confidence)
+- `energy.distribution.substation_untyped` (medium confidence — `power=substation` with no subtype)
+
+The full power-sector preset (`"full"`) also pulls solar farms, wind farms, power plants, and generators, but is not the current paper scope.
+
+### Sharded runs
+
+For parallel runs across machines, `pipeline.py` supports:
 
 ```bash
-python -m infra_fm.pretraining.train \
-  --dataset-root data/curated_datasets/dataset_maine_v1 \
-  --output-dir outputs/pretrain_maine_v1 \
-  --epochs 15 \
-  --batch-size 16 \
-  --image-size 128 \
-  --backbone-name resnet18 \
-  --num-workers 0
+python pipeline.py --shard-count 4 --shard-index 0 --shard-strategy spatial
 ```
 
-This writes a pretraining checkpoint such as `checkpoint_best.pt`, epoch checkpoints, and a run config file.
+Spatial sharding uses Z-order (Morton) curve interleaving for geographic coherence within shards.
 
-### 3. Export embeddings
+---
 
-```bash
-python -m infra_fm.pretraining.export_embeddings \
-  --dataset-root data/curated_datasets/dataset_maine_v1 \
-  --checkpoint outputs/pretrain_maine_v1/checkpoint_best.pt \
-  --output-dir outputs/embeddings_maine_v1 \
-  --image-size 128 \
-  --batch-size 32 \
-  --num-workers 0
+## Dataset layout
+
+Curated regional datasets are written under `data/curated_datasets/`:
+
+```
+data/curated_datasets/dataset_<region>_stac_v1/
+├── images/
+│   ├── osm_node_<id>_stac_sentinel2_ms+sentinel1.npy          # (C, H, W) array
+│   ├── osm_way_<id>_stac_sentinel2_ms+sentinel1.npy
+│   └── ...
+├── manifest.json                  # Full per-tile metadata
+├── summary.csv                    # Lightweight tabular summary
+└── _SUCCESS                       # Completion marker with run metadata
 ```
 
-## Downstream tasks
+Image arrays for the current substation pipeline are 9 bands: Sentinel-2 multispectral bands 0–6, then Sentinel-1 VV + VH bands 7–8. Landsat thermal (band 9 in older Central America tiles) was dropped for cross-region consistency.
 
-### Asset classification
+---
 
-This is the simplest downstream benchmark because the curated dataset already carries weak `asset_type` labels.
+## Roadmap
 
-#### Frozen-pretrained encoder run
+**Near-term (current paper scope):**
+- Resolve the Asia yield gap. Diagnostic work has identified that the 9% yield in the China + Southeast Asia longitude band is concentrated in China specifically (5% yield at temperate Chinese latitudes vs. 24% in equatorial SE Asia), inconsistent with a cloud-cover hypothesis and most likely reflecting Sentinel-2 L2A coverage gaps over China during the fetch window.
+- Code review and refactoring for scalability to additional asset types and infrastructure sectors.
+- Paper drafting targeting end of July 2026.
 
-```bash
-python -m downstream.asset_classification.train \
-  --dataset-root data/curated_datasets/dataset_maine_v1 \
-  --output-dir outputs/classification_maine_v1 \
-  --checkpoint outputs/pretrain_maine_v1/checkpoint_best.pt \
-  --freeze-encoder \
-  --epochs 15 \
-  --batch-size 16 \
-  --image-size 128 \
-  --min-class-count 3 \
-  --train-fraction 0.8 \
-  --max-images 129
+**Longer-term:**
+- Expand to the full power ontology (generators, power plants, solar/wind farms at scale) once substations are complete globally.
+- Cross-sector co-location prediction (substations near roads, water, telecom) — requires non-power OSM extraction not yet implemented in the curation pipeline.
+- Higher-resolution imagery integration: Maxar 30cm via NASA CSDA program.
+- MAE pretraining as an alternative to SimCLR; ViT backbones as an alternative to ResNet-18.
+- Multisector ontology extension (water/sewer, transport, telecom) — drafted in `ONTOLOGY.md`.
+
+---
+
+## Known quirks and gotchas
+
+Project-specific knowledge that's saved hours and will save hours again:
+
+**"Ways scanned: 0" in `sources.py` progress logs is normal.** `NodeLocationsForWays` processes all nodes first to build a location index, then resolves ways in a second internal pass. The way-scanning count doesn't update during the first pass.
+
+**The SimCLR encoder loading bug.** When loading a pretrained SimCLR checkpoint for downstream classification, `EncoderBackbone` must use `net.fc = nn.Identity()` + `self.backbone = net`, not `nn.Sequential(*list(net.children())[:-1])`. The Sequential pattern produces key names like `backbone.encoder.conv1.weight` that don't match the checkpoint's `backbone.conv1.weight`, causing silent random initialization with `strict=False`. Always verify that `model.load_state_dict(...)` reports zero missing keys before trusting classification results.
+
+**Planetary Computer is unreliable from home wifi.** Residential NAT and ISP throttling cause sporadic failures at scale. Use campus / institutional network for large fetches.
+
+**Large parquets cause Colab RAM issues.** Load only the columns you need:
+```python
+df = pd.read_parquet(path)[['asset_id', 'asset_type', 'lat', 'lon']].copy()
 ```
 
-#### Scratch baseline
+**Augmentations are modality-aware.** Spatial transforms (flip, rotation, random crop) apply to all bands. Value transforms (jitter, noise) apply only to optical bands (0–6), never to SAR or thermal — different value distributions, different statistical properties.
 
-```bash
-python -m downstream.asset_classification.train \
-  --dataset-root data/curated_datasets/dataset_maine_v1 \
-  --output-dir outputs/classification_maine_v1_scratch \
-  --epochs 15 \
-  --batch-size 16 \
-  --image-size 128 \
-  --min-class-count 3 \
-  --train-fraction 0.8 \
-  --max-images 129
-```
+**Tail mean, not best val_acc.** Random init can achieve high *best* validation accuracy through lucky checkpoints while collapsing to majority-class prediction across the rest of training. The tail mean (average of last 5 epochs) plus tail std together reveal whether the encoder learned a generalizable representation.
 
-### First Maine benchmark snapshot (April 2026)
+**Solar farm deduplication looks aggressive but is correct.** OSM mappers often trace individual panel arrays within a single solar facility, producing many polygons within 200 m of each other. High dedup rates (~87% in Maine experiments) reflect the data, not a bug.
 
-On the first curated Maine benchmark:
+---
 
-- curated imagery samples used for downstream classification: **129**
-- number of classes retained with `--min-class-count 3`: **7**
-- frozen-pretrained run best validation accuracy: **0.3846**
-- scratch baseline best validation accuracy: **0.4231**
+## Related work
 
-This should be interpreted carefully:
+The closest published work is Ye, Ward, De Plaen, and Koks (2025), "Big Earth Data" (DOI: 10.1080/20964471.2025.2490408), which trains supervised Faster R-CNN with ResNet-101 on WorldView-3 30 cm imagery over Vietnam to detect transmission towers and poles. The contributions are complementary:
 
-- the end-to-end curation -> pretraining -> downstream pipeline is now operational
-- the downstream task is non-trivial and produces above-chance results
-- the current pretraining stage has **not yet** outperformed the scratch baseline on this small Maine corpus
-- this likely reflects small-data instability, limited corpus size, and the difficulty of contrastive pretraining on only ~129 curated samples
+- TIF-M is representation learning; Ye et al. is supervised object detection.
+- TIF-M trains on freely available 10 m Sentinel imagery at global scale; Ye et al. requires commercial 30 cm tasking.
+- TIF-M uses weak OSM labels; Ye et al. uses manual annotation.
+- TIF-M targets multi-sector transfer; Ye et al. targets a specific detection task.
 
-This is still a useful and honest first benchmark.
+---
 
-## Known limitations
+## Authors
 
-- Sentinel-2 at 10 m resolution is often too coarse for confident discrimination of some substation types.
-- Solar assets can dominate raw OSM pulls without careful filtering.
-- OSM relation handling is still best-effort for some assets.
-- The current pretraining corpus for Maine is too small to draw strong conclusions about learned generality.
-- The first downstream benchmark currently favors the scratch baseline over the frozen-pretrained encoder.
-
-## Near-term next steps
-
-1. Run the same curation -> pretraining -> downstream flow on a larger regional corpus (for example Central America).
-2. Compare scratch, frozen-pretrained, and fine-tuned downstream asset classification more systematically.
-3. Extend the curation ontology and downstream logic toward water/sewer, transport, rail, and telecom.
-4. Revisit higher-throughput Earth Engine fetching (for example regional compositing before per-asset clipping) once the first complete pipeline benchmarks are stable.
+Lead author: Justin Guthrie
+Advisor: Edward Oughton (George Mason University)
+Collaborators: Jack Watson (Northeastern University, Enodia Inc.)
