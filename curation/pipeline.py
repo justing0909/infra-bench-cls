@@ -172,7 +172,7 @@ JOB_PRESETS = {
         "deduped_parquet": "../data/PIPELINE/02-deduped-assets/south-america_deduped_assets_substations.parquet",
     },
     "maine": {
-        # "pbf_path":        "../data/pbf/power_only/maine-latest.osm_power_only.osm.pbf",
+        "pbf_path":        "../data/pbf/power_only/maine-latest.osm_power_only.osm.pbf",
         "output_dir":      "../data/curated_datasets/dataset_maine_stac_v1",
         "assets_table":    "../data/PIPELINE/01-extracted-assets/maine_all_assets_substations.parquet",
         "assets_csv":      "../data/PIPELINE/01-extracted-assets/maine_all_assets_substations.csv",
