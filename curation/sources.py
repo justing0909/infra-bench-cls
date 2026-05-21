@@ -308,52 +308,115 @@ class GeoFabrikSource:
     def _region_name(self) -> str:
         return os.path.splitext(os.path.basename(self.pbf_path))[0]
 
-    def _pre_filter_pbf(self) -> str:
+    def _pre_filter_pbf_by_tags(
+        self,
+        sector_name: str,
+        sector_tag_keys: list,
+    ) -> str:
         """
-        Writes a power-only PBF to speed up scanning on large files.
-        Returns path to the filtered PBF, or original path on failure.
+        Writes a sector-filtered PBF subset to speed up scanning on large files.
+
+        Parameters
+        ----------
+        sector_name : str
+            Short label embedded in the output filename, e.g. "power".
+            The output PBF is written to "{base}_{sector_name}_only.osm.pbf".
+        sector_tag_keys : list of str
+            OSM tag keys that mark an element as in-sector.
+            An element matches if ANY of these keys is present in its tags.
+            Examples:
+              ["power"]
+              ["waterway", "water", "man_made"]
+              ["highway", "railway", "aeroway"]
+
+        Pass 1 collects:
+          - IDs of nodes/ways/relations whose tags include any sector_tag_keys.
+          - IDs of nodes referenced by matched ways (via w.nodes).
+          - IDs of nodes referenced by matched relations (members of type 'n').
+            Nested relation membership is intentionally not traversed.
+
+        Pass 2 writes:
+          - every node that is either tagged or referenced by a matched
+            way/relation,
+          - every matched way and matched relation.
+
+        Returns path to the filtered PBF, or the original path on failure.
         """
         import time
         base = os.path.splitext(self.pbf_path)[0]
-        out_path = f"{base}_power_only.osm.pbf"
+        out_path = f"{base}_{sector_name}_only.osm.pbf"
 
         if os.path.exists(out_path):
-            print(f"  Using existing power-only PBF: {out_path}")
+            print(f"  Using existing {sector_name}-only PBF: {out_path}")
             return out_path
 
-        print(f"  Pre-filtering {self.pbf_path} -> {out_path}...")
+        print(f"  Pre-filtering {self.pbf_path} -> {out_path} "
+              f"(sector='{sector_name}', tag_keys={sector_tag_keys})")
         t0 = time.time()
+
+        # Local copy for fast membership tests inside the handler classes.
+        _tag_keys = tuple(sector_tag_keys)
 
         try:
             class IDCollector(osmium.SimpleHandler):
                 def __init__(self):
                     super().__init__()
-                    self.power_node_ids     = set()
-                    self.power_way_ids      = set()
-                    self.power_relation_ids = set()
+                    self.tagged_node_ids     = set()
+                    self.tagged_way_ids      = set()
+                    self.tagged_relation_ids = set()
+                    # Nodes referenced by matched ways/relations.
+                    # Kept in a separate set so we can report both numbers.
+                    self.member_node_ids     = set()
+
+                @staticmethod
+                def _matches(tags) -> bool:
+                    for key in _tag_keys:
+                        if key in tags:
+                            return True
+                    return False
 
                 def node(self, n):
-                    if "power" in n.tags:
-                        self.power_node_ids.add(n.id)
+                    if self._matches(n.tags):
+                        self.tagged_node_ids.add(n.id)
 
                 def way(self, w):
-                    if "power" in w.tags:
-                        self.power_way_ids.add(w.id)
+                    if self._matches(w.tags):
+                        self.tagged_way_ids.add(w.id)
+                        # Retain referenced nodes so the output remains valid.
+                        for nd in w.nodes:
+                            self.member_node_ids.add(nd.ref)
 
                 def relation(self, r):
-                    if "power" in r.tags:
-                        self.power_relation_ids.add(r.id)
+                    if self._matches(r.tags):
+                        self.tagged_relation_ids.add(r.id)
+                        # Only direct node members. Way/relation members are
+                        # not followed — keep this pass simple and correct.
+                        for m in r.members:
+                            if m.type == 'n':
+                                self.member_node_ids.add(m.ref)
 
-            print(f"  Pass 1: collecting power element IDs...")
+            print(f"  Pass 1: collecting matched element IDs + member node refs...")
             collector = IDCollector()
             collector.apply_file(self.pbf_path)
-            print(f"  Pass 1 complete: {len(collector.power_node_ids):,} nodes, "
-                  f"{len(collector.power_way_ids):,} ways, "
-                  f"{len(collector.power_relation_ids):,} relations")
+
+            n_tagged_nodes      = len(collector.tagged_node_ids)
+            n_member_only_nodes = len(
+                collector.member_node_ids - collector.tagged_node_ids
+            )
+            n_keep_nodes        = n_tagged_nodes + n_member_only_nodes
+            print(f"  Pass 1 complete: "
+                  f"{n_tagged_nodes:,} tagged nodes + "
+                  f"{n_member_only_nodes:,} member-only nodes "
+                  f"= {n_keep_nodes:,} nodes to keep, "
+                  f"{len(collector.tagged_way_ids):,} ways, "
+                  f"{len(collector.tagged_relation_ids):,} relations")
+
+            # Union the two sets for fast O(1) lookup during Pass 2.
+            keep_node_ids = collector.tagged_node_ids | collector.member_node_ids
 
             writer = osmium.SimpleWriter(out_path)
 
-            class PowerWriter(osmium.SimpleHandler):
+            class FilterWriter(osmium.SimpleHandler):
                 def __init__(self, node_ids, way_ids, relation_ids):
                     super().__init__()
                     self.node_ids     = node_ids
@@ -367,8 +430,8 @@ class GeoFabrikSource:
                     if self._n_scanned % 5_000_000 == 0:
                         print(f"    pass 2: {self._n_scanned/1e6:.0f}M elements, "
                               f"{self.n_written:,} written")
-                    writer.add_node(n)
                     if n.id in self.node_ids:
+                        writer.add_node(n)
                         self.n_written += 1
 
                 def way(self, w):
@@ -381,13 +444,13 @@ class GeoFabrikSource:
                         writer.add_relation(r)
                         self.n_written += 1
 
-            print(f"  Pass 2: writing filtered PBF with all nodes...")
-            pw = PowerWriter(
-                collector.power_node_ids,
-                collector.power_way_ids,
-                collector.power_relation_ids,
+            print(f"  Pass 2: writing matched elements and their referenced nodes...")
+            fw = FilterWriter(
+                keep_node_ids,
+                collector.tagged_way_ids,
+                collector.tagged_relation_ids,
             )
-            pw.apply_file(self.pbf_path)
+            fw.apply_file(self.pbf_path)
             writer.close()
 
             elapsed = time.time() - t0
@@ -414,10 +477,20 @@ class GeoFabrikSource:
                 os.remove(out_path)
             return self.pbf_path
 
+
     def _run(self, target_types: Optional[set] = None) -> pd.DataFrame:
         import time
 
-        scan_path = self._pre_filter_pbf() if self.pre_filter else self.pbf_path
+        # All current filter presets target the energy sector, so the
+        # pre-filter scans for the "power" tag key. When other sectors are
+        # added, route via _pre_filter_pbf_by_tags with their tag keys.
+        if self.pre_filter:
+            scan_path = self._pre_filter_pbf_by_tags(
+                sector_name="power",
+                sector_tag_keys=["power"],
+            )
+        else:
+            scan_path = self.pbf_path
 
         active = self._target_types
         if target_types is not None:
