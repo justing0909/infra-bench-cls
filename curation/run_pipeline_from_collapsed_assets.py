@@ -91,12 +91,9 @@ MODALITIES = "sentinel2_ms,sentinel1"
 # Set to True to fetch seasonal temporal stacks (slower, larger output)
 TEMPORAL_STACK = False
 
-# STAC (Planetary Computer) is the primary imagery path
+# STAC (Planetary Computer) is the only imagery path. The legacy GEE
+# fallback was removed; see git history for the deleted gee_imagery.py.
 USE_STAC = True
-USE_GEE  = False
-
-GEE_PROJECT   = "towards-an-infra-fm"
-GEE_COMPOSITE = "median"
 
 
 # ---------------------------------------------------------------------------
@@ -215,13 +212,6 @@ def main() -> None:
 
         if USE_STAC:
             cmd.append("--use-stac")
-        elif USE_GEE:
-            cmd += [
-                "--no-use-stac",
-                "--use-gee",
-                "--gee-project",   GEE_PROJECT,
-                "--gee-composite", GEE_COMPOSITE,
-            ]
 
         print(f"\n[run] {region}")
         print(" ".join(cmd))
