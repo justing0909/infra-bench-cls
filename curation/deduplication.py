@@ -63,16 +63,44 @@ class Deduplicator:
     """
     Removes spatially near-duplicate assets from a sources.py DataFrame.
 
+    The threshold used for each asset type is determined as follows:
+      1. If the asset type has a matching `AssetClass` in `curation.ontology`
+         with `dedup_distance_m` set, that value is used.
+      2. Otherwise, the constructor-supplied `distance_threshold_m` is used
+         (which itself defaults to 200m).
+
+    This lets the ontology express per-class scale: subway transfer
+    stations want ~50m, solar farms want ~1000m, etc.
+
     Parameters
     ----------
     distance_threshold_m : float
-        Assets of the same type within this distance are considered
-        duplicates. Default 200m works well for a 150m buffer.
-        Scale proportionally if you change buffer_m in imagery.py.
+        Fallback threshold for asset types not present in the ontology
+        (e.g. legacy types). Default 200m matches a 150m buffer.
     """
 
     def __init__(self, distance_threshold_m: float = DEFAULT_DISTANCE_THRESHOLD_M):
         self.threshold = distance_threshold_m
+
+    @staticmethod
+    def _threshold_for(asset_type: str, fallback: float) -> float:
+        """
+        Look up the per-class dedup threshold from the ontology.
+        Returns the fallback if the type is unknown or the class did
+        not declare `dedup_distance_m`.
+
+        Import is lazy + tolerant so this module remains usable even if
+        the ontology import path can't resolve (e.g. unusual sys.path).
+        """
+        try:
+            from ontology import get_class_by_name
+        except Exception:
+            return fallback
+        try:
+            cls = get_class_by_name(asset_type)
+        except KeyError:
+            return fallback
+        return cls.dedup_distance_m if cls.dedup_distance_m is not None else fallback
 
     def run(self, df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
         """
@@ -80,6 +108,8 @@ class Deduplicator:
 
         Deduplication is applied per asset_type — a substation and a
         solar farm at the same location are NOT considered duplicates.
+        Each asset type uses its own per-class threshold from the
+        ontology (falling back to `self.threshold` for unknown types).
 
         Parameters
         ----------
@@ -91,12 +121,15 @@ class Deduplicator:
         removed_df : pd.DataFrame — removed duplicates with reference to
                      the asset that replaced them
         """
-        keep_rows    = []
-        removed_rows = []
+        keep_rows         = []
+        removed_rows      = []
+        per_class_summary = []  # (asset_type, n_in, n_kept, threshold_m)
 
         for asset_type, group in df.groupby("asset_type"):
             group = group.reset_index(drop=True)
-            kept_indices = self._deduplicate_group(group)
+            threshold_m = self._threshold_for(asset_type, self.threshold)
+
+            kept_indices = self._deduplicate_group(group, threshold_m)
             removed_indices = set(range(len(group))) - set(kept_indices)
 
             keep_rows.append(group.iloc[list(kept_indices)])
@@ -104,36 +137,52 @@ class Deduplicator:
             # Record removed assets with reference to nearest kept asset
             if removed_indices:
                 removed = group.iloc[list(removed_indices)].copy()
+                kept_subset = group.iloc[list(kept_indices)]
                 removed["deduplicated_by"] = removed.apply(
-                    lambda row: self._nearest_kept(
-                        row, group.iloc[list(kept_indices)]
-                    ),
+                    lambda row: self._nearest_kept(row, kept_subset),
                     axis=1,
                 )
                 removed_rows.append(removed)
 
-        clean_df = pd.concat(keep_rows, ignore_index=True) if keep_rows else pd.DataFrame()
+            per_class_summary.append(
+                (asset_type, len(group), len(kept_indices), threshold_m)
+            )
+
+        clean_df   = pd.concat(keep_rows,    ignore_index=True) if keep_rows    else pd.DataFrame()
         removed_df = pd.concat(removed_rows, ignore_index=True) if removed_rows else pd.DataFrame()
 
         n_removed = len(removed_df)
         n_kept    = len(clean_df)
         print(f"Deduplication complete:")
         print(f"  Kept:    {n_kept}")
-        print(f"  Removed: {n_removed} ({n_removed / max(len(df), 1) * 100:.1f}%)")
-        if n_removed > 0:
-            print(f"\n  Removed by asset type:")
-            if not removed_df.empty:
-                print(removed_df["asset_type"].value_counts().to_string())
-
+        print(f"  Removed: {n_removed} "
+              f"({n_removed / max(len(df), 1) * 100:.1f}%)")
+        print(f"  Per-class breakdown (threshold_m | in -> kept):")
+        for asset_type, n_in, n_out, thr in sorted(per_class_summary):
+            removed_n = n_in - n_out
+            print(f"    {asset_type:42s}  {int(thr):>5d}m | "
+                  f"{n_in:>7,} -> {n_out:>7,}  ({removed_n} removed)")
         return clean_df, removed_df
 
-    def _deduplicate_group(self, group: pd.DataFrame) -> list:
+    def _deduplicate_group(self, group: pd.DataFrame, threshold_m: float) -> list:
         """
         Returns indices of assets to keep within a single asset_type group.
 
-        Uses a KDTree spatial index for O(n log n) performance instead of
-        the naive O(n²) pairwise comparison. Critical for global scale where
-        a single asset type (e.g. poles) can have millions of entries.
+        Uses sklearn's BallTree with the `haversine` metric — this gives
+        true great-circle distances, so the meter-valued `threshold_m`
+        is applied uniformly regardless of latitude.
+
+        History note:
+          A previous implementation here built a `scipy.spatial.KDTree`
+          over raw (lat, lon) degree pairs and queried with
+          `threshold / 111_320`. That was wrong on two counts:
+            (1) longitude degrees shrink by cos(lat), so the conversion
+                only held at the equator. At lat 60° the E–W radius
+                collapsed to ~50% of intended; at lat 45° to ~70%.
+            (2) KDTree's Euclidean metric in degree space treats N–S and
+                E–W as commensurate, which is anisotropic away from the
+                equator regardless of the threshold conversion.
+          Both are fixed by switching to BallTree+haversine on radians.
         """
         lats = group["lat"].values
         lons = group["lon"].values
@@ -142,36 +191,41 @@ class Deduplicator:
         if n == 1:
             return [0]
 
-        # Convert threshold from meters to approximate degrees
-        # (conservative — uses lat degrees which are constant ~111km)
-        threshold_deg = self.threshold / 111_320
-
         try:
-            from scipy.spatial import KDTree
-            # Build KDTree on (lat, lon) coordinates
-            coords = np.column_stack([lats, lons])
-            tree   = KDTree(coords)
+            from sklearn.neighbors import BallTree
+            EARTH_RADIUS_M = 6_371_000
+
+            # Convert to radians; BallTree haversine requires that.
+            coords_rad = np.column_stack([
+                np.radians(lats),
+                np.radians(lons),
+            ])
+            tree = BallTree(coords_rad, metric="haversine")
+
+            # Threshold in radians (the haversine metric returns distances
+            # in radians; multiply by Earth radius to get meters).
+            threshold_rad = threshold_m / EARTH_RADIUS_M
+
+            # Batch query — for each point, indices of points within radius.
+            neighbors = tree.query_radius(coords_rad, r=threshold_rad)
 
             suppressed = set()
             kept       = []
-
             for i in range(n):
                 if i in suppressed:
                     continue
                 kept.append(i)
-                # Find all points within threshold_deg of this point
-                # query_ball_point returns indices of nearby points
-                nearby = tree.query_ball_point(coords[i], threshold_deg)
-                for j in nearby:
+                for j in neighbors[i]:
                     if j > i:  # only suppress points after current
                         suppressed.add(j)
-
             return kept
 
         except ImportError:
-            # scipy not available — fall back to O(n²) with a warning
-            print("  Warning: scipy not installed, using slow O(n²) dedup. "
-                  "Install with: pip install scipy")
+            # sklearn not available — fall back to O(n²) with a warning.
+            # The fallback uses _haversine_m so it is geographically
+            # correct, just slow on large groups.
+            print("  Warning: scikit-learn not installed, using slow O(n²) "
+                  "dedup. Install with: pip install scikit-learn")
             kept       = []
             suppressed = set()
             for i in range(n):
@@ -182,7 +236,7 @@ class Deduplicator:
                     if j in suppressed:
                         continue
                     dist = _haversine_m(lats[i], lons[i], lats[j], lons[j])
-                    if dist <= self.threshold:
+                    if dist <= threshold_m:
                         suppressed.add(j)
             return kept
 
@@ -190,22 +244,32 @@ class Deduplicator:
                       kept_df: pd.DataFrame) -> str:
         """
         Returns the asset_id of the nearest kept asset to a removed one.
-        Uses KDTree for O(log n) lookup instead of O(n) linear scan.
+
+        Uses BallTree+haversine so the nearest neighbor reported is the
+        true geographic nearest, not whatever a Euclidean-on-degrees
+        KDTree happens to surface (which can be off by tens of meters
+        at mid-to-high latitudes).
         """
         if kept_df.empty:
             return ""
         try:
-            from scipy.spatial import KDTree
-            coords = kept_df[["lat", "lon"]].values
-            tree   = KDTree(coords)
-            _, idx = tree.query([removed_row["lat"], removed_row["lon"]])
-            return kept_df.iloc[idx]["asset_id"]
+            from sklearn.neighbors import BallTree
+            coords_rad = np.column_stack([
+                np.radians(kept_df["lat"].values),
+                np.radians(kept_df["lon"].values),
+            ])
+            tree = BallTree(coords_rad, metric="haversine")
+            removed_coord = np.radians([[
+                removed_row["lat"], removed_row["lon"],
+            ]])
+            _, idx = tree.query(removed_coord, k=1)
+            return kept_df.iloc[idx[0][0]]["asset_id"]
+
         except ImportError:
-            # fallback
             dists = kept_df.apply(
                 lambda r: _haversine_m(
                     removed_row["lat"], removed_row["lon"],
-                    r["lat"], r["lon"]
+                    r["lat"], r["lon"],
                 ),
                 axis=1,
             )

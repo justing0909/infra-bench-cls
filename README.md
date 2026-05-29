@@ -58,9 +58,9 @@ Cross-sector co-location prediction is on the roadmap but not currently implemen
 ```
 curation/                         # Local / VSCode-side
   sources.py                      #   OSM extraction (pyosmium, NodeLocationsForWays)
-  deduplication.py                #   KDTree spatial dedup
-  stac_imagery.py                 #   Planetary Computer fetcher (primary)
-  gee_imagery.py                  #   Google Earth Engine fetcher (fallback)
+  ontology.py                     #   Multi-sector asset class registry
+  deduplication.py                #   BallTree+haversine spatial dedup
+  stac_imagery.py                 #   Planetary Computer fetcher
   qc.py                           #   Quality control checks
   triage.py                       #   Rule-based confidence scoring
   dataset.py                      #   Dataset assembly (manifest + .npy tiles)
@@ -295,6 +295,20 @@ df = pd.read_parquet(path)[['asset_id', 'asset_type', 'lat', 'lon']].copy()
 **Tail mean, not best val_acc.** Random init can achieve high *best* validation accuracy through lucky checkpoints while collapsing to majority-class prediction across the rest of training. The tail mean (average of last 5 epochs) plus tail std together reveal whether the encoder learned a generalizable representation.
 
 **Solar farm deduplication looks aggressive but is correct.** OSM mappers often trace individual panel arrays within a single solar facility, producing many polygons within 200 m of each other. High dedup rates (~87% in Maine experiments) reflect the data, not a bug.
+
+---
+
+## Known dataset limitations
+
+These are documented for paper readers and downstream users; they do not undermine the benchmark's methodology but should be reported explicitly.
+
+**~2–3% extract undercount (May 2026).** The pyosmium `idx="sparse_file_array,locations.idx"` option silently dropped some node locations on certain inputs, causing the OSM extract to miss a small fraction of substations and to assemble fewer multipolygon areas than the source actually contained. The bug was identified in late May 2026 when transport extraction returned 1 airport instead of 88, and `sources.py` was patched to drop the `idx` parameter (commit history). The substation extract for central-america went from 1,870 → 1,920 (+2.6%) after the fix. The bug is uniform-random across regions and asset types, so class proportions and per-region representativeness are preserved. The existing imagery datasets correspond to extracts taken before the patch and are therefore mildly undercount; we chose not to re-extract globally because the cost (~19 h pre-filter compute) is not warranted for a 2–3% effect on a benchmark where F1 metrics are invariant to overall sample count.
+
+**Substation subclass granularity.** The `energy.distribution.substation_minor` class (matching OSM `substation=minor_distribution`) is present in central-america's extract but not in the other regions' parquets, because the other regions' extracts predate the ontology update. For the Infra-Bench paper, all four substation subclasses are aggregated to a single "substations" label, so this asymmetry does not affect reported metrics.
+
+**Imagery datasets are sample-capped.** The May 2026 STAC fetch capped at 25,000 tiles per region for compute reasons. For regions with more than 25,000 deduped substations (asia, north-america, europe), the on-disk imagery represents a subset of the deduped parquet. The `missing_from_dataset.csv` produced by `resync_dataset_manifest.py` lists every asset in the deduped parquet without a tile — for sample-capped regions, this is dominated by deliberately sampled-out assets, NOT bug recovery, and should not be fed verbatim into a refetch.
+
+**KDTree latitude bug in pre-May-2026 dedup outputs.** Earlier deduplicated parquets were built with a scipy KDTree on raw (lat, lon) degree pairs and a `threshold / 111_320` conversion that only held at the equator. The fix swaps to sklearn BallTree+haversine, which is geographically correct. Per-region impact (substations) when re-deduping the same input: south-america −53 rows, australia-oceania −50, africa −34, north-america −310, asia −3,266 (largest, driven by high-latitude Russia/Siberia where the bug bit hardest). The current 02-deduped-assets parquets reflect the corrected dedup.
 
 ---
 

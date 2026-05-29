@@ -6,18 +6,18 @@ End-to-end infrastructure imagery curation pipeline.
 Orchestrates the full sequence:
     1. Extract asset locations from GeoFabrik PBF (sources.py)
     2. Deduplicate spatially proximate assets (deduplication.py)
-    3. Fetch imagery tiles — STAC (stac_imagery.py) or GEE fallback (gee_imagery.py)
+    3. Fetch imagery tiles via STAC / Planetary Computer (stac_imagery.py)
     4. Basic quality control (qc.py)
     5. Confidence triage (triage.py)
     6. Assemble training dataset (dataset.py)
 
-Key changes from previous version:
-  - STAC (Planetary Computer) is now the primary imagery path (USE_STAC=True)
-  - GEE remains available as a fallback (USE_GEE=True, USE_STAC=False)
-  - solar_collapse import removed — substation-only scope makes it unnecessary
-  - filter_preset="substation" is the new default in GeoFabrikSource calls
-  - MODALITIES controls which imagery layers are fetched (multimodal)
-  - TEMPORAL_STACK enables seasonal composite stacking
+Notes:
+  - STAC (Planetary Computer) is the only imagery path. The previous GEE
+    fallback was removed when STAC became the default; see git history
+    for the removed `gee_imagery.py` if it is ever needed again.
+  - filter_preset="substation" is the default in GeoFabrikSource calls.
+  - MODALITIES controls which imagery layers are fetched (multimodal).
+  - TEMPORAL_STACK enables seasonal composite stacking.
   - Dataset output dirs use _stac_v1 suffix for STAC runs
   - _SUCCESS files written with run metadata for resumability
 
@@ -77,12 +77,6 @@ N_YEARS        = 2          # number of years of seasonal composites if temporal
 BUFFER_M       = 300
 SOURCES        = ["sentinel2"]   # legacy field — kept for dry-run display
 MAX_WORKERS    = 4
-
-# --- Imagery: GEE (fallback, used when USE_STAC=False) ---
-USE_GEE        = False
-GEE_PROJECT    = "towards-an-infra-fm"
-GEE_COMPOSITE  = "median"
-GEE_BUFFER_M   = 300
 
 # --- QC thresholds ---
 MIN_VALID_RATIO = 0.80
@@ -203,10 +197,6 @@ DEFAULT_CONFIG = {
     "modalities":         list(MODALITIES),
     "temporal_stack":     TEMPORAL_STACK,
     "n_years":            N_YEARS,
-    "use_gee":            USE_GEE,
-    "gee_project":        GEE_PROJECT,
-    "gee_composite":      GEE_COMPOSITE,
-    "gee_buffer_m":       GEE_BUFFER_M,
     "min_valid_ratio":    MIN_VALID_RATIO,
     "distance_threshold_m": DISTANCE_THRESHOLD_M,
     "contradiction_threshold": CONTRADICTION_THRESHOLD,
@@ -429,12 +419,6 @@ def _build_runtime_config(args: Optional[argparse.Namespace]) -> dict:
         config["use_stac"] = args.use_stac
     if args.temporal_stack is not None:
         config["temporal_stack"] = args.temporal_stack
-    if args.use_gee is not None:
-        config["use_gee"] = args.use_gee
-    if args.gee_project:
-        config["gee_project"] = args.gee_project
-    if args.gee_composite:
-        config["gee_composite"] = args.gee_composite
 
     config["asset_types"]   = _parse_csv_arg(args.asset_types)
     config["shard_count"]   = args.shard_count
@@ -464,9 +448,6 @@ def _print_run_plan(config: dict) -> None:
         print(f"  Temporal stack: {config.get('temporal_stack', False)}")
         if config.get("temporal_stack"):
             print(f"  N years:        {config.get('n_years', 2)}")
-    if config.get("use_gee") and not config.get("use_stac"):
-        print(f"  GEE project:    {config['gee_project']}")
-        print(f"  Composite:      {config['gee_composite']}")
     if config.get("asset_types"):
         print(f"  Asset types:    {config['asset_types']}")
     if config.get("sample_per_type") is not None:
@@ -647,21 +628,9 @@ def run_pipeline(
         )
         tiles = fetcher.fetch_all(df_clean)
 
-    elif config.get("use_gee", False):
-        from gee_imagery import GEEImageryFetcher
-
-        fetcher = GEEImageryFetcher(
-            project        = config["gee_project"],
-            buffer_m       = config.get("gee_buffer_m", GEE_BUFFER_M),
-            composite      = config.get("gee_composite", GEE_COMPOSITE),
-            checkpoint_path= checkpoint_path,
-        )
-        tiles = fetcher.fetch_all(df_clean)
-
     else:
         raise ValueError(
-            "No imagery fetcher enabled. Set USE_STAC=True (recommended) "
-            "or USE_GEE=True in pipeline config."
+            "No imagery fetcher enabled. Set USE_STAC=True in pipeline config."
         )
 
     n_ok   = sum(1 for t in tiles if t.status == "ok")
@@ -865,11 +834,6 @@ if __name__ == "__main__":
     parser.add_argument("--temporal-stack",
                         action=argparse.BooleanOptionalAction, default=None,
                         help="Fetch seasonal temporal stacks")
-    parser.add_argument("--use-gee",
-                        action=argparse.BooleanOptionalAction, default=None,
-                        help="Use Google Earth Engine (fallback)")
-    parser.add_argument("--gee-project")
-    parser.add_argument("--gee-composite", choices=["median", "mosaic", "best"])
     parser.add_argument("--min-confidence", choices=["high", "medium", "low"])
     parser.add_argument("--max-assets", type=int)
     parser.add_argument("--sample-per-type", type=int)
