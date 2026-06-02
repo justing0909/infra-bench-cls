@@ -169,19 +169,19 @@ class AdaptiveConcurrencyController:
 
         if fail_rate > self.max_fail_rate:
             self.current = max(self.min_workers, self.current - self.step)
-            action = "↓ back off (high fail rate)"
+            action = "v back off (high fail rate)"
         elif tp > self._best_tp:
             self._best_tp      = tp
             self._best_workers = self.current
             self.current = min(self.max_workers, self.current + self.step)
-            action = "↑ increase (throughput improving)"
+            action = "^ increase (throughput improving)"
         elif tp < self._last_tp * 0.9:
             self.current = max(self.min_workers,
                                min(self._best_workers, self.current - self.step))
-            action = "↓ decrease (throughput degrading)"
+            action = "v decrease (throughput degrading)"
         else:
             self.current = min(self.max_workers, self.current + self.step // 2)
-            action = "→ nudge up"
+            action = "-> nudge up"
 
         self._last_tp       = tp
         self._window_start  = time.time()
@@ -201,7 +201,7 @@ class AdaptiveConcurrencyController:
         print(f"\n  Concurrency tuning summary:")
         print(f"  {'workers':>8} {'tiles/s':>10} {'fail_rate':>10}")
         for w, tp, fr in self._history:
-            marker = " ← best" if w == self._best_workers else ""
+            marker = " <- best" if w == self._best_workers else ""
             print(f"  {w:>8} {tp:>10.2f} {fr:>10.1%}{marker}")
         print(f"  Best: {self._best_workers} workers @ {self._best_tp:.2f} tiles/s")
 
@@ -884,7 +884,7 @@ if __name__ == "__main__":
     INPUT_CSV = "data/maine_deduped_assets.csv"
 
     if not os.path.exists(INPUT_CSV):
-        print(f"No CSV at {INPUT_CSV} — run sources.py first.")
+        print(f"No CSV at {INPUT_CSV} - run sources.py first.")
         sys.exit(1)
 
     df = pd.read_csv(INPUT_CSV)
