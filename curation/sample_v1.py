@@ -74,12 +74,19 @@ def find_input_parquet(region: str, sector: str) -> tuple[str, bool]:
 def stratified_sample(
     df: pd.DataFrame,
     target_total: int,
+    sample_threshold: int,
     seed: int,
 ) -> tuple[pd.DataFrame, list[dict]]:
     """
     Proportional class-stratified random sample.
 
-    For each asset_type class:
+    Triggering rule:
+      - if population > sample_threshold: sample down to target_total
+      - else: keep the entire population (no sampling, even if it slightly
+        exceeds target_total — this avoids dropping a small fraction of
+        an already-modest cell)
+
+    Within the sampling branch, per class:
       - allocation = round(class_size / total_size * target_total)
       - sample min(allocation, class_size) rows uniformly at random
       - (a class smaller than its allocation contributes in full)
@@ -93,15 +100,15 @@ def stratified_sample(
     if total_n == 0:
         return df.iloc[0:0].copy(), summary
 
-    # If the cell is below the target, just return everything — no sampling.
-    if total_n <= target_total:
+    # If the population is at or below the sampling threshold, keep all.
+    if total_n <= sample_threshold:
         for cls_name, cls_df in df.groupby("asset_type", sort=False):
             summary.append({
                 "asset_type":    cls_name,
                 "in_population": len(cls_df),
                 "in_sample":     len(cls_df),
                 "proportion":    len(cls_df) / total_n,
-                "note":          "all (population <= target)",
+                "note":          f"all (population <= threshold {sample_threshold})",
             })
         return df.copy(), summary
 
@@ -136,7 +143,8 @@ def stratified_sample(
     return df.iloc[0:0].copy(), summary
 
 
-def sample_cell(region: str, sector: str, target: int, seed: int) -> dict:
+def sample_cell(region: str, sector: str, target: int,
+                sample_threshold: int, seed: int) -> dict:
     try:
         src_path, used_fallback = find_input_parquet(region, sector)
     except FileNotFoundError:
@@ -153,7 +161,12 @@ def sample_cell(region: str, sector: str, target: int, seed: int) -> dict:
         }
 
     df = pd.read_parquet(src_path)
-    sample_df, per_class = stratified_sample(df, target_total=target, seed=seed)
+    sample_df, per_class = stratified_sample(
+        df,
+        target_total=target,
+        sample_threshold=sample_threshold,
+        seed=seed,
+    )
     out_path = os.path.join(OUT_DIR, f"{region}_{sector}_v1_sample.parquet")
     os.makedirs(OUT_DIR, exist_ok=True)
     sample_df.to_parquet(out_path, index=False)
@@ -175,6 +188,10 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--target", type=int, default=10_000,
                    help="Target sample size per cell (default 10000)")
+    p.add_argument("--threshold", type=int, default=10_000,
+                   help="Sampling threshold; cells with population <= this "
+                        "are kept in full (default 10000 — i.e. sample any "
+                        "cell whose population exceeds the target)")
     p.add_argument("--seed",   type=int, default=42,
                    help="RNG seed for reproducibility")
     p.add_argument("--region", action="append",
@@ -187,7 +204,8 @@ def main():
     sectors = args.sector or SECTORS
 
     results = []
-    print(f"V1 sampling: target={args.target:,} seed={args.seed}")
+    print(f"V1 sampling: target={args.target:,} threshold={args.threshold:,} "
+          f"seed={args.seed}")
     print(f"Regions: {regions}")
     print(f"Sectors: {sectors}")
     print()
@@ -195,7 +213,8 @@ def main():
     print("-" * 80)
     for region in regions:
         for sector in sectors:
-            r = sample_cell(region, sector, args.target, args.seed)
+            r = sample_cell(region, sector, args.target,
+                            args.threshold, args.seed)
             results.append(r)
             if r["status"] == "MISSING_INPUT":
                 print(f"{region:<20} {sector:<11} {'--':>10} {'--':>8}  no input parquet")
@@ -208,11 +227,12 @@ def main():
     summary_path = os.path.join(OUT_DIR, "_v1_sample_summary.json")
     with open(summary_path, "w", encoding="utf-8") as f:
         json.dump({
-            "target_per_cell": args.target,
-            "seed":            args.seed,
-            "regions":         regions,
-            "sectors":         sectors,
-            "results":         results,
+            "target_per_cell":  args.target,
+            "sample_threshold": args.threshold,
+            "seed":             args.seed,
+            "regions":          regions,
+            "sectors":          sectors,
+            "results":          results,
         }, f, indent=2, default=str)
     print()
     print(f"Summary -> {summary_path}")

@@ -1,0 +1,996 @@
+v1 overnight fetch — 28 cell(s) planned
+  samples_dir     = C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\PIPELINE\03-v1-samples
+  datasets_dir    = C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets
+  checkpoints_dir = C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\checkpoints\v1
+  modalities      = ['sentinel2_ms', 'sentinel1']
+  buffer_m        = 300  (=> 600m tile)
+  workers         = 8/16
+  order           = smallest_per_region
+
+idx  region               sector       n_assets
+  0  central-america      telecom             1
+  1  central-america      transport         570
+  2  central-america      water           2,591
+  3  central-america      energy          2,612
+  4  australia-oceania    telecom            12
+  5  australia-oceania    transport       2,178
+  6  australia-oceania    energy          6,492
+  7  australia-oceania    water          10,000
+  8  south-america        telecom             8
+  9  south-america        transport       3,997
+ 10  south-america        energy          9,999
+ 11  south-america        water          10,001
+ 12  africa               telecom             1
+ 13  africa               energy          1,000
+ 14  africa               water           1,000
+ 15  africa               transport       5,297
+ 16  asia                 telecom            32
+ 17  asia                 energy          1,000
+ 18  asia                 water           1,000
+ 19  asia                 transport       1,000
+ 20  north-america        telecom           279
+ 21  north-america        energy            999
+ 22  north-america        water           1,000
+ 23  north-america        transport       1,001
+ 24  europe               telecom           345
+ 25  europe               water           1,000
+ 26  europe               transport       1,000
+ 27  europe               energy          1,001
+     TOTAL                               65,416
+
+>>> [1/28] central-america/telecom (n=1)
+
+========================================================================
+CELL  central-america/telecom   (2026-06-06 13:35:56)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_central-america_telecom_v1\_SUCCESS already exists
+
+>>> [2/28] central-america/transport (n=570)
+
+========================================================================
+CELL  central-america/transport   (2026-06-06 13:35:56)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_central-america_transport_v1\_SUCCESS already exists
+
+>>> [3/28] central-america/water (n=2,591)
+
+========================================================================
+CELL  central-america/water   (2026-06-06 13:35:56)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_central-america_water_v1\_SUCCESS already exists
+
+>>> [4/28] central-america/energy (n=2,612)
+
+========================================================================
+CELL  central-america/energy   (2026-06-06 13:35:56)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_central-america_energy_v1\_SUCCESS already exists
+
+>>> [5/28] australia-oceania/telecom (n=12)
+
+========================================================================
+CELL  australia-oceania/telecom   (2026-06-06 13:35:56)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_australia-oceania_telecom_v1\_SUCCESS already exists
+
+>>> [6/28] australia-oceania/transport (n=2,178)
+
+========================================================================
+CELL  australia-oceania/transport   (2026-06-06 13:35:56)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_australia-oceania_transport_v1\_SUCCESS already exists
+
+>>> [7/28] australia-oceania/energy (n=6,492)
+
+========================================================================
+CELL  australia-oceania/energy   (2026-06-06 13:35:56)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_australia-oceania_energy_v1\_SUCCESS already exists
+
+>>> [8/28] australia-oceania/water (n=10,000)
+
+========================================================================
+CELL  australia-oceania/water   (2026-06-06 13:35:56)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_australia-oceania_water_v1\_SUCCESS already exists
+
+>>> [9/28] south-america/telecom (n=8)
+
+========================================================================
+CELL  south-america/telecom   (2026-06-06 13:35:56)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_south-america_telecom_v1\_SUCCESS already exists
+
+>>> [10/28] south-america/transport (n=3,997)
+
+========================================================================
+CELL  south-america/transport   (2026-06-06 13:35:56)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_south-america_transport_v1\_SUCCESS already exists
+
+>>> [11/28] south-america/energy (n=9,999)
+
+========================================================================
+CELL  south-america/energy   (2026-06-06 13:35:56)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_south-america_energy_v1\_SUCCESS already exists
+
+>>> [12/28] south-america/water (n=10,001)
+
+========================================================================
+CELL  south-america/water   (2026-06-06 13:35:56)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_south-america_water_v1\_SUCCESS already exists
+
+>>> [13/28] africa/telecom (n=1)
+
+========================================================================
+CELL  africa/telecom   (2026-06-06 13:35:56)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_africa_telecom_v1\_SUCCESS already exists
+
+>>> [14/28] africa/energy (n=1,000)
+
+========================================================================
+CELL  africa/energy   (2026-06-06 13:35:56)
+========================================================================
+  loaded 1,000 assets from africa_energy_v1_sample.parquet
+  [1/4] STAC fetch ...
+STACImageryFetcher: modalities=['sentinel2_ms', 'sentinel1'], n_bands=9, temporal_stack=False, buffer_m=300, workers=8 (adaptive)
+  Resuming from checkpoint: 633 tiles already fetched
+  STAC fetch: 367 assets pending (633 already checkpointed)
+  [640/1000] (64%) ok=640 fail=0 workers=8
+  [650/1000] (65%) ok=649 fail=1 workers=8
+  [concurrency] workers=16 | throughput=0.1 tiles/s | fail_rate=5.0% | ^ increase (throughput improving)
+  [660/1000] (66%) ok=659 fail=1 workers=16
+  [670/1000] (67%) ok=669 fail=1 workers=16
+  [concurrency] workers=16 | throughput=0.1 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [680/1000] (68%) ok=679 fail=1 workers=16
+  [690/1000] (69%) ok=688 fail=2 workers=16
+  [concurrency] workers=16 | throughput=0.2 tiles/s | fail_rate=5.0% | ^ increase (throughput improving)
+  [700/1000] (70%) ok=698 fail=2 workers=16
+  [710/1000] (71%) ok=708 fail=2 workers=16
+  [concurrency] workers=16 | throughput=0.3 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [720/1000] (72%) ok=718 fail=2 workers=16
+  [730/1000] (73%) ok=728 fail=2 workers=16
+  [concurrency] workers=16 | throughput=0.3 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [740/1000] (74%) ok=738 fail=2 workers=16
+  [750/1000] (75%) ok=748 fail=2 workers=16
+  [concurrency] workers=8 | throughput=0.3 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [760/1000] (76%) ok=758 fail=2 workers=8
+  [770/1000] (77%) ok=768 fail=2 workers=8
+  [concurrency] workers=12 | throughput=0.3 tiles/s | fail_rate=0.0% | -> nudge up
+  [780/1000] (78%) ok=778 fail=2 workers=12
+  [790/1000] (79%) ok=788 fail=2 workers=12
+  [concurrency] workers=16 | throughput=0.3 tiles/s | fail_rate=0.0% | -> nudge up
+  [800/1000] (80%) ok=798 fail=2 workers=16
+  checkpoint saved at 800 ok tiles
+  [810/1000] (81%) ok=808 fail=2 workers=16
+  [concurrency] workers=16 | throughput=0.4 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [820/1000] (82%) ok=818 fail=2 workers=16
+  [830/1000] (83%) ok=828 fail=2 workers=16
+  [concurrency] workers=16 | throughput=0.6 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [840/1000] (84%) ok=838 fail=2 workers=16
+  [850/1000] (85%) ok=848 fail=2 workers=16
+  [concurrency] workers=8 | throughput=0.3 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [860/1000] (86%) ok=858 fail=2 workers=8
+  [870/1000] (87%) ok=868 fail=2 workers=8
+  [concurrency] workers=8 | throughput=0.3 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [880/1000] (88%) ok=878 fail=2 workers=8
+  [890/1000] (89%) ok=888 fail=2 workers=8
+  [concurrency] workers=16 | throughput=0.6 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [900/1000] (90%) ok=898 fail=2 workers=16
+  [910/1000] (91%) ok=908 fail=2 workers=16
+  [concurrency] workers=16 | throughput=0.7 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [920/1000] (92%) ok=918 fail=2 workers=16
+  [930/1000] (93%) ok=928 fail=2 workers=16
+  [concurrency] workers=8 | throughput=0.3 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [940/1000] (94%) ok=938 fail=2 workers=8
+  [950/1000] (95%) ok=948 fail=2 workers=8
+  [concurrency] workers=12 | throughput=0.4 tiles/s | fail_rate=0.0% | -> nudge up
+  [960/1000] (96%) ok=958 fail=2 workers=12
+  [970/1000] (97%) ok=968 fail=2 workers=12
+  [concurrency] workers=8 | throughput=0.4 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [980/1000] (98%) ok=978 fail=2 workers=8
+  [990/1000] (99%) ok=988 fail=2 workers=8
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [1000/1000] (100%) ok=998 fail=2 workers=8
+
+  Concurrency tuning summary:
+   workers    tiles/s  fail_rate
+         8       0.12       5.0%
+        16       0.14       0.0% <- best
+        16       0.18       5.0% <- best
+        16       0.28       0.0% <- best
+        16       0.33       0.0% <- best
+        16       0.25       0.0% <- best
+         8       0.28       0.0%
+        12       0.28       0.0%
+        16       0.40       0.0% <- best
+        16       0.62       0.0% <- best
+        16       0.32       0.0% <- best
+         8       0.25       0.0%
+         8       0.64       0.0%
+        16       0.70       0.0% <- best
+        16       0.29       0.0% <- best
+         8       0.44       0.0%
+        12       0.37       0.0%
+         8       0.19       0.0%
+  Best: 16 workers @ 0.70 tiles/s
+  Checkpoint preserved (some assets failed).
+
+  STAC fetch complete: 998 ok / 2 failed
+        fetched ok=998 fail=2
+  [2/4] QC (min_valid_ratio=0.8) ...
+  QC [1000/1000] passed=949
+QC complete: 949 passed, 51 failed (1000 total)
+        QC passed 949 / 1000
+  [3/4] triage ...
+  Triage [949/949] high=949 low=0 contradiction=0
+Triage complete: 949 high / 0 low / 0 contradiction (949 total)
+        accepted 949
+  [4/4] assemble -> C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_africa_energy_v1
+C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\fetch_v1_overnight.py:221: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "completed_at"   : datetime.utcnow().isoformat() + "Z",
+  [949/949] saved=949 failed=0
+
+Dataset assembled: 949 tiles saved, 0 failed
+  Images:   C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_africa_energy_v1\images
+  Manifest: C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_africa_energy_v1\manifest.json
+  Summary:  C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_africa_energy_v1\summary.csv
+
+Tiles by asset type:
+asset_type
+energy.distribution.substation_untyped    449
+energy.transmission.substation            154
+energy.distribution.substation            127
+energy.generation.solar_farm              117
+energy.generation.power_plant              70
+energy.distribution.substation_minor       31
+energy.generation.wind_farm                 1
+
+Tiles by source/modality:
+source
+stac_sentinel2_ms+sentinel1    949
+
+Temporal tiles: 0 / 949
+  [done] africa/energy in 1395s — 949 tiles assembled
+
+>>> [15/28] africa/water (n=1,000)
+
+========================================================================
+CELL  africa/water   (2026-06-06 13:59:11)
+========================================================================
+  loaded 1,000 assets from africa_water_v1_sample.parquet
+  [1/4] STAC fetch ...
+STACImageryFetcher: modalities=['sentinel2_ms', 'sentinel1'], n_bands=9, temporal_stack=False, buffer_m=300, workers=8 (adaptive)
+  STAC fetch: 1000 assets pending (0 already checkpointed)
+  [10/1000] (1%) ok=10 fail=0 workers=8
+  [20/1000] (2%) ok=19 fail=1 workers=8
+  [concurrency] workers=16 | throughput=0.1 tiles/s | fail_rate=5.0% | ^ increase (throughput improving)
+  [30/1000] (3%) ok=29 fail=1 workers=16
+  [40/1000] (4%) ok=37 fail=3 workers=16
+  [concurrency] workers=16 | throughput=0.1 tiles/s | fail_rate=10.0% | ^ increase (throughput improving)
+  [50/1000] (5%) ok=47 fail=3 workers=16
+  [60/1000] (6%) ok=57 fail=3 workers=16
+  [concurrency] workers=16 | throughput=0.2 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [70/1000] (7%) ok=67 fail=3 workers=16
+  [80/1000] (8%) ok=77 fail=3 workers=16
+  [concurrency] workers=16 | throughput=0.2 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [90/1000] (9%) ok=87 fail=3 workers=16
+  [100/1000] (10%) ok=97 fail=3 workers=16
+  [concurrency] workers=16 | throughput=0.7 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\curation\stac_imagery.py:240: RuntimeWarning: invalid value encountered in log10
+  arr = np.where(arr > 0, 10 * np.log10(arr + 1e-10), vmin)
+  [110/1000] (11%) ok=106 fail=4 workers=16
+  [120/1000] (12%) ok=116 fail=4 workers=16
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=5.0% | v decrease (throughput degrading)
+  [130/1000] (13%) ok=126 fail=4 workers=8
+  [140/1000] (14%) ok=135 fail=5 workers=8
+  [concurrency] workers=12 | throughput=0.4 tiles/s | fail_rate=5.0% | -> nudge up
+  [150/1000] (15%) ok=145 fail=5 workers=12
+  [160/1000] (16%) ok=155 fail=5 workers=12
+  [concurrency] workers=8 | throughput=0.3 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [170/1000] (17%) ok=165 fail=5 workers=8
+  [180/1000] (18%) ok=175 fail=5 workers=8
+  [concurrency] workers=12 | throughput=0.3 tiles/s | fail_rate=0.0% | -> nudge up
+  [190/1000] (19%) ok=184 fail=6 workers=12
+  [200/1000] (20%) ok=194 fail=6 workers=12
+  [concurrency] workers=16 | throughput=0.4 tiles/s | fail_rate=5.0% | -> nudge up
+  checkpoint saved at 200 ok tiles
+  [210/1000] (21%) ok=204 fail=6 workers=16
+  [220/1000] (22%) ok=214 fail=6 workers=16
+  [concurrency] workers=16 | throughput=0.5 tiles/s | fail_rate=0.0% | -> nudge up
+  [230/1000] (23%) ok=224 fail=6 workers=16
+  [240/1000] (24%) ok=234 fail=6 workers=16
+  [concurrency] workers=16 | throughput=0.9 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [250/1000] (25%) ok=244 fail=6 workers=16
+  [260/1000] (26%) ok=254 fail=6 workers=16
+  [concurrency] workers=16 | throughput=0.9 tiles/s | fail_rate=0.0% | -> nudge up
+  [270/1000] (27%) ok=264 fail=6 workers=16
+  [280/1000] (28%) ok=274 fail=6 workers=16
+  [concurrency] workers=16 | throughput=1.2 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [290/1000] (29%) ok=284 fail=6 workers=16
+  [300/1000] (30%) ok=294 fail=6 workers=16
+  [concurrency] workers=16 | throughput=1.3 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [310/1000] (31%) ok=304 fail=6 workers=16
+  [320/1000] (32%) ok=314 fail=6 workers=16
+  [concurrency] workers=16 | throughput=1.2 tiles/s | fail_rate=0.0% | -> nudge up
+  [330/1000] (33%) ok=321 fail=9 workers=16
+  [340/1000] (34%) ok=329 fail=11 workers=16
+  [concurrency] workers=8 | throughput=0.3 tiles/s | fail_rate=25.0% | v back off (high fail rate)
+  [350/1000] (35%) ok=332 fail=18 workers=8
+  [360/1000] (36%) ok=342 fail=18 workers=8
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=35.0% | v back off (high fail rate)
+  [370/1000] (37%) ok=352 fail=18 workers=8
+  [380/1000] (38%) ok=362 fail=18 workers=8
+  [concurrency] workers=12 | throughput=1.0 tiles/s | fail_rate=0.0% | -> nudge up
+  [390/1000] (39%) ok=372 fail=18 workers=12
+  [400/1000] (40%) ok=382 fail=18 workers=12
+  [concurrency] workers=8 | throughput=0.9 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [410/1000] (41%) ok=387 fail=23 workers=8
+  [420/1000] (42%) ok=397 fail=23 workers=8
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=25.0% | v back off (high fail rate)
+  checkpoint saved at 400 ok tiles
+  [430/1000] (43%) ok=407 fail=23 workers=8
+  [440/1000] (44%) ok=417 fail=23 workers=8
+  [concurrency] workers=12 | throughput=0.7 tiles/s | fail_rate=0.0% | -> nudge up
+  [450/1000] (45%) ok=427 fail=23 workers=12
+  [460/1000] (46%) ok=437 fail=23 workers=12
+  [concurrency] workers=8 | throughput=0.6 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [470/1000] (47%) ok=447 fail=23 workers=8
+  [480/1000] (48%) ok=457 fail=23 workers=8
+  [concurrency] workers=12 | throughput=1.0 tiles/s | fail_rate=0.0% | -> nudge up
+  [490/1000] (49%) ok=465 fail=25 workers=12
+  [500/1000] (50%) ok=475 fail=25 workers=12
+  [concurrency] workers=8 | throughput=0.4 tiles/s | fail_rate=10.0% | v decrease (throughput degrading)
+  [510/1000] (51%) ok=485 fail=25 workers=8
+  [520/1000] (52%) ok=495 fail=25 workers=8
+  [concurrency] workers=12 | throughput=0.7 tiles/s | fail_rate=0.0% | -> nudge up
+  [530/1000] (53%) ok=505 fail=25 workers=12
+  [540/1000] (54%) ok=515 fail=25 workers=12
+  [concurrency] workers=16 | throughput=0.7 tiles/s | fail_rate=0.0% | -> nudge up
+  [550/1000] (55%) ok=525 fail=25 workers=16
+  [560/1000] (56%) ok=535 fail=25 workers=16
+  [concurrency] workers=8 | throughput=0.5 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [570/1000] (57%) ok=545 fail=25 workers=8
+  [580/1000] (58%) ok=555 fail=25 workers=8
+  [concurrency] workers=12 | throughput=0.5 tiles/s | fail_rate=0.0% | -> nudge up
+  [590/1000] (59%) ok=565 fail=25 workers=12
+  [600/1000] (60%) ok=575 fail=25 workers=12
+  [concurrency] workers=16 | throughput=0.8 tiles/s | fail_rate=0.0% | -> nudge up
+  [610/1000] (61%) ok=582 fail=28 workers=16
+  [620/1000] (62%) ok=590 fail=30 workers=16
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=25.0% | v back off (high fail rate)
+  [630/1000] (63%) ok=600 fail=30 workers=8
+  checkpoint saved at 600 ok tiles
+  checkpoint saved at 600 ok tiles
+  checkpoint saved at 600 ok tiles
+  checkpoint saved at 600 ok tiles
+  [640/1000] (64%) ok=606 fail=34 workers=8
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=20.0% | v back off (high fail rate)
+  [650/1000] (65%) ok=615 fail=35 workers=8
+  [660/1000] (66%) ok=625 fail=35 workers=8
+  [concurrency] workers=12 | throughput=0.3 tiles/s | fail_rate=5.0% | -> nudge up
+  [670/1000] (67%) ok=635 fail=35 workers=12
+  [680/1000] (68%) ok=645 fail=35 workers=12
+  [concurrency] workers=16 | throughput=0.5 tiles/s | fail_rate=0.0% | -> nudge up
+  [690/1000] (69%) ok=655 fail=35 workers=16
+  [700/1000] (70%) ok=665 fail=35 workers=16
+  [concurrency] workers=16 | throughput=1.1 tiles/s | fail_rate=0.0% | -> nudge up
+  [710/1000] (71%) ok=675 fail=35 workers=16
+  [720/1000] (72%) ok=680 fail=40 workers=16
+  [concurrency] workers=8 | throughput=0.4 tiles/s | fail_rate=25.0% | v back off (high fail rate)
+  [730/1000] (73%) ok=688 fail=42 workers=8
+  [740/1000] (74%) ok=698 fail=42 workers=8
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=10.0% | v decrease (throughput degrading)
+  [750/1000] (75%) ok=708 fail=42 workers=8
+  [760/1000] (76%) ok=718 fail=42 workers=8
+  [concurrency] workers=12 | throughput=1.2 tiles/s | fail_rate=0.0% | -> nudge up
+  [770/1000] (77%) ok=728 fail=42 workers=12
+  [780/1000] (78%) ok=738 fail=42 workers=12
+  [concurrency] workers=8 | throughput=0.8 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [790/1000] (79%) ok=748 fail=42 workers=8
+  [800/1000] (80%) ok=758 fail=42 workers=8
+  [concurrency] workers=12 | throughput=1.0 tiles/s | fail_rate=0.0% | -> nudge up
+  [810/1000] (81%) ok=765 fail=45 workers=12
+  [820/1000] (82%) ok=775 fail=45 workers=12
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=15.0% | v back off (high fail rate)
+  [830/1000] (83%) ok=785 fail=45 workers=8
+  [840/1000] (84%) ok=795 fail=45 workers=8
+  [concurrency] workers=12 | throughput=0.5 tiles/s | fail_rate=0.0% | -> nudge up
+  checkpoint saved at 800 ok tiles
+  [850/1000] (85%) ok=805 fail=45 workers=12
+  [860/1000] (86%) ok=815 fail=45 workers=12
+  [concurrency] workers=16 | throughput=1.3 tiles/s | fail_rate=0.0% | -> nudge up
+  [870/1000] (87%) ok=825 fail=45 workers=16
+  [880/1000] (88%) ok=835 fail=45 workers=16
+  [concurrency] workers=8 | throughput=0.6 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [890/1000] (89%) ok=845 fail=45 workers=8
+  [900/1000] (90%) ok=855 fail=45 workers=8
+  [concurrency] workers=16 | throughput=1.3 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [910/1000] (91%) ok=865 fail=45 workers=16
+  [920/1000] (92%) ok=871 fail=49 workers=16
+  [concurrency] workers=8 | throughput=0.4 tiles/s | fail_rate=20.0% | v back off (high fail rate)
+  [930/1000] (93%) ok=880 fail=50 workers=8
+  [940/1000] (94%) ok=890 fail=50 workers=8
+  [concurrency] workers=8 | throughput=0.3 tiles/s | fail_rate=5.0% | v decrease (throughput degrading)
+  [950/1000] (95%) ok=900 fail=50 workers=8
+  [960/1000] (96%) ok=909 fail=51 workers=8
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=5.0% | v decrease (throughput degrading)
+  [970/1000] (97%) ok=919 fail=51 workers=8
+  [980/1000] (98%) ok=929 fail=51 workers=8
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [990/1000] (99%) ok=939 fail=51 workers=8
+  [1000/1000] (100%) ok=949 fail=51 workers=8
+  [concurrency] workers=12 | throughput=0.2 tiles/s | fail_rate=0.0% | -> nudge up
+
+  Concurrency tuning summary:
+   workers    tiles/s  fail_rate
+         8       0.08       5.0% <- best
+        16       0.13      10.0%
+        16       0.17       0.0%
+        16       0.23       0.0%
+        16       0.71       0.0%
+        16       0.23       5.0%
+         8       0.45       5.0% <- best
+        12       0.28       0.0%
+         8       0.33       0.0% <- best
+        12       0.35       5.0%
+        16       0.54       0.0%
+        16       0.89       0.0%
+        16       0.88       0.0%
+        16       1.16       0.0%
+        16       1.30       0.0%
+        16       1.18       0.0%
+        16       0.31      25.0%
+         8       0.17      35.0% <- best
+         8       0.97       0.0% <- best
+        12       0.86       0.0%
+         8       0.23      25.0% <- best
+         8       0.66       0.0% <- best
+        12       0.57       0.0%
+         8       0.98       0.0% <- best
+        12       0.41      10.0%
+         8       0.67       0.0% <- best
+        12       0.70       0.0%
+        16       0.53       0.0%
+         8       0.51       0.0% <- best
+        12       0.84       0.0%
+        16       0.22      25.0%
+         8       0.16      20.0% <- best
+         8       0.29       5.0% <- best
+        12       0.48       0.0%
+        16       1.13       0.0%
+        16       0.42      25.0%
+         8       0.24      10.0% <- best
+         8       1.24       0.0% <- best
+        12       0.78       0.0%
+         8       0.95       0.0% <- best
+        12       0.21      15.0%
+         8       0.52       0.0% <- best
+        12       1.26       0.0%
+        16       0.59       0.0%
+         8       1.31       0.0% <- best
+        16       0.43      20.0%
+         8       0.28       5.0% <- best
+         8       0.23       5.0% <- best
+         8       0.17       0.0% <- best
+         8       0.18       0.0% <- best
+  Best: 8 workers @ 1.31 tiles/s
+  Checkpoint preserved (some assets failed).
+
+  STAC fetch complete: 949 ok / 51 failed
+        fetched ok=949 fail=51
+  [2/4] QC (min_valid_ratio=0.8) ...
+  QC [1000/1000] passed=892
+QC complete: 892 passed, 108 failed (1000 total)
+        QC passed 892 / 1000
+  [3/4] triage ...
+  Triage [892/892] high=892 low=0 contradiction=0
+Triage complete: 892 high / 0 low / 0 contradiction (892 total)
+        accepted 892
+  [4/4] assemble -> C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_africa_water_v1
+C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\fetch_v1_overnight.py:221: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "completed_at"   : datetime.utcnow().isoformat() + "Z",
+  [892/892] saved=892 failed=0
+
+Dataset assembled: 892 tiles saved, 0 failed
+  Images:   C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_africa_water_v1\images
+  Manifest: C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_africa_water_v1\manifest.json
+  Summary:  C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_africa_water_v1\summary.csv
+
+Tiles by asset type:
+asset_type
+water.storage_tank        650
+water.treatment.plant     129
+water.wastewater.plant    113
+
+Tiles by source/modality:
+source
+stac_sentinel2_ms+sentinel1    892
+
+Temporal tiles: 0 / 892
+  [done] africa/water in 2624s — 892 tiles assembled
+
+>>> [16/28] africa/transport (n=5,297)
+
+========================================================================
+CELL  africa/transport   (2026-06-06 14:42:55)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_africa_transport_v1\_SUCCESS already exists
+
+>>> [17/28] asia/telecom (n=32)
+
+========================================================================
+CELL  asia/telecom   (2026-06-06 14:42:55)
+========================================================================
+  loaded 32 assets from asia_telecom_v1_sample.parquet
+  [1/4] STAC fetch ...
+STACImageryFetcher: modalities=['sentinel2_ms', 'sentinel1'], n_bands=9, temporal_stack=False, buffer_m=300, workers=8 (adaptive)
+  STAC fetch: 32 assets pending (0 already checkpointed)
+  [10/32] (31%) ok=10 fail=0 workers=8
+  [20/32] (62%) ok=20 fail=0 workers=8
+  [concurrency] workers=16 | throughput=0.3 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\curation\stac_imagery.py:240: RuntimeWarning: invalid value encountered in log10
+  arr = np.where(arr > 0, 10 * np.log10(arr + 1e-10), vmin)
+  [30/32] (94%) ok=30 fail=0 workers=16
+  [32/32] (100%) ok=32 fail=0 workers=16
+
+  Concurrency tuning summary:
+   workers    tiles/s  fail_rate
+         8       0.33       0.0% <- best
+  Best: 8 workers @ 0.33 tiles/s
+
+  STAC fetch complete: 32 ok / 0 failed
+        fetched ok=32 fail=0
+  [2/4] QC (min_valid_ratio=0.8) ...
+  QC [32/32] passed=28
+QC complete: 28 passed, 4 failed (32 total)
+        QC passed 28 / 32
+  [3/4] triage ...
+  Triage [28/28] high=28 low=0 contradiction=0
+Triage complete: 28 high / 0 low / 0 contradiction (28 total)
+        accepted 28
+  [4/4] assemble -> C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_asia_telecom_v1
+C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\fetch_v1_overnight.py:221: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "completed_at"   : datetime.utcnow().isoformat() + "Z",
+  [28/28] saved=28 failed=0
+
+Dataset assembled: 28 tiles saved, 0 failed
+  Images:   C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_asia_telecom_v1\images
+  Manifest: C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_asia_telecom_v1\manifest.json
+  Summary:  C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_asia_telecom_v1\summary.csv
+
+Tiles by asset type:
+asset_type
+telecom.data_center    28
+
+Tiles by source/modality:
+source
+stac_sentinel2_ms+sentinel1    28
+
+Temporal tiles: 0 / 28
+  [done] asia/telecom in 91s — 28 tiles assembled
+
+>>> [18/28] asia/energy (n=1,000)
+
+========================================================================
+CELL  asia/energy   (2026-06-06 14:44:26)
+========================================================================
+  loaded 1,000 assets from asia_energy_v1_sample.parquet
+  [1/4] STAC fetch ...
+STACImageryFetcher: modalities=['sentinel2_ms', 'sentinel1'], n_bands=9, temporal_stack=False, buffer_m=300, workers=8 (adaptive)
+  STAC fetch: 1000 assets pending (0 already checkpointed)
+  [10/1000] (1%) ok=10 fail=0 workers=8
+C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\curation\stac_imagery.py:240: RuntimeWarning: invalid value encountered in log10
+  arr = np.where(arr > 0, 10 * np.log10(arr + 1e-10), vmin)
+  [20/1000] (2%) ok=20 fail=0 workers=8
+  [concurrency] workers=16 | throughput=0.2 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [30/1000] (3%) ok=30 fail=0 workers=16
+  [40/1000] (4%) ok=39 fail=1 workers=16
+  [concurrency] workers=8 | throughput=0.1 tiles/s | fail_rate=5.0% | v decrease (throughput degrading)
+  [50/1000] (5%) ok=49 fail=1 workers=8
+  [60/1000] (6%) ok=59 fail=1 workers=8
+  [concurrency] workers=16 | throughput=0.3 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [70/1000] (7%) ok=66 fail=4 workers=16
+  [80/1000] (8%) ok=76 fail=4 workers=16
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=15.0% | v back off (high fail rate)
+  [90/1000] (9%) ok=83 fail=7 workers=8
+  [100/1000] (10%) ok=93 fail=7 workers=8
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=15.0% | v back off (high fail rate)
+  [110/1000] (11%) ok=103 fail=7 workers=8
+  [120/1000] (12%) ok=113 fail=7 workers=8
+  [concurrency] workers=16 | throughput=0.6 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [130/1000] (13%) ok=123 fail=7 workers=16
+  [140/1000] (14%) ok=133 fail=7 workers=16
+  [concurrency] workers=8 | throughput=0.4 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [150/1000] (15%) ok=143 fail=7 workers=8
+  [160/1000] (16%) ok=153 fail=7 workers=8
+  [concurrency] workers=12 | throughput=0.4 tiles/s | fail_rate=0.0% | -> nudge up
+  [170/1000] (17%) ok=156 fail=14 workers=12
+  [180/1000] (18%) ok=165 fail=15 workers=12
+  [concurrency] workers=8 | throughput=0.6 tiles/s | fail_rate=40.0% | v back off (high fail rate)
+  [190/1000] (19%) ok=175 fail=15 workers=8
+  [200/1000] (20%) ok=185 fail=15 workers=8
+  [concurrency] workers=16 | throughput=0.9 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [210/1000] (21%) ok=195 fail=15 workers=16
+  checkpoint saved at 200 ok tiles
+  [220/1000] (22%) ok=205 fail=15 workers=16
+  [concurrency] workers=8 | throughput=0.7 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [230/1000] (23%) ok=215 fail=15 workers=8
+  [240/1000] (24%) ok=224 fail=16 workers=8
+  [concurrency] workers=8 | throughput=0.4 tiles/s | fail_rate=5.0% | v decrease (throughput degrading)
+  [250/1000] (25%) ok=232 fail=18 workers=8
+  [260/1000] (26%) ok=242 fail=18 workers=8
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=10.0% | v decrease (throughput degrading)
+  [270/1000] (27%) ok=252 fail=18 workers=8
+  [280/1000] (28%) ok=262 fail=18 workers=8
+  [concurrency] workers=12 | throughput=0.4 tiles/s | fail_rate=0.0% | -> nudge up
+  [290/1000] (29%) ok=272 fail=18 workers=12
+  [300/1000] (30%) ok=282 fail=18 workers=12
+  [concurrency] workers=16 | throughput=0.6 tiles/s | fail_rate=0.0% | -> nudge up
+  [310/1000] (31%) ok=292 fail=18 workers=16
+  [320/1000] (32%) ok=301 fail=19 workers=16
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=5.0% | v decrease (throughput degrading)
+  [330/1000] (33%) ok=309 fail=21 workers=8
+  [340/1000] (34%) ok=319 fail=21 workers=8
+  [concurrency] workers=12 | throughput=0.3 tiles/s | fail_rate=10.0% | -> nudge up
+  [350/1000] (35%) ok=329 fail=21 workers=12
+  [360/1000] (36%) ok=334 fail=26 workers=12
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=25.0% | v back off (high fail rate)
+  [370/1000] (37%) ok=344 fail=26 workers=8
+  [380/1000] (38%) ok=354 fail=26 workers=8
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [390/1000] (39%) ok=360 fail=30 workers=8
+  [400/1000] (40%) ok=369 fail=31 workers=8
+  [concurrency] workers=8 | throughput=0.1 tiles/s | fail_rate=25.0% | v back off (high fail rate)
+  [410/1000] (41%) ok=379 fail=31 workers=8
+  [420/1000] (42%) ok=389 fail=31 workers=8
+  [concurrency] workers=12 | throughput=0.4 tiles/s | fail_rate=0.0% | -> nudge up
+  [430/1000] (43%) ok=399 fail=31 workers=12
+  checkpoint saved at 400 ok tiles
+  [440/1000] (44%) ok=409 fail=31 workers=12
+  [concurrency] workers=8 | throughput=0.3 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [450/1000] (45%) ok=419 fail=31 workers=8
+  [460/1000] (46%) ok=428 fail=32 workers=8
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=5.0% | v decrease (throughput degrading)
+  [470/1000] (47%) ok=438 fail=32 workers=8
+  [480/1000] (48%) ok=446 fail=34 workers=8
+  [concurrency] workers=12 | throughput=0.3 tiles/s | fail_rate=10.0% | -> nudge up
+  [490/1000] (49%) ok=454 fail=36 workers=12
+  [500/1000] (50%) ok=461 fail=39 workers=12
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=25.0% | v back off (high fail rate)
+  [510/1000] (51%) ok=471 fail=39 workers=8
+  [520/1000] (52%) ok=481 fail=39 workers=8
+  [concurrency] workers=12 | throughput=0.2 tiles/s | fail_rate=0.0% | -> nudge up
+  [530/1000] (53%) ok=486 fail=44 workers=12
+  [540/1000] (54%) ok=496 fail=44 workers=12
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=25.0% | v back off (high fail rate)
+  [550/1000] (55%) ok=506 fail=44 workers=8
+  [560/1000] (56%) ok=512 fail=48 workers=8
+  [concurrency] workers=8 | throughput=0.4 tiles/s | fail_rate=20.0% | v back off (high fail rate)
+  [570/1000] (57%) ok=522 fail=48 workers=8
+  [580/1000] (58%) ok=531 fail=49 workers=8
+  [concurrency] workers=8 | throughput=0.4 tiles/s | fail_rate=5.0% | v decrease (throughput degrading)
+  [590/1000] (59%) ok=538 fail=52 workers=8
+  [600/1000] (60%) ok=547 fail=53 workers=8
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=20.0% | v back off (high fail rate)
+  [610/1000] (61%) ok=555 fail=55 workers=8
+  [620/1000] (62%) ok=562 fail=58 workers=8
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=25.0% | v back off (high fail rate)
+  [630/1000] (63%) ok=572 fail=58 workers=8
+  [640/1000] (64%) ok=581 fail=59 workers=8
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=5.0% | v decrease (throughput degrading)
+  [650/1000] (65%) ok=587 fail=63 workers=8
+  [660/1000] (66%) ok=596 fail=64 workers=8
+  [concurrency] workers=8 | throughput=0.1 tiles/s | fail_rate=25.0% | v back off (high fail rate)
+  checkpoint saved at 600 ok tiles
+  [670/1000] (67%) ok=605 fail=65 workers=8
+  [680/1000] (68%) ok=615 fail=65 workers=8
+  [concurrency] workers=12 | throughput=0.2 tiles/s | fail_rate=5.0% | -> nudge up
+  [690/1000] (69%) ok=621 fail=69 workers=12
+  [700/1000] (70%) ok=629 fail=71 workers=12
+  [concurrency] workers=8 | throughput=0.1 tiles/s | fail_rate=30.0% | v back off (high fail rate)
+  [710/1000] (71%) ok=639 fail=71 workers=8
+  [720/1000] (72%) ok=648 fail=72 workers=8
+  [concurrency] workers=12 | throughput=0.2 tiles/s | fail_rate=5.0% | -> nudge up
+  [730/1000] (73%) ok=657 fail=73 workers=12
+  [740/1000] (74%) ok=667 fail=73 workers=12
+  [concurrency] workers=16 | throughput=0.2 tiles/s | fail_rate=5.0% | -> nudge up
+  [750/1000] (75%) ok=672 fail=78 workers=16
+  [760/1000] (76%) ok=682 fail=78 workers=16
+  [concurrency] workers=8 | throughput=0.1 tiles/s | fail_rate=25.0% | v back off (high fail rate)
+  [770/1000] (77%) ok=692 fail=78 workers=8
+  [780/1000] (78%) ok=701 fail=79 workers=8
+  [concurrency] workers=12 | throughput=0.2 tiles/s | fail_rate=5.0% | -> nudge up
+  [790/1000] (79%) ok=711 fail=79 workers=12
+  [800/1000] (80%) ok=721 fail=79 workers=12
+  [concurrency] workers=16 | throughput=0.2 tiles/s | fail_rate=0.0% | -> nudge up
+  [810/1000] (81%) ok=731 fail=79 workers=16
+  [820/1000] (82%) ok=739 fail=81 workers=16
+  [concurrency] workers=16 | throughput=0.3 tiles/s | fail_rate=10.0% | -> nudge up
+  [830/1000] (83%) ok=749 fail=81 workers=16
+  [840/1000] (84%) ok=757 fail=83 workers=16
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=10.0% | v decrease (throughput degrading)
+  [850/1000] (85%) ok=767 fail=83 workers=8
+  [860/1000] (86%) ok=775 fail=85 workers=8
+  [concurrency] workers=12 | throughput=0.2 tiles/s | fail_rate=10.0% | -> nudge up
+  [870/1000] (87%) ok=785 fail=85 workers=12
+  [880/1000] (88%) ok=795 fail=85 workers=12
+  [concurrency] workers=16 | throughput=0.4 tiles/s | fail_rate=0.0% | -> nudge up
+  checkpoint saved at 800 ok tiles
+  [890/1000] (89%) ok=805 fail=85 workers=16
+  [900/1000] (90%) ok=814 fail=86 workers=16
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=5.0% | v decrease (throughput degrading)
+  [910/1000] (91%) ok=824 fail=86 workers=8
+  [920/1000] (92%) ok=834 fail=86 workers=8
+  [concurrency] workers=12 | throughput=0.7 tiles/s | fail_rate=0.0% | -> nudge up
+  [930/1000] (93%) ok=844 fail=86 workers=12
+  [940/1000] (94%) ok=854 fail=86 workers=12
+  [concurrency] workers=8 | throughput=0.6 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [950/1000] (95%) ok=864 fail=86 workers=8
+  [960/1000] (96%) ok=874 fail=86 workers=8
+  [concurrency] workers=8 | throughput=0.4 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [970/1000] (97%) ok=884 fail=86 workers=8
+  [980/1000] (98%) ok=894 fail=86 workers=8
+  [concurrency] workers=12 | throughput=0.5 tiles/s | fail_rate=0.0% | -> nudge up
+  [990/1000] (99%) ok=904 fail=86 workers=12
+  [1000/1000] (100%) ok=914 fail=86 workers=12
+  [concurrency] workers=8 | throughput=0.3 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+
+  Concurrency tuning summary:
+   workers    tiles/s  fail_rate
+         8       0.24       0.0% <- best
+        16       0.10       5.0%
+         8       0.29       0.0% <- best
+        16       0.18      15.0%
+         8       0.19      15.0% <- best
+         8       0.56       0.0% <- best
+        16       0.40       0.0%
+         8       0.42       0.0% <- best
+        12       0.56      40.0%
+         8       0.93       0.0% <- best
+        16       0.73       0.0%
+         8       0.45       5.0% <- best
+         8       0.18      10.0% <- best
+         8       0.37       0.0% <- best
+        12       0.60       0.0%
+        16       0.17       5.0%
+         8       0.31      10.0% <- best
+        12       0.19      25.0%
+         8       0.16       0.0% <- best
+         8       0.13      25.0% <- best
+         8       0.39       0.0% <- best
+        12       0.29       0.0%
+         8       0.21       5.0% <- best
+         8       0.29      10.0% <- best
+        12       0.15      25.0%
+         8       0.18       0.0% <- best
+        12       0.21      25.0%
+         8       0.42      20.0% <- best
+         8       0.35       5.0% <- best
+         8       0.20      20.0% <- best
+         8       0.21      25.0% <- best
+         8       0.17       5.0% <- best
+         8       0.12      25.0% <- best
+         8       0.20       5.0% <- best
+        12       0.10      30.0%
+         8       0.20       5.0% <- best
+        12       0.24       5.0%
+        16       0.15      25.0%
+         8       0.22       5.0% <- best
+        12       0.23       0.0%
+        16       0.28      10.0%
+        16       0.16      10.0%
+         8       0.24      10.0% <- best
+        12       0.40       0.0%
+        16       0.24       5.0%
+         8       0.67       0.0% <- best
+        12       0.57       0.0%
+         8       0.39       0.0% <- best
+         8       0.49       0.0% <- best
+        12       0.27       0.0%
+  Best: 8 workers @ 0.93 tiles/s
+  Checkpoint preserved (some assets failed).
+
+  STAC fetch complete: 914 ok / 86 failed
+        fetched ok=914 fail=86
+  [2/4] QC (min_valid_ratio=0.8) ...
+  QC [1000/1000] passed=889
+QC complete: 889 passed, 111 failed (1000 total)
+        QC passed 889 / 1000
+  [3/4] triage ...
+  Triage [889/889] high=889 low=0 contradiction=0
+Triage complete: 889 high / 0 low / 0 contradiction (889 total)
+        accepted 889
+  [4/4] assemble -> C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_asia_energy_v1
+C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\fetch_v1_overnight.py:221: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "completed_at"   : datetime.utcnow().isoformat() + "Z",
+  [889/889] saved=889 failed=0
+
+Dataset assembled: 889 tiles saved, 0 failed
+  Images:   C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_asia_energy_v1\images
+  Manifest: C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_asia_energy_v1\manifest.json
+  Summary:  C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_asia_energy_v1\summary.csv
+
+Tiles by asset type:
+asset_type
+energy.distribution.substation_untyped    520
+energy.generation.solar_farm              102
+energy.transmission.substation             72
+energy.generation.power_plant              68
+energy.distribution.substation             67
+energy.distribution.substation_minor       58
+energy.generation.wind_farm                 2
+
+Tiles by source/modality:
+source
+stac_sentinel2_ms+sentinel1    889
+
+Temporal tiles: 0 / 889
+  [done] asia/energy in 3775s — 889 tiles assembled
+
+>>> [19/28] asia/water (n=1,000)
+
+========================================================================
+CELL  asia/water   (2026-06-06 15:47:21)
+========================================================================
+  loaded 1,000 assets from asia_water_v1_sample.parquet
+  [1/4] STAC fetch ...
+STACImageryFetcher: modalities=['sentinel2_ms', 'sentinel1'], n_bands=9, temporal_stack=False, buffer_m=300, workers=8 (adaptive)
+  STAC fetch: 1000 assets pending (0 already checkpointed)
+  [10/1000] (1%) ok=10 fail=0 workers=8
+C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\curation\stac_imagery.py:240: RuntimeWarning: invalid value encountered in log10
+  arr = np.where(arr > 0, 10 * np.log10(arr + 1e-10), vmin)
+  [20/1000] (2%) ok=20 fail=0 workers=8
+  [concurrency] workers=16 | throughput=0.1 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [30/1000] (3%) ok=30 fail=0 workers=16
+  [40/1000] (4%) ok=40 fail=0 workers=16
+  [concurrency] workers=16 | throughput=0.3 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [50/1000] (5%) ok=50 fail=0 workers=16
+  [60/1000] (6%) ok=60 fail=0 workers=16
+  [concurrency] workers=8 | throughput=0.1 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [70/1000] (7%) ok=70 fail=0 workers=8
+  [80/1000] (8%) ok=80 fail=0 workers=8
+  [concurrency] workers=12 | throughput=0.2 tiles/s | fail_rate=0.0% | -> nudge up
+  [90/1000] (9%) ok=90 fail=0 workers=12
+  [100/1000] (10%) ok=99 fail=1 workers=12
+  [concurrency] workers=8 | throughput=0.1 tiles/s | fail_rate=5.0% | v decrease (throughput degrading)
+  [110/1000] (11%) ok=105 fail=5 workers=8
+  [120/1000] (12%) ok=115 fail=5 workers=8
+  [concurrency] workers=8 | throughput=0.4 tiles/s | fail_rate=20.0% | v back off (high fail rate)
+  [130/1000] (13%) ok=122 fail=8 workers=8
+  [140/1000] (14%) ok=132 fail=8 workers=8
+  [concurrency] workers=8 | throughput=0.3 tiles/s | fail_rate=15.0% | v back off (high fail rate)
+  [150/1000] (15%) ok=142 fail=8 workers=8
+  [160/1000] (16%) ok=152 fail=8 workers=8
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [170/1000] (17%) ok=162 fail=8 workers=8
+  [180/1000] (18%) ok=172 fail=8 workers=8
+  [concurrency] workers=16 | throughput=0.6 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [190/1000] (19%) ok=180 fail=10 workers=16
+  [200/1000] (20%) ok=189 fail=11 workers=16
+  [concurrency] workers=8 | throughput=0.1 tiles/s | fail_rate=15.0% | v back off (high fail rate)
+  [210/1000] (21%) ok=199 fail=11 workers=8
+  checkpoint saved at 200 ok tiles
+  [220/1000] (22%) ok=209 fail=11 workers=8
+  [concurrency] workers=12 | throughput=0.5 tiles/s | fail_rate=0.0% | -> nudge up
+  [230/1000] (23%) ok=218 fail=12 workers=12
+  [240/1000] (24%) ok=228 fail=12 workers=12
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=5.0% | v decrease (throughput degrading)
+  [250/1000] (25%) ok=238 fail=12 workers=8
+  [260/1000] (26%) ok=248 fail=12 workers=8
+  [concurrency] workers=12 | throughput=0.5 tiles/s | fail_rate=0.0% | -> nudge up
+  [270/1000] (27%) ok=258 fail=12 workers=12
+  [280/1000] (28%) ok=268 fail=12 workers=12
+  [concurrency] workers=16 | throughput=0.6 tiles/s | fail_rate=0.0% | -> nudge up
+  [290/1000] (29%) ok=277 fail=13 workers=16
+  [300/1000] (30%) ok=287 fail=13 workers=16
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=5.0% | v decrease (throughput degrading)
+  [310/1000] (31%) ok=297 fail=13 workers=8
+  [320/1000] (32%) ok=307 fail=13 workers=8
+  [concurrency] workers=16 | throughput=0.6 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [330/1000] (33%) ok=317 fail=13 workers=16
+  [340/1000] (34%) ok=327 fail=13 workers=16
+  [concurrency] workers=8 | throughput=0.5 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [350/1000] (35%) ok=337 fail=13 workers=8
+  [360/1000] (36%) ok=347 fail=13 workers=8
+  [concurrency] workers=16 | throughput=1.0 tiles/s | fail_rate=0.0% | ^ increase (throughput improving)
+  [370/1000] (37%) ok=357 fail=13 workers=16
+  [380/1000] (38%) ok=367 fail=13 workers=16
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [390/1000] (39%) ok=377 fail=13 workers=8
+  [400/1000] (40%) ok=387 fail=13 workers=8
+  [concurrency] workers=8 | throughput=0.1 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [410/1000] (41%) ok=397 fail=13 workers=8
+  checkpoint saved at 400 ok tiles
+  [420/1000] (42%) ok=407 fail=13 workers=8
+  [concurrency] workers=12 | throughput=0.3 tiles/s | fail_rate=0.0% | -> nudge up
+  [430/1000] (43%) ok=413 fail=17 workers=12
+  [440/1000] (44%) ok=421 fail=19 workers=12
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=30.0% | v back off (high fail rate)
+  [450/1000] (45%) ok=431 fail=19 workers=8
+  [460/1000] (46%) ok=441 fail=19 workers=8
+  [concurrency] workers=12 | throughput=0.2 tiles/s | fail_rate=0.0% | -> nudge up
+  [470/1000] (47%) ok=448 fail=22 workers=12
+  [480/1000] (48%) ok=458 fail=22 workers=12
+  [concurrency] workers=8 | throughput=0.1 tiles/s | fail_rate=15.0% | v back off (high fail rate)
+  [490/1000] (49%) ok=468 fail=22 workers=8
+  [500/1000] (50%) ok=478 fail=22 workers=8
+  [concurrency] workers=12 | throughput=0.2 tiles/s | fail_rate=0.0% | -> nudge up
+  [510/1000] (51%) ok=488 fail=22 workers=12
+  [520/1000] (52%) ok=498 fail=22 workers=12
+  [concurrency] workers=8 | throughput=0.1 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [530/1000] (53%) ok=508 fail=22 workers=8
+  [540/1000] (54%) ok=518 fail=22 workers=8
+  [concurrency] workers=12 | throughput=0.7 tiles/s | fail_rate=0.0% | -> nudge up
+  [550/1000] (55%) ok=528 fail=22 workers=12
+  [560/1000] (56%) ok=538 fail=22 workers=12
+  [concurrency] workers=16 | throughput=0.7 tiles/s | fail_rate=0.0% | -> nudge up
+  [570/1000] (57%) ok=548 fail=22 workers=16
+  [580/1000] (58%) ok=558 fail=22 workers=16
+  [concurrency] workers=16 | throughput=0.9 tiles/s | fail_rate=0.0% | -> nudge up
+  [590/1000] (59%) ok=568 fail=22 workers=16
+  [600/1000] (60%) ok=574 fail=26 workers=16
+  [concurrency] workers=8 | throughput=0.3 tiles/s | fail_rate=20.0% | v back off (high fail rate)
+  [610/1000] (61%) ok=584 fail=26 workers=8
+  [620/1000] (62%) ok=594 fail=26 workers=8
+  [concurrency] workers=12 | throughput=0.9 tiles/s | fail_rate=0.0% | -> nudge up
+  checkpoint saved at 600 ok tiles
+  [630/1000] (63%) ok=604 fail=26 workers=12
+  [640/1000] (64%) ok=609 fail=31 workers=12
+  [concurrency] workers=8 | throughput=0.3 tiles/s | fail_rate=25.0% | v back off (high fail rate)
+  [650/1000] (65%) ok=619 fail=31 workers=8
+  [660/1000] (66%) ok=627 fail=33 workers=8
+  [concurrency] workers=12 | throughput=0.3 tiles/s | fail_rate=10.0% | -> nudge up
+  [670/1000] (67%) ok=637 fail=33 workers=12
+  [680/1000] (68%) ok=647 fail=33 workers=12
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [690/1000] (69%) ok=656 fail=34 workers=8
+  [700/1000] (70%) ok=664 fail=36 workers=8
+  [concurrency] workers=8 | throughput=0.1 tiles/s | fail_rate=15.0% | v back off (high fail rate)
+  [710/1000] (71%) ok=674 fail=36 workers=8
+  [720/1000] (72%) ok=684 fail=36 workers=8
+  [concurrency] workers=12 | throughput=0.1 tiles/s | fail_rate=0.0% | -> nudge up
+  [730/1000] (73%) ok=693 fail=37 workers=12
+  [740/1000] (74%) ok=703 fail=37 workers=12
+  [concurrency] workers=16 | throughput=0.3 tiles/s | fail_rate=5.0% | -> nudge up
+  [750/1000] (75%) ok=712 fail=38 workers=16
+  [760/1000] (76%) ok=721 fail=39 workers=16
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=10.0% | v decrease (throughput degrading)
+  [770/1000] (77%) ok=731 fail=39 workers=8
+  [780/1000] (78%) ok=741 fail=39 workers=8
+  [concurrency] workers=12 | throughput=0.2 tiles/s | fail_rate=0.0% | -> nudge up
+  [790/1000] (79%) ok=751 fail=39 workers=12
+  [800/1000] (80%) ok=760 fail=40 workers=12
+  [concurrency] workers=16 | throughput=0.2 tiles/s | fail_rate=5.0% | -> nudge up
+  [810/1000] (81%) ok=769 fail=41 workers=16
+  [820/1000] (82%) ok=777 fail=43 workers=16
+  [concurrency] workers=8 | throughput=0.1 tiles/s | fail_rate=15.0% | v back off (high fail rate)
+  [830/1000] (83%) ok=787 fail=43 workers=8
+  [840/1000] (84%) ok=797 fail=43 workers=8
+  [concurrency] workers=12 | throughput=0.3 tiles/s | fail_rate=0.0% | -> nudge up
+  checkpoint saved at 800 ok tiles
+  [850/1000] (85%) ok=807 fail=43 workers=12
+  [860/1000] (86%) ok=817 fail=43 workers=12
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [870/1000] (87%) ok=825 fail=45 workers=8
+  [880/1000] (88%) ok=835 fail=45 workers=8
+  [concurrency] workers=12 | throughput=0.2 tiles/s | fail_rate=10.0% | -> nudge up
+  [890/1000] (89%) ok=845 fail=45 workers=12
+  [900/1000] (90%) ok=855 fail=45 workers=12
+  [concurrency] workers=16 | throughput=0.3 tiles/s | fail_rate=0.0% | -> nudge up
+  [910/1000] (91%) ok=865 fail=45 workers=16
+  [920/1000] (92%) ok=875 fail=45 workers=16
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=0.0% | v decrease (throughput degrading)
+  [930/1000] (93%) ok=885 fail=45 workers=8
+  [940/1000] (94%) ok=895 fail=45 workers=8
+  [concurrency] workers=12 | throughput=0.2 tiles/s | fail_rate=0.0% | -> nudge up
+  [950/1000] (95%) ok=905 fail=45 workers=12
+  [960/1000] (96%) ok=914 fail=46 workers=12
+  [concurrency] workers=16 | throughput=0.3 tiles/s | fail_rate=5.0% | -> nudge up
+  [970/1000] (97%) ok=924 fail=46 workers=16
+  [980/1000] (98%) ok=932 fail=48 workers=16
+  [concurrency] workers=8 | throughput=0.2 tiles/s | fail_rate=10.0% | v decrease (throughput degrading)
+  [990/1000] (99%) ok=938 fail=52 workers=8

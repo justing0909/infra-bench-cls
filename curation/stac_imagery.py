@@ -564,7 +564,14 @@ class STACImageryFetcher:
 
     def _get_catalog(self):
         import pystac_client
-        return pystac_client.Client.open(STAC_ENDPOINT)
+        # Explicit (connect, read) timeout. Without this, the underlying
+        # `requests` session has no default timeout, so a stale TCP
+        # connection on flaky wifi can block a worker thread forever —
+        # no exception is raised, the retry loop never runs, and the
+        # whole fetch process eventually appears hung. The GDAL_HTTP_*
+        # env vars only cover rasterio's HTTP path; pystac_client uses
+        # its own session and needs its own timeout.
+        return pystac_client.Client.open(STAC_ENDPOINT, timeout=(15, 60))
 
     def _build_temporal_windows(self) -> List[Tuple[str, str]]:
         end_year = int(self.date_end[:4])

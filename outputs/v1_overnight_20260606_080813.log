@@ -1,0 +1,144 @@
+v1 overnight fetch — 28 cell(s) planned
+  samples_dir     = C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\PIPELINE\03-v1-samples
+  datasets_dir    = C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets
+  checkpoints_dir = C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\checkpoints\v1
+  modalities      = ['sentinel2_ms', 'sentinel1']
+  buffer_m        = 300  (=> 600m tile)
+  workers         = 8/16
+  order           = smallest_per_region
+
+idx  region               sector       n_assets
+  0  central-america      telecom             1
+  1  central-america      transport         570
+  2  central-america      water           2,591
+  3  central-america      energy          2,612
+  4  australia-oceania    telecom            12
+  5  australia-oceania    transport       2,178
+  6  australia-oceania    energy          6,492
+  7  australia-oceania    water          10,000
+  8  south-america        telecom             8
+  9  south-america        transport       3,997
+ 10  south-america        energy          9,999
+ 11  south-america        water          10,001
+ 12  africa               telecom             1
+ 13  africa               energy          1,000
+ 14  africa               water           1,000
+ 15  africa               transport       5,297
+ 16  asia                 telecom            32
+ 17  asia                 energy          1,000
+ 18  asia                 water           1,000
+ 19  asia                 transport       1,000
+ 20  north-america        telecom           279
+ 21  north-america        energy            999
+ 22  north-america        water           1,000
+ 23  north-america        transport       1,001
+ 24  europe               telecom           345
+ 25  europe               water           1,000
+ 26  europe               transport       1,000
+ 27  europe               energy          1,001
+     TOTAL                               65,416
+
+>>> [1/28] central-america/telecom (n=1)
+
+========================================================================
+CELL  central-america/telecom   (2026-06-06 08:08:14)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_central-america_telecom_v1\_SUCCESS already exists
+
+>>> [2/28] central-america/transport (n=570)
+
+========================================================================
+CELL  central-america/transport   (2026-06-06 08:08:14)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_central-america_transport_v1\_SUCCESS already exists
+
+>>> [3/28] central-america/water (n=2,591)
+
+========================================================================
+CELL  central-america/water   (2026-06-06 08:08:14)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_central-america_water_v1\_SUCCESS already exists
+
+>>> [4/28] central-america/energy (n=2,612)
+
+========================================================================
+CELL  central-america/energy   (2026-06-06 08:08:14)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_central-america_energy_v1\_SUCCESS already exists
+
+>>> [5/28] australia-oceania/telecom (n=12)
+
+========================================================================
+CELL  australia-oceania/telecom   (2026-06-06 08:08:14)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_australia-oceania_telecom_v1\_SUCCESS already exists
+
+>>> [6/28] australia-oceania/transport (n=2,178)
+
+========================================================================
+CELL  australia-oceania/transport   (2026-06-06 08:08:14)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_australia-oceania_transport_v1\_SUCCESS already exists
+
+>>> [7/28] australia-oceania/energy (n=6,492)
+
+========================================================================
+CELL  australia-oceania/energy   (2026-06-06 08:08:14)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_australia-oceania_energy_v1\_SUCCESS already exists
+
+>>> [8/28] australia-oceania/water (n=10,000)
+
+========================================================================
+CELL  australia-oceania/water   (2026-06-06 08:08:14)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_australia-oceania_water_v1\_SUCCESS already exists
+
+>>> [9/28] south-america/telecom (n=8)
+
+========================================================================
+CELL  south-america/telecom   (2026-06-06 08:08:14)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_south-america_telecom_v1\_SUCCESS already exists
+
+>>> [10/28] south-america/transport (n=3,997)
+
+========================================================================
+CELL  south-america/transport   (2026-06-06 08:08:14)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_south-america_transport_v1\_SUCCESS already exists
+
+>>> [11/28] south-america/energy (n=9,999)
+
+========================================================================
+CELL  south-america/energy   (2026-06-06 08:08:14)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_south-america_energy_v1\_SUCCESS already exists
+
+>>> [12/28] south-america/water (n=10,001)
+
+========================================================================
+CELL  south-america/water   (2026-06-06 08:08:14)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_south-america_water_v1\_SUCCESS already exists
+
+>>> [13/28] africa/telecom (n=1)
+
+========================================================================
+CELL  africa/telecom   (2026-06-06 08:08:14)
+========================================================================
+  [skip] C:\Users\j.guthrie\Downloads\RESEARCH\infra_fm\data\curated_datasets\dataset_africa_telecom_v1\_SUCCESS already exists
+
+>>> [14/28] africa/energy (n=1,000)
+
+========================================================================
+CELL  africa/energy   (2026-06-06 08:08:14)
+========================================================================
+  loaded 1,000 assets from africa_energy_v1_sample.parquet
+  [1/4] STAC fetch ...
+STACImageryFetcher: modalities=['sentinel2_ms', 'sentinel1'], n_bands=9, temporal_stack=False, buffer_m=300, workers=8 (adaptive)
+  Resuming from checkpoint: 633 tiles already fetched
+  STAC fetch: 367 assets pending (633 already checkpointed)
+  [640/1000] (64%) ok=640 fail=0 workers=8
+  [650/1000] (65%) ok=649 fail=1 workers=8
+  [concurrency] workers=16 | throughput=0.1 tiles/s | fail_rate=5.0% | ^ increase (throughput improving)
