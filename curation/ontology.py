@@ -266,10 +266,10 @@ WATER_CLASSES: tuple[AssetClass, ...] = (
         confidence="high",
     ),
     AssetClass(
-        # Matches the doc's `water.treatment.plant` (man_made=water_works);
-        # spec uses the short label "water_works" but we keep the doc
-        # hierarchy for naming consistency with energy.
-        name="water.treatment.plant",
+        # OSM `man_made=water_works`. Class name uses the short label
+        # directly (renamed from `water.treatment.plant` for consistency
+        # with the manuscript's "water works" terminology).
+        name="water.water_works",
         sector="water",
         tags=(("man_made", "water_works"),),
         dedup_distance_m=300.0,
