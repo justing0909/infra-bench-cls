@@ -143,7 +143,7 @@ This is the standard US convention — may vary internationally.
 
 | Asset Type | OSM Tags | Visual Confidence | Notes |
 |---|---|---|---|
-| `water.treatment.plant` | `man_made=water_works` | High | Water treatment facility |
+| `water.water_works` | `man_made=water_works` | High | Water works facility |
 | `water.wastewater.plant` | `man_made=wastewater_plant` | High | Wastewater processing |
 | `water.reservoir` | `landuse=reservoir` | High | System-scale storage |
 | `water.pumping_station` | `man_made=pumping_station` | Medium | Infrastructure node |
