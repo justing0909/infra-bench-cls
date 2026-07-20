@@ -1,3 +1,20 @@
+"""
+I/O utilities for the curated tile dataset.
+
+Contains the filename regex for both legacy GEE and current STAC tile
+naming conventions, plus helpers for:
+
+- `parse_asset_id_from_filename`: extract stable OSM asset ID from a
+  tile filename
+- `parse_band_indices`: parse comma-separated band-index strings
+  ("0,1,2,3,4,5,6" -> [0, 1, 2, 3, 4, 5, 6])
+- `resolve_path`, `load_table`, `find_default_summary`: locate the
+  manifest/summary CSV inside a curated dataset root
+- `infer_sector_from_asset_type`: canonical asset_type -> sector
+  (energy / water / transport / telecom)
+- `percentile_normalize`: per-band [2nd, 98th] percentile clip -> [0, 1]
+"""
+
 from __future__ import annotations
 
 # Changes from original:

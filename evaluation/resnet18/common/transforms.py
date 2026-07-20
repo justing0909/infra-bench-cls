@@ -1,3 +1,18 @@
+"""
+Image transforms for 9-band Sentinel-1 + Sentinel-2 tiles.
+
+Bypasses PIL (which caps at 4 channels) by operating directly on
+numpy HWC arrays via OpenCV. Includes:
+
+- `MultimodalResize`: bilinear resize preserving all channels
+- `MultimodalAugment`: random crop + horizontal flip for arbitrary-band
+  arrays
+- `TwoCropTransform`: paired-view wrapper (used only by archived
+  SimCLR pretraining; kept for backward compatibility with any
+  experiment_grid rerun from archive/)
+- `build_eval_transform` / `build_simclr_transform`: transform builders
+"""
+
 from __future__ import annotations
 
 import cv2

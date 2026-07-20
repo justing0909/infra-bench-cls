@@ -1,3 +1,15 @@
+"""
+Small PyTorch / experiment helpers shared by the ResNet-18 baselines.
+
+- `set_seed(seed)`: seed random / numpy / torch (CPU + CUDA)
+- `choose_device(name=None)`: return torch.device
+- `count_trainable_params(model)`
+- `ensure_dir(path)`: mkdir -p equivalent, returns Path
+- `save_json(path, payload)`: pretty-printed JSON writer (dataclass-aware)
+- `save_checkpoint(path, state)`: torch.save wrapper
+- `worker_init_fn(worker_id)`: DataLoader worker seeding
+"""
+
 from __future__ import annotations
 
 import json

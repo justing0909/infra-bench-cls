@@ -1,3 +1,16 @@
+"""
+Dataset wrapper for the curated .npy tile files.
+
+`NpyInfrastructureDataset` reads a manifest / summary CSV produced by
+the curation/ pipeline, resolves each tile path, applies per-tile band
+selection and percentile normalization, and yields (image, label)
+tuples suitable for DataLoader.
+
+Used by both ResNet-18 baselines. Foundation-model notebooks use their
+own per-FM Dataset wrappers because they need FM-specific normalization
+and band mappings.
+"""
+
 from __future__ import annotations
 
 # Changes from original:
