@@ -257,10 +257,6 @@ parquet. This is a deliberate compute-budget decision, not a bug.
 index, then resolves ways in a second internal pass — the way count
 doesn't update during the first pass.
 
-**Planetary Computer is unreliable from home wifi.** Residential NAT
-and ISP throttling cause sporadic STAC-fetch failures at scale. Use
-campus / institutional network for large fetches.
-
 **Large parquets cause Colab RAM issues.** Load only the columns you
 need:
 
@@ -268,7 +264,7 @@ need:
 df = pd.read_parquet(path)[['asset_id', 'asset_type', 'lat', 'lon']].copy()
 ```
 
-**Prithvi's HuggingFace loader is fragile.** Requires
+**Prithvi's HuggingFace loader can be fragile.** Requires
 `trust_remote_code=True` and `num_labels=0`; TerraTorch's
 scipy/dask/rapids conflict is documented in the Prithvi notebook.
 
@@ -314,6 +310,8 @@ above).
 
 ## Authors
 
-- **Justin Guthrie** (lead author) — Northeastern University
+- **Justin Guthrie** (lead author) — Northeastern University, George Mason University, Enodia Inc.
 - **Edward Oughton** (advisor) — George Mason University
-- **Jack Watson** — Northeastern University / Enodia Inc.
+- **Konrad Wessels** (coauthor) — George Mason University
+- **Matthew Rice** (coauthor) — George Mason University
+- **Isaac Corley** (coauthor) — Taylor Geospatial
