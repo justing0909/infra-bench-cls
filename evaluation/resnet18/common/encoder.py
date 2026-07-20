@@ -1,3 +1,17 @@
+"""
+ResNet-18/50 encoder backbone for the ResNet-18 baselines.
+
+Used by both the supervised ResNet-18 and the Random Features (frozen
+random-init) baselines. Wraps torchvision's ResNet with two adaptations
+for multimodal Infra-Bench tiles:
+
+- First-conv expansion from 3 to N input channels (default 9 for
+  Sentinel-1 VV/VH + Sentinel-2 [B02, B03, B04, B08, B8A, B11, B12]).
+- Final FC replaced with Identity so the encoder outputs feature
+  vectors of `feature_dim` (512 for ResNet-18, 2048 for ResNet-50);
+  the classification head is separate (`LinearClassifier` below).
+"""
+
 from __future__ import annotations
 
 import torch
@@ -29,40 +43,6 @@ class EncoderBackbone(nn.Module):
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         return self.encoder(x)
 
-
-class SimCLRModel(nn.Module):
-    def __init__(self, backbone_name: str = "resnet18", pretrained_backbone: bool = False,
-                 projection_dim: int = 128, in_channels: int = 3):
-        super().__init__()
-        if backbone_name == "resnet18":
-            net = resnet18(weights="DEFAULT" if pretrained_backbone else None)
-            feat_dim = net.fc.in_features
-        elif backbone_name == "resnet50":
-            net = resnet50(weights="DEFAULT" if pretrained_backbone else None)
-            feat_dim = net.fc.in_features
-        else:
-            raise ValueError(f"Unsupported backbone: {backbone_name}")
-
-        if in_channels != 3:
-            old = net.conv1
-            net.conv1 = nn.Conv2d(in_channels, old.out_channels,
-                kernel_size=old.kernel_size, stride=old.stride,
-                padding=old.padding, bias=False)
-
-        net.fc = nn.Identity()
-        self.backbone = net          # directly, no EncoderBackbone wrapper
-        self.feature_dim = feat_dim  # expose for LinearClassifier
-        self.projector = nn.Sequential(
-            nn.Linear(feat_dim, feat_dim),
-            nn.ReLU(inplace=True),
-            nn.Linear(feat_dim, projection_dim),
-        )
-
-    def forward(self, x: torch.Tensor):
-        features = self.backbone(x)
-        z = self.projector(features)
-        z = nn.functional.normalize(z, dim=1)
-        return features, z
 
 
 class LinearClassifier(nn.Module):
