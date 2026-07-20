@@ -204,7 +204,7 @@ ENERGY_CLASSES: tuple[AssetClass, ...] = (
     # used for individual panel clusters within a facility — those are
     # not facility-scale assets and we deliberately don't match them.
     # Histogram audit on AU + CA confirmed every top-10 largest solar
-    # polygon uses Pattern A. See outputs/solar_histogram.py.
+    # polygon uses Pattern A. See archive/outputs_v1_curation/solar_histogram.py.
     AssetClass(
         name="energy.generation.solar_farm",
         sector="energy",
