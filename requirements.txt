@@ -1,0 +1,44 @@
+# Infra-Bench CLS — Python dependencies
+#
+# Install with:
+#     pip install -r requirements.txt
+#
+# Scope: everything needed to (1) run the curation pipeline (curation/) and
+# (2) open the notebooks + regenerate paper figures (plots/) locally.
+# The evaluation notebooks under evaluation/ are Colab-based and install
+# their own foundation-model deps in-notebook, so those are NOT listed here.
+
+# --- Curation pipeline ---
+# OSM extraction
+osmium>=4.0
+
+# Geospatial
+rasterio>=1.3
+shapely>=2.0
+scipy>=1.10
+
+# STAC / Planetary Computer imagery
+pystac-client>=0.7
+planetary-computer>=1.0
+azure-storage-blob>=12.0
+
+# Data
+numpy>=1.24
+pandas>=2.0
+pyarrow>=12.0        # parquet support
+
+# Image processing
+opencv-python-headless>=4.8
+matplotlib>=3.7
+Pillow>=10.0
+
+# Progress
+tqdm>=4.65
+
+# --- Local notebook + figure regeneration ---
+jupyter>=1.0         # open evaluation/ + qa/ notebooks locally
+scikit-learn>=1.3    # weighted-F1 / confusion-matrix helpers in analysis notebooks
+
+# Optional — only needed for AgentTriager in curation/triage.py
+# anthropic>=0.20
+# openai>=1.0
