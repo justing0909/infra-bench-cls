@@ -26,3 +26,10 @@ qa_outputs/
 # OS junk
 .DS_Store
 Thumbs.db
+
+# Archive of TIF-M pivot + superseded eval notebooks (kept locally, not committed)
+archive/
+# pyosmium spatial cache (32MB, regeneratable)
+locations.idx
+# Optuna study pickles
+*.pkl
