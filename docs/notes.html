@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes — Infra-Bench CLS</title>
+<meta name="description" content="Method notes and citation for the Infra-Bench CLS benchmark: task, conditions, the ten-class subset, and how to read the metrics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <p class="site-name"><a href="index.html">Infra-Bench&nbsp;CLS</a></p>
+  <h1>Notes</h1>
+  <p class="lede">
+    What the benchmark measures, how the numbers are computed, and where to
+    be careful reading them.
+  </p>
+</header>
+
+<nav>
+  <a href="index.html">Results</a>
+  <a href="figures.html">Figures</a>
+  <a href="notes.html" aria-current="page">Notes</a>
+  <a href="notes.html#cite">Cite</a>
+  <a href="https://github.com/justing0909/infra-bench-cls" target="_blank" rel="noopener" class="ext">GitHub&nbsp;&#8599;</a>
+</nav>
+
+<main class="prose">
+
+  <section id="task">
+    <h2>The task</h2>
+    <p>
+      Single-label classification of critical-infrastructure assets from
+      satellite imagery. Asset locations come from OpenStreetMap across seven
+      continental regions, and each one is imaged with co-located Sentinel-2 L2A
+      optical and Sentinel-1 SAR tiles at 10&nbsp;m resolution. Every model is
+      evaluated on the same fixed spatial split, so train and test assets never
+      share a spatial block.
+    </p>
+    <p>
+      Models differ in which bands they take and in how they fuse SAR with
+      optical, so each evaluation notebook records its own band mapping.
+    </p>
+  </section>
+
+  <section id="conditions">
+    <h2>Conditions</h2>
+    <p>
+      Each model runs under up to four conditions, pairing two adaptation
+      protocols with two data scales.
+    </p>
+    <dl>
+      <dt>LP</dt>
+      <dd>Linear probe. The backbone is frozen and only a linear head is
+          trained.</dd>
+      <dt>FT</dt>
+      <dd>Fine-tune. The full backbone is trained with layer-wise
+          learning-rate decay.</dd>
+      <dt>Sup</dt>
+      <dd>Supervised. The ResNet-18 baseline, trained end to end from
+          scratch.</dd>
+      <dt>1.0&times; / 0.3&times;</dt>
+      <dd>The full training set and a 30% subsample of it, which together give
+          the label-efficiency comparison.</dd>
+    </dl>
+    <p>
+      Two models are linear-probe only. AlphaEarth is an embedding product
+      rather than an image backbone, so there is nothing to fine-tune, and
+      Random Features is a ResNet-18 frozen at initialization, included as a
+      floor. Every condition runs at three seeds (314, 271, 161), and all
+      figures are the mean with population standard deviation across them.
+    </p>
+  </section>
+
+  <section id="ten-class">
+    <h2>Why ten classes?</h2>
+    <p>
+      The full ontology has thirteen classes, three of which are dropped here.
+      <em>Wind farm</em> and <em>port terminal</em> have only three test tiles
+      each per seed, which is too few for a stable per-class F1.
+    </p>
+    <p>
+      <em>Water works</em> is dropped for a different reason. It is hard to tell
+      apart from wastewater plants and storage tanks, both in the imagery and in
+      how OpenStreetMap tags it. That makes the label itself unreliable, so a
+      model can identify a site correctly and still be scored wrong.
+    </p>
+    <p>
+      That leaves ten classes carrying 2,689 of the original 2,813 test tiles
+      per seed. Macro and weighted F1, accuracy, precision and recall are all
+      recomputed on the subset, though per-class F1 needs no adjustment, because
+      a class's F1 does not depend on which others are averaged with it.
+    </p>
+  </section>
+
+  <section id="metrics">
+    <h2>Reading the metrics</h2>
+    <p>
+      Scores are shown as percentages, but an F1 of 57.9% does not mean right
+      57.9% of the time. F1 is the harmonic mean of two separate rates.
+      <em>Recall</em> is the share of real sites a model finds, while
+      <em>precision</em> is how often it is right when it chooses a class. Pick
+      a single class in the recommender and you will see both rates on their
+      own.
+    </p>
+    <dl>
+      <dt>Macro F1</dt>
+      <dd>Per-class F1 averaged with equal weight, so rare classes count as
+          much as common ones. The headline metric.</dd>
+      <dt>Weighted F1</dt>
+      <dd>Per-class F1 weighted by test support, so it tracks the common
+          classes.</dd>
+      <dt>Per-sector F1</dt>
+      <dd>The macro average of per-class F1s for that sector's retained
+          classes, each scored on the <em>full</em> test set rather than on a
+          sector-filtered subset, since filtering first would hide false
+          positives and inflate the score. Telecom has only one class, so its
+          column is just that class's F1.</dd>
+      <dt>Recall</dt>
+      <dd>Uses each class's true support as the denominator.</dd>
+      <dt>Precision</dt>
+      <dd>Counts only predictions landing in the ten retained classes.</dd>
+      <dt>GMACs</dt>
+      <dd>One forward pass at batch 16. Values marked
+          <span class="dag">*</span> come from an architecture-matched stand-in,
+          used where the original loader was unavailable, which is fair because
+          GMACs depends on architecture rather than on trained weights.
+          AlphaEarth reports zero, since it has no backbone forward pass to
+          count.</dd>
+    </dl>
+  </section>
+
+  <section id="caveats">
+    <h2>Caveats</h2>
+    <p class="warn">
+      <strong>Per-region F1 is on the thirteen-class basis.</strong> The stored
+      results record it already averaged over classes, so it cannot be
+      recomputed on the ten-class subset. Compare models against each other
+      within that breakdown, but not against numbers elsewhere on the site.
+    </p>
+    <p>
+      The results hold no per-region, per-class figure at all, so nothing here
+      can answer which model is best at airports in Asia. The recommender
+      therefore ranks on your class selection and reports the regional picture
+      alongside it instead.
+    </p>
+    <p>
+      Tile extraction may undercount slightly in some regions. We chose not to
+      re-extract globally, since the effect on F1 is small next to the
+      differences between models, and the repository README documents the
+      specifics.
+    </p>
+  </section>
+
+  <section id="cite">
+    <h2>Cite this work</h2>
+    <p>
+      The paper is not yet posted, so until it is, please cite the benchmark
+      itself.
+    </p>
+    <div class="cite-block">
+      <button type="button" class="copy" data-copy="bibtex">Copy</button>
+      <pre id="bibtex">@misc{guthrie2026infrabenchcls,
+  title        = {Infra-Bench CLS: A Global, Open-Source Benchmark for
+                  Critical Infrastructure Classification with Earth
+                  Observation Foundation Models},
+  author       = {Guthrie, Justin and Oughton, Edward and Wessels, Konrad
+                  and Rice, Matthew and Corley, Isaac},
+  year         = {2026},
+  howpublished = {\url{https://github.com/justing0909/infra-bench-cls}},
+  note         = {Benchmark and evaluation code}
+}</pre>
+    </div>
+    <p class="hint">
+      Replace this with the paper entry once it is on arXiv. The dataset is
+      archived separately on Zenodo, so cite its DOI alongside once one
+      exists.
+    </p>
+
+    <h3>Licensing</h3>
+    <p>
+      Code is MIT, and the dataset is ODbL&nbsp;1.0, distributed via Zenodo.
+      The repository has the access details.
+    </p>
+  </section>
+
+  <section id="team">
+    <h2>The team</h2>
+    <p>
+      Built at George Mason University, with collaborators at Taylor Geospatial.
+    </p>
+    <ul class="authors">
+      <li>
+        <strong><a href="https://jg-geoportfolio.vercel.app/" target="_blank" rel="noopener">Justin Guthrie</a></strong>
+        <span class="affil">George Mason University</span>
+      </li>
+      <li>
+        <strong><a href="https://science.gmu.edu/directory/edward-oughton" target="_blank" rel="noopener">Edward Oughton</a></strong>
+        <span class="affil">George Mason University</span>
+      </li>
+      <li>
+        <strong><a href="https://science.gmu.edu/directory/konrad-wessels" target="_blank" rel="noopener">Konrad Wessels</a></strong>
+        <span class="affil">George Mason University</span>
+      </li>
+      <li>
+        <strong><a href="https://science.gmu.edu/directory/matthew-rice" target="_blank" rel="noopener">Matthew Rice</a></strong>
+        <span class="affil">George Mason University</span>
+      </li>
+      <li>
+        <strong><a href="https://isaac.earth/" target="_blank" rel="noopener">Isaac Corley</a></strong>
+        <span class="affil">Taylor Geospatial</span>
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    <a href="https://github.com/justing0909/infra-bench-cls" target="_blank" rel="noopener">Source and curation pipeline &#8599;</a>
+  </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
