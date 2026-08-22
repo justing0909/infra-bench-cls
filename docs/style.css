@@ -785,10 +785,24 @@ figcaption strong { color: var(--ink); font-weight: 600; }
 
 /* --------------------------------------------------------- margin sketches */
 
-/* Hidden by default. They only appear once the viewport is wide enough that
-   the outer margin can hold one without crowding the column or pushing the
-   page sideways: at 1280px the margin is (1280-900)/2 = 190px, and a 150px
-   drawing offset 172px still clears the viewport edge. */
+/* Hidden by default. They appear once the outer margin can hold one without
+   crowding the column or pushing the page sideways, then grow with the margin:
+   at 1280px the margin is (1280-900)/2 = 190px, at 2100px it is 600px, so the
+   size steps up rather than staying fixed at whatever the tightest case allows.
+   Width and outward offset both derive from --sk-w and --sk-scale.
+
+   --sk-gap is the clearance from the host's own edge. Note that resolves to a
+   different place depending on the host: `header` and `footer` carry the
+   column's 26px padding themselves, so an absolutely positioned child measures
+   from their border box and gains that padding on top. Hosts *inside* main
+   (.qs, #results) sit at the content edge already, so they get the bare gap.
+   That is why the two groups read with slightly different air, which suits the
+   page — more breathing room at the very top and bottom. */
+/* The gap is set 12px wider than the clearance actually wanted, because each
+   drawing is rotated a few degrees and a rotated bounding box is wider than
+   the element — that expansion eats about 12px of the gap back. */
+:root { --sk-scale: 1; --sk-gap: 32px; }
+
 .sketch { display: none; }
 
 .sketch-host { position: relative; }
@@ -797,6 +811,7 @@ figcaption strong { color: var(--ink); font-weight: 600; }
   .sketch {
     display: block;
     position: absolute;
+    width: calc(var(--sk-w) * 1px * var(--sk-scale));
     height: auto;
     pointer-events: none;
     /* The ink is a dark olive sitting at 2.7:1 on this background, and opacity
@@ -808,14 +823,16 @@ figcaption strong { color: var(--ink); font-weight: 600; }
     opacity: 0.7;
   }
 
-  .sketch-left  { left: -172px; }
-  .sketch-right { right: -172px; }
+  .sketch-left  { left:  calc(-1 * (var(--sk-w) * 1px * var(--sk-scale) + var(--sk-gap))); }
+  .sketch-right { right: calc(-1 * (var(--sk-w) * 1px * var(--sk-scale) + var(--sk-gap))); }
 }
 
-@media (min-width: 1500px) {
-  .sketch-left  { left: -210px; }
-  .sketch-right { right: -210px; }
-}
+/* 1280–1359 is the cramped tier: 190px of margin only fits a small one. */
+@media (min-width: 1280px) { :root { --sk-scale: 0.85; } }
+@media (min-width: 1360px) { :root { --sk-scale: 1; } }
+@media (min-width: 1520px) { :root { --sk-scale: 1.6; } }
+@media (min-width: 1800px) { :root { --sk-scale: 2.1; } }
+@media (min-width: 2100px) { :root { --sk-scale: 2.5; } }
 
 /* ------------------------------------------------------------------ footer */
 

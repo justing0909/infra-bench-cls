@@ -1217,10 +1217,11 @@
 
   // ------------------------------------------------------ margin sketches
   //
-  // Hand-drawn infrastructure, scattered down the outer margins as a bit of
-  // texture. Each drawing appears exactly once. Slots are fixed and chosen to
-  // sit beside real content, but which drawing lands in which slot is shuffled
-  // per load, so the page is not identical every visit.
+  // Hand-drawn infrastructure down the outer margins, one drawing each.
+  //
+  // Assignments are pinned rather than shuffled. Randomizing meant the layout
+  // changed every visit, which made it impossible to say "move that one" about
+  // anything on screen. Edit the `img` field below to rearrange.
   //
   // Two constraints on anchors. They must not set `overflow`, since an
   // absolutely positioned child of a scroll container gets clipped — that
@@ -1228,39 +1229,33 @@
   // out .rec: it is rebuilt on every interaction, taking any child with it.
   // #quickstart is the stable stand-in, anchored from its bottom so the
   // drawing still lands beside the recommendation card.
-
-  var SKETCHES = [
-    'pylon', 'storage_tanks', 'substation', 'train_labeled', 'train_station'
-  ];
+  //
+  // `w` is a unitless base width. CSS multiplies it by --sk-scale, which steps
+  // up with viewport width, and derives the outward offset from the result so
+  // a drawing always sits just clear of the text column.
 
   var SKETCH_SLOTS = [
-    { sel: 'header',     side: 'left',  top: 34,     w: 132, rot: -5 },
-    { sel: '.qs',        side: 'right', top: 8,      w: 138, rot: 4 },
-    { sel: '#quickstart', side: 'left', bottom: 40,  w: 126, rot: 6 },
-    { sel: '#results',   side: 'right', top: 300,    w: 134, rot: -4 },
-    { sel: 'footer',     side: 'left',  top: 4,      w: 130, rot: 3 }
+    { sel: 'header',      img: 'substation',    side: 'left',  top: 20,    w: 150, rot: -5 },
+    { sel: '.qs',         img: 'pylon',         side: 'right', top: -10,   w: 158, rot: 4 },
+    { sel: '#quickstart', img: 'train_station', side: 'left',  bottom: 30, w: 144, rot: 5 },
+    { sel: '#results',    img: 'storage_tanks', side: 'right', top: 290,   w: 154, rot: -4 },
+    { sel: 'footer',      img: 'train_labeled', side: 'left',  top: 0,     w: 148, rot: 3 }
   ];
 
   function placeSketches() {
     if (!$('t-results')) return;          // front page only
-    var pool = SKETCHES.slice();
-    for (var i = pool.length - 1; i > 0; i--) {   // Fisher-Yates
-      var j = Math.floor(Math.random() * (i + 1));
-      var t = pool[i]; pool[i] = pool[j]; pool[j] = t;
-    }
-    SKETCH_SLOTS.forEach(function (slot, k) {
+    SKETCH_SLOTS.forEach(function (slot) {
       var host = document.querySelector(slot.sel);
-      var name = pool[k];
-      if (!host || !name) return;
+      if (!host) return;
       host.classList.add('sketch-host');
       var img = el('img', 'sketch sketch-' + slot.side);
-      img.src = 'figures/sketches/' + name + '.png';
+      img.src = 'figures/sketches/' + slot.img + '.png';
       img.alt = '';                       // decorative
       img.setAttribute('aria-hidden', 'true');
       img.loading = 'lazy';
       if (slot.bottom != null) img.style.bottom = slot.bottom + 'px';
       else img.style.top = slot.top + 'px';
-      img.style.width = slot.w + 'px';
+      img.style.setProperty('--sk-w', slot.w);
       img.style.transform = 'rotate(' + slot.rot + 'deg)';
       host.appendChild(img);
     });
