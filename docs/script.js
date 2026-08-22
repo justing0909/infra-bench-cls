@@ -1230,20 +1230,30 @@
   // #quickstart is the stable stand-in, anchored from its bottom so the
   // drawing still lands beside the recommendation card.
   //
-  // `w` is a unitless base width. CSS multiplies it by --sk-scale, which steps
-  // up with viewport width, and derives the outward offset from the result so
-  // a drawing always sits just clear of the text column.
+  // `f` is a size factor, not a width. CSS sizes each drawing against the
+  // margin the layout actually leaves and multiplies by this, so the set keeps
+  // a little variety without any of them being pinned to a fixed pixel size.
 
   var SKETCH_SLOTS = [
-    { sel: 'header',      img: 'substation',    side: 'left',  top: 20,    w: 150, rot: -5 },
-    { sel: '.qs',         img: 'pylon',         side: 'right', top: -10,   w: 158, rot: 4 },
-    { sel: '#quickstart', img: 'train_station', side: 'left',  bottom: 30, w: 144, rot: 5 },
-    { sel: '#results',    img: 'storage_tanks', side: 'right', top: 290,   w: 154, rot: -4 },
-    { sel: 'footer',      img: 'train_labeled', side: 'left',  top: 0,     w: 148, rot: 3 }
+    { sel: 'header',      img: 'pylon',         side: 'left',  top: -30,   f: 1.00, rot: -4 },
+    { sel: '.qs',         img: 'substation',    side: 'right', top: -20,   f: 0.94, rot: 4 },
+    { sel: '#quickstart', img: 'train_station', side: 'left',  bottom: 20, f: 0.98, rot: 4 },
+    { sel: '#results',    img: 'storage_tanks', side: 'right', top: 250,   f: 1.00, rot: -3 },
+    { sel: 'footer',      img: 'train_labeled', side: 'left',  top: -20,   f: 0.96, rot: 3 }
   ];
+
+  /* Only build them once the layout can show them.
+   *
+   * Hiding with `display: none` and trusting loading="lazy" to skip the fetch
+   * does not work — measured, a phone still downloaded all five, about a
+   * megabyte of pure decoration. Never creating the elements is the only way to
+   * actually avoid the requests. */
+  var SKETCH_MQ = '(min-width: 1280px)';
 
   function placeSketches() {
     if (!$('t-results')) return;          // front page only
+    if (!window.matchMedia(SKETCH_MQ).matches) return;
+    if (document.querySelector('.sketch')) return;   // already built
     SKETCH_SLOTS.forEach(function (slot) {
       var host = document.querySelector(slot.sel);
       if (!host) return;
@@ -1255,7 +1265,7 @@
       img.loading = 'lazy';
       if (slot.bottom != null) img.style.bottom = slot.bottom + 'px';
       else img.style.top = slot.top + 'px';
-      img.style.setProperty('--sk-w', slot.w);
+      img.style.setProperty('--sk-f', slot.f);
       img.style.transform = 'rotate(' + slot.rot + 'deg)';
       host.appendChild(img);
     });
@@ -1266,6 +1276,14 @@
   wireCopy();
   wireHelp();
   placeSketches();
+
+  // Widening past the breakpoint after load should still get them.
+  if (window.matchMedia) {
+    var skMq = window.matchMedia(SKETCH_MQ);
+    var onSkChange = function () { if (skMq.matches) placeSketches(); };
+    if (skMq.addEventListener) skMq.addEventListener('change', onSkChange);
+    else if (skMq.addListener) skMq.addListener(onSkChange);
+  }
 
   if ($('t-results')) {
     fetch('data/results.json')
