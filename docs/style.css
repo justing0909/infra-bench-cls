@@ -783,6 +783,40 @@ figcaption strong { color: var(--ink); font-weight: 600; }
 .copy:focus-visible { outline: 1px solid var(--tan); outline-offset: 1px; }
 .copy.done { color: var(--green-lit); border-color: var(--green-lit); }
 
+/* --------------------------------------------------------- margin sketches */
+
+/* Hidden by default. They only appear once the viewport is wide enough that
+   the outer margin can hold one without crowding the column or pushing the
+   page sideways: at 1280px the margin is (1280-900)/2 = 190px, and a 150px
+   drawing offset 172px still clears the viewport edge. */
+.sketch { display: none; }
+
+.sketch-host { position: relative; }
+
+@media (min-width: 1280px) {
+  .sketch {
+    display: block;
+    position: absolute;
+    height: auto;
+    pointer-events: none;
+    /* The ink is a dark olive sitting at 2.7:1 on this background, and opacity
+       alone drops it to 1.6:1 — invisible. Lift hard and warm it into the
+       palette, then pull back with opacity. Measured against the page
+       background, this renders around rgb(100,100,81) at 2.8:1: readable as
+       texture, well short of competing with the text. */
+    filter: brightness(2.1) sepia(0.55);
+    opacity: 0.7;
+  }
+
+  .sketch-left  { left: -172px; }
+  .sketch-right { right: -172px; }
+}
+
+@media (min-width: 1500px) {
+  .sketch-left  { left: -210px; }
+  .sketch-right { right: -210px; }
+}
+
 /* ------------------------------------------------------------------ footer */
 
 footer {
