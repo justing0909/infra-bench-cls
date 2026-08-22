@@ -14,6 +14,11 @@ This repository contains the curation pipeline, evaluation notebooks,
 paper-figure regeneration scripts, and QA notebooks used to produce the
 benchmark and the numbers reported in the accompanying paper.
 
+**Interactive results:** <https://justing0909.github.io/infra-bench-cls> —
+browse all 30 conditions, filter by class, sector or region, and get a model
+recommendation for your compute and label budget. Site source in
+[`docs/`](docs).
+
 ---
 
 ## What the benchmark measures

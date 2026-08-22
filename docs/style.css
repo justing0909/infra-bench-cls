@@ -1,0 +1,866 @@
+/* Infra-Bench CLS — results site.
+   Dark, warm, serif. Palette and type follow jg-geoportfolio. */
+
+:root {
+  --bg:         #1a1e1b;   /* dark green-black */
+  --bg-raised:  #21251e;
+  --ink:        #c4b9a5;   /* body */
+  --ink-bright: #e2d8c4;   /* headings */
+  --ink-dim:    #9b8e7a;   /* secondary */
+  --rule:       #3a3c33;   /* hairlines — never used for text */
+  --rule-soft:  #2b2e26;
+
+  --brown:      #7a5c3d;
+  --tan:        #c8b08a;
+  --green:      #2f4a3a;
+  --gold:       #c4a24e;
+
+  /* Lifted variants of the two darkest palette colors. The originals are
+     right for fills but sit at ~2.8:1 on this background — too low for the
+     small mono labels they were being used on. */
+  --brown-lit:  #a8825a;   /* 4.9:1 */
+  --green-lit:  #7d9a63;   /* 5.4:1 */
+
+  --serif:  "EB Garamond", Georgia, serif;
+  --body:   "Crimson Pro", Georgia, serif;
+  --mono:   "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 18.5px/1.7 var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* One centered column, shared by every block on the page. The recommendation
+   panel spans it exactly, and nothing else is allowed a narrower measure —
+   so section rules, tables, prose and figures all line up on the same edges.
+   Widened alongside the type bump so the line measure stays about the same. */
+header, nav, main, footer { max-width: 900px; margin: 0 auto; padding: 0 26px; }
+
+a { color: var(--tan); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--ink-bright); }
+
+/* ------------------------------------------------------------------ header */
+
+/* Identical on every page: eyebrow, title, lede, optional aside. */
+header {
+  padding-top: 82px;
+  padding-bottom: 4px;
+  text-align: center;
+}
+
+.site-name {
+  margin: 0 0 18px;
+  font: 500 0.72rem/1 var(--mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.site-name a { color: var(--brown-lit); text-decoration: none; }
+.site-name a:hover { color: var(--tan); text-decoration: underline; }
+
+h1 {
+  font: 500 3.1rem/1.1 var(--serif);
+  color: var(--ink-bright);
+  margin: 0;
+}
+
+.lede {
+  margin: 18px 0 0;
+  font-size: 1.14rem;
+  color: var(--ink);
+}
+
+.header-aside {
+  margin: 16px 0 0;
+  font-size: 0.94rem;
+  color: var(--ink-dim);
+}
+
+/* Underlined by default, in the same warm tone as the question labels in the
+   recommender, brightening to tan on hover. */
+.header-aside a {
+  color: var(--brown-lit);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.header-aside a:hover { color: var(--tan); }
+
+/* --------------------------------------------------------------------- nav */
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  margin-top: 34px;
+  padding-bottom: 4px;
+}
+
+nav a {
+  font: 500 0.72rem/1 var(--mono);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  text-decoration: none;
+  padding: 9px 14px;
+  border: 1px solid transparent;
+}
+
+nav a:hover { color: var(--ink-bright); }
+
+nav a[aria-current="page"] {
+  color: var(--tan);
+  border-color: var(--rule);
+}
+
+nav a.ext { color: var(--brown-lit); }
+nav a.ext:hover { color: var(--tan); }
+
+nav a:focus-visible { outline: 1px solid var(--tan); outline-offset: 1px; }
+
+/* ---------------------------------------------------------------- sections */
+
+/* Sections are separated mostly by space; the rule is a warm hairline, dimmer
+   than the table lines so it reads as a division rather than another row. */
+section {
+  margin-top: 96px;
+  padding-top: 58px;
+  border-top: 1px solid rgba(200, 176, 138, 0.13);
+}
+
+main > section:first-of-type,
+#app > section:first-of-type { border-top: none; padding-top: 0; margin-top: 52px; }
+
+h2 {
+  font: 500 2rem/1.2 var(--serif);
+  color: var(--ink-bright);
+  margin: 0 0 14px;
+  text-align: center;
+}
+
+h3 {
+  font: 500 1.28rem/1.3 var(--serif);
+  color: var(--ink-bright);
+  margin: 38px 0 8px;
+}
+
+.sub, .caption, .note, .hint {
+  color: var(--ink-dim);
+  font-size: 0.97rem;
+}
+
+.sub { margin: 0 0 30px; text-align: center; }
+.caption { margin: 18px 0 0; font-size: 0.9rem; }
+.note { margin: 60px 0; }
+.hint { margin: 14px 0 0; font-size: 0.9rem; }
+
+.warn {
+  margin: 0 0 24px;
+  padding: 14px 17px;
+  border-left: 2px solid var(--gold);
+  background: rgba(196, 162, 78, 0.07);
+  color: var(--ink);
+  font-size: 0.97rem;
+}
+
+.warn[hidden], .hint[hidden] { display: none; }
+.warn strong { color: var(--ink-bright); font-weight: 600; }
+
+/* -------------------------------------------------------------- controls */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 30px;
+  align-items: flex-end;
+  margin: 0 0 30px;
+}
+
+.ctl { display: flex; flex-direction: column; gap: 8px; }
+.ctl[hidden] { display: none; }
+
+.ctl-label {
+  font: 500 0.66rem/1 var(--mono);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.seg { display: inline-flex; gap: 3px; }
+
+.seg button {
+  appearance: none;
+  font: 0.92rem/1 var(--body);
+  padding: 8px 14px;
+  color: var(--ink-dim);
+  background: none;
+  border: 1px solid var(--rule-soft);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.seg button:hover { color: var(--ink-bright); border-color: var(--rule); }
+
+.seg button.on {
+  color: var(--bg);
+  background: var(--tan);
+  border-color: var(--tan);
+}
+
+.seg button:focus-visible { outline: 1px solid var(--tan); outline-offset: 2px; }
+
+select {
+  font: 0.92rem/1 var(--body);
+  padding: 8px 10px;
+  color: var(--ink);
+  background: var(--bg-raised);
+  border: 1px solid var(--rule);
+  min-width: 178px;
+}
+
+select:focus-visible { outline: 1px solid var(--tan); outline-offset: 1px; }
+
+.ctl-checks {
+  gap: 7px;
+  font-size: 0.94rem;
+  color: var(--ink-dim);
+}
+
+.ctl-checks label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ctl-checks input { accent-color: var(--brown-lit); }
+
+/* -------------------------------------------------------- recommender */
+
+.qs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 34px;
+  margin: 0 0 52px;
+}
+
+.q { display: flex; flex-direction: column; gap: 9px; }
+.q-wide { flex: 1 1 260px; min-width: 0; }
+.q-full { flex: 1 1 100%; min-width: 0; }
+
+/* --- class picker: a sector per row, its classes alongside -------------- */
+
+.sectorgrid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 9px 16px;
+  align-items: start;
+}
+
+.sector-classes { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.chipset { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* Selection is shown with a tan edge and a faint wash rather than a solid
+   fill. Everything is selected by default, and ten solid blocks read as
+   shouting; this stays legible without dominating the page. */
+.chip, .sector-btn {
+  appearance: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  font: 0.9rem/1 var(--body);
+  padding: 8px 12px;
+  color: var(--ink-dim);
+  background: none;
+  border: 1px solid var(--rule-soft);
+  border-radius: 3px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color .12s, border-color .12s, background-color .12s;
+}
+
+.chip:hover, .sector-btn:hover {
+  color: var(--ink);
+  border-color: var(--rule);
+}
+
+.chip.on {
+  color: var(--ink-bright);
+  border-color: rgba(200, 176, 138, 0.55);
+  background: rgba(200, 176, 138, 0.09);
+}
+
+.chip.on:hover { border-color: var(--tan); }
+
+.chip-n, .sector-n { font: 0.7rem/1 var(--mono); color: var(--ink-dim); }
+
+/* On a selected chip the tinted background lifts the floor, and brown-lit
+   drops to ~4.1:1 there — tan clears AA while staying dimmer than the label. */
+.chip.on .chip-n { color: var(--tan); }
+
+/* Sector buttons sit in their own column, right-aligned into the classes. */
+.sector-btn {
+  width: 100%;
+  justify-content: space-between;
+  font: 500 0.76rem/1 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 9px 11px;
+  gap: 12px;
+}
+
+.sector-btn.part {
+  color: var(--ink);
+  border-color: var(--rule);
+  border-left: 2px solid rgba(200, 176, 138, 0.4);
+}
+
+.sector-btn.on {
+  color: var(--ink-bright);
+  border-color: rgba(168, 130, 90, 0.6);
+  background: rgba(168, 130, 90, 0.12);
+  border-left: 2px solid var(--brown-lit);
+}
+
+.sector-btn.on .sector-n { color: var(--tan); }
+
+.pick-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 18px;
+  margin-top: 4px;
+}
+
+.reset-btn {
+  appearance: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  padding: 2px 0;
+  font: 0.86rem/1.4 var(--body);
+  color: var(--ink-dim);
+  cursor: pointer;
+}
+
+.reset-btn:hover { color: var(--tan); border-bottom-color: var(--tan); }
+
+/* The note explaining the small counts beside classes and sectors. */
+.q-note {
+  margin: 6px 0 0;
+  font-size: 0.88rem;
+  color: var(--ink-dim);
+}
+
+.q-note strong { color: var(--ink); font-weight: 600; }
+
+/* The metric picker greys out when class narrowing takes over. */
+#metric-pick.is-muted .q-label,
+#metric-pick.is-muted select { opacity: 0.5; }
+#metric-pick select:disabled { cursor: not-allowed; }
+
+.help-body dl { margin: 0; }
+
+/* brown-lit clears AA on the page background but only reaches 4.46:1 on the
+   raised panel, so these terms use tan instead. */
+.help-body dt {
+  font: 500 0.72rem/1 var(--mono);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--tan);
+  margin-top: 15px;
+}
+
+.help-body dd { margin: 5px 0 0; color: var(--ink-dim); }
+
+.chip:focus-visible, .sector-btn:focus-visible, .reset-btn:focus-visible {
+  outline: 1px solid var(--tan);
+  outline-offset: 2px;
+}
+
+.q-summary {
+  margin: 4px 0 0;
+  font-size: 0.88rem;
+  color: var(--ink-dim);
+}
+
+.q-label {
+  font: 500 0.66rem/1.4 var(--mono);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--brown-lit);
+}
+
+.q select { width: 100%; }
+
+/* superscript "?" next to a question, opening a note beneath it */
+.help {
+  position: relative;
+  appearance: none;
+  vertical-align: super;
+  margin-left: 5px;
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: none;
+  color: var(--ink-dim);
+  font: 500 0.58rem/1 var(--mono);
+  cursor: pointer;
+}
+
+/* The badge has to stay small to read as a superscript, so grow the hit area
+   instead. Kept to 8px vertically — the gap down to the segmented control is
+   9px, and any more would start swallowing clicks meant for it. */
+.help::after {
+  content: "";
+  position: absolute;
+  inset: -8px -13px;
+}
+
+.help:hover { color: var(--ink-bright); border-color: var(--brown-lit); }
+.help:focus-visible { outline: 1px solid var(--tan); outline-offset: 2px; }
+
+.help[aria-expanded="true"] {
+  color: var(--bg);
+  background: var(--brown-lit);
+  border-color: var(--brown-lit);
+}
+
+/* Sits directly below the question it belongs to. Q1 and Q2 share a row, so
+   their panels land in the same slot beneath both — only one is ever open.
+   The negative top margin claws back most of the (now generous) row gap, so
+   the panel reads as attached to its question rather than floating between
+   two of them. */
+.help-body {
+  flex: 1 1 100%;
+  margin: -28px 0 0;
+  padding: 16px 18px;
+  border-left: 2px solid var(--brown-lit);
+  background: var(--bg-raised);
+  font-size: 0.92rem;
+  color: var(--ink-dim);
+}
+
+.help-body[hidden] { display: none; }
+.help-body p { margin: 0 0 11px; }
+.help-body p:last-child { margin-bottom: 0; }
+.help-body strong { color: var(--ink); font-weight: 600; }
+.help-body em { font-style: italic; color: var(--ink); }
+
+.help-body ul { margin: 0 0 11px; padding-left: 19px; }
+.help-body li { margin-bottom: 4px; }
+
+.rec {
+  border: 1px solid var(--rule);
+  border-left: 2px solid var(--tan);
+  background: var(--bg-raised);
+  padding: 26px 28px 24px;
+}
+
+.rec-kicker {
+  display: block;
+  font: 500 0.66rem/1 var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  margin-bottom: 9px;
+}
+
+.rec-name {
+  margin: 0;
+  font: 500 2rem/1.15 var(--serif);
+  color: var(--ink-bright);
+}
+
+.rec-cond {
+  display: block;
+  margin-top: 6px;
+  font: 500 0.7rem/1.4 var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tan);
+}
+
+.rec-flag {
+  margin: 16px 0 0;
+  padding: 11px 14px;
+  border-left: 2px solid var(--gold);
+  background: rgba(196, 162, 78, 0.07);
+  font-size: 0.94rem;
+  color: var(--ink);
+}
+
+.rec-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(184px, 1fr));
+  gap: 22px 30px;
+  margin: 26px 0 0;
+  padding: 22px 0 0;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.rec-stats dt {
+  font: 500 0.63rem/1.4 var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.rec-stats dd {
+  margin: 5px 0 0;
+  font: 1.28rem/1.25 var(--mono);
+  color: var(--ink-bright);
+  font-variant-numeric: tabular-nums;
+}
+
+.rec-note {
+  display: block;
+  margin-top: 4px;
+  font: 0.8rem/1.45 var(--body);
+  color: var(--ink-dim);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.rec-second, .rec-region, .rec-gloss {
+  margin: 20px 0 0;
+  font-size: 0.95rem;
+  color: var(--ink-dim);
+}
+
+.rec-second strong, .rec-region strong, .rec-gloss strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.rec-region em { font-style: italic; color: var(--ink-dim); }
+
+/* The plain-language reading of the score sits directly under the numbers. */
+.rec-gloss {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule-soft);
+  color: var(--ink);
+}
+
+.rec-actions { margin: 24px 0 0; }
+
+.rec-btn {
+  font: 0.92rem/1 var(--body);
+  padding: 11px 20px;
+  color: var(--bg);
+  background: var(--tan);
+  border: 1px solid var(--tan);
+  cursor: pointer;
+}
+
+.rec-btn:hover { background: var(--ink-bright); border-color: var(--ink-bright); }
+.rec-btn:focus-visible { outline: 1px solid var(--tan); outline-offset: 2px; }
+
+.rec-empty { margin: 0; color: var(--ink-dim); }
+
+/* ------------------------------------------------------------------ tables */
+
+.scroll { overflow-x: auto; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+}
+
+thead th {
+  font-weight: 500;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  text-align: right;
+  padding: 0 12px 11px;
+  border-bottom: 1px solid var(--rule);
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+thead th.lead { text-align: left; padding-left: 0; }
+
+thead th .n {
+  display: block;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--brown-lit);
+  font-size: 0.92em;
+  margin-top: 3px;
+}
+
+thead th.sortable { cursor: pointer; }
+thead th.sortable:hover { color: var(--ink-bright); }
+thead th.sorted { color: var(--tan); }
+thead th .caret { opacity: 0; margin-left: 4px; }
+thead th.sorted .caret { opacity: 1; }
+thead th.sortable:focus-visible { outline: 1px solid var(--tan); outline-offset: 2px; }
+
+tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--rule-soft);
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+tbody td.lead {
+  text-align: left;
+  padding-left: 0;
+  font-family: var(--body);
+  font-size: 1.06rem;
+  color: var(--ink-bright);
+  white-space: nowrap;
+}
+
+tbody tr:last-child td { border-bottom: none; }
+tbody tr.baseline td.lead { color: var(--ink-dim); font-style: italic; }
+tbody tr.baseline td { color: var(--ink-dim); }
+
+/* The row the recommender sent you to. A warm wash plus a tan edge on the
+   first cell, which has no left padding so the marker sits flush. */
+tbody tr.picked td { background: rgba(200, 176, 138, 0.075); }
+tbody tr.picked td.lead {
+  box-shadow: inset 2px 0 0 var(--tan);
+  padding-left: 12px;
+  color: var(--ink-bright);
+}
+tbody tr.picked.baseline td.lead { color: var(--ink); }
+tbody tr.picked td:last-child { box-shadow: inset -1px 0 0 rgba(200, 176, 138, 0.2); }
+
+/* A single soft pulse on arrival, so the eye finds it without a flash. */
+tbody tr.picked.arriving td { animation: settle 1.5s ease-out 1; }
+
+@keyframes settle {
+  0%   { background: rgba(200, 176, 138, 0.26); }
+  100% { background: rgba(200, 176, 138, 0.075); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  tbody tr.picked.arriving td { animation: none; }
+}
+
+.cond {
+  font: 500 0.7rem/1 var(--mono);
+  letter-spacing: 0.08em;
+  color: var(--ink-dim);
+}
+.cond.ft  { color: var(--tan); }
+.cond.sup { color: var(--green-lit); }
+
+.sd { color: var(--ink-dim); font-size: 0.9em; }
+.lead-val { color: var(--ink-bright); }
+.dag, .na { color: var(--ink-dim); }
+
+td.rowmean { border-left: 1px solid var(--rule-soft); }
+
+/* the one visual flourish: a rule proportional to the leading value */
+td.bar { width: 92px; padding-right: 0; }
+.bar-track { display: block; height: 3px; background: var(--rule-soft); }
+.bar-fill  { display: block; height: 3px; background: var(--brown-lit); }
+tr.baseline .bar-fill { background: var(--rule); }
+.bar-fill.top { background: var(--tan); }
+
+/* ----------------------------------------------------------------- figures */
+
+figure { margin: 0 0 44px; }
+
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #fff;
+  border: 1px solid var(--rule);
+}
+
+figcaption {
+  margin-top: 11px;
+  font-size: 0.92rem;
+  color: var(--ink-dim);
+}
+
+figcaption strong { color: var(--ink); font-weight: 600; }
+
+/* ------------------------------------------------------------------- prose */
+
+.prose p { color: var(--ink); margin: 0 0 14px; }
+.prose em { font-style: italic; color: var(--ink-bright); }
+
+.prose dl { margin: 20px 0 18px; }
+
+.prose dt {
+  font: 500 0.72rem/1 var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brown-lit);
+  margin-top: 17px;
+}
+
+.prose dd { margin: 5px 0 0; color: var(--ink); }
+
+.authors { padding: 0; margin: 20px 0 0; list-style: none; }
+
+.authors li {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--rule-soft);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 14px;
+}
+
+.authors li:last-child { border-bottom: none; }
+.authors strong { color: var(--ink); font-weight: 600; font-size: 1.05rem; }
+
+.authors a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.authors a:hover { color: var(--tan); }
+
+.affil {
+  font: 0.74rem/1.4 var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+/* --------------------------------------------------------------- citation */
+
+.cite-block {
+  position: relative;
+  margin: 20px 0 0;
+  border: 1px solid var(--rule);
+  background: var(--bg-raised);
+}
+
+.cite-block pre {
+  margin: 0;
+  padding: 20px 22px;
+  overflow-x: auto;
+  font: 0.78rem/1.75 var(--mono);
+  color: var(--ink);
+  tab-size: 2;
+}
+
+.copy {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font: 500 0.64rem/1 var(--mono);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  padding: 7px 11px;
+  cursor: pointer;
+}
+
+.copy:hover { color: var(--ink-bright); border-color: var(--brown-lit); }
+.copy:focus-visible { outline: 1px solid var(--tan); outline-offset: 1px; }
+.copy.done { color: var(--green-lit); border-color: var(--green-lit); }
+
+/* ------------------------------------------------------------------ footer */
+
+footer {
+  margin-top: 84px;
+  padding-top: 26px;
+  padding-bottom: 70px;
+  border-top: 1px solid var(--rule-soft);
+}
+
+footer p {
+  margin: 0 0 5px;
+  font: 0.78rem/1.7 var(--mono);
+  color: var(--ink-dim);
+}
+
+footer a { color: var(--brown-lit); }
+footer a:hover { color: var(--tan); }
+
+/* ------------------------------------------------------------------ mobile */
+
+@media (max-width: 640px) {
+  header, nav, main, footer { padding: 0 18px; }
+  header { padding-top: 52px; }
+  h1 { font-size: 2.3rem; }
+  .lede { font-size: 1.06rem; }
+  nav { margin-top: 26px; gap: 2px; }
+  nav a { padding: 8px 10px; font-size: 0.68rem; letter-spacing: 0.1em; }
+  section { margin-top: 60px; padding-top: 38px; }
+  main > section:first-of-type,
+  #app > section:first-of-type { margin-top: 38px; }
+  h2 { font-size: 1.62rem; }
+  .controls { gap: 16px 20px; }
+  select { min-width: 0; width: 100%; padding: 12px 10px; }
+  .ctl[data-for="metric"], .ctl[data-for="fm"] { flex: 1 1 100%; }
+  .pick-actions { gap: 20px; }
+  .reset-btn { padding: 10px 0; }
+
+  /* Questions stack here, so each note belongs under its own question rather
+     than in a slot shared by the side-by-side pair. */
+  #q1 { order: 1 } #help-compute { order: 2 }
+  #q2 { order: 3 } #help-labels  { order: 4 }
+  #q3 { order: 5 } #help-target  { order: 6 }
+  #metric-pick { order: 7 } #help-metric { order: 8 }
+  #q4 { order: 9 }
+  .help-body { margin-top: -20px; }
+  td.bar, thead th.bar-head { display: none; }
+  .chip, .sector-btn {
+    min-height: 44px;
+    padding: 0 13px;
+    align-items: center;
+  }
+  /* Not enough width for a label column beside the chips — stack instead. */
+  .sectorgrid { grid-template-columns: 1fr; gap: 6px; }
+  .sector-btn { width: auto; }
+  .sector-classes { margin-bottom: 10px; }
+  .site-name { margin-bottom: 14px; }
+
+  /* comfortable touch targets */
+  .seg button { padding: 13px 16px; }
+  .ctl-checks { gap: 12px; }
+  .ctl-checks label { padding: 4px 0; }
+  .rec-btn { padding: 14px 22px; width: 100%; }
+
+  /* The code block scrolls sideways on a phone, so an overlaid button would
+     sit on top of whatever has been scrolled under it. Put it in the flow. */
+  .cite-block { display: flex; flex-direction: column-reverse; }
+  .copy {
+    position: static;
+    align-self: flex-end;
+    margin: 10px 10px 0;
+    min-height: 44px;
+    padding: 0 18px;
+  }
+
+  /* recommender */
+  .qs { gap: 32px 22px; }
+  .q, .q-wide { flex: 1 1 100%; }
+  .rec { padding: 22px 20px 20px; }
+  .rec-name { font-size: 1.72rem; }
+  .rec-stats { gap: 18px 20px; }
+}

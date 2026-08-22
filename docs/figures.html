@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figures — Infra-Bench CLS</title>
+<meta name="description" content="Figures from the Infra-Bench CLS benchmark: per-class F1, all conditions, grouped by model, and training dynamics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <p class="site-name"><a href="index.html">Infra-Bench&nbsp;CLS</a></p>
+  <h1>Figures</h1>
+  <p class="lede">
+    Drawn from the same results as the tables. Click any figure for full size.
+  </p>
+</header>
+
+<nav>
+  <a href="index.html">Results</a>
+  <a href="figures.html" aria-current="page">Figures</a>
+  <a href="notes.html">Notes</a>
+  <a href="notes.html#cite">Cite</a>
+  <a href="https://github.com/justing0909/infra-bench-cls" target="_blank" rel="noopener" class="ext">GitHub&nbsp;&#8599;</a>
+</nav>
+
+<main>
+  <section>
+    <figure>
+      <a href="figures/fig_perclass_heatmap.png"><img src="figures/fig_perclass_heatmap.png" alt="Heatmap of per-class test F1 across all foundation models" loading="lazy"></a>
+      <figcaption>
+        <strong>Per-class F1.</strong> Best condition per model across the ten
+        retained classes, with macro and weighted F1 summary rows.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <a href="figures/fig3_all_conditions.png"><img src="figures/fig3_all_conditions.png" alt="All 30 conditions sorted ascending by test macro F1" loading="lazy"></a>
+      <figcaption>
+        <strong>All thirty conditions</strong>, sorted by macro F1. Every model,
+        adaptation protocol, and data scale on one axis.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <a href="figures/fig4_grouped_by_model.png"><img src="figures/fig4_grouped_by_model.png" alt="Test macro F1 grouped by model and adaptation protocol" loading="lazy"></a>
+      <figcaption>
+        <strong>Grouped by model.</strong> Each model's four conditions side by
+        side; hatching marks the 0.3&times; data scale.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <a href="figures/fig7_training-dynamics_1.0x.png"><img src="figures/fig7_training-dynamics_1.0x.png" alt="Linear-probe and fine-tuning validation curves at 1.0x data scale" loading="lazy"></a>
+      <figcaption>
+        <strong>Training dynamics, 1.0&times;.</strong> Linear probe and
+        fine-tuning validation curves. Baselines dashed; stars mark the best
+        checkpoint.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <a href="figures/fig6_training-dynamics_0.3x.png"><img src="figures/fig6_training-dynamics_0.3x.png" alt="Linear-probe and fine-tuning validation curves at 0.3x data scale" loading="lazy"></a>
+      <figcaption>
+        <strong>Training dynamics, 0.3&times;.</strong> The same at the reduced
+        data scale.
+      </figcaption>
+    </figure>
+  </section>
+</main>
+
+<footer>
+  <p>
+    Figures regenerated from the evaluation run artifacts.
+    <a href="https://github.com/justing0909/infra-bench-cls" target="_blank" rel="noopener">Source and curation pipeline &#8599;</a>
+  </p>
+</footer>
+
+</body>
+</html>
