@@ -785,23 +785,33 @@ figcaption strong { color: var(--ink); font-weight: 600; }
 
 /* --------------------------------------------------------- margin sketches */
 
-/* Hidden by default. They appear once the outer margin can hold one without
-   crowding the column or pushing the page sideways, then grow with the margin:
-   at 1280px the margin is (1280-900)/2 = 190px, at 2100px it is 600px, so the
-   size steps up rather than staying fixed at whatever the tightest case allows.
-   Width and outward offset both derive from --sk-w and --sk-scale.
+/* Sized fluidly against the margin the layout actually leaves, rather than
+   stepped through breakpoints: the margin is (100vw - 900px) / 2, so a drawing
+   takes that minus the gap it needs from the text, plus a small deliberate
+   bleed past the viewport edge. Positioning uses `right: 100% + gap` instead of
+   a negative offset, which pins the inner edge a fixed distance from the column
+   without needing to know the width — so width and position stay independent.
 
-   --sk-gap is the clearance from the host's own edge. Note that resolves to a
-   different place depending on the host: `header` and `footer` carry the
-   column's 26px padding themselves, so an absolutely positioned child measures
-   from their border box and gains that padding on top. Hosts *inside* main
-   (.qs, #results) sit at the content edge already, so they get the bare gap.
-   That is why the two groups read with slightly different air, which suits the
-   page — more breathing room at the very top and bottom. */
-/* The gap is set 12px wider than the clearance actually wanted, because each
-   drawing is rotated a few degrees and a rotated bounding box is wider than
-   the element — that expansion eats about 12px of the gap back. */
-:root { --sk-scale: 1; --sk-gap: 32px; }
+   --sk-gap is clearance from the host's own edge, which resolves to a different
+   place depending on the host: `header` and `footer` carry the column's 26px
+   padding themselves, so a child measures from their border box and gains that
+   padding on top, while hosts inside main sit at the content edge already. The
+   effect is more air at the very top and bottom of the page, which suits it.
+
+   The gap runs ~12px wider than the clearance actually wanted, because each
+   drawing is rotated a few degrees and a rotated bounding box is wider than the
+   element, eating that much back. */
+:root {
+  --sk-gap:   34px;
+  --sk-bleed: 18px;   /* how far a drawing may hang past the viewport edge */
+  --sk-min:   170px;
+  --sk-max:   600px;
+}
+
+/* The bleed is only possible because nothing on the page is position:sticky,
+   so clipping the horizontal axis costs nothing. Without this the overhang
+   would add a horizontal scrollbar. */
+html, body { overflow-x: hidden; }
 
 .sketch { display: none; }
 
@@ -811,28 +821,27 @@ figcaption strong { color: var(--ink); font-weight: 600; }
   .sketch {
     display: block;
     position: absolute;
-    width: calc(var(--sk-w) * 1px * var(--sk-scale));
+    width: clamp(
+      var(--sk-min),
+      calc(((100vw - 900px) / 2 - var(--sk-gap) + var(--sk-bleed)) * var(--sk-f, 1)),
+      var(--sk-max)
+    );
     height: auto;
     pointer-events: none;
-    /* The ink is a dark olive sitting at 2.7:1 on this background, and opacity
-       alone drops it to 1.6:1 — invisible. Lift hard and warm it into the
-       palette, then pull back with opacity. Measured against the page
-       background, this renders around rgb(100,100,81) at 2.8:1: readable as
-       texture, well short of competing with the text. */
-    filter: brightness(2.1) sepia(0.55);
-    opacity: 0.7;
+    /* The ink is a dark olive that measures 2.7:1 against this background, and
+       opacity alone drops it to 1.6:1 — invisible. Lift it hard and warm it
+       into the palette instead, at full opacity: measured, this renders around
+       rgb(139,131,113), which is 4.5:1 on average and 12.7:1 on the densest
+       strokes. The peak is what matters, because the handwritten labels are
+       the darkest ink in each drawing and would not otherwise read. */
+    filter: brightness(2) sepia(0.6);
   }
 
-  .sketch-left  { left:  calc(-1 * (var(--sk-w) * 1px * var(--sk-scale) + var(--sk-gap))); }
-  .sketch-right { right: calc(-1 * (var(--sk-w) * 1px * var(--sk-scale) + var(--sk-gap))); }
+  /* Pin the inner edge a fixed distance outside the column, independent of
+     however wide the drawing turns out to be. */
+  .sketch-left  { right: calc(100% + var(--sk-gap)); }
+  .sketch-right { left:  calc(100% + var(--sk-gap)); }
 }
-
-/* 1280–1359 is the cramped tier: 190px of margin only fits a small one. */
-@media (min-width: 1280px) { :root { --sk-scale: 0.85; } }
-@media (min-width: 1360px) { :root { --sk-scale: 1; } }
-@media (min-width: 1520px) { :root { --sk-scale: 1.6; } }
-@media (min-width: 1800px) { :root { --sk-scale: 2.1; } }
-@media (min-width: 2100px) { :root { --sk-scale: 2.5; } }
 
 /* ------------------------------------------------------------------ footer */
 
