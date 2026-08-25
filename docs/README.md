@@ -26,8 +26,8 @@ README.md           this file (not served)
 
 ## Design
 
-Three pages with a shared nav. `index.html` opens with a recommender, then
-carries the full results table.
+Three pages share a nav, with `index.html` opening on a recommender and then
+carrying the full results table.
 
 Below that is one filterable table rather than a stack of static slices: pick a
 **breakdown** (overall / by class / by sector / by region) to change the
@@ -45,8 +45,8 @@ it filters the 30 conditions and ranks what survives.
   linear probes. `modest` applies a 12 GB ceiling against each fine-tune run's
   measured `peak_gpu_gb`, which drops CROMA FT (~40 GB) and Prithvi FT
   (~17–19 GB). Verified: the ceiling excludes exactly the four runs above it.
-- **Labels** maps to data scale, with thousands going to 1.0× and a few hundred or less to
-  0.3×, "not sure" keeps both in the running. The note covers the case the
+- **Labels** maps to data scale, with thousands going to 1.0×, a few hundred
+  or less to 0.3×, and "not sure" keeping both in the running. The note covers the case the
   tiers cannot serve: with no labels at all, none of these results apply, since
   every condition here is supervised.
 
@@ -76,11 +76,11 @@ meant for it.
   and could change the winner for no visible reason. Consistency is worth more
   than using the input.
 
-Selecting a full sector is not an approximation. It reproduces the paper's
-per-sector F1 exactly, because that metric is defined the same way (the macro
-average of member classes, each scored on the full test set). Same for all ten
-classes and macro F1. Verified against the data: 120/120 sector and 30/30 macro
-identities hold to 1e-9.
+Selecting a full sector reproduces the paper's per-sector F1 exactly rather
+than approximating it, because that metric is defined the same way, as the
+macro average of member classes each scored on the full test set, and the same
+holds for all ten classes and macro F1. Verified against the data, 120/120
+sector and 30/30 macro identities hold to 1e-9.
 
 Both pickers start **empty** and you add what you want. Empty means "no
 narrowing", and the ranking uses the whole-set metric. Clicking through every
@@ -103,9 +103,10 @@ Neither number is visible in "0.350".
 
 Differences between two percentages are labeled in **points**, not percent.
 
-Two more things it surfaces rather than hides. It flags when the gap to the
-runner-up is **smaller than the two runs' combined seed spread**, so a
-2-point lead over three seeds is not read as a genuine difference. And when the
+Two further things are surfaced rather than hidden, the first being a flag
+raised when the gap to the runner-up is **smaller than the two runs' combined
+seed spread**, so that a 2-point lead over three seeds is not read as a genuine
+difference, and the second appearing when the
 winner is an expensive backbone (>300 GMACs) it names the best cheap
 alternative with the accuracy cost attached, because otherwise answering "no GPU"
 would still return a 955-GMAC ViT-L with no caveat.
@@ -143,8 +144,8 @@ recommendation panel, so no block gets its own narrower measure and section
 rules, tables, prose and figures all break on the same edges. Headings and
 intros are centered, and body copy, tables and lists stay left-aligned.
 
-Body type is 18.5 px. The column was widened alongside that bump so the line
-measure stayed roughly constant rather than shortening.
+Body type is 18.5 px, and the column was widened alongside that bump so that
+the line measure stayed roughly constant rather than shortening.
 
 Every page header is identical by construction: eyebrow, title, lede, optional
 aside, then the nav. On subpages the eyebrow links home. The `h1` lands at the
@@ -204,8 +205,9 @@ change.
 
 ## Two things to know when reading the tables
 
-Per-region F1 is 13-class. The stored results record per-region F1 already
-averaged over classes, so it cannot be recomputed on the 10-class subset.
+Per-region F1 remains on the 13-class basis, because the stored results record
+it already averaged over classes and it therefore cannot be recomputed on the
+10-class subset.
 That breakdown is on a different basis from everything else on the site and
 raises a callout whenever it is selected. Compare models against each other
 within it, not against numbers elsewhere.

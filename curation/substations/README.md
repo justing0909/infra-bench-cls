@@ -3,17 +3,18 @@
 Every deduplicated substation in a region, energy sector only, with no
 per-cell cap. Output goes to `data/curated_datasets/dataset_<region>_stac_v1/`.
 
-This part is **not** what the paper evaluates. The benchmark runs on the
-sampled cross-sector cells built by [`curation/sectors/`](../sectors). Part A
+The paper does not evaluate on this part, since the benchmark runs on the
+sampled cross-sector cells built by [`curation/sectors/`](../sectors). It
 exists because the substation extraction is the one product that is complete
 rather than sampled, which makes it useful on its own for substation-specific
-work. It is distributed alongside the benchmark on Zenodo.
+work, and it is distributed alongside the benchmark on Zenodo.
 
-Two regions are the exception. Europe has 505,951 deduplicated substations and
-North America is comparable, so at the observed fetch rate of roughly half a
-tile per second a full pass would take days. Both fetch from a proportional
-sample that preserves the OSM class mix, named `*_substations_sampled.parquet`.
-`SAMPLED_REGIONS` in `pipeline.py` records which regions this applies to.
+Europe and North America are the exception, because Europe alone holds 505,951
+deduplicated substations and North America is comparable, so at the observed
+fetch rate of roughly half a tile per second a full pass over either would take
+days. Both therefore fetch from a proportional sample that preserves the OSM
+class mix, named `*_substations_sampled.parquet`, and `SAMPLED_REGIONS` in
+`pipeline.py` records which regions this applies to.
 
 ## Contents
 
