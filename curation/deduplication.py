@@ -1,23 +1,23 @@
 """
 deduplication.py
 ----------------
-Removes near-duplicate tiles from spatially proximate assets.
+removes near-duplicate tiles from spatially proximate assets.
 
-When two assets of the same type are very close together, their imagery
+when two assets of the same type are very close together, their imagery
 tiles will overlap substantially — feeding the model nearly identical
 images twice can cause overfitting to that visual pattern.
 
-Strategy: geographic distance between asset centroids.
-If two same-type assets are within DISTANCE_THRESHOLD_M meters of each
+strategy: geographic distance between asset centroids.
+if two same-type assets are within DISTANCE_THRESHOLD_M meters of each
 other, only one is kept (the one with the higher OSM ID, for determinism).
-The surviving record notes which asset's tile it represents.
+the surviving record notes which asset's tile it represents.
 
-A more sophisticated approach (embedding similarity) is possible later
+a more sophisticated approach (embedding similarity) is possible later
 but requires a trained encoder — geographic distance is the right
 pragmatic choice at this stage.
 
 Usage:
-    from deduplication import Deduplicator
+    from curation.deduplication import Deduplicator
     dedup = Deduplicator(distance_threshold_m=200)
     clean_df, removed_df = dedup.run(df)   # df from sources.py
 """
@@ -28,24 +28,24 @@ from typing import Tuple
 
 
 # ---------------------------------------------------------------------------
-# Constants
+# constants
 # ---------------------------------------------------------------------------
 
-# Two assets within this distance (meters) are considered duplicates.
+# two assets within this distance (meters) are considered duplicates.
 # 200m means their 150m-buffer tiles would overlap by ~50%.
-# Increase for larger buffer sizes.
+# increase for larger buffer sizes.
 DEFAULT_DISTANCE_THRESHOLD_M = 200
 
 
 # ---------------------------------------------------------------------------
-# Helpers
+# helpers
 # ---------------------------------------------------------------------------
 
 def _haversine_m(lat1: float, lon1: float,
                  lat2: float, lon2: float) -> float:
     """
-    Returns the great-circle distance in meters between two lat/lon points.
-    Uses the Haversine formula — accurate enough for small distances.
+    returns the great-circle distance in meters between two lat/lon points.
+    uses the Haversine formula — accurate enough for small distances.
     """
     R = 6_371_000  # Earth radius in meters
     phi1, phi2 = np.radians(lat1), np.radians(lat2)
@@ -56,27 +56,27 @@ def _haversine_m(lat1: float, lon1: float,
 
 
 # ---------------------------------------------------------------------------
-# Main class
+# main class
 # ---------------------------------------------------------------------------
 
 class Deduplicator:
     """
-    Removes spatially near-duplicate assets from a sources.py DataFrame.
+    removes spatially near-duplicate assets from a sources.py DataFrame.
 
-    The threshold used for each asset type is determined as follows:
-      1. If the asset type has a matching `AssetClass` in `curation.ontology`
+    the threshold used for each asset type is determined as follows:
+      1. if the asset type has a matching `AssetClass` in `curation.ontology`
          with `dedup_distance_m` set, that value is used.
-      2. Otherwise, the constructor-supplied `distance_threshold_m` is used
+      2. otherwise, the constructor-supplied `distance_threshold_m` is used
          (which itself defaults to 200m).
 
-    This lets the ontology express per-class scale: subway transfer
+    this lets the ontology express per-class scale: subway transfer
     stations want ~50m, solar farms want ~1000m, etc.
 
     Parameters
     ----------
     distance_threshold_m : float
-        Fallback threshold for asset types not present in the ontology
-        (e.g. legacy types). Default 200m matches a 150m buffer.
+        fallback threshold for asset types not present in the ontology
+        (e.g. legacy types). default 200m matches a 150m buffer.
     """
 
     def __init__(self, distance_threshold_m: float = DEFAULT_DISTANCE_THRESHOLD_M):
@@ -85,15 +85,15 @@ class Deduplicator:
     @staticmethod
     def _threshold_for(asset_type: str, fallback: float) -> float:
         """
-        Look up the per-class dedup threshold from the ontology.
-        Returns the fallback if the type is unknown or the class did
+        look up the per-class dedup threshold from the ontology.
+        returns the fallback if the type is unknown or the class did
         not declare `dedup_distance_m`.
 
-        Import is lazy + tolerant so this module remains usable even if
+        import is lazy + tolerant so this module remains usable even if
         the ontology import path can't resolve (e.g. unusual sys.path).
         """
         try:
-            from ontology import get_class_by_name
+            from .ontology import get_class_by_name
         except Exception:
             return fallback
         try:
@@ -104,11 +104,11 @@ class Deduplicator:
 
     def run(self, df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
         """
-        Deduplicates the asset DataFrame.
+        deduplicates the asset DataFrame.
 
-        Deduplication is applied per asset_type — a substation and a
+        deduplication is applied per asset_type — a substation and a
         solar farm at the same location are NOT considered duplicates.
-        Each asset type uses its own per-class threshold from the
+        each asset type uses its own per-class threshold from the
         ontology (falling back to `self.threshold` for unknown types).
 
         Parameters
@@ -134,7 +134,7 @@ class Deduplicator:
 
             keep_rows.append(group.iloc[list(kept_indices)])
 
-            # Record removed assets with reference to nearest kept asset
+            # record removed assets with reference to nearest kept asset
             if removed_indices:
                 removed = group.iloc[list(removed_indices)].copy()
                 kept_subset = group.iloc[list(kept_indices)]
@@ -166,23 +166,23 @@ class Deduplicator:
 
     def _deduplicate_group(self, group: pd.DataFrame, threshold_m: float) -> list:
         """
-        Returns indices of assets to keep within a single asset_type group.
+        returns indices of assets to keep within a single asset_type group.
 
-        Uses sklearn's BallTree with the `haversine` metric — this gives
+        uses sklearn's BallTree with the `haversine` metric — this gives
         true great-circle distances, so the meter-valued `threshold_m`
         is applied uniformly regardless of latitude.
 
-        History note:
-          A previous implementation here built a `scipy.spatial.KDTree`
+        history note:
+          a previous implementation here built a `scipy.spatial.KDTree`
           over raw (lat, lon) degree pairs and queried with
-          `threshold / 111_320`. That was wrong on two counts:
+          `threshold / 111_320`. that was wrong on two counts:
             (1) longitude degrees shrink by cos(lat), so the conversion
-                only held at the equator. At lat 60° the E–W radius
+                only held at the equator. at lat 60° the E–W radius
                 collapsed to ~50% of intended; at lat 45° to ~70%.
             (2) KDTree's Euclidean metric in degree space treats N–S and
-                E–W as commensurate, which is anisotropic away from the
+                e–W as commensurate, which is anisotropic away from the
                 equator regardless of the threshold conversion.
-          Both are fixed by switching to BallTree+haversine on radians.
+          both are fixed by switching to BallTree+haversine on radians.
         """
         lats = group["lat"].values
         lons = group["lon"].values
@@ -195,18 +195,18 @@ class Deduplicator:
             from sklearn.neighbors import BallTree
             EARTH_RADIUS_M = 6_371_000
 
-            # Convert to radians; BallTree haversine requires that.
+            # convert to radians; BallTree haversine requires that.
             coords_rad = np.column_stack([
                 np.radians(lats),
                 np.radians(lons),
             ])
             tree = BallTree(coords_rad, metric="haversine")
 
-            # Threshold in radians (the haversine metric returns distances
+            # threshold in radians (the haversine metric returns distances
             # in radians; multiply by Earth radius to get meters).
             threshold_rad = threshold_m / EARTH_RADIUS_M
 
-            # Batch query — for each point, indices of points within radius.
+            # batch query — for each point, indices of points within radius.
             neighbors = tree.query_radius(coords_rad, r=threshold_rad)
 
             suppressed = set()
@@ -222,7 +222,7 @@ class Deduplicator:
 
         except ImportError:
             # sklearn not available — fall back to O(n²) with a warning.
-            # The fallback uses _haversine_m so it is geographically
+            # the fallback uses _haversine_m so it is geographically
             # correct, just slow on large groups.
             print("  Warning: scikit-learn not installed, using slow O(n²) "
                   "dedup. Install with: pip install scikit-learn")
@@ -243,9 +243,9 @@ class Deduplicator:
     def _nearest_kept(self, removed_row: pd.Series,
                       kept_df: pd.DataFrame) -> str:
         """
-        Returns the asset_id of the nearest kept asset to a removed one.
+        returns the asset_id of the nearest kept asset to a removed one.
 
-        Uses BallTree+haversine so the nearest neighbor reported is the
+        uses BallTree+haversine so the nearest neighbor reported is the
         true geographic nearest, not whatever a Euclidean-on-degrees
         KDTree happens to surface (which can be off by tens of meters
         at mid-to-high latitudes).
@@ -278,7 +278,7 @@ class Deduplicator:
     def summarize(self, clean_df: pd.DataFrame,
                   removed_df: pd.DataFrame) -> pd.DataFrame:
         """
-        Returns a summary DataFrame showing kept/removed counts per asset type.
+        returns a summary DataFrame showing kept/removed counts per asset type.
         """
         kept_counts    = clean_df["asset_type"].value_counts().rename("kept")
         removed_counts = removed_df["asset_type"].value_counts().rename("removed") \
@@ -291,7 +291,7 @@ class Deduplicator:
 
 
 # ---------------------------------------------------------------------------
-# Quick demo
+# quick demo
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":

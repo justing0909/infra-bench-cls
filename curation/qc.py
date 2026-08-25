@@ -1,27 +1,27 @@
 """
 qc.py
 -----
-Imagery quality control for infrastructure asset tiles.
+imagery quality control for infrastructure asset tiles.
 
-Extended to support multimodal tiles (sentinel2_ms, sentinel1,
-landsat_thermal, naip) with per-modality thresholds.
+handles multimodal tiles (sentinel2_ms, sentinel1, landsat_thermal, naip)
+with per-modality thresholds.
 
 QC is always applied to TileResult.image — the single best composite.
-Temporal stacks (image_stack) are not QC'd individually; if the best
+temporal stacks (image_stack) are not QC'd individually; if the best
 composite passes, the stack is accepted.
 
-Four checks in order:
-  1. Valid pixel ratio  — rejects tiles that are mostly nodata/zero.
-                          Checks optical bands only — SAR and thermal can
+four checks in order:
+  1. valid pixel ratio  — rejects tiles that are mostly nodata/zero.
+                          checks optical bands only — SAR and thermal can
                           have non-zero values even when optical data is
                           empty, which would falsely inflate the ratio.
-  2. Edge artifact      — rejects tiles clipped at scene boundary
-  3. Minimum tile size  — rejects tiles too small to be meaningful
+  2. edge artifact      — rejects tiles clipped at scene boundary
+  3. minimum tile size  — rejects tiles too small to be meaningful
                           (catches edge cases from windowed reads)
-  4. Value range        — per-modality range check on optical bands only
+  4. value range        — per-modality range check on optical bands only
 
 Usage:
-    from qc import QualityChecker
+    from curation.qc import QualityChecker
     checker = QualityChecker()
     qc_results = checker.check_all(tile_results)
     clean      = checker.filter_ok(qc_results)
@@ -32,18 +32,18 @@ import pandas as pd
 from dataclasses import dataclass, field
 from typing import List, Optional
 
-from helpers.tile_types import TileResult, MODALITY_REGISTRY
+from .helpers.tile_types import TileResult, MODALITY_REGISTRY
 
 
 # ---------------------------------------------------------------------------
-# Default thresholds
+# default thresholds
 # ---------------------------------------------------------------------------
 
 DEFAULT_MIN_VALID_RATIO = 0.80
 DEFAULT_EDGE_MARGIN_PX  = 5
 DEFAULT_MIN_TILE_DIM    = 20   # pixels — reject tiles smaller than this
 
-# Per-modality value range thresholds (applied to optical bands only)
+# per-modality value range thresholds (applied to optical bands only)
 MODALITY_RANGE_THRESHOLDS = {
     "sentinel2_ms":    (15, 220),
     "sentinel2_rgb":   (15, 220),
@@ -56,14 +56,14 @@ DEFAULT_RANGE_THRESHOLD = (15, 220)
 
 
 # ---------------------------------------------------------------------------
-# Helpers
+# helpers
 # ---------------------------------------------------------------------------
 
 def _optical_bands(image: np.ndarray, modalities: List[str]) -> np.ndarray:
     """
-    Returns the optical-only slice of a multimodal (C, H, W) array.
-    Optical modalities are those with dtype='uint8' in MODALITY_REGISTRY.
-    Falls back to full image if no modality info available.
+    returns the optical-only slice of a multimodal (C, H, W) array.
+    optical modalities are those with dtype='uint8' in MODALITY_REGISTRY.
+    falls back to full image if no modality info available.
     """
     if not modalities:
         return image
@@ -83,14 +83,14 @@ def _optical_bands(image: np.ndarray, modalities: List[str]) -> np.ndarray:
 
 
 # ---------------------------------------------------------------------------
-# Check functions
+# check functions
 # ---------------------------------------------------------------------------
 
 def _check_valid_pixels(image: np.ndarray, min_ratio: float,
                          modalities: List[str]) -> tuple:
     """
-    Checks that enough pixels contain real optical data.
-    Uses optical bands only — SAR/thermal can be non-zero even when
+    checks that enough pixels contain real optical data.
+    uses optical bands only — SAR/thermal can be non-zero even when
     optical data is empty (clouds, no-data fill), inflating the ratio.
     """
     optical     = _optical_bands(image, modalities)
@@ -102,7 +102,7 @@ def _check_valid_pixels(image: np.ndarray, min_ratio: float,
 def _check_edge_artifacts(image: np.ndarray, margin_px: int,
                            zero_threshold: float = 0.90) -> bool:
     """
-    Checks for edge clipping using optical bands only.
+    checks for edge clipping using optical bands only.
     """
     _, h, w = image.shape
     if h < margin_px * 2 or w < margin_px * 2:
@@ -124,8 +124,8 @@ def _check_edge_artifacts(image: np.ndarray, margin_px: int,
 def _check_min_size(image: np.ndarray,
                     min_dim: int = DEFAULT_MIN_TILE_DIM) -> bool:
     """
-    Rejects tiles where either spatial dimension is below min_dim pixels.
-    Catches edge cases from windowed reads near scene boundaries.
+    rejects tiles where either spatial dimension is below min_dim pixels.
+    catches edge cases from windowed reads near scene boundaries.
     """
     _, h, w = image.shape
     return h >= min_dim and w >= min_dim
@@ -134,8 +134,8 @@ def _check_min_size(image: np.ndarray,
 def _check_value_range(image: np.ndarray,
                         modalities: List[str]) -> tuple:
     """
-    Checks mean value of the optical bands against expected range.
-    Uses the primary optical modality's thresholds.
+    checks mean value of the optical bands against expected range.
+    uses the primary optical modality's thresholds.
     """
     primary = modalities[0] if modalities else "sentinel2_rgb"
     vmin, vmax = MODALITY_RANGE_THRESHOLDS.get(primary, DEFAULT_RANGE_THRESHOLD)
@@ -157,7 +157,7 @@ def _check_value_range(image: np.ndarray,
 @dataclass
 class QCResult:
     """
-    Holds the quality control outcome for one TileResult.
+    holds the quality control outcome for one TileResult.
 
     status values:
         "pass"
@@ -184,13 +184,13 @@ class QCResult:
 
 
 # ---------------------------------------------------------------------------
-# Main class
+# main class
 # ---------------------------------------------------------------------------
 
 class QualityChecker:
     """
-    Runs QC checks on imagery tiles.
-    Modality-aware: valid pixel and value range checks use optical bands only.
+    runs QC checks on imagery tiles.
+    modality-aware: valid pixel and value range checks use optical bands only.
 
     Parameters
     ----------
@@ -229,21 +229,21 @@ class QualityChecker:
         passed_checks = []
         failed_checks = []
 
-        # Check 1: valid pixels (optical bands only)
+        # check 1: valid pixels (optical bands only)
         valid_ok, valid_ratio = _check_valid_pixels(
             image, self.min_valid_ratio, modalities
         )
         (passed_checks if valid_ok else failed_checks).append("valid_pixels")
 
-        # Check 2: edge artifacts
+        # check 2: edge artifacts
         edge_ok = _check_edge_artifacts(image, self.edge_margin_px)
         (passed_checks if edge_ok else failed_checks).append("edge_artifacts")
 
-        # Check 3: minimum tile size
+        # check 3: minimum tile size
         size_ok = _check_min_size(image, self.min_tile_dim)
         (passed_checks if size_ok else failed_checks).append("min_size")
 
-        # Check 4: value range (optical bands only)
+        # check 4: value range (optical bands only)
         range_ok, mean_val = _check_value_range(image, modalities)
         (passed_checks if range_ok else failed_checks).append("value_range")
 

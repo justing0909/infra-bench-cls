@@ -1,17 +1,17 @@
 """
 visualize_tiles.py
 ------------------
-Visual inspection tool for curated infrastructure imagery tiles.
+visual inspection tool for curated infrastructure imagery tiles.
 
-Shows a grid of tiles from a curated dataset, with:
+shows a grid of tiles from a curated dataset, with:
   - RGB composite (S2 bands B04/B03/B02)
   - NIR channel (B08) if available
   - SAR VV channel if available
   - SAR VH channel if available
-  - Thermal (Landsat TIR) if available — rendered with inferno colormap
+  - Thermal (Landsat TIR) if available -- rendered with inferno colormap
   - Asset type and ID labels
 
-Band indices are computed dynamically from the manifest modalities,
+band indices are computed dynamically from the manifest modalities,
 so the visualizer works correctly regardless of which modality combination
 was used when fetching.
 
@@ -41,12 +41,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-# Add curation root to path so MODALITY_REGISTRY is importable
+# add curation root to path so MODALITY_REGISTRY is importable
 sys.path.insert(0, str(Path(__file__).parent))
 try:
-    from helpers.tile_types import MODALITY_REGISTRY
+    from curation.helpers.tile_types import MODALITY_REGISTRY
 except ImportError:
-    # Fallback hardcoded registry if import fails
+    # fallback hardcoded registry if import fails
     MODALITY_REGISTRY = {
         "sentinel2_ms":    {"n_bands": 7,  "dtype": "uint8"},
         "sentinel2_rgb":   {"n_bands": 3,  "dtype": "uint8"},
@@ -57,7 +57,7 @@ except ImportError:
 
 
 # ---------------------------------------------------------------------------
-# Band index helpers
+# band index helpers
 # ---------------------------------------------------------------------------
 
 S2_RGB_INDICES = (0, 1, 2)   # B04=R, B03=G, B02=B within sentinel2_ms
@@ -66,10 +66,10 @@ S2_NIR_INDEX   = 3            # B08 within sentinel2_ms
 
 def _compute_band_indices(modalities: list) -> dict:
     """
-    Computes band indices for named channels based on active modalities.
-    Returns dict with keys: nir, sar_vv, sar_vh, thermal (where available).
+    computes band indices for named channels based on active modalities.
+    returns dict with keys: nir, sar_vv, sar_vh, thermal (where available).
 
-    Example for ["sentinel2_ms", "sentinel1", "landsat_thermal"]:
+    example for ["sentinel2_ms", "sentinel1", "landsat_thermal"]:
       sentinel2_ms = bands 0-6
       sentinel1    = bands 7-8  -> sar_vv=7, sar_vh=8
       landsat_thermal = band 9  -> thermal=9
@@ -97,13 +97,13 @@ def _compute_band_indices(modalities: list) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Rendering helpers
+# rendering helpers
 # ---------------------------------------------------------------------------
 
 def _to_rgb(arr: np.ndarray, band_indices=(0, 1, 2)) -> np.ndarray:
     """
-    Extracts RGB bands from (C, H, W) and returns (H, W, 3) uint8.
-    Handles both uint8 and float32 input. Applies 2-98 percentile stretch.
+    extracts RGB bands from (C, H, W) and returns (H, W, 3) uint8.
+    handles both uint8 and float32 input. applies 2-98 percentile stretch.
     """
     r = arr[band_indices[0]].astype(np.float32)
     g = arr[band_indices[1]].astype(np.float32)
@@ -124,8 +124,8 @@ def _to_rgb(arr: np.ndarray, band_indices=(0, 1, 2)) -> np.ndarray:
 
 def _to_grayscale(arr: np.ndarray, band_index: int) -> np.ndarray:
     """
-    Extracts a single band and returns (H, W) float32 in [0, 1].
-    Applies 2-98 percentile stretch for visibility.
+    extracts a single band and returns (H, W) float32 in [0, 1].
+    applies 2-98 percentile stretch for visibility.
     """
     band = arr[band_index].astype(np.float32)
     p2, p98 = np.percentile(band, (2, 98))
@@ -137,7 +137,7 @@ def _to_grayscale(arr: np.ndarray, band_index: int) -> np.ndarray:
 
 
 # ---------------------------------------------------------------------------
-# Dataset loader
+# dataset loader
 # ---------------------------------------------------------------------------
 
 def load_manifest(dataset_root: str) -> dict:
@@ -154,7 +154,7 @@ def load_tile(dataset_root: str, record: dict) -> np.ndarray:
 
 
 # ---------------------------------------------------------------------------
-# Label helpers
+# label helpers
 # ---------------------------------------------------------------------------
 
 def _short_id(asset_id: str, max_len: int = 18) -> str:
@@ -174,7 +174,7 @@ def _short_type(asset_type: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Main visualizer
+# main visualizer
 # ---------------------------------------------------------------------------
 
 def visualize_tiles(
@@ -185,8 +185,8 @@ def visualize_tiles(
     seed         : int  = 42,
 ) -> None:
     """
-    Renders a grid of tiles with all available modality panels.
-    Band indices are computed dynamically from manifest modalities.
+    renders a grid of tiles with all available modality panels.
+    band indices are computed dynamically from manifest modalities.
     """
     manifest   = load_manifest(dataset_root)
     records    = manifest["records"]
@@ -208,13 +208,13 @@ def visualize_tiles(
     random.seed(seed)
     sample = random.sample(records, min(n, len(records)))
 
-    # Compute band indices from modalities
+    # compute band indices from modalities
     band_idx  = _compute_band_indices(modalities)
     has_nir   = "nir"     in band_idx
     has_sar   = "sar_vv"  in band_idx
     has_therm = "thermal" in band_idx
 
-    # Build panel list
+    # build panel list
     panels = [("RGB", "rgb", S2_RGB_INDICES)]
     if has_nir:
         panels.append(("NIR",    "gray",    band_idx["nir"]))
@@ -235,7 +235,7 @@ def visualize_tiles(
           f"SAR={'yes' if has_sar else 'no'} | "
           f"TIR={'yes' if has_therm else 'no'}")
 
-    # Grid layout
+    # grid layout
     cols      = 4
     tile_rows = (len(sample) + cols - 1) // cols
     fig_w     = cols * (n_panels * 1.6 + 0.3)
@@ -272,7 +272,7 @@ def visualize_tiles(
         label_bottom = bottom + inner_h
         label_left   = left + margin
 
-        # Title label
+        # title label
         ax_title = fig.add_axes(
             [label_left, label_bottom, width - 2 * margin, 0.04]
         )
@@ -324,7 +324,7 @@ def visualize_tiles(
 
 
 # ---------------------------------------------------------------------------
-# Stats summary
+# stats summary
 # ---------------------------------------------------------------------------
 
 def print_stats(dataset_root: str) -> None:
@@ -371,7 +371,7 @@ def print_stats(dataset_root: str) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Entry point
+# entry point
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":

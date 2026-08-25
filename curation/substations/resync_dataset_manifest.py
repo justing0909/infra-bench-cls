@@ -1,40 +1,40 @@
 """
 resync_dataset_manifest.py
 --------------------------
-Reconcile an existing curated imagery dataset against an updated deduped
+reconcile an existing curated imagery dataset against an updated deduped
 asset parquet, without refetching tiles.
 
-Three buckets after reconciliation:
+three buckets after reconciliation:
   - kept    : tile exists in images/ AND asset_id is in the new parquet
   - orphan  : tile exists in images/ but asset_id is NOT in the new parquet
               (happens when the corrected dedup collapsed that asset away)
   - missing : asset_id is in the new parquet but no tile exists.
-              IMPORTANT: this set typically mixes two very different
+              important: this set typically mixes two very different
               populations:
                 (a) assets recovered by post-hoc bug fixes that were
                     never in the original imagery scope,
                 (b) assets that the original dataset intentionally
                     sampled out (e.g. the 25k-tile-per-region cap used
                     in the May 2026 STAC pass).
-              For sample-capped datasets, (b) dominates and the
+              for sample-capped datasets, (b) dominates and the
               `missing_from_dataset.csv` output is informational, NOT
               an actionable refetch list.
 
-The script rewrites summary.csv + manifest.json against only the `kept`
+the script rewrites summary.csv + manifest.json against only the `kept`
 set and writes:
-  - missing_from_dataset.csv — every asset in the new parquet that has
-                               no tile on disk. Inspect manually before
+  - missing_from_dataset.csv -- every asset in the new parquet that has
+                               no tile on disk. inspect manually before
                                feeding into any refetch step.
 
-By default, orphan .npy files are left on disk for safety. Use
+by default, orphan .npy files are left on disk for safety. use
 `--delete-orphans` to remove them.
 
 Usage:
-    python -m curation.resync_dataset_manifest \\
+    python -m curation.substations.resync_dataset_manifest \\
         --dataset-dir data/curated_datasets/dataset_central-america_stac_v1 \\
         --deduped-parquet data/PIPELINE/02-deduped-assets/central-america_deduped_assets_substations.parquet
 
-Or call `resync_dataset()` directly from Python.
+or call `resync_dataset()` directly from Python.
 """
 from __future__ import annotations
 import argparse
@@ -47,7 +47,7 @@ from datetime import datetime, timezone
 import pandas as pd
 
 
-# Filename pattern: <asset_id>_<source-tag>.npy where asset_id is e.g.
+# filename pattern: <asset_id>_<source-tag>.npy where asset_id is e.g.
 # osm_way_12345 or osm_node_12345 or osm_relation_12345.
 _FILENAME_RE = re.compile(r"^(osm_(?:node|way|relation)_\d+)_.+\.npy$")
 
@@ -64,9 +64,9 @@ def resync_dataset(
     write_manifest:   bool = True,
 ) -> dict:
     """
-    Reconcile dataset_dir against deduped_parquet. Returns a stats dict.
+    reconcile dataset_dir against deduped_parquet. returns a stats dict.
 
-    Side effects (when write_manifest=True):
+    side effects (when write_manifest=True):
       - Overwrites <dataset_dir>/summary.csv with kept-only rows.
       - Overwrites <dataset_dir>/manifest.json with updated counts.
       - Writes <dataset_dir>/to_refetch.csv listing missing asset_ids.
@@ -88,7 +88,7 @@ def resync_dataset(
     deduped_df = pd.read_parquet(deduped_parquet)
     valid_ids: set[str] = set(deduped_df["asset_id"].tolist())
 
-    # Catalogue files in images/ by asset_id (multiple tile variants OK).
+    # catalogue files in images/ by asset_id (multiple tile variants OK).
     files_by_asset: dict[str, list[str]] = {}
     skipped: list[str] = []
     for fn in os.listdir(images_dir):
@@ -120,7 +120,7 @@ def resync_dataset(
     if not write_manifest:
         return stats
 
-    # Rewrite summary.csv against the new kept set. If an old summary
+    # rewrite summary.csv against the new kept set. if an old summary
     # exists, preserve its columns and only retain kept-asset rows; else
     # fall back to the parquet's columns.
     if os.path.exists(summary_path):
@@ -130,7 +130,7 @@ def resync_dataset(
         new_summary = deduped_df[deduped_df["asset_id"].isin(kept_ids)].copy()
     new_summary.to_csv(summary_path, index=False)
 
-    # Rewrite manifest.json — preserve existing keys, update counts.
+    # rewrite manifest.json — preserve existing keys, update counts.
     if os.path.exists(manifest_path):
         with open(manifest_path, "r", encoding="utf-8") as f:
             manifest = json.load(f)
@@ -147,12 +147,12 @@ def resync_dataset(
         json.dump(manifest, f, indent=2)
 
     # missing_from_dataset.csv — rows from the deduped parquet whose tiles
-    # are absent. NOTE: this typically includes both (a) post-fix recovered
-    # assets and (b) deliberately sampled-out assets. Treat as informational.
+    # are absent. note: this typically includes both (a) post-fix recovered
+    # assets and (b) deliberately sampled-out assets. treat as informational.
     missing_df = deduped_df[deduped_df["asset_id"].isin(missing_ids)].copy()
     missing_df.to_csv(refetch_path, index=False)
 
-    # Optional cleanup of orphan tiles.
+    # optional cleanup of orphan tiles.
     if delete_orphans and orphan_ids:
         for aid in orphan_ids:
             for fn in files_by_asset.get(aid, ()):

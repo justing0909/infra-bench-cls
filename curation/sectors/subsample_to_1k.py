@@ -1,10 +1,10 @@
 """
 subsample_to_1k.py
 ------------------
-Produce a 1k subsampled view of each completed v1 cell, without refetching
-any imagery. Reads dataset_<region>_<sector>_v1/{manifest.json,summary.csv,images/},
+produce a 1k subsampled view of each completed v1 cell, without refetching
+any imagery. reads dataset_<region>_<sector>_v1/{manifest.json,summary.csv,images/},
 applies proportional class-stratified sampling (target=1000, seed=42, same
-algorithm as curation/sample_v1.py), and writes:
+algorithm as curation/sectors/sample_v1.py), and writes:
 
   data/curated_datasets/dataset_<region>_<sector>_v1_1k/
     images/           hardlinks to the chosen .npy files in ../dataset_*_v1/images/
@@ -12,15 +12,15 @@ algorithm as curation/sample_v1.py), and writes:
     summary.csv       filtered to the chosen records
     _SUCCESS          completion marker
 
-Cells with ≤TARGET tiles pass through unchanged (still hardlinked into the
+cells with <=TARGET tiles pass through unchanged (still hardlinked into the
 new folder so consumers have a single uniform layout to point at).
 
-Idempotent — re-run safely after additional cells finish.
+idempotent -- re-run safely after additional cells finish.
 
 Usage
 -----
-python subsample_to_1k.py                 # all cells under data/curated_datasets/dataset_*_v1
-python subsample_to_1k.py --only africa energy
+python -m curation.sectors.subsample_to_1k                 # every cell under data/curated_datasets/
+python -m curation.sectors.subsample_to_1k --only africa energy
 """
 from __future__ import annotations
 
@@ -35,8 +35,10 @@ from pathlib import Path
 
 import pandas as pd
 
-REPO          = Path(__file__).resolve().parent
-DATASETS_DIR  = REPO / "data" / "curated_datasets"
+from ..paths import REPO_ROOT, CURATED_DIR
+
+REPO          = REPO_ROOT
+DATASETS_DIR  = CURATED_DIR
 
 V1_FOLDER_RE  = re.compile(r"^dataset_([a-z-]+)_(energy|water|transport|telecom)_v1$")
 TARGET        = 1_000
@@ -44,12 +46,16 @@ SEED          = 42
 
 
 def stratified_subsample(records: list[dict], target: int, seed: int) -> list[dict]:
-    """Proportional class-stratified subsample matching curation/sample_v1.py."""
+    """proportional class-stratified subsample matching curation/sectors/sample_v1.py."""
     if len(records) <= target:
         return records
     df = pd.DataFrame(records)
     parts: list[pd.DataFrame] = []
     total_n = len(df)
+    # each class is allocated its own rounded share, so the parts need not sum
+    # to `target`: three of the 28 shipped cells land at 1,001 or 1,002. do not
+    # trim the overshoot -- the published dataset was built with this exact
+    # arithmetic and rounding it down would no longer reproduce those cells.
     for cls, cls_df in df.groupby("asset_type", sort=False):
         cls_n = len(cls_df)
         allocation = int(round(cls_n / total_n * target))
@@ -64,7 +70,7 @@ def stratified_subsample(records: list[dict], target: int, seed: int) -> list[di
 
 
 def hardlink_image(src: Path, dst: Path) -> None:
-    """Create a Windows hardlink; fall back to copy if hardlink isn't possible."""
+    """create a Windows hardlink; fall back to copy if hardlink isn't possible."""
     if dst.exists():
         return
     try:
@@ -74,7 +80,7 @@ def hardlink_image(src: Path, dst: Path) -> None:
 
 
 def process_cell(src_dir: Path, target: int = TARGET, seed: int = SEED) -> dict:
-    """Subsample one completed v1 cell into a parallel _v1_1k folder."""
+    """subsample one completed v1 cell into a parallel _v1_1k folder."""
     m = V1_FOLDER_RE.match(src_dir.name)
     if not m:
         return {"cell": src_dir.name, "status": "skip_not_v1"}
@@ -104,7 +110,7 @@ def process_cell(src_dir: Path, target: int = TARGET, seed: int = SEED) -> dict:
     chosen = stratified_subsample(records, target=target, seed=seed)
     chosen_ids = {r["asset_id"] for r in chosen}
 
-    # Hardlink the chosen image files (and any temporal_file if present)
+    # hardlink the chosen image files (and any temporal_file if present)
     n_linked = 0
     n_missing = 0
     for r in chosen:
@@ -120,11 +126,11 @@ def process_cell(src_dir: Path, target: int = TARGET, seed: int = SEED) -> dict:
             hardlink_image(s, d)
             n_linked += 1
 
-    # Write filtered manifest with updated top-level counts
+    # write filtered manifest with updated top-level counts
     new_manifest = dict(m_obj)
     new_manifest["records"]  = chosen
     new_manifest["n_tiles"]  = len(chosen)
-    # Recompute asset_types/sources/modalities counts
+    # recompute asset_types/sources/modalities counts
     at_counts = {}
     for r in chosen:
         at_counts[r["asset_type"]] = at_counts.get(r["asset_type"], 0) + 1
@@ -141,7 +147,7 @@ def process_cell(src_dir: Path, target: int = TARGET, seed: int = SEED) -> dict:
     with dst_manifest.open("w") as f:
         json.dump(new_manifest, f, indent=2, default=str)
 
-    # Filter summary.csv if present
+    # filter summary.csv if present
     if src_summary.exists():
         with src_summary.open(newline="") as f:
             reader = csv.DictReader(f)
@@ -152,7 +158,7 @@ def process_cell(src_dir: Path, target: int = TARGET, seed: int = SEED) -> dict:
             writer.writeheader()
             writer.writerows(rows)
 
-    # Write _SUCCESS
+    # write _SUCCESS
     dst_success.write_text(json.dumps({
         "subsample_of"   : src_dir.name,
         "target"         : target,
