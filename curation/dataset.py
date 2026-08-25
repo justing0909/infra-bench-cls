@@ -1,17 +1,16 @@
 """
 dataset.py
 ----------
-Assembles accepted tiles into a structured training dataset.
+assembles accepted tiles into a structured training dataset.
 
-Extended to support:
-  - multimodal tiles (sentinel2_ms, sentinel1, landsat_thermal, naip)
-  - temporal stacks: saves image_stack as <asset_id>_temporal.npy (T,C,H,W)
-    alongside the single best composite <asset_id>.npy (C,H,W)
-  - modality and band metadata in manifest.json
-  - STAC dataset version suffix (dataset_<region>_stac_v1/)
-    vs. GEE suffix (dataset_<region>_sentinel_v1/)
+handles multimodal tiles (sentinel2_ms, sentinel1, landsat_thermal, naip)
+and, when a temporal stack is present, saves image_stack as
+<asset_id>_temporal.npy (T,C,H,W) alongside the single best composite
+<asset_id>.npy (C,H,W). modality and band metadata go into manifest.json.
+output directories carry a _stac_v1 suffix; the _sentinel_v1 suffix belongs
+to the retired Google Earth Engine path.
 
-Directory structure:
+directory structure:
     dataset_<region>_stac_v1/
     ├── images/
     │   ├── osm_node_123_stac_sentinel2_ms+sentinel1.npy       (C, H, W)
@@ -23,10 +22,13 @@ Directory structure:
 manifest.json records per tile:
     asset_id, asset_type, source, lat, lon, bbox,
     image_date, image_dates, confidence, image_file, temporal_file,
-    image_shape, stack_shape, modalities, n_bands, n_timesteps
+    image_shape, stack_shape, modalities, n_bands, n_timesteps, scenes
+
+scenes maps each modality to the STAC item its pixels came from
+(collection, item_id, datetime, cloud_cover).
 
 Usage:
-    from dataset import DatasetAssembler
+    from curation.dataset import DatasetAssembler
     assembler = DatasetAssembler("data/curated_datasets/dataset_central-america_stac_v1")
     assembler.assemble(accepted_tiles, triage_results)
 """
@@ -38,12 +40,12 @@ import pandas as pd
 from datetime import datetime
 from typing import List, Optional, Dict
 
-from helpers.tile_types import TileResult
-from triage import TriageResult
+from .helpers.tile_types import TileResult
+from .triage import TriageResult
 
 
 # ---------------------------------------------------------------------------
-# Version suffix constants
+# version suffix constants
 # ---------------------------------------------------------------------------
 
 VERSION_SUFFIX_STAC = "stac_v1"
@@ -53,7 +55,7 @@ VERSION_SUFFIX_GEE  = "sentinel_v1"
 def dataset_output_dir(region: str, use_stac: bool = True,
                         root: str = "data/curated_datasets") -> str:
     """
-    Returns the canonical output directory path for a region's dataset.
+    returns the canonical output directory path for a region's dataset.
 
     Examples
     --------
@@ -68,19 +70,19 @@ def dataset_output_dir(region: str, use_stac: bool = True,
 
 
 # ---------------------------------------------------------------------------
-# Main class
+# main class
 # ---------------------------------------------------------------------------
 
 class DatasetAssembler:
     """
-    Assembles accepted tiles into a structured training dataset.
+    assembles accepted tiles into a structured training dataset.
 
     Parameters
     ----------
     output_dir : str
-        Root directory for the dataset.
-        Convention: data/curated_datasets/dataset_<region>_stac_v1/
-        Use dataset_output_dir() to generate this consistently.
+        root directory for the dataset.
+        convention: data/curated_datasets/dataset_<region>_stac_v1/
+        use dataset_output_dir() to generate this consistently.
     """
 
     def __init__(self, output_dir: str):
@@ -95,13 +97,13 @@ class DatasetAssembler:
         triage_results  : Optional[List[TriageResult]] = None,
     ) -> pd.DataFrame:
         """
-        Saves images to disk and writes manifest.json + summary.csv.
+        saves images to disk and writes manifest.json + summary.csv.
 
-        For tiles with a temporal stack (image_stack is not None), saves:
+        for tiles with a temporal stack (image_stack is not None), saves:
           - <asset_id>_<source>.npy            — single best composite (C, H, W)
           - <asset_id>_<source>_temporal.npy   — full stack (T, C, H, W)
 
-        Returns summary DataFrame.
+        returns summary DataFrame.
         """
         os.makedirs(self.images_dir, exist_ok=True)
 
@@ -124,7 +126,7 @@ class DatasetAssembler:
             filename = f"{safe_id}_{tile.source}.npy"
             filepath = os.path.join(self.images_dir, filename)
 
-            # Save primary image (C, H, W)
+            # save primary image (C, H, W)
             try:
                 np.save(filepath, tile.image)
                 n_saved += 1
@@ -133,7 +135,7 @@ class DatasetAssembler:
                 n_failed += 1
                 continue
 
-            # Save temporal stack (T, C, H, W) if present
+            # save temporal stack (T, C, H, W) if present
             temporal_filename = None
             if tile.image_stack is not None:
                 temporal_filename = f"{safe_id}_{tile.source}_temporal.npy"
@@ -162,6 +164,9 @@ class DatasetAssembler:
                 "bbox":              list(tile.bbox),
                 "image_date":        tile.image_date,
                 "image_dates":       image_dates,
+                # getattr so manifests can still be reassembled from tiles
+                # produced before scenes existed
+                "scenes":            getattr(tile, "scenes", {}) or {},
                 "confidence":        triage.confidence if triage else "high",
                 "triage_reason":     triage.reason if triage else "",
                 "image_file":        filename,
@@ -179,13 +184,13 @@ class DatasetAssembler:
                 print(f"  [{i+1}/{len(accepted_tiles)}] "
                       f"saved={n_saved} failed={n_failed}")
 
-        # Collect per-modality tile counts for timing log
+        # collect per-modality tile counts for timing log
         modality_counts: Dict[str, int] = {}
         for r in records:
             key = "+".join(r["modalities"])
             modality_counts[key] = modality_counts.get(key, 0) + 1
 
-        # Write manifest.json
+        # write manifest.json
         manifest = {
             "created_at":      datetime.utcnow().isoformat() + "Z",
             "n_tiles":         len(records),
@@ -200,8 +205,8 @@ class DatasetAssembler:
         with open(self.manifest_path, "w") as f:
             json.dump(manifest, f, indent=2)
 
-        # Write summary.csv (lightweight — no large array fields)
-        _skip = {"bbox", "image_shape", "stack_shape", "image_dates"}
+        # write summary.csv (lightweight — no large array fields)
+        _skip = {"bbox", "image_shape", "stack_shape", "image_dates", "scenes"}
         summary_df = pd.DataFrame([
             {k: ("+".join(v) if k == "modalities" else v)
              for k, v in r.items() if k not in _skip}
@@ -235,12 +240,12 @@ class DatasetAssembler:
             return json.load(f)
 
     def load_tile(self, record: dict) -> np.ndarray:
-        """Loads the primary (C, H, W) tile for a manifest record."""
+        """loads the primary (C, H, W) tile for a manifest record."""
         filepath = os.path.join(self.images_dir, record["image_file"])
         return np.load(filepath)
 
     def load_temporal_tile(self, record: dict) -> Optional[np.ndarray]:
-        """Loads the temporal (T, C, H, W) stack for a manifest record, or None."""
+        """loads the temporal (T, C, H, W) stack for a manifest record, or None."""
         if not record.get("temporal_file"):
             return None
         filepath = os.path.join(self.images_dir, record["temporal_file"])
@@ -260,7 +265,8 @@ class DatasetAssembler:
         df = pd.DataFrame([
             {k: ("+".join(v) if k == "modalities" else v)
              for k, v in r.items()
-             if k not in ("bbox", "image_shape", "stack_shape", "image_dates")}
+             if k not in ("bbox", "image_shape", "stack_shape", "image_dates",
+                          "scenes")}
             for r in manifest["records"]
         ])
         print(f"\nTiles by asset type:")
