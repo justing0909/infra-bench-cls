@@ -1,19 +1,19 @@
 """
 sources.py
 ----------
-Extracts infrastructure asset geometries and weak labels from local
+extracts infrastructure asset geometries and weak labels from local
 GeoFabrik OSM extracts (.osm.pbf files) using pyosmium.
 
-Why GeoFabrik instead of live Overpass API queries?
+why GeoFabrik instead of live Overpass API queries?
   - No rate limits or timeouts
   - Works offline once downloaded
   - Scales globally — download a country or continent extract once,
     query it as many times as needed
   - Much faster for large areas
 
-Download GeoFabrik extracts from: https://download.geofabrik.de/
+download GeoFabrik extracts from: https://download.geofabrik.de/
 
-Each query returns a pandas DataFrame with one row per asset:
+each query returns a pandas DataFrame with one row per asset:
   - asset_id      : unique ID (e.g. "osm_node_123456" or "osm_relation_42")
   - asset_type    : ontology label (e.g. "energy.transmission.substation")
   - lat / lon     : centroid coordinates
@@ -21,9 +21,9 @@ Each query returns a pandas DataFrame with one row per asset:
   - source        : always "osm_geofabrik"
   - osm_tags      : dict of all OSM tags (for provenance)
 
-Filter presets
+filter presets
 --------------
-The available presets are derived from `curation/ontology.py`:
+the available presets are derived from `curation/ontology.py`:
   "full"       : every energy-sector class (legacy default)
   "substation" : transmission + distribution + minor + untyped substations
   "energy"     : same as "full" (clarified name)
@@ -31,12 +31,12 @@ The available presets are derived from `curation/ontology.py`:
   "transport"  : transport-sector classes
   "telecom"    : telecom-sector classes
 
-Recommended preset for current infra-FM paper runs is "substation"
+recommended preset for current infra-FM paper runs is "substation"
 (Ed's guidance: start small, ignore generators; CSDA handoff needs clean
 substation bounding boxes).
 
 Usage:
-    from sources import GeoFabrikSource
+    from curation.sources import GeoFabrikSource
     src = GeoFabrikSource("data/pbf/asia-260408.osm.pbf",
                           filter_preset="substation")
     df = src.extract_all()
@@ -46,9 +46,12 @@ import os
 import osmium
 import pandas as pd
 from typing import Optional
-from utils.timing_log_utils import update_timing_log, file_size_kb, file_size_mb
+from .paths import TIMING_LOG
+from .utils.timing_log_utils import (
+    update_timing_log, file_size_kb
+)
 
-from ontology import (
+from .ontology import (
     AssetClass,
     ASSET_CLASSES,
     SECTORS as ONTOLOGY_SECTORS,
@@ -58,17 +61,17 @@ from ontology import (
 
 
 # ---------------------------------------------------------------------------
-# Confidence ordering
+# confidence ordering
 # ---------------------------------------------------------------------------
 
 CONFIDENCE_LEVELS = {"high": 3, "medium": 2, "low": 1}
 
 
 # ---------------------------------------------------------------------------
-# Filter presets — derived from the ontology registry
+# filter presets — derived from the ontology registry
 # ---------------------------------------------------------------------------
-# Each preset is a tuple of AssetClass instances in declaration order.
-# Order matters: matchers prefer the earliest matching class so the untyped
+# each preset is a tuple of AssetClass instances in declaration order.
+# order matters: matchers prefer the earliest matching class so the untyped
 # substation catch-all only fires when the subtype-specific entries don't.
 
 _ENERGY_CLASSES    = tuple(c for c in ASSET_CLASSES if c.sector == "energy")
@@ -89,7 +92,7 @@ FILTER_PRESETS: dict[str, tuple[AssetClass, ...]] = {
     "telecom":    _TELECOM_CLASSES,
 }
 
-# Group asset_type *names* by top-level sector (used by extract_sector()).
+# group asset_type *names* by top-level sector (used by extract_sector()).
 SECTORS: dict[str, list[str]] = {
     sector: [c.name for c in classes]
     for sector, classes in ONTOLOGY_SECTORS.items()
@@ -101,8 +104,8 @@ def asset_types_by_confidence(
     filter_preset:  str = "full",
 ) -> set:
     """
-    Return the set of asset_type names in `filter_preset` whose confidence
-    meets or exceeds `min_confidence`. Backwards-compatible with the prior
+    return the set of asset_type names in `filter_preset` whose confidence
+    meets or exceeds `min_confidence`. backwards-compatible with the prior
     dict-based implementation.
     """
     classes = FILTER_PRESETS.get(filter_preset, _ENERGY_CLASSES)
@@ -114,15 +117,15 @@ def asset_types_by_confidence(
 
 
 # ---------------------------------------------------------------------------
-# Matching helpers
+# matching helpers
 # ---------------------------------------------------------------------------
-# These operate on raw OSM tag sets (pyosmium tags object) and ontology
-# AssetClass instances. They are intentionally side-effect-free and take all
+# these operate on raw OSM tag sets (pyosmium tags object) and ontology
+# AssetClass instances. they are intentionally side-effect-free and take all
 # inputs as arguments so they can be unit-tested without instantiating the
 # osmium handler.
 
 def _tags_all_match(tags, required: tuple) -> bool:
-    """Every (key, value) in `required` must be present. value=None matches any value."""
+    """every (key, value) in `required` must be present. value=None matches any value."""
     for key, value in required:
         tv = tags.get(key)
         if tv is None:
@@ -133,7 +136,7 @@ def _tags_all_match(tags, required: tuple) -> bool:
 
 
 def _tags_any_match(tags, candidates: tuple) -> bool:
-    """At least one (key, value) in `candidates` must be present. Empty tuple = vacuously True."""
+    """at least one (key, value) in `candidates` must be present. empty tuple = vacuously True."""
     if not candidates:
         return True
     for key, value in candidates:
@@ -146,7 +149,7 @@ def _tags_any_match(tags, candidates: tuple) -> bool:
 
 
 def _tags_none_match(tags, forbidden: tuple) -> bool:
-    """No (key, value) in `forbidden` may be present. Empty tuple = vacuously True."""
+    """no (key, value) in `forbidden` may be present. empty tuple = vacuously True."""
     if not forbidden:
         return True
     for key, value in forbidden:
@@ -176,7 +179,7 @@ def _class_accepts(
     osm_type:   str,
     area_m2:    Optional[float],
 ) -> bool:
-    """Full accept/reject test for a single AssetClass against an OSM element."""
+    """full accept/reject test for a single AssetClass against an OSM element."""
     if not _geometry_allowed(cls, osm_type):
         return False
     if not _tags_all_match(tags, cls.tags):
@@ -197,7 +200,7 @@ def _best_class(
     osm_type:   str,
     area_m2:    Optional[float] = None,
 ) -> Optional[AssetClass]:
-    """Returns the first matching AssetClass from `classes`, or None.
+    """returns the first matching AssetClass from `classes`, or None.
 
     `classes` must be iterated in priority order: subtype-specific entries
     (e.g. transmission.substation) before catch-alls (substation_untyped)."""
@@ -207,18 +210,18 @@ def _best_class(
     return None
 
 
-# Legacy alias retained for any external callers that grepped this name.
-# Returns the matched AssetClass.name (str) rather than the dataclass.
+# legacy alias retained for any external callers that grepped this name.
+# returns the matched AssetClass.name (str) rather than the dataclass.
 def _best_asset_type(tags, classes) -> Optional[str]:
     cls = _best_class(tuple(classes), tags, "any", None)
     return cls.name if cls is not None else None
 
 
 # ---------------------------------------------------------------------------
-# Pre-filter routing
+# pre-filter routing
 # ---------------------------------------------------------------------------
 
-# Sector -> output filename label for the pre-filter PBF. "power" is kept
+# sector -> output filename label for the pre-filter PBF. "power" is kept
 # for the energy sector so existing `*_power_only.osm.pbf` files continue
 # to be picked up by _pre_filter_pbf_by_tags' "already exists" shortcut.
 _SECTOR_TO_PREFILTER_NAME = {
@@ -233,16 +236,16 @@ def _derive_prefilter_sector(
     classes: tuple,
 ) -> tuple[str, list[str]]:
     """
-    Returns (sector_name, sector_tag_keys) suitable for passing to
-    `_pre_filter_pbf_by_tags`. Both are derived from the active class set:
+    returns (sector_name, sector_tag_keys) suitable for passing to
+    `_pre_filter_pbf_by_tags`. both are derived from the active class set:
 
-      - sector_name: from the unique sector(s) of `classes`. For a single
-        sector, uses the sector-specific label (energy -> "power"). For a
+      - sector_name: from the unique sector(s) of `classes`. for a single
+        sector, uses the sector-specific label (energy -> "power"). for a
         mixed set (rare), uses an alphabetically joined name.
 
       - sector_tag_keys: the union of the FIRST tag key from each class's
-        `tags` tuple. This is the "anchor" key that every matching element
-        must carry. Empty `tags` (any_of_tags only) falls back to the first
+        `tags` tuple. this is the "anchor" key that every matching element
+        must carry. empty `tags` (any_of_tags only) falls back to the first
         key of any_of_tags.
     """
     sectors = sorted({c.sector for c in classes})
@@ -262,7 +265,7 @@ def _derive_prefilter_sector(
 
 
 # ---------------------------------------------------------------------------
-# Note on area handling
+# note on area handling
 # ---------------------------------------------------------------------------
 # pyosmium 4.x's `SimpleHandler.apply_file(filename, locations=True)` already
 # does the right thing when the handler defines an `area()` callback:
@@ -270,8 +273,8 @@ def _derive_prefilter_sector(
 #     "If an area callback is implemented, then the file will be scanned
 #      twice and a location handler and a handler for assembling
 #      multipolygons and areas from ways will be executed."
-# That means we get both closed-way areas AND multipolygon-relation areas
-# without any manual AreaManager wiring. The `_needs_area` flag inside
+# that means we get both closed-way areas AND multipolygon-relation areas
+# without any manual AreaManager wiring. the `_needs_area` flag inside
 # InfraHandler controls only:
 #   - whether way() defers closed ways to area() (so area_m2 is available
 #     before matching), and
@@ -285,14 +288,14 @@ def _derive_prefilter_sector(
 class InfraHandler(osmium.SimpleHandler):
     """
     pyosmium handler that scans an .osm.pbf and collects elements matching
-    any of `active_classes`. When at least one active class declares
+    any of `active_classes`. when at least one active class declares
     `min_area_m2`, the handler is driven in two-pass area-aware mode:
 
       - way() ignores closed ways (they will reappear via area()).
       - area() computes the ellipsoidal polygon area in m² via shapely +
         pyproj, then runs the full matcher with area_m2 supplied.
 
-    Matched elements are deduplicated by (osm_type, osm_id) so closed ways
+    matched elements are deduplicated by (osm_type, osm_id) so closed ways
     that also surface through area() are not recorded twice.
     """
 
@@ -308,14 +311,14 @@ class InfraHandler(osmium.SimpleHandler):
         self._needs_area          = any(
             c.min_area_m2 is not None for c in self._classes
         )
-        # Deduplication key: (osm_type, osm_id).
+        # deduplication key: (osm_type, osm_id).
         self._seen_ids: set       = set()
 
-        # Lazy-init heavy geometry helpers only when area mode is active.
+        # lazy-init heavy geometry helpers only when area mode is active.
         self._wkb_factory         = None
         self._geod                = None
 
-        # Progress / stats.
+        # progress / stats.
         self._log_every           = log_every
         self._n_nodes             = 0
         self._n_ways              = 0
@@ -390,8 +393,8 @@ class InfraHandler(osmium.SimpleHandler):
     def way(self, w):
         self._n_ways += 1
 
-        # In area mode, defer closed ways to area() — they'll surface there
-        # with an actual area_m2 value. Open (linear) ways must still be
+        # in area mode, defer closed ways to area() — they'll surface there
+        # with an actual area_m2 value. open (linear) ways must still be
         # processed here because area() does not fire for them.
         if self._needs_area and w.is_closed():
             return
@@ -412,11 +415,11 @@ class InfraHandler(osmium.SimpleHandler):
 
     def area(self, a):
         """
-        Fires only in area mode (after AreaManager has assembled multipolygon
+        fires only in area mode (after AreaManager has assembled multipolygon
         relations, plus closed-way auto-assembled areas).
 
-        Note: pyosmium 4.x auto-fires `area()` for closed ways whenever node
-        locations are loaded, even outside the AreaManager flow. When
+        note: pyosmium 4.x auto-fires `area()` for closed ways whenever node
+        locations are loaded, even outside the AreaManager flow. when
         `_needs_area` is False we early-return so we don't pay the WKB +
         geod cost for nothing — closed ways are already handled in `way()`.
         """
@@ -454,19 +457,19 @@ class InfraHandler(osmium.SimpleHandler):
 
 
 # ---------------------------------------------------------------------------
-# Main source class
+# main source class
 # ---------------------------------------------------------------------------
 
 class GeoFabrikSource:
     """
-    Extracts infrastructure assets from a GeoFabrik .osm.pbf file.
+    extracts infrastructure assets from a GeoFabrik .osm.pbf file.
 
     Parameters
     ----------
     pbf_path        : str  — path to local .osm.pbf file
     min_confidence  : str  — "high", "medium", or "low"
     filter_preset   : str  — "full" or "substation"
-                      Use "substation" for infra-FM paper runs.
+                      use "substation" for infra-FM paper runs.
     pre_filter      : bool — write a power-only PBF before scanning
                       (dramatically faster for continent-scale files)
     """
@@ -486,7 +489,7 @@ class GeoFabrikSource:
                 f"Available: {list(FILTER_PRESETS.keys())}"
             )
 
-        # The preset is an *ordered* tuple of AssetClass instances. Apply the
+        # the preset is an *ordered* tuple of AssetClass instances. apply the
         # confidence threshold here so downstream code only sees in-scope
         # classes, but PRESERVE order — matchers depend on subtype-specific
         # entries appearing before catch-alls (e.g. transmission.substation
@@ -497,7 +500,7 @@ class GeoFabrikSource:
             c for c in preset_classes
             if CONFIDENCE_LEVELS.get(c.confidence, 0) >= threshold
         )
-        # Name-set view of the active classes (used by extract_sector for
+        # name-set view of the active classes (used by extract_sector for
         # intersection with sector membership).
         self._target_types: set = {c.name for c in self._active_classes}
 
@@ -514,47 +517,62 @@ class GeoFabrikSource:
         sector_tag_keys: list,
     ) -> str:
         """
-        Writes a sector-filtered PBF subset to speed up scanning on large files.
+        writes a sector-filtered PBF subset to speed up scanning on large files.
 
         Parameters
         ----------
         sector_name : str
-            Short label embedded in the output filename, e.g. "power".
-            The output PBF is written to "{base}_{sector_name}_only.osm.pbf".
+            short label embedded in the output filename, e.g. "power".
+            the output PBF is written to "{base}_{sector_name}_only.osm.pbf".
         sector_tag_keys : list of str
             OSM tag keys that mark an element as in-sector.
-            An element matches if ANY of these keys is present in its tags.
+            an element matches if ANY of these keys is present in its tags.
             Examples:
               ["power"]
               ["waterway", "water", "man_made"]
               ["highway", "railway", "aeroway"]
 
-        Pass 1 collects:
+        pass 1 collects:
           - IDs of nodes/ways/relations whose tags include any sector_tag_keys.
           - IDs of nodes referenced by matched ways (via w.nodes).
           - IDs of nodes referenced by matched relations (members of type 'n').
-            Nested relation membership is intentionally not traversed.
+            nested relation membership is intentionally not traversed.
 
-        Pass 2 writes:
+        pass 2 writes:
           - every node that is either tagged or referenced by a matched
             way/relation,
           - every matched way and matched relation.
 
-        Returns path to the filtered PBF, or the original path on failure.
+        returns path to the filtered PBF, or the original path on failure.
         """
         import time
-        base = os.path.splitext(self.pbf_path)[0]
-        out_path = f"{base}_{sector_name}_only.osm.pbf"
+
+        # Pre-filter output goes in a prefiltered/ subdirectory next to the
+        # input rather than beside it. The inputs are already named
+        # <region>_power_only.osm.pbf, so appending the suffix again produced
+        # <region>_power_only.osm_power_only.osm.pbf, which reads like a
+        # mistake and sits in the same folder as the real extracts. The second
+        # pass is still worth running: it applies this module's own stricter
+        # criteria and shrinks the scan by orders of magnitude.
+        stem = os.path.basename(os.path.splitext(self.pbf_path)[0])
+        already = f"_{sector_name}_only.osm"
+        if stem.endswith(already):
+            stem = stem[: -len(already)]
+
+        out_dir  = os.path.join(os.path.dirname(self.pbf_path) or ".", "prefiltered")
+        out_path = os.path.join(out_dir, f"{stem}_{sector_name}_only.osm.pbf")
 
         if os.path.exists(out_path):
             print(f"  Using existing {sector_name}-only PBF: {out_path}")
             return out_path
 
+        os.makedirs(out_dir, exist_ok=True)
+
         print(f"  Pre-filtering {self.pbf_path} -> {out_path} "
               f"(sector='{sector_name}', tag_keys={sector_tag_keys})")
         t0 = time.time()
 
-        # Local copy for fast membership tests inside the handler classes.
+        # local copy for fast membership tests inside the handler classes.
         _tag_keys = tuple(sector_tag_keys)
 
         try:
@@ -564,8 +582,8 @@ class GeoFabrikSource:
                     self.tagged_node_ids     = set()
                     self.tagged_way_ids      = set()
                     self.tagged_relation_ids = set()
-                    # Nodes referenced by matched ways/relations.
-                    # Kept in a separate set so we can report both numbers.
+                    # nodes referenced by matched ways/relations.
+                    # kept in a separate set so we can report both numbers.
                     self.member_node_ids     = set()
 
                 @staticmethod
@@ -582,14 +600,14 @@ class GeoFabrikSource:
                 def way(self, w):
                     if self._matches(w.tags):
                         self.tagged_way_ids.add(w.id)
-                        # Retain referenced nodes so the output remains valid.
+                        # retain referenced nodes so the output remains valid.
                         for nd in w.nodes:
                             self.member_node_ids.add(nd.ref)
 
                 def relation(self, r):
                     if self._matches(r.tags):
                         self.tagged_relation_ids.add(r.id)
-                        # Only direct node members. Way/relation members are
+                        # only direct node members. way/relation members are
                         # not followed — keep this pass simple and correct.
                         for m in r.members:
                             if m.type == 'n':
@@ -611,7 +629,7 @@ class GeoFabrikSource:
                   f"{len(collector.tagged_way_ids):,} ways, "
                   f"{len(collector.tagged_relation_ids):,} relations")
 
-            # Union the two sets for fast O(1) lookup during Pass 2.
+            # union the two sets for fast O(1) lookup during Pass 2.
             keep_node_ids = collector.tagged_node_ids | collector.member_node_ids
 
             writer = osmium.SimpleWriter(out_path)
@@ -660,7 +678,7 @@ class GeoFabrikSource:
 
             try:
                 update_timing_log(
-                    workbook_path="Infra-FM-timing-log.xlsx",
+                    workbook_path=str(TIMING_LOG),
                     region=self._region_name(),
                     starting_file_size_kb=file_size_kb(self.pbf_path),
                     pre_filter_time_s=round(elapsed, 2),
@@ -681,7 +699,7 @@ class GeoFabrikSource:
     def _run(self, target_types: Optional[set] = None) -> pd.DataFrame:
         import time
 
-        # Effective class set for this run = active classes (preset +
+        # effective class set for this run = active classes (preset +
         # confidence threshold) intersected with `target_types` if supplied.
         if target_types is None:
             effective_classes = self._active_classes
@@ -694,8 +712,8 @@ class GeoFabrikSource:
             print("  No active classes for this run; returning empty DataFrame.")
             return pd.DataFrame()
 
-        # Pre-filter sector name + tag keys derived from the effective
-        # classes. The pre-filter step itself is unchanged from Part 1 —
+        # pre-filter sector name + tag keys derived from the effective
+        # classes. the pre-filter step itself is unchanged from Part 1 —
         # this just routes the right keys to it.
         sector_name, sector_tag_keys = _derive_prefilter_sector(
             effective_classes
@@ -709,7 +727,7 @@ class GeoFabrikSource:
         else:
             scan_path = self.pbf_path
 
-        # Estimate node count from file size.
+        # estimate node count from file size.
         # ~850 bytes/node is a reasonable estimate for power-only PBFs;
         # the same heuristic works ballpark for other sector subsets.
         size_bytes        = os.path.getsize(scan_path)
@@ -732,16 +750,16 @@ class GeoFabrikSource:
 
         t0 = time.time()
         # pyosmium 4.x auto-detects the area() callback and runs a two-pass
-        # scan internally when locations=True. The `_needs_area` flag only
+        # scan internally when locations=True. the `_needs_area` flag only
         # influences whether area() does work or early-returns.
         #
-        # NOTE: an earlier version of this code passed
+        # note: an earlier version of this code passed
         #     idx="sparse_file_array,locations.idx"
-        # to use a disk-backed location index. That parameter silently drops
+        # to use a disk-backed location index. that parameter silently drops
         # node locations on some inputs, which then breaks both way()
-        # centroid calc AND multipolygon-area assembly. Symptoms observed
+        # centroid calc AND multipolygon-area assembly. symptoms observed
         # on central-america transport: only 1 airport matched instead of
-        # 88 (≥50 ha), 0 ports instead of 2. The pre-filter output is
+        # 88 (≥50 ha), 0 ports instead of 2. the pre-filter output is
         # always small enough that in-memory locations are affordable
         # (a few MB up to ~50 MB), so we just use the default.
         handler.apply_file(scan_path, locations=True)
@@ -755,7 +773,7 @@ class GeoFabrikSource:
 
         try:
             update_timing_log(
-                workbook_path="Infra-FM-timing-log.xlsx",
+                workbook_path=str(TIMING_LOG),
                 region=self._region_name(),
                 scanning_time_s=round(elapsed, 2),
                 assets_extracted=len(handler.rows),
@@ -797,7 +815,7 @@ class GeoFabrikSource:
 
 
 # ---------------------------------------------------------------------------
-# Configuration
+# configuration
 # ---------------------------------------------------------------------------
 
 OUTPUT_PARQUET = "data/asia_all_assets.parquet"
@@ -805,7 +823,7 @@ PBF_PATH       = "data/pbf/asia-260408.osm.pbf"
 
 
 # ---------------------------------------------------------------------------
-# Quick demo
+# quick demo
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
@@ -817,7 +835,7 @@ if __name__ == "__main__":
     print("(Change OUTPUT_PARQUET and PBF_PATH above before re-running.)\n")
 
     # filter_preset="substation" is the recommended default for infra-FM runs.
-    # Switch to "full" (or any sector preset) to broaden the scope.
+    # switch to "full" (or any sector preset) to broaden the scope.
     src = GeoFabrikSource(PBF_PATH,
                           min_confidence="medium",
                           filter_preset="substation")
