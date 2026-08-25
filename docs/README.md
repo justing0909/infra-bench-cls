@@ -195,7 +195,8 @@ python tools/validate.py data/results.json
 ```
 
 `validate.py` checks the output against every figure printed in
-`paper_figures.ipynb` — the Appendix F tables (all four metrics, mean and std,
+`paper_figures.ipynb` — the Supporting Information Tables S10–S13 (all four
+metrics, mean and std,
 30 conditions), the LP→FT macro F1 values at full float precision, and the
 structural constants. It exits non-zero on any mismatch, so a silent drift in
 the upstream results will not reach the site unnoticed. Nothing else needs to

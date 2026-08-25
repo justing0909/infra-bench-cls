@@ -3,42 +3,41 @@
 # Install with:
 #     pip install -r requirements.txt
 #
-# Scope: everything needed to (1) run the curation pipeline (curation/) and
-# (2) open the notebooks + regenerate paper figures (plots/) locally.
-# The evaluation notebooks under evaluation/ are Colab-based and install
-# their own foundation-model deps in-notebook, so those are NOT listed here.
+# Scope: everything needed to (1) run the curation pipeline (curation/),
+# (2) open the notebooks locally, and (3) rebuild the results site
+# (docs/tools/). The evaluation notebooks under evaluation/ and the figure
+# notebook under plots/ run in Colab and install their own foundation-model
+# dependencies in-notebook, so those are NOT listed here.
+#
+# Every entry below is imported by code in this repository. Verified against
+# an AST scan of curation/ and docs/tools/, plus the two indirect entries
+# noted inline.
 
-# --- Curation pipeline ---
-# OSM extraction
-osmium>=4.0
+# --- OSM extraction ---
+osmium>=4.0             # curation/sources.py
 
-# Geospatial
-rasterio>=1.3
-shapely>=2.0
-scipy>=1.10
+# --- Geospatial ---
+rasterio>=1.3           # windowed COG reads in curation/stac_imagery.py
+shapely>=2.0            # multipolygon assembly in curation/sources.py
+pyproj>=3.5             # ellipsoidal areas (sources.py) and Equal Earth
+                        # blocks (utils/spatial_blocking.py)
+scikit-learn>=1.3       # BallTree haversine dedup in curation/deduplication.py
 
-# STAC / Planetary Computer imagery
+# --- STAC / Planetary Computer ---
 pystac-client>=0.7
 planetary-computer>=1.0
-azure-storage-blob>=12.0
 
-# Data
+# --- Data ---
 numpy>=1.24
 pandas>=2.0
-pyarrow>=12.0        # parquet support
+pyarrow>=12.0           # indirect: pandas parquet engine, no direct import
 
-# Image processing
-opencv-python-headless>=4.8
-matplotlib>=3.7
-Pillow>=10.0
+# --- Imagery and plotting ---
+opencv-python-headless>=4.8   # tile resampling in curation/stac_imagery.py
+matplotlib>=3.7               # curation/visualize_tiles.py and the QA notebooks
 
-# Progress
-tqdm>=4.65
+# --- Curation timing log ---
+openpyxl>=3.1           # data/Infra-FM-timing-log.xlsx
 
-# --- Local notebook + figure regeneration ---
-jupyter>=1.0         # open evaluation/ + qa/ notebooks locally
-scikit-learn>=1.3    # weighted-F1 / confusion-matrix helpers in analysis notebooks
-
-# Optional — only needed for AgentTriager in curation/triage.py
-# anthropic>=0.20
-# openai>=1.0
+# --- Local notebooks ---
+jupyter>=1.0            # indirect: opens the .ipynb files, not imported

@@ -13,17 +13,46 @@ env/
 
 # Curated data — large, regenerable
 data/curated_datasets/
-data/PIPELINE/
 data/pbf/
 data/checkpoints/
 data/results/
 **/checkpoints/*.pkl
 data/curated_datasets/**/checkpoints/
 
+# data/PIPELINE holds the extraction and dedup tables. Ignore everything in it
+# except the parquets, which are the inputs every curation entry point reads.
+# Written as data/PIPELINE/** rather than data/PIPELINE/ on purpose: an ignored
+# *directory* stops git descending into it, and then no ! rule below can
+# re-include anything underneath.
+data/PIPELINE/**
+!data/PIPELINE/01-extracted-assets/
+!data/PIPELINE/02-deduped-assets/
+!data/PIPELINE/_backup/
+!data/PIPELINE/**/*.parquet
+
+# ...except 01-extracted-assets. Those are one step further back than anything
+# the pipeline needs: regenerating them takes 51 GB of Geofabrik PBFs that are
+# not distributable, and every entry point starts from the deduplicated tables
+# instead. pipeline.py skips extraction outright when its deduped table exists.
+data/PIPELINE/01-extracted-assets/
+
+# ...but not the per-cell sample lists: they embed absolute paths from whoever
+# ran the sampling, and curation.sectors.sample_v1 regenerates them.
+data/PIPELINE/03-v1-samples/
+
+# The split artifact and the AlphaEarth embeddings ARE shipped. Every
+# evaluation notebook needs both, they total ~12 MB, and keeping them with the
+# code means the Zenodo bundle is imagery alone.
+!data/spatial_split/
+!data/spatial_split/*.parquet
+!data/alphaearth/
+!data/alphaearth/*.parquet
+
 # QA outputs
 qa_outputs/
 
-# Regenerated paper figures (plots/paper_figures.py output)
+# Regenerated paper figures (plots/paper_figures.ipynb writes these to Drive;
+# these are the local copies)
 figures/
 plots/figures/
 # ...but the published site ships its own copies, which must be committed.
