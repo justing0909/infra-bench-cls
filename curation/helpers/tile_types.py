@@ -1,13 +1,11 @@
 """
 tile_types.py
 -------------
-Shared data types and helper functions used by imagery fetchers,
+shared data types and helper functions used by the imagery fetcher,
 qc.py, triage.py, and dataset.py.
 
-Extended to support:
-  - multimodal imagery (sentinel2_ms, sentinel1, landsat_thermal, naip)
-  - temporal image stacks (T, C, H, W)
-  - per-modality band metadata
+covers multimodal imagery (sentinel2_ms, sentinel1, landsat_thermal, naip),
+temporal image stacks shaped (T, C, H, W), and per-modality band metadata.
 """
 
 import numpy as np
@@ -16,10 +14,10 @@ from typing import Optional, List
 
 
 # ---------------------------------------------------------------------------
-# Modality definitions
+# modality definitions
 # ---------------------------------------------------------------------------
-# Central registry of all supported imagery modalities.
-# Used by stac_imagery.py, qc.py, and dataset.py.
+# central registry of all supported imagery modalities.
+# used by stac_imagery.py, qc.py, and dataset.py.
 #
 # value_range: expected (min, max) after normalization
 #   - uint8 optical:  (0, 255)
@@ -69,8 +67,8 @@ MODALITY_REGISTRY = {
     },
 }
 
-# Ordered list for stacking when multiple modalities are fetched.
-# Determines band ordering in (C, H, W) stacked arrays.
+# ordered list for stacking when multiple modalities are fetched.
+# determines band ordering in (C, H, W) stacked arrays.
 MODALITY_STACK_ORDER = [
     "sentinel2_ms",
     "sentinel2_rgb",
@@ -79,27 +77,27 @@ MODALITY_STACK_ORDER = [
     "naip",
 ]
 
-# Total bands if all modalities are stacked
+# total bands if all modalities are stacked
 def total_bands(modalities: List[str]) -> int:
     return sum(MODALITY_REGISTRY[m]["n_bands"] for m in modalities
                if m in MODALITY_REGISTRY)
 
 
 # ---------------------------------------------------------------------------
-# Core tile dataclass
+# core tile dataclass
 # ---------------------------------------------------------------------------
 
 @dataclass
 class TileResult:
     """
-    Holds the result of fetching one imagery tile for one asset.
+    holds the result of fetching one imagery tile for one asset.
 
     image       : np.ndarray or None
-                  Single-date:  (C, H, W) where C = total bands across modalities
-                  Use image_stack for temporal tiles (see below)
+                  single-date:  (C, H, W) where C = total bands across modalities
+                  use image_stack for temporal tiles (see below)
     image_stack : np.ndarray or None
-                  Temporal stack: (T, C, H, W) — T seasonal composites
-                  Only populated when temporal_stack=True in the fetcher.
+                  temporal stack: (T, C, H, W) — T seasonal composites
+                  only populated when temporal_stack=True in the fetcher.
                   image holds the single best composite in that case too
                   for backward compatibility with qc.py / triage.py.
 
@@ -117,22 +115,28 @@ class TileResult:
     bbox        : tuple
     source      : str
 
-    # Primary image — single date or best composite
+    # primary image — single date or best composite
     image       : Optional[np.ndarray]  = None   # (C, H, W)
 
-    # Temporal stack — populated when temporal_stack=True
+    # temporal stack — populated when temporal_stack=True
     image_stack : Optional[np.ndarray]  = None   # (T, C, H, W)
 
-    # Modality metadata
+    # modality metadata
     modalities  : List[str]             = field(default_factory=lambda: ["sentinel2_rgb"])
     n_bands     : int                   = 3
     n_timesteps : int                   = 1
 
-    # Acquisition metadata
+    # acquisition metadata
     image_date  : Optional[str]         = None
     image_dates : List[str]             = field(default_factory=list)  # per timestep
 
-    # Status
+    # provenance: modality -> {collection, item_id, datetime, cloud_cover}.
+    # identifies the exact STAC scene each modality's pixels came from, so a
+    # finished tile can be traced back to the imagery it was built from.
+    # tiles fetched before this field existed carry an empty dict.
+    scenes      : dict                  = field(default_factory=dict)
+
+    # status
     status      : str                   = "ok"
     error_msg   : str                   = ""
 
@@ -154,7 +158,7 @@ class TileResult:
 
 
 # ---------------------------------------------------------------------------
-# Geometry helpers
+# geometry helpers
 # ---------------------------------------------------------------------------
 
 def _meters_to_degrees(meters: float, lat: float):

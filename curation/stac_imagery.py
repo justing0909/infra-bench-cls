@@ -3,35 +3,35 @@ stac_imagery.py
 ---------------
 Planetary Computer STAC imagery fetcher for infrastructure asset tiles.
 
-Replaces gee_imagery.py as the primary imagery source.
-All imagery is free via Microsoft Planetary Computer's public STAC endpoint.
+replaces gee_imagery.py as the primary imagery source.
+all imagery is free via Microsoft Planetary Computer's public STAC endpoint.
 
-Supported modalities
+supported modalities
 --------------------
   sentinel2_ms      Sentinel-2 L2A multispectral (RGB + NIR + RedEdge + SWIR)
                     10/20m resolution, 5-day revisit, global
   sentinel1         Sentinel-1 RTC SAR (VV + VH polarizations)
                     10m resolution, cloud-independent, global
-                    Uses sentinel-1-rtc collection (terrain corrected)
+                    uses sentinel-1-rtc collection (terrain corrected)
   landsat_thermal   Landsat Collection 2 L2 thermal infrared (Band 10)
                     30m resolution, global, back to 1982
   naip              NAIP aerial imagery (R + G + B + NIR)
                     1m resolution, CONUS only
 
-Non-fatal modalities
+non-fatal modalities
 --------------------
 sentinel1, landsat_thermal, and naip are non-fatal — if unavailable for
 a tile, zeros are substituted rather than failing the whole tile.
-This ensures sentinel2_ms always drives tile success/failure.
+this ensures sentinel2_ms always drives tile success/failure.
 
-Adaptive concurrency
+adaptive concurrency
 --------------------
-Set adaptive_concurrency=True in STACImageryFetcher to automatically
+set adaptive_concurrency=True in STACImageryFetcher to automatically
 tune MAX_CONCURRENT during a run based on observed throughput and
-fail rate. Starts at start_workers and hill-climbs toward the optimum.
+fail rate. starts at start_workers and hill-climbs toward the optimum.
 
 Usage:
-    from stac_imagery import STACImageryFetcher
+    from curation.stac_imagery import STACImageryFetcher
     fetcher = STACImageryFetcher(
         buffer_m=300,
         modalities=["sentinel2_ms", "sentinel1", "landsat_thermal"],
@@ -52,7 +52,7 @@ import pandas as pd
 from typing import List, Optional, Tuple
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from helpers.tile_types import (
+from .helpers.tile_types import (
     TileResult,
     MODALITY_REGISTRY,
     _centroid_to_bbox,
@@ -61,7 +61,7 @@ from helpers.tile_types import (
 
 
 # ---------------------------------------------------------------------------
-# Constants
+# constants
 # ---------------------------------------------------------------------------
 
 STAC_ENDPOINT = "https://planetarycomputer.microsoft.com/api/stac/v1"
@@ -72,7 +72,7 @@ DATE_END   = "2024-12-31"
 MAX_CLOUD_PCT       = 20
 TARGET_RESOLUTION_M = 10
 
-# Default concurrency — adaptive tuning starts here and adjusts up/down
+# default concurrency — adaptive tuning starts here and adjusts up/down
 MAX_CONCURRENT    = 16
 
 MAX_RETRIES       = 4
@@ -103,19 +103,19 @@ BAND_ASSET_KEYS = {
     "naip":            ["image"],
 }
 
-# Non-fatal modalities — missing fills with zeros instead of failing tile
+# non-fatal modalities — missing fills with zeros instead of failing tile
 NON_FATAL_MODALITIES = {"naip", "sentinel1", "landsat_thermal"}
 
 # ---------------------------------------------------------------------------
-# Adaptive concurrency controller
+# adaptive concurrency controller
 # ---------------------------------------------------------------------------
 
 class AdaptiveConcurrencyController:
     """
-    Hill-climbing adaptive concurrency tuner.
+    hill-climbing adaptive concurrency tuner.
 
-    Evaluates throughput and fail rate every `window` completions and
-    adjusts worker count up or down accordingly. Tracks the best observed
+    evaluates throughput and fail rate every `window` completions and
+    adjusts worker count up or down accordingly. tracks the best observed
     (concurrency, throughput) pair and converges toward it.
 
     Parameters
@@ -151,7 +151,7 @@ class AdaptiveConcurrencyController:
         self._history       = []
 
     def record(self, success: bool) -> bool:
-        """Record one tile completion. Returns True when window is full."""
+        """record one tile completion. returns True when window is full."""
         if success:
             self._window_ok += 1
         else:
@@ -159,7 +159,7 @@ class AdaptiveConcurrencyController:
         return (self._window_ok + self._window_fail) >= self.window
 
     def evaluate_and_adjust(self) -> int:
-        """Evaluate window and return new worker count."""
+        """evaluate window and return new worker count."""
         total     = self._window_ok + self._window_fail
         elapsed   = time.time() - self._window_start
         fail_rate = self._window_fail / max(total, 1)
@@ -207,7 +207,7 @@ class AdaptiveConcurrencyController:
 
 
 # ---------------------------------------------------------------------------
-# Helpers
+# helpers
 # ---------------------------------------------------------------------------
 
 def _retry_backoff(attempt: int) -> float:
@@ -263,9 +263,9 @@ def _resample_to_target(arr: np.ndarray,
 
 def _windowed_read(href: str, bbox: tuple) -> Optional[np.ndarray]:
     """
-    Opens a raster href, reprojects bbox to its native CRS, and returns
-    a windowed read. Falls back to full-tile read if CRS is missing.
-    Returns (H, W) float32 array or None on empty read.
+    opens a raster href, reprojects bbox to its native CRS, and returns
+    a windowed read. falls back to full-tile read if CRS is missing.
+    returns (H, W) float32 array or None on empty read.
     """
     import rasterio
     from rasterio.crs import CRS
@@ -289,8 +289,8 @@ def _windowed_read(href: str, bbox: tuple) -> Optional[np.ndarray]:
 
 def _windowed_read_multiband(href: str, bbox: tuple) -> Optional[np.ndarray]:
     """
-    Same as _windowed_read but reads all bands. Returns (C, H, W) array.
-    Used for NAIP which delivers all bands in a single asset.
+    same as _windowed_read but reads all bands. returns (C, H, W) array.
+    used for NAIP which delivers all bands in a single asset.
     """
     import rasterio
     from rasterio.crs import CRS
@@ -313,33 +313,76 @@ def _windowed_read_multiband(href: str, bbox: tuple) -> Optional[np.ndarray]:
 
 
 # ---------------------------------------------------------------------------
-# Per-modality fetch functions
+# per-modality fetch functions
 # ---------------------------------------------------------------------------
 
-def _fetch_sentinel2(catalog, bbox: tuple, date_start: str, date_end: str,
-                     modality: str = "sentinel2_ms") -> Optional[np.ndarray]:
+def _resolve_pinned(catalog, collection: str, item_id: str):
+    """fetch one STAC item by id instead of searching for the best match.
+
+    used by the pinned refetch path, where the point is to reproduce a
+    manifest exactly rather than to pick whatever is currently cleanest.
     """
-    Fetches Sentinel-2 L2A composite. Sorts client-side by cloud cover.
-    Returns (C, H, W) uint8 array or None.
+    import planetary_computer
+    try:
+        items = list(catalog.search(collections=[collection],
+                                    ids=[item_id], limit=1).items())
+    except Exception:
+        return None
+    return planetary_computer.sign(items[0]) if items else None
+
+
+def _record_scene(sink: Optional[dict], modality: str, item) -> None:
+    """note which STAC item a modality's pixels came from.
+
+    without this the only temporal metadata on a tile was image_date, which
+    was set to the search window end rather than the scene's own date, so a
+    finished dataset carried no way to identify the imagery it was built from.
+    """
+    if sink is None or item is None:
+        return
+    props = getattr(item, "properties", {}) or {}
+    dt = getattr(item, "datetime", None)
+    sink[modality] = {
+        "collection":  getattr(item, "collection_id", None),
+        "item_id":     getattr(item, "id", None),
+        "datetime":    dt.isoformat() if dt is not None else props.get("datetime"),
+        "cloud_cover": props.get("eo:cloud_cover"),
+    }
+
+
+def _fetch_sentinel2(catalog, bbox: tuple, date_start: str, date_end: str,
+                     modality: str = "sentinel2_ms",
+                     sink: Optional[dict] = None,
+                     pin: Optional[str] = None) -> Optional[np.ndarray]:
+    """
+    fetches Sentinel-2 L2A composite. sorts client-side by cloud cover.
+    returns (C, H, W) uint8 array or None.
     """
     import planetary_computer
     import cv2
 
     band_keys = BAND_ASSET_KEYS[modality]
 
-    search = catalog.search(
-        collections=["sentinel-2-l2a"],
-        bbox=bbox,
-        datetime=f"{date_start}/{date_end}",
-        limit=50,
-    )
-    items = list(search.items())
-    if not items:
-        return None
+    if pin is not None:
+        item = _resolve_pinned(catalog, "sentinel-2-l2a", pin)
+        if item is None:
+            return None
+    else:
+        search = catalog.search(
+            collections=["sentinel-2-l2a"],
+            bbox=bbox,
+            datetime=f"{date_start}/{date_end}",
+            limit=50,
+        )
+        items = list(search.items())
+        if not items:
+            return None
 
-    items.sort(key=lambda x: x.properties.get("eo:cloud_cover", 100))
-    clean = [i for i in items if i.properties.get("eo:cloud_cover", 100) < MAX_CLOUD_PCT]
-    item  = planetary_computer.sign(clean[0] if clean else items[0])
+        items.sort(key=lambda x: x.properties.get("eo:cloud_cover", 100))
+        clean = [i for i in items
+                 if i.properties.get("eo:cloud_cover", 100) < MAX_CLOUD_PCT]
+        item = planetary_computer.sign(clean[0] if clean else items[0])
+    _record_scene(sink, modality, item)
 
     for band in band_keys:
         if band not in item.assets:
@@ -372,26 +415,33 @@ def _fetch_sentinel2(catalog, bbox: tuple, date_start: str, date_end: str,
 
 
 def _fetch_sentinel1(catalog, bbox: tuple, date_start: str,
-                     date_end: str) -> Optional[np.ndarray]:
+                     date_end: str,
+                     sink: Optional[dict] = None,
+                     pin: Optional[str] = None) -> Optional[np.ndarray]:
     """
-    Fetches Sentinel-1 RTC (terrain corrected) VV+VH bands.
-    Uses sentinel-1-rtc collection — no subscription key required.
-    Returns (2, H, W) float32 dB array or None.
+    fetches Sentinel-1 RTC (terrain corrected) VV+VH bands.
+    uses sentinel-1-rtc collection — no subscription key required.
+    returns (2, H, W) float32 dB array or None.
     """
     import planetary_computer
     import cv2
 
-    search = catalog.search(
-        collections=["sentinel-1-rtc"],
-        bbox=bbox,
-        datetime=f"{date_start}/{date_end}",
-        limit=10,
-    )
-    items = list(search.items())
-    if not items:
-        return None
-
-    item     = planetary_computer.sign(items[0])
+    if pin is not None:
+        item = _resolve_pinned(catalog, "sentinel-1-rtc", pin)
+        if item is None:
+            return None
+    else:
+        search = catalog.search(
+            collections=["sentinel-1-rtc"],
+            bbox=bbox,
+            datetime=f"{date_start}/{date_end}",
+            limit=10,
+        )
+        items = list(search.items())
+        if not items:
+            return None
+        item = planetary_computer.sign(items[0])
+    _record_scene(sink, "sentinel1", item)
     arrays   = []
     target_h = None
     target_w = None
@@ -422,28 +472,35 @@ def _fetch_sentinel1(catalog, bbox: tuple, date_start: str,
 
 
 def _fetch_landsat_thermal(catalog, bbox: tuple, date_start: str,
-                            date_end: str) -> Optional[np.ndarray]:
+                            date_end: str,
+                            sink: Optional[dict] = None,
+                            pin: Optional[str] = None) -> Optional[np.ndarray]:
     """
-    Fetches Landsat Collection 2 L2 thermal band.
-    Filters to Landsat 8/9 only — consistent ST_B10/lwir11/lwir asset key,
+    fetches Landsat Collection 2 L2 thermal band.
+    filters to Landsat 8/9 only — consistent ST_B10/lwir11/lwir asset key,
     no Landsat 7 scan line corrector issues.
-    Returns (1, H, W) float32 Kelvin array or None.
+    returns (1, H, W) float32 Kelvin array or None.
     """
     import planetary_computer
 
-    search = catalog.search(
-        collections=["landsat-c2-l2"],
-        bbox=bbox,
-        datetime=f"{date_start}/{date_end}",
-        query={"platform": {"in": ["landsat-8", "landsat-9"]}},
-        limit=50,
-    )
-    items = list(search.items())
-    if not items:
-        return None
-
-    items.sort(key=lambda x: x.properties.get("eo:cloud_cover", 100))
-    item = planetary_computer.sign(items[0])
+    if pin is not None:
+        item = _resolve_pinned(catalog, "landsat-c2-l2", pin)
+        if item is None:
+            return None
+    else:
+        search = catalog.search(
+            collections=["landsat-c2-l2"],
+            bbox=bbox,
+            datetime=f"{date_start}/{date_end}",
+            query={"platform": {"in": ["landsat-8", "landsat-9"]}},
+            limit=50,
+        )
+        items = list(search.items())
+        if not items:
+            return None
+        items.sort(key=lambda x: x.properties.get("eo:cloud_cover", 100))
+        item = planetary_computer.sign(items[0])
+    _record_scene(sink, "landsat_thermal", item)
 
     thermal_key = next((k for k in ["lwir11", "lwir", "ST_B10"] if k in item.assets), None)
     if thermal_key is None:
@@ -458,24 +515,31 @@ def _fetch_landsat_thermal(catalog, bbox: tuple, date_start: str,
 
 
 def _fetch_naip(catalog, bbox: tuple, date_start: str,
-                date_end: str) -> Optional[np.ndarray]:
+                date_end: str,
+                sink: Optional[dict] = None,
+                pin: Optional[str] = None) -> Optional[np.ndarray]:
     """
-    Fetches NAIP 4-band (R, G, B, NIR). CONUS only.
-    Returns (4, H, W) uint8 array or None.
+    fetches NAIP 4-band (R, G, B, NIR). CONUS only.
+    returns (4, H, W) uint8 array or None.
     """
     import planetary_computer
 
-    search = catalog.search(
-        collections=["naip"],
-        bbox=bbox,
-        datetime=f"{date_start}/{date_end}",
-        limit=5,
-    )
-    items = list(search.items())
-    if not items:
-        return None
-
-    item = planetary_computer.sign(items[0])
+    if pin is not None:
+        item = _resolve_pinned(catalog, "naip", pin)
+        if item is None:
+            return None
+    else:
+        search = catalog.search(
+            collections=["naip"],
+            bbox=bbox,
+            datetime=f"{date_start}/{date_end}",
+            limit=5,
+        )
+        items = list(search.items())
+        if not items:
+            return None
+        item = planetary_computer.sign(items[0])
+    _record_scene(sink, "naip", item)
 
     if "image" not in item.assets:
         return None
@@ -488,10 +552,10 @@ def _fetch_naip(catalog, bbox: tuple, date_start: str,
     return _normalize_array(arr, "naip")
 
 
-# Dispatch table
+# dispatch table
 FETCH_DISPATCH = {
-    "sentinel2_ms":    lambda cat, bbox, ds, de: _fetch_sentinel2(cat, bbox, ds, de, "sentinel2_ms"),
-    "sentinel2_rgb":   lambda cat, bbox, ds, de: _fetch_sentinel2(cat, bbox, ds, de, "sentinel2_rgb"),
+    "sentinel2_ms":    lambda cat, bbox, ds, de, sink=None, pin=None: _fetch_sentinel2(cat, bbox, ds, de, "sentinel2_ms", sink, pin),
+    "sentinel2_rgb":   lambda cat, bbox, ds, de, sink=None, pin=None: _fetch_sentinel2(cat, bbox, ds, de, "sentinel2_rgb", sink, pin),
     "sentinel1":       _fetch_sentinel1,
     "landsat_thermal": _fetch_landsat_thermal,
     "naip":            _fetch_naip,
@@ -499,12 +563,12 @@ FETCH_DISPATCH = {
 
 
 # ---------------------------------------------------------------------------
-# Main fetcher class
+# main fetcher class
 # ---------------------------------------------------------------------------
 
 class STACImageryFetcher:
     """
-    Fetches multimodal imagery tiles via Microsoft Planetary Computer STAC.
+    fetches multimodal imagery tiles via Microsoft Planetary Computer STAC.
 
     Parameters
     ----------
@@ -514,6 +578,9 @@ class STACImageryFetcher:
     n_years              : int   — years of seasonal composites
     date_start           : str   — ISO date string for scene search start
     date_end             : str   — ISO date string for scene search end
+    scene_pins           : dict  — {asset_id: {modality: item_id}}; pins each
+                                   tile to a specific STAC item for an exact
+                                   reproduction of an existing manifest
     checkpoint_path      : str   — path to checkpoint pickle
     checkpoint_every     : int   — save checkpoint every N successful tiles
     adaptive_concurrency : bool  — auto-tune worker count during run
@@ -531,6 +598,7 @@ class STACImageryFetcher:
         date_end             : str         = DATE_END,
         checkpoint_path      : Optional[str] = None,
         checkpoint_every     : int         = 200,
+        scene_pins           : Optional[dict] = None,
         adaptive_concurrency : bool        = False,
         start_workers        : int         = MAX_CONCURRENT,
         max_workers          : int         = 128,
@@ -543,6 +611,10 @@ class STACImageryFetcher:
         self.date_end             = date_end
         self.checkpoint_path      = checkpoint_path
         self.checkpoint_every     = checkpoint_every
+        # {asset_id: {modality: item_id}} -- when supplied, each tile is cut
+        # from that exact STAC item rather than from whichever scene is
+        # currently least cloudy. see curation/refetch_from_manifest.py.
+        self.scene_pins           = scene_pins
         self.adaptive_concurrency = adaptive_concurrency
         self.start_workers        = start_workers
         self.max_workers          = max_workers
@@ -564,11 +636,11 @@ class STACImageryFetcher:
 
     def _get_catalog(self):
         import pystac_client
-        # Explicit (connect, read) timeout. Without this, the underlying
+        # explicit (connect, read) timeout. without this, the underlying
         # `requests` session has no default timeout, so a stale TCP
         # connection on flaky wifi can block a worker thread forever —
         # no exception is raised, the retry loop never runs, and the
-        # whole fetch process eventually appears hung. The GDAL_HTTP_*
+        # whole fetch process eventually appears hung. the GDAL_HTTP_*
         # env vars only cover rasterio's HTTP path; pystac_client uses
         # its own session and needs its own timeout.
         return pystac_client.Client.open(STAC_ENDPOINT, timeout=(15, 60))
@@ -584,7 +656,9 @@ class STACImageryFetcher:
 
     def _fetch_single_date(self, catalog, lat: float, lon: float,
                            date_start: str, date_end: str,
-                           modalities: List[str]) -> Optional[np.ndarray]:
+                           modalities: List[str],
+                           sink: Optional[dict] = None,
+                           pins: Optional[dict] = None) -> Optional[np.ndarray]:
         bbox         = _centroid_to_bbox(lat, lon, self.buffer_m)
         arrays       = []
         ref_h, ref_w = None, None
@@ -597,7 +671,8 @@ class STACImageryFetcher:
             arr = None
             for attempt in range(MAX_RETRIES):
                 try:
-                    arr = fetch_fn(catalog, bbox, date_start, date_end)
+                    arr = fetch_fn(catalog, bbox, date_start, date_end, sink,
+                                   (pins or {}).get(modality))
                     break
                 except Exception as exc:
                     if _is_retryable(exc) and attempt < MAX_RETRIES - 1:
@@ -652,19 +727,27 @@ class STACImageryFetcher:
             catalog = self._get_catalog()
 
             if not self.temporal_stack:
+                scenes = {}
                 arr = self._fetch_single_date(
                     catalog, lat, lon,
                     self.date_start, self.date_end,
                     self.modalities,
+                    sink=scenes,
+                    pins=(self.scene_pins or {}).get(asset_id),
                 )
                 if arr is None or arr.size == 0:
                     result.status    = "no_scene"
                     result.error_msg = "no usable scenes in date range"
                     return result
 
-                result.image      = arr
-                result.image_date = self.date_end
-                result.status     = "ok"
+                result.image  = arr
+                result.scenes = scenes
+                # the primary modality's own acquisition date. this used to be
+                # set to self.date_end, so every tile in a run reported the
+                # same date and the real one was lost.
+                primary = self.modalities[0] if self.modalities else None
+                result.image_date = (scenes.get(primary) or {}).get("datetime")                     or self.date_end
+                result.status = "ok"
 
             else:
                 windows = self._build_temporal_windows()
@@ -710,14 +793,16 @@ class STACImageryFetcher:
         return result
 
     # ------------------------------------------------------------------
-    # Checkpointing
+    # checkpointing
     # ------------------------------------------------------------------
+    # see _CompatUnpickler at the bottom of this module for why loading
+    # goes through a custom unpickler rather than pickle.load.
 
     def _load_checkpoint(self) -> dict:
         if self.checkpoint_path and os.path.exists(self.checkpoint_path):
             try:
                 with open(self.checkpoint_path, "rb") as f:
-                    data = pickle.load(f)
+                    data = _CompatUnpickler(f).load()
                 if not isinstance(data, dict):
                     raise ValueError("Checkpoint is not a dict")
                 data.setdefault("results", [])
@@ -758,7 +843,7 @@ class STACImageryFetcher:
             os.remove(self.checkpoint_path)
 
     # ------------------------------------------------------------------
-    # Batch fetch
+    # batch fetch
     # ------------------------------------------------------------------
 
     def fetch_all(
@@ -767,9 +852,9 @@ class STACImageryFetcher:
         max_assets  : Optional[int] = None,
     ) -> List[TileResult]:
         """
-        Fetches tiles for all assets in df with checkpointing and concurrency.
-        If adaptive_concurrency=True, tunes worker count during the run.
-        Returns list of TileResult in the same order as df.
+        fetches tiles for all assets in df with checkpointing and concurrency.
+        if adaptive_concurrency=True, tunes worker count during the run.
+        returns list of TileResult in the same order as df.
         """
         if max_assets is not None:
             df = df.head(max_assets)
@@ -787,7 +872,7 @@ class STACImageryFetcher:
         rows = [row for _, row in pending.iterrows()]
         lock = threading.Lock()
 
-        # Set up adaptive controller or fixed concurrency
+        # set up adaptive controller or fixed concurrency
         if self.adaptive_concurrency:
             controller = AdaptiveConcurrencyController(
                 start_workers = self.start_workers,
@@ -829,14 +914,14 @@ class STACImageryFetcher:
                               f"workers={current_workers}",
                               flush=True)
 
-                    # Adaptive: adjust semaphore when window is full
+                    # adaptive: adjust semaphore when window is full
                     if controller and controller.record(success):
                         new_count = controller.evaluate_and_adjust()
                         diff = new_count - semaphore._value
                         if diff > 0:
                             for _ in range(diff):
                                 semaphore.release()
-                        # Decreasing is handled naturally as threads finish
+                        # decreasing is handled naturally as threads finish
 
                     if n_done > 0 and n_done % self.checkpoint_every == 0:
                         self._save_checkpoint(all_results, completed_ids)
@@ -882,7 +967,7 @@ class STACImageryFetcher:
 
 
 # ---------------------------------------------------------------------------
-# Quick demo
+# quick demo
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
@@ -915,3 +1000,36 @@ if __name__ == "__main__":
 
     print("\nSummary:")
     print(fetcher.summarize(results).to_string(index=False))
+
+# ---------------------------------------------------------------------------
+# checkpoint backward compatibility
+# ---------------------------------------------------------------------------
+# fetch checkpoints pickle TileResult instances, and a pickle stores the class
+# by module path. before curation became a package these modules were importable
+# flat, so checkpoints written then name "helpers.tile_types" rather than
+# "curation.helpers.tile_types". plain pickle.load raises ModuleNotFoundError on
+# those, and _load_checkpoint treats any load failure as corruption -- it would
+# rename a valid multi-hour checkpoint to .corrupt and refetch from zero.
+#
+# remap the old names on the way in. checkpoints are written with the current
+# paths, so this only ever fires for pre-package files.
+
+_LEGACY_MODULES = {
+    "helpers":            "curation.helpers",
+    "helpers.tile_types": "curation.helpers.tile_types",
+    "utils":              "curation.utils",
+    "utils.io_utils":     "curation.utils.io_utils",
+    "stac_imagery":       "curation.stac_imagery",
+    "dataset":            "curation.dataset",
+    "qc":                 "curation.qc",
+    "triage":             "curation.triage",
+    "sources":            "curation.sources",
+    "ontology":           "curation.ontology",
+}
+
+
+class _CompatUnpickler(pickle.Unpickler):
+    """pickle.Unpickler that resolves pre-package module paths."""
+
+    def find_class(self, module, name):
+        return super().find_class(_LEGACY_MODULES.get(module, module), name)
