@@ -3,7 +3,7 @@
 Defines the asset taxonomy used for OSM querying, labeling, and corpus
 construction. OSM tags are the primary source of asset locations globally.
 
-This ontology is a working document. It will be refined as the pipeline
+This ontology is a working document that will be refined as the pipeline
 scales and as additional data sources are incorporated.
 
 ---
@@ -75,8 +75,8 @@ examples when a higher-level facility representation exists.
 
 Hierarchy: `energy → generation / transmission / distribution / other`
 
-Voltage threshold assumption: transmission = ≥69kV, distribution = <69kV.  
-This is the standard US convention, and may vary internationally.
+Voltage threshold assumption: transmission = ≥69kV, distribution = <69kV,
+which is the standard US convention and may vary internationally.
 
 ---
 

@@ -1,12 +1,12 @@
 # Evaluation
 
-Thirty conditions: seven backbone configurations plus two baselines, each at
-1.0x and 0.3x training data, under linear probing and fine-tuning where the
-model supports both. One notebook per condition.
-
-Every notebook runs in Google Colab on a GPU runtime and reads the dataset from
-Drive. See [Running the notebooks](../README.md#running-the-notebooks) for the
-Drive layout and how to open them.
+Thirty conditions are evaluated here, covering seven backbone configurations
+plus two baselines, each at 1.0x and 0.3x training data and under both linear
+probing and fine-tuning wherever the model supports them, with one notebook per
+condition. All of them run in Google Colab on a GPU runtime and read the
+dataset from Drive, so the Drive layout and the two ways of opening a notebook
+are described in
+[Running the notebooks](../README.md#running-the-notebooks).
 
 ```
 alphaearth/   lp_{1.0x,0.3x}                      precomputed 64-D embeddings, LP only
@@ -23,31 +23,32 @@ analysis/     cross-model utilities
 
 ## Running one condition
 
-1. Open the notebook in Colab on a GPU runtime. Linear probes will run without
-   one. Fine-tuning will not.
-2. Check that `MyDrive/infra_fm/datasets/` holds the 28 cells. The split
-   artifact and the AlphaEarth embeddings come from the code zip, so there is
-   nothing else to stage.
+1. Open the notebook in Colab on a GPU runtime, which fine-tuning requires
+   and linear probing does not.
+2. Check that `MyDrive/infra_fm/datasets/` holds the 28 cells, which is all
+   that needs staging, since the split artifact and the AlphaEarth embeddings
+   arrive with the code zip.
 3. Set `SMOKE_ONLY = False` in the training-cell parameters.
 4. Run all cells. Per-seed results go to `results/fm_eval_<name>/`, and the
    aggregate is written once all three seeds are present.
 
-Fine-tuning notebooks resume from `checkpoint_final.pt` if Colab disconnects
-part way through a seed.
+Should Colab disconnect part way through a seed, the fine-tuning notebooks
+resume from `checkpoint_final.pt` rather than starting the seed again.
 
-Every aggregate write is guarded so a partial rerun cannot overwrite a
-complete one. Thirty of them test `set(SEEDS) == set(FULL_PROTOCOL_SEEDS)` and
-print a note instead of writing when it fails. The four combine-from-disk cells
-in the SatlasPretrain fine-tune notebooks raise `FileNotFoundError` unless all
-three per-seed JSONs are on disk. Each aggregate also stamps `agg['seeds']`.
+Every aggregate write is guarded so that a partial rerun cannot overwrite a
+complete one, in one of two ways. Thirty of them test
+`set(SEEDS) == set(FULL_PROTOCOL_SEEDS)` and print a note instead of writing
+when that fails, while the four combine-from-disk cells in the SatlasPretrain
+fine-tune notebooks raise `FileNotFoundError` unless all three per-seed JSONs
+are already on disk. Each aggregate additionally stamps `agg['seeds']`, so a
+file that did slip through would at least describe itself.
 
 ## Environments
 
 Each notebook installs its own dependencies, because the foundation-model
-stacks conflict with one another. Nothing FM-specific belongs in the top-level
-`requirements.txt`.
-
-The published runs were not fully pinned. What each notebook pins today:
+stacks conflict with one another and so nothing model-specific belongs in the
+top-level `requirements.txt`. The published runs were not fully pinned, and
+what each notebook pins today varies considerably:
 
 | Model | Pinned | Unpinned |
 |---|---|---|
@@ -64,8 +65,9 @@ install cells use `%%capture` or `-q`, so pip's output was not kept in the
 committed notebooks. Treat the pinned entries above as the reproducibility
 floor and the rest as "whatever Colab resolved in mid-2026".
 
-Before a rerun you intend to cite, capture the environment so the next person
-does not face the same gap. Add a cell after the installs:
+Anyone rerunning a condition they intend to cite should capture the
+environment first, so that the next person does not face the same gap, which
+takes one cell placed after the installs:
 
 ```python
 import subprocess, json, pathlib
@@ -80,22 +82,20 @@ lands beside the per-seed JSONs and travels with them.
 
 ## Model weights
 
-Weights download from each model's original source at run time, mostly via
-`hf_hub_download`. No notebook sets `HF_HOME`, `HF_HUB_CACHE`, or
-`HF_HUB_OFFLINE`, so nothing has to be pre-staged. A fresh runtime fetches
-what it needs.
+Weights download from each model's original source at run time, mostly through
+`hf_hub_download`, and because no notebook sets `HF_HOME`, `HF_HUB_CACHE`, or
+`HF_HUB_OFFLINE`, a fresh runtime simply fetches what it needs and nothing has
+to be pre-staged. A few notebooks do print "Fine when HF_HUB_OFFLINE=1 and
+models are pre-loaded in Drive cache", which describes a setup used during
+development rather than anything the committed notebooks do.
 
-A few notebooks print "Fine when HF_HUB_OFFLINE=1 and models are pre-loaded in
-Drive cache." That describes a setup used during development. It is not what
-the committed notebooks do.
-
-Token handling: OlmoEarth reads `HF_TOKEN_OLMOEARTH`, others `HF_TOKEN`. The
-chain is Colab Secrets, then `.env` on Drive, then the ambient environment. The
-token is only needed for gated metadata calls, so "no token found" is not
-automatically a failure.
-
-Because weights are pulled live, an upstream checkpoint being withdrawn or
-silently updated is the one dependency outside this repository's control.
+Tokens are read from Colab Secrets first, then from `.env` on Drive, and
+finally from the ambient environment, with OlmoEarth looking for
+`HF_TOKEN_OLMOEARTH` and the rest for `HF_TOKEN`. Since a token is only needed
+for gated metadata calls, a message reporting that none was found is not
+automatically a failure. Pulling weights live does leave one dependency outside
+this repository's control, in that an upstream checkpoint could be withdrawn or
+silently updated between runs.
 
 ## Cross-model utilities
 
@@ -109,14 +109,14 @@ silently updated is the one dependency outside this repository's control.
 
 ## Known quirks
 
-SatlasS1 and SatlasS2 cannot share a runtime. Both use
-`/content/datasets/` and race on the extract step. Run them separately.
+SatlasS1 and SatlasS2 cannot share a runtime, because both use
+`/content/datasets/` and race on the extract step, so they have to be run
+separately. Prithvi's loader is similarly particular, needing
+`trust_remote_code=True` together with `num_labels=0`, and its TerraTorch
+conflict over scipy, dask and rapids is documented in that notebook.
 
-Prithvi's loader needs `trust_remote_code=True` and
-`num_labels=0`. The TerraTorch scipy/dask/rapids conflict is documented in the
-notebook itself.
-
-Large parquets exhaust Colab RAM. Read only the columns you need:
+Loading a full parquet will exhaust Colab RAM on the larger regions, so read
+only the columns actually needed:
 
 ```python
 df = pd.read_parquet(path)[['asset_id', 'asset_type', 'lat', 'lon']].copy()

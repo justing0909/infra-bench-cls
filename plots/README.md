@@ -4,10 +4,11 @@
 manuscript. It is the authoritative source for them, and there is no local
 script equivalent.
 
-It runs in Google Colab. The first cell mounts Drive, and everything reads from
-the evaluation output tree at `MyDrive/infra_fm/results/`. See
-[Running the notebooks](../README.md#running-the-notebooks) in the root README
-for how to open it, either in the browser or from VS Code.
+Because it runs in Google Colab, the first cell mounts Drive and everything
+thereafter reads from the evaluation output tree at
+`MyDrive/infra_fm/results/`, with the two ways of opening it described under
+[Running the notebooks](../README.md#running-the-notebooks) in the root
+README.
 
 ## Configuration
 
@@ -39,20 +40,22 @@ supervised ResNet-18 has no probe.
 
 ## How to run it
 
-Run the setup cells once, in order: Drive mount, results-tree listing, config
-and loaders, paper style, and the 10-class re-fit. Then run any figure cell on
-its own. Each renders inline and overwrites its PNG.
+The setup cells run once, in order, covering the Drive mount, the results-tree
+listing, the config and loaders, the paper style, and the 10-class re-fit,
+after which any figure cell can be run on its own and will render inline and
+overwrite its PNG.
 
-The 10-class re-fit cell must run before any figure cell. It monkey-patches
-`load_agg()` and `_best_condition_agg()`, so a figure cell run before it will
-silently produce 13-class numbers. The cell prints a sanity check against four
-known values and reports `OK` or `MISMATCH` for each.
+That last setup cell has to come before any figure cell, because it
+monkey-patches `load_agg()` and `_best_condition_agg()`, and a figure run ahead
+of it will silently produce 13-class numbers instead. To make the patch visible
+the cell checks four known values on the way through and reports `OK` or
+`MISMATCH` for each.
 
 ## Figures
 
-Cells run in manuscript order. Function names and output filenames both match
-the paper, so the PNGs drop straight into the manuscript's `figures/` folder
-without renaming.
+Cells run in manuscript order, and because both the function names and the
+output filenames match the paper, the PNGs drop straight into the manuscript's
+`figures/` folder without renaming.
 
 ### Main text
 
@@ -92,8 +95,8 @@ and S7, the ontology definitions, from [`ONTOLOGY.md`](../ONTOLOGY.md).
 ## Conventions
 
 - Models appear in the `FM_ORDER` defined in the config cell, with a fixed
-  color per model in `FM_COLORS`. Both are used by every figure and by the
-  results site, so changing one means changing the other.
+  color per model in `FM_COLORS`. Every figure and the results site both draw
+  on these, so changing one means changing the other.
 - The two baselines, supervised ResNet-18 and random features, are drawn
   dashed in grey and brown so they read as baselines in the training-dynamics
   panels.

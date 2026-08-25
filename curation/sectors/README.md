@@ -85,14 +85,15 @@ blocks, and assigns whole blocks to train, validation, or test at roughly
 70/15/15 within each region. It writes the artifact only if every verification
 gate passes.
 
-The committed copy lives at `data/spatial_split/asset_id_to_split_v1.parquet`.
-If you regenerate it, copy the result back into the repository and rebuild the
-code zip. The block logic itself is in
+The committed copy lives at `data/spatial_split/asset_id_to_split_v1.parquet`,
+so regenerating it means copying the result back into the repository and
+rebuilding the code zip before anything downstream will see it. The block logic
+itself is in
 [`curation/utils/spatial_blocking.py`](../utils/spatial_blocking.py), which all
 30 evaluation notebooks import to read the artifact back.
 
 ## Why the fetch leaves the local environment
 
-Steps 1, 3 and 4 are cheap. Step 2 is hours of network-bound work per cell
-against a rate-limited public API, so it was parallelised across people with
-Colab runtimes rather than run on one machine.
+Steps 1, 3 and 4 are cheap, whereas step 2 is hours of network-bound work per
+cell against a rate-limited public API, which is why it was parallelised across
+several people with Colab runtimes rather than run on one machine.
