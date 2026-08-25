@@ -1,43 +1,43 @@
 """
 ontology.py
 -----------
-Canonical asset ontology for the multi-sector infrastructure pipeline.
+canonical asset ontology for the multi-sector infrastructure pipeline.
 
-Each ontology class declares:
+each ontology class declares:
   - canonical `name` (dotted, e.g. "energy.transmission.substation")
   - `sector` ("energy" | "water" | "transport" | "telecom")
   - `tags`           : tuple of (key, value) tuples; ALL must match.
-                       A value of `None` requires only key presence.
+                       a value of `None` requires only key presence.
   - `any_of_tags`    : tuple of (key, value) tuples;
                        AT LEAST ONE must match (if the tuple is non-empty).
   - `exclude_tags`   : tuple of (key, value) tuples;
                        if ANY matches, the element is rejected.
   - `require_geometry`: "node" | "way" | "relation" | "way_or_relation" | "any"
-                       Default "any". When `min_area_m2` is set, this MUST be
+                       default "any". when `min_area_m2` is set, this MUST be
                        one of "way", "relation", or "way_or_relation" — nodes
                        have no area.
   - `min_area_m2`    : optional numeric minimum area, applied only to way and
                        relation geometries.
   - `confidence`     : "high" | "medium" | "low"
 
-Naming convention follows the existing pipeline + ONTOLOGY.md
+naming convention follows the existing pipeline + ONTOLOGY.md
 (`energy.transmission.substation`, not `energy.substation.transmission`) so
 existing parquet labels and downstream consumers keep working.
 
-Order within a sector is meaningful: matchers should prefer the earlier
+order within a sector is meaningful: matchers should prefer the earlier
 entry when multiple classes could match a single OSM element (e.g. a
 substation tagged with both `substation=transmission` and `power=substation`
 should match `energy.transmission.substation`, not the untyped fallback).
 
-This module exposes:
+this module exposes:
   - ASSET_CLASSES           : tuple of every AssetClass instance
   - SECTORS                 : dict[sector_name -> tuple[AssetClass, ...]]
   - get_classes_for_sector(sector_name) -> tuple[AssetClass, ...]
   - get_class_by_name(name) -> AssetClass
 
-This is the FIRST revision. Many classes from ONTOLOGY.md are intentionally
+this is the FIRST revision. many classes from ONTOLOGY.md are intentionally
 omitted (lines, towers, generators, parking, rooftop telecom, etc.) pending
-sector-specific verification. Extend as those classes are reviewed.
+sector-specific verification. extend as those classes are reviewed.
 """
 
 from __future__ import annotations
@@ -47,17 +47,17 @@ from typing import Optional
 
 
 # ---------------------------------------------------------------------------
-# Type aliases and constants
+# type aliases and constants
 # ---------------------------------------------------------------------------
 
-# (key, value). A value of None means "any value as long as the key exists".
+# (key, value). a value of None means "any value as long as the key exists".
 TagTuple = tuple[str, Optional[str]]
 
 VALID_SECTORS    = ("energy", "water", "transport", "telecom")
 VALID_GEOMETRIES = ("any", "node", "way", "relation", "way_or_relation")
 VALID_CONFIDENCE = ("high", "medium", "low")
 
-# Geometries for which `min_area_m2` is meaningful. Setting `min_area_m2`
+# geometries for which `min_area_m2` is meaningful. setting `min_area_m2`
 # with any other `require_geometry` value is rejected at construction time.
 GEOMETRIES_WITH_AREA = ("way", "relation", "way_or_relation")
 
@@ -66,9 +66,9 @@ GEOMETRIES_WITH_AREA = ("way", "relation", "way_or_relation")
 # AssetClass dataclass
 # ---------------------------------------------------------------------------
 
-# Default dedup threshold if a class doesn't set `dedup_distance_m`.
+# default dedup threshold if a class doesn't set `dedup_distance_m`.
 # 200m matches the historical Deduplicator default and works well for
-# typical substation-sized facilities. Override per class when the
+# typical substation-sized facilities. override per class when the
 # physical scale of the asset is meaningfully different (huge solar
 # farms; tiny subway-platform train stations).
 DEFAULT_DEDUP_DISTANCE_M = 200.0
@@ -77,9 +77,9 @@ DEFAULT_DEDUP_DISTANCE_M = 200.0
 @dataclass(frozen=True)
 class AssetClass:
     """
-    Declarative spec for one ontology class.
+    declarative spec for one ontology class.
 
-    Frozen so the registry can be passed around without accidental mutation,
+    frozen so the registry can be passed around without accidental mutation,
     and so a class instance is hashable (useful for set-membership and as a
     dict key in downstream code).
     """
@@ -90,8 +90,8 @@ class AssetClass:
     exclude_tags     : tuple[TagTuple, ...] = ()
     require_geometry : str                  = "any"
     min_area_m2      : Optional[float]      = None
-    # Per-class deduplication threshold in meters. If None, the consumer
-    # (Deduplicator) falls back to its own default. Set this when the
+    # per-class deduplication threshold in meters. if None, the consumer
+    # (Deduplicator) falls back to its own default. set this when the
     # asset's physical scale differs from the typical-substation default —
     # e.g. solar farms (~1 km), subway transfer stations (~50 m).
     dedup_distance_m : Optional[float]      = None
@@ -139,12 +139,12 @@ class AssetClass:
 
 
 # ---------------------------------------------------------------------------
-# Energy sector
+# energy sector
 # ---------------------------------------------------------------------------
-# Order: most-specific substation subtypes first, untyped catch-all last.
+# order: most-specific substation subtypes first, untyped catch-all last.
 
 _SUBSTATION_EXCLUDES: tuple[TagTuple, ...] = (
-    # Rules out tagged transformer kiosk buildings, which sometimes carry
+    # rules out tagged transformer kiosk buildings, which sometimes carry
     # `power=substation` as a secondary tag but should not be treated as
     # facility-scale substations.
     ("building", "transformer_tower"),
@@ -174,7 +174,7 @@ ENERGY_CLASSES: tuple[AssetClass, ...] = (
         confidence="high",
     ),
     AssetClass(
-        # NEW in this revision: small low-voltage distribution substations.
+        # new in this revision: small low-voltage distribution substations.
         # `substation=minor_distribution` is a real but rare OSM value.
         name="energy.distribution.substation_minor",
         sector="energy",
@@ -187,8 +187,8 @@ ENERGY_CLASSES: tuple[AssetClass, ...] = (
         confidence="medium",
     ),
     AssetClass(
-        # Catch-all for substations with no `substation=*` subtype tag.
-        # MUST come after the three subtype-specific entries above so the
+        # catch-all for substations with no `substation=*` subtype tag.
+        # must come after the three subtype-specific entries above so the
         # matcher prefers them when their tag combinations apply.
         name="energy.distribution.substation_untyped",
         sector="energy",
@@ -197,14 +197,14 @@ ENERGY_CLASSES: tuple[AssetClass, ...] = (
         dedup_distance_m=200.0,
         confidence="medium",
     ),
-    # Solar / wind farms FIRST so they match before the generic power_plant.
+    # solar / wind farms FIRST so they match before the generic power_plant.
     # OSM convention: real utility-scale solar/wind farms are tagged
-    # `power=plant + plant:source=solar/wind` (Pattern A). The older
+    # `power=plant + plant:source=solar/wind` (Pattern A). the older
     # `power=generator + generator:source=solar` (Pattern B) is mostly
     # used for individual panel clusters within a facility — those are
     # not facility-scale assets and we deliberately don't match them.
-    # Histogram audit on AU + CA confirmed every top-10 largest solar
-    # polygon uses Pattern A. See archive/outputs_v1_curation/solar_histogram.py.
+    # histogram audit on AU + CA confirmed every top-10 largest solar
+    # polygon uses Pattern A. see archive/outputs_v1_curation/solar_histogram.py.
     AssetClass(
         name="energy.generation.solar_farm",
         sector="energy",
@@ -228,9 +228,9 @@ ENERGY_CLASSES: tuple[AssetClass, ...] = (
         confidence="high",
     ),
     AssetClass(
-        # Conventional power plants only — `plant:source=solar/wind` is
-        # routed to solar_farm / wind_farm above. This entry must come
-        # AFTER the renewable-specific entries for the matcher's
+        # conventional power plants only — `plant:source=solar/wind` is
+        # routed to solar_farm / wind_farm above. this entry must come
+        # after the renewable-specific entries for the matcher's
         # priority-order rule to do the right thing; the explicit
         # exclude_tags is a belt-and-suspenders guard for that.
         name="energy.generation.power_plant",
@@ -240,7 +240,7 @@ ENERGY_CLASSES: tuple[AssetClass, ...] = (
             ("plant:source", "solar"),
             ("plant:source", "wind"),
         ),
-        # Plants are larger than substations; legitimate plants within
+        # plants are larger than substations; legitimate plants within
         # 200m of each other are rare. 500m collapses duplicate mappings
         # without merging adjacent generating units mapped separately.
         dedup_distance_m=500.0,
@@ -250,9 +250,9 @@ ENERGY_CLASSES: tuple[AssetClass, ...] = (
 
 
 # ---------------------------------------------------------------------------
-# Water sector
+# water sector
 # ---------------------------------------------------------------------------
-# Reservoirs are intentionally NOT included in this revision (per spec).
+# reservoirs are intentionally NOT included in this revision (per spec).
 # `landuse=reservoir` will be revisited separately.
 
 WATER_CLASSES: tuple[AssetClass, ...] = (
@@ -260,13 +260,13 @@ WATER_CLASSES: tuple[AssetClass, ...] = (
         name="water.wastewater.plant",
         sector="water",
         tags=(("man_made", "wastewater_plant"),),
-        # Treatment plants are mid-sized facilities. 300m collapses
+        # treatment plants are mid-sized facilities. 300m collapses
         # multiple polygon mappings of the same plant.
         dedup_distance_m=300.0,
         confidence="high",
     ),
     AssetClass(
-        # OSM `man_made=water_works`. Class name uses the short label
+        # OSM `man_made=water_works`. class name uses the short label
         # directly (renamed from `water.treatment.plant` for consistency
         # with the manuscript's "water works" terminology).
         name="water.water_works",
@@ -276,7 +276,7 @@ WATER_CLASSES: tuple[AssetClass, ...] = (
         confidence="high",
     ),
     AssetClass(
-        # NEW in this revision. `content=water` distinguishes water tanks
+        # new in this revision. `content=water` distinguishes water tanks
         # from oil/gas storage tanks that share `man_made=storage_tank`.
         name="water.storage_tank",
         sector="water",
@@ -284,7 +284,7 @@ WATER_CLASSES: tuple[AssetClass, ...] = (
             ("man_made", "storage_tank"),
             ("content", "water"),
         ),
-        # Tanks can legitimately cluster very closely (private domestic
+        # tanks can legitimately cluster very closely (private domestic
         # tanks, multi-tank facilities). 50m collapses obvious duplicates
         # without merging neighboring distinct tanks.
         dedup_distance_m=50.0,
@@ -294,7 +294,7 @@ WATER_CLASSES: tuple[AssetClass, ...] = (
 
 
 # ---------------------------------------------------------------------------
-# Transport sector
+# transport sector
 # ---------------------------------------------------------------------------
 
 TRANSPORT_CLASSES: tuple[AssetClass, ...] = (
@@ -312,12 +312,12 @@ TRANSPORT_CLASSES: tuple[AssetClass, ...] = (
         confidence="high",
     ),
     AssetClass(
-        # INTERPRETATION (flagged): user spec was "any-of-tags pattern on
-        # name/train/public_transport/station". Encoded as:
+        # interpretation (flagged): user spec was "any-of-tags pattern on
+        # name/train/public_transport/station". encoded as:
         #   required:  railway=station
         #   any-of:    (name=*) OR (train=yes) OR (public_transport=station)
-        # This excludes unnamed bare `railway=station` halts that lack train
-        # or public_transport tags. If a different shape is wanted, adjust
+        # this excludes unnamed bare `railway=station` halts that lack train
+        # or public_transport tags. if a different shape is wanted, adjust
         # here.
         name="transport.train_station",
         sector="transport",
@@ -327,16 +327,16 @@ TRANSPORT_CLASSES: tuple[AssetClass, ...] = (
             ("train", "yes"),
             ("public_transport", "station"),
         ),
-        # Subway transfer stations / paired platforms can legitimately
+        # subway transfer stations / paired platforms can legitimately
         # be 50–150m apart and should stay separate assets. 50m collapses
         # only obvious duplicate point mappings of the same platform.
         dedup_distance_m=50.0,
         confidence="high",
     ),
     AssetClass(
-        # 20-hectare minimum on harbour-tagged area. Doc note also mentions
+        # 20-hectare minimum on harbour-tagged area. doc note also mentions
         # "port relations" — supported here via require_geometry covering
-        # relations as well as ways. Alternative port taggings (e.g.
+        # relations as well as ways. alternative port taggings (e.g.
         # `landuse=harbour`, `industrial=port`) are NOT included in this
         # revision; extend if real-world recall is too low.
         name="transport.port_terminal",
@@ -344,7 +344,7 @@ TRANSPORT_CLASSES: tuple[AssetClass, ...] = (
         tags=(("harbour", "yes"),),
         require_geometry="way_or_relation",
         min_area_m2=200_000.0,
-        # Ports are smaller than airports but still substantial. 500m
+        # ports are smaller than airports but still substantial. 500m
         # collapses duplicate mappings without merging adjacent terminals.
         dedup_distance_m=500.0,
         confidence="high",
@@ -353,9 +353,9 @@ TRANSPORT_CLASSES: tuple[AssetClass, ...] = (
 
 
 # ---------------------------------------------------------------------------
-# Telecom sector
+# telecom sector
 # ---------------------------------------------------------------------------
-# Only `data_center` in this revision. Communication towers, exchanges,
+# only `data_center` in this revision. communication towers, exchanges,
 # and broadcast sites are documented in ONTOLOGY.md but deferred.
 
 TELECOM_CLASSES: tuple[AssetClass, ...] = (
@@ -370,7 +370,7 @@ TELECOM_CLASSES: tuple[AssetClass, ...] = (
 
 
 # ---------------------------------------------------------------------------
-# Registry + lookups
+# registry + lookups
 # ---------------------------------------------------------------------------
 
 ASSET_CLASSES: tuple[AssetClass, ...] = (
@@ -387,12 +387,12 @@ SECTORS: dict[str, tuple[AssetClass, ...]] = {
     "telecom":   TELECOM_CLASSES,
 }
 
-# Built once at import time; cheap to keep in memory at ~14 entries.
+# built once at import time; cheap to keep in memory at ~14 entries.
 _BY_NAME: dict[str, AssetClass] = {cls.name: cls for cls in ASSET_CLASSES}
 
 
 def get_classes_for_sector(sector_name: str) -> tuple[AssetClass, ...]:
-    """Return every AssetClass in the given sector, in declaration order."""
+    """return every AssetClass in the given sector, in declaration order."""
     if sector_name not in SECTORS:
         raise KeyError(
             f"Unknown sector '{sector_name}'. "
@@ -402,7 +402,7 @@ def get_classes_for_sector(sector_name: str) -> tuple[AssetClass, ...]:
 
 
 def get_class_by_name(name: str) -> AssetClass:
-    """Look up an AssetClass by its canonical dotted name."""
+    """look up an AssetClass by its canonical dotted name."""
     if name not in _BY_NAME:
         raise KeyError(
             f"Unknown asset class '{name}'. "
