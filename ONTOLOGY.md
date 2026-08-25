@@ -3,7 +3,7 @@
 Defines the asset taxonomy used for OSM querying, labeling, and corpus
 construction. OSM tags are the primary source of asset locations globally.
 
-This ontology is a working document — it will be refined as the pipeline
+This ontology is a working document. It will be refined as the pipeline
 scales and as additional data sources are incorporated.
 
 ---
@@ -76,7 +76,7 @@ examples when a higher-level facility representation exists.
 Hierarchy: `energy → generation / transmission / distribution / other`
 
 Voltage threshold assumption: transmission = ≥69kV, distribution = <69kV.  
-This is the standard US convention — may vary internationally.
+This is the standard US convention, and may vary internationally.
 
 ---
 
@@ -86,10 +86,10 @@ This is the standard US convention — may vary internationally.
 |---|---|---|---|
 | `energy.generation.power_plant` | `power=plant` | High | Large footprint, distinctive from overhead |
 | `energy.generation.generator` | `power=generator` | Medium | Varies by type |
-| `energy.generation.solar_farm` | facility-scale solar plant or mapped solar site | High | `core_infra`; utility-scale generation facility |
+| `energy.generation.solar_farm` | facility-scale solar plant or mapped solar site | High | `core_infra`, utility-scale generation facility |
 | `energy.generation.solar_facility_inferred` | clustered `power=generator` + `generator:source=solar` features with no enclosing plant/site | Medium–High | `core_infra` when cluster evidence is strong |
-| `energy.generation.solar_rooftop_distributed` | `power=generator` + `generator:source=solar` + `location=roof` | Low | `distributed_edge`; excluded from core corpus |
-| `energy.generation.solar_component` | individual solar generator polygons inside a facility | Low | `component_only`; collapsed upward |
+| `energy.generation.solar_rooftop_distributed` | `power=generator` + `generator:source=solar` + `location=roof` | Low | `distributed_edge`, excluded from core corpus |
+| `energy.generation.solar_component` | individual solar generator polygons inside a facility | Low | `component_only`, collapsed upward |
 | `energy.generation.wind_farm` | `power=generator` + `generator:source=wind` | High | Distinctive turbine pattern |
 
 ---
