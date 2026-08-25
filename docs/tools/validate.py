@@ -1,4 +1,4 @@
-"""Validate results.json against every number printed in paper_figures.ipynb."""
+"""validate results.json against every number printed in paper_figures.ipynb."""
 import json
 import sys
 
@@ -14,10 +14,19 @@ def chk(label, got, exp, tol=5e-4):
     print(f'  {"OK " if ok else "FAIL"} {label:<52} got={got if got is None else round(got,4)} exp={exp}')
 
 
-print('== cell 6: structural constants')
+print('== structural constants')
 chk('test_n_per_seed', D['meta']['test_n_per_seed'], 2689, 0.5)
 chk('test_n_13class', D['meta']['test_n_per_seed_13class'], 2813, 0.5)
 chk('n conditions', len(D['conditions']), 30, 0.5)
+
+# every check below indexes conditions by name, so a short file would fail
+# with a KeyError rather than a readable message. the usual cause is
+# build_results.py pointed at a path with no results in it, which it reports
+# per-condition and then writes out empty.
+if len(D['conditions']) != 30:
+    print(f'\nonly {len(D["conditions"])} of 30 conditions present -- stopping here.')
+    print('check the results tree passed to build_results.py.')
+    sys.exit(1)
 for sect, n in [('transport', 862), ('telecom', 100), ('water', 802), ('energy', 925)]:
     chk(f'sector n {sect}', idx[('DINOv3 ViT-L/16', 'FT', '1.0x')]['per_sector_f1'][sect]['n'], n, 0.5)
 
@@ -46,8 +55,8 @@ for fm, lp, ft in [
     chk(f'{fm} LP', idx[(fm, 'LP', '1.0x')]['macro_f1']['mean'], lp, 1e-9)
     chk(f'{fm} FT', idx[(fm, 'FT', '1.0x')]['macro_f1']['mean'], ft, 1e-9)
 
-print('\n== cell 25: Appendix F tables F1-F4')
-# Transcribed verbatim from the notebook's executed output.
+print('\n== supporting information Tables S10-S13')
+# transcribed verbatim from the notebook's executed output.
 F = {
 'accuracy': """
 SatlasPretrain S1 0.290 0.027 0.219 0.018 0.384 0.010 0.342 0.024
@@ -105,7 +114,7 @@ for metric, block in F.items():
         fm = ' '.join(parts)
         for i, (mode, scale) in enumerate(SLOTS):
             mu, sd = nums[2 * i], nums[2 * i + 1]
-            # The paper table prints Supervised ResNet-18 under both LP and FT
+            # the paper table prints Supervised ResNet-18 under both LP and FT
             # headers; both resolve to the same 'Sup' condition.
             actual = 'Sup' if fm == 'Supervised ResNet-18' else mode
             r = idx.get((fm, actual, scale))

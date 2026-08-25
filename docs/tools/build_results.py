@@ -1,7 +1,8 @@
-"""Build the canonical 10-class results.json for the Infra-Bench CLS site.
+"""build the canonical 10-class results.json for the Infra-Bench CLS site.
 
-Ports the 10-class re-fit (paper_figures.ipynb cell 6) and the Appendix F
-CM-derived metrics (cell 25) so every number on the site matches the paper.
+ports the 10-class re-fit and the confusion-matrix-derived metrics of
+Supporting Information Tables S10-S13 from paper_figures.ipynb, so every
+number on the site matches the paper.
 """
 import glob
 import json
@@ -33,7 +34,7 @@ CLASS_KEYS_13 = [
     'energy.transmission.substation', 'energy.distribution.substation',
     'energy.distribution.other', 'energy.generation.power_plant',
     'energy.generation.solar_farm', 'energy.generation.wind_farm',
-    'water.wastewater_plant', 'water.water_works', 'water.storage_tank',
+    'water.wastewater.plant', 'water.water_works', 'water.storage_tank',
     'transport.airport', 'transport.train_station', 'transport.port_terminal',
     'telecom.data_center',
 ]
@@ -121,7 +122,7 @@ def stat(vals):
 
 
 def conditions():
-    """Yield (fm, mode, scale) for all 30 real conditions."""
+    """yield (fm, mode, scale) for all 30 real conditions."""
     for fm in FM_ORDER:
         if fm == 'Supervised ResNet-18':
             modes = ('Sup',)
@@ -154,7 +155,7 @@ def load_agg(fm, mode, scale):
 
 
 def load_cms(fm, mode, scale):
-    """Per-seed 13x13 confusion matrices, keyed by seed."""
+    """per-seed 13x13 confusion matrices, keyed by seed."""
     d = run_dir(fm, mode, scale)
     if d is None:
         return {}
@@ -173,8 +174,8 @@ def load_cms(fm, mode, scale):
 def cm_metrics_10(cm_13):
     """10-class accuracy / macro P / macro R / weighted P from one 13x13 CM.
 
-    Recall uses original 13-col row sums (= class supports) so per-class recall
-    matches the paper's Tables D1/D2. Precision uses sliced column sums.
+    recall uses original 13-col row sums (= class supports) so per-class recall
+    matches the paper's Tables D1/D2. precision uses sliced column sums.
     """
     cm_10 = cm_13[np.ix_(KEEP_IDX, KEEP_IDX)]
     tp = np.diag(cm_10).astype(np.float64)
@@ -228,9 +229,9 @@ def build_condition(fm, mode, scale):
             stat(vals), n=sum(CLASS_COUNTS_13[i] for i in idxs)
         )
 
-    # --- per-region: 13-class ONLY. The aggregates and the per-seed files both
+    # --- per-region: 13-class ONLY. the aggregates and the per-seed files both
     # store per-region macro F1 already reduced over classes, so there is no way
-    # to re-fit this to 10 classes. Flagged for the UI.
+    # to re-fit this to 10 classes. flagged for the UI.
     per_region = {}
     for reg in REGIONS:
         e = (agg.get('per_region_f1') or {}).get(reg)
@@ -240,7 +241,7 @@ def build_condition(fm, mode, scale):
                 'per_seed': e['per_seed'], 'n': e['n'], 'class_basis': 13,
             }
 
-    # --- CM-derived metrics (Appendix F)
+    # --- CM-derived metrics (supporting information Tables S10-S13)
     cms = load_cms(fm, mode, scale)
     cm_derived, cm_sum = {}, None
     if cms:

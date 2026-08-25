@@ -1,0 +1,181 @@
+{
+  "_comment": [
+    "per-cell sampling parameters actually used to build the shipped v1 cells.",
+    "two runs produced the dataset: an initial pass over all 28 cells at",
+    "target=10000, then a second pass over asia, europe and north-america at",
+    "target=1000. sample_v1.py reads this file so a rerun reproduces the same",
+    "draw per cell; pass --target on the command line to override it.",
+    "seed was 42 for both runs."
+  ],
+  "seed": 42,
+  "cells": {
+    "africa/energy": {
+      "target": 10000,
+      "threshold": 10000,
+      "sample_rows": 10000,
+      "run": "10k"
+    },
+    "africa/telecom": {
+      "target": 10000,
+      "threshold": 10000,
+      "sample_rows": 1,
+      "run": "10k"
+    },
+    "africa/transport": {
+      "target": 10000,
+      "threshold": 10000,
+      "sample_rows": 5297,
+      "run": "10k"
+    },
+    "africa/water": {
+      "target": 10000,
+      "threshold": 10000,
+      "sample_rows": 10000,
+      "run": "10k"
+    },
+    "asia/energy": {
+      "target": 1000,
+      "threshold": 1000,
+      "sample_rows": 1000,
+      "run": "1k"
+    },
+    "asia/telecom": {
+      "target": 1000,
+      "threshold": 1000,
+      "sample_rows": 32,
+      "run": "1k"
+    },
+    "asia/transport": {
+      "target": 1000,
+      "threshold": 1000,
+      "sample_rows": 1000,
+      "run": "1k"
+    },
+    "asia/water": {
+      "target": 1000,
+      "threshold": 1000,
+      "sample_rows": 1000,
+      "run": "1k"
+    },
+    "australia-oceania/energy": {
+      "target": 10000,
+      "threshold": 10000,
+      "sample_rows": 6492,
+      "run": "10k"
+    },
+    "australia-oceania/telecom": {
+      "target": 10000,
+      "threshold": 10000,
+      "sample_rows": 12,
+      "run": "10k"
+    },
+    "australia-oceania/transport": {
+      "target": 10000,
+      "threshold": 10000,
+      "sample_rows": 2178,
+      "run": "10k"
+    },
+    "australia-oceania/water": {
+      "target": 10000,
+      "threshold": 10000,
+      "sample_rows": 10000,
+      "run": "10k"
+    },
+    "central-america/energy": {
+      "target": 10000,
+      "threshold": 10000,
+      "sample_rows": 2612,
+      "run": "10k"
+    },
+    "central-america/telecom": {
+      "target": 10000,
+      "threshold": 10000,
+      "sample_rows": 1,
+      "run": "10k"
+    },
+    "central-america/transport": {
+      "target": 10000,
+      "threshold": 10000,
+      "sample_rows": 570,
+      "run": "10k"
+    },
+    "central-america/water": {
+      "target": 10000,
+      "threshold": 10000,
+      "sample_rows": 2591,
+      "run": "10k"
+    },
+    "europe/energy": {
+      "target": 1000,
+      "threshold": 1000,
+      "sample_rows": 1001,
+      "run": "1k"
+    },
+    "europe/telecom": {
+      "target": 1000,
+      "threshold": 1000,
+      "sample_rows": 345,
+      "run": "1k"
+    },
+    "europe/transport": {
+      "target": 1000,
+      "threshold": 1000,
+      "sample_rows": 1000,
+      "run": "1k"
+    },
+    "europe/water": {
+      "target": 1000,
+      "threshold": 1000,
+      "sample_rows": 1000,
+      "run": "1k"
+    },
+    "north-america/energy": {
+      "target": 1000,
+      "threshold": 1000,
+      "sample_rows": 999,
+      "run": "1k"
+    },
+    "north-america/telecom": {
+      "target": 1000,
+      "threshold": 1000,
+      "sample_rows": 279,
+      "run": "1k"
+    },
+    "north-america/transport": {
+      "target": 1000,
+      "threshold": 1000,
+      "sample_rows": 1001,
+      "run": "1k"
+    },
+    "north-america/water": {
+      "target": 1000,
+      "threshold": 1000,
+      "sample_rows": 1000,
+      "run": "1k"
+    },
+    "south-america/energy": {
+      "target": 10000,
+      "threshold": 10000,
+      "sample_rows": 9999,
+      "run": "10k"
+    },
+    "south-america/telecom": {
+      "target": 10000,
+      "threshold": 10000,
+      "sample_rows": 8,
+      "run": "10k"
+    },
+    "south-america/transport": {
+      "target": 10000,
+      "threshold": 10000,
+      "sample_rows": 3997,
+      "run": "10k"
+    },
+    "south-america/water": {
+      "target": 10000,
+      "threshold": 10000,
+      "sample_rows": 10001,
+      "run": "10k"
+    }
+  }
+}
