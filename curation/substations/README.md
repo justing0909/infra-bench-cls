@@ -40,7 +40,7 @@ python -m curation.substations.pipeline --job central-america --dry-run
 
 The dry run stops before the imagery fetch and prints how many tiles it would
 request. Drop `--dry-run` to fetch. Available jobs are the seven continental
-regions plus `maine`; passing no `--job` prints the list.
+regions plus `maine`. Passing no `--job` prints the list.
 
 Stages 1 and 2 are skipped when their output parquet already exists, and both
 are committed to the repository, so a normal run starts at the imagery fetch.
