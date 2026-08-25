@@ -24,7 +24,7 @@ analysis/     cross-model utilities
 ## Running one condition
 
 1. Open the notebook in Colab on a GPU runtime. Linear probes will run without
-   one; fine-tuning will not.
+   one. Fine-tuning will not.
 2. Check that `MyDrive/infra_fm/datasets/` holds the 28 cells. The split
    artifact and the AlphaEarth embeddings come from the code zip, so there is
    nothing else to stage.
@@ -54,10 +54,10 @@ The published runs were not fully pinned. What each notebook pins today:
 | Prithvi-EO-2.0 | `terratorch==0.99.8`, `transformers==4.41.0`, `huggingface-hub==0.36.2`, `torch==2.6.0`, `torchvision==0.21.0`, `pillow<12` | `pyarrow`, `scikit-learn`, `scipy` |
 | OlmoEarth | `huggingface-hub==0.36.2` | `olmoearth_pretrain_minimal`, `hf_transfer`, `pyarrow`, `scikit-learn`, `scipy` |
 | DINOv3 | `transformers>=4.49.0,<5.0`, `numpy>=2.2` | `huggingface-hub`, `pyarrow`, `scikit-learn`, `scipy` |
-| SatlasPretrain S1, S2 | — | `satlaspretrain-models`, `scikit-learn`, `pyarrow` |
-| CROMA | — | `einops`, `huggingface_hub`, `scikit-learn`, `pyproj`, `pyarrow` |
-| AlphaEarth | — | `pyarrow`, `pyproj`, `scikit-learn` |
-| ResNet-18 baselines | — | `scikit-learn`, `pyarrow` |
+| SatlasPretrain S1, S2 | none | `satlaspretrain-models`, `scikit-learn`, `pyarrow` |
+| CROMA | none | `einops`, `huggingface_hub`, `scikit-learn`, `pyproj`, `pyarrow` |
+| AlphaEarth | none | `pyarrow`, `pyproj`, `scikit-learn` |
+| ResNet-18 baselines | none | `scikit-learn`, `pyarrow` |
 
 The exact resolved versions from the published runs are not recoverable: the
 install cells use `%%capture` or `-q`, so pip's output was not kept in the
@@ -82,11 +82,11 @@ lands beside the per-seed JSONs and travels with them.
 
 Weights download from each model's original source at run time, mostly via
 `hf_hub_download`. No notebook sets `HF_HOME`, `HF_HUB_CACHE`, or
-`HF_HUB_OFFLINE`, so nothing has to be pre-staged — a fresh runtime fetches
+`HF_HUB_OFFLINE`, so nothing has to be pre-staged. A fresh runtime fetches
 what it needs.
 
 A few notebooks print "Fine when HF_HUB_OFFLINE=1 and models are pre-loaded in
-Drive cache." That describes a setup used during development; it is not what
+Drive cache." That describes a setup used during development. It is not what
 the committed notebooks do.
 
 Token handling: OlmoEarth reads `HF_TOKEN_OLMOEARTH`, others `HF_TOKEN`. The
@@ -101,22 +101,22 @@ silently updated is the one dependency outside this repository's control.
 
 | Notebook | Purpose |
 |---|---|
-| `spatial_split_verification.ipynb` | builds `asset_id_to_split_v1.parquet`; gated on its own verification checks |
+| `spatial_split_verification.ipynb` | builds `asset_id_to_split_v1.parquet`, gated on its own verification checks |
 | `confusion_matrices.ipynb` | per-seed confusion matrices and the wall-clock backfill behind Tables S5 and S6 |
-| `compute_weighted_f1.ipynb` | weighted F1 recomputation, cross-checked against a private `claims.json` of hand-recorded numbers. **Author-only** — that file is not in the repository or the dataset, so this notebook will not run elsewhere. `docs/tools/validate.py` covers the same ground publicly |
+| `compute_weighted_f1.ipynb` | recomputes weighted F1 from the per-seed confusion matrices. it used to diff the result against a private `claims.json`, but that comparison was removed and the dead load with it, so it now runs anywhere a results tree does |
 | `per_sector_f1_catchall.ipynb` | the corrected per-sector F1 definition |
-| `find_GMACs.ipynb` | GMACs profiling; uses timm architecture proxies where a model's own loader was unavailable, which is what the `†` marks on the results site refer to |
+| `find_GMACs.ipynb` | GMACs profiling, using timm architecture proxies where a model's own loader was unavailable, which is what the `†` marks on the results site refer to |
 
 ## Known quirks
 
-**SatlasS1 and SatlasS2 cannot share a runtime.** Both use
+SatlasS1 and SatlasS2 cannot share a runtime. Both use
 `/content/datasets/` and race on the extract step. Run them separately.
 
-**Prithvi's loader is fragile.** It needs `trust_remote_code=True` and
-`num_labels=0`; the TerraTorch scipy/dask/rapids conflict is documented in the
+Prithvi's loader needs `trust_remote_code=True` and
+`num_labels=0`. The TerraTorch scipy/dask/rapids conflict is documented in the
 notebook itself.
 
-**Large parquets exhaust Colab RAM.** Read only the columns you need:
+Large parquets exhaust Colab RAM. Read only the columns you need:
 
 ```python
 df = pd.read_parquet(path)[['asset_id', 'asset_type', 'lat', 'lon']].copy()
