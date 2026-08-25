@@ -1,30 +1,37 @@
 """
 pipeline.py
 -----------
-End-to-end infrastructure imagery curation pipeline.
+single-process curation pipeline for the full substation dataset (part A).
 
-Orchestrates the full sequence:
-    1. Extract asset locations from GeoFabrik PBF (sources.py)
-    2. Deduplicate spatially proximate assets (deduplication.py)
-    3. Fetch imagery tiles via STAC / Planetary Computer (stac_imagery.py)
-    4. Basic quality control (qc.py)
-    5. Confidence triage (triage.py)
-    6. Assemble training dataset (dataset.py)
+produces data/curated_datasets/dataset_<region>_stac_v1/ -- every deduplicated
+substation in a region, energy sector only, with no per-cell cap. this is NOT
+the dataset the paper evaluates on; that is the sampled cross-sector benchmark
+built by curation.sectors. see curation/substations/README.md.
+
+orchestrates the full sequence:
+    1. extract asset locations from GeoFabrik PBF (curation/sources.py)
+    2. deduplicate spatially proximate assets (curation/deduplication.py)
+    3. fetch imagery tiles via Planetary Computer (curation/stac_imagery.py)
+    4. basic quality control (curation/qc.py)
+    5. confidence triage (curation/triage.py)
+    6. assemble the dataset (curation/dataset.py)
+
+steps 1 and 2 are skipped when their output table already exists on disk, so a
+rerun against the committed parquets goes straight to the imagery fetch.
 
 Notes:
-  - STAC (Planetary Computer) is the only imagery path. The previous GEE
-    fallback was removed when STAC became the default; see git history
-    for the removed `gee_imagery.py` if it is ever needed again.
-  - filter_preset="substation" is the default in GeoFabrikSource calls.
-  - MODALITIES controls which imagery layers are fetched (multimodal).
+  - Planetary Computer STAC is the only imagery path. the previous Google Earth
+    engine fallback was removed when STAC became the default; see git history
+    for the deleted gee_imagery.py.
+  - MODALITIES controls which imagery layers are fetched.
   - TEMPORAL_STACK enables seasonal composite stacking.
-  - Dataset output dirs use _stac_v1 suffix for STAC runs
-  - _SUCCESS files written with run metadata for resumability
+  - a _SUCCESS file with run metadata is written on completion, so an
+    interrupted batch can resume without redoing finished regions.
 
-Usage:
-    python pipeline.py --dry-run
-    python pipeline.py --job central-america --dry-run
-    python pipeline.py --job central-america --shard-count 8 --shard-index 0
+usage (from the repo root):
+    python -m curation.substations.pipeline --job central-america --dry-run
+    python -m curation.substations.pipeline --job central-america
+    python -m curation.substations.pipeline --job asia --shard-count 8 --shard-index 0
 """
 
 import os
@@ -33,29 +40,33 @@ import argparse
 import json
 from datetime import datetime
 from typing import Dict, Optional, List
-import pandas as pd
-from sources import GeoFabrikSource
-from utils.io_utils import load_asset_table
-from deduplication import Deduplicator
-from qc import QualityChecker
-from triage import RuleBasedTriager
-from dataset import DatasetAssembler, dataset_output_dir
-from utils.timing_log_utils import (
-    update_timing_log, update_modality_counts, file_size_mb
+
+from ..paths import (
+    EXTRACTED_DIR, DEDUPED_DIR, CURATED_DIR, CHECKPOINTS_DIR,
+    SCHEDULES_DIR, PBF_DIR, TIMING_LOG,
+)
+from ..sources import GeoFabrikSource
+from ..utils.io_utils import load_asset_table
+from ..deduplication import Deduplicator
+from ..qc import QualityChecker
+from ..triage import RuleBasedTriager
+from ..dataset import DatasetAssembler
+from ..utils.timing_log_utils import (
+    update_timing_log, update_modality_counts, file_size_kb
 )
 
 
 # ===========================================================================
-# CONFIGURATION — change these before each run
+# configuration — change these before each run
 # ===========================================================================
 
-# --- Input ---
+# --- input ---
 PBF_PATH = None
 
-# --- Output ---
+# --- output ---
 OUTPUT_DIR = None
 
-# Intermediate table paths
+# intermediate table paths
 ASSETS_CSV     = None
 ASSETS_PARQUET = None
 ASSETS_TABLE   = None
@@ -63,13 +74,13 @@ DEDUPED_CSV    = None
 DEDUPED_PARQUET = None
 DEDUPED_TABLE  = None
 
-# --- Asset filtering ---
+# --- asset filtering ---
 FILTER_PRESET  = "substation"   # "substation" (recommended) or "full"
 MIN_CONFIDENCE = "medium"
 MAX_ASSETS     = None
 SAMPLE_PER_TYPE = None
 
-# --- Imagery: STAC (primary) ---
+# --- imagery: STAC (primary) ---
 USE_STAC       = True
 MODALITIES     = ["sentinel2_ms", "sentinel1"]   # add "landsat_thermal", "naip" as needed
 TEMPORAL_STACK = False      # set True to fetch seasonal stacks (T, C, H, W)
@@ -78,104 +89,63 @@ BUFFER_M       = 300
 SOURCES        = ["sentinel2"]   # legacy field — kept for dry-run display
 MAX_WORKERS    = 4
 
-# --- QC thresholds ---
+# --- qC thresholds ---
 MIN_VALID_RATIO = 0.80
 
-# --- Deduplication ---
+# --- deduplication ---
 DISTANCE_THRESHOLD_M = 200
 
-# --- Triage ---
+# --- triage ---
 CONTRADICTION_THRESHOLD = 3
 LOW_THRESHOLD           = 4
 
 
 # ===========================================================================
-# JOB PRESETS
-# All output_dirs use _stac_v1 suffix for new STAC runs.
+# job PRESETS
 # ===========================================================================
+# one preset per region, all paths anchored to the repo root by curation.paths
+# so a job resolves identically whatever directory you launch from.
 
-JOB_PRESETS = {
-    "north-america": {
-        # "pbf_path":        "../data/pbf/power_only/north-america-latest.osm_power_only.osm.pbf",
-        "output_dir":      "../data/curated_datasets/dataset_north-america_stac_v1",
-        "assets_table":    "../data/PIPELINE/01-extracted-assets/north-america_all_assets_substations.parquet",
-        "assets_csv":      "../data/PIPELINE/01-extracted-assets/north-america_all_assets_collapsed.csv",
-        "assets_parquet":  "../data/PIPELINE/01-extracted-assets/north-america_all_assets_substations.parquet",
-        "deduped_table":   "../data/PIPELINE/02-deduped-assets/north-america_deduped_assets_substations_sampled.parquet",
-        "deduped_csv":     "../data/PIPELINE/02-deduped-assets/north-america_deduped_assets.csv",
-        "deduped_parquet": "../data/PIPELINE/02-deduped-assets/north-america_deduped_assets_substations_sampled.parquet",
-    },
-    "europe": {
-        # "pbf_path":        "../data/pbf/power_only/europe-latest.osm_power_only.osm.pbf",
-        "output_dir":      "../data/curated_datasets/dataset_europe_stac_v1",
-        "assets_table":    "../data/PIPELINE/01-extracted-assets/europe_all_assets_substations.parquet",
-        "assets_csv":      "../data/PIPELINE/01-extracted-assets/europe_all_assets_collapsed.csv",
-        "assets_parquet":  "../data/PIPELINE/01-extracted-assets/europe_all_assets_substations.parquet",
-        "deduped_table":   "../data/PIPELINE/02-deduped-assets/europe_deduped_assets_substations_sampled.parquet",
-        "deduped_csv":     "../data/PIPELINE/02-deduped-assets/europe_deduped_assets.csv",
-        "deduped_parquet": "../data/PIPELINE/02-deduped-assets/europe_deduped_assets_substations_sampled.parquet",
-    },
-    "central-america": {
-        # "pbf_path":        "../data/pbf/power_only/central-america-260408.osm_power_only.osm.pbf",
-        "output_dir":      "../data/curated_datasets/dataset_central-america_stac_v1",
-        "assets_table":    "../data/PIPELINE/01-extracted-assets/central-america_all_assets_substations.parquet",
-        "assets_csv":      "../data/PIPELINE/01-extracted-assets/central-america_all_assets_substations.csv",
-        "assets_parquet":  "../data/PIPELINE/01-extracted-assets/central-america_all_assets_substations.parquet",
-        "deduped_table":   "../data/PIPELINE/02-deduped-assets/central-america_deduped_assets_substations.parquet",
-        "deduped_csv":     "../data/PIPELINE/02-deduped-assets/central-america_deduped_assets.csv",
-        "deduped_parquet": "../data/PIPELINE/02-deduped-assets/central-america_deduped_assets_substations.parquet",
-    },
-    "africa": {
-        # "pbf_path":        "../data/pbf/power_only/africa-260408.osm_power_only.osm.pbf",
-        "output_dir":      "../data/curated_datasets/dataset_africa_stac_v1",
-        "assets_table":    "../data/PIPELINE/01-extracted-assets/africa_all_assets_substations.parquet",
-        "assets_csv":      "../data/PIPELINE/01-extracted-assets/africa_all_assets_substations.csv",
-        "assets_parquet":  "../data/PIPELINE/01-extracted-assets/africa_all_assets_substations.parquet",
-        "deduped_table":   "../data/PIPELINE/02-deduped-assets/africa_deduped_assets_substations.parquet",
-        "deduped_csv":     "../data/PIPELINE/02-deduped-assets/africa_deduped_assets.csv",
-        "deduped_parquet": "../data/PIPELINE/02-deduped-assets/africa_deduped_assets_substations.parquet",
-    },
-    "australia-oceania": {
-        # "pbf_path":        "../data/pbf/power_only/australia-oceania-260408.osm_power_only.osm.pbf",
-        "output_dir":      "../data/curated_datasets/dataset_australia-oceania_stac_v1",
-        "assets_table":    "../data/PIPELINE/01-extracted-assets/australia-oceania_all_assets_substations.parquet",
-        "assets_csv":      "../data/PIPELINE/01-extracted-assets/australia-oceania_all_assets_substations.csv",
-        "assets_parquet":  "../data/PIPELINE/01-extracted-assets/australia-oceania_all_assets_substations.parquet",
-        "deduped_table":   "../data/PIPELINE/02-deduped-assets/australia-oceania_deduped_assets_substations.parquet",
-        "deduped_csv":     "../data/PIPELINE/02-deduped-assets/australia-oceania_deduped_assets.csv",
-        "deduped_parquet": "../data/PIPELINE/02-deduped-assets/australia-oceania_deduped_assets_substations.parquet",
-    },
-    "asia": {
-        # "pbf_path":        "../data/pbf/power_only/asia-260408.osm_power_only.osm.pbf",
-        "output_dir":      "../data/curated_datasets/dataset_asia_stac_v1",
-        "assets_table":    "../data/PIPELINE/01-extracted-assets/asia_all_assets_substations.parquet",
-        "assets_csv":      "../data/PIPELINE/01-extracted-assets/asia_all_assets_substations.csv",
-        "assets_parquet":  "../data/PIPELINE/01-extracted-assets/asia_all_assets_substations.parquet",
-        "deduped_table":   "../data/PIPELINE/02-deduped-assets/asia_deduped_assets_substations.parquet",
-        "deduped_csv":     "../data/PIPELINE/02-deduped-assets/asia_deduped_assets.csv",
-        "deduped_parquet": "../data/PIPELINE/02-deduped-assets/asia_deduped_assets_substations.parquet",
-    },
-    "south-america": {
-        # "pbf_path":        "../data/pbf/power_only/south-america-260410.osm_power_only.osm.pbf",
-        "output_dir":      "../data/curated_datasets/dataset_south-america_stac_v1",
-        "assets_table":    "../data/PIPELINE/01-extracted-assets/south-america_all_assets_substations.parquet",
-        "assets_csv":      "../data/PIPELINE/01-extracted-assets/south-america_all_assets_substations.csv",
-        "assets_parquet":  "../data/PIPELINE/01-extracted-assets/south-america_all_assets_substations.parquet",
-        "deduped_table":   "../data/PIPELINE/02-deduped-assets/south-america_deduped_assets_substations.parquet",
-        "deduped_csv":     "../data/PIPELINE/02-deduped-assets/south-america_deduped_assets.csv",
-        "deduped_parquet": "../data/PIPELINE/02-deduped-assets/south-america_deduped_assets_substations.parquet",
-    },
-    "maine": {
-        "pbf_path":        "../data/pbf/power_only/maine-latest.osm_power_only.osm.pbf",
-        "output_dir":      "../data/curated_datasets/dataset_maine_stac_v1",
-        "assets_table":    "../data/PIPELINE/01-extracted-assets/maine_all_assets_substations.parquet",
-        "assets_csv":      "../data/PIPELINE/01-extracted-assets/maine_all_assets_substations.csv",
-        "assets_parquet":  "../data/PIPELINE/01-extracted-assets/maine_all_assets_substations.parquet",
-        "deduped_table":   "../data/PIPELINE/02-deduped-assets/maine_deduped_assets_substations.parquet",
-        "deduped_csv":     "../data/PIPELINE/02-deduped-assets/maine_deduped_assets.csv",
-        "deduped_parquet": "../data/PIPELINE/02-deduped-assets/maine_deduped_assets_substations.parquet",
-    },
+# the geofabrik snapshot each region was extracted from. only consulted for a
+# from-scratch re-extract -- a run that finds an existing assets table on disk
+# skips step 1 and never touches the PBF.
+PBF_NAMES = {
+    "north-america":     "north-america-latest.osm_power_only.osm.pbf",
+    "europe":            "europe-latest.osm_power_only.osm.pbf",
+    "central-america":   "central-america-latest.osm_power_only.osm.pbf",
+    "africa":            "africa-260408.osm_power_only.osm.pbf",
+    "australia-oceania": "australia-oceania-260408.osm_power_only.osm.pbf",
+    "asia":              "asia-260408.osm_power_only.osm.pbf",
+    "south-america":     "south-america-260410.osm_power_only.osm.pbf",
+    "maine":             "maine-latest.osm_power_only.osm.pbf",
 }
+
+# regions whose deduplicated extraction was too large to fetch imagery for at
+# the observed ~0.5 tiles/s, so imagery was fetched from a proportional sample
+# instead. Europe alone has 505,951 deduplicated substations, roughly 88 hours
+# of fetching; the sample preserves the OSM class mix and drops it to ~127k.
+SAMPLED_REGIONS = {"europe", "north-america"}
+
+
+def _job_preset(region: str) -> dict:
+    """build one region's path set. see PBF_NAMES and SAMPLED_REGIONS above."""
+    dedup_stem = f"{region}_deduped_assets_substations"
+    if region in SAMPLED_REGIONS:
+        dedup_stem += "_sampled"
+    return {
+        "pbf_path":        str(PBF_DIR / "power_only" / PBF_NAMES[region]),
+        "output_dir":      str(CURATED_DIR / f"dataset_{region}_stac_v1"),
+        "assets_table":    str(EXTRACTED_DIR / f"{region}_all_assets_substations.parquet"),
+        "assets_csv":      str(EXTRACTED_DIR / f"{region}_all_assets_substations.csv"),
+        "assets_parquet":  str(EXTRACTED_DIR / f"{region}_all_assets_substations.parquet"),
+        "deduped_table":   str(DEDUPED_DIR / f"{dedup_stem}.parquet"),
+        "deduped_csv":     str(DEDUPED_DIR / f"{region}_deduped_assets.csv"),
+        "deduped_parquet": str(DEDUPED_DIR / f"{dedup_stem}.parquet"),
+    }
+
+
+JOB_PRESETS = {region: _job_preset(region) for region in PBF_NAMES}
+
 
 DEFAULT_CONFIG = {
     "pbf_path":           PBF_PATH,
@@ -206,12 +176,12 @@ DEFAULT_CONFIG = {
     "shard_index":        0,
     "shard_strategy":     "spatial",
     "schedule_name":      "pipeline_run",
-    "schedule_dir":       os.path.join("data", "schedules"),
+    "schedule_dir":       str(SCHEDULES_DIR),
 }
 
 
 # ===========================================================================
-# Helpers
+# helpers
 # ===========================================================================
 
 def _parse_csv_arg(value: Optional[str]) -> Optional[list]:
@@ -350,8 +320,8 @@ def _save_shard_artifacts(df, config, shard_plan):
 
 def _write_success(output_dir: str, metadata: dict) -> None:
     """
-    Writes a _SUCCESS file with run metadata to the dataset output directory.
-    Used by run_pipeline_from_collapsed_assets.py to detect completed regions.
+    writes a _SUCCESS file with run metadata to the dataset output directory.
+    a batch driver can read this to skip regions that are already done.
     """
     path = os.path.join(output_dir, "_SUCCESS")
     with open(path, "w") as f:
@@ -396,7 +366,10 @@ def _build_runtime_config(args: Optional[argparse.Namespace]) -> dict:
         config["deduped_table"] = config.get("deduped_parquet") or config.get("deduped_csv")
 
     if not config.get("output_dir"):
-        raise ValueError("output_dir must be provided via --job or --output-dir")
+        raise ValueError(
+            "output_dir must be provided via --job or --output-dir. "
+            f"Available jobs: {', '.join(sorted(JOB_PRESETS))}"
+        )
 
     if not config.get("assets_table") and not config.get("pbf_path"):
         raise ValueError("pbf_path is required when no assets table is provided")
@@ -462,7 +435,7 @@ def _print_run_plan(config: dict) -> None:
 
 
 # ===========================================================================
-# Pipeline runner
+# pipeline runner
 # ===========================================================================
 
 def run_pipeline(
@@ -470,8 +443,8 @@ def run_pipeline(
     config  : Optional[dict] = None,
 ) -> dict:
     """
-    Runs the full curation pipeline end to end.
-    Returns a dict of pipeline results and stage counts.
+    runs the full curation pipeline end to end.
+    returns a dict of pipeline results and stage counts.
     """
     config = dict(DEFAULT_CONFIG if config is None else config)
     config["sources"]    = list(config.get("sources", []))
@@ -488,15 +461,25 @@ def run_pipeline(
     _print_run_plan(config)
 
     # ------------------------------------------------------------------
-    # Step 1: Extract assets
+    # step 1: Extract assets
     # ------------------------------------------------------------------
     stage_start = time.time()
     print("\n[1/6] Extracting assets from GeoFabrik PBF...")
 
+    # once a deduplicated table exists, step 2 loads that and nothing reads the
+    # extraction result, so re-deriving it from a multi-gigabyte PBF is wasted
+    # work -- and a hard failure for anyone holding the tables but not the PBFs.
+    deduped_ready = bool(config.get("deduped_table")) and \
+        os.path.exists(config["deduped_table"])
+
+    df = None
     if config.get("assets_table") and os.path.exists(config["assets_table"]):
         print(f"  Loading existing asset table: {config['assets_table']}")
         df = load_asset_table(config["assets_table"])
         print(f"  Loaded {len(df)} assets")
+    elif deduped_ready:
+        print("  Skipped: the deduplicated table already exists, so the "
+              "extraction that would feed it is unused.")
     else:
         src = GeoFabrikSource(
             config["pbf_path"],
@@ -514,14 +497,15 @@ def run_pipeline(
             write_df.to_parquet(config["assets_parquet"], index=False)
         print(f"  Saved {len(df)} assets")
 
-    results["n_extracted"] = len(df)
+    results["n_extracted"] = len(df) if df is not None else None
     stage_timings["extract_assets"] = round(time.time() - stage_start, 2)
-    print("  Asset counts:")
-    for asset_type, count in df["asset_type"].value_counts().items():
-        print(f"    {asset_type}: {count}")
+    if df is not None:
+        print("  Asset counts:")
+        for asset_type, count in df["asset_type"].value_counts().items():
+            print(f"    {asset_type}: {count}")
 
     # ------------------------------------------------------------------
-    # Step 2: Deduplicate
+    # step 2: Deduplicate
     # ------------------------------------------------------------------
     stage_start = time.time()
     print("\n[2/6] Deduplicating assets...")
@@ -603,18 +587,17 @@ def run_pipeline(
         return results
 
     # ------------------------------------------------------------------
-    # Step 3: Fetch imagery
+    # step 3: Fetch imagery
     # ------------------------------------------------------------------
     stage_start = time.time()
     print(f"\n[3/6] Fetching imagery tiles ({len(df_clean)} assets)...")
 
-    checkpoint_path = os.path.join(
-        "data", "checkpoints",
-        f"{os.path.basename(config['output_dir'])}_fetch.pkl",
+    checkpoint_path = str(
+        CHECKPOINTS_DIR / f"{os.path.basename(config['output_dir'])}_fetch.pkl"
     )
 
     if config.get("use_stac", True):
-        from stac_imagery import STACImageryFetcher
+        from ..stac_imagery import STACImageryFetcher
 
         fetcher = STACImageryFetcher(
             buffer_m             = config.get("buffer_m", BUFFER_M),
@@ -641,7 +624,7 @@ def run_pipeline(
     print(f"  Fetched: {n_ok} ok, {n_fail} failed")
 
     # ------------------------------------------------------------------
-    # Step 4: Quality control
+    # step 4: Quality control
     # ------------------------------------------------------------------
     stage_start = time.time()
     print("\n[4/6] Running quality control...")
@@ -658,7 +641,7 @@ def run_pipeline(
     print(f"  QC passed: {n_qc_pass}, failed: {n_qc_fail}")
 
     # ------------------------------------------------------------------
-    # Step 5: Triage
+    # step 5: Triage
     # ------------------------------------------------------------------
     stage_start = time.time()
     print("\n[5/6] Running confidence triage...")
@@ -679,7 +662,7 @@ def run_pipeline(
           f"rejected: {results['n_rejected']}")
 
     # ------------------------------------------------------------------
-    # Step 6: Assemble dataset
+    # step 6: Assemble dataset
     # ------------------------------------------------------------------
     stage_start = time.time()
     print(f"\n[6/6] Assembling dataset -> {config['output_dir']}...")
@@ -694,7 +677,7 @@ def run_pipeline(
     results["timings_s"] = stage_timings
 
     # ------------------------------------------------------------------
-    # Print summary
+    # print summary
     # ------------------------------------------------------------------
     print("\n" + "=" * 60)
     print("PIPELINE COMPLETE")
@@ -721,7 +704,7 @@ def run_pipeline(
         print(f"  Pipeline yield:  {yield_rate:.1f}% of fetched tiles")
 
     # ------------------------------------------------------------------
-    # Write _SUCCESS with run metadata
+    # write _SUCCESS with run metadata
     # ------------------------------------------------------------------
     try:
         success_meta = {
@@ -739,10 +722,10 @@ def run_pipeline(
         print(f"  Warning: could not write _SUCCESS: {e}")
 
     # ------------------------------------------------------------------
-    # Update timing log
+    # update timing log
     # ------------------------------------------------------------------
     try:
-        log_path = "data/Infra-FM-timing-log.xlsx"
+        log_path = str(TIMING_LOG)
 
         fetcher_total  = results["n_tiles_fetched"] + results["n_tiles_failed"]
         stac_accept_pct = round(
@@ -778,13 +761,13 @@ def run_pipeline(
             total_tiles_fetched= results.get("n_tiles_fetched"),
             dataset_tiles     = results.get("n_dataset_tiles"),
             total_time_elapsed_s = results.get("elapsed_s"),
-            collapsed_file_size_mb = file_size_mb(config.get("assets_table")),
+            collapsed_file_size_kb = file_size_kb(config.get("assets_table")),
             filter_preset     = config.get("filter_preset", "substation"),
             modalities        = "+".join(config.get("modalities", [])),
             temporal_stack    = str(config.get("temporal_stack", False)),
         )
 
-        # Per-modality tile counts from manifest
+        # per-modality tile counts from manifest
         try:
             manifest = assembler.load_manifest()
             mod_counts = manifest.get("modality_counts", {})
@@ -804,7 +787,7 @@ def run_pipeline(
 
 
 # ===========================================================================
-# Entry point
+# entry point
 # ===========================================================================
 
 if __name__ == "__main__":
