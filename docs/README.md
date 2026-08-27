@@ -162,10 +162,11 @@ All text on the site clears WCAG AA at 4.8:1 or better.
 
 ## Citation
 
-`notes.html#cite` carries a BibTeX block with a copy button. It is currently a
-`@misc` entry pointing at the GitHub repository, because the paper is not yet
-posted. **Swap it for the paper entry once that is on arXiv**, and add the
-dataset's Zenodo DOI alongside when one is minted.
+`notes.html#cite` carries two BibTeX blocks, each with a copy button. The
+first is still a `@misc` entry pointing at the GitHub repository, because the
+paper is not yet posted, so **swap it for the paper entry once that is on
+arXiv**. The second is the dataset, deposited at `10.5281/zenodo.22118892`, and needs no further
+change.
 
 `notes.html#team` carries the author list with affiliations, every name linked.
 The front page header links straight to it.
