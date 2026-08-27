@@ -325,8 +325,8 @@ pretrained infrastructure classifier that can be pointed at unlabelled imagery.
 
 ## Dataset access
 
-The dataset is archived on Zenodo in two parts, with DOIs added on paper
-acceptance.
+The dataset is archived on Zenodo in two parts, together under
+<https://doi.org/10.5281/zenodo.22118892>.
 
 The benchmark comprises 28 cells named `dataset_<region>_<sector>_v1_1k`,
 covering seven regions (North America, South America, Central America, Europe,
@@ -385,8 +385,8 @@ Paper citation will be added on posting to arXiv.
 
 ## License
 
-Code is MIT, see [`LICENSE`](LICENSE). The dataset is ODbL 1.0, distributed via
-Zenodo.
+Code is MIT, see [`LICENSE`](LICENSE). The dataset is ODbL 1.0, archived at
+<https://doi.org/10.5281/zenodo.22118892>.
 
 ## Authors
 

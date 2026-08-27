@@ -7,7 +7,8 @@ The paper does not evaluate on this part, since the benchmark runs on the
 sampled cross-sector cells built by [`curation/sectors/`](../sectors). It
 exists because the substation extraction is the one product that is complete
 rather than sampled, which makes it useful on its own for substation-specific
-work, and it is distributed alongside the benchmark on Zenodo.
+work, and it is distributed alongside the benchmark on Zenodo at
+<https://doi.org/10.5281/zenodo.22118892>.
 
 Europe and North America are the exception, because Europe alone holds 505,951
 deduplicated substations and North America is comparable, so at the observed

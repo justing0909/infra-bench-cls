@@ -13,7 +13,7 @@ sample too. Classes smaller than their proportional allocation are taken whole,
 which is why some cells land well under the target.
 
 You almost certainly do not need to run any of this. The finished cells are on
-Zenodo. Rebuilding them means refetching imagery from Planetary Computer, which
+Zenodo at <https://doi.org/10.5281/zenodo.22118892>. Rebuilding them means refetching imagery from Planetary Computer, which
 took a distributed effort across several volunteers. Run it only to change the
 taxonomy, move the snapshot date, or add a region.
 
