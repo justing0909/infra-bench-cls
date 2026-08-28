@@ -1250,7 +1250,10 @@
     { sel: '.qs',         img: 'substation',    side: 'right', top: -20,   f: 0.94, rot: 4 },
     { sel: '#quickstart', img: 'train_station', side: 'left',  bottom: 20, f: 0.98, rot: 4 },
     { sel: '#results',    img: 'storage_tanks', side: 'right', top: 250,   f: 1.00, rot: -3 },
-    { sel: 'footer',      img: 'train_labeled', side: 'left',  top: -20,   f: 0.96, rot: 3 }
+    // Bottom-anchored so it grows upward. Top-anchored, a 600px drawing in a
+    // ~150px footer hung hundreds of pixels below the page, which both added
+    // dead scroll space and gave body something to overflow with.
+    { sel: 'footer',      img: 'train_labeled', side: 'left',  bottom: 20, f: 0.96, rot: 3 }
   ];
 
   /* Only build them once the layout can show them.

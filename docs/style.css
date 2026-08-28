@@ -819,10 +819,24 @@ figcaption strong { color: var(--ink); font-weight: 600; }
   --sk-max:   600px;
 }
 
-/* The bleed is only possible because nothing on the page is position:sticky,
-   so clipping the horizontal axis costs nothing. Without this the overhang
-   would add a horizontal scrollbar. */
-html, body { overflow-x: hidden; }
+/* The bleed needs the horizontal axis clipped, or the overhang adds a
+   horizontal scrollbar.
+
+   `clip` rather than `hidden`, and on body alone. `overflow-x: hidden` makes an
+   element a scroll container, which forces overflow-y from visible to auto — so
+   body grew its own vertical scrollbar alongside the browser's, two bars for
+   one page. `clip` crops without creating a scroll container, so overflow-y
+   stays visible and only the real scroller (html) shows a bar.
+
+   Safe here because nothing on the page is position:sticky, which is what
+   clipping an ancestor would otherwise break. */
+body { overflow-x: clip; }
+
+@supports not (overflow-x: clip) {
+  /* Older engines: rather than fall back to `hidden` and reintroduce the
+     second scrollbar, just stop the drawings overhanging at all. */
+  :root { --sk-bleed: -6px; }
+}
 
 .sketch { display: none; }
 
