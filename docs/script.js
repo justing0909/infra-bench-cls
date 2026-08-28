@@ -899,7 +899,7 @@
 
     // Same treatment as the button beside it, but an anchor, since it
     // navigates rather than acting on the page.
-    var repo = el('a', 'rec-btn', 'Get the code on GitHub');
+    var repo = el('a', 'rec-btn', 'Have your own labels? Try it out');
     repo.href = REPO_URL;
     repo.target = '_blank';
     repo.rel = 'noopener';
