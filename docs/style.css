@@ -557,14 +557,25 @@ select:focus-visible { outline: 1px solid var(--tan); outline-offset: 1px; }
   color: var(--ink);
 }
 
-.rec-actions { margin: 24px 0 0; }
+.rec-actions {
+  margin: 24px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
 
+/* Shared by the button and the anchor beside it, so inline-flex and the
+   text-decoration reset are needed to make an <a> match a <button> box. */
 .rec-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font: 0.92rem/1 var(--body);
   padding: 11px 20px;
   color: var(--bg);
   background: var(--tan);
   border: 1px solid var(--tan);
+  text-decoration: none;
   cursor: pointer;
 }
 

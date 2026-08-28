@@ -123,6 +123,8 @@
     ['transport', 'Transport'], ['telecom', 'Telecom']
   ];
 
+  var REPO_URL = 'https://github.com/justing0909/infra-bench-cls';
+
   var PROTOCOL_FULL = {
     LP: 'Linear probe — frozen backbone',
     FT: 'Fine-tune — full backbone',
@@ -894,6 +896,15 @@
       document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
     });
     act.appendChild(btn);
+
+    // Same treatment as the button beside it, but an anchor, since it
+    // navigates rather than acting on the page.
+    var repo = el('a', 'rec-btn', 'Get the code on GitHub');
+    repo.href = REPO_URL;
+    repo.target = '_blank';
+    repo.rel = 'noopener';
+    act.appendChild(repo);
+
     box.appendChild(act);
   }
 
