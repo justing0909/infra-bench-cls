@@ -450,7 +450,7 @@ are appended on the next write.
 
 ## Authors
 
-- Justin Guthrie (lead author), Northeastern University, George Mason University, Enodia Inc.
+- Justin Guthrie (lead author), George Mason University
 - Edward Oughton (advisor), George Mason University
 - Konrad Wessels (coauthor), George Mason University
 - Matthew Rice (coauthor), George Mason University
