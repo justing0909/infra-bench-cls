@@ -65,21 +65,38 @@ h1 {
   color: var(--ink);
 }
 
-.header-aside {
-  margin: 16px 0 0;
-  font-size: 0.94rem;
+/* Author line and affiliation key, set like a paper's title block. */
+.byline {
+  margin: 26px auto 0;
+  max-width: 58ch;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* Each name is one unbreakable unit, so a wrap never splits a person in half. */
+.byline .author { white-space: nowrap; }
+
+.affils {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin: 10px 0 0;
+  font: 0.78rem/1.5 var(--mono);
   color: var(--ink-dim);
 }
 
-/* Underlined by default, brightening to tan on hover. */
-.header-aside a {
+/* Superscript affiliation markers. vertical-align rather than <sup> so the
+   line height of the author block stays even. */
+.mark {
+  font: 500 0.62rem/1 var(--mono);
+  vertical-align: super;
   color: var(--brown-lit);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  margin-left: 1px;
 }
 
-.header-aside a:hover { color: var(--tan); }
+.affils .mark { margin: 0 3px 0 0; }
 
 /* --------------------------------------------------------------------- nav */
 
@@ -167,6 +184,10 @@ figcaption strong { color: var(--ink); font-weight: 600; }
 }
 
 .prose dd { margin: 5px 0 0; color: var(--ink); }
+
+/* Paper / dataset / code, each a term with a line under it. */
+.links dt { margin-top: 22px; }
+.links dt:first-child { margin-top: 0; }
 
 .authors { padding: 0; margin: 20px 0 0; list-style: none; }
 
