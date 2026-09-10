@@ -43,39 +43,47 @@
   <section id="brief">
     <h2>What it is</h2>
     <p>
-      Earth observation foundation models are usually measured on land cover,
-      crop type, and building footprints. Critical infrastructure is harder and
-      less studied. The assets are small, they look alike, and they are spread
-      unevenly across the world. Infra-Bench CLS measures how well these models
-      find them.
+      Critical infrastructure location data is often incomplete and unevenly
+      distributed globally, especially in developing regions. Earth observation
+      foundation models are proposed as a way to understand the built
+      environment more efficiently, yet they remain largely untested on the
+      facility-scale assets that underpin a range of societal and economic
+      functions. Infra-Bench CLS tests them.
     </p>
     <p>
-      The task is single-label classification of infrastructure assets from
-      satellite imagery. Asset locations come from OpenStreetMap across seven
-      continental regions, each imaged with co-located Sentinel-2 L2A optical
-      and Sentinel-1 SAR tiles at 10&nbsp;m resolution. Ten classes span four
-      sectors, from transmission substations and solar farms to wastewater
-      plants, airports, and data centers.
+      The benchmark holds 18,756 Sentinel-1 SAR and Sentinel-2 multispectral
+      images of facility-scale assets at 10&nbsp;m resolution, covering seven
+      world regions, with asset locations drawn from OpenStreetMap. It spans 13
+      infrastructure classes across the energy, water, transport, and telecom
+      sectors.
     </p>
     <p>
-      Seven foundation models are scored against a supervised ResNet-18 and a
-      random features floor, under two adaptation protocols and two data scales,
-      at three seeds each. That gives thirty conditions, all on one fixed
-      spatial split, so training and test assets never share a spatial block.
+      Results are reported for 10 of those 13 classes. Wind farm and port
+      terminal carry only three test images each, too few for a stable score.
+      Water works is hard to separate from wastewater plants and storage tanks,
+      in the imagery and in the OpenStreetMap tagging alike, so its label cannot
+      be trusted. The 10 retained classes hold 2,689 of the 2,813 test images.
+    </p>
+    <p>
+      Seven foundation models are evaluated with linear probing and fine-tuning,
+      at two training set sizes (1.0&times; and 0.3&times;) and three seeds
+      each, against a supervised ResNet-18 and a random features floor. That
+      gives thirty conditions, all on one fixed spatial split, so training and
+      test assets never share a spatial block.
     </p>
 
     <h3>What we found</h3>
     <p>
       Fine-tuning matters more than the choice of backbone. Four of the six
-      fine-tuned foundation models beat the supervised ResNet-18 baseline, and
-      none of the frozen linear probes did. The best condition was DINOv3
-      ViT-L/16 fine-tuned on the full training set, at 57.9% macro F1 against
-      39.2% for the baseline.
+      fine-tuned foundation models beat the supervised ResNet-18 baseline of
+      39.2% macro F1, and none of the frozen linear probes did. The best was
+      DINOv3 ViT-L/16 fine-tuned on the full training set at 57.9%, a 48%
+      relative improvement over the baseline.
     </p>
     <p>
-      Results also vary sharply by class. Airports and train stations score
-      well, while distribution substations and power plants stay difficult for
-      every model tested.
+      Results vary sharply by class. Airports (85.3%), train stations (82.1%),
+      and data centers (77.6%) score well, while many power sector classes stay
+      difficult, ranging from 27.5% to 46.2%.
     </p>
 
     <figure>
