@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Infra-Bench CLS</title>
-<meta name="description" content="A benchmark of Earth-observation foundation models on critical-infrastructure classification. 9 models, 30 conditions, 3 seeds, 10 classes.">
+<meta name="description" content="A global, open-source benchmark for critical infrastructure classification with Earth observation foundation models. Nine models, thirty conditions, three seeds.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -15,229 +15,168 @@
 <header>
   <h1>Infra-Bench&nbsp;CLS</h1>
   <p class="lede">
-    How well do Earth-observation foundation models recognize critical
-    infrastructure? Nine models, thirty conditions, three seeds, one fixed
-    spatial split.
+    A global, open-source benchmark for critical infrastructure classification
+    with Earth observation foundation models.
   </p>
   <p class="header-aside">
-    <a href="notes.html#team">Meet the team</a>
+    Guthrie, Oughton, Wessels, Rice &amp; Corley &middot; 2026
   </p>
 </header>
 
 <nav>
-  <a href="index.html" aria-current="page">Results</a>
-  <a href="figures.html">Figures</a>
-  <a href="notes.html">Notes</a>
-  <a href="notes.html#cite">Cite</a>
-  <a href="https://doi.org/10.5281/zenodo.22118892" target="_blank" rel="noopener" class="ext">Dataset&nbsp;&#8599;</a>
-  <a href="https://github.com/justing0909/infra-bench-cls" target="_blank" rel="noopener" class="ext">GitHub&nbsp;&#8599;</a>
+  <a href="https://arxiv.org/abs/2609.09482" target="_blank" rel="noopener">Paper&nbsp;&#8599;</a>
+  <a href="https://doi.org/10.5281/zenodo.22118892" target="_blank" rel="noopener">Dataset&nbsp;&#8599;</a>
+  <a href="https://github.com/justing0909/infra-bench-cls" target="_blank" rel="noopener">Code&nbsp;&#8599;</a>
+  <a href="#cite">Cite</a>
 </nav>
 
-<main>
+<main class="prose">
 
-  <p id="loading" class="note">Loading results&hellip;</p>
+  <section id="brief">
+    <h2>What it is</h2>
+    <p>
+      Earth observation foundation models are usually measured on land cover,
+      crop type and building footprints. Critical infrastructure is harder and
+      less studied: the assets are small, visually similar to one another, and
+      unevenly distributed across the world. Infra-Bench CLS asks how well these
+      models recognise them.
+    </p>
+    <p>
+      The task is single-label classification of infrastructure assets from
+      satellite imagery. Asset locations come from OpenStreetMap across seven
+      continental regions, and each one is imaged with co-located Sentinel-2 L2A
+      optical and Sentinel-1 SAR tiles at 10&nbsp;m resolution. Ten classes span
+      four sectors, from transmission substations and solar farms to wastewater
+      plants, airports and data centres.
+    </p>
+    <p>
+      We evaluate seven foundation models against a supervised ResNet-18 and a
+      random-features floor, under two adaptation protocols and two data scales,
+      at three seeds each. That is thirty conditions in total, every one scored
+      on the same fixed spatial split, so training and test assets never share a
+      spatial block.
+    </p>
 
-  <div id="app" hidden>
+    <h3>What we found</h3>
+    <p>
+      Fine-tuning matters more than the choice of backbone. Four of the six
+      fine-tuned foundation models beat the supervised baseline, while
+      <em>none</em> of the frozen linear probes did &mdash; every one of them
+      landed below a ResNet-18 trained from scratch. The strongest condition was
+      DINOv3 ViT-L/16 fine-tuned on the full training set, at 57.9% macro F1
+      against the baseline's 39.2%.
+    </p>
+    <p>
+      Performance also varies sharply by class. Airports and train stations are
+      recognised well, while distribution substations and power plants remain
+      difficult for every model tested. The paper reports per-class, per-sector
+      and per-region breakdowns in full.
+    </p>
 
-    <section id="quickstart">
-      <h2>Have only a couple of minutes?</h2>
-      <p class="sub">
-        Answer four questions about your setup and we will point you to the
-        model the benchmark favors, with the numbers behind it so you can judge
-        for yourself.
-      </p>
+    <figure>
+      <a href="figures/fig_perclass_heatmap.png" target="_blank" rel="noopener"><img
+        src="figures/fig_perclass_heatmap.png"
+        alt="Heatmap of per-class test F1 for each foundation model at its best condition, with macro and weighted F1 summary rows"
+        loading="lazy"></a>
+      <figcaption>
+        Per-class test F1 for each model at its best condition, over ten classes,
+        with macro and weighted F1 as summary rows. Mean of three seeds.
+      </figcaption>
+    </figure>
+  </section>
 
-      <div class="qs">
-        <div class="q" id="q1">
-          <span class="q-label">1 &middot; What can you train on?<button
-            type="button" class="help" aria-expanded="false"
-            aria-controls="help-compute"
-            aria-label="What does this mean?">?</button></span>
-          <div class="seg" id="q-compute"></div>
-        </div>
-        <div class="q" id="q2">
-          <span class="q-label">2 &middot; How many labels do you have?<button
-            type="button" class="help" aria-expanded="false"
-            aria-controls="help-labels"
-            aria-label="What counts as a label?">?</button></span>
-          <div class="seg" id="q-labels"></div>
-        </div>
-        <div class="help-body" id="help-compute" hidden>
-        <p>
-          These tiers refer to <strong>GPU memory (VRAM)</strong> rather than
-          system RAM. Fine-tuning has to hold the whole backbone and its
-          gradients in VRAM, so it needs far more than a linear probe does. The
-          peak VRAM beside each recommendation is measured from our own runs,
-          not estimated.
-        </p>
-        <p>
-          Not sure what you have?
-          <a href="https://www.microsoft.com/en-us/windows/learning-center/how-to-check-gpu" target="_blank" rel="noopener">Check
-          your GPU on Windows &#8599;</a> &middot;
-          <a href="https://support.apple.com/en-us/102312" target="_blank" rel="noopener">Check your graphics
-          card on a Mac &#8599;</a>
-        </p>
-        <p>
-          With no dedicated GPU, pick <em>No GPU</em>. A linear probe still
-          works, since you can extract the frozen features once on CPU and then
-          train a small head on top. Apple-silicon machines share a single pool
-          of memory between CPU and GPU, so treat your total RAM as the
-          ceiling.
-        </p>
-      </div>
+  <section id="access">
+    <h2>Paper, data and code</h2>
+    <dl class="links">
+      <dt>Paper</dt>
+      <dd>
+        <a href="https://arxiv.org/abs/2609.09482" target="_blank" rel="noopener">arXiv:2609.09482</a>
+        &mdash; the benchmark, the evaluation protocol and the full results.
+      </dd>
+      <dt>Dataset</dt>
+      <dd>
+        <a href="https://doi.org/10.5281/zenodo.22118892" target="_blank" rel="noopener">10.5281/zenodo.22118892</a>
+        &mdash; the curated tile dataset, archived on Zenodo under ODbL&nbsp;1.0.
+      </dd>
+      <dt>Code</dt>
+      <dd>
+        <a href="https://github.com/justing0909/infra-bench-cls" target="_blank" rel="noopener">justing0909/infra-bench-cls</a>
+        &mdash; curation pipeline, evaluation notebooks and figure scripts. MIT.
+      </dd>
+    </dl>
+  </section>
 
-        <div class="help-body" id="help-labels" hidden>
-          <p>
-            A <strong>label</strong> pairs a place with a class, so you know
-            the location holds a wastewater plant and it is tagged as one. Here
-            each label is a single satellite tile of a single asset, which means
-            a few hundred labels is a few hundred tiles you have already
-            identified.
-          </p>
-          <p>
-            What matters is the <em>count</em>, not the file format. In
-            practice they arrive as:
-          </p>
-          <ul>
-            <li><strong>CSV</strong> or <strong>Parquet</strong> &mdash; asset id, class, coordinates</li>
-            <li><strong>GeoJSON</strong> or <strong>Shapefile</strong> &mdash; point or polygon locations</li>
-            <li><strong>GeoTIFF</strong> &mdash; the imagery tiles themselves</li>
-          </ul>
-          <p>
-            <strong>With none at all</strong>, these results cannot help you
-            directly, because every condition here is supervised. Label a modest
-            set first and use the 0.3&times; column as a guide to what it buys
-            you, or else look to zero-shot methods, which this benchmark does
-            not cover.
-          </p>
-          <p>
-            <strong>Not sure</strong> keeps both data scales in the running and
-            returns whichever scores highest, so you can see the ceiling without
-            committing to a label budget yet.
-          </p>
-          <p>
-            For scale, <em>1.0&times;</em> is our full training split and
-            <em>0.3&times;</em> a 30% subsample of it, and both are scored on
-            the same <span id="help-test-n">&mdash;</span>-tile test set. Below
-            roughly a hundred examples for a class, expect that class to land
-            under what the table shows.
-          </p>
-        </div>
+  <section id="cite">
+    <h2>Cite</h2>
+    <p>
+      Please cite the paper. If you use the tiles themselves, cite the dataset
+      alongside it.
+    </p>
+    <div class="cite-block">
+      <button type="button" class="copy" data-copy="bibtex-paper">Copy</button>
+      <pre id="bibtex-paper">@misc{guthrie2026infrabenchcls,
+  title         = {Infra-Bench CLS: A Global, Open-Source Benchmark for
+                   Critical Infrastructure Classification with Earth
+                   Observation Foundation Models},
+  author        = {Guthrie, Justin and Oughton, Edward and Wessels, Konrad
+                   and Rice, Matthew and Corley, Isaac},
+  year          = {2026},
+  eprint        = {2609.09482},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2609.09482}
+}</pre>
+    </div>
+    <div class="cite-block">
+      <button type="button" class="copy" data-copy="bibtex-data">Copy</button>
+      <pre id="bibtex-data">@dataset{guthrie2026infrabenchclsdata,
+  title     = {Infra-Bench CLS: A Global Multimodal Satellite Imagery Dataset
+               for Critical Infrastructure Classification},
+  author    = {Guthrie, Justin and Oughton, Edward and Wessels, Konrad
+               and Rice, Matthew and Corley, Isaac},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22118892},
+  url       = {https://doi.org/10.5281/zenodo.22118892}
+}</pre>
+    </div>
+  </section>
 
-        <div class="q q-full" id="q3">
-          <span class="q-label">3 &middot; What are you classifying?<button
-            type="button" class="help" aria-expanded="false"
-            aria-controls="help-target"
-            aria-label="How does picking classes work?">?</button></span>
-          <div class="sectorgrid" id="q-classes"></div>
-          <p class="q-note">
-            The small figures are counts, showing test tiles per seed beside a
-            <strong>class</strong> and member classes beside a
-            <strong>sector</strong>. Rarer classes have fewer tiles to go on, so
-            their scores move around more between seeds.
-          </p>
-          <p class="q-summary" id="sum-classes"></p>
-        </div>
+  <section id="team">
+    <h2>The team</h2>
+    <p>
+      Built at George Mason University, with collaborators at Taylor Geospatial.
+    </p>
+    <ul class="authors">
+      <li>
+        <strong><a href="https://jg-geoportfolio.vercel.app/" target="_blank" rel="noopener">Justin Guthrie</a></strong>
+        <span class="affil">George Mason University</span>
+      </li>
+      <li>
+        <strong><a href="https://science.gmu.edu/directory/edward-oughton" target="_blank" rel="noopener">Edward Oughton</a></strong>
+        <span class="affil">George Mason University</span>
+      </li>
+      <li>
+        <strong><a href="https://science.gmu.edu/directory/konrad-wessels" target="_blank" rel="noopener">Konrad Wessels</a></strong>
+        <span class="affil">George Mason University</span>
+      </li>
+      <li>
+        <strong><a href="https://science.gmu.edu/directory/matthew-rice" target="_blank" rel="noopener">Matthew Rice</a></strong>
+        <span class="affil">George Mason University</span>
+      </li>
+      <li>
+        <strong><a href="https://isaac.earth/" target="_blank" rel="noopener">Isaac Corley</a></strong>
+        <span class="affil">Taylor Geospatial</span>
+      </li>
+    </ul>
+  </section>
 
-        <div class="help-body" id="help-target" hidden>
-          <p>
-            Pick any combination of classes you like. With none picked, the
-            ranking uses the whole-set metric below, and with some picked it
-            becomes the average of just those classes' F1 scores. Either way,
-            the table further down follows the same selection.
-          </p>
-          <p>
-            The sector button on each row toggles that whole row at once, and
-            picking a sector in full gives you exactly the per-sector F1 from
-            the paper, which is defined the same way: the macro average of its
-            member classes, with each one scored on the full test set.
-          </p>
-          <p>
-            Only F1 exists per class in the stored results, so the metric
-            selector works on the whole set, meaning none picked or all ten, and
-            locks on anything in between.
-          </p>
-        </div>
-
-        <div class="q q-full" id="metric-pick">
-          <span class="q-label">Score by<button
-            type="button" class="help" aria-expanded="false"
-            aria-controls="help-metric"
-            aria-label="What do these metrics mean?">?</button></span>
-          <select id="q-metric"></select>
-          <p class="q-summary" id="sum-metric"></p>
-        </div>
-
-        <div class="help-body" id="help-metric" hidden>
-          <p>
-            All six are computed on the ten-class subset, and none of them is
-            the single right answer, since they weigh misses, false alarms and
-            rare classes differently.
-          </p>
-          <dl id="metric-list"></dl>
-        </div>
-
-        <div class="q q-full" id="q4">
-          <span class="q-label">4 &middot; Where?</span>
-          <div class="chipset" id="q-regions"></div>
-          <p class="q-summary" id="sum-regions"></p>
-        </div>
-      </div>
-
-      <div id="rec" class="rec"></div>
-    </section>
-
-    <section id="results">
-      <h2>All results</h2>
-      <p class="sub">
-        All thirty conditions, filterable. That is nine models across up to
-        two adaptation protocols and two data scales each, with three seeds
-        apiece.
-      </p>
-
-      <div class="controls">
-        <div class="ctl" data-for="breakdown">
-          <span class="ctl-label">Breakdown</span>
-          <div class="seg" id="f-breakdown"></div>
-        </div>
-        <div class="ctl" data-for="metric" id="ctl-metric">
-          <label class="ctl-label" for="f-metric">Metric</label>
-          <select id="f-metric"></select>
-        </div>
-        <div class="ctl" data-for="fm">
-          <label class="ctl-label" for="f-fm">Model</label>
-          <select id="f-fm"></select>
-        </div>
-        <div class="ctl" data-for="protocol">
-          <span class="ctl-label">Adaptation</span>
-          <div class="seg" id="f-protocol"></div>
-        </div>
-        <div class="ctl" data-for="scale">
-          <span class="ctl-label">Data scale</span>
-          <div class="seg" id="f-scale"></div>
-        </div>
-        <div class="ctl ctl-checks">
-          <label><input type="checkbox" id="f-baselines" checked> Baselines</label>
-          <label><input type="checkbox" id="f-std" checked> &plusmn;&nbsp;std</label>
-        </div>
-      </div>
-
-      <p class="warn" id="region-warn" hidden></p>
-      <p class="hint" id="view-hint" hidden></p>
-
-      <div class="scroll"><table id="t-results"></table></div>
-
-      <p class="caption" id="tally"></p>
-    </section>
-
-  </div>
 </main>
 
 <footer>
-  <p id="footer-meta"></p>
   <p>
-    Every number on this page is generated from the evaluation run artifacts.
-    <a href="https://github.com/justing0909/infra-bench-cls" target="_blank" rel="noopener">Source and curation pipeline &#8599;</a>
+    Code MIT, dataset ODbL&nbsp;1.0. Imagery from Sentinel-1 and Sentinel-2,
+    asset locations from OpenStreetMap.
   </p>
 </footer>
 
