@@ -48,14 +48,14 @@
       foundation models are proposed as a way to understand the built
       environment more efficiently, yet they remain largely untested on the
       facility-scale assets that underpin a range of societal and economic
-      functions. Infra-Bench CLS tests them.
+      functions.
     </p>
     <p>
-      The benchmark holds 18,756 Sentinel-1 SAR and Sentinel-2 multispectral
-      images of facility-scale assets at 10&nbsp;m resolution, covering seven
-      world regions, with asset locations drawn from OpenStreetMap. It spans 13
-      infrastructure classes across the energy, water, transport, and telecom
-      sectors.
+      Infra-Bench CLS tests them on 18,756 Sentinel-1 SAR and Sentinel-2
+      multispectral images of facility-scale assets at 10&nbsp;m resolution,
+      covering seven continents, with asset locations drawn from OpenStreetMap.
+      It spans 13 infrastructure classes across the energy, water, transport,
+      and telecom sectors.
     </p>
     <p>
       Results are reported for 10 of those 13 classes. Wind farm and port
@@ -81,7 +81,7 @@
       relative improvement over the baseline.
     </p>
     <p>
-      Results vary sharply by class. Airports (85.3%), train stations (82.1%),
+      Results vary widely by class. Airports (85.3%), train stations (82.1%),
       and data centers (77.6%) score well, while many power sector classes stay
       difficult, ranging from 27.5% to 46.2%.
     </p>
@@ -218,10 +218,18 @@
 </main>
 
 <footer>
-  <p>
-    Code MIT &middot; Dataset ODbL&nbsp;1.0 &middot; Imagery from Sentinel-1 and
-    Sentinel-2 &middot; Asset locations from OpenStreetMap
-  </p>
+  <dl class="foot">
+    <dt>Licensing</dt>
+    <dd>
+      Code is released under the MIT License. The dataset is released under the
+      Open Database License (ODbL)&nbsp;1.0.
+    </dd>
+    <dt>Data sources</dt>
+    <dd>
+      Imagery from the European Space Agency Sentinel-1 and Sentinel-2
+      missions. Asset locations from OpenStreetMap contributors.
+    </dd>
+  </dl>
 </footer>
 
 <script src="script.js"></script>
