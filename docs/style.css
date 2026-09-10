@@ -170,7 +170,20 @@ figcaption strong { color: var(--ink); font-weight: 600; }
 
 /* ------------------------------------------------------------------- prose */
 
-.prose p { color: var(--ink); margin: 0 0 14px; }
+/* Justified. No auto-hyphenation: on this measure the word spacing stays
+   even enough without it, and hyphen breaks would read as the stray dashes
+   we deliberately kept out of the copy. */
+.prose p {
+  color: var(--ink);
+  margin: 0 0 14px;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: none;
+}
+
+/* Ragged right where justifying would look wrong: short captions and the
+   one-line link descriptions. */
+figcaption, .prose dd { text-align: left; }
 .prose em { font-style: italic; color: var(--ink-bright); }
 
 .prose dl { margin: 20px 0 18px; }
@@ -344,6 +357,28 @@ footer p {
   color: var(--ink-dim);
 }
 
+/* Licensing and provenance are different things, so they get separate terms
+   rather than one run-on line of dot-separated fragments. */
+.foot { margin: 0; }
+
+.foot dt {
+  font: 500 0.66rem/1 var(--mono);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--brown-lit);
+  margin-top: 18px;
+}
+
+.foot dt:first-child { margin-top: 0; }
+
+.foot dd {
+  margin: 7px 0 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ink-dim);
+  max-width: 70ch;
+}
+
 footer a { color: var(--brown-lit); }
 footer a:hover { color: var(--tan); }
 
@@ -359,6 +394,10 @@ footer a:hover { color: var(--tan); }
   section { margin-top: 60px; padding-top: 38px; }
   main > section:first-of-type { margin-top: 38px; }
   h2 { font-size: 1.62rem; }
+
+  /* A 339px column is too narrow to justify without hyphenation: the word
+     spacing opens into rivers. Ragged right below this breakpoint. */
+  .prose p { text-align: left; }
 
   /* The code block scrolls sideways on a phone, so an overlaid button would
      sit on top of whatever has been scrolled under it. Put it in the flow. */
