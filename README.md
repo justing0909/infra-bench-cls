@@ -31,6 +31,23 @@ Below is the citation for this repository.
 
 In addition, the citations for the accompanying paper and database are below:
 
+**Paper.** [arXiv:2609.09482](https://arxiv.org/abs/2609.09482)
+
+```bibtex
+@misc{guthrie2026infrabenchcls,
+  title         = {Infra-Bench CLS: A Global, Open-Source Benchmark for
+                   Critical Infrastructure Classification with Earth
+                   Observation Foundation Models},
+  author        = {Guthrie, Justin and Oughton, Edward and Wessels, Konrad
+                   and Rice, Matthew and Corley, Isaac},
+  year          = {2026},
+  eprint        = {2609.09482},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2609.09482}
+}
+```
+
 **Dataset.** [10.5281/zenodo.22118892](https://doi.org/10.5281/zenodo.22118892)
 
 ```bibtex
@@ -45,21 +62,6 @@ In addition, the citations for the accompanying paper and database are below:
   url       = {https://doi.org/10.5281/zenodo.22118892}
 }
 ```
-
-**Code.** [10.5281/zenodo.22256967](https://doi.org/10.5281/zenodo.22256967)
-
-```bibtex
-@software{guthrie2026infrabenchclscode,
-  title     = {Infra-Bench Classification (Infra-Bench CLS) GitHub Repository},
-  author    = {Guthrie, Justin},
-  year      = {2026},
-  version   = {1},
-  publisher = {Zenodo},
-  doi       = {10.5281/zenodo.22256967},
-  url       = {https://doi.org/10.5281/zenodo.22256967}
-}
-```
-
 
 ---
 
