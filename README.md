@@ -9,6 +9,74 @@ it, and what has to be in place first. Results are browsable at
 <https://justing0909.github.io/infra-bench-cls>, whose source is in
 [`docs/`](docs).
 
+---
+
+## Citation
+
+Below is the citation for this repository.
+**Code.** [10.5281/zenodo.22256967](https://doi.org/10.5281/zenodo.22256967)
+
+```bibtex
+@software{guthrie2026infrabenchclscode,
+  title     = {Infra-Bench Classification (Infra-Bench CLS) GitHub Repository},
+  author    = {Guthrie, Justin},
+  year      = {2026},
+  version   = {1},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22256967},
+  url       = {https://doi.org/10.5281/zenodo.22256967}
+}
+```
+
+In addition, the citations for the accompanying paper and database are below:
+
+**Dataset.** [10.5281/zenodo.22118892](https://doi.org/10.5281/zenodo.22118892)
+
+```bibtex
+@dataset{guthrie2026infrabenchclsdata,
+  title     = {Infra-Bench CLS: A Global Multimodal Satellite Imagery Dataset
+               for Critical Infrastructure Classification},
+  author    = {Guthrie, Justin and Oughton, Edward and Wessels, Konrad
+               and Rice, Matthew and Corley, Isaac},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22118892},
+  url       = {https://doi.org/10.5281/zenodo.22118892}
+}
+```
+
+**Code.** [10.5281/zenodo.22256967](https://doi.org/10.5281/zenodo.22256967)
+
+```bibtex
+@software{guthrie2026infrabenchclscode,
+  title     = {Infra-Bench Classification (Infra-Bench CLS) GitHub Repository},
+  author    = {Guthrie, Justin},
+  year      = {2026},
+  version   = {1},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22256967},
+  url       = {https://doi.org/10.5281/zenodo.22256967}
+}
+```
+
+
+---
+
+## License
+
+The code in this repository is released under the MIT License, see
+[`LICENSE`](LICENSE).
+
+The dataset is released separately under the Open Database License (ODbL) 1.0,
+because it derives from OpenStreetMap. It is archived at
+<https://doi.org/10.5281/zenodo.22118892>, and redistributing or deriving from
+it requires the attribution given under [Dataset access](#dataset-access).
+
+Imagery derives from the European Space Agency Sentinel-1 and Sentinel-2
+missions. Asset locations come from OpenStreetMap contributors.
+
+---
+
 > **Note.** If you already have your own labelled assets and want to test
 > foundation models on them, skip to
 > [Using your own assets](#using-your-own-assets), since none of the curation
@@ -376,17 +444,6 @@ Finally, `data/Infra-FM-timing-log.xlsx` is incomplete by construction. It was
 filled in as regions completed, so any region curated before a given column
 existed has gaps there, and columns named in `COLUMN_MAP` that the sheet lacks
 are appended on the next write.
-
----
-
-## Citation
-
-Paper citation will be added on posting to arXiv.
-
-## License
-
-Code is MIT, see [`LICENSE`](LICENSE). The dataset is ODbL 1.0, archived at
-<https://doi.org/10.5281/zenodo.22118892>.
 
 ## Authors
 
