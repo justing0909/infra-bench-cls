@@ -18,8 +18,16 @@
     A global, open-source benchmark for critical infrastructure classification
     with Earth observation foundation models.
   </p>
-  <p class="header-aside">
-    Guthrie, Oughton, Wessels, Rice &amp; Corley &middot; 2026
+  <p class="byline">
+    <span class="author">Justin Guthrie<span class="mark">1</span>,</span>
+    <span class="author">Edward Oughton<span class="mark">1</span>,</span>
+    <span class="author">Konrad Wessels<span class="mark">1</span>,</span>
+    <span class="author">Matthew Rice<span class="mark">1</span>,</span>
+    <span class="author">Isaac Corley<span class="mark">2</span></span>
+  </p>
+  <p class="affils">
+    <span><span class="mark">1</span>George Mason University</span>
+    <span><span class="mark">2</span>Taylor Geospatial</span>
   </p>
 </header>
 
@@ -36,42 +44,52 @@
     <h2>What it is</h2>
     <p>
       Earth observation foundation models are usually measured on land cover,
-      crop type and building footprints. Critical infrastructure is harder and
-      less studied: the assets are small, visually similar to one another, and
-      unevenly distributed across the world. Infra-Bench CLS asks how well these
-      models recognise them.
+      crop type, and building footprints. Critical infrastructure is harder and
+      less studied. The assets are small, they look alike, and they are spread
+      unevenly across the world. Infra-Bench CLS measures how well these models
+      find them.
     </p>
     <p>
       The task is single-label classification of infrastructure assets from
       satellite imagery. Asset locations come from OpenStreetMap across seven
-      continental regions, and each one is imaged with co-located Sentinel-2 L2A
-      optical and Sentinel-1 SAR tiles at 10&nbsp;m resolution. Ten classes span
-      four sectors, from transmission substations and solar farms to wastewater
-      plants, airports and data centres.
+      continental regions, each imaged with co-located Sentinel-2 L2A optical
+      and Sentinel-1 SAR tiles at 10&nbsp;m resolution. Ten classes span four
+      sectors, from transmission substations and solar farms to wastewater
+      plants, airports, and data centers.
     </p>
     <p>
-      We evaluate seven foundation models against a supervised ResNet-18 and a
-      random-features floor, under two adaptation protocols and two data scales,
-      at three seeds each. That is thirty conditions in total, every one scored
-      on the same fixed spatial split, so training and test assets never share a
-      spatial block.
+      Seven foundation models are scored against a supervised ResNet-18 and a
+      random features floor, under two adaptation protocols and two data scales,
+      at three seeds each. That gives thirty conditions, all on one fixed
+      spatial split, so training and test assets never share a spatial block.
     </p>
 
     <h3>What we found</h3>
     <p>
       Fine-tuning matters more than the choice of backbone. Four of the six
-      fine-tuned foundation models beat the supervised baseline, while
-      <em>none</em> of the frozen linear probes did &mdash; every one of them
-      landed below a ResNet-18 trained from scratch. The strongest condition was
-      DINOv3 ViT-L/16 fine-tuned on the full training set, at 57.9% macro F1
-      against the baseline's 39.2%.
+      fine-tuned foundation models beat the supervised ResNet-18 baseline, and
+      none of the frozen linear probes did. The best condition was DINOv3
+      ViT-L/16 fine-tuned on the full training set, at 57.9% macro F1 against
+      39.2% for the baseline.
     </p>
     <p>
-      Performance also varies sharply by class. Airports and train stations are
-      recognised well, while distribution substations and power plants remain
-      difficult for every model tested. The paper reports per-class, per-sector
-      and per-region breakdowns in full.
+      Results also vary sharply by class. Airports and train stations score
+      well, while distribution substations and power plants stay difficult for
+      every model tested.
     </p>
+
+    <figure>
+      <a href="figures/fig4_grouped_by_model.png" target="_blank" rel="noopener"><img
+        src="figures/fig4_grouped_by_model.png"
+        alt="Bar chart of test macro F1 grouped by model, showing each model's linear probe and fine-tuned conditions at both data scales"
+        loading="lazy"></a>
+      <figcaption>
+        Test macro F1 grouped by model. Each model shows its linear probe and
+        fine-tuned conditions at both data scales, with hatching marking the
+        0.3&times; scale. Mean of three seeds, error bars one standard
+        deviation.
+      </figcaption>
+    </figure>
 
     <figure>
       <a href="figures/fig_perclass_heatmap.png" target="_blank" rel="noopener"><img
@@ -79,29 +97,32 @@
         alt="Heatmap of per-class test F1 for each foundation model at its best condition, with macro and weighted F1 summary rows"
         loading="lazy"></a>
       <figcaption>
-        Per-class test F1 for each model at its best condition, over ten classes,
-        with macro and weighted F1 as summary rows. Mean of three seeds.
+        Per-class test F1 for each model at its best condition, over ten
+        classes, with macro and weighted F1 as summary rows. Mean of three
+        seeds.
       </figcaption>
     </figure>
   </section>
 
   <section id="access">
-    <h2>Paper, data and code</h2>
+    <h2>Paper, data, and code</h2>
     <dl class="links">
       <dt>Paper</dt>
       <dd>
-        <a href="https://arxiv.org/abs/2609.09482" target="_blank" rel="noopener">arXiv:2609.09482</a>
-        &mdash; the benchmark, the evaluation protocol and the full results.
+        <a href="https://arxiv.org/abs/2609.09482" target="_blank" rel="noopener">arXiv:2609.09482</a>.
+        The benchmark, the evaluation protocol, and the full results.
       </dd>
       <dt>Dataset</dt>
       <dd>
-        <a href="https://doi.org/10.5281/zenodo.22118892" target="_blank" rel="noopener">10.5281/zenodo.22118892</a>
-        &mdash; the curated tile dataset, archived on Zenodo under ODbL&nbsp;1.0.
+        <a href="https://doi.org/10.5281/zenodo.22118892" target="_blank" rel="noopener">10.5281/zenodo.22118892</a>.
+        The curated tile dataset, archived on Zenodo.
       </dd>
       <dt>Code</dt>
       <dd>
-        <a href="https://github.com/justing0909/infra-bench-cls" target="_blank" rel="noopener">justing0909/infra-bench-cls</a>
-        &mdash; curation pipeline, evaluation notebooks and figure scripts. MIT.
+        <a href="https://github.com/justing0909/infra-bench-cls" target="_blank" rel="noopener">justing0909/infra-bench-cls</a>,
+        archived at
+        <a href="https://doi.org/10.5281/zenodo.22256967" target="_blank" rel="noopener">10.5281/zenodo.22256967</a>.
+        Curation pipeline, evaluation notebooks, and figure scripts.
       </dd>
     </dl>
   </section>
@@ -109,9 +130,11 @@
   <section id="cite">
     <h2>Cite</h2>
     <p>
-      Please cite the paper. If you use the tiles themselves, cite the dataset
+      Please cite the paper. If you use the tiles or the code, cite those
       alongside it.
     </p>
+
+    <h3>Paper</h3>
     <div class="cite-block">
       <button type="button" class="copy" data-copy="bibtex-paper">Copy</button>
       <pre id="bibtex-paper">@misc{guthrie2026infrabenchcls,
@@ -127,6 +150,8 @@
   url           = {https://arxiv.org/abs/2609.09482}
 }</pre>
     </div>
+
+    <h3>Dataset</h3>
     <div class="cite-block">
       <button type="button" class="copy" data-copy="bibtex-data">Copy</button>
       <pre id="bibtex-data">@dataset{guthrie2026infrabenchclsdata,
@@ -140,13 +165,24 @@
   url       = {https://doi.org/10.5281/zenodo.22118892}
 }</pre>
     </div>
+
+    <h3>Code</h3>
+    <div class="cite-block">
+      <button type="button" class="copy" data-copy="bibtex-code">Copy</button>
+      <pre id="bibtex-code">@software{guthrie2026infrabenchclscode,
+  title     = {Infra-Bench Classification (Infra-Bench CLS) GitHub Repository},
+  author    = {Guthrie, Justin},
+  year      = {2026},
+  version   = {1},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22256967},
+  url       = {https://doi.org/10.5281/zenodo.22256967}
+}</pre>
+    </div>
   </section>
 
   <section id="team">
     <h2>The team</h2>
-    <p>
-      Built at George Mason University, with collaborators at Taylor Geospatial.
-    </p>
     <ul class="authors">
       <li>
         <strong><a href="https://jg-geoportfolio.vercel.app/" target="_blank" rel="noopener">Justin Guthrie</a></strong>
@@ -175,8 +211,8 @@
 
 <footer>
   <p>
-    Code MIT, dataset ODbL&nbsp;1.0. Imagery from Sentinel-1 and Sentinel-2,
-    asset locations from OpenStreetMap.
+    Code MIT &middot; Dataset ODbL&nbsp;1.0 &middot; Imagery from Sentinel-1 and
+    Sentinel-2 &middot; Asset locations from OpenStreetMap
   </p>
 </footer>
 
