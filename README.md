@@ -287,7 +287,7 @@ run varies by stage:
 | If you want to do... | Is it possible? |
 |---|---|
 | Extract assets from OpenStreetMap | No, as it needs 51 GB of Geofabrik PBFs that are too large to distribute, and the 2026-05-26 snapshot will no longer be downloadable |
-| Deduplicate those assets | No, as it reads the extraction above, which you would not have |
+| Deduplicate those assets | Yes. The extracted tables are committed to this repository, though only Maine is wired into `pipeline.py`, so the sector tables need `curation.deduplication.Deduplicator` called directly |
 | Draw the per-cell samples (`sample_v1`) | Yes. The deduplicated tables are committed to this repository |
 | Fetch the imagery | Yes, though it takes hours to days per cell against a rate-limited API |
 | Cap cells at 1k, build the split, evaluate | Yes |

@@ -30,11 +30,9 @@ data/PIPELINE/**
 !data/PIPELINE/_backup/
 !data/PIPELINE/**/*.parquet
 
-# ...except 01-extracted-assets. Those are one step further back than anything
-# the pipeline needs: regenerating them takes 51 GB of Geofabrik PBFs that are
-# not distributable, and every entry point starts from the deduplicated tables
-# instead. pipeline.py skips extraction outright when its deduped table exists.
-data/PIPELINE/01-extracted-assets/
+# 01-extracted-assets is shipped too, even though every entry point starts from
+# the deduplicated tables: regenerating it takes 51 GB of Geofabrik PBFs that
+# are not distributable, so these parquets are the only way to re-run dedup.
 
 # ...but not the per-cell sample lists: they embed absolute paths from whoever
 # ran the sampling, and curation.sectors.sample_v1 regenerates them.
