@@ -250,5 +250,32 @@ class TestAutoAccept(unittest.TestCase):
         self.assertEqual(held(), first)
 
 
+class TestClassSample(unittest.TestCase):
+    """the per-class sample size rule and the accuracy report."""
+
+    def test_sample_size_rule(self):
+        from curation.review.class_sample import sample_size
+        self.assertEqual(sample_size(5046), 100)   # capped
+        self.assertEqual(sample_size(676), 68)     # 10%, rounded up
+        self.assertEqual(sample_size(150), 20)     # floor
+        self.assertEqual(sample_size(12), 12)      # whole class when smaller
+
+    def test_report_counts_relabels_as_wrong_and_skips_unsure(self):
+        from curation.review import class_sample
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            pd.DataFrame({"asset_id": ["a", "b", "c", "d"], "asset_type": SUB, "class_size": 40,
+                          "draw": range(4), "hint": ""}).to_csv(root / "s.csv", index=False)
+            with mock.patch.object(class_sample, "SAMPLE", root / "s.csv"), \
+                 mock.patch.object(decisions, "REVIEW_DIR", root):
+                decisions.append("justin", "a", "accept", SUB)
+                decisions.append("justin", "b", "relabel", DX)
+                decisions.append("justin", "c", "unsure", "")
+                summary, confusion = class_sample.report("justin")
+        row = summary.iloc[0]
+        self.assertEqual((row.reviewed, row.unsure, row.correct, row["accuracy_%"]), (3, 1, 1, 50.0))
+        self.assertEqual(confusion.tiles.sum(), 1)
+
+
 if __name__ == "__main__":
     unittest.main()

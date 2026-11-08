@@ -38,10 +38,15 @@ class Review:
         audit = REVIEW_DIR / "auto_accept_audit.csv"
         self.audit = (set(pd.read_csv(audit).query("audit_kind == 'held_back'").asset_id)
                       if audit.exists() else set())
+        sample = REVIEW_DIR / "class_sample.csv"
+        self.sample = (dict(pd.read_csv(sample, keep_default_na=False)[["asset_id", "hint"]].values)
+                       if sample.exists() else {})
 
     def _item(self, row: dict, entries: dict) -> dict:
+        hint = self.sample.get(row["asset_id"], "")
         return {
             **row,
+            "evidence": " | ".join(x for x in (hint, row.get("evidence", "")) if x),
             "status": decisions.status(entries, self.second_opinion),
             "mine": entries.get(self.reviewer),
             "others": [e for r, e in entries.items() if r != self.reviewer],
@@ -58,6 +63,8 @@ class Review:
             modes.insert(0, "confirmed")
         if self.audit:
             modes.insert(0, "audit")
+        if self.sample:
+            modes.insert(0, "sample")
         return {"reviewer": self.reviewer, "classes": self.classes, "modes": modes,
                 "total": len(self.by_id), "counts": counts,
                 "mine": sum(1 for e in latest.values() if self.reviewer in e)}
@@ -65,6 +72,10 @@ class Review:
     def _in_pass(self, mode: str, entries: dict, row: dict) -> bool:
         if mode == "adjudicate":
             return decisions.status(entries, True) == "disputed"
+        if mode == "sample":
+            # the random per-class sample (class_sample.py): every tile in it
+            # needs this reviewer's own call, even one a source auto-accepted.
+            return row["asset_id"] in self.sample and self.reviewer not in entries
         if mode == "audit":
             # the held-back sample of strict source matches (auto_accept.py)
             return (row["asset_id"] in self.audit

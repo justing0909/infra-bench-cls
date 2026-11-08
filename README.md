@@ -368,6 +368,15 @@ A fixed 10% of eligible tiles is held back as an audit (`auto_accept_audit.csv`,
 the "Audit of auto-accepts" pass on the page), and `--report` shows how often
 people agreed with the source on those tiles.
 
+That audit measures the source rules, which mostly cover stations and
+airports. To estimate how accurate the OSM labels themselves are,
+`python -m curation.review.class_sample` draws a fixed random sample of every
+class: 10% of its tiles, at most 100 and at least 20 (or the whole class when
+smaller), 940 tiles in all. It appears as the "Random label sample" pass, with
+each tile's current OSM tags and footprint size as hints, and
+`python -m curation.review.class_sample --report` gives each class's accuracy
+with a 95% Clopper-Pearson interval and what the wrong labels should have been.
+
 The same review also runs in VIA (VGG Image Annotator 2.x), writing the same
 log:
 
