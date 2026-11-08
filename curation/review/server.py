@@ -21,7 +21,7 @@ from urllib.parse import parse_qs, urlparse
 
 import pandas as pd
 
-from ..paths import REVIEW_QUEUE
+from ..paths import REVIEW_DIR, REVIEW_QUEUE
 from . import decisions
 from .via import NOT_INFRA, chip_for
 
@@ -35,6 +35,9 @@ class Review:
         self.queue = pd.read_csv(REVIEW_QUEUE, keep_default_na=False)
         self.by_id = {r["asset_id"]: r for r in self.queue.to_dict("records")}
         self.classes = sorted(self.queue.asset_type.unique()) + [NOT_INFRA]
+        audit = REVIEW_DIR / "auto_accept_audit.csv"
+        self.audit = (set(pd.read_csv(audit).query("audit_kind == 'held_back'").asset_id)
+                      if audit.exists() else set())
 
     def _item(self, row: dict, entries: dict) -> dict:
         return {
@@ -53,6 +56,8 @@ class Review:
         modes = ["first", "revisit"] if not self.second_opinion else ["first", "second", "adjudicate"]
         if self.queue.corroborated.astype(str).eq("True").any():
             modes.insert(0, "confirmed")
+        if self.audit:
+            modes.insert(0, "audit")
         return {"reviewer": self.reviewer, "classes": self.classes, "modes": modes,
                 "total": len(self.by_id), "counts": counts,
                 "mine": sum(1 for e in latest.values() if self.reviewer in e)}
@@ -60,6 +65,10 @@ class Review:
     def _in_pass(self, mode: str, entries: dict, row: dict) -> bool:
         if mode == "adjudicate":
             return decisions.status(entries, True) == "disputed"
+        if mode == "audit":
+            # the held-back sample of strict source matches (auto_accept.py)
+            return (row["asset_id"] in self.audit
+                    and decisions.wants(self.reviewer, entries, self.second_opinion) == "first")
         if mode == "confirmed":
             # first looks a secondary source already agrees with: still a
             # human decision each, just a fast one.

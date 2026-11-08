@@ -186,5 +186,69 @@ class TestViaRoundTrip(unittest.TestCase):
         self.assertEqual(decisions.load()["osm_way_0"]["justin"]["label"], SUB)
 
 
+class TestAutoAccept(unittest.TestCase):
+    """auto-accept must stay out of a person's way and keep its audit."""
+
+    def setUp(self):
+        from curation.review import auto_accept
+        self.aa = auto_accept
+        self.tmp = tempfile.TemporaryDirectory()
+        root = Path(self.tmp.name)
+        (root / "sources").mkdir()
+        ids = [f"osm_way_{i}" for i in range(30)]
+        pd.DataFrame({"order": range(30), "asset_id": ids, "asset_type": SUB}).to_csv(root / "queue.csv", index=False)
+        pd.DataFrame({"asset_id": ids, "hifld_text": "HIFLD: 2 line(s) end here (230 kV)",
+                      "auto_ok": True}).to_csv(root / "sources" / "hifld_lines.csv", index=False)
+        self.patches = [mock.patch.object(decisions, "REVIEW_DIR", root),
+                        mock.patch.object(auto_accept, "REVIEW_DIR", root),
+                        mock.patch.object(auto_accept, "REVIEW_QUEUE", root / "queue.csv"),
+                        mock.patch.object(auto_accept, "AUDIT", root / "audit.csv")]
+        for p in self.patches:
+            p.start()
+
+    def tearDown(self):
+        for p in self.patches:
+            p.stop()
+        self.tmp.cleanup()
+
+    def test_audit_is_held_back_and_humans_win(self):
+        decisions.append("justin", "osm_way_0", "relabel", DX)
+        counts = self.aa.apply()
+        table = pd.read_csv(self.aa.AUDIT)
+        audit = set(table[table.audit_kind == "held_back"].asset_id)
+        self.assertEqual(len(audit), 3)                        # 10% of 30
+        latest = decisions.load()
+        for a in audit:
+            self.assertNotIn("source", latest.get(a, {}))      # left for a person
+        if "osm_way_0" not in audit:
+            self.assertEqual(counts["human_decided"], 1)
+            self.assertNotIn("source", latest["osm_way_0"])    # never overrides a person
+        self.assertEqual(counts["accepted"] + counts["human_decided"], 30 - len(audit))
+
+    def test_a_new_source_never_reshuffles_the_audit(self):
+        self.aa.apply()
+        before = set(pd.read_csv(self.aa.AUDIT).query("audit_kind == 'held_back'").asset_id)
+        queue = pd.read_csv(self.aa.REVIEW_QUEUE)
+        new = [f"osm_way_{i}" for i in range(100, 110)]
+        pd.concat([queue, pd.DataFrame({"order": range(100, 110), "asset_id": new, "asset_type": SUB})]
+                  ).to_csv(self.aa.REVIEW_QUEUE, index=False)
+        pd.DataFrame({"asset_id": new, "register": "DB", "register_text": "DB: x 5 m away (matches OSM name)",
+                      "auto_ok": True}).to_csv(self.aa.REVIEW_DIR / "sources" / "registers.csv", index=False)
+        self.aa.apply()
+        after = pd.read_csv(self.aa.AUDIT).query("audit_kind == 'held_back'")
+        self.assertTrue(before <= set(after.asset_id))         # nothing earlier dropped
+        self.assertEqual((after.source == "DB").sum(), 1)       # the new source gets its own pick
+        accepted = {a for a, e in decisions.load().items() if "source" in e}
+        self.assertFalse(set(after.asset_id) & accepted)        # never an already-accepted tile
+
+    def test_rerunning_adds_nothing_and_keeps_the_same_audit(self):
+        self.aa.apply()
+        held = lambda: set(pd.read_csv(self.aa.AUDIT).query("audit_kind == 'held_back'").asset_id)
+        first = held()
+        again = self.aa.apply()
+        self.assertEqual(again["accepted"], 0)
+        self.assertEqual(held(), first)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -348,6 +348,23 @@ or other power plant tile with an EIA plant of the matching kind within 1 km is
 source-confirmed. A plant of the wrong kind, or a substation tile whose OSM
 name matches a plant within 300 m, is flagged as a likely mislabel.
 
+`python -m curation.review.registers` adds official registers for stations
+and airports: North American Rail Network passenger station nodes (BTS), UK
+national rail stations (DfT NaPTAN), FAA aviation facilities (BTS), Deutsche
+Bahn's OpenStation stations, Trafikverket's railway station nodes (Sweden),
+Ireland's NaPTAN rail stops, SNCF's passenger stations (France), Fintraffic
+Digitraffic stations (Finland), and SBB's Trafimage stations (Switzerland).
+Spain's ADIF network was considered but its service refuses access.
+
+The most obvious tiles pass without review, openly. `python -m
+curation.review.auto_accept` accepts a tile when a source confirms it under a
+strict rule that always includes a name match, for example a NaPTAN station
+within 300 m with the same name. Those decisions go to
+`decisions_source.jsonl` under the reviewer `source`, never over a person's.
+A fixed 10% of eligible tiles is held back as an audit (`auto_accept_audit.csv`,
+the "Audit of auto-accepts" pass on the page), and `--report` shows how often
+people agreed with the source on those tiles.
+
 The same review also runs in VIA (VGG Image Annotator 2.x), writing the same
 log:
 

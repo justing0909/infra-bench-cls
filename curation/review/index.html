@@ -109,7 +109,7 @@
 <div id="msg"></div>
 <script>
 const KEYS = "1234567890qwert".split("");
-const MODE_NAMES = { confirmed: "Source-confirmed (fast)", first: "First look", revisit: "Revisit (my unconfirmed)", second: "Second opinion", adjudicate: "Disputed" };
+const MODE_NAMES = { audit: "Audit of auto-accepts", confirmed: "Source-confirmed (fast)", first: "First look", revisit: "Revisit (my unconfirmed)", second: "Second opinion", adjudicate: "Disputed" };
 const MARK = { accept: "✓", relabel: "✗", unsure: "?" };
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));

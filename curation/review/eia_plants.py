@@ -73,7 +73,7 @@ def fetch() -> pd.DataFrame:
 def build() -> pd.DataFrame:
     plants = fetch()
     plants = plants[plants.Latitude.astype(float).abs() > 0].reset_index(drop=True)
-    q = pd.read_csv(REVIEW_QUEUE, keep_default_na=False)
+    q = pd.read_csv(REVIEW_QUEUE, keep_default_na=False).drop_duplicates("asset_id")
     lo_lat, hi_lat, lo_lon, hi_lon = US_BOX
     tiles = q[(q.sector == "energy") & q.lat.between(lo_lat, hi_lat)
               & q.lon.between(lo_lon, hi_lon)].reset_index(drop=True)
@@ -88,7 +88,7 @@ def build() -> pd.DataFrame:
         agrees = CLASS_SOURCES.get(t["asset_type"])
         osm_tokens = _tokens(t["name"])
         corroborated = bool(agrees) and any(m <= MATCH_M and agrees(str(p.PrimSource)) for p, m in near)
-        lines = []
+        lines, strict = [], False
         for p, m in near[:3]:
             src = str(p.PrimSource)
             name_match = bool(osm_tokens & _tokens(str(p.Plant_Name)))
@@ -103,13 +103,17 @@ def build() -> pd.DataFrame:
             # suggests the tile is the plant itself.
             elif not agrees and name_match and m <= 300:
                 line = f"Caution: {line}; this may be the plant, not a substation"
+            # strict enough to pass without review: the right kind of plant,
+            # close, and named like the OSM asset
+            strict = strict or bool(agrees and agrees(src) and name_match and m <= 300)
             lines.append(line)
         if not near and agrees:
             lines.append(f"EIA: no plant within {SEARCH_M / 1000:.1f} km")
         out.append({"asset_id": t["asset_id"], "asset_type": t["asset_type"],
                     "eia_nearest_m": round(near[0][1]) if near else None,
                     "eia_source": str(near[0][0].PrimSource) if near else "",
-                    "eia_text": " | ".join(lines), "corroborated": corroborated})
+                    "eia_text": " | ".join(lines), "corroborated": corroborated,
+                    "auto_ok": strict and not any(l.startswith("Caution") for l in lines)})
     return pd.DataFrame(out)
 
 

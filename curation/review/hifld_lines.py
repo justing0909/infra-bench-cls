@@ -88,7 +88,11 @@ def _query(asset_id: str, lat: float, lon: float) -> dict:
 
 
 _PLACEHOLDER = re.compile(r"^(UNKNOWN|TAP|DEADEND|NOT AVAILABLE)", re.I)
-_FILLER = re.compile(r"\b(substation|sub|station|switching|switchyard|power|electric|kv|\d+)\b", re.I)
+# words that name the kind of facility rather than which one it is, so two
+# names only "match" when they share something specific like a place name.
+_FILLER = re.compile(r"\b(substation|sub|station|switching|switchyard|power|electric|kv|rail|railway|"
+                     r"train|amtrak|airport|aerodrome|airfield|international|intl|regional|rgnl|"
+                     r"municipal|muni|county|\d+)\b", re.I)
 
 
 def _tokens(name: str) -> set:
@@ -152,7 +156,7 @@ def _summarise(lat: float, lon: float, data: dict, osm_name: str = "") -> dict:
 
 
 def build(workers: int = 4) -> pd.DataFrame:
-    q = pd.read_csv(REVIEW_QUEUE, keep_default_na=False)
+    q = pd.read_csv(REVIEW_QUEUE, keep_default_na=False).drop_duplicates("asset_id")
     lo_lat, hi_lat, lo_lon, hi_lon = US_BOX
     tiles = q[q.asset_type.isin(SUBSTATION_CLASSES) & q.lat.between(lo_lat, hi_lat)
               & q.lon.between(lo_lon, hi_lon)]
@@ -167,6 +171,8 @@ def build(workers: int = 4) -> pd.DataFrame:
     # what counts as the source agreeing with the OSM label
     out["corroborated"] = ((out.asset_type == "energy.transmission.substation")
                            & out.hifld_transmission)
+    # strict enough to pass without review: confirmed and the line-end name matches
+    out["auto_ok"] = out.corroborated & out.hifld_name_match
     return out
 
 

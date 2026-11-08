@@ -135,14 +135,21 @@ def build() -> pd.DataFrame:
     # secondary sources, when they have been fetched (hifld_lines.py, eia_plants.py).
     q["evidence"], q["corroborated"] = "", False
     for path, text_col in [(REVIEW_DIR / "sources" / "hifld_lines.csv", "hifld_text"),
-                           (REVIEW_DIR / "sources" / "eia_plants.csv", "eia_text")]:
+                           (REVIEW_DIR / "sources" / "eia_plants.csv", "eia_text"),
+                           (REVIEW_DIR / "sources" / "registers.csv", "register_text")]:
         if path.exists():
             ev = pd.read_csv(path, keep_default_na=False)[["asset_id", text_col, "corroborated"]]
-            q = q.merge(ev.rename(columns={text_col: "_text", "corroborated": "_corr"}),
-                        on="asset_id", how="left")
+            # one row per tile: a tile inside two registers' areas (UK and
+            # Ireland, say) has two rows, and merging those would duplicate it.
+            ev = ev.groupby("asset_id", sort=False).agg(
+                _text=(text_col, lambda s: " | ".join(t for t in s if t)),
+                _corr=("corroborated", lambda s: (s.astype(str) == "True").any())).reset_index()
+            q = q.merge(ev, on="asset_id", how="left")
             q["evidence"] = q.evidence.str.cat(q._text.fillna(""), sep=" | ").str.strip(" |")
-            q["corroborated"] = q.corroborated | (q._corr.astype(str) == "True")
+            q["corroborated"] = q.corroborated | q._corr.eq(True)
             q = q.drop(columns=["_text", "_corr"])
+    if q.asset_id.duplicated().any():
+        raise ValueError("queue has duplicate tiles after merging sources")
 
     # within a class: name hints first, then the tiles the model doubts most.
     doubt = (1 - q.model_p_label).fillna(0)
