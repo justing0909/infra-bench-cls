@@ -308,6 +308,51 @@ The benchmark chain is documented in
 chain in
 [`curation/substations/README.md`](curation/substations/README.md).
 
+### Label review
+
+Every benchmark label comes from OSM, so `curation/review/` puts a human
+decision on each tile. It needs the v1_1k tiles under `data/curated_datasets/`.
+
+```bash
+python -m curation.review.build_queue                 # data/label_review/queue.csv
+python -m curation.review.server --reviewer justin    # http://127.0.0.1:8765
+```
+
+The page is laid out like VIA: a tile list, the Sentinel-2 chip the models see
+next to a high-resolution satellite view of the same footprint, and one
+annotation row with the verdict, the correct class, and clickable Google
+satellite, Street View and OSM links. Space marks the OSM label true, a class
+key marks it false and relabels in one press, U marks it unconfirmed, and
+G, V and O open the three links. The open shortcut list is in the sidebar.
+
+A true verdict accepts the OSM label, false plus a class relabels it, and
+unconfirmed brings the tile back in the revisit pass. The page also shows two
+weak hints: a keyword in the OSM name that points at another class, and the
+disagreement of an out-of-fold AlphaEarth probe, which is right only about 30%
+of the time. Decisions go to `data/label_review/decisions_<reviewer>.jsonl`,
+which is the committed record. `--second-opinion` sends relabels and
+unconfirmed tiles to a second reviewer instead.
+
+Secondary sources add evidence to the queue. For US substation tiles,
+`python -m curation.review.hifld_lines` (then rebuild the queue) finds the
+HIFLD transmission lines that end at each asset, with their voltages and the
+substation names HIFLD gives at their ends. A tile whose OSM label is
+transmission and which has lines of 100 kV or more ending at it, on lines HIFLD
+did not trace from OSM, appears in a "Source-confirmed" pass. That pass still
+needs a decision per tile, but a quick one. Lines HIFLD traced from OSM are
+flagged on the page and never count as confirmation.
+
+The same review also runs in VIA (VGG Image Annotator 2.x), writing the same
+log:
+
+```bash
+python -m curation.review.via export --reviewer justin
+# Project > Load in VIA, mark each chip's verdict, Project > Save, then:
+python -m curation.review.via import --reviewer justin path/to/saved_project.json
+```
+
+Chips and VIA projects are regenerable and ignored by git.
+
 ---
 
 ## Using your own assets

@@ -41,3 +41,8 @@ SPLIT_ARTIFACT = SPLIT_DIR / "asset_id_to_split_v1.parquet"
 
 ALPHAEARTH_DIR        = DATA_DIR / "alphaearth"
 ALPHAEARTH_EMBEDDINGS = ALPHAEARTH_DIR / "embeddings_2024.parquet"
+
+# human label review: the queue is built once and shared, and each reviewer
+# appends to their own decisions file so two people never edit the same file.
+REVIEW_DIR   = DATA_DIR / "label_review"
+REVIEW_QUEUE = REVIEW_DIR / "queue.csv"

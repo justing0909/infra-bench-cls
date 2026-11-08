@@ -46,6 +46,13 @@ data/PIPELINE/03-v1-samples/
 !data/alphaearth/
 !data/alphaearth/*.parquet
 
+# label review: chips and VIA projects are regenerated from the queue; the
+# queue and the per-reviewer decisions logs are the committed record.
+data/label_review/chips/
+data/label_review/via/
+# raw per-tile source responses; the summarised sources/*.csv are committed
+data/label_review/sources/*/
+
 # QA outputs
 qa_outputs/
 

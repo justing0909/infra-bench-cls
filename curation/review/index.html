@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infra-Bench Label Review</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+  /* deliberately plain, after VIA: dark bar, file list, images, one annotation row */
+  * { box-sizing: border-box; }
+  body { margin:0; font:13px/1.4 Arial, sans-serif; color:#000; background:#fff; }
+  #bar { background:#212121; color:#fff; display:flex; gap:14px; align-items:center; padding:6px 12px; flex-wrap:wrap; }
+  #bar b { font-size:14px; }
+  #bar select { font:inherit; }
+  #progress { margin-left:auto; color:#ccc; }
+  #wrap { display:flex; min-height:calc(100vh - 34px); }
+  #side { width:250px; flex:none; background:#f2f2f2; border-right:1px solid #ddd; }
+  .panel h3 { margin:0; padding:8px 10px; font-size:15px; font-weight:normal; background:#e6e6e6;
+              display:flex; justify-content:space-between; cursor:pointer; }
+  .panel h3 span { color:#7a5cff; }
+  #files { list-style:none; margin:0; padding:4px 0; max-height:60vh; overflow:auto; font-size:12px; }
+  #files li { padding:1px 10px; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  #files li:hover { background:#dde6ff; }
+  #files li.cur { font-weight:bold; border-left:3px solid #000; padding-left:7px; }
+  #files .m { display:inline-block; width:14px; color:#555; }
+  #keys { padding:6px 10px; font-size:12px; display:none; }
+  #keys div { margin:2px 0; }
+  kbd { font:11px monospace; background:#fff; border:1px solid #bbb; border-radius:2px; padding:0 4px; }
+  #main { flex:1; display:flex; flex-direction:column; min-width:0; }
+  #images { display:flex; gap:12px; padding:12px; flex-wrap:wrap; }
+  .pane { display:flex; flex-direction:column; gap:3px; color:#555; font-size:12px; }
+  #tile { width:420px; height:420px; image-rendering:pixelated; background:#222; }
+  #map { width:420px; height:420px; }
+  #editor { border-top:1px solid #ccc; padding:6px 12px 12px; }
+  #editor .tabs { color:#00c; margin-bottom:6px; }
+  table { border-collapse:collapse; width:100%; }
+  th, td { border:1px solid #000; padding:5px 8px; text-align:left; vertical-align:top; }
+  th { font-weight:bold; }
+  td label { display:block; }
+  td select { font:inherit; max-width:230px; }
+  td a { color:#00c; display:block; }
+  #note { font:inherit; width:100%; }
+  .flag { color:#a4501b; }
+  .ev { color:#2f6f4f; }
+  #msg { position:fixed; bottom:10px; left:50%; transform:translateX(-50%); background:#000; color:#ff0;
+         padding:6px 30px; display:none; }
+  #empty { padding:40px; color:#555; display:none; }
+</style>
+</head>
+<body>
+<div id="bar">
+  <b>Label review</b>
+  <label>Pass <select id="mode"></select></label>
+  <label>Class <select id="cls"><option value="">All classes</option></select></label>
+  <span id="progress"></span>
+</div>
+<div id="wrap">
+  <div id="side">
+    <div class="panel"><h3>Tiles <span>&minus;</span></h3><ul id="files"></ul></div>
+    <div class="panel"><h3 id="keyshead">Keyboard Shortcuts <span>+</span></h3>
+      <div id="keys">
+        <div><kbd>Space</kbd> true (OSM label is right)</div>
+        <div><kbd>F</kbd> false: pick the class</div>
+        <div><kbd>1</kbd>&ndash;<kbd>0</kbd> <kbd>Q</kbd>&ndash;<kbd>T</kbd> false, straight to a class</div>
+        <div><kbd>U</kbd> unconfirmed</div>
+        <div><kbd>G</kbd> Google satellite &nbsp;<kbd>V</kbd> Street View &nbsp;<kbd>O</kbd> OSM</div>
+        <div><kbd>&larr;</kbd> previous &nbsp;<kbd>&rarr;</kbd> skip</div>
+        <div><kbd>N</kbd> note</div>
+        <div id="classkeys" style="margin-top:6px"></div>
+      </div>
+    </div>
+  </div>
+  <div id="main">
+    <div id="empty">Nothing left in this pass for this class.</div>
+    <div id="images">
+      <div class="pane"><img id="tile" alt="Sentinel-2 tile"><span>Sentinel-2, what the model sees (~600 m)</span></div>
+      <div class="pane"><div id="map"></div><span>Satellite, Esri World Imagery (box = tile)</span></div>
+    </div>
+    <div id="editor">
+      <div class="tabs">File Annotations</div>
+      <table>
+        <tr><th>tile</th><th>verdict</th><th>correct_class</th><th>osm_label</th><th>name</th><th>check</th></tr>
+        <tr>
+          <td id="fname"></td>
+          <td>
+            <label><input type="radio" name="v" value="true"> true</label>
+            <label><input type="radio" name="v" value="false"> false</label>
+            <label><input type="radio" name="v" value="unconfirmed"> unconfirmed</label>
+          </td>
+          <td><select id="klass"><option value=""></option></select></td>
+          <td id="olabel"></td>
+          <td id="oname"></td>
+          <td>
+            <a id="gmaps" target="_blank" rel="noopener">Google satellite</a>
+            <a id="street" target="_blank" rel="noopener">Street View</a>
+            <a id="osm" target="_blank" rel="noopener">OpenStreetMap</a>
+          </td>
+        </tr>
+        <tr><td>notes</td><td colspan="5"><div id="evidence"></div><input id="note" placeholder="optional"></td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+<div id="msg"></div>
+<script>
+const KEYS = "1234567890qwert".split("");
+const MODE_NAMES = { confirmed: "Source-confirmed (fast)", first: "First look", revisit: "Revisit (my unconfirmed)", second: "Second opinion", adjudicate: "Disputed" };
+const MARK = { accept: "✓", relabel: "✗", unsure: "?" };
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let state, item = null, history = [], classes = [];
+
+const map = L.map("map", { attributionControl: true });
+L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+  { maxZoom: 19, attribution: "&copy; Esri, Maxar, Earthstar Geographics" }).addTo(map);
+let box = null;
+
+function flash(t) { const m = $("msg"); m.textContent = t; m.style.display = "block"; clearTimeout(flash.t); flash.t = setTimeout(() => m.style.display = "none", 1800); }
+
+async function api(path, opts) {
+  const r = await fetch(path, opts);
+  const j = await r.json();
+  if (!r.ok) throw new Error(j.error || r.statusText);
+  return j;
+}
+
+async function refreshState() {
+  state = await api("/api/state");
+  const c = state.counts, n = v => (v || 0).toLocaleString();
+  $("progress").textContent = `${state.reviewer}: ${n(state.mine)} reviewed · ${n(c.done)} / ${n(state.total)} done` +
+    (c.unsure ? ` · ${n(c.unsure)} unconfirmed` : "") + (c.disputed ? ` · ${n(c.disputed)} disputed` : "");
+}
+
+async function refreshList() {
+  const around = Math.max(0, (item ? item.order : 0) - 5);
+  const r = await api(`/api/list?mode=${$("mode").value}&cls=${encodeURIComponent($("cls").value)}&around=${around}`);
+  $("files").innerHTML = r.items.map(f =>
+    `<li data-id="${esc(f.asset_id)}" class="${item && f.asset_id === item.asset_id ? "cur" : ""}">` +
+    `<span class="m">${MARK[f.mine] || ""}</span>[${f.order + 1}] ${esc(f.name || f.asset_id)}</li>`).join("");
+  $("files").querySelector(".cur")?.scrollIntoView({ block: "nearest" });
+}
+
+function show(it) {
+  item = it;
+  $("empty").style.display = it ? "none" : "block";
+  for (const id of ["images", "editor"]) $(id).style.display = it ? "" : "none";
+  if (!it) return refreshList();
+  const lat = +it.lat, lon = +it.lon;
+  $("tile").src = `/tile/${encodeURIComponent(it.asset_id)}.png`;
+  $("fname").textContent = it.asset_id;
+  $("olabel").textContent = it.asset_type;
+  $("oname").textContent = it.name || "(no name)";
+  $("gmaps").href = `https://www.google.com/maps/@?api=1&map_action=map&center=${lat},${lon}&zoom=18&basemap=satellite`;
+  $("street").href = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${lat},${lon}`;
+  $("osm").href = it.osm_url;
+  const lines = [];
+  // filled in once secondary sources are matched into the queue.
+  if (it.evidence) it.evidence.split(" | ").forEach(e =>
+    lines.push(`<div class="${e.startsWith("Caution") ? "flag" : "ev"}">${esc(e)}</div>`));
+  if (it.name_hint) lines.push(`<div class="flag">name suggests ${esc(it.name_hint)}</div>`);
+  (it.others || []).forEach(e => lines.push(`<div>${esc(e.reviewer)}: ${esc(e.decision)} ${esc(e.label)} ${esc(e.note)}</div>`));
+  $("evidence").innerHTML = lines.join("");
+  // show this reviewer's earlier verdict when going back
+  const m = it.mine;
+  const v = !m ? "" : m.decision === "accept" ? "true" : m.decision === "relabel" ? "false" : "unconfirmed";
+  document.querySelectorAll("input[name=v]").forEach(r => r.checked = r.value === v);
+  $("klass").value = m && m.decision === "relabel" ? m.label : "";
+  $("note").value = m?.note || "";
+
+  const dLat = 300 / 111320, dLon = 300 / (111320 * Math.cos(lat * Math.PI / 180));
+  if (box) box.remove();
+  box = L.rectangle([[lat - dLat, lon - dLon], [lat + dLat, lon + dLon]], { color: "#ffcc00", weight: 2, fill: false }).addTo(map);
+  map.fitBounds(box.getBounds(), { padding: [20, 20] });
+  refreshList();
+}
+
+async function next() {
+  const after = item ? item.order : -1;
+  const r = await api(`/api/next?mode=${$("mode").value}&cls=${encodeURIComponent($("cls").value)}&after=${after}`);
+  if (item) history.push(item.asset_id);
+  show(r.item);
+}
+
+async function jump(id) {
+  if (item) history.push(item.asset_id);
+  show((await api(`/api/item?asset_id=${encodeURIComponent(id)}`)).item);
+}
+
+async function decide(decision, label) {
+  if (!item) return;
+  try {
+    await api("/api/decide", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ asset_id: item.asset_id, decision, label, note: $("note").value.trim() }) });
+  } catch (e) { flash("Not saved: " + e.message); return; }
+  flash(decision === "accept" ? "true" : decision === "relabel" ? "false → " + label : "unconfirmed");
+  await next();
+  refreshState();
+}
+
+async function back() {
+  const id = history.pop();
+  if (id) show((await api(`/api/item?asset_id=${encodeURIComponent(id)}`)).item);
+}
+
+function relabel(c) {
+  if (!c) return;
+  c === item.asset_type ? decide("accept") : decide("relabel", c);
+}
+
+// the mouse works exactly like the keys
+document.querySelectorAll("input[name=v]").forEach(r => r.addEventListener("change", () => {
+  if (r.value === "true") decide("accept");
+  else if (r.value === "unconfirmed") decide("unsure");
+  else $("klass").focus();
+}));
+$("klass").addEventListener("change", e => { e.target.blur(); relabel(e.target.value); });
+$("files").addEventListener("click", e => { const li = e.target.closest("li"); if (li) jump(li.dataset.id); });
+$("keyshead").addEventListener("click", () => {
+  const k = $("keys"), open = k.style.display === "block";
+  k.style.display = open ? "none" : "block";
+  $("keyshead").querySelector("span").textContent = open ? "+" : "−";
+});
+
+document.addEventListener("keydown", e => {
+  const note = $("note");
+  if (document.activeElement === note) { if (e.key === "Enter" || e.key === "Escape") note.blur(); return; }
+  if (e.target.tagName === "SELECT" || e.ctrlKey || e.metaKey || e.altKey || !item) return;
+  const k = e.key.toLowerCase();
+  const open = id => window.open($(id).href, "_blank", "noopener");
+  if (k === " " || k === "enter") { e.preventDefault(); decide("accept"); }
+  else if (k === "f") { document.querySelector("input[value=false]").checked = true; $("klass").focus(); }
+  else if (k === "u") decide("unsure");
+  else if (k === "arrowright") next();
+  else if (k === "arrowleft" || k === "backspace") { e.preventDefault(); back(); }
+  else if (k === "n") { e.preventDefault(); note.focus(); }
+  else if (k === "g") open("gmaps");
+  else if (k === "v") open("street");
+  else if (k === "o") open("osm");
+  else if (KEYS.includes(k)) relabel(classes[KEYS.indexOf(k)]);
+});
+
+for (const id of ["mode", "cls"]) $(id).addEventListener("change", e => {
+  e.target.blur(); item = null; history = []; next();
+});
+
+(async () => {
+  await refreshState();
+  classes = state.classes;
+  state.modes.forEach(m => $("mode").add(new Option(MODE_NAMES[m] || m, m)));
+  classes.filter(c => c !== "not_infrastructure").forEach(c => $("cls").add(new Option(c, c)));
+  classes.forEach(c => $("klass").add(new Option(c, c)));
+  $("classkeys").innerHTML = classes.map((c, i) => `<div><kbd>${KEYS[i].toUpperCase()}</kbd> ${esc(c)}</div>`).join("");
+  await next();
+})();
+</script>
+</body>
+</html>
