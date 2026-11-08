@@ -30,7 +30,9 @@
   #main { flex:1; display:flex; flex-direction:column; min-width:0; }
   #images { display:flex; gap:12px; padding:12px; flex-wrap:wrap; }
   .pane { display:flex; flex-direction:column; gap:3px; color:#555; font-size:12px; }
-  #tile { width:420px; height:420px; image-rendering:pixelated; background:#222; }
+  .tilewrap { position:relative; width:420px; height:420px; }
+  #tile { width:420px; height:420px; image-rendering:pixelated; background:#222; display:block; }
+  #tileov { position:absolute; inset:0; pointer-events:none; }
   #map { width:420px; height:420px; }
   #editor { border-top:1px solid #ccc; padding:6px 12px 12px; }
   #editor .tabs { color:#00c; margin-bottom:6px; }
@@ -65,6 +67,7 @@
         <div><kbd>1</kbd>&ndash;<kbd>0</kbd> <kbd>Q</kbd>&ndash;<kbd>T</kbd> false, straight to a class</div>
         <div><kbd>U</kbd> unconfirmed</div>
         <div><kbd>G</kbd> Google satellite &nbsp;<kbd>V</kbd> Street View &nbsp;<kbd>O</kbd> OSM</div>
+        <div><kbd>Z</kbd> zoom: asset / whole tile</div>
         <div><kbd>&larr;</kbd> previous &nbsp;<kbd>&rarr;</kbd> skip</div>
         <div><kbd>N</kbd> note</div>
         <div id="classkeys" style="margin-top:6px"></div>
@@ -74,8 +77,9 @@
   <div id="main">
     <div id="empty">Nothing left in this pass for this class.</div>
     <div id="images">
-      <div class="pane"><img id="tile" alt="Sentinel-2 tile"><span>Sentinel-2, what the model sees (~600 m)</span></div>
-      <div class="pane"><div id="map"></div><span>Satellite, Esri World Imagery (box = tile)</span></div>
+      <div class="pane"><div class="tilewrap"><img id="tile" alt="Sentinel-2 tile"><svg id="tileov" viewBox="0 0 420 420"></svg></div>
+        <span>Sentinel-2, what the model sees (~600 m). <span id="share"></span></span></div>
+      <div class="pane"><div id="map"></div><span>Satellite: cyan = OSM footprint, dashed = tile. <kbd>Z</kbd> asset / whole tile</span></div>
     </div>
     <div id="editor">
       <div class="tabs">File Annotations</div>
@@ -114,7 +118,66 @@ let state, item = null, history = [], classes = [];
 const map = L.map("map", { attributionControl: true });
 L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
   { maxZoom: 19, attribution: "&copy; Esri, Maxar, Earthstar Geographics" }).addTo(map);
-let box = null;
+let box = null, shape = null, zoomTile = false;
+const TILE_M = 600, PX = 420;
+const footprints = new Map();
+
+// the mapped OSM geometry, straight from the OSM API (CORS-enabled), so the
+// reviewer judges the asset itself rather than the 600 m around it.
+async function footprint(osmUrl) {
+  if (footprints.has(osmUrl)) return footprints.get(osmUrl);
+  const m = osmUrl.match(/(node|way|relation)\/(\d+)/);
+  let rings = [];
+  if (m && m[1] !== "node") {
+    try {
+      const r = await fetch(`https://api.openstreetmap.org/api/0.6/${m[1]}/${m[2]}/full.json`);
+      const els = (await r.json()).elements;
+      const nodes = new Map(els.filter(e => e.type === "node").map(e => [e.id, [e.lat, e.lon]]));
+      rings = els.filter(e => e.type === "way").map(w => w.nodes.map(n => nodes.get(n)).filter(Boolean));
+    } catch (e) { rings = []; }
+  }
+  footprints.set(osmUrl, rings);
+  return rings;
+}
+
+function areaM2(ring) {  // shoelace on a local equirectangular projection
+  if (ring.length < 3) return 0;
+  const k = Math.cos(ring[0][0] * Math.PI / 180) * 111320;
+  let a = 0;
+  for (let i = 0; i < ring.length; i++) {
+    const [y1, x1] = ring[i], [y2, x2] = ring[(i + 1) % ring.length];
+    a += (x1 * k) * (y2 * 111320) - (x2 * k) * (y1 * 111320);
+  }
+  return Math.abs(a) / 2;
+}
+
+function fitView(it, rings) {
+  const lat = +it.lat, lon = +it.lon;
+  if (zoomTile || !rings.length) {
+    const b = zoomTile ? box.getBounds() : L.latLng(lat, lon).toBounds(200);
+    map.fitBounds(b, { padding: [20, 20] });
+  } else {
+    map.fitBounds(shape.getBounds(), { padding: [60, 60], maxZoom: 19 });
+  }
+}
+
+async function drawFootprint(it) {
+  const rings = await footprint(it.osm_url);
+  if (item !== it) return;  // moved on while the request was out
+  const lat = +it.lat, lon = +it.lon;
+  const dLat = TILE_M / 2 / 111320, dLon = TILE_M / 2 / (111320 * Math.cos(lat * Math.PI / 180));
+  if (shape) shape.remove();
+  shape = rings.length ? L.polygon(rings, { color: "#00e5ff", weight: 2, fillOpacity: 0.08 }).addTo(map) : null;
+  const px = ([y, x]) => `${((x - (lon - dLon)) / (2 * dLon) * PX).toFixed(1)},${(((lat + dLat) - y) / (2 * dLat) * PX).toFixed(1)}`;
+  $("tileov").innerHTML = rings.length
+    ? rings.map(r => `<polygon points="${r.map(px).join(" ")}" fill="none" stroke="#00e5ff" stroke-width="2"/>`).join("")
+    : `<circle cx="210" cy="210" r="9" fill="none" stroke="#00e5ff" stroke-width="2"/>`;
+  const area = rings.reduce((s, r) => s + areaM2(r), 0);
+  $("share").textContent = rings.length
+    ? `Mapped footprint ≈ ${Math.round(area).toLocaleString()} m², ${(100 * area / (TILE_M * TILE_M)).toFixed(1)}% of the tile.`
+    : "Mapped as a point in OSM: no footprint.";
+  fitView(it, rings);
+}
 
 function flash(t) { const m = $("msg"); m.textContent = t; m.style.display = "block"; clearTimeout(flash.t); flash.t = setTimeout(() => m.style.display = "none", 1800); }
 
@@ -170,8 +233,12 @@ function show(it) {
 
   const dLat = 300 / 111320, dLon = 300 / (111320 * Math.cos(lat * Math.PI / 180));
   if (box) box.remove();
-  box = L.rectangle([[lat - dLat, lon - dLon], [lat + dLat, lon + dLon]], { color: "#ffcc00", weight: 2, fill: false }).addTo(map);
-  map.fitBounds(box.getBounds(), { padding: [20, 20] });
+  if (shape) { shape.remove(); shape = null; }
+  $("tileov").innerHTML = ""; $("share").textContent = "";
+  box = L.rectangle([[lat - dLat, lon - dLon], [lat + dLat, lon + dLon]],
+                    { color: "#ffcc00", weight: 2, dashArray: "6 6", fill: false }).addTo(map);
+  map.fitBounds(L.latLng(lat, lon).toBounds(200), { padding: [20, 20] });
+  drawFootprint(it);
   refreshList();
 }
 
@@ -237,6 +304,7 @@ document.addEventListener("keydown", e => {
   else if (k === "g") open("gmaps");
   else if (k === "v") open("street");
   else if (k === "o") open("osm");
+  else if (k === "z") { zoomTile = !zoomTile; fitView(item, footprints.get(item.osm_url) || []); }
   else if (KEYS.includes(k)) relabel(classes[KEYS.indexOf(k)]);
 });
 

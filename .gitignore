@@ -52,6 +52,8 @@ data/label_review/chips/
 data/label_review/via/
 # raw per-tile source responses; the summarised sources/*.csv are committed
 data/label_review/sources/*/
+# raw Overpass responses behind the footprint analysis; its CSVs are committed
+data/asset_footprints/overpass/
 
 # QA outputs
 qa_outputs/
