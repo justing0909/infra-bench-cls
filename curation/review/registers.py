@@ -19,6 +19,9 @@ Secondary evidence from official point registers of stations and airports:
   SNCF          SNCF passenger stations, "gares de voyageurs" (ODbL), France.
   Digitraffic   Fintraffic rail stations with passenger traffic (CC BY 4.0), Finland.
   SBB           SBB stations with published station plans (Trafimage), Switzerland.
+  GA            Geoscience Australia railway stations (CC BY 4.0), Australia,
+                without the entries it took from OSM; abandoned and disused
+                stations never confirm a tile and are flagged when they match.
 
 Spain's ADIF network was also considered, but its WFS refuses access.
 
@@ -52,11 +55,11 @@ EARTH_R = 6371008.8
 BTS = "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services"
 
 
-def _arcgis(url: str, where: str, fields: str) -> list:
+def _arcgis(url: str, where: str, fields: str, oid: str = "OBJECTID") -> list:
     rows, offset = [], 0
     while True:
         params = {"where": where, "outFields": fields, "returnGeometry": "true", "outSR": 4326,
-                  "orderByFields": "OBJECTID", "resultOffset": offset,
+                  "orderByFields": oid, "resultOffset": offset,
                   "resultRecordCount": 2000, "f": "json"}
         with urllib.request.urlopen(f"{url}/query?{urllib.parse.urlencode(params)}", timeout=120) as r:
             data = json.load(r)
@@ -199,6 +202,22 @@ def _sbb() -> pd.DataFrame:
                           "detail": f"SBB station {r.get('bpuic')}"} for r in rows if r.get("geopos")])
 
 
+def _ga() -> pd.DataFrame:
+    """Geoscience Australia railway stations (CC BY 4.0), compiled from state
+    topographic programmes. The 129 entries it took from OSM are dropped, and
+    abandoned or disused stations are kept but marked inactive: they never
+    confirm a tile, and an OSM station on one is flagged."""
+    rows = _arcgis("https://services.ga.gov.au/gis/rest/services/Foundation_Rail_Infrastructure/MapServer/0",
+                   "1=1", "objectid,name,operationalstatus,feature_source,state", oid="objectid")
+    df = pd.DataFrame(rows)
+    df = df[df.feature_source.fillna("").str.upper() != "OSM"]
+    status = df.operationalstatus.fillna("")
+    return pd.DataFrame({"name": df.name.fillna("").str.replace(r"\s+RAILWAY STATION$", "", regex=True),
+                         "lat": df.lat, "lon": df.lon,
+                         "detail": "GA station, " + status.str.lower() + ", " + df.state.fillna(""),
+                         "inactive": status.isin(["Abandoned", "Disused"])})
+
+
 # register -> (fetcher, class it speaks to, tile box (lat lo, lat hi, lon lo, lon hi), radius m)
 REGISTERS = {
     "NARN": (_narn, "transport.train_station", (14.0, 72.0, -170.0, -50.0), 300),
@@ -210,6 +229,7 @@ REGISTERS = {
     "SNCF": (_sncf, "transport.train_station", (41.3, 51.1, -5.2, 9.6), 300),
     "Digitraffic": (_digitraffic, "transport.train_station", (59.7, 70.1, 20.5, 31.6), 300),
     "SBB": (_sbb, "transport.train_station", (45.8, 47.85, 5.9, 10.5), 300),
+    "GA": (_ga, "transport.train_station", (-44.0, -10.0, 112.0, 154.0), 300),
 }
 
 
@@ -237,8 +257,11 @@ def build() -> pd.DataFrame:
             osm_tokens = _tokens(t["name"])
             near = [(reg.iloc[i], d) for i, d in zip(ii, dd) if d <= 2 * radius]
             hits = [(r, d, bool(osm_tokens & _tokens(str(r["name"])))) for r, d in near]
-            within = [(r, d, nm) for r, d, nm in hits if d <= radius]
-            lines = [f"{register}: {r['name']} ({r['detail']}) {d:.0f} m away"
+            # an entry the register marks abandoned or disused never confirms
+            inactive = lambda r: str(r.get("inactive", "")) == "True"
+            within = [(r, d, nm) for r, d, nm in hits if d <= radius and not inactive(r)]
+            lines = [("Caution: " if inactive(r) and d <= radius else "")
+                     + f"{register}: {r['name']} ({r['detail']}) {d:.0f} m away"
                      + (" (matches OSM name)" if nm else "") for r, d, nm in hits]
             if not lines:
                 lines = [f"{register}: nothing within {2 * radius / 1000:g} km"]

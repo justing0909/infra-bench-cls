@@ -353,8 +353,11 @@ and airports: North American Rail Network passenger station nodes (BTS), UK
 national rail stations (DfT NaPTAN), FAA aviation facilities (BTS), Deutsche
 Bahn's OpenStation stations, Trafikverket's railway station nodes (Sweden),
 Ireland's NaPTAN rail stops, SNCF's passenger stations (France), Fintraffic
-Digitraffic stations (Finland), and SBB's Trafimage stations (Switzerland).
-Spain's ADIF network was considered but its service refuses access.
+Digitraffic stations (Finland), SBB's Trafimage stations (Switzerland), and
+Geoscience Australia's railway stations, without the entries it took from
+OSM. Abandoned or disused stations never confirm a tile, and an OSM station on
+one is flagged. Spain's ADIF network was considered but its service refuses
+access.
 
 The most obvious tiles pass without review, openly. `python -m
 curation.review.auto_accept` accepts a tile when a source confirms it under a
