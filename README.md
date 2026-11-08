@@ -342,6 +342,12 @@ did not trace from OSM, appears in a "Source-confirmed" pass. That pass still
 needs a decision per tile, but a quick one. Lines HIFLD traced from OSM are
 flagged on the page and never count as confirmation.
 
+`python -m curation.review.eia_plants` does the same for US energy tiles with
+the EIA power plant inventory published through HIFLD. A solar farm, wind farm
+or other power plant tile with an EIA plant of the matching kind within 1 km is
+source-confirmed. A plant of the wrong kind, or a substation tile whose OSM
+name matches a plant within 300 m, is flagged as a likely mislabel.
+
 The same review also runs in VIA (VGG Image Annotator 2.x), writing the same
 log:
 

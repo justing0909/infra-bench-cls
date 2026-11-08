@@ -132,9 +132,10 @@ def build() -> pd.DataFrame:
     q["model_suggests"] = q.model_suggests.fillna("")
     q["name_hint"] = [_name_hint(n, t) for n, t in zip(q.name, q.asset_type)]
 
-    # secondary sources, when they have been fetched (see hifld_lines.py).
+    # secondary sources, when they have been fetched (hifld_lines.py, eia_plants.py).
     q["evidence"], q["corroborated"] = "", False
-    for path, text_col in [(REVIEW_DIR / "sources" / "hifld_lines.csv", "hifld_text")]:
+    for path, text_col in [(REVIEW_DIR / "sources" / "hifld_lines.csv", "hifld_text"),
+                           (REVIEW_DIR / "sources" / "eia_plants.csv", "eia_text")]:
         if path.exists():
             ev = pd.read_csv(path, keep_default_na=False)[["asset_id", text_col, "corroborated"]]
             q = q.merge(ev.rename(columns={text_col: "_text", "corroborated": "_corr"}),
