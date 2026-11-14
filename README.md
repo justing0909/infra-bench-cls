@@ -123,7 +123,6 @@ data/
   PIPELINE/02-deduped-assets/   deduplicated asset tables, the curation inputs
   spatial_split/                the fixed train/val/test assignment
   alphaearth/                   64-D AlphaEarth features
-  maine_subset/                 geojson behind the Maine validation subset
   Infra-FM-timing-log.xlsx      per-region curation timings and tile counts
 
 ONTOLOGY.md             full asset taxonomy and OSM tag mappings
