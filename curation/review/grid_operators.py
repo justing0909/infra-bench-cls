@@ -35,6 +35,16 @@ serve. Unlike HIFLD, these come straight from the operator.
                HTA/BT postes in France (Licence Ouverte 2.0). Both list every small
                distribution substation, so they are queried per tile, support a
                distribution or untyped label within 50 m, and never flag another.
+  World Bank   energydata.info layers (CC BY 4.0), read from the World Bank data
+               catalogue: transmission and distribution lines for Sub-Saharan
+               Africa (the AICD compilation), Namibia (NamPower), Nigeria and
+               Ghana. Lines of 100 kV and up count like Transpower's; 1-36 kV
+               feeders are cut into short segments, so they only add a hint. These
+               layers stay quiet where no line ends.
+  Schematic    World Bank maps digitised from PDFs (MENA grid nodes, and substations
+               in Kazakhstan, Uzbekistan, Azerbaijan and Vietnam). Their positions
+               can be kilometres out, so they only add a pointer note within 5 km
+               and never confirm or flag a label.
 
 A point source says what kind of substation stands there: a Transpower site is
 on the national grid, a Vector zone substation is a distribution substation. A
@@ -375,6 +385,109 @@ def argentina_at(_tiles=None) -> pd.DataFrame:
     return pd.DataFrame(out)
 
 
+# World Bank Group layers on energydata.info (CC BY 4.0), served from the
+# World Bank data catalogue, which needs no login (energydata.info's own copies do)
+WB = "https://datacatalogfiles.worldbank.org/ddh-published"
+WB_DIR = CACHE_DIR / "energydata"
+AFRICA = (-35.5, 38.0, -26.0, 52.0)
+NAMIBIA = (-29.1, -16.9, 11.7, 25.3)
+NIGERIA = (4.0, 14.0, 2.6, 14.7)
+GHANA = (4.6, 11.2, -3.3, 1.3)
+# key -> (file, region box, country column, countries to skip, source name)
+WB_LINES = {
+    # AICD's 2005-09 compilation; Namibia, Nigeria and Ghana come from their
+    # own newer files below, so they are skipped here
+    "aicd": (f"{WB}/0039347/1/DR0048854/aicdall-countries-electricity-transmission-network.geojson",
+             AFRICA, "COUNTRY", {"NAM", "NGA", "GHA"}, "World Bank AICD"),
+    "nampower": (f"{WB}/0039297/1/DR0048741/namibiagrid.geojson", NAMIBIA, None, set(), "NamPower"),
+    "nigeria": (f"{WB}/0042076/1/DR0052636/nigeriafinal.geojson", NIGERIA, None, set(), "Nigeria grid (World Bank)"),
+    "ghana": (f"{WB}/0039062/1/DR0048472/ghanafinal.geojson", GHANA, None, set(), "Ghana grid (World Bank)"),
+}
+# schematic maps digitised from PDFs: substations, or MENA's grid nodes
+WB_SCHEMATIC = {
+    "World Bank MENA": f"{WB}/0041431/DR0051700/electric-network-mena.geojson",
+    "World Bank Kazakhstan": f"{WB}/0040250/1/DR0050154/substations-existing.geojson",
+    "World Bank Uzbekistan": f"{WB}/0042342/1/DR0053063/existingsubstations.geojson",
+    "World Bank Azerbaijan": f"{WB}/0041101/DR0051280/substations.geojson",
+    "World Bank Vietnam": f"{WB}/0042329/1/DR0053027/substationskv.geojson",
+}
+
+
+def _wb_features(url: str) -> list:
+    """(properties, shapely geometry) for every feature of a World Bank GeoJSON
+    file, downloaded once into WB_DIR."""
+    from shapely.geometry import shape
+    path = WB_DIR / url.rsplit("/", 1)[-1]
+    if not path.exists():
+        WB_DIR.mkdir(parents=True, exist_ok=True)
+        req = urllib.request.Request(url, headers={"User-Agent": "research-client"})
+        with urllib.request.urlopen(req, timeout=300) as r:
+            path.write_bytes(r.read())
+    text = path.read_bytes().decode("utf-8", "ignore").lstrip(chr(0xFEFF) + " \r\n\t")
+    # the catalogue appends "System.IO.MemoryStream" after the JSON
+    data, _ = json.JSONDecoder().raw_decode(text)
+    out = []
+    for f in data.get("features", []):
+        try:
+            out.append((f.get("properties") or {}, shape(f["geometry"])))
+        except Exception:  # a feature with no or broken geometry
+            continue
+    return out
+
+
+def _wb_lines(key: str, lo: float, hi):
+    """a loader for the existing lines of a WB_LINES layer with lo <= kV (<= hi)."""
+    url, _, country_col, skip, _ = WB_LINES[key]
+
+    def load(_tiles=None) -> list:
+        out = []
+        for p, g in _wb_features(url):
+            p = {k.lower(): v for k, v in p.items()}
+            if str(p.get("status", "Existing")) != "Existing":
+                continue
+            if country_col and str(p.get(country_col.lower())) in skip:
+                continue
+            kv = pd.to_numeric(p.get("voltage_kv"), errors="coerce")
+            if pd.isna(kv) or kv < lo or (hi is not None and kv > hi):
+                continue
+            ends = [(c[1], c[0]) for part in getattr(g, "geoms", [g]) if hasattr(part, "coords")
+                    for c in (list(part.coords)[0], list(part.coords)[-1])]
+            if ends:
+                out.append((float(kv), ends))
+        return out
+    return load
+
+
+def _wb_schematic(name: str):
+    """a loader for a schematic layer's points: name, lat, lon, detail."""
+    url = WB_SCHEMATIC[name]
+
+    def load(_tiles=None) -> pd.DataFrame:
+        feats = _wb_features(url)
+        # MENA nodes carry no voltage; take it from the lines that join them
+        node_kv = {}
+        for p, g in feats:
+            if g.geom_type.endswith("LineString") and p.get("transmissionPower"):
+                for n in (json.loads(p["nodes"]) if isinstance(p.get("nodes"), str) else p.get("nodes") or []):
+                    node_kv.setdefault(n, set()).add(float(p["transmissionPower"]))
+        rows = []
+        for p, g in feats:
+            if not g.geom_type.endswith("Point"):
+                continue
+            c = g.representative_point()
+            if p.get("nodeType"):
+                kvs = sorted(node_kv.get(p.get("name"), ()), reverse=True)
+                detail = (f"a grid node at {p.get('name') or 'an unnamed place'} ({p['nodeType']})"
+                          + (f" on {'/'.join(f'{k:g}' for k in kvs)} kV lines" if kvs else ""))
+            else:
+                text = " ".join(str(v) for k, v in p.items() if re.search(r"(?i)volt|kv|legend|layername", k))
+                kvs = _kvs(text)
+                detail = f"a {max(kvs):g} kV substation" if kvs else "a substation"
+            rows.append({"name": str(p.get("name") or ""), "lat": c.y, "lon": c.x, "detail": detail})
+        return pd.DataFrame(rows, columns=["name", "lat", "lon", "detail"])
+    return load
+
+
 # point sources: (loader, region box, radius m, the substation class it implies
 # when a row does not say, dense). A loader returns name, lat, lon, detail and
 # optionally implies per row (None: the row does not say which type it is).
@@ -393,11 +506,20 @@ POINTS = {
     "OSINERGMIN": (peru_sed, PERU, 50, DX, True),
     "Enedis": (enedis_postes, FRANCE, 50, DX, True),
 }
-# line sources: (loader, region box, endpoint radius m, min kV, the class it implies)
+# line sources: (loader, region box, endpoint radius m, min kV, the class it
+# implies, dense, quiet). Dense feeder networks only ever add a hint; quiet
+# ones say nothing where no line ends, since a coarse compilation missing a
+# line is no evidence against a substation.
 LINES = {
     "Transpower lines": (transpower_lines, NZ, 250, 110, TX),
     "EDF HTA": (edf_hta_lines, MARTINIQUE, 150, 0, DX),
 }
+for _key, (_url, _box, _country_col, _skip, _src) in WB_LINES.items():
+    LINES[f"{_src} HV lines"] = (_wb_lines(_key, 100, None), _box, 250, 100, TX, False, True)
+    LINES[f"{_src} MV lines"] = (_wb_lines(_key, 1, 36), _box, 150, 0, DX, True, True)
+# schematic point layers: rough pointers within SCHEMATIC_M, never evidence
+SCHEMATIC_M = 5000
+SCHEMATIC = {name: _wb_schematic(name) for name in WB_SCHEMATIC}
 SHORT = {TX: "transmission", DX: "distribution", UNTYPED: "untyped"}
 
 
@@ -457,20 +579,35 @@ def build() -> pd.DataFrame:
                 line += f"; suggests a {SHORT[implies]} substation"
             out.append({"asset_id": t["asset_id"], "asset_type": t["asset_type"], "source": source,
                         "grid_text": line, "corroborated": agrees, "auto_ok": agrees and name_match})
-    for source, (load, box, radius, min_kv, implies) in LINES.items():
+    for source, (load, box, radius, min_kv, implies, *rest) in LINES.items():
+        dense, quiet = (list(rest) + [False, False])[:2]
         tiles = subs[_in(subs, box)]
         if tiles.empty:
             continue
         lines = load()
-        for t in tiles.to_dict("records"):
-            ending = [kv for kv, ends in lines
-                      if any(_metres(t["lat"], t["lon"], la, lo) <= radius for la, lo in ends)]
+        if not lines:
+            continue
+        # one row per line end, so a tile finds the lines ending near it quickly
+        ends = [(i, la, lo) for i, (_, e) in enumerate(lines) for la, lo in e]
+        tree = BallTree(np.radians([[la, lo] for _, la, lo in ends]), metric="haversine")
+        hits = tree.query_radius(np.radians(tiles[["lat", "lon"]].values), r=radius / EARTH_R)
+        for t, h in zip(tiles.to_dict("records"), hits):
+            ending = [lines[i][0] for i in sorted({ends[j][0] for j in h})]
+            if quiet and not ending:
+                continue
             strong = [kv for kv in ending if kv is not None and kv >= min_kv]
             line = (f"{source}: {len(ending)} line(s) end here"
                     + (f" (max {max(k for k in ending if k):g} kV)" if any(ending) else "")
                     if ending else f"{source}: no line ends within {radius} m")
-            agrees = bool(strong) and t["asset_type"] == implies
-            if strong and t["asset_type"] not in (implies, UNTYPED) and implies == TX:
+            agrees = bool(strong) and t["asset_type"] == implies and not dense
+            if dense:
+                # dense feeder networks are cut into short segments, so a segment
+                # ending near a substation is a hint, not a confirmation
+                if strong and t["asset_type"] == UNTYPED:
+                    line += f"; hints at a {SHORT[implies]} substation"
+                elif strong and implies == DX and t["asset_type"] == TX:
+                    line += "; distribution feeders may leave it, so it may step down to distribution"
+            elif strong and t["asset_type"] not in (implies, UNTYPED) and implies == TX:
                 line = f"Caution: {line}, which a {SHORT[t['asset_type']]} label does not expect"
             elif strong and t["asset_type"] == UNTYPED:
                 line += f"; suggests a {SHORT[implies]} substation"
@@ -480,6 +617,26 @@ def build() -> pd.DataFrame:
                 line += "; distribution feeders leave it, so it steps down to distribution"
             out.append({"asset_id": t["asset_id"], "asset_type": t["asset_type"], "source": source,
                         "grid_text": line, "corroborated": agrees, "auto_ok": False})
+    for source, load in SCHEMATIC.items():
+        pts = load()
+        if pts.empty:
+            continue
+        box = (pts.lat.min() - .5, pts.lat.max() + .5, pts.lon.min() - .5, pts.lon.max() + .5)
+        tiles = subs[_in(subs, box)]
+        if tiles.empty:
+            continue
+        tree = BallTree(np.radians(pts[["lat", "lon"]].astype(float).values), metric="haversine")
+        dist, idx = tree.query(np.radians(tiles[["lat", "lon"]].values), k=1)
+        for t, d, i in zip(tiles.to_dict("records"), dist[:, 0] * EARTH_R, idx[:, 0]):
+            if d > SCHEMATIC_M:
+                continue
+            # a pointer only: these maps were digitised from PDFs and can be
+            # kilometres out, so they never confirm or flag a label
+            out.append({"asset_id": t["asset_id"], "asset_type": t["asset_type"], "source": source,
+                        "grid_text": (f"Schematic map ({source}): {pts.iloc[i]['detail']} about {d / 1000:.1f} km "
+                                      "away; digitised from a PDF map, so positions can be off by kilometres "
+                                      "and this only hints at what is nearby"),
+                        "corroborated": False, "auto_ok": False})
     return pd.DataFrame(out, columns=["asset_id", "asset_type", "source", "grid_text", "corroborated", "auto_ok"])
 
 

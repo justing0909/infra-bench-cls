@@ -388,3 +388,37 @@ class TestGridOperatorVoltages(unittest.TestCase):
         self.assertIsNone(g._top_voltage_kind(g.DX, 132))
         self.assertEqual(g._top_voltage_kind(g.DX, 66), g.DX)
         self.assertEqual(g._top_voltage_kind(None, None), None)
+
+
+class TestWorldBankLayers(unittest.TestCase):
+    def _write(self, folder, name, features):
+        # the World Bank catalogue appends this after the JSON
+        text = json.dumps({"type": "FeatureCollection", "features": features}) + "System.IO.MemoryStream"
+        (Path(folder) / name).write_text(text, encoding="utf-8")
+
+    def test_lines_skip_planned_skipped_countries_and_other_voltages(self):
+        from curation.review import grid_operators as g
+        line = lambda kv, status="Existing", country="KEN": {
+            "type": "Feature", "properties": {"VOLTAGE_KV": kv, "STATUS": status, "COUNTRY": country},
+            "geometry": {"type": "LineString", "coordinates": [[36.0, -1.0], [36.5, -1.2]]}}
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.object(g, "WB_DIR", Path(tmp)):
+            url = g.WB_LINES["aicd"][0]
+            self._write(tmp, url.rsplit("/", 1)[-1],
+                        [line(220), line(220, "Planned"), line(220, country="NAM"), line(33)])
+            hv = g._wb_lines("aicd", 100, None)()
+            mv = g._wb_lines("aicd", 1, 36)()
+        self.assertEqual([kv for kv, _ in hv], [220.0])
+        self.assertEqual([kv for kv, _ in mv], [33.0])
+        self.assertEqual(hv[0][1], [(-1.0, 36.0), (-1.2, 36.5)])
+
+    def test_schematic_nodes_take_voltage_from_their_lines(self):
+        from curation.review import grid_operators as g
+        feats = [
+            {"type": "Feature", "properties": {"name": "Fes", "nodeType": "city"},
+             "geometry": {"type": "Point", "coordinates": [-5.0, 34.0]}},
+            {"type": "Feature", "properties": {"transmissionPower": 400, "nodes": ["Fes", "Meknes"]},
+             "geometry": {"type": "LineString", "coordinates": [[-5.0, 34.0], [-5.5, 33.9]]}}]
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.object(g, "WB_DIR", Path(tmp)):
+            self._write(tmp, g.WB_SCHEMATIC["World Bank MENA"].rsplit("/", 1)[-1], feats)
+            pts = g._wb_schematic("World Bank MENA")()
+        self.assertEqual(pts.detail.tolist(), ["a grid node at Fes (city) on 400 kV lines"])

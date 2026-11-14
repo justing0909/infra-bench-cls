@@ -438,6 +438,8 @@ data from Street View images".
 | Secretaría de Energía estaciones transformadoras AT (Argentina), 2023 portal snapshot | substation evidence, auto-accept | CC BY 4.0 | Secretaría de Energía, República Argentina |
 | OSINERGMIN subestaciones de distribución (Peru) | substation evidence | ODC-BY 1.0 | OSINERGMIN |
 | Enedis postes de distribution publique HTA/BT (France) | substation evidence | Licence Ouverte 2.0 (Etalab) | Enedis, Postes électriques (postes HTA/BT), last updated 2026-07-03 (retrieved 2026-11-14) |
+| World Bank Group, energydata.info: Sub-Saharan Africa transmission network (AICD), Namibia (NamPower 2017), Nigeria and Ghana transmission networks | substation evidence (line ends) | CC BY 4.0 | World Bank Group, energydata.info, with the original compilers (AICD; NamPower; ECREEE; World Bank) |
+| World Bank Group, energydata.info: schematic MENA grid and Kazakhstan, Uzbekistan, Azerbaijan and Vietnam substations, digitised from PDF maps | pointer notes only (positions can be kilometres out) | CC BY 4.0 | World Bank Group, energydata.info |
 
 HIFLD and EIA cover the contiguous US, Alaska, Hawaii and Puerto Rico. Sources
 considered and not used: LUMA Puerto Rico (its terms forbid copying, derivative
@@ -445,7 +447,9 @@ works and automated collection), Chile's substation layer (published as CC BY-NC
 an exception to the portal's CC0 default), Brazil's ANEEL BDGD (no licence
 stated), Zambia's MV transformers (too dense to tell a substation apart), National
 Grid's GB transmission network route maps (restricted to emergency and land-use
-planning, non-commercial), Eskom
+planning, non-commercial), World Bank layers built from OpenStreetMap (they
+would check OSM against itself), World Bank power plant layers (mostly
+extracts of the commercial Platts WEPP database), Eskom
 (website terms limit use to non-commercial purposes), and a third-party copy of
 Puerto Rico transmission lines (no licence; partly traced from OSM).
 
