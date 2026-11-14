@@ -25,7 +25,8 @@ serve. Unlike HIFLD, these come straight from the operator.
                BULK SUPPLY transmission.
   KPLC, ZESCO  Kenya Power primary substations and Zambia's distribution
                substations, from energydata.info (CC BY 4.0), downloaded by hand
-               into sources/grid_operators/manual/.
+               into sources/grid_operators/manual/. Both are typed by voltage:
+               ZESCO's layer also holds 132-330 kV transmission sites.
   Secretaría de Energía  Argentina's high-voltage transformer stations (CC BY
                4.0), from a 2023 snapshot of the national portal, with input and
                output voltages: all outputs of 100 kV or more imply transmission,
@@ -190,10 +191,13 @@ def _by_voltage(high: list, low: list = None):
     return DX if max(high) < 100 else None
 
 
-def _ga_kind(kind, kv):
-    """GA files some 275 and 330 kV sites as "Zone", so voltage overrides the
-    subtype: 220 kV and up is transmission, and a "Zone" at 100-219 kV may
-    step down from transmission, so it says neither."""
+def _top_voltage_kind(kind, kv):
+    """the type a site's single (highest) voltage allows, given the type its
+    source files it under. Sources file some transmission sites as
+    distribution: GA lists 275 and 330 kV sites as "Zone", and ZESCO's
+    "distribution substations" include 330 kV ones. So 220 kV and up is
+    transmission, and a "distribution" site at 100-219 kV may step down
+    from transmission, so it says neither."""
     if kv and kv >= 220:
         return TX
     if kind == DX and kv and kv >= 100:
@@ -214,7 +218,7 @@ def ga_substations(_tiles=None) -> pd.DataFrame:
         kv = a.get("VOLTAGE_KV")
         rows.append({"name": a.get("FEATURE_NAME") or "", "lat": f["geometry"]["y"], "lon": f["geometry"]["x"],
                      "detail": f"GA {a.get('FEATURE_SUBTYPE') or 'substation'}" + (f", {kv:g} kV" if kv else ""),
-                     "implies": _ga_kind(kinds.get(a.get("FEATURE_SUBTYPE")), kv)})
+                     "implies": _top_voltage_kind(kinds.get(a.get("FEATURE_SUBTYPE")), kv)})
     return pd.DataFrame(rows)
 
 
@@ -345,11 +349,17 @@ def kenya_kplc(_tiles=None) -> pd.DataFrame:
 
 
 def zambia_zesco(_tiles=None) -> pd.DataFrame:
-    """ZESCO distribution substations (energydata.info, CC BY 4.0)."""
+    """ZESCO's "distribution substations" (energydata.info, CC BY 4.0). The
+    layer also holds 132-330 kV sites, so each is typed by its voltage."""
     g = _shapefile("zambia_distribution_substations.zip")
-    return pd.DataFrame([{"name": str(r.NAME or ""), "lat": r.lat, "lon": r.lon,
-                          "detail": f"ZESCO distribution substation, {r.VOLATGELEV} kV", "implies": DX}
-                         for r in g.itertuples()])
+    rows = []
+    for r in g.itertuples():
+        kv = pd.to_numeric(r.VOLATGELEV, errors="coerce")
+        kv = None if pd.isna(kv) else float(kv)
+        rows.append({"name": str(r.NAME or ""), "lat": r.lat, "lon": r.lon,
+                     "detail": f"ZESCO substation, {kv:g} kV" if kv else "ZESCO substation",
+                     "implies": _top_voltage_kind(DX, kv)})
+    return pd.DataFrame(rows)
 
 
 def argentina_at(_tiles=None) -> pd.DataFrame:

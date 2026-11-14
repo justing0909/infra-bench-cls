@@ -429,7 +429,7 @@ data from Street View images".
 | Geoscience Australia railway stations | evidence, auto-accept | CC BY 4.0 | © Commonwealth of Australia (Geoscience Australia) |
 | Transpower sites and transmission lines (New Zealand) | substation evidence, auto-accept | CC BY 4.0 | Transpower Geospatial (CC BY) |
 | Vector zone substations (Auckland) | substation evidence, auto-accept | CC BY 4.0 | Vector Limited, Our Data (CC BY 4.0) |
-| EDF SEI Martinique HTA lines | substation evidence | Licence Ouverte 2.0 (Etalab) | EDF SEI Martinique, with the date of the last update |
+| EDF SEI Martinique HTA lines (aérien, souterrain) | substation evidence | Licence Ouverte 2.0 (Etalab) | EDF SEI Martinique, Lignes haute tension HTA aérien et souterrain, last updated 2025-10-16 (retrieved 2026-11-14) |
 | Geoscience Australia Electricity Infrastructure substations (OSM-sourced rows dropped) | substation evidence, auto-accept | CC BY 4.0 | © Commonwealth of Australia (Geoscience Australia) |
 | Vicmap Features of Interest power facilities (Victoria) | substation evidence, auto-accept | CC BY 4.0 | © State of Victoria (Department of Transport and Planning) |
 | NSW Features of Interest building complexes | substation evidence, auto-accept | CC BY 4.0 | © State of New South Wales (Spatial Services, a business unit of the Department of Customer Service NSW). For current information go to spatial.nsw.gov.au |
@@ -437,13 +437,15 @@ data from Street View images".
 | ZESCO distribution substations (Zambia), via energydata.info | substation evidence, auto-accept | CC BY 4.0 | ZESCO / energydata.info |
 | Secretaría de Energía estaciones transformadoras AT (Argentina), 2023 portal snapshot | substation evidence, auto-accept | CC BY 4.0 | Secretaría de Energía, República Argentina |
 | OSINERGMIN subestaciones de distribución (Peru) | substation evidence | ODC-BY 1.0 | OSINERGMIN |
-| Enedis postes de distribution publique HTA/BT (France) | substation evidence | Licence Ouverte 2.0 (Etalab) | Enedis, with the date of the last update |
+| Enedis postes de distribution publique HTA/BT (France) | substation evidence | Licence Ouverte 2.0 (Etalab) | Enedis, Postes électriques (postes HTA/BT), last updated 2026-07-03 (retrieved 2026-11-14) |
 
 HIFLD and EIA cover the contiguous US, Alaska, Hawaii and Puerto Rico. Sources
 considered and not used: LUMA Puerto Rico (its terms forbid copying, derivative
 works and automated collection), Chile's substation layer (published as CC BY-NC,
 an exception to the portal's CC0 default), Brazil's ANEEL BDGD (no licence
-stated), Zambia's MV transformers (too dense to tell a substation apart), Eskom
+stated), Zambia's MV transformers (too dense to tell a substation apart), National
+Grid's GB transmission network route maps (restricted to emergency and land-use
+planning, non-commercial), Eskom
 (website terms limit use to non-commercial purposes), and a third-party copy of
 Puerto Rico transmission lines (no licence; partly traced from OSM).
 

@@ -382,9 +382,9 @@ class TestGridOperatorVoltages(unittest.TestCase):
         self.assertIsNone(g._by_voltage([132], [33, 13.2]))
         self.assertIsNone(g._by_voltage([]))
 
-    def test_ga_voltage_overrides_zone(self):
+    def test_voltage_overrides_distribution_filing(self):
         from curation.review import grid_operators as g
-        self.assertEqual(g._ga_kind(g.DX, 330), g.TX)
-        self.assertIsNone(g._ga_kind(g.DX, 132))
-        self.assertEqual(g._ga_kind(g.DX, 66), g.DX)
-        self.assertEqual(g._ga_kind(None, None), None)
+        self.assertEqual(g._top_voltage_kind(g.DX, 330), g.TX)
+        self.assertIsNone(g._top_voltage_kind(g.DX, 132))
+        self.assertEqual(g._top_voltage_kind(g.DX, 66), g.DX)
+        self.assertEqual(g._top_voltage_kind(None, None), None)
