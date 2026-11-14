@@ -48,6 +48,8 @@
   #msg { position:fixed; bottom:10px; left:50%; transform:translateX(-50%); background:#000; color:#ff0;
          padding:6px 30px; display:none; }
   #empty { padding:40px; color:#555; display:none; }
+  #sampleinfo { display:none; padding:5px 12px; background:#f6f6f0; border-bottom:1px solid #ddd; font-size:12px; }
+  #sampleinfo b.go { color:#a4501b; } #sampleinfo b.ok { color:#2f6f4f; }
 </style>
 </head>
 <body>
@@ -57,6 +59,7 @@
   <label>Class <select id="cls"><option value="">All classes</option></select></label>
   <span id="progress"></span>
 </div>
+<div id="sampleinfo"></div>
 <div id="wrap">
   <div id="side">
     <div class="panel"><h3>Tiles <span>&minus;</span></h3><ul id="files"></ul></div>
@@ -66,7 +69,7 @@
         <div><kbd>F</kbd> false: pick the class</div>
         <div><kbd>1</kbd>&ndash;<kbd>0</kbd> <kbd>Q</kbd>&ndash;<kbd>T</kbd> false, straight to a class</div>
         <div><kbd>U</kbd> unconfirmed</div>
-        <div><kbd>G</kbd> Google satellite &nbsp;<kbd>V</kbd> Street View &nbsp;<kbd>O</kbd> OSM</div>
+        <div><kbd>I</kbd> Esri World Imagery (Wayback) &nbsp;<kbd>O</kbd> OpenStreetMap</div>
         <div><kbd>Z</kbd> zoom: asset / whole tile</div>
         <div><kbd>&larr;</kbd> previous &nbsp;<kbd>&rarr;</kbd> skip</div>
         <div><kbd>N</kbd> note</div>
@@ -79,7 +82,7 @@
     <div id="images">
       <div class="pane"><div class="tilewrap"><img id="tile" alt="Sentinel-2 tile"><svg id="tileov" viewBox="0 0 420 420"></svg></div>
         <span>Sentinel-2, what the model sees (~600 m). <span id="share"></span></span></div>
-      <div class="pane"><div id="map"></div><span>Satellite: cyan = OSM footprint, dashed = tile. <kbd>Z</kbd> asset / whole tile</span></div>
+      <div class="pane"><div id="map"></div><span>High-resolution imagery (Esri with an ArcGIS key, else NAIP for US tiles): cyan = OSM footprint, dashed = tile. <kbd>Z</kbd> asset / whole tile. <span id="imgnote"></span></span></div>
     </div>
     <div id="editor">
       <div class="tabs">File Annotations</div>
@@ -96,8 +99,7 @@
           <td id="olabel"></td>
           <td id="oname"></td>
           <td>
-            <a id="gmaps" target="_blank" rel="noopener">Google satellite</a>
-            <a id="street" target="_blank" rel="noopener">Street View</a>
+            <a id="esri" target="_blank" rel="noopener">Esri World Imagery (Wayback)</a>
             <a id="osm" target="_blank" rel="noopener">OpenStreetMap</a>
           </td>
         </tr>
@@ -116,26 +118,38 @@ const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt
 let state, item = null, history = [], classes = [];
 
 const map = L.map("map", { attributionControl: true });
-L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-  { maxZoom: 19, attribution: "&copy; Esri, Maxar, Earthstar Geographics" }).addTo(map);
+// Imagery a reviewer may base a label on. Google Maps and Street View are
+// deliberately absent: their terms forbid using them to create or augment
+// another mapping dataset. Esri World Imagery permits validating vector data,
+// but only through an ArcGIS account in an app like this one, so it loads only
+// when the server has an ArcGIS API key; without one, US tiles show NAIP
+// (USDA, public domain) and other tiles show the Sentinel-2 chip alone.
+let esri = null, naip = null;
+function setupImagery() {
+  if (esri || !state || !state.arcgis_key) return;
+  esri = L.tileLayer("https://ibasemaps-api.arcgis.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}?token=" + encodeURIComponent(state.arcgis_key),
+    // Esri has no imagery past about zoom 17 in many places, so fetch at most 17 and enlarge it.
+    { maxNativeZoom: 17, maxZoom: 19, attribution: "Powered by Esri &copy; Esri, Vantor, Earthstar Geographics" }).addTo(map);
+}
+function showNaip(it, bounds) {
+  if (naip) { naip.remove(); naip = null; }
+  if (esri) return;
+  naip = L.imageOverlay(`/naip/${encodeURIComponent(it.asset_id)}.png`, bounds,
+    { attribution: "NAIP aerial imagery: USDA Farm Production and Conservation (public domain)" }).addTo(map);
+  naip.on("error", () => { if (item === it) $("imgnote").textContent = "No high-resolution imagery for this tile (add an ArcGIS key for Esri World Imagery; see README)."; });
+}
 let box = null, shape = null, zoomTile = false;
 const TILE_M = 600, PX = 420;
 const footprints = new Map();
 
-// the mapped OSM geometry, straight from the OSM API (CORS-enabled), so the
-// reviewer judges the asset itself rather than the 600 m around it.
+// the mapped OSM geometry, served by our own server from the cached Overpass
+// responses (no live OSM requests per tile), so the reviewer judges the asset
+// itself rather than the 600 m around it.
 async function footprint(osmUrl) {
   if (footprints.has(osmUrl)) return footprints.get(osmUrl);
-  const m = osmUrl.match(/(node|way|relation)\/(\d+)/);
+  const id = (osmUrl.match(/(node|way|relation)\/(\d+)/) || []).slice(1).join("_");
   let rings = [];
-  if (m && m[1] !== "node") {
-    try {
-      const r = await fetch(`https://api.openstreetmap.org/api/0.6/${m[1]}/${m[2]}/full.json`);
-      const els = (await r.json()).elements;
-      const nodes = new Map(els.filter(e => e.type === "node").map(e => [e.id, [e.lat, e.lon]]));
-      rings = els.filter(e => e.type === "way").map(w => w.nodes.map(n => nodes.get(n)).filter(Boolean));
-    } catch (e) { rings = []; }
-  }
+  try { rings = id ? (await api(`/footprint/osm_${id}.json`)).rings : []; } catch (e) { rings = []; }
   footprints.set(osmUrl, rings);
   return rings;
 }
@@ -157,7 +171,7 @@ function fitView(it, rings) {
     const b = zoomTile ? box.getBounds() : L.latLng(lat, lon).toBounds(200);
     map.fitBounds(b, { padding: [20, 20] });
   } else {
-    map.fitBounds(shape.getBounds(), { padding: [60, 60], maxZoom: 19 });
+    map.fitBounds(shape.getBounds(), { padding: [60, 60], maxZoom: 18 });
   }
 }
 
@@ -193,6 +207,25 @@ async function refreshState() {
   const c = state.counts, n = v => (v || 0).toLocaleString();
   $("progress").textContent = `${state.reviewer}: ${n(state.mine)} reviewed · ${n(c.done)} / ${n(state.total)} done` +
     (c.unsure ? ` · ${n(c.unsure)} unconfirmed` : "") + (c.disputed ? ` · ${n(c.disputed)} disputed` : "");
+  renderSample();
+}
+
+// random-sample pass: how far this class has got, and whether it can stop
+function renderSample() {
+  const box = $("sampleinfo"), prog = (state && state.sample_progress) || {};
+  if ($("mode").value !== "sample" || !Object.keys(prog).length) { box.style.display = "none"; return; }
+  const cls = $("cls").value || (item && item.asset_type) || "";
+  const done = Object.values(prog).filter(p => p.next === "enough").length;
+  const total = Object.keys(prog).length;
+  let line = `Sample: ${done} of ${total} classes have enough.`;
+  const p = prog[cls];
+  if (p) {
+    const acc = p.accuracy == null ? "no decisions yet" : `${p.accuracy}% correct (95% CI ${p.ci}%)`;
+    line = `<b>${esc(cls.split(".").slice(1).join(" ").replace(/_/g, " "))}</b>: ${p.reviewed} of ${p.sampled} reviewed · ${acc} · ` +
+      (p.next === "enough" ? `<b class="ok">enough, move on</b>` : `<b class="go">keep going</b>`) + ` &nbsp;|&nbsp; ` + line;
+  }
+  if (!$("cls").value) line += " With All classes, finished classes are skipped automatically.";
+  box.innerHTML = line; box.style.display = "block";
 }
 
 async function refreshList() {
@@ -207,6 +240,10 @@ async function refreshList() {
 function show(it) {
   item = it;
   $("empty").style.display = it ? "none" : "block";
+  $("empty").textContent = $("mode").value === "sample" && !$("cls").value
+    ? "Every class in the random sample has enough. The sample is done."
+    : "Nothing left in this pass for this class.";
+  renderSample();
   for (const id of ["images", "editor"]) $(id).style.display = it ? "" : "none";
   if (!it) return refreshList();
   const lat = +it.lat, lon = +it.lon;
@@ -214,8 +251,9 @@ function show(it) {
   $("fname").textContent = it.asset_id;
   $("olabel").textContent = it.asset_type;
   $("oname").textContent = it.name || "(no name)";
-  $("gmaps").href = `https://www.google.com/maps/@?api=1&map_action=map&center=${lat},${lon}&zoom=18&basemap=satellite`;
-  $("street").href = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${lat},${lon}`;
+  // Esri's own Wayback app: World Imagery inside an ArcGIS app, which its terms
+  // allow for data collection, with the capture date and earlier versions.
+  $("esri").href = `https://livingatlas.arcgis.com/wayback/#mapCenter=${lon.toFixed(5)}%2C${lat.toFixed(5)}%2C18&mode=explore`;
   $("osm").href = it.osm_url;
   const lines = [];
   // filled in once secondary sources are matched into the queue.
@@ -237,6 +275,8 @@ function show(it) {
   $("tileov").innerHTML = ""; $("share").textContent = "";
   box = L.rectangle([[lat - dLat, lon - dLon], [lat + dLat, lon + dLon]],
                     { color: "#ffcc00", weight: 2, dashArray: "6 6", fill: false }).addTo(map);
+  $("imgnote").textContent = "";
+  showNaip(it, box.getBounds());
   map.fitBounds(L.latLng(lat, lon).toBounds(200), { padding: [20, 20] });
   drawFootprint(it);
   refreshList();
@@ -251,7 +291,7 @@ async function next() {
 
 async function jump(id) {
   if (item) history.push(item.asset_id);
-  show((await api(`/api/item?asset_id=${encodeURIComponent(id)}`)).item);
+  show((await api(`/api/item?asset_id=${encodeURIComponent(id)}&mode=${$("mode").value}`)).item);
 }
 
 async function decide(decision, label) {
@@ -267,7 +307,7 @@ async function decide(decision, label) {
 
 async function back() {
   const id = history.pop();
-  if (id) show((await api(`/api/item?asset_id=${encodeURIComponent(id)}`)).item);
+  if (id) show((await api(`/api/item?asset_id=${encodeURIComponent(id)}&mode=${$("mode").value}`)).item);
 }
 
 function relabel(c) {
@@ -301,9 +341,8 @@ document.addEventListener("keydown", e => {
   else if (k === "arrowright") next();
   else if (k === "arrowleft" || k === "backspace") { e.preventDefault(); back(); }
   else if (k === "n") { e.preventDefault(); note.focus(); }
-  else if (k === "g") open("gmaps");
-  else if (k === "v") open("street");
   else if (k === "o") open("osm");
+  else if (k === "i") open("esri");
   else if (k === "z") { zoomTile = !zoomTile; fitView(item, footprints.get(item.osm_url) || []); }
   else if (KEYS.includes(k)) relabel(classes[KEYS.indexOf(k)]);
 });
@@ -314,6 +353,7 @@ for (const id of ["mode", "cls"]) $(id).addEventListener("change", e => {
 
 (async () => {
   await refreshState();
+  setupImagery();
   classes = state.classes;
   state.modes.forEach(m => $("mode").add(new Option(MODE_NAMES[m] || m, m)));
   classes.filter(c => c !== "not_infrastructure").forEach(c => $("cls").add(new Option(c, c)));

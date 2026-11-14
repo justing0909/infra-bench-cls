@@ -11,8 +11,11 @@ writes):
                 not traced from OSM end there, and a line-end name matches
   eia_plants    an EIA plant of the matching kind within 300 m whose name
                 matches, with no conflicting plant nearby
-  registers     a NARN or NaPTAN station within 300 m, or an FAA airport within
+  registers     a station register entry within 300 m, or an FAA airport within
                 2 km, whose name matches
+  grid_operators  a grid operator's or national mapping agency's substation
+                of the matching type nearby (Transpower, Vector, Geoscience
+                Australia, Vicmap, NSW, KPLC, ZESCO, Argentina), whose name matches
 
 A fixed random AUDIT_SHARE of eligible tiles (at least one per source) is held
 back and left for human review, so the paper can report how often a strict
@@ -45,6 +48,7 @@ SOURCES = {
     "hifld_lines.csv": ("hifld_text", "HIFLD lines >=100 kV end here and a line-end name matches"),
     "eia_plants.csv": ("eia_text", "EIA plant of the matching kind within 300 m, name matches"),
     "registers.csv": ("register_text", "official register entry nearby, name matches"),
+    "grid_operators.csv": ("grid_text", "grid operator's substation of the matching type nearby, name matches"),
 }
 
 
@@ -56,7 +60,8 @@ def eligible() -> pd.DataFrame:
             continue
         ev = pd.read_csv(path, keep_default_na=False)
         ev = ev[ev.auto_ok.astype(str) == "True"]
-        source = ev["register"] if "register" in ev else name.removesuffix(".csv")
+        source = (ev["register"] if "register" in ev else ev["source"] if "source" in ev
+                  else name.removesuffix(".csv"))
         rows.append(pd.DataFrame({"asset_id": ev.asset_id, "source": source,
                                   "rule": rule, "evidence": ev[text_col]}))
     out = pd.concat(rows, ignore_index=True) if rows else pd.DataFrame(

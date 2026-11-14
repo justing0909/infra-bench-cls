@@ -18,12 +18,13 @@ Secondary evidence from official point registers of stations and airports:
   IE-NaPTAN     Ireland's NaPTAN rail entries (NTA, CC-BY 4.0), for Ireland.
   SNCF          SNCF passenger stations, "gares de voyageurs" (ODbL), France.
   Digitraffic   Fintraffic rail stations with passenger traffic (CC BY 4.0), Finland.
-  SBB           SBB stations with published station plans (Trafimage), Switzerland.
   GA            Geoscience Australia railway stations (CC BY 4.0), Australia,
                 without the entries it took from OSM; abandoned and disused
                 stations never confirm a tile and are flagged when they match.
 
-Spain's ADIF network was also considered, but its WFS refuses access.
+Spain's ADIF network was also considered, but its WFS refuses access. SBB's
+Trafimage stations were dropped: their licence could not be confirmed and they
+matched no tile.
 
 None of these are derived from OSM. A tile is corroborated when a register
 entry lies within that register's radius of the OSM point, and passes without
@@ -195,13 +196,6 @@ def _digitraffic() -> pd.DataFrame:
                          for r in rows if r.get("passengerTraffic")])
 
 
-def _sbb() -> pd.DataFrame:
-    """SBB stations with published station plans, 'haltestelle-karte-trafimage', Switzerland."""
-    rows = _explore("https://data.sbb.ch", "haltestelle-karte-trafimage", "bezeichnung_offiziell,bpuic,geopos")
-    return pd.DataFrame([{"name": r["bezeichnung_offiziell"], "lat": r["geopos"]["lat"], "lon": r["geopos"]["lon"],
-                          "detail": f"SBB station {r.get('bpuic')}"} for r in rows if r.get("geopos")])
-
-
 def _ga() -> pd.DataFrame:
     """Geoscience Australia railway stations (CC BY 4.0), compiled from state
     topographic programmes. The 129 entries it took from OSM are dropped, and
@@ -228,7 +222,6 @@ REGISTERS = {
     "IE-NaPTAN": (_ie_naptan, "transport.train_station", (51.4, 55.4, -10.6, -5.9), 300),
     "SNCF": (_sncf, "transport.train_station", (41.3, 51.1, -5.2, 9.6), 300),
     "Digitraffic": (_digitraffic, "transport.train_station", (59.7, 70.1, 20.5, 31.6), 300),
-    "SBB": (_sbb, "transport.train_station", (45.8, 47.85, 5.9, 10.5), 300),
     "GA": (_ga, "transport.train_station", (-44.0, -10.0, 112.0, 154.0), 300),
 }
 

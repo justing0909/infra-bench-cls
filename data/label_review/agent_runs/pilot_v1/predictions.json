@@ -1,0 +1,1187 @@
+[
+ {
+  "id": "osm_way_1082584040",
+  "osm_label": "energy.distribution.other",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_abstention, low_confidence, poor_imagery",
+  "investigator": {
+   "id": "osm_way_1082584040",
+   "action": "confirm",
+   "confidence": 0.6,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1082584040:sentinel2",
+    "osm_way_1082584040:osm",
+    "osm_way_1082584040:footprint"
+   ],
+   "reason": "Small bright compound at centre beside a cleared pad next to a solar array; OSM power=substation with no type and a 35 m footprint fits an untyped small substation. No secondary source; 10 m imagery cannot resolve equipment."
+  },
+  "reviewer": {
+   "id": "osm_way_1082584040",
+   "action": "request_review",
+   "label": null,
+   "confidence": 0.25,
+   "image_quality": "poor",
+   "evidence_ids": [
+    "osm_way_1082584040:sentinel2"
+   ],
+   "reason": "S2 only: striped grey-blue rectangles (greenhouses or panels) north of a bare tan patch and white blob at centre beside a canal; cannot resolve."
+  }
+ },
+ {
+  "id": "osm_way_1027218596",
+  "osm_label": "energy.distribution.other",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_abstention, low_confidence, poor_imagery",
+  "investigator": {
+   "id": "osm_way_1027218596",
+   "action": "request_review",
+   "confidence": 0.35,
+   "image_quality": "poor",
+   "evidence_ids": [
+    "osm_way_1027218596:sentinel2",
+    "osm_way_1027218596:naip",
+    "osm_way_1027218596:osm",
+    "osm_way_1027218596:sources"
+   ],
+   "reason": "Tagged substation=generation at 161 kV with 8 HIFLD line ends, which would suggest transmission.substation rather than untyped, but EIA plant 112 m away may mean the polygon is the plant. NAIP (KS tile) centre shows riverbank, parking and grass with no switchyard; Sentinel-2 is dark and unclear. Imagery does not settle class."
+  },
+  "reviewer": {
+   "id": "osm_way_1027218596",
+   "action": "request_review",
+   "label": null,
+   "confidence": 0.2,
+   "image_quality": "poor",
+   "evidence_ids": [
+    "osm_way_1027218596:sentinel2",
+    "osm_way_1027218596:naip"
+   ],
+   "reason": "NAIP centre is grass field between a levee/river and a large parking lot with building at right; S2 chip shows a different-looking scene. No clear asset at centre."
+  }
+ },
+ {
+  "id": "osm_node_3369578046",
+  "osm_label": "transport.train_station",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_abstention, low_confidence, poor_imagery",
+  "investigator": {
+   "id": "osm_node_3369578046",
+   "action": "confirm",
+   "confidence": 0.6,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_3369578046:sentinel2",
+    "osm_node_3369578046:osm",
+    "osm_node_3369578046:sources"
+   ],
+   "reason": "GA register lists Walkaway station 14 m away; Sentinel-2 shows a small rural settlement with a linear corridor through the centre. Station itself not resolvable at 10 m and passenger service is not evidenced."
+  },
+  "reviewer": {
+   "id": "osm_node_3369578046",
+   "action": "request_review",
+   "label": null,
+   "confidence": 0.2,
+   "image_quality": "poor",
+   "evidence_ids": [
+    "osm_node_3369578046:sentinel2"
+   ],
+   "reason": "S2 only: small town at a road junction; nothing identifiable at centre."
+  }
+ },
+ {
+  "id": "osm_node_7134004725",
+  "osm_label": "transport.train_station",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_node_7134004725",
+   "action": "confirm",
+   "confidence": 0.92,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_7134004725:naip",
+    "osm_node_7134004725:osm",
+    "osm_node_7134004725:sources"
+   ],
+   "reason": "NAIP shows rail tracks with stabled passenger trains, platforms and commuter parking at centre; Metra tags and NARN match 44 m."
+  },
+  "reviewer": {
+   "id": "osm_node_7134004725",
+   "action": "classify",
+   "label": "transport.train_station",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_7134004725:naip",
+    "osm_node_7134004725:sentinel2"
+   ],
+   "reason": "Multi-track rail corridor at centre with passenger coaches stabled, small station building and adjacent parking lots."
+  }
+ },
+ {
+  "id": "osm_node_7009019858",
+  "osm_label": "transport.train_station",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_node_7009019858",
+   "action": "confirm",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_7009019858:naip",
+    "osm_node_7009019858:osm",
+    "osm_node_7009019858:sources"
+   ],
+   "reason": "NAIP shows a rail line through the centre of town with station-area parking; NJ Transit tags and NARN match 29 m."
+  },
+  "reviewer": {
+   "id": "osm_node_7009019858",
+   "action": "classify",
+   "label": "transport.train_station",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_7009019858:naip"
+   ],
+   "reason": "Rail line runs diagonally through centre of a suburban downtown with parking strips alongside; platform not clearly resolved."
+  }
+ },
+ {
+  "id": "osm_node_5864908345",
+  "osm_label": "transport.train_station",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_abstention, low_confidence",
+  "investigator": {
+   "id": "osm_node_5864908345",
+   "action": "confirm",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_5864908345:naip",
+    "osm_node_5864908345:osm",
+    "osm_node_5864908345:sources"
+   ],
+   "reason": "NARN station node 4 m away and SEPTA tags; NAIP shows the electrified rail line crossing the upper part of the tile, though the exact centre falls on adjacent rowhouses rather than the platforms."
+  },
+  "reviewer": {
+   "id": "osm_node_5864908345",
+   "action": "request_review",
+   "label": null,
+   "confidence": 0.3,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_5864908345:naip"
+   ],
+   "reason": "Centre is rowhouses; electrified rail line crosses about 150 m north with no visible platform at centre."
+  }
+ },
+ {
+  "id": "osm_node_7100419077",
+  "osm_label": "transport.train_station",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_node_7100419077",
+   "action": "confirm",
+   "confidence": 0.92,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_7100419077:naip",
+    "osm_node_7100419077:osm",
+    "osm_node_7100419077:sources"
+   ],
+   "reason": "NAIP shows the terminal end of a rail line with a long platform and commuter lots at centre; Metro-North tags and NARN match 87 m."
+  },
+  "reviewer": {
+   "id": "osm_node_7100419077",
+   "action": "classify",
+   "label": "transport.train_station",
+   "confidence": 0.8,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_7100419077:naip"
+   ],
+   "reason": "Rail line through centre with a long platform canopy and large commuter parking lots on both sides."
+  }
+ },
+ {
+  "id": "osm_node_7009837500",
+  "osm_label": "transport.train_station",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_node_7009837500",
+   "action": "confirm",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_7009837500:naip",
+    "osm_node_7009837500:osm",
+    "osm_node_7009837500:sources"
+   ],
+   "reason": "NAIP shows a rail line through the centre with a station parking area beside it; NJ Transit tags and NARN match 58 m."
+  },
+  "reviewer": {
+   "id": "osm_node_7009837500",
+   "action": "classify",
+   "label": "transport.train_station",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_7009837500:naip"
+   ],
+   "reason": "Rail line just south of centre with a paved strip/lot alongside the track, possibly a small halt; no canopy visible."
+  }
+ },
+ {
+  "id": "osm_node_6135688779",
+  "osm_label": "transport.train_station",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_node_6135688779",
+   "action": "confirm",
+   "confidence": 0.92,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_6135688779:naip",
+    "osm_node_6135688779:osm",
+    "osm_node_6135688779:sources"
+   ],
+   "reason": "NAIP shows rail tracks with a canopied platform at centre in downtown Redding; Amtrak tags and NARN match 20 m."
+  },
+  "reviewer": {
+   "id": "osm_node_6135688779",
+   "action": "classify",
+   "label": "transport.train_station",
+   "confidence": 0.8,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_6135688779:naip"
+   ],
+   "reason": "Rail line through downtown with a platform and green canopy along the track at centre."
+  }
+ },
+ {
+  "id": "osm_node_1875506624",
+  "osm_label": "transport.train_station",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_abstention, low_confidence, poor_imagery",
+  "investigator": {
+   "id": "osm_node_1875506624",
+   "action": "confirm",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_1875506624:sentinel2",
+    "osm_node_1875506624:osm",
+    "osm_node_1875506624:sources"
+   ],
+   "reason": "GA register match 7 m and Queensland Rail tags; Sentinel-2 shows a linear rail corridor through suburban fabric at centre but platforms are not resolvable."
+  },
+  "reviewer": {
+   "id": "osm_node_1875506624",
+   "action": "request_review",
+   "label": null,
+   "confidence": 0.15,
+   "image_quality": "poor",
+   "evidence_ids": [
+    "osm_node_1875506624:sentinel2"
+   ],
+   "reason": "S2 only: dense urban fabric with a diagonal linear corridor; cannot identify asset."
+  }
+ },
+ {
+  "id": "osm_node_4919245752",
+  "osm_label": "transport.train_station",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_abstention, low_confidence, poor_imagery",
+  "investigator": {
+   "id": "osm_node_4919245752",
+   "action": "confirm",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_4919245752:sentinel2",
+    "osm_node_4919245752:osm",
+    "osm_node_4919245752:sources"
+   ],
+   "reason": "NaPTAN rail station 25 m away and National Rail tags; Sentinel-2 shows a linear corridor through a settlement but cannot resolve the station."
+  },
+  "reviewer": {
+   "id": "osm_node_4919245752",
+   "action": "request_review",
+   "label": null,
+   "confidence": 0.15,
+   "image_quality": "poor",
+   "evidence_ids": [
+    "osm_node_4919245752:sentinel2"
+   ],
+   "reason": "S2 only: rural village in hilly farmland; nothing distinctive at centre."
+  }
+ },
+ {
+  "id": "osm_way_534701314",
+  "osm_label": "transport.train_station",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_abstention, low_confidence, poor_imagery",
+  "investigator": {
+   "id": "osm_way_534701314",
+   "action": "confirm",
+   "confidence": 0.8,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_534701314:sentinel2",
+    "osm_way_534701314:osm",
+    "osm_way_534701314:sources"
+   ],
+   "reason": "Sentinel-2 shows a rail line crossing the river on a bridge into the village at centre; GA register match 10 m and NSW TrainLink tags."
+  },
+  "reviewer": {
+   "id": "osm_way_534701314",
+   "action": "request_review",
+   "label": null,
+   "confidence": 0.25,
+   "image_quality": "poor",
+   "evidence_ids": [
+    "osm_way_534701314:sentinel2"
+   ],
+   "reason": "S2 only: shoreline with a curving linear structure (breakwater or road) beside a small town; possibly a harbour but unresolved."
+  }
+ },
+ {
+  "id": "osm_way_1237457726",
+  "osm_label": "transport.train_station",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_abstention, low_confidence, poor_imagery",
+  "investigator": {
+   "id": "osm_way_1237457726",
+   "action": "confirm",
+   "confidence": 0.7,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1237457726:sentinel2",
+    "osm_way_1237457726:osm",
+    "osm_way_1237457726:sources"
+   ],
+   "reason": "GA register match 45 m; tagged as a Puffing Billy heritage railway passenger station. Sentinel-2 shows a small clearing and building at centre in wooded terrain; track not clearly resolvable."
+  },
+  "reviewer": {
+   "id": "osm_way_1237457726",
+   "action": "request_review",
+   "label": null,
+   "confidence": 0.15,
+   "image_quality": "poor",
+   "evidence_ids": [
+    "osm_way_1237457726:sentinel2"
+   ],
+   "reason": "S2 only: village with a linear corridor and a bright roof near centre; cannot identify."
+  }
+ },
+ {
+  "id": "osm_node_4971583381",
+  "osm_label": "transport.train_station",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_abstention, low_confidence, poor_imagery",
+  "investigator": {
+   "id": "osm_node_4971583381",
+   "action": "confirm",
+   "confidence": 0.65,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_4971583381:sentinel2",
+    "osm_node_4971583381:osm",
+    "osm_node_4971583381:sources"
+   ],
+   "reason": "Sentinel-2 shows a rail corridor crossing the centre in open outback terrain; NSW TrainLink tags, but the GA register point is 234 m away, so the station position is less certain."
+  },
+  "reviewer": {
+   "id": "osm_node_4971583381",
+   "action": "request_review",
+   "label": null,
+   "confidence": 0.3,
+   "image_quality": "poor",
+   "evidence_ids": [
+    "osm_node_4971583381:sentinel2"
+   ],
+   "reason": "S2 only: arid terrain with long straight parallel strips across centre, possibly an airstrip, plus a circular feature; not settled."
+  }
+ },
+ {
+  "id": "osm_node_475651910",
+  "osm_label": "transport.train_station",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_abstention, low_confidence, poor_imagery",
+  "investigator": {
+   "id": "osm_node_475651910",
+   "action": "confirm",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_475651910:sentinel2",
+    "osm_node_475651910:osm",
+    "osm_node_475651910:sources"
+   ],
+   "reason": "GA register match 13 m; Sentinel-2 shows a rail corridor with a long building/platform line through the town centre."
+  },
+  "reviewer": {
+   "id": "osm_node_475651910",
+   "action": "request_review",
+   "label": null,
+   "confidence": 0.2,
+   "image_quality": "poor",
+   "evidence_ids": [
+    "osm_node_475651910:sentinel2"
+   ],
+   "reason": "S2 only: urban area with curving parallel linear features (possible rail tracks or shed); unresolved."
+  }
+ },
+ {
+  "id": "osm_way_60110281",
+  "osm_label": "energy.generation.power_plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_abstention, low_confidence",
+  "investigator": {
+   "id": "osm_way_60110281",
+   "action": "confirm",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_60110281:naip",
+    "osm_way_60110281:osm",
+    "osm_way_60110281:sources"
+   ],
+   "reason": "EIA lists BYU Central Heating Plant (gas, 14 MW) 20 m away and OSM tags a 16.5 MW gas combustion plant; NAIP shows a campus utility building at centre, not visually distinctive but consistent."
+  },
+  "reviewer": {
+   "id": "osm_way_60110281",
+   "action": "request_review",
+   "label": null,
+   "confidence": 0.2,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_60110281:naip"
+   ],
+   "reason": "Centre is a mid-size building among a campus of offices and parking; no visible yard, tanks or equipment identifying a class."
+  }
+ },
+ {
+  "id": "osm_way_1082349929",
+  "osm_label": "energy.generation.power_plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1082349929",
+   "action": "confirm",
+   "confidence": 0.82,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1082349929:naip",
+    "osm_way_1082349929:osm",
+    "osm_way_1082349929:sources"
+   ],
+   "reason": "NAIP shows a small fenced yard with generator/transformer equipment and a building at centre; EIA petroleum plant match 17 m."
+  },
+  "reviewer": {
+   "id": "osm_way_1082349929",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1082349929:naip"
+   ],
+   "reason": "Small fenced yard with transformers and bus structures at centre-right beside a road; no lattice towers visible."
+  }
+ },
+ {
+  "id": "osm_way_970347065",
+  "osm_label": "energy.generation.power_plant",
+  "action": "confirm",
+  "label": "energy.generation.power_plant",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_970347065",
+   "action": "confirm",
+   "confidence": 0.97,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_970347065:naip",
+    "osm_way_970347065:sentinel2",
+    "osm_way_970347065:osm",
+    "osm_way_970347065:sources"
+   ],
+   "reason": "NAIP shows boiler houses, scrubbers, coal conveyors, coal pile and a steaming cooling tower; EIA coal plant Scherer matches."
+  },
+  "reviewer": {
+   "id": "osm_way_970347065",
+   "action": "classify",
+   "label": "energy.generation.power_plant",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_970347065:naip",
+    "osm_way_970347065:sentinel2"
+   ],
+   "reason": "Coal plant: boiler houses, scrubbers, stack, cooling tower plume and coal pile with conveyor."
+  }
+ },
+ {
+  "id": "osm_way_858035513",
+  "osm_label": "energy.generation.power_plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_858035513",
+   "action": "confirm",
+   "confidence": 0.88,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_858035513:naip",
+    "osm_way_858035513:osm",
+    "osm_way_858035513:sources"
+   ],
+   "reason": "NAIP shows an industrial combustion facility with boiler/flue structures and waste handling yard at centre; EIA waste-to-energy plant match 49 m."
+  },
+  "reviewer": {
+   "id": "osm_way_858035513",
+   "action": "classify",
+   "label": "energy.generation.power_plant",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_858035513:naip"
+   ],
+   "reason": "Industrial boiler/stack building at centre with fuel or ash yards and rail cars; could be a small thermal/biomass plant or other process plant."
+  }
+ },
+ {
+  "id": "osm_way_1004828064",
+  "osm_label": "energy.generation.power_plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1004828064",
+   "action": "confirm",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1004828064:naip",
+    "osm_way_1004828064:sentinel2",
+    "osm_way_1004828064:osm",
+    "osm_way_1004828064:sources"
+   ],
+   "reason": "NAIP shows a small powerhouse on a cleared pad at the reservoir/river edge with a penstock corridor uphill; EIA hydro match 17 m."
+  },
+  "reviewer": {
+   "id": "osm_way_1004828064",
+   "action": "classify",
+   "label": "energy.generation.power_plant",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1004828064:naip"
+   ],
+   "reason": "Small concrete structure with gate/pipe works at the end of a reservoir in forest; looks like a small hydro powerhouse or dam outlet."
+  }
+ },
+ {
+  "id": "osm_way_836497627",
+  "osm_label": "energy.generation.power_plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_abstention, low_confidence",
+  "investigator": {
+   "id": "osm_way_836497627",
+   "action": "confirm",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_836497627:naip",
+    "osm_way_836497627:sentinel2",
+    "osm_way_836497627:osm",
+    "osm_way_836497627:sources"
+   ],
+   "reason": "EIA hydro plant match 53 m and OSM hydro tags; Sentinel-2 shows a river with a bright structure near centre, but NAIP centre shows only river and trees with no clear dam or powerhouse, so imagery is weak support."
+  },
+  "reviewer": {
+   "id": "osm_way_836497627",
+   "action": "request_review",
+   "label": null,
+   "confidence": 0.2,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_836497627:naip"
+   ],
+   "reason": "Forested river with a weir-like riffle near centre; no powerhouse or other structure visible."
+  }
+ },
+ {
+  "id": "osm_way_662691651",
+  "osm_label": "energy.generation.power_plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_abstention, low_confidence",
+  "investigator": {
+   "id": "osm_way_662691651",
+   "action": "confirm",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_662691651:naip",
+    "osm_way_662691651:osm",
+    "osm_way_662691651:sources"
+   ],
+   "reason": "NAIP shows a small powerhouse at the reservoir shore with transmission lines leaving; EIA hydro match 21 m."
+  },
+  "reviewer": {
+   "id": "osm_way_662691651",
+   "action": "request_review",
+   "label": null,
+   "confidence": 0.3,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_662691651:naip"
+   ],
+   "reason": "Small facility on a reservoir shore under crossing power lines; could be a small hydro intake/powerhouse or minor substation."
+  }
+ },
+ {
+  "id": "osm_way_835753773",
+  "osm_label": "energy.generation.power_plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_835753773",
+   "action": "confirm",
+   "confidence": 0.65,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_835753773:naip",
+    "osm_way_835753773:osm",
+    "osm_way_835753773:sources"
+   ],
+   "reason": "NAIP (2023) shows a gas plant building with stack and switchyard beside a paper mill; EIA match 9 m. OSM now tags it disused (end_date 2025-10), so the structure is a power plant but may no longer operate."
+  },
+  "reviewer": {
+   "id": "osm_way_835753773",
+   "action": "classify",
+   "label": "energy.generation.power_plant",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_835753773:naip"
+   ],
+   "reason": "Boiler-house-like building with stack and small switchyard at centre of a paper mill complex; likely mill power/cogeneration plant."
+  }
+ },
+ {
+  "id": "osm_way_120652193",
+  "osm_label": "energy.generation.power_plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_120652193",
+   "action": "confirm",
+   "confidence": 0.92,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_120652193:naip",
+    "osm_way_120652193:osm",
+    "osm_way_120652193:sources"
+   ],
+   "reason": "NAIP shows the containment dome and turbine buildings at the tile edge with plant support buildings at centre; EIA nuclear match."
+  },
+  "reviewer": {
+   "id": "osm_way_120652193",
+   "action": "classify",
+   "label": "energy.generation.power_plant",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_120652193:naip"
+   ],
+   "reason": "Support buildings inside a secured site with a reactor containment dome and turbine building at the left edge."
+  }
+ },
+ {
+  "id": "osm_way_162601905",
+  "osm_label": "transport.airport",
+  "action": "confirm",
+  "label": "transport.airport",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_162601905",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_162601905:naip",
+    "osm_way_162601905:osm",
+    "osm_way_162601905:sources"
+   ],
+   "reason": "NAIP shows a marked runway and taxiways at centre; FAA match 21 m."
+  },
+  "reviewer": {
+   "id": "osm_way_162601905",
+   "action": "classify",
+   "label": "transport.airport",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_162601905:naip",
+    "osm_way_162601905:sentinel2"
+   ],
+   "reason": "Runway with markings crossing centre and a taxiway network."
+  }
+ },
+ {
+  "id": "osm_way_946198448",
+  "osm_label": "transport.airport",
+  "action": "confirm",
+  "label": "transport.airport",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_946198448",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_946198448:naip",
+    "osm_way_946198448:osm",
+    "osm_way_946198448:sources"
+   ],
+   "reason": "NAIP shows a runway, apron with aircraft and hangars; FAA match."
+  },
+  "reviewer": {
+   "id": "osm_way_946198448",
+   "action": "classify",
+   "label": "transport.airport",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_946198448:naip",
+    "osm_way_946198448:sentinel2"
+   ],
+   "reason": "Runway, parallel taxiway, apron with aircraft and hangars."
+  }
+ },
+ {
+  "id": "osm_way_881998684",
+  "osm_label": "transport.airport",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_881998684",
+   "action": "confirm",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_881998684:naip",
+    "osm_way_881998684:osm",
+    "osm_way_881998684:sources"
+   ],
+   "reason": "NAIP shows intersecting runways with centreline markings; FAA match."
+  },
+  "reviewer": {
+   "id": "osm_way_881998684",
+   "action": "classify",
+   "label": "transport.airport",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_881998684:naip"
+   ],
+   "reason": "Paved strips with centreline markings intersecting at right, consistent with taxiways/runway of an airfield."
+  }
+ },
+ {
+  "id": "osm_way_424873525",
+  "osm_label": "transport.airport",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence, poor_imagery",
+  "investigator": {
+   "id": "osm_way_424873525",
+   "action": "confirm",
+   "confidence": 0.88,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_424873525:sentinel2",
+    "osm_way_424873525:naip",
+    "osm_way_424873525:osm",
+    "osm_way_424873525:sources"
+   ],
+   "reason": "Sentinel-2 shows runways and hangars; NAIP is smeared but shows paved runway/taxiway strips; FAA match 107 m."
+  },
+  "reviewer": {
+   "id": "osm_way_424873525",
+   "action": "classify",
+   "label": "transport.airport",
+   "confidence": 0.55,
+   "image_quality": "poor",
+   "evidence_ids": [
+    "osm_way_424873525:sentinel2",
+    "osm_way_424873525:naip"
+   ],
+   "reason": "S2 shows diagonal runways with hangar roofs; NAIP is distorted but shows parallel paved strips."
+  }
+ },
+ {
+  "id": "osm_way_915785158",
+  "osm_label": "transport.airport",
+  "action": "confirm",
+  "label": "transport.airport",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_915785158",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_915785158:naip",
+    "osm_way_915785158:osm",
+    "osm_way_915785158:sources"
+   ],
+   "reason": "NAIP shows a marked runway, parallel taxiway and hangars at centre; FAA match 31 m."
+  },
+  "reviewer": {
+   "id": "osm_way_915785158",
+   "action": "classify",
+   "label": "transport.airport",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_915785158:naip"
+   ],
+   "reason": "Runway with parallel taxiway, hangars and apron with aircraft."
+  }
+ },
+ {
+  "id": "osm_way_753531377",
+  "osm_label": "transport.airport",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_abstention, low_confidence, poor_imagery",
+  "investigator": {
+   "id": "osm_way_753531377",
+   "action": "confirm",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_753531377:sentinel2",
+    "osm_way_753531377:osm",
+    "osm_way_753531377:sources"
+   ],
+   "reason": "Sentinel-2 shows a long straight gravel runway across the centre; registry match for CYDB."
+  },
+  "reviewer": {
+   "id": "osm_way_753531377",
+   "action": "request_review",
+   "label": null,
+   "confidence": 0.35,
+   "image_quality": "poor",
+   "evidence_ids": [
+    "osm_way_753531377:sentinel2"
+   ],
+   "reason": "S2 only: broad pale diagonal strip with a thinner parallel line and connector, possibly runway and taxiway, possibly a road."
+  }
+ },
+ {
+  "id": "osm_way_190950897",
+  "osm_label": "transport.airport",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_abstention, low_confidence, poor_imagery",
+  "investigator": {
+   "id": "osm_way_190950897",
+   "action": "confirm",
+   "confidence": 0.88,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_190950897:sentinel2",
+    "osm_way_190950897:osm",
+    "osm_way_190950897:sources"
+   ],
+   "reason": "Sentinel-2 shows a runway/taxiway band with apron and terminal buildings; registry match for MBPV."
+  },
+  "reviewer": {
+   "id": "osm_way_190950897",
+   "action": "request_review",
+   "label": null,
+   "confidence": 0.25,
+   "image_quality": "poor",
+   "evidence_ids": [
+    "osm_way_190950897:sentinel2"
+   ],
+   "reason": "S2 only: dark rectangular basins with bright rims below buildings; could be dock basins or treatment ponds."
+  }
+ },
+ {
+  "id": "osm_way_616837990",
+  "osm_label": "transport.airport",
+  "action": "confirm",
+  "label": "transport.airport",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_616837990",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_616837990:naip",
+    "osm_way_616837990:osm",
+    "osm_way_616837990:sources"
+   ],
+   "reason": "NAIP shows intersecting marked runways and a wind indicator circle; FAA match 82 m."
+  },
+  "reviewer": {
+   "id": "osm_way_616837990",
+   "action": "classify",
+   "label": "transport.airport",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_616837990:naip"
+   ],
+   "reason": "Two marked runways intersecting in desert with a windsock circle and small hangar area."
+  }
+ },
+ {
+  "id": "osm_way_402064374",
+  "osm_label": "transport.airport",
+  "action": "confirm",
+  "label": "transport.airport",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_402064374",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_402064374:naip",
+    "osm_way_402064374:osm",
+    "osm_way_402064374:sources"
+   ],
+   "reason": "NAIP shows a runway, parallel taxiway, apron with aircraft and hangars; FAA match."
+  },
+  "reviewer": {
+   "id": "osm_way_402064374",
+   "action": "classify",
+   "label": "transport.airport",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_402064374:naip",
+    "osm_way_402064374:sentinel2"
+   ],
+   "reason": "Runway, parallel taxiway, apron with light aircraft and hangars."
+  }
+ },
+ {
+  "id": "osm_way_1153850719",
+  "osm_label": "energy.generation.solar_farm",
+  "action": "confirm",
+  "label": "energy.generation.solar_farm",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_1153850719",
+   "action": "confirm",
+   "confidence": 0.96,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1153850719:naip",
+    "osm_way_1153850719:osm",
+    "osm_way_1153850719:sources"
+   ],
+   "reason": "NAIP shows a ground-mounted PV array filling the centre; EIA 5 MW solar match."
+  },
+  "reviewer": {
+   "id": "osm_way_1153850719",
+   "action": "classify",
+   "label": "energy.generation.solar_farm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1153850719:naip",
+    "osm_way_1153850719:sentinel2"
+   ],
+   "reason": "Rows of ground-mounted panels fill the centre."
+  }
+ },
+ {
+  "id": "osm_way_941588805",
+  "osm_label": "energy.generation.solar_farm",
+  "action": "confirm",
+  "label": "energy.generation.solar_farm",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_941588805",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_941588805:naip",
+    "osm_way_941588805:osm",
+    "osm_way_941588805:sources"
+   ],
+   "reason": "NAIP shows ground-mounted PV rows with inverter pads at centre; EIA solar match 28 m."
+  },
+  "reviewer": {
+   "id": "osm_way_941588805",
+   "action": "classify",
+   "label": "energy.generation.solar_farm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_941588805:naip"
+   ],
+   "reason": "Two blocks of ground-mounted panel rows with inverter pads."
+  }
+ },
+ {
+  "id": "osm_way_1153919614",
+  "osm_label": "energy.generation.solar_farm",
+  "action": "confirm",
+  "label": "energy.generation.solar_farm",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_1153919614",
+   "action": "confirm",
+   "confidence": 0.96,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1153919614:naip",
+    "osm_way_1153919614:osm",
+    "osm_way_1153919614:sources"
+   ],
+   "reason": "NAIP shows a fenced ground-mounted PV array at centre; EIA solar match."
+  },
+  "reviewer": {
+   "id": "osm_way_1153919614",
+   "action": "classify",
+   "label": "energy.generation.solar_farm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1153919614:naip",
+    "osm_way_1153919614:sentinel2"
+   ],
+   "reason": "Fenced block of ground-mounted panel rows in dry rangeland."
+  }
+ },
+ {
+  "id": "osm_way_1157812805",
+  "osm_label": "energy.generation.solar_farm",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1157812805",
+   "action": "relabel",
+   "label": "not_infrastructure",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1157812805:naip",
+    "osm_way_1157812805:osm",
+    "osm_way_1157812805:sources"
+   ],
+   "reason": "NAIP shows PV panels on the roof of a large warehouse, matching the OSM location=roof tag; the solar_farm class is ground-mounted utility-scale, and no other class fits a warehouse with rooftop PV. Relabel depends on how rooftop plants should be treated."
+  },
+  "reviewer": {
+   "id": "osm_way_1157812805",
+   "action": "classify",
+   "label": "not_infrastructure",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1157812805:naip"
+   ],
+   "reason": "Large warehouse with loading docks and trailers; roof covered in rooftop solar panels, not a ground-mounted array."
+  }
+ },
+ {
+  "id": "osm_way_1015722300",
+  "osm_label": "energy.transmission.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1015722300",
+   "action": "confirm",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1015722300:naip",
+    "osm_way_1015722300:osm",
+    "osm_way_1015722300:sources"
+   ],
+   "reason": "NAIP shows a large gantry switchyard with many lattice-tower lines entering, beside the nuclear plant buildings; tagged 500 kV transmission and HIFLD line ends match."
+  },
+  "reviewer": {
+   "id": "osm_way_1015722300",
+   "action": "classify",
+   "label": "energy.transmission.substation",
+   "confidence": 0.7,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1015722300:naip"
+   ],
+   "reason": "Large switchyard with many bays and lattice-tower lines at centre, adjacent to a power plant turbine hall."
+  }
+ },
+ {
+  "id": "osm_way_102124678",
+  "osm_label": "energy.transmission.substation",
+  "action": "confirm",
+  "label": "energy.transmission.substation",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_102124678",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_102124678:naip",
+    "osm_way_102124678:osm",
+    "osm_way_102124678:sources"
+   ],
+   "reason": "NAIP shows a large high-voltage switchyard with large transformers and lattice-tower lines; 500/230 kV HIFLD lines end here."
+  },
+  "reviewer": {
+   "id": "osm_way_102124678",
+   "action": "classify",
+   "label": "energy.transmission.substation",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_102124678:naip"
+   ],
+   "reason": "Large HV switchyard with transformer banks and lattice towers carrying lines in."
+  }
+ }
+]

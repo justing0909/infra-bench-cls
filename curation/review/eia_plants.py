@@ -30,7 +30,7 @@ import pandas as pd
 from sklearn.neighbors import BallTree
 
 from ..paths import REVIEW_DIR, REVIEW_QUEUE
-from .hifld_lines import US_BOX, _tokens
+from .hifld_lines import _tokens, in_us
 
 LAYER = ("https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/"
          "Power_Plants_in_the_US/FeatureServer/0")
@@ -74,9 +74,7 @@ def build() -> pd.DataFrame:
     plants = fetch()
     plants = plants[plants.Latitude.astype(float).abs() > 0].reset_index(drop=True)
     q = pd.read_csv(REVIEW_QUEUE, keep_default_na=False).drop_duplicates("asset_id")
-    lo_lat, hi_lat, lo_lon, hi_lon = US_BOX
-    tiles = q[(q.sector == "energy") & q.lat.between(lo_lat, hi_lat)
-              & q.lon.between(lo_lon, hi_lon)].reset_index(drop=True)
+    tiles = q[(q.sector == "energy") & in_us(q.lat, q.lon)].reset_index(drop=True)
 
     tree = BallTree(np.radians(plants[["Latitude", "Longitude"]].astype(float).values), metric="haversine")
     idx, dist = tree.query_radius(np.radians(tiles[["lat", "lon"]].values),

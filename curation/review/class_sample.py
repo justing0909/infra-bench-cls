@@ -43,6 +43,13 @@ SHARE = 0.10
 MAX_PER_CLASS = 100
 MIN_PER_CLASS = 20
 SEED = 2026
+# Early stopping. The sample pass walks each class in draw order, so the tiles
+# reviewed so far are a random subset and a class can stop once it has at
+# least STOP_AFTER decisions and its 95% interval is at most STOP_WIDTH points
+# wide (30 tiles with no errors gives 88-100%). A class where errors turn up
+# keeps going until its interval tightens or its sample runs out.
+STOP_AFTER = 30
+STOP_WIDTH = 12
 REVIEWER = "justin"   # whose decisions the report reads; override with --reviewer
 SAMPLE = REVIEW_DIR / "class_sample.csv"
 CACHE_DIR = REVIEW_DIR / "sources" / "class_sample"
@@ -158,13 +165,18 @@ def report(reviewer: str = REVIEWER) -> tuple:
         d = decided[decided.asset_type == cls]
         k, n = int(d.correct.sum()), len(d)
         lo, hi = _ci(k, n)
+        reviewed = int((df.asset_type == cls).sum())
+        # stop a class once its interval is tight enough, or its sample is done
+        enough = reviewed >= len(g) or (n >= min(STOP_AFTER, len(g)) and 100 * (hi - lo) <= STOP_WIDTH)
         summary.append({"class": cls, "class_size": int(g.class_size.iloc[0]), "sampled": len(g),
-                        "reviewed": int((df.asset_type == cls).sum()),
+                        "reviewed": reviewed,
                         "unsure": int(((df.asset_type == cls) & (df.decision == "unsure")).sum()),
                         "correct": k, "accuracy_%": round(100 * k / n, 1) if n else None,
-                        "ci95_%": f"{100 * lo:.0f}-{100 * hi:.0f}" if n else ""})
-    wrong = decided[~decided.correct]
-    confusion = wrong.groupby(["asset_type", "label"]).size().rename("tiles").reset_index()
+                        "ci95_%": f"{100 * lo:.0f}-{100 * hi:.0f}" if n else "",
+                        "next": "enough" if enough else "keep going"})
+    wrong = decided[decided.correct.eq(False)]
+    confusion = (wrong.groupby(["asset_type", "label"]).size().rename("tiles").reset_index()
+                 if len(wrong) else pd.DataFrame(columns=["asset_type", "label", "tiles"]))
     return pd.DataFrame(summary), confusion
 
 

@@ -319,11 +319,19 @@ python -m curation.review.server --reviewer justin    # http://127.0.0.1:8765
 ```
 
 The page is laid out like VIA: a tile list, the Sentinel-2 chip the models see
-next to a high-resolution satellite view of the same footprint, and one
-annotation row with the verdict, the correct class, and clickable Google
-satellite, Street View and OSM links. Space marks the OSM label true, a class
-key marks it false and relabels in one press, U marks it unconfirmed, and
-G, V and O open the three links. The open shortcut list is in the sidebar.
+next to high-resolution imagery of the same footprint with the mapped OSM
+outline, and one annotation row with the verdict and the correct class. Space
+marks the OSM label true, a class key marks it false and relabels in one press,
+U marks it unconfirmed, and O opens the asset in OpenStreetMap. The open
+shortcut list is in the sidebar.
+
+The high-resolution view is Esri World Imagery when the server has an ArcGIS
+API key (`ARCGIS_API_KEY`, or one line in `data/label_review/arcgis_key.txt`,
+which git ignores); a free ArcGIS Location Platform account provides one. Without
+a key, US tiles show NAIP aerial imagery and other tiles show the Sentinel-2
+chip alone. Google Maps and Street View are deliberately not used: their terms
+forbid using them to create or augment another mapping dataset (see Imagery and
+source licences below).
 
 A true verdict accepts the OSM label, false plus a class relabels it, and
 unconfirmed brings the tile back in the revisit pass. The page also shows two
@@ -376,6 +384,80 @@ smaller), 940 tiles in all. It appears as the "Random label sample" pass, with
 each tile's current OSM tags and footprint size as hints, and
 `python -m curation.review.class_sample --report` gives each class's accuracy
 with a 95% Clopper-Pearson interval and what the wrong labels should have been.
+
+`curation/review/two_agent.py` adapts Ed Oughton's two-agent workflow
+([Agentic-GeoAI, week 10](https://github.com/edwardoughton/Agentic-GeoAI/tree/main/week10))
+to these tiles, keeping his routing rule and scoring. An investigator agent sees
+the imagery (Sentinel-2, plus NAIP aerial imagery for US tiles), the OSM label,
+tags and name, and the source evidence, and confirms, relabels or abstains. A
+reviewer agent sees only the imagery, is never told the label, and names the
+class itself. A tile gets a provisional label only when both agree, neither
+abstains, both call the imagery adequate and both confidences reach 0.85;
+everything else goes to a person. Each role runs in its own fresh agent session
+that reads only its packet. Runs live in `data/label_review/agent_runs/`, never
+touch the decision logs, and `score` reports coverage and selective error
+against a person's decisions:
+
+```bash
+python -m curation.review.two_agent prepare --run pilot_v1 --ids <asset ids>
+# run investigator/TASK.md and reviewer/TASK.md in two fresh agent sessions
+python -m curation.review.two_agent finalize --run pilot_v1
+python -m curation.review.two_agent score --run pilot_v1 --reviewer justin
+```
+
+#### Imagery and source licences
+
+Label review rests only on sources whose terms allow deriving or validating
+data. Google Maps and Street View are excluded: the Google Maps / Google Earth
+Additional Terms (§2.4) forbid using Google Maps "to create or augment any
+other mapping-related dataset", and Google's geo guidelines forbid "creating
+data from Street View images".
+
+| Source | Used for | Licence | Attribution |
+|---|---|---|---|
+| Copernicus Sentinel-2 / Sentinel-1 | the benchmark tiles | free, full and open | Contains modified Copernicus Sentinel data |
+| Esri World Imagery | human review only: on the page with an ArcGIS key, or in Esri's Wayback app; never given to agents or models | Esri Master Agreement; "Esri and its imagery contributors" permit tracing and validating vector data; automated extraction is more restricted | Powered by Esri; Esri, Vantor, Earthstar Geographics |
+| NAIP (USDA) | human and agent review, US tiles | public domain | USDA Farm Production and Conservation |
+| OpenStreetMap (Overpass API) | tags and footprints | ODbL | © OpenStreetMap contributors |
+| HIFLD transmission lines, EIA power plants | evidence, auto-accept | US government, public domain | HIFLD; U.S. Energy Information Administration |
+| NARN passenger stations, FAA aviation facilities (BTS NTAD) | evidence, auto-accept | US government, public domain | U.S. DOT Bureau of Transportation Statistics |
+| UK NaPTAN | evidence, auto-accept | Open Government Licence v3.0 | Contains public sector information licensed under the Open Government Licence v3.0 |
+| Ireland NaPTAN | evidence, auto-accept | CC BY 4.0 | National Transport Authority |
+| Deutsche Bahn OpenStation | evidence, auto-accept | CC0 | DB InfraGO (not required) |
+| Trafikverket railway station nodes | evidence, auto-accept | CC0 | Trafikverket (not required) |
+| SNCF gares de voyageurs | evidence, auto-accept | ODbL (share-alike; compatible with this dataset) | SNCF |
+| Fintraffic Digitraffic stations | evidence, auto-accept | CC BY 4.0 | Fintraffic / digitraffic.fi |
+| Geoscience Australia railway stations | evidence, auto-accept | CC BY 4.0 | © Commonwealth of Australia (Geoscience Australia) |
+| Transpower sites and transmission lines (New Zealand) | substation evidence, auto-accept | CC BY 4.0 | Transpower Geospatial (CC BY) |
+| Vector zone substations (Auckland) | substation evidence, auto-accept | CC BY 4.0 | Vector Limited, Our Data (CC BY 4.0) |
+| EDF SEI Martinique HTA lines | substation evidence | Licence Ouverte 2.0 (Etalab) | EDF SEI Martinique, with the date of the last update |
+| Geoscience Australia Electricity Infrastructure substations (OSM-sourced rows dropped) | substation evidence, auto-accept | CC BY 4.0 | © Commonwealth of Australia (Geoscience Australia) |
+| Vicmap Features of Interest power facilities (Victoria) | substation evidence, auto-accept | CC BY 4.0 | © State of Victoria (Department of Transport and Planning) |
+| NSW Features of Interest building complexes | substation evidence, auto-accept | CC BY 4.0 | © State of New South Wales (Spatial Services, a business unit of the Department of Customer Service NSW). For current information go to spatial.nsw.gov.au |
+| KPLC primary substations (Kenya), via energydata.info | substation evidence, auto-accept | CC BY 4.0 | Kenya Power and Lighting Company / energydata.info |
+| ZESCO distribution substations (Zambia), via energydata.info | substation evidence, auto-accept | CC BY 4.0 | ZESCO / energydata.info |
+| Secretaría de Energía estaciones transformadoras AT (Argentina), 2023 portal snapshot | substation evidence, auto-accept | CC BY 4.0 | Secretaría de Energía, República Argentina |
+| OSINERGMIN subestaciones de distribución (Peru) | substation evidence | ODC-BY 1.0 | OSINERGMIN |
+| Enedis postes de distribution publique HTA/BT (France) | substation evidence | Licence Ouverte 2.0 (Etalab) | Enedis, with the date of the last update |
+
+HIFLD and EIA cover the contiguous US, Alaska, Hawaii and Puerto Rico. Sources
+considered and not used: LUMA Puerto Rico (its terms forbid copying, derivative
+works and automated collection), Chile's substation layer (published as CC BY-NC,
+an exception to the portal's CC0 default), Brazil's ANEEL BDGD (no licence
+stated), Zambia's MV transformers (too dense to tell a substation apart), Eskom
+(website terms limit use to non-commercial purposes), and a third-party copy of
+Puerto Rico transmission lines (no licence; partly traced from OSM).
+
+The Kenya, Zambia and Argentina layers have no stable download URL, so they are
+read from zips saved by hand under `data/label_review/sources/grid_operators/manual/`
+(not committed, like the other caches): `kenya_kplc_primary_substations.zip` and
+`zambia_distribution_substations.zip` from energydata.info, and
+`argentina_at_estaciones_transformadoras.zip` from a 2023 Wayback Machine snapshot
+of datos.energia.gob.ar. Without them, `grid_operators.py` skips those three sources and says so.
+
+The evidence tables under `data/label_review/sources/` carry names and values
+from these registers, so they keep the dataset's ODbL licence and need the
+attributions above wherever they are redistributed.
 
 The same review also runs in VIA (VGG Image Annotator 2.x), writing the same
 log:

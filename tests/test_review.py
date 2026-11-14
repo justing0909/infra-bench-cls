@@ -250,6 +250,70 @@ class TestAutoAccept(unittest.TestCase):
         self.assertEqual(held(), first)
 
 
+class TestTwoAgentRouting(unittest.TestCase):
+    """only confident agreement becomes a provisional label (Ed's rule)."""
+
+    CLASSES = [SUB, DX, "not_infrastructure"]
+
+    def _run(self, inv, rev, human=None, threshold=0.85):
+        from curation.review import two_agent
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        root = Path(tmp.name)
+        run = root / "r"
+        ids = [r["id"] for r in inv]
+        for role, rows in (("investigator", inv), ("reviewer", rev)):
+            (run / role).mkdir(parents=True)
+            packet = [{"id": i, "evidence_ids": [f"{i}:sentinel2", f"{i}:osm"],
+                       "evidence": {"osm": {"label": SUB}}} for i in ids]
+            (run / role / "packet.json").write_text(json.dumps(packet))
+            (run / role / "decisions.json").write_text(json.dumps(rows))
+        (run / "policy.json").write_text(json.dumps({"ids": ids, "classes": self.CLASSES}))
+        with mock.patch.object(two_agent, "RUNS_DIR", root), mock.patch.object(decisions, "REVIEW_DIR", root):
+            preds = two_agent.finalize("r", threshold)
+            for i, (d, label) in (human or {}).items():
+                decisions.append("justin", i, d, label)
+            result = two_agent.score("r") if human else None
+        return {p["id"]: p for p in preds}, result
+
+    @staticmethod
+    def _row(i, action, label=None, conf=0.9, q="adequate"):
+        r = {"id": i, "action": action, "confidence": conf, "image_quality": q,
+             "evidence_ids": [f"{i}:sentinel2"], "reason": "seen"}
+        if label:
+            r["label"] = label
+        return r
+
+    def test_agreement_confirms_and_agreed_relabel_relabels(self):
+        preds, _ = self._run([self._row("a", "confirm"), self._row("b", "relabel", DX)],
+                             [self._row("a", "classify", SUB), self._row("b", "classify", DX)])
+        self.assertEqual((preds["a"]["action"], preds["a"]["label"]), ("confirm", SUB))
+        self.assertEqual((preds["b"]["action"], preds["b"]["label"]), ("relabel", DX))
+
+    def test_every_doubt_routes_to_a_person(self):
+        preds, _ = self._run(
+            [self._row("a", "confirm"), self._row("b", "confirm", conf=0.8),
+             self._row("c", "confirm", q="poor"), self._row("d", "request_review")],
+            [self._row("a", "classify", DX), self._row("b", "classify", SUB),
+             self._row("c", "classify", SUB), self._row("d", "classify", SUB)])
+        self.assertIn("agent_disagreement", preds["a"]["reason"])
+        self.assertIn("low_confidence", preds["b"]["reason"])
+        self.assertIn("poor_imagery", preds["c"]["reason"])
+        self.assertIn("agent_abstention", preds["d"]["reason"])
+        self.assertTrue(all(p["action"] == "request_review" for p in preds.values()))
+
+    def test_missing_rows_stop_finalize(self):
+        with self.assertRaises(ValueError):
+            self._run([self._row("a", "confirm"), self._row("b", "confirm")], [self._row("a", "classify", SUB)])
+
+    def test_score_counts_a_confident_wrong_confirm(self):
+        _, s = self._run([self._row("a", "confirm"), self._row("b", "confirm")],
+                         [self._row("a", "classify", SUB), self._row("b", "classify", SUB)],
+                         human={"a": ("accept", SUB), "b": ("relabel", DX)})
+        self.assertEqual((s["coverage"], s["wrong_automatic"], s["false_confirms"]), (1.0, 1, 1))
+        self.assertEqual(s["selective_error"], 0.5)
+
+
 class TestClassSample(unittest.TestCase):
     """the per-class sample size rule and the accuracy report."""
 
@@ -275,7 +339,52 @@ class TestClassSample(unittest.TestCase):
         row = summary.iloc[0]
         self.assertEqual((row.reviewed, row.unsure, row.correct, row["accuracy_%"]), (3, 1, 1, 50.0))
         self.assertEqual(confusion.tiles.sum(), 1)
+        self.assertEqual(row.next, "keep going")
+
+    def test_report_works_before_any_decisions(self):
+        from curation.review import class_sample
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            pd.DataFrame({"asset_id": ["a"], "asset_type": SUB, "class_size": 40, "draw": [0],
+                          "hint": ""}).to_csv(root / "s.csv", index=False)
+            with mock.patch.object(class_sample, "SAMPLE", root / "s.csv"), \
+                 mock.patch.object(decisions, "REVIEW_DIR", root):
+                summary, confusion = class_sample.report("nobody")
+        self.assertEqual((summary.iloc[0].reviewed, summary.iloc[0].next, len(confusion)), (0, "keep going", 0))
+
+    def test_a_clean_class_can_stop_at_thirty(self):
+        from curation.review import class_sample
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            ids = [f"t{i}" for i in range(60)]
+            pd.DataFrame({"asset_id": ids, "asset_type": SUB, "class_size": 600, "draw": range(60),
+                          "hint": ""}).to_csv(root / "s.csv", index=False)
+            with mock.patch.object(class_sample, "SAMPLE", root / "s.csv"), \
+                 mock.patch.object(decisions, "REVIEW_DIR", root):
+                for i in ids[:30]:
+                    decisions.append("justin", i, "accept", SUB)
+                summary, _ = class_sample.report("justin")
+        self.assertEqual(summary.iloc[0].next, "enough")
 
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestGridOperatorVoltages(unittest.TestCase):
+    def test_voltages_set_the_type(self):
+        from curation.review import grid_operators as g
+        self.assertEqual(g._kvs("PARKLANDS ( 66 / 11 KV)"), [66.0, 11.0])
+        self.assertEqual(g._kvs("13.2 | 33"), [13.2, 33.0])
+        self.assertEqual(g._by_voltage([500], [220]), g.TX)
+        self.assertEqual(g._by_voltage([33], [11]), g.DX)
+        # transmission in, distribution out: OSM files these under either
+        self.assertIsNone(g._by_voltage([132], [33, 13.2]))
+        self.assertIsNone(g._by_voltage([]))
+
+    def test_ga_voltage_overrides_zone(self):
+        from curation.review import grid_operators as g
+        self.assertEqual(g._ga_kind(g.DX, 330), g.TX)
+        self.assertIsNone(g._ga_kind(g.DX, 132))
+        self.assertEqual(g._ga_kind(g.DX, 66), g.DX)
+        self.assertEqual(g._ga_kind(None, None), None)

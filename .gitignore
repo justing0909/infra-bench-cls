@@ -78,3 +78,8 @@ archive/
 locations.idx
 # Optuna study pickles
 *.pkl
+# two-agent runs: images are regenerable; packets, decisions and summaries are kept
+data/label_review/agent_runs/*/images/
+# label review: local ArcGIS key and cached NAIP for the review page
+data/label_review/arcgis_key.txt
+data/label_review/naip_cache/

@@ -136,7 +136,8 @@ def build() -> pd.DataFrame:
     q["evidence"], q["corroborated"] = "", False
     for path, text_col in [(REVIEW_DIR / "sources" / "hifld_lines.csv", "hifld_text"),
                            (REVIEW_DIR / "sources" / "eia_plants.csv", "eia_text"),
-                           (REVIEW_DIR / "sources" / "registers.csv", "register_text")]:
+                           (REVIEW_DIR / "sources" / "registers.csv", "register_text"),
+                           (REVIEW_DIR / "sources" / "grid_operators.csv", "grid_text")]:
         if path.exists():
             ev = pd.read_csv(path, keep_default_na=False)[["asset_id", text_col, "corroborated"]]
             # one row per tile: a tile inside two registers' areas (UK and

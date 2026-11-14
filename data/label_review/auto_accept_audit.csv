@@ -1,24 +1,7 @@
 asset_id,source,audit_kind,rule,evidence
 osm_way_1015722300,hifld_lines,held_back,HIFLD lines >=100 kV end here and a line-end name matches,"HIFLD: 10 line(s) end here (500/161 kV, 7 traced from OSM) | HIFLD line ends named: MAURY, BROWNS FERRY, TRINITY, WESTPOINT (matches OSM name) | Caution: 7 of these HIFLD lines were traced from OSM, so they don't count as independent"
 osm_way_102124678,hifld_lines,held_back,HIFLD lines >=100 kV end here and a line-end name matches,"HIFLD: 8 line(s) end here (500/230 kV) | HIFLD line ends named: GARRISON, BROADVIEW, TAFT, RATTLESNAKE (matches OSM name)"
-osm_way_1238756236,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: Wellington 2 (natural gas, 21 MW) 36 m away (matches OSM name)"
-osm_way_1082349929,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: City West Diesel Plant (petroleum, 7 MW) 17 m away (matches OSM name)"
-osm_way_1077852045,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: Hay Road (natural gas, 1128 MW) 127 m away (matches OSM name) | EIA plant: Edge Moor (natural gas, 707 MW) 618 m away | EIA plant: DD Hay Road Solar 23 LLC (solar, 1 MW) 969 m away (matches OSM name)"
-osm_way_120652193,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: Wolf Creek Generating Station (nuclear, 1177 MW) 162 m away (matches OSM name)"
-osm_way_1229883837,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: Frederick County LFGTE Facility (biomass, 2 MW) 13 m away (matches OSM name)"
-osm_way_60110281,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: BYU Central Heating Plant (natural gas, 14 MW) 20 m away (matches OSM name) | EIA plant: Provo Power Plant (natural gas, 12 MW) 1491 m away"
-osm_way_941520179,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: Dighton Power Plant (natural gas, 166 MW) 58 m away (matches OSM name)"
-osm_way_1072756159,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: Topaz Generating (natural gas, 445 MW) 36 m away (matches OSM name)"
-osm_way_1004828064,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: Grizzly (hydroelectric, 18 MW) 17 m away (matches OSM name)"
-osm_way_1213324976,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: Sterling Power Plant (natural gas, 56 MW) 23 m away (matches OSM name)"
-osm_way_507022302,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: Grafton (petroleum, 4 MW) 21 m away (matches OSM name)"
-osm_way_970347065,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: Scherer (coal, 2580 MW) 217 m away (matches OSM name)"
-osm_way_1077826989,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: Genesee Power Station LP (biomass, 35 MW) 26 m away (matches OSM name)"
-osm_way_836497627,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: Clement Dam Hydro LLC (hydroelectric, 2 MW) 53 m away (matches OSM name)"
-osm_way_835753773,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: Androscoggin Energy Center (natural gas, 130 MW) 9 m away (matches OSM name) | EIA plant: International Paper Riley Hydro (hydroelectric, 7 MW) 631 m away"
-osm_way_164475618,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: Union Power Station (natural gas, 2037 MW) 197 m away (matches OSM name)"
-osm_way_865199672,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: Coughlin Power Station (natural gas, 734 MW) 130 m away (matches OSM name)"
-osm_way_858035513,eia_plants,already_reviewed,"EIA plant of the matching kind within 300 m, name matches","EIA plant: McKay Bay Facility (biomass, 18 MW) 49 m away (matches OSM name) | EIA plant: IKEA Tampa 042 (solar, 1 MW) 1262 m away"
+osm_way_448221263,eia_plants,held_back,"EIA plant of the matching kind within 300 m, name matches","EIA plant: Central San Juan Plant (petroleum, 784 MW) 33 m away (matches OSM name)"
 osm_way_662691651,eia_plants,held_back,"EIA plant of the matching kind within 300 m, name matches","EIA plant: Clearwater 2 (hydroelectric, 31 MW) 21 m away (matches OSM name)"
 osm_way_1157812805,eia_plants,held_back,"EIA plant of the matching kind within 300 m, name matches","EIA plant: McCormick & Co. Inc. at Belcamp (solar, 1 MW) 68 m away (matches OSM name)"
 osm_way_1153850719,eia_plants,held_back,"EIA plant of the matching kind within 300 m, name matches","EIA plant: NY 26 Carthage CSG (solar, 5 MW) 59 m away (matches OSM name)"
@@ -128,3 +111,17 @@ osm_node_2656917827,GA,held_back,"official register entry nearby, name matches",
 osm_node_1874069587,GA,held_back,"official register entry nearby, name matches","GA: HIGHETT (GA station, operational, VIC) 3 m away (matches OSM name)"
 osm_node_1843679382,GA,held_back,"official register entry nearby, name matches","GA: MORTDALE (GA station, operational, NSW) 25 m away (matches OSM name)"
 osm_way_944094648,GA,held_back,"official register entry nearby, name matches","GA: COBURG (GA station, operational, VIC) 17 m away (matches OSM name)"
+osm_way_51867062,Transpower,held_back,"grid operator's substation of the matching type nearby, name matches",Transpower: Hepburn Road (Transpower ACSTN HEP) 18 m away (matches OSM name)
+osm_way_182465617,Transpower,held_back,"grid operator's substation of the matching type nearby, name matches",Transpower: Hokitika (Westpower) (Transpower ACSTN HKK) 5 m away (matches OSM name)
+osm_way_167952087,Transpower,held_back,"grid operator's substation of the matching type nearby, name matches",Transpower: Kaikohe (Transpower ACSTN KOE) 27 m away (matches OSM name)
+osm_way_260242665,Vector,held_back,"grid operator's substation of the matching type nearby, name matches",Vector: KINGSLAND 110/22/11kV (Vector zone substation KING) 12 m away (matches OSM name)
+osm_way_238707670,Vector,held_back,"grid operator's substation of the matching type nearby, name matches",Vector: DRIVE 33/11kV (Vector zone substation DRIV) 8 m away (matches OSM name)
+osm_way_23647798,Geoscience Australia,held_back,"grid operator's substation of the matching type nearby, name matches","Geoscience Australia: Sydenham (GA Zone, 500 kV) 81 m away (matches OSM name)"
+osm_way_483430155,Geoscience Australia,held_back,"grid operator's substation of the matching type nearby, name matches","Geoscience Australia: Red Cliffs (GA Substation, 220 kV) 129 m away (matches OSM name)"
+osm_way_49455810,Geoscience Australia,held_back,"grid operator's substation of the matching type nearby, name matches","Geoscience Australia: Moorabool (GA Substation, 500 kV) 126 m away (matches OSM name)"
+osm_way_653341742,Vicmap,held_back,"grid operator's substation of the matching type nearby, name matches",Vicmap: PARSONS CREEK ZONE SUBSTATION (Vicmap power sub station) 3 m away (matches OSM name)
+osm_way_364498745,NSW Spatial Services,held_back,"grid operator's substation of the matching type nearby, name matches",NSW Spatial Services: COPETON DAM ZONE SUBSTATION (NSW Features of Interest) 8 m away (matches OSM name)
+osm_way_698271365,NSW Spatial Services,held_back,"grid operator's substation of the matching type nearby, name matches",NSW Spatial Services: SOUTH WEST ROCKS ZONE SUBSTATION (NSW Features of Interest) 16 m away (matches OSM name)
+osm_way_770078960,NSW Spatial Services,held_back,"grid operator's substation of the matching type nearby, name matches",NSW Spatial Services: BERMAGUI ZONE SUBSTATION (NSW Features of Interest) 1 m away (matches OSM name)
+osm_way_512061491,ZESCO,held_back,"grid operator's substation of the matching type nearby, name matches","ZESCO: SINAZONGWE (ZESCO distribution substation, 33.0 kV) 9 m away (matches OSM name)"
+osm_way_274067533,Secretaría de Energía,held_back,"grid operator's substation of the matching type nearby, name matches","Secretaría de Energía: MERCEDES (Secretaría de Energía ET, 500 kV in, 132 kV out) 114 m away (matches OSM name)"

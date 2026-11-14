@@ -44,7 +44,21 @@ EVIDENCE = REVIEW_DIR / "sources" / "hifld_lines.csv"
 SUBSTATION_CLASSES = ("energy.transmission.substation", "energy.distribution.substation",
                       "energy.distribution.other")
 # HIFLD lines cover the US; a loose box keeps Canada and Mexico out of the requests.
-US_BOX = (24.0, 50.0, -125.0, -66.0)
+# HIFLD and EIA cover the US states and territories, not just the mainland:
+# (lat lo, lat hi, lon lo, lon hi) for the contiguous US, Alaska, Hawaii and
+# Puerto Rico; loose enough to keep Canada and Mexico mostly out.
+US_BOXES = [(24.0, 50.0, -125.0, -66.0), (51.0, 72.0, -170.0, -129.0),
+            (18.8, 22.4, -160.5, -154.6), (17.8, 18.6, -67.4, -65.2)]
+US_BOX = US_BOXES[0]
+
+
+def in_us(lat, lon):
+    """boolean mask (or bool) for points inside any of the US boxes."""
+    hits = [((lat >= a) & (lat <= b) & (lon >= c) & (lon <= d)) for a, b, c, d in US_BOXES]
+    out = hits[0]
+    for h in hits[1:]:
+        out = out | h
+    return out
 HALF_TILE_M = 300      # 60 px x 10 m tiles
 ENDS_AT_M = 250        # an endpoint this close to the OSM point terminates there
 TRANSMISSION_KV = 100
@@ -157,9 +171,7 @@ def _summarise(lat: float, lon: float, data: dict, osm_name: str = "") -> dict:
 
 def build(workers: int = 4) -> pd.DataFrame:
     q = pd.read_csv(REVIEW_QUEUE, keep_default_na=False).drop_duplicates("asset_id")
-    lo_lat, hi_lat, lo_lon, hi_lon = US_BOX
-    tiles = q[q.asset_type.isin(SUBSTATION_CLASSES) & q.lat.between(lo_lat, hi_lat)
-              & q.lon.between(lo_lon, hi_lon)]
+    tiles = q[q.asset_type.isin(SUBSTATION_CLASSES) & in_us(q.lat, q.lon)]
     rows = tiles[["asset_id", "asset_type", "lat", "lon", "name"]].to_dict("records")
 
     def one(r):

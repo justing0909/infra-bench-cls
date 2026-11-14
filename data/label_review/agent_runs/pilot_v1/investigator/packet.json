@@ -1,0 +1,2004 @@
+[
+ {
+  "id": "osm_way_1082584040",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_1082584040_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1082584040:sentinel2",
+   "osm_way_1082584040:osm",
+   "osm_way_1082584040:sources",
+   "osm_way_1082584040:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.other",
+    "name": "Subestación Solar San Fermín",
+    "tags": {
+     "name": "Subestación Solar San Fermín",
+     "operator": "PREPA",
+     "operator:wikidata": "Q7258708",
+     "power": "substation"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 34.6,
+     "area_m2": 1171.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1027218596",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_1027218596_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_1027218596_naip.png",
+    "date": "2025-05-11",
+    "source_id": "ks_m_3909460_nw_15_030_20250511",
+    "resolution_m": 0.3
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1027218596:sentinel2",
+   "osm_way_1027218596:naip",
+   "osm_way_1027218596:osm",
+   "osm_way_1027218596:sources",
+   "osm_way_1027218596:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.other",
+    "name": "Northeast Power Plant",
+    "tags": {
+     "name": "Northeast Power Plant",
+     "operator": "Evergy",
+     "operator:wikidata": "Q7987107",
+     "operator:wikipedia": "en:Evergy",
+     "power": "substation",
+     "substation": "generation",
+     "voltage": "161000;13000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 8 line(s) end here (161 kV, 1 unknown voltage, 3 traced from OSM) | HIFLD line ends named: NORTHEAST (MO), GRAND AVE PLANT (matches OSM name) | Caution: 3 of these HIFLD lines were traced from OSM, so they don't count as independent | Caution: EIA plant: Northeast (MO) (petroleum, 396 MW) 112 m away (matches OSM name); this may be the plant, not a substation",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 254.8,
+     "area_m2": 20948.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_node_3369578046",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_node_3369578046_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_3369578046:sentinel2",
+   "osm_node_3369578046:osm",
+   "osm_node_3369578046:sources",
+   "osm_node_3369578046:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Walkaway",
+    "tags": {
+     "name": "Walkaway",
+     "railway": "station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "GA: WALKAWAY (GA station, operational, WA) 14 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_7134004725",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_node_7134004725_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_node_7134004725_naip.png",
+    "date": "2025-09-14",
+    "source_id": "il_m_4208742_nw_16_060_20250914",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_node_7134004725:sentinel2",
+   "osm_node_7134004725:naip",
+   "osm_node_7134004725:osm",
+   "osm_node_7134004725:sources",
+   "osm_node_7134004725:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Waukegan",
+    "tags": {
+     "addr:city": "Waukegan",
+     "addr:housenumber": "95",
+     "addr:postcode": "60085",
+     "addr:state": "IL",
+     "addr:street": "North Spring Street",
+     "name": "Waukegan",
+     "network": "Metra",
+     "network:wikidata": "Q1814208",
+     "operator": "Metra",
+     "platforms": "2",
+     "public_transport": "station",
+     "railway": "station",
+     "ref:metra": "WAUKEGAN",
+     "train": "yes",
+     "website": "https://metra.com/train-lines/stations/waukegan",
+     "wheelchair": "yes",
+     "wikidata": "Q14688224",
+     "wikipedia": "en:Waukegan station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "NARN: Waukegan (passenger station node, IL US) 44 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_7009019858",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_node_7009019858_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_node_7009019858_naip.png",
+    "date": "2025-07-04",
+    "source_id": "nj_m_4007464_ne_18_060_20250704",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_node_7009019858:sentinel2",
+   "osm_node_7009019858:naip",
+   "osm_node_7009019858:osm",
+   "osm_node_7009019858:sources",
+   "osm_node_7009019858:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Manasquan",
+    "tags": {
+     "name": "Manasquan",
+     "network": "NJ Transit",
+     "network:short": "NJT",
+     "network:wikidata": "Q498553",
+     "operator": "New Jersey Transit Rail Operations",
+     "public_transport": "station",
+     "railway": "station",
+     "train": "yes",
+     "wikidata": "Q6747004",
+     "wikipedia": "en:Manasquan station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "NARN: Manasquan (passenger station node, NJ US) 29 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_5864908345",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_node_5864908345_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_node_5864908345_naip.png",
+    "date": "2022-05-10",
+    "source_id": "pa_m_4007563_sw_18_060_20220510",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_node_5864908345:sentinel2",
+   "osm_node_5864908345:naip",
+   "osm_node_5864908345:osm",
+   "osm_node_5864908345:sources",
+   "osm_node_5864908345:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Sedgwick",
+    "tags": {
+     "name": "Sedgwick",
+     "network": "SEPTA",
+     "operator": "SEPTA",
+     "public_transport": "station",
+     "railway": "station",
+     "railway:position": "mi:8.90",
+     "train": "yes",
+     "wikidata": "Q7445264"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "NARN: Sedgwick (passenger station node, PA US) 4 m away (matches OSM name) | NARN: Mount Airy (passenger station node, PA US) 538 m away",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_7100419077",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_node_7100419077_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_node_7100419077_naip.png",
+    "date": "2025-07-04",
+    "source_id": "ct_m_4107353_sw_18_060_20250704",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_node_7100419077:sentinel2",
+   "osm_node_7100419077:naip",
+   "osm_node_7100419077:osm",
+   "osm_node_7100419077:sources",
+   "osm_node_7100419077:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "New Canaan",
+    "tags": {
+     "name": "New Canaan",
+     "network": "Metro-North Railroad",
+     "network:wikidata": "Q125908",
+     "operator": "Metro-North Railroad",
+     "operator:wikidata": "Q125908",
+     "public_transport": "station",
+     "railway": "station",
+     "railway:ref": "3NC",
+     "train": "yes",
+     "website": "https://www.mta.info/stations/new-canaan",
+     "wheelchair": "yes",
+     "wikidata": "Q11325006"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "NARN: New Canaan (passenger station node, CT US) 87 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_7009837500",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_node_7009837500_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_node_7009837500_naip.png",
+    "date": "2025-08-09",
+    "source_id": "nj_m_4007421_sw_18_060_20250809",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_node_7009837500:sentinel2",
+   "osm_node_7009837500:naip",
+   "osm_node_7009837500:osm",
+   "osm_node_7009837500:sources",
+   "osm_node_7009837500:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Stirling",
+    "tags": {
+     "name": "Stirling",
+     "network": "NJ Transit",
+     "network:wikidata": "Q498553",
+     "operator": "New Jersey Transit Rail Operations",
+     "public_transport": "station",
+     "railway": "station",
+     "train": "yes",
+     "wheelchair": "no",
+     "wikidata": "Q7617555"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "NARN: Stirling (passenger station node, NJ US) 58 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_6135688779",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_node_6135688779_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_node_6135688779_naip.png",
+    "date": "2024-07-22",
+    "source_id": "ca_m_4012229_ne_10_060_20240722",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_node_6135688779:sentinel2",
+   "osm_node_6135688779:naip",
+   "osm_node_6135688779:osm",
+   "osm_node_6135688779:sources",
+   "osm_node_6135688779:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Redding",
+    "tags": {
+     "addr:state": "CA",
+     "name": "Redding",
+     "network": "Amtrak",
+     "network:wikidata": "Q23239",
+     "operator": "Amtrak",
+     "public_transport": "station",
+     "railway": "station",
+     "railway:ref": "RDD",
+     "source": "Yahoo",
+     "train": "yes",
+     "wikidata": "Q7305615",
+     "wikipedia": "en:Redding (Amtrak station)"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "NARN: Redding (passenger station node, CA US) 20 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_1875506624",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_node_1875506624_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_1875506624:sentinel2",
+   "osm_node_1875506624:osm",
+   "osm_node_1875506624:sources",
+   "osm_node_1875506624:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Coorparoo",
+    "tags": {
+     "gtfs_id": "place_coosta",
+     "name": "Coorparoo",
+     "network": "Translink",
+     "network:wikidata": "Q7833625",
+     "operator": "Queensland Rail",
+     "operator:wikidata": "Q379439",
+     "public_transport": "station",
+     "railway": "station",
+     "train": "yes",
+     "wheelchair": "yes",
+     "wikidata": "Q5168053",
+     "wikipedia": "en:Coorparoo railway station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "GA: COORPAROO (GA station, operational, QLD) 7 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_4919245752",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_node_4919245752_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_4919245752:sentinel2",
+   "osm_node_4919245752:osm",
+   "osm_node_4919245752:sources",
+   "osm_node_4919245752:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Tadworth",
+    "tags": {
+     "fare_zone": "6",
+     "name": "Tadworth",
+     "naptan:AtcoCode": "9100TADWTH",
+     "network": "National Rail",
+     "network:website": "https://www.nationalrail.co.uk/stations/tad/",
+     "network:wikidata": "Q26334",
+     "operator": "Govia Thameslink Railway (Southern)",
+     "payment:contactless": "yes",
+     "payment:oyster": "yes",
+     "public_transport": "station",
+     "railway": "station",
+     "ref:crs": "TAD",
+     "wheelchair": "yes",
+     "wikidata": "Q2516420",
+     "wikipedia": "en:Tadworth railway station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "NaPTAN: Tadworth Rail Station (national rail station 9100TADWTH) 25 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_534701314",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_534701314_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_534701314:sentinel2",
+   "osm_way_534701314:osm",
+   "osm_way_534701314:sources",
+   "osm_way_534701314:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Hawkesbury River",
+    "tags": {
+     "alt_name": "Brooklyn",
+     "building": "train_station",
+     "fare_gates": "no",
+     "name": "Hawkesbury River",
+     "network": "NSW TrainLink",
+     "network:wikidata": "Q6955406",
+     "platforms": "2",
+     "public_transport": "station",
+     "railway": "station",
+     "railway:ref": "HRV",
+     "ref": "208310",
+     "train": "yes",
+     "wheelchair": "yes",
+     "wikidata": "Q14934826",
+     "wikipedia": "en:Hawkesbury River railway station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "GA: HAWKESBURY RIVER (GA station, operational, NSW) 10 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 38.9,
+     "area_m2": 182.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1237457726",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_1237457726_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1237457726:sentinel2",
+   "osm_way_1237457726:osm",
+   "osm_way_1237457726:sources",
+   "osm_way_1237457726:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Menzies Creek",
+    "tags": {
+     "addr:postcode": "3159",
+     "addr:state": "VIC",
+     "addr:suburb": "Menzies Creek",
+     "building": "train_station",
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Menzies Creek",
+     "old_name": "Aura",
+     "operator": "Puffing Billy Railway Board",
+     "public_transport": "station",
+     "railway": "station",
+     "tourism": "yes",
+     "train": "yes",
+     "website": "https://puffingbilly.com.au/",
+     "wikidata": "Q14935221",
+     "wikipedia": "en:Menzies Creek railway station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "GA: MENZIES CREEK (GA station, operational, VIC) 45 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 20.9,
+     "area_m2": 106.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_node_4971583381",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_node_4971583381_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_4971583381:sentinel2",
+   "osm_node_4971583381:osm",
+   "osm_node_4971583381:sources",
+   "osm_node_4971583381:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Darnick Station",
+    "tags": {
+     "gtfs:stop_id": "28781",
+     "name": "Darnick Station",
+     "network": "NSW TrainLink",
+     "network:wikidata": "Q6955406",
+     "operator": "NSW TrainLink",
+     "public_transport": "station",
+     "railway": "station",
+     "train": "yes"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "GA: DARNICK (GA station, operational, NSW) 234 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_475651910",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_node_475651910_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_475651910:sentinel2",
+   "osm_node_475651910:osm",
+   "osm_node_475651910:sources",
+   "osm_node_475651910:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Chinchilla",
+    "tags": {
+     "name": "Chinchilla",
+     "operator": "QueenslandRail",
+     "public_transport": "station",
+     "railway": "station",
+     "source": "bing"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "GA: CHINCHILLA (GA station, operational, QLD) 13 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_60110281",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_60110281_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_60110281_naip.png",
+    "date": "2021-11-21",
+    "source_id": "ut_m_4011151_ne_12_060_20211121",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_way_60110281:sentinel2",
+   "osm_way_60110281:naip",
+   "osm_way_60110281:osm",
+   "osm_way_60110281:sources",
+   "osm_way_60110281:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Central Heating and Cooling Plants",
+    "tags": {
+     "building": "university",
+     "landuse": "industrial",
+     "name": "Central Heating and Cooling Plants",
+     "operator": "Brigham Young University (BYU)",
+     "plant:method": "combustion",
+     "plant:output:electricity": "16.5 MW",
+     "plant:output:hot_water": "yes",
+     "plant:source": "gas",
+     "power": "plant",
+     "ref:US:EIA": "63423",
+     "source": "U.S. Energy Information Administration - EIA-860 - 2021",
+     "start_date": "2019-02"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: BYU Central Heating Plant (natural gas, 14 MW) 20 m away (matches OSM name) | EIA plant: Provo Power Plant (natural gas, 12 MW) 1491 m away",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 69.6,
+     "area_m2": 2313.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1082349929",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_1082349929_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_1082349929_naip.png",
+    "date": "2025-06-11",
+    "source_id": "sc_m_3408119_ne_17_030_20250611",
+    "resolution_m": 0.3
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1082349929:sentinel2",
+   "osm_way_1082349929:naip",
+   "osm_way_1082349929:osm",
+   "osm_way_1082349929:sources",
+   "osm_way_1082349929:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "City West Diesel Plant",
+    "tags": {
+     "addr:city": "Union",
+     "addr:housenumber": "198",
+     "addr:postcode": "29379",
+     "addr:state": "SC",
+     "addr:street": "Times Drive",
+     "landuse": "industrial",
+     "name": "City West Diesel Plant",
+     "operator": "Lockhart Power",
+     "plant:method": "combustion",
+     "plant:output:electricity": "7.2 MW",
+     "plant:source": "oil",
+     "power": "plant",
+     "ref:US:EIA": "57886",
+     "start_date": "2011"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: City West Diesel Plant (petroleum, 7 MW) 17 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 52.5,
+     "area_m2": 2039.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_970347065",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_970347065_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_970347065_naip.png",
+    "date": "2025-10-02",
+    "source_id": "ga_m_3308358_se_17_030_20251002",
+    "resolution_m": 0.3
+   }
+  },
+  "evidence_ids": [
+   "osm_way_970347065:sentinel2",
+   "osm_way_970347065:naip",
+   "osm_way_970347065:osm",
+   "osm_way_970347065:sources",
+   "osm_way_970347065:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Robert W Scherer Power Plant",
+    "tags": {
+     "addr:city": "Juliette",
+     "addr:housenumber": "10986",
+     "addr:postcode": "31046",
+     "addr:state": "GA",
+     "description": "Unit 4 retired end 2021",
+     "landuse": "industrial",
+     "name": "Robert W Scherer Power Plant",
+     "operator": "Georgia Power",
+     "operator:wikidata": "Q5547666",
+     "plant:method": "combustion",
+     "plant:output:electricity": "2673 MW",
+     "plant:source": "coal",
+     "power": "plant",
+     "ref:US:EIA": "6257",
+     "start_date": "1982",
+     "wikidata": "Q7201493",
+     "wikipedia": "en:Plant Scherer"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: Scherer (coal, 2580 MW) 217 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1606.9,
+     "area_m2": 1772627.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_858035513",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_858035513_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_858035513_naip.png",
+    "date": "2025-05-16",
+    "source_id": "fl_m_2708205_ne_17_030_20250516",
+    "resolution_m": 0.3
+   }
+  },
+  "evidence_ids": [
+   "osm_way_858035513:sentinel2",
+   "osm_way_858035513:naip",
+   "osm_way_858035513:osm",
+   "osm_way_858035513:sources",
+   "osm_way_858035513:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "McKay Bay Facility",
+    "tags": {
+     "addr:city": "Tampa",
+     "addr:state": "FL",
+     "landuse": "industrial",
+     "name": "McKay Bay Facility",
+     "operator": "City of Tampa",
+     "plant:method": "combustion",
+     "plant:output:electricity": "22.1 MW",
+     "plant:source": "waste",
+     "power": "plant",
+     "ref:US:EIA": "50875",
+     "source": "U.S. Energy Information Administration - EIA-860 - 2021",
+     "start_date": "1985-06",
+     "website": "https://www.tampa.gov/solid-waste/info/mckay-bay"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: McKay Bay Facility (biomass, 18 MW) 49 m away (matches OSM name) | EIA plant: IKEA Tampa 042 (solar, 1 MW) 1262 m away",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 245.1,
+     "area_m2": 48195.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1004828064",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_1004828064_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_1004828064_naip.png",
+    "date": "2024-07-02",
+    "source_id": "ca_m_3912106_se_10_060_20240702",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1004828064:sentinel2",
+   "osm_way_1004828064:naip",
+   "osm_way_1004828064:osm",
+   "osm_way_1004828064:sources",
+   "osm_way_1004828064:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Grizzly Powerhouse",
+    "tags": {
+     "building": "industrial",
+     "name": "Grizzly Powerhouse",
+     "operator": "City of Santa Clara - (CA)",
+     "plant:output:electricity": "22 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "ref:US:EIA": "7338",
+     "source": "U.S. Energy Information Administration - EIA-860 - 2021",
+     "start_date": "1993-11"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: Grizzly (hydroelectric, 18 MW) 17 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 26.7,
+     "area_m2": 396.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_836497627",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_836497627_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_836497627_naip.png",
+    "date": "2025-09-20",
+    "source_id": "nh_m_4307136_sw_19_060_20250920",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_way_836497627:sentinel2",
+   "osm_way_836497627:naip",
+   "osm_way_836497627:osm",
+   "osm_way_836497627:sources",
+   "osm_way_836497627:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Clement Dam Hydro",
+    "tags": {
+     "addr:city": "Tilton",
+     "addr:street": "Mill Street",
+     "building": "yes",
+     "name": "Clement Dam Hydro",
+     "operator": "Eagle Creek Renewable Energy",
+     "operator:wikidata": "Q113376370",
+     "plant:method": "water-storage",
+     "plant:output:electricity": "2.4 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "ref:US:EIA": "10276",
+     "source": "U.S. Energy Information Administration - EIA-860 - 2021",
+     "start_date": "1984-12"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: Clement Dam Hydro LLC (hydroelectric, 2 MW) 53 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 20.0,
+     "area_m2": 200.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_662691651",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_662691651_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_662691651_naip.png",
+    "date": "2022-07-18",
+    "source_id": "or_m_4312245_se_10_030_20220718",
+    "resolution_m": 0.3
+   }
+  },
+  "evidence_ids": [
+   "osm_way_662691651:sentinel2",
+   "osm_way_662691651:naip",
+   "osm_way_662691651:osm",
+   "osm_way_662691651:sources",
+   "osm_way_662691651:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Clearwater Powerplant Number 2",
+    "tags": {
+     "addr:state": "OR",
+     "building": "yes",
+     "ele": "747",
+     "gnis:feature_id": "1134864",
+     "name": "Clearwater Powerplant Number 2",
+     "operator": "PacifiCorp",
+     "operator:wikidata": "Q2045479",
+     "plant:output:electricity": "26 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "ref:US:EIA": "3021",
+     "source": "U.S. Energy Information Administration - EIA-860 - 2020",
+     "start_date": "1953-11"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: Clearwater 2 (hydroelectric, 31 MW) 21 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 23.1,
+     "area_m2": 419.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_835753773",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_835753773_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_835753773_naip.png",
+    "date": "2023-10-02",
+    "source_id": "me_m_4407031_sw_19_030_20231002_20240103",
+    "resolution_m": 0.3
+   }
+  },
+  "evidence_ids": [
+   "osm_way_835753773:sentinel2",
+   "osm_way_835753773:naip",
+   "osm_way_835753773:osm",
+   "osm_way_835753773:sources",
+   "osm_way_835753773:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Androscoggin Energy Center",
+    "tags": {
+     "disused:power": "plant",
+     "end_date": "2025-10",
+     "landuse": "industrial",
+     "name": "Androscoggin Energy Center",
+     "operator": "Pixelle Androscoggin LLC",
+     "plant:method": "combustion",
+     "plant:output:electricity": "163.5 MW",
+     "plant:output:hot_water": "yes",
+     "plant:source": "gas",
+     "ref:US:EIA": "55031",
+     "source": "http://globalenergyobservatory.org/geoid/2115",
+     "start_date": "1999-10"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: Androscoggin Energy Center (natural gas, 130 MW) 9 m away (matches OSM name) | EIA plant: International Paper Riley Hydro (hydroelectric, 7 MW) 631 m away",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 226.9,
+     "area_m2": 29375.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_120652193",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_120652193_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_120652193_naip.png",
+    "date": "2025-05-16",
+    "source_id": "ks_m_3809551_ne_15_030_20250516",
+    "resolution_m": 0.3
+   }
+  },
+  "evidence_ids": [
+   "osm_way_120652193:sentinel2",
+   "osm_way_120652193:naip",
+   "osm_way_120652193:osm",
+   "osm_way_120652193:sources",
+   "osm_way_120652193:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Wolf Creek Generating Station",
+    "tags": {
+     "addr:city": "Burlington",
+     "addr:housenumber": "1550",
+     "addr:postcode": "66839",
+     "addr:state": "KS",
+     "addr:street": "Oxen Lane",
+     "landuse": "industrial",
+     "name": "Wolf Creek Generating Station",
+     "operator": "Wolf Creek Nuclear Optg Corp",
+     "plant:method": "fission",
+     "plant:output:electricity": "1267.7 MW",
+     "plant:source": "nuclear",
+     "power": "plant",
+     "ref:US:EIA": "210",
+     "source": "U.S. Energy Information Administration - EIA-860 - 2021",
+     "start_date": "1985-09-03",
+     "website": "http://www.wolfcreeknuclear.com/",
+     "wikidata": "Q163911",
+     "wikipedia": "en:Wolf Creek Generating Station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: Wolf Creek Generating Station (nuclear, 1177 MW) 162 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 541.7,
+     "area_m2": 124888.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_162601905",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_162601905_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_162601905_naip.png",
+    "date": "2023-08-24",
+    "source_id": "il_m_3908838_ne_16_030_20230824_20240214",
+    "resolution_m": 0.3
+   }
+  },
+  "evidence_ids": [
+   "osm_way_162601905:sentinel2",
+   "osm_way_162601905:naip",
+   "osm_way_162601905:osm",
+   "osm_way_162601905:sources",
+   "osm_way_162601905:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Coles County Memorial Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "ele": "219",
+     "gnis:feature_id": "427525",
+     "iata": "MTO",
+     "icao": "KMTO",
+     "name": "Coles County Memorial Airport",
+     "operator": "Coles County Airport Authority",
+     "source": "wikipedia",
+     "type": "public",
+     "website": "https://www.colescountyairport.com/",
+     "wikidata": "Q1654299",
+     "wikipedia": "en:Coles County Memorial Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: COLES COUNTY MEML (FAA MTO, public, O) 21 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3209.2,
+     "area_m2": 3755188.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_946198448",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_946198448_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_946198448_naip.png",
+    "date": "2025-07-01",
+    "source_id": "mn_m_4309404_ne_15_060_20250701",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_way_946198448:sentinel2",
+   "osm_way_946198448:naip",
+   "osm_way_946198448:osm",
+   "osm_way_946198448:sources",
+   "osm_way_946198448:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Saint James Municipal Airport",
+    "tags": {
+     "addr:city": "St. James",
+     "addr:county": "Watonwan",
+     "addr:housenumber": "75751",
+     "addr:postcode": "56081",
+     "addr:state": "MN",
+     "addr:street": "Airport Lane",
+     "aeroway": "aerodrome",
+     "elevation": "325",
+     "icao": "KJYG",
+     "name": "Saint James Municipal Airport",
+     "note": "not necessarily official boundary",
+     "source": "Esri",
+     "wikidata": "Q35305790",
+     "wikipedia": "en:St. James Municipal Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: ST JAMES MUNI (FAA JYG, public, O) 202 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2034.4,
+     "area_m2": 603915.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_881998684",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_881998684_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_881998684_naip.png",
+    "date": "2022-06-23",
+    "source_id": "wi_m_4508956_sw_16_060_20220623",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_way_881998684:sentinel2",
+   "osm_way_881998684:naip",
+   "osm_way_881998684:osm",
+   "osm_way_881998684:sources",
+   "osm_way_881998684:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Langlade County Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "ele": "463",
+     "faa": "AIG",
+     "icao": "KAIG",
+     "name": "Langlade County Airport",
+     "operator": "Langlade County",
+     "wikidata": "Q6486173",
+     "wikipedia": "en:Langlade County Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: LANGLADE COUNTY (FAA AIG, public, O) 204 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2188.2,
+     "area_m2": 1658527.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_424873525",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_424873525_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_424873525_naip.png",
+    "date": "2023-05-26",
+    "source_id": "oh_m_3908340_se_17_030_20230526_20231018",
+    "resolution_m": 0.3
+   }
+  },
+  "evidence_ids": [
+   "osm_way_424873525:sentinel2",
+   "osm_way_424873525:naip",
+   "osm_way_424873525:osm",
+   "osm_way_424873525:sources",
+   "osm_way_424873525:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Ross County Airport",
+    "tags": {
+     "addr:housenumber": "1296",
+     "addr:state": "OH",
+     "addr:street": "Stone Road",
+     "aeroway": "aerodrome",
+     "ele": "221",
+     "faa": "RZT",
+     "gnis:feature_id": "1082567",
+     "icao": "KRZT",
+     "name": "Ross County Airport",
+     "operator": "Ross County Board of County Commissioners",
+     "wikidata": "Q34962539"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: ROSS COUNTY (FAA RZT, public, O) 107 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2405.9,
+     "area_m2": 804473.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_915785158",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_915785158_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_915785158_naip.png",
+    "date": "2025-07-24",
+    "source_id": "ar_m_3509348_sw_15_060_20250724",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_way_915785158:sentinel2",
+   "osm_way_915785158:naip",
+   "osm_way_915785158:osm",
+   "osm_way_915785158:sources",
+   "osm_way_915785158:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Russellville Regional Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "faa": "RUE",
+     "gnis:feature_id": "83822",
+     "icao": "KRUE",
+     "name": "Russellville Regional Airport",
+     "wikidata": "Q7381916",
+     "wikipedia": "en:Russellville Regional Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: RUSSELLVILLE RGNL (FAA RUE, public, O) 31 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2105.3,
+     "area_m2": 748122.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_753531377",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_753531377_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_753531377:sentinel2",
+   "osm_way_753531377:osm",
+   "osm_way_753531377:sources",
+   "osm_way_753531377:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Burwash Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "iata": "YDB",
+     "icao": "CYDB",
+     "name": "Burwash Airport",
+     "operator": "Government of Yukon",
+     "operator:type": "public",
+     "source": "ourairports.com",
+     "wikidata": "Q3813604",
+     "wikipedia": "en:Burwash Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: BURWASH (FAA CYDB, public, O) 222 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2752.0,
+     "area_m2": 1143926.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_190950897",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_190950897_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_190950897:sentinel2",
+   "osm_way_190950897:osm",
+   "osm_way_190950897:sources",
+   "osm_way_190950897:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Providenciales International Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "closest_town": "Providenciales",
+     "ele": "5",
+     "iata": "PLS",
+     "icao": "MBPV",
+     "name": "Providenciales International Airport",
+     "name:en": "Providenciales International Airport",
+     "operator": "Providenciales Airport Company",
+     "ref": "PLS",
+     "source": "wikipedia",
+     "type": "public",
+     "wikidata": "Q1748436",
+     "wikipedia": "en:Providenciales International Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: PROVIDENCIALES INTL (FAA MBPV, public, O) 315 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3432.8,
+     "area_m2": 1511416.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_616837990",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_616837990_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_616837990_naip.png",
+    "date": "2024-10-12",
+    "source_id": "tx_m_3010448_ne_13_060_20241012",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_way_616837990:sentinel2",
+   "osm_way_616837990:naip",
+   "osm_way_616837990:osm",
+   "osm_way_616837990:sources",
+   "osm_way_616837990:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Marfa Municipal Airport",
+    "tags": {
+     "addr:city": "Marfa",
+     "addr:housenumber": "45101",
+     "addr:postcode": "79843",
+     "addr:state": "TX",
+     "addr:street": "State Highway 17",
+     "aeroway": "aerodrome",
+     "ele": "1475",
+     "faa": "MRF",
+     "gnis:feature_id": "1387150",
+     "iata": "MRF",
+     "icao": "KMRF",
+     "name": "Marfa Municipal Airport",
+     "name:es": "Aeropuerto Municipal de Marfa",
+     "operator": "Presidio County",
+     "operator:es": "Condado de Presidio",
+     "source_ref": "geonames.usgs.gov",
+     "wikidata": "Q1031391"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: MARFA MUNI (FAA MRF, public, O) 82 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2301.8,
+     "area_m2": 2698792.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_402064374",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_402064374_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_402064374_naip.png",
+    "date": "2025-08-25",
+    "source_id": "la_m_3009049_sw_15_060_20250825",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_way_402064374:sentinel2",
+   "osm_way_402064374:naip",
+   "osm_way_402064374:osm",
+   "osm_way_402064374:sources",
+   "osm_way_402064374:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Louisiana Regional Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "area": "yes",
+     "faa": "REG",
+     "icao": "KREG",
+     "name": "Louisiana Regional Airport",
+     "source": "ourairports.com",
+     "wikidata": "Q35276115"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: LOUISIANA RGNL (FAA REG, public, O) 163 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1836.4,
+     "area_m2": 532774.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1153850719",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_1153850719_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_1153850719_naip.png",
+    "date": "2024-09-14",
+    "source_id": "ny_m_4307504_nw_18_060_20240914",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1153850719:sentinel2",
+   "osm_way_1153850719:naip",
+   "osm_way_1153850719:osm",
+   "osm_way_1153850719:sources",
+   "osm_way_1153850719:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "NY 26 Carthage CSG",
+    "tags": {
+     "name": "NY 26 Carthage CSG",
+     "operator": "Standard Solar",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "5 MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "ref:US:EIA": "63224",
+     "source": "U.S. Energy Information Administration - EIA-860 - 2022",
+     "start_date": "2020-03"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: NY 26 Carthage CSG (solar, 5 MW) 59 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 503.6,
+     "area_m2": 135471.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_941588805",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_941588805_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_941588805_naip.png",
+    "date": "2024-06-28",
+    "source_id": "ny_m_4307330_sw_18_060_20240628",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_way_941588805:sentinel2",
+   "osm_way_941588805:naip",
+   "osm_way_941588805:osm",
+   "osm_way_941588805:sources",
+   "osm_way_941588805:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "HGS Solar I",
+    "tags": {
+     "name": "HGS Solar I",
+     "operator": "HGS solar I, LLC",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "2 MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "ref:US:EIA": "61765",
+     "source": "U.S. Energy Information Administration - EIA-860 - 2020",
+     "start_date": "2016-09"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: HGS Solar I (solar, 2 MW) 28 m away (matches OSM name) | EIA plant: Gore Mountain Solar II (solar, 2 MW) 200 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 240.5,
+     "area_m2": 37551.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1153919614",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_1153919614_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_1153919614_naip.png",
+    "date": "2024-09-27",
+    "source_id": "or_m_4311708_nw_11_060_20240927",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1153919614:sentinel2",
+   "osm_way_1153919614:naip",
+   "osm_way_1153919614:osm",
+   "osm_way_1153919614:sources",
+   "osm_way_1153919614:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Morgan Solar Center",
+    "tags": {
+     "name": "Morgan Solar Center",
+     "operator": "Adapture Renewables, Inc.",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "3 MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "ref:US:EIA": "61855",
+     "source": "U.S. Energy Information Administration - EIA-860 - 2022",
+     "start_date": "2020-05"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: Morgan Solar Center (solar, 3 MW) 134 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 321.9,
+     "area_m2": 83416.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1157812805",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_1157812805_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_1157812805_naip.png",
+    "date": "2023-05-27",
+    "source_id": "md_m_3907639_nw_18_030_20230527_20231018",
+    "resolution_m": 0.3
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1157812805:sentinel2",
+   "osm_way_1157812805:naip",
+   "osm_way_1157812805:osm",
+   "osm_way_1157812805:sources",
+   "osm_way_1157812805:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "McCormick & Co. Inc. at Belcamp",
+    "tags": {
+     "location": "roof",
+     "name": "McCormick & Co. Inc. at Belcamp",
+     "operator": "Luminace Solar Maryland, LLC",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "1.4 MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "ref:US:EIA": "57646",
+     "source": "U.S. Energy Information Administration - EIA-860m - 2025",
+     "start_date": "2010-12"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: McCormick & Co. Inc. at Belcamp (solar, 1 MW) 68 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 188.7,
+     "area_m2": 29255.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1015722300",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_1015722300_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_1015722300_naip.png",
+    "date": "2025-07-04",
+    "source_id": "al_m_3408724_nw_16_030_20250704",
+    "resolution_m": 0.3
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1015722300:sentinel2",
+   "osm_way_1015722300:naip",
+   "osm_way_1015722300:osm",
+   "osm_way_1015722300:sources",
+   "osm_way_1015722300:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.transmission.substation",
+    "name": "Browns Ferry Substation",
+    "tags": {
+     "barrier": "fence",
+     "location": "outdoor",
+     "name": "Browns Ferry Substation",
+     "operator": "Tennessee Valley Authority",
+     "operator:short": "TVA",
+     "operator:wikidata": "Q1367577",
+     "power": "substation",
+     "substation": "transmission",
+     "voltage": "500000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 10 line(s) end here (500/161 kV, 7 traced from OSM) | HIFLD line ends named: MAURY, BROWNS FERRY, TRINITY, WESTPOINT (matches OSM name) | Caution: 7 of these HIFLD lines were traced from OSM, so they don't count as independent | Caution: EIA plant: Browns Ferry (nuclear, 3662 MW) 243 m away (matches OSM name); this may be the plant, not a substation",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 321.3,
+     "area_m2": 43874.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_102124678",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_102124678_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\pilot_v1\\images\\osm_way_102124678_naip.png",
+    "date": "2023-11-09",
+    "source_id": "mt_m_4611225_se_12_060_20231109_20240103",
+    "resolution_m": 0.6
+   }
+  },
+  "evidence_ids": [
+   "osm_way_102124678:sentinel2",
+   "osm_way_102124678:naip",
+   "osm_way_102124678:osm",
+   "osm_way_102124678:sources",
+   "osm_way_102124678:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.transmission.substation",
+    "name": "Garrison Substation",
+    "tags": {
+     "barrier": "fence",
+     "location": "outdoor",
+     "name": "Garrison Substation",
+     "operator": "Bonneville Power Administration",
+     "operator:short": "BPA",
+     "operator:wikidata": "Q2910288",
+     "power": "substation",
+     "source": "bing",
+     "substation": "transmission",
+     "voltage": "500000;230000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 8 line(s) end here (500/230 kV) | HIFLD line ends named: GARRISON, BROADVIEW, TAFT, RATTLESNAKE (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 516.6,
+     "area_m2": 112354.4
+    },
+    "available": true
+   }
+  }
+ }
+]

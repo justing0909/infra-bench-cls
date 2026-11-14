@@ -15,13 +15,14 @@ the v1_1k tiles under data/curated_datasets/.
 
 import argparse
 import json
+import os
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 import pandas as pd
 
-from ..paths import REVIEW_DIR, REVIEW_QUEUE
+from ..paths import DATA_DIR, REVIEW_DIR, REVIEW_QUEUE
 from . import decisions
 from .via import NOT_INFRA, chip_for
 
@@ -39,8 +40,19 @@ class Review:
         self.audit = (set(pd.read_csv(audit).query("audit_kind == 'held_back'").asset_id)
                       if audit.exists() else set())
         sample = REVIEW_DIR / "class_sample.csv"
-        self.sample = (dict(pd.read_csv(sample, keep_default_na=False)[["asset_id", "hint"]].values)
-                       if sample.exists() else {})
+        draw = pd.read_csv(sample, keep_default_na=False) if sample.exists() else pd.DataFrame()
+        self.sample = dict(draw[["asset_id", "hint"]].values) if len(draw) else {}
+        # the sample pass walks each class in its random draw order, so any
+        # prefix you review is itself a random sample and you can stop early.
+        self.sample_pos = ({a: i for i, a in enumerate(draw.sort_values(["asset_type", "draw"]).asset_id)}
+                           if len(draw) else {})
+
+    def _view(self, mode: str, cls: str) -> pd.DataFrame:
+        q = self.queue if not cls else self.queue[self.queue.asset_type == cls]
+        if mode == "sample":
+            q = q[q.asset_id.isin(self.sample_pos)]
+            q = q.assign(order=q.asset_id.map(self.sample_pos)).sort_values("order")
+        return q
 
     def _item(self, row: dict, entries: dict) -> dict:
         hint = self.sample.get(row["asset_id"], "")
@@ -51,6 +63,64 @@ class Review:
             "mine": entries.get(self.reviewer),
             "others": [e for r, e in entries.items() if r != self.reviewer],
         }
+
+    def footprint(self, asset_id: str) -> list:
+        """the asset's mapped OSM outline as lat/lon rings, from the Overpass
+        responses cached by evaluation/analysis/asset_footprint_share.py, so the
+        page makes no live OSM requests (Overpass rate-limits per address)."""
+        if not hasattr(self, "_footprints"):
+            self._footprints = {}
+            for path in sorted((DATA_DIR / "asset_footprints" / "overpass").glob("*.json")):
+                for el in json.loads(path.read_text(encoding="utf-8"))["elements"]:
+                    ways = [el] if el["type"] == "way" else [m for m in el.get("members", []) if m.get("type") == "way"]
+                    rings = [[[p["lat"], p["lon"]] for p in w.get("geometry", [])] for w in ways]
+                    self._footprints[f"osm_{el['type']}_{el['id']}"] = [r for r in rings if r]
+        return self._footprints.get(asset_id, [])
+
+    @staticmethod
+    def arcgis_key() -> str:
+        """an ArcGIS Location Platform API key, from ARCGIS_API_KEY or a local
+        data/label_review/arcgis_key.txt (git-ignored). Esri World Imagery is only
+        shown with one: using it inside a custom app needs an ArcGIS account."""
+        key = os.environ.get("ARCGIS_API_KEY", "").strip()
+        path = REVIEW_DIR / "arcgis_key.txt"
+        if not key and path.exists():
+            key = path.read_text(encoding="utf-8").strip()
+        return key
+
+    def naip_png(self, asset_id: str) -> bytes | None:
+        """NAIP aerial imagery (USDA, public domain) for a US tile, cached."""
+        from .hifld_lines import in_us
+        from .two_agent import _naip
+        row = self.by_id.get(asset_id)
+        if row is None:
+            return None
+        lat, lon = float(row["lat"]), float(row["lon"])
+        if not in_us(lat, lon):
+            return None
+        cache = REVIEW_DIR / "naip_cache" / f"{asset_id}.png"
+        missing = cache.with_suffix(".none")
+        if missing.exists():
+            return None
+        if not cache.exists():
+            cache.parent.mkdir(parents=True, exist_ok=True)
+            if _naip(lat, lon, cache) is None:
+                missing.touch()
+                return None
+        return cache.read_bytes()
+
+    def sample_progress(self) -> dict:
+        """per class: how far the random sample has got and whether it can stop."""
+        if not self.sample:
+            return {}
+        from . import class_sample
+        summary, _ = class_sample.report(self.reviewer)
+        # a class with no decisions has no accuracy: send null, never NaN,
+        # which is not valid JSON and stops the page loading.
+        acc = lambda v: None if v is None or v != v else float(v)
+        return {r["class"]: {"reviewed": int(r["reviewed"]), "sampled": int(r["sampled"]),
+                             "accuracy": acc(r["accuracy_%"]), "ci": r["ci95_%"], "next": r["next"]}
+                for r in summary.to_dict("records")}
 
     def state(self) -> dict:
         latest = decisions.load()
@@ -67,7 +137,9 @@ class Review:
             modes.insert(0, "sample")
         return {"reviewer": self.reviewer, "classes": self.classes, "modes": modes,
                 "total": len(self.by_id), "counts": counts,
-                "mine": sum(1 for e in latest.values() if self.reviewer in e)}
+                "mine": sum(1 for e in latest.values() if self.reviewer in e),
+                "sample_progress": self.sample_progress(),
+                "arcgis_key": self.arcgis_key()}
 
     def _in_pass(self, mode: str, entries: dict, row: dict) -> bool:
         if mode == "adjudicate":
@@ -89,7 +161,12 @@ class Review:
 
     def next(self, mode: str, cls: str, after: int) -> dict | None:
         latest = decisions.load()
-        q = self.queue if not cls else self.queue[self.queue.asset_type == cls]
+        q = self._view(mode, cls)
+        if mode == "sample" and not cls:
+            # across all classes, skip the ones whose estimate is already tight
+            # enough; picking a class by name still lets you keep going in it.
+            enough = {c for c, p in self.sample_progress().items() if p["next"] == "enough"}
+            q = q[~q.asset_type.isin(enough)]
         for row in q[q.order > after].to_dict("records"):
             entries = latest.get(row["asset_id"], {})
             if self._in_pass(mode, entries, row):
@@ -100,7 +177,7 @@ class Review:
         """the file list: a few tiles before `around` (any status) and the
         next ones still in this pass, like VIA's project panel."""
         latest = decisions.load()
-        q = self.queue if not cls else self.queue[self.queue.asset_type == cls]
+        q = self._view(mode, cls)
         out = []
         for row in q[q.order >= around].to_dict("records"):
             entries = latest.get(row["asset_id"], {})
@@ -112,10 +189,13 @@ class Review:
                 break
         return out
 
-    def item(self, asset_id: str) -> dict | None:
+    def item(self, asset_id: str, mode: str = "") -> dict | None:
         row = self.by_id.get(asset_id)
         if row is None:
             return None
+        if mode == "sample" and asset_id in self.sample_pos:
+            # keep "next" moving through the draw order after going back
+            row = {**row, "order": self.sample_pos[asset_id]}
         return self._item(row, decisions.load().get(asset_id, {}))
 
     def decide(self, body: dict) -> dict:
@@ -138,7 +218,7 @@ def make_handler(review: Review):
 
         def _send(self, code, body, ctype="application/json"):
             if not isinstance(body, bytes):
-                body = json.dumps(body, ensure_ascii=False).encode("utf-8")
+                body = json.dumps(body, ensure_ascii=False, allow_nan=False).encode("utf-8")
             self.send_response(code)
             self.send_header("Content-Type", ctype)
             self.send_header("Cache-Control", "no-store")
@@ -162,7 +242,15 @@ def make_handler(review: Review):
                                                              qs.get("cls", ""),
                                                              int(qs.get("around", 0)))})
                 elif url.path == "/api/item":
-                    self._send(200, {"item": review.item(qs.get("asset_id", ""))})
+                    self._send(200, {"item": review.item(qs.get("asset_id", ""), qs.get("mode", ""))})
+                elif url.path.startswith("/footprint/") and url.path.endswith(".json"):
+                    self._send(200, {"rings": review.footprint(url.path[len("/footprint/"):-len(".json")])})
+                elif url.path.startswith("/naip/") and url.path.endswith(".png"):
+                    png = review.naip_png(url.path[len("/naip/"):-len(".png")])
+                    if png is None:
+                        self._send(404, {"error": "no NAIP for this tile"})
+                    else:
+                        self._send(200, png, "image/png")
                 elif url.path.startswith("/tile/") and url.path.endswith(".png"):
                     # look the asset up rather than trusting the path.
                     row = review.by_id.get(url.path[len("/tile/"):-len(".png")])

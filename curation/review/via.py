@@ -16,7 +16,10 @@ data/label_review/via/. Each image carries file attributes:
 
     verdict        true / false / unconfirmed   (true = the OSM label is right)
     correct_class  the right class, only needed when verdict is false
-    osm_label, name, hints, google_maps, street_view, note
+    osm_label, name, hints, lat, lon, note
+
+Google Maps and Street View links are deliberately not included: their terms
+forbid using them to create or augment another mapping dataset.
 
 Nothing is pre-selected, so every tile needs a deliberate click. Import turns
 true into accept, false + correct_class into relabel, and anything else into
@@ -93,8 +96,7 @@ def via_project(name: str, rows: list, classes: list, image_root: str) -> dict:
         "osm_label": _text("OSM label under review"),
         "name": _text("OSM name"),
         "hints": _text("Weak hints, not evidence"),
-        "google_maps": _text("Satellite view"),
-        "street_view": _text("Street View at the asset point"),
+        "esri_wayback": _text("Esri World Imagery in Esri's Wayback app"),
         "lat": _text(""), "lon": _text(""),
         "note": _text("Optional"),
     }
@@ -108,8 +110,7 @@ def via_project(name: str, rows: list, classes: list, image_root: str) -> dict:
             "filename": chip.name, "size": size, "regions": [],
             "file_attributes": {
                 "osm_label": row["asset_type"], "name": row["name"], "hints": _hints(row),
-                "google_maps": f"https://www.google.com/maps/@?api=1&map_action=map&center={lat:.6f},{lon:.6f}&zoom=18&basemap=satellite",
-                "street_view": f"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint={lat:.6f},{lon:.6f}",
+                "esri_wayback": f"https://livingatlas.arcgis.com/wayback/#mapCenter={lon:.5f}%2C{lat:.5f}%2C18&mode=explore",
                 "lat": f"{lat:.6f}", "lon": f"{lon:.6f}",
             },
         }
