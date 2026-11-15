@@ -294,6 +294,19 @@ async function jump(id) {
   show((await api(`/api/item?asset_id=${encodeURIComponent(id)}&mode=${$("mode").value}`)).item);
 }
 
+// open any tile by id from the address, e.g. http://127.0.0.1:8765/#osm_way_669603982,
+// to recheck a tile already decided (a new decision replaces the old one)
+async function openFromHash() {
+  const id = decodeURIComponent(location.hash.slice(1)).trim();
+  if (!id) return false;
+  const r = await api(`/api/item?asset_id=${encodeURIComponent(id)}&mode=${$("mode").value}`);
+  if (!r.item) { flash("No tile " + id); return false; }
+  if (item) history.push(item.asset_id);
+  show(r.item);
+  return true;
+}
+window.addEventListener("hashchange", openFromHash);
+
 async function decide(decision, label) {
   if (!item) return;
   try {
@@ -359,7 +372,7 @@ for (const id of ["mode", "cls"]) $(id).addEventListener("change", e => {
   classes.filter(c => c !== "not_infrastructure").forEach(c => $("cls").add(new Option(c, c)));
   classes.forEach(c => $("klass").add(new Option(c, c)));
   $("classkeys").innerHTML = classes.map((c, i) => `<div><kbd>${KEYS[i].toUpperCase()}</kbd> ${esc(c)}</div>`).join("");
-  await next();
+  if (!(await openFromHash())) await next();
 })();
 </script>
 </body>

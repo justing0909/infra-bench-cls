@@ -447,7 +447,9 @@ works and automated collection), Chile's substation layer (published as CC BY-NC
 an exception to the portal's CC0 default), Brazil's ANEEL BDGD (no licence
 stated), Zambia's MV transformers (too dense to tell a substation apart), National
 Grid's GB transmission network route maps (restricted to emergency and land-use
-planning, non-commercial), World Bank layers built from OpenStreetMap (they
+planning, non-commercial), Orion New Zealand's network and hosting-capacity
+viewers (their terms forbid copying, redistribution and derivative works
+without written consent), World Bank layers built from OpenStreetMap (they
 would check OSM against itself), World Bank power plant layers (mostly
 extracts of the commercial Platts WEPP database), Eskom
 (website terms limit use to non-commercial purposes), and a third-party copy of
