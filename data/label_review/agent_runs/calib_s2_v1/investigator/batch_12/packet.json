@@ -1,0 +1,1604 @@
+[
+ {
+  "id": "osm_way_894682884",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_894682884_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_894682884:sentinel2",
+   "osm_way_894682884:osm",
+   "osm_way_894682884:sources",
+   "osm_way_894682884:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.storage_tank",
+    "name": "",
+    "tags": {
+     "building": "yes",
+     "content": "water",
+     "man_made": "storage_tank"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 8.5,
+     "area_m2": 56.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_871895894",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_871895894_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_871895894:sentinel2",
+   "osm_way_871895894:osm",
+   "osm_way_871895894:sources",
+   "osm_way_871895894:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Güneş Enerji Santrali",
+    "tags": {
+     "name": "Güneş Enerji Santrali",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 763.1,
+     "area_m2": 87100.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1287580110",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_1287580110_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1287580110:sentinel2",
+   "osm_way_1287580110:osm",
+   "osm_way_1287580110:sources",
+   "osm_way_1287580110:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.treatment.plant",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "man_made": "water_works"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 30.9,
+     "area_m2": 752.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_754480687",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_754480687_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_754480687:sentinel2",
+   "osm_way_754480687:osm",
+   "osm_way_754480687:sources",
+   "osm_way_754480687:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 169.0,
+     "area_m2": 25429.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_674975195",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_674975195_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_674975195:sentinel2",
+   "osm_way_674975195:osm",
+   "osm_way_674975195:sources",
+   "osm_way_674975195:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.other",
+    "name": "",
+    "tags": {
+     "power": "substation"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 50.1,
+     "area_m2": 1401.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_75128129",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_75128129_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_75128129:sentinel2",
+   "osm_way_75128129:osm",
+   "osm_way_75128129:sources",
+   "osm_way_75128129:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.wastewater.plant",
+    "name": "",
+    "tags": {
+     "man_made": "wastewater_plant",
+     "natural": "water",
+     "nhd:fdate": "2010-06-02",
+     "nhd:reach_code": "18030003019490",
+     "source": "NHD",
+     "water": "reservoir"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 55.8,
+     "area_m2": 1005.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_595587999",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_595587999_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_595587999:sentinel2",
+   "osm_way_595587999:osm",
+   "osm_way_595587999:sources",
+   "osm_way_595587999:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subestação Periperi",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subestação Periperi",
+     "operator": "Coelba",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 50.9,
+     "area_m2": 1779.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1259682526",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_1259682526_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1259682526:sentinel2",
+   "osm_way_1259682526:osm",
+   "osm_way_1259682526:sources",
+   "osm_way_1259682526:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "operator": "City of Owensboro",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "69000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 3 line(s) end here (69 kV)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 88.9,
+     "area_m2": 6371.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_403351060",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_403351060_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_403351060:sentinel2",
+   "osm_way_403351060:osm",
+   "osm_way_403351060:sources",
+   "osm_way_403351060:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.treatment.plant",
+    "name": "Cooperativa de Agua Potable de Capioví",
+    "tags": {
+     "addr:city": "Capioví",
+     "addr:housenumber": "451",
+     "addr:street": "Avenida Padre Juan May",
+     "man_made": "water_works",
+     "name": "Cooperativa de Agua Potable de Capioví",
+     "short_name": "CAPCA"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 72.4,
+     "area_m2": 5082.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1464859309",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_1464859309_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1464859309:sentinel2",
+   "osm_way_1464859309:osm",
+   "osm_way_1464859309:sources",
+   "osm_way_1464859309:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 97.5,
+     "area_m2": 3745.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_218898508",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_218898508_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_218898508:sentinel2",
+   "osm_way_218898508:osm",
+   "osm_way_218898508:sources",
+   "osm_way_218898508:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.transmission.substation",
+    "name": "",
+    "tags": {
+     "location": "outdoor",
+     "name:en": "Baghdad",
+     "power": "substation",
+     "substation": "transmission",
+     "voltage": "220000;66000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 302.4,
+     "area_m2": 90208.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1004052522",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_1004052522_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1004052522:sentinel2",
+   "osm_way_1004052522:osm",
+   "osm_way_1004052522:sources",
+   "osm_way_1004052522:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA: no plant within 1.5 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 117.4,
+     "area_m2": 12625.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_252265360",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_252265360_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_252265360:sentinel2",
+   "osm_way_252265360:osm",
+   "osm_way_252265360:sources",
+   "osm_way_252265360:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.treatment.plant",
+    "name": "Vedenottamo",
+    "tags": {
+     "building": "industrial",
+     "building:levels": "1",
+     "man_made": "water_works",
+     "name": "Vedenottamo"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 8.2,
+     "area_m2": 62.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_728199308",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_728199308_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_728199308:sentinel2",
+   "osm_way_728199308:osm",
+   "osm_way_728199308:sources",
+   "osm_way_728199308:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.transmission.substation",
+    "name": "Subestación Cóbano",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subestación Cóbano",
+     "operator": "Instituto Costarricense de Electricidad",
+     "operator:short": "ICE",
+     "operator:wikidata": "Q3431114",
+     "power": "substation",
+     "ref": "COB",
+     "substation": "transmission",
+     "voltage": "138000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 140.1,
+     "area_m2": 15060.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_609112981",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_609112981_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_609112981:sentinel2",
+   "osm_way_609112981:osm",
+   "osm_way_609112981:sources",
+   "osm_way_609112981:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.treatment.plant",
+    "name": "",
+    "tags": {
+     "man_made": "water_works"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 145.2,
+     "area_m2": 11778.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_node_3437756629",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_node_3437756629_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_3437756629:sentinel2",
+   "osm_node_3437756629:osm",
+   "osm_node_3437756629:sources",
+   "osm_node_3437756629:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.treatment.plant",
+    "name": "",
+    "tags": {
+     "man_made": "water_works",
+     "source": "turistautak.hu",
+     "source:date": "2013-12-02",
+     "url": "http://turistautak.hu/poi.php?id=137954"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_1419221212",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_1419221212_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1419221212:sentinel2",
+   "osm_way_1419221212:osm",
+   "osm_way_1419221212:sources",
+   "osm_way_1419221212:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.wastewater.plant",
+    "name": "",
+    "tags": {
+     "man_made": "wastewater_plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 792.1,
+     "area_m2": 320843.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_373851571",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_373851571_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_373851571:sentinel2",
+   "osm_way_373851571:osm",
+   "osm_way_373851571:sources",
+   "osm_way_373851571:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Lightning Ridge Aerodrome",
+    "tags": {
+     "aeroway": "aerodrome",
+     "iata": "LHG",
+     "icao": "YLRD",
+     "name": "Lightning Ridge Aerodrome",
+     "source": "bing"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1983.2,
+     "area_m2": 512678.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_744785109",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_744785109_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_744785109:sentinel2",
+   "osm_way_744785109:osm",
+   "osm_way_744785109:sources",
+   "osm_way_744785109:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Miravalles Unit V",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Miravalles Unit V",
+     "operator": "Instituto Costarricense de Electricidad",
+     "plant:output:electricity": "19 MW",
+     "plant:source": "geothermal",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 141.8,
+     "area_m2": 13475.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1025334410",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_1025334410_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1025334410:sentinel2",
+   "osm_way_1025334410:osm",
+   "osm_way_1025334410:sources",
+   "osm_way_1025334410:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.transmission.substation",
+    "name": "",
+    "tags": {
+     "location": "outdoor",
+     "power": "substation",
+     "substation": "transmission",
+     "voltage": "66000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 83.6,
+     "area_m2": 5517.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_135512541",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_135512541_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_135512541:sentinel2",
+   "osm_way_135512541:osm",
+   "osm_way_135512541:sources",
+   "osm_way_135512541:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.treatment.plant",
+    "name": "Usine d'eau potable de Pont ar Bled",
+    "tags": {
+     "alt_name": "Usine d'eaux de Brest;Usine de Pont-ar-Bled",
+     "man_made": "water_works",
+     "name": "Usine d'eau potable de Pont ar Bled",
+     "operator": "Eau du Ponant",
+     "short_name": "Usine de Pont ar Bled",
+     "source:alt_name": "BD Topo - 2022;press",
+     "start_date": "1923"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 352.3,
+     "area_m2": 36456.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_198117530",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_198117530_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_198117530:sentinel2",
+   "osm_way_198117530:osm",
+   "osm_way_198117530:sources",
+   "osm_way_198117530:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Maidstone Substation",
+    "tags": {
+     "name": "Maidstone Substation",
+     "operator": "Wellington Electricity",
+     "operator:wikidata": "Q7981392",
+     "operator:wikipedia": "en:Wellington Electricity",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "33000;11000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Transpower: no substation within 500 m | Transpower lines: no line ends within 250 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 51.5,
+     "area_m2": 1154.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1017402114",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_1017402114_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1017402114:sentinel2",
+   "osm_way_1017402114:osm",
+   "osm_way_1017402114:sources",
+   "osm_way_1017402114:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "building": "yes",
+     "building_status": "abandoned",
+     "landuse": "industrial",
+     "plant:output:electricity": "yes",
+     "plant:source": "hydro",
+     "power": "plant",
+     "status": "abandoned"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 44.9,
+     "area_m2": 574.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_160593521",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_160593521_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_160593521:sentinel2",
+   "osm_way_160593521:osm",
+   "osm_way_160593521:sources",
+   "osm_way_160593521:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "building": "yes",
+     "landuse": "industrial",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 32.0,
+     "area_m2": 460.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1332894536",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_1332894536_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1332894536:sentinel2",
+   "osm_way_1332894536:osm",
+   "osm_way_1332894536:sources",
+   "osm_way_1332894536:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.transmission.substation",
+    "name": "",
+    "tags": {
+     "operator": "Sarawak Energy",
+     "operator:wikidata": "Q7659479",
+     "power": "substation",
+     "substation": "transmission"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 10.7,
+     "area_m2": 83.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_node_1301739057",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_node_1301739057_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_1301739057:sentinel2",
+   "osm_node_1301739057:osm",
+   "osm_node_1301739057:sources",
+   "osm_node_1301739057:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Monte Caseros",
+    "tags": {
+     "name": "Monte Caseros",
+     "railway": "station",
+     "railway:position": "153.2",
+     "wikidata": "Q2878910",
+     "wikipedia": "es:Estación Monte Caseros"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_1328823631",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_1328823631_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1328823631:sentinel2",
+   "osm_way_1328823631:osm",
+   "osm_way_1328823631:sources",
+   "osm_way_1328823631:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.wastewater.plant",
+    "name": "",
+    "tags": {
+     "man_made": "wastewater_plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 16.1,
+     "area_m2": 122.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_478224162",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_478224162_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_478224162:sentinel2",
+   "osm_way_478224162:osm",
+   "osm_way_478224162:sources",
+   "osm_way_478224162:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.treatment.plant",
+    "name": "",
+    "tags": {
+     "man_made": "water_works"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 48.6,
+     "area_m2": 1799.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1472629376",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_1472629376_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1472629376:sentinel2",
+   "osm_way_1472629376:osm",
+   "osm_way_1472629376:sources",
+   "osm_way_1472629376:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 71.9,
+     "area_m2": 2017.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_528763580",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_528763580_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_528763580:sentinel2",
+   "osm_way_528763580:osm",
+   "osm_way_528763580:sources",
+   "osm_way_528763580:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.wastewater.plant",
+    "name": "Estação de Tratamento de Esgotos de Camalaú",
+    "tags": {
+     "man_made": "wastewater_plant",
+     "name": "Estação de Tratamento de Esgotos de Camalaú",
+     "source": "Bing"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 155.1,
+     "area_m2": 16628.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_node_1482782275",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_node_1482782275_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_1482782275:sentinel2",
+   "osm_node_1482782275:osm",
+   "osm_node_1482782275:sources",
+   "osm_node_1482782275:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.wastewater.plant",
+    "name": "Βιολογικός Καθαρισμός Σπάρτης",
+    "tags": {
+     "man_made": "wastewater_plant",
+     "name": "Βιολογικός Καθαρισμός Σπάρτης"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_234112050",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_234112050_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_234112050:sentinel2",
+   "osm_way_234112050:osm",
+   "osm_way_234112050:sources",
+   "osm_way_234112050:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Sun Valley / Friedman Memorial Airport",
+    "tags": {
+     "addr:state": "ID",
+     "aeroway": "aerodrome",
+     "closest_town": "Hailey, Idaho",
+     "ele": "1620",
+     "gnis:feature_id": "400830",
+     "iata": "SUN",
+     "icao": "KSUN",
+     "name": "Sun Valley / Friedman Memorial Airport",
+     "name:en": "Sun Valley / Friedman Memorial Airport",
+     "operator": "Friedman Memorial Airport Authority under a Joint Powers Agreement between Hailey and Blaine County",
+     "operator:type": "public",
+     "source": "wikipedia",
+     "source_ref": "geonames.usgs.gov",
+     "type": "public",
+     "wikidata": "Q3275758",
+     "wikipedia": "en:Friedman Memorial Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: FRIEDMAN MEML (FAA SUN, public, O) 70 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2682.4,
+     "area_m2": 830736.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_421834984",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_421834984_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_421834984:sentinel2",
+   "osm_way_421834984:osm",
+   "osm_way_421834984:sources",
+   "osm_way_421834984:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.wastewater.plant",
+    "name": "Brush Creek Wastewater Treatment Plant",
+    "tags": {
+     "man_made": "wastewater_plant",
+     "name": "Brush Creek Wastewater Treatment Plant",
+     "operator": "Western Westmoreland Municipal Authority"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 161.3,
+     "area_m2": 15615.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_node_9149482622",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_node_9149482622_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_9149482622:sentinel2",
+   "osm_node_9149482622:osm",
+   "osm_node_9149482622:sources",
+   "osm_node_9149482622:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.storage_tank",
+    "name": "",
+    "tags": {
+     "content": "water",
+     "man_made": "storage_tank"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_1286728834",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_1286728834_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1286728834:sentinel2",
+   "osm_way_1286728834:osm",
+   "osm_way_1286728834:sources",
+   "osm_way_1286728834:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.storage_tank",
+    "name": "Torre de Oscilación Venecia",
+    "tags": {
+     "building": "yes",
+     "content": "water",
+     "man_made": "storage_tank",
+     "name": "Torre de Oscilación Venecia"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 9.7,
+     "area_m2": 74.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1093571864",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_1093571864_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1093571864:sentinel2",
+   "osm_way_1093571864:osm",
+   "osm_way_1093571864:sources",
+   "osm_way_1093571864:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.other",
+    "name": "",
+    "tags": {
+     "power": "substation"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Transpower: no substation within 500 m | Transpower lines: no line ends within 250 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3.7,
+     "area_m2": 5.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1377335321",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_1377335321_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1377335321:sentinel2",
+   "osm_way_1377335321:osm",
+   "osm_way_1377335321:sources",
+   "osm_way_1377335321:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 131.7,
+     "area_m2": 7379.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1166009853",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_1166009853_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1166009853:sentinel2",
+   "osm_way_1166009853:osm",
+   "osm_way_1166009853:sources",
+   "osm_way_1166009853:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "DARC & NEXBE",
+    "tags": {
+     "addr:city": "Christchurch",
+     "addr:housenumber": "510",
+     "addr:postcode": "8042",
+     "addr:street": "Waterloo Road",
+     "addr:suburb": "Islington",
+     "name": "DARC & NEXBE",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "285 kW",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 78.9,
+     "area_m2": 4778.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1376753790",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_1376753790_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1376753790:sentinel2",
+   "osm_way_1376753790:osm",
+   "osm_way_1376753790:sources",
+   "osm_way_1376753790:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.wastewater.plant",
+    "name": "",
+    "tags": {
+     "man_made": "wastewater_plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 360.5,
+     "area_m2": 62711.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_149013794",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_s2_v1\\images\\osm_way_149013794_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_149013794:sentinel2",
+   "osm_way_149013794:osm",
+   "osm_way_149013794:sources",
+   "osm_way_149013794:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Poste 60/22 KvTafersit",
+    "tags": {
+     "barrier": "fence",
+     "location": "outdoor",
+     "name": "Poste 60/22 KvTafersit",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "60000;22000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 58.1,
+     "area_m2": 2575.6
+    },
+    "available": true
+   }
+  }
+ }
+]

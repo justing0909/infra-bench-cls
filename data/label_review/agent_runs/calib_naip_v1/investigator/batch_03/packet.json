@@ -1,0 +1,1552 @@
+[
+ {
+  "id": "osm_node_2031079188",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_node_2031079188_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_node_2031079188_naip.png",
+    "date": "2021-10-06",
+    "source_id": "me_m_4506828_nw_19_060_20211006",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_node_2031079188:sentinel2",
+   "osm_node_2031079188:naip",
+   "osm_node_2031079188:osm",
+   "osm_node_2031079188:sources",
+   "osm_node_2031079188:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "plant:output:electricity": "yes",
+     "plant:source": "hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA: no plant within 1.5 km",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_1426192219",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1426192219_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1426192219_naip.png",
+    "date": "2023-08-02",
+    "source_id": "ok_m_3509532_ne_15_030_20230802_20240104",
+    "resolution_m": 0.3,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1426192219:sentinel2",
+   "osm_way_1426192219:naip",
+   "osm_way_1426192219:osm",
+   "osm_way_1426192219:sources",
+   "osm_way_1426192219:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.other",
+    "name": "Tenkiller Substation",
+    "tags": {
+     "name": "Tenkiller Substation",
+     "power": "substation",
+     "substation": "generation",
+     "voltage": "161000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 2 line(s) end here (161 kV, 1 traced from OSM) | HIFLD line ends named: TENKILLER FERRY, WEBBERS FALLS (matches OSM name) | Caution: 1 of these HIFLD lines were traced from OSM, so they don't count as independent | Caution: EIA plant: Tenkiller Ferry (hydroelectric, 42 MW) 51 m away (matches OSM name); this may be the plant, not a substation",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 26.7,
+     "area_m2": 699.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_794147654",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_794147654_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_794147654_naip.png",
+    "date": "2023-10-11",
+    "source_id": "va_m_3907761_sw_18_060_20231011_20240103",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_794147654:sentinel2",
+   "osm_way_794147654:naip",
+   "osm_way_794147654:osm",
+   "osm_way_794147654:sources",
+   "osm_way_794147654:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "CloudHQ LC1",
+    "tags": {
+     "addr:city": "Ashburn",
+     "addr:housenumber": "21955",
+     "addr:postcode": "20147",
+     "addr:state": "VA",
+     "addr:street": "Loudoun County Parkway",
+     "building": "data_center",
+     "input:electricity": "264 MW",
+     "it_power": "144 MW",
+     "name": "CloudHQ LC1",
+     "operator": "CloudHQ",
+     "operator:wikidata": "Q136332516",
+     "ref": "LC1",
+     "start_date": "2020",
+     "telecom": "data_center",
+     "website": "https://cloudhq.com/campus/lc-campus/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 339.9,
+     "area_m2": 46442.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1149728975",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1149728975_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1149728975_naip.png",
+    "date": "2025-07-13",
+    "source_id": "al_m_3208504_ne_16_030_20250713",
+    "resolution_m": 0.3,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1149728975:sentinel2",
+   "osm_way_1149728975:naip",
+   "osm_way_1149728975:osm",
+   "osm_way_1149728975:sources",
+   "osm_way_1149728975:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "46000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: no transmission line within 300 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 24.5,
+     "area_m2": 508.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_183162077",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_183162077_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_183162077_naip.png",
+    "date": "2024-10-03",
+    "source_id": "tx_m_2909725_se_14_060_20241003",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_183162077:sentinel2",
+   "osm_way_183162077:naip",
+   "osm_way_183162077:osm",
+   "osm_way_183162077:sources",
+   "osm_way_183162077:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.wastewater.plant",
+    "name": "Geronimo Creek Wastewater Treatment Plant",
+    "tags": {
+     "addr:housenumber": "405",
+     "addr:postcode": "78155",
+     "addr:street": "Seitz Road",
+     "barrier": "fence",
+     "fence:type": "chain_link ",
+     "layer": "-1",
+     "man_made": "wastewater_plant",
+     "name": "Geronimo Creek Wastewater Treatment Plant",
+     "operator": "City of Seguin"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 237.7,
+     "area_m2": 32984.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1243555994",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1243555994_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1243555994_naip.png",
+    "date": "2022-10-16",
+    "source_id": "pr_m_1806660_sw_19_030_20221016_20230329",
+    "resolution_m": 0.3,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1243555994:sentinel2",
+   "osm_way_1243555994:naip",
+   "osm_way_1243555994:osm",
+   "osm_way_1243555994:sources",
+   "osm_way_1243555994:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.other",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "power": "substation",
+     "substation": "industrial",
+     "voltage": "38000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: no transmission line within 300 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 14.2,
+     "area_m2": 198.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_262754999",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_262754999_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_262754999_naip.png",
+    "date": "2023-07-01",
+    "source_id": "wa_m_4711739_ne_11_060_20230701_20230911",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_262754999:sentinel2",
+   "osm_way_262754999:naip",
+   "osm_way_262754999:osm",
+   "osm_way_262754999:sources",
+   "osm_way_262754999:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.wastewater.plant",
+    "name": "",
+    "tags": {
+     "man_made": "wastewater_plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 169.4,
+     "area_m2": 20564.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_807317321",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_807317321_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_807317321_naip.png",
+    "date": "2022-04-13",
+    "source_id": "hi_m_1915534_sw_05_060_20220413_20220909",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_807317321:sentinel2",
+   "osm_way_807317321:naip",
+   "osm_way_807317321:osm",
+   "osm_way_807317321:sources",
+   "osm_way_807317321:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.storage_tank",
+    "name": "",
+    "tags": {
+     "building": "yes",
+     "content": "water",
+     "man_made": "storage_tank"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2.0,
+     "area_m2": 3.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_419360381",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_419360381_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_419360381_naip.png",
+    "date": "2023-10-13",
+    "source_id": "va_m_3707626_sw_18_060_20231013_20240103",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_419360381:sentinel2",
+   "osm_way_419360381:naip",
+   "osm_way_419360381:osm",
+   "osm_way_419360381:sources",
+   "osm_way_419360381:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.wastewater.plant",
+    "name": "",
+    "tags": {
+     "man_made": "wastewater_plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 337.4,
+     "area_m2": 54108.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_990537858",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_990537858_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_990537858_naip.png",
+    "date": "2023-10-11",
+    "source_id": "va_m_3807704_ne_18_060_20231011_20240103",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_990537858:sentinel2",
+   "osm_way_990537858:naip",
+   "osm_way_990537858:osm",
+   "osm_way_990537858:sources",
+   "osm_way_990537858:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "CyrusOne Sterling IX",
+    "tags": {
+     "addr:city": "Sterling",
+     "addr:housenumber": "43290;43294",
+     "addr:postcode": "20166",
+     "addr:state": "VA",
+     "addr:street": "Old Ox Road",
+     "building": "data_center",
+     "name": "CyrusOne Sterling IX",
+     "operator": "CyrusOne",
+     "operator:wikidata": "Q16953751",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 265.8,
+     "area_m2": 25021.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_181288373",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_181288373_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_181288373_naip.png",
+    "date": "2024-07-27",
+    "source_id": "mi_m_4308663_sw_16_060_20240727",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_181288373:sentinel2",
+   "osm_way_181288373:naip",
+   "osm_way_181288373:osm",
+   "osm_way_181288373:sources",
+   "osm_way_181288373:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Grand Haven Memorial Airpark",
+    "tags": {
+     "aeroway": "aerodrome",
+     "ele": "181",
+     "name": "Grand Haven Memorial Airpark",
+     "source": "Bing"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: GRAND HAVEN MEML AIRPARK (FAA 3GM, public, O) 113 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1583.7,
+     "area_m2": 585048.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1372377202",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1372377202_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1372377202_naip.png",
+    "date": "2022-06-19",
+    "source_id": "in_m_4008547_sw_16_060_20220619",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1372377202:sentinel2",
+   "osm_way_1372377202:naip",
+   "osm_way_1372377202:osm",
+   "osm_way_1372377202:sources",
+   "osm_way_1372377202:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.wastewater.plant",
+    "name": "",
+    "tags": {
+     "addr:housenumber": "555",
+     "addr:postcode": "47320",
+     "addr:state": "IN",
+     "addr:street": "South Dowden Avenue",
+     "building": "government",
+     "man_made": "wastewater_plant",
+     "source": "esri/USA_NAD_Addresses"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 139.9,
+     "area_m2": 8186.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1486752301",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1486752301_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1486752301_naip.png",
+    "date": "2024-10-01",
+    "source_id": "tx_m_3209655_se_14_060_20241001",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1486752301:sentinel2",
+   "osm_way_1486752301:naip",
+   "osm_way_1486752301:osm",
+   "osm_way_1486752301:sources",
+   "osm_way_1486752301:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "generator:source": "battery",
+     "landuse": "industrial",
+     "plant:source": "battery",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA: no plant within 1.5 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 135.5,
+     "area_m2": 10187.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_548462777",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_548462777_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_548462777_naip.png",
+    "date": "2025-09-14",
+    "source_id": "il_m_4008862_ne_16_060_20250914",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_548462777:sentinel2",
+   "osm_way_548462777:naip",
+   "osm_way_548462777:osm",
+   "osm_way_548462777:sources",
+   "osm_way_548462777:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "addr:city": "Champaign",
+     "addr:housenumber": "3002",
+     "addr:postcode": "61822",
+     "addr:state": "IL",
+     "addr:street": "South Mattis Avenue",
+     "barrier": "fence",
+     "fixme": "internal mapping",
+     "operator": "Ameren",
+     "operator:wikidata": "Q462984",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "138000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 2 line(s) end here (138/69 kV)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 71.4,
+     "area_m2": 4867.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_node_6309491951",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_node_6309491951_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_node_6309491951_naip.png",
+    "date": "2024-05-29",
+    "source_id": "ca_m_3712142_sw_10_060_20240529",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_node_6309491951:sentinel2",
+   "osm_node_6309491951:naip",
+   "osm_node_6309491951:osm",
+   "osm_node_6309491951:sources",
+   "osm_node_6309491951:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Capitol",
+    "tags": {
+     "amenity": "bus_station",
+     "bus": "yes",
+     "light_rail": "yes",
+     "name": "Capitol",
+     "network": "VTA",
+     "operator": "Santa Clara Valley Transportation Authority",
+     "operator:wikidata": "Q1456861",
+     "public_transport": "station",
+     "railway": "station",
+     "station": "light_rail",
+     "wikidata": "Q5035835"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "NARN: nothing within 0.6 km",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_1015714905",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1015714905_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1015714905_naip.png",
+    "date": "2023-05-26",
+    "source_id": "oh_m_4108134_nw_17_030_20230526_20231018",
+    "resolution_m": 0.3,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1015714905:sentinel2",
+   "osm_way_1015714905:naip",
+   "osm_way_1015714905:osm",
+   "osm_way_1015714905:sources",
+   "osm_way_1015714905:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.storage_tank",
+    "name": "",
+    "tags": {
+     "building": "yes",
+     "content": "water",
+     "man_made": "storage_tank"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 31.8,
+     "area_m2": 790.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_75128129",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_75128129_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_75128129_naip.png",
+    "date": "2024-07-27",
+    "source_id": "ca_m_3511850_sw_11_060_20240727",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_75128129:sentinel2",
+   "osm_way_75128129:naip",
+   "osm_way_75128129:osm",
+   "osm_way_75128129:sources",
+   "osm_way_75128129:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.wastewater.plant",
+    "name": "",
+    "tags": {
+     "man_made": "wastewater_plant",
+     "natural": "water",
+     "nhd:fdate": "2010-06-02",
+     "nhd:reach_code": "18030003019490",
+     "source": "NHD",
+     "water": "reservoir"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 55.8,
+     "area_m2": 1005.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1259682526",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1259682526_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1259682526_naip.png",
+    "date": "2022-08-03",
+    "source_id": "ky_m_3708716_sw_16_060_20220803",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1259682526:sentinel2",
+   "osm_way_1259682526:naip",
+   "osm_way_1259682526:osm",
+   "osm_way_1259682526:sources",
+   "osm_way_1259682526:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "operator": "City of Owensboro",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "69000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 3 line(s) end here (69 kV)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 88.9,
+     "area_m2": 6371.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1004052522",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1004052522_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1004052522_naip.png",
+    "date": "2025-05-26",
+    "source_id": "az_m_3411230_NW_12_060_20250526",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1004052522:sentinel2",
+   "osm_way_1004052522:naip",
+   "osm_way_1004052522:osm",
+   "osm_way_1004052522:sources",
+   "osm_way_1004052522:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA: no plant within 1.5 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 117.4,
+     "area_m2": 12625.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1419221212",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1419221212_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1419221212_naip.png",
+    "date": "2022-06-05",
+    "source_id": "tx_m_2609749_sw_14_060_20220605",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1419221212:sentinel2",
+   "osm_way_1419221212:naip",
+   "osm_way_1419221212:osm",
+   "osm_way_1419221212:sources",
+   "osm_way_1419221212:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.wastewater.plant",
+    "name": "",
+    "tags": {
+     "man_made": "wastewater_plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 792.1,
+     "area_m2": 320843.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_234112050",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_234112050_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_234112050_naip.png",
+    "date": "2025-08-06",
+    "source_id": "id_m_4311430_se_11_030_20250806",
+    "resolution_m": 0.3,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_234112050:sentinel2",
+   "osm_way_234112050:naip",
+   "osm_way_234112050:osm",
+   "osm_way_234112050:sources",
+   "osm_way_234112050:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Sun Valley / Friedman Memorial Airport",
+    "tags": {
+     "addr:state": "ID",
+     "aeroway": "aerodrome",
+     "closest_town": "Hailey, Idaho",
+     "ele": "1620",
+     "gnis:feature_id": "400830",
+     "iata": "SUN",
+     "icao": "KSUN",
+     "name": "Sun Valley / Friedman Memorial Airport",
+     "name:en": "Sun Valley / Friedman Memorial Airport",
+     "operator": "Friedman Memorial Airport Authority under a Joint Powers Agreement between Hailey and Blaine County",
+     "operator:type": "public",
+     "source": "wikipedia",
+     "source_ref": "geonames.usgs.gov",
+     "type": "public",
+     "wikidata": "Q3275758",
+     "wikipedia": "en:Friedman Memorial Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: FRIEDMAN MEML (FAA SUN, public, O) 70 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2682.4,
+     "area_m2": 830736.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_421834984",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_421834984_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_421834984_naip.png",
+    "date": "2022-05-09",
+    "source_id": "pa_m_4007943_nw_17_060_20220509",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_421834984:sentinel2",
+   "osm_way_421834984:naip",
+   "osm_way_421834984:osm",
+   "osm_way_421834984:sources",
+   "osm_way_421834984:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.wastewater.plant",
+    "name": "Brush Creek Wastewater Treatment Plant",
+    "tags": {
+     "man_made": "wastewater_plant",
+     "name": "Brush Creek Wastewater Treatment Plant",
+     "operator": "Western Westmoreland Municipal Authority"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 161.3,
+     "area_m2": 15615.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1376753790",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1376753790_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1376753790_naip.png",
+    "date": "2025-08-18",
+    "source_id": "in_m_3708715_se_16_060_20250818",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1376753790:sentinel2",
+   "osm_way_1376753790:naip",
+   "osm_way_1376753790:osm",
+   "osm_way_1376753790:sources",
+   "osm_way_1376753790:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.wastewater.plant",
+    "name": "",
+    "tags": {
+     "man_made": "wastewater_plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 360.5,
+     "area_m2": 62711.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1144951057",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1144951057_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1144951057_naip.png",
+    "date": "2024-09-27",
+    "source_id": "mi_m_4508421_sw_16_060_20240927",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1144951057:sentinel2",
+   "osm_way_1144951057:naip",
+   "osm_way_1144951057:osm",
+   "osm_way_1144951057:sources",
+   "osm_way_1144951057:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Cheboygan",
+    "tags": {
+     "name": "Cheboygan",
+     "operator": "Great Lakes Tissue Co",
+     "plant:output:electricity": "1.5 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "ref:US:EIA": "50461",
+     "source": "U.S. Energy Information Administration - EIA-860 - 2021",
+     "start_date": "1984-11"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: Cheboygan (hydroelectric, 1 MW) 109 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 25.7,
+     "area_m2": 302.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_873137563",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_873137563_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_873137563_naip.png",
+    "date": "2025-06-11",
+    "source_id": "nc_m_3508130_ne_17_030_20250611",
+    "resolution_m": 0.3,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_873137563:sentinel2",
+   "osm_way_873137563:naip",
+   "osm_way_873137563:osm",
+   "osm_way_873137563:sources",
+   "osm_way_873137563:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 313.7,
+     "area_m2": 18938.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_362113392",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_362113392_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_362113392_naip.png",
+    "date": "2023-08-02",
+    "source_id": "ok_m_3509426_nw_15_030_20230802_20240104",
+    "resolution_m": 0.3,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_362113392:sentinel2",
+   "osm_way_362113392:naip",
+   "osm_way_362113392:osm",
+   "osm_way_362113392:sources",
+   "osm_way_362113392:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "frequency": "60",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "69000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 1 line(s) end here (69 kV)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 45.6,
+     "area_m2": 1690.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1058338313",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1058338313_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1058338313_naip.png",
+    "date": "2025-10-02",
+    "source_id": "ga_m_3308241_sw_17_030_20251002",
+    "resolution_m": 0.3,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1058338313:sentinel2",
+   "osm_way_1058338313:naip",
+   "osm_way_1058338313:osm",
+   "osm_way_1058338313:sources",
+   "osm_way_1058338313:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "46000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 3 line(s) end here (3 unknown voltage) | Caution: 2 of these HIFLD lines were traced from OSM, so they don't count as independent",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 27.4,
+     "area_m2": 678.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_231502894",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_231502894_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_231502894_naip.png",
+    "date": "2023-09-20",
+    "source_id": "co_m_3810445_sw_13_030_20230920_20240104",
+    "resolution_m": 0.3,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_231502894:sentinel2",
+   "osm_way_231502894:naip",
+   "osm_way_231502894:osm",
+   "osm_way_231502894:sources",
+   "osm_way_231502894:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Pueblo Memorial Airport",
+    "tags": {
+     "addr:city": "Pueblo",
+     "addr:housenumber": "31201",
+     "addr:postcode": "81001",
+     "addr:state": "CO",
+     "addr:street": "Bryan Circle",
+     "aeroway": "aerodrome",
+     "ele": "1425",
+     "gnis:feature_id": "204561",
+     "iata": "PUB",
+     "icao": "KPUB",
+     "mobile": "+1 719 553-2760",
+     "name": "Pueblo Memorial Airport",
+     "source_ref": "geonames.usgs.gov",
+     "wikidata": "Q7258455",
+     "wikipedia": "en:Pueblo Memorial Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: PUEBLO MEML (FAA PUB, public, O) 197 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 4597.9,
+     "area_m2": 7108599.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1151287099",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1151287099_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_1151287099_naip.png",
+    "date": "2025-10-11",
+    "source_id": "fl_m_3008634_sw_16_030_20251011",
+    "resolution_m": 0.3,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1151287099:sentinel2",
+   "osm_way_1151287099:naip",
+   "osm_way_1151287099:osm",
+   "osm_way_1151287099:sources",
+   "osm_way_1151287099:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "water.treatment.plant",
+    "name": "",
+    "tags": {
+     "man_made": "water_works"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 67.4,
+     "area_m2": 1977.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_597876721",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_597876721_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_597876721_naip.png",
+    "date": "2024-11-06",
+    "source_id": "tx_m_3209603_nw_14_060_20241106",
+    "resolution_m": 0.6,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_597876721:sentinel2",
+   "osm_way_597876721:naip",
+   "osm_way_597876721:osm",
+   "osm_way_597876721:sources",
+   "osm_way_597876721:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Digital Realty Dallas DFW17",
+    "tags": {
+     "addr:city": "Richardson",
+     "addr:housenumber": "900",
+     "addr:postcode": "75081",
+     "addr:state": "TX",
+     "addr:street": "Quality Way",
+     "building": "data_center",
+     "height": "8.2",
+     "name": "Digital Realty Dallas DFW17",
+     "operator": "Digital Realty",
+     "operator:wikidata": "Q5275969",
+     "ref": "DFW17",
+     "telecom": "data_center",
+     "website": "https://www.digitalrealty.com/data-centers/americas/dallas/dfw17"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 123.5,
+     "area_m2": 7789.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_104351355",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_104351355_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   },
+   "naip": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\calib_naip_v1\\images\\osm_way_104351355_naip.png",
+    "date": "2023-10-20",
+    "source_id": "co_m_3910404_se_13_030_20231020_20240104",
+    "resolution_m": 0.3,
+    "tile_covered": 1.0
+   }
+  },
+  "evidence_ids": [
+   "osm_way_104351355:sentinel2",
+   "osm_way_104351355:naip",
+   "osm_way_104351355:osm",
+   "osm_way_104351355:sources",
+   "osm_way_104351355:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.transmission.substation",
+    "name": "Green Valley Switching Station",
+    "tags": {
+     "barrier": "fence",
+     "check_date": "2025-06-12",
+     "fence_type": "chain_link",
+     "location": "outdoor",
+     "name": "Green Valley Switching Station",
+     "note": "Refer to source 1, 2 & 3 on page 3, 1 & 58 map. Substation mapped via Bing Maps Aerial 2021.  https://tristate.coop/sites/default/files/PDF/TransmissionPlanningDocs/2024/Appendix%20F%20-%20Public%20Service%20Projects.pdf",
+     "operator": "Public Service Company of Colorado",
+     "operator:wikidata": "Q130224325",
+     "power": "substation",
+     "source": "https://doc.westconnect.com/Documents.aspx?NID=21435;https://tristate.coop/sites/tristategt/files/PDF/2020%20COPUC%20Rule%203627%20Filing/20M-0008E_Appendix%20B_Denver%20Metro%20Transmission%20Map_FINAL.pdf;Bing Maps Aerial 6/8 to 6/11/2021",
+     "substation": "transmission",
+     "voltage": "230000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 8 line(s) end here (230 kV) | HIFLD line ends named: RMEC, GREEN VALLEY, KEENESBURG, FORT LUPTON (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 172.1,
+     "area_m2": 23440.3
+    },
+    "available": true
+   }
+  }
+ }
+]

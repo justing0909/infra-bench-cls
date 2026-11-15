@@ -1,0 +1,3849 @@
+[
+ {
+  "id": "osm_way_38305568",
+  "osm_label": "telecom.data_center",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_38305568",
+   "action": "confirm",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_38305568:naip",
+    "osm_way_38305568:sentinel2",
+    "osm_way_38305568:osm",
+    "osm_way_38305568:footprint"
+   ],
+   "reason": "Centre is a ~110 m plain building with rows of rooftop cooling units and equipment boxes along its side in a Santa Clara industrial park; OSM names it a Csquare data centre."
+  },
+  "reviewer": {
+   "id": "osm_way_38305568",
+   "action": "classify",
+   "label": "telecom.data_center",
+   "confidence": 0.3,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_38305568:naip",
+    "osm_way_38305568:sentinel2"
+   ],
+   "reason": "Low flat-roof building with rooftop equipment in a corporate campus; unclear."
+  }
+ },
+ {
+  "id": "osm_way_1466878845",
+  "osm_label": "water.wastewater.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1466878845",
+   "action": "confirm",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1466878845:naip",
+    "osm_way_1466878845:sentinel2",
+    "osm_way_1466878845:osm",
+    "osm_way_1466878845:footprint"
+   ],
+   "reason": "Clearing in woods beside a subdivision holds a small rectangular bermed cell that is bright green in Sentinel-2 (duckweed-covered lagoon) next to a mown field, consistent with a small subdivision lagoon plant; no tanks or clarifiers visible, so uncertain."
+  },
+  "reviewer": {
+   "id": "osm_way_1466878845",
+   "action": "classify",
+   "label": "not_infrastructure",
+   "confidence": 0.4,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1466878845:naip",
+    "osm_way_1466878845:sentinel2"
+   ],
+   "reason": "Small green clearing in woods between houses; no clear facility."
+  }
+ },
+ {
+  "id": "osm_way_1472889938",
+  "osm_label": "water.wastewater.plant",
+  "action": "confirm",
+  "label": "water.wastewater.plant",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_1472889938",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1472889938:naip",
+    "osm_way_1472889938:sentinel2",
+    "osm_way_1472889938:osm"
+   ],
+   "reason": "Small treatment works with an oxidation ditch, a round clarifier, a green lagoon and control building at the centre."
+  },
+  "reviewer": {
+   "id": "osm_way_1472889938",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1472889938:naip",
+    "osm_way_1472889938:sentinel2"
+   ],
+   "reason": "Green lagoon, oxidation ditch and clarifier at small plant."
+  }
+ },
+ {
+  "id": "osm_way_606138003",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_606138003",
+   "action": "confirm",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_606138003:naip",
+    "osm_way_606138003:osm",
+    "osm_way_606138003:sources",
+    "osm_way_606138003:footprint"
+   ],
+   "reason": "Tiny (~680 m2) fenced gravel yard with a few transformers on a hillside; tagged 12/4 kV and no HIFLD line ends here, so a small distribution substation."
+  },
+  "reviewer": {
+   "id": "osm_way_606138003",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_606138003:naip",
+    "osm_way_606138003:sentinel2"
+   ],
+   "reason": "Small fenced yard with a few transformers at the edge of town."
+  }
+ },
+ {
+  "id": "osm_way_382765262",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_382765262",
+   "action": "confirm",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_382765262:naip",
+    "osm_way_382765262:sentinel2",
+    "osm_way_382765262:osm",
+    "osm_way_382765262:sources",
+    "osm_way_382765262:footprint"
+   ],
+   "reason": "Compact fenced yard (~45 x 97 m) in a residential area with a couple of transformers and a 100 kV line corridor from the west; looks like a 100 kV retail station looping a double-circuit line. HIFLD shows 4 line ends (2 of unknown voltage), so transmission is possible."
+  },
+  "reviewer": {
+   "id": "osm_way_382765262",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.6,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_382765262:naip",
+    "osm_way_382765262:sentinel2"
+   ],
+   "reason": "Compact fenced yard in suburb with few transformers and lines."
+  }
+ },
+ {
+  "id": "osm_way_1156795669",
+  "osm_label": "energy.transmission.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1156795669",
+   "action": "confirm",
+   "confidence": 0.7,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1156795669:naip",
+    "osm_way_1156795669:sentinel2",
+    "osm_way_1156795669:osm",
+    "osm_way_1156795669:sources",
+    "osm_way_1156795669:footprint"
+   ],
+   "reason": "Large gravel yard (~1.1 ha) with several transformers and many bays beside the railway; HIFLD has 5 lines ending here at 115 kV, so a transmission node."
+  },
+  "reviewer": {
+   "id": "osm_way_1156795669",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1156795669:naip",
+    "osm_way_1156795669:sentinel2"
+   ],
+   "reason": "Mid-size fenced yard with transformers beside rail line."
+  }
+ },
+ {
+  "id": "osm_way_830881733",
+  "osm_label": "telecom.data_center",
+  "action": "confirm",
+  "label": "telecom.data_center",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_830881733",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_830881733:naip",
+    "osm_way_830881733:sentinel2",
+    "osm_way_830881733:osm"
+   ],
+   "reason": "Campus of large windowless halls with rows of rooftop/yard cooling and generator units and its own substation; Microsoft data centre."
+  },
+  "reviewer": {
+   "id": "osm_way_830881733",
+   "action": "classify",
+   "label": "telecom.data_center",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_830881733:naip",
+    "osm_way_830881733:sentinel2"
+   ],
+   "reason": "Large windowless halls with rooftop cooling, generators and own substation."
+  }
+ },
+ {
+  "id": "osm_way_223605748",
+  "osm_label": "water.storage_tank",
+  "action": "confirm",
+  "label": "water.storage_tank",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_223605748",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_223605748:naip",
+    "osm_way_223605748:sentinel2",
+    "osm_way_223605748:osm",
+    "osm_way_223605748:footprint"
+   ],
+   "reason": "Round ~45 m ground storage tank with a green roof at the centre, next to a covered reservoir; operated by the municipal water authority."
+  },
+  "reviewer": {
+   "id": "osm_way_223605748",
+   "action": "classify",
+   "label": "water.storage_tank",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_223605748:naip",
+    "osm_way_223605748:sentinel2"
+   ],
+   "reason": "Round ground reservoir tank and covered reservoir on hillside."
+  }
+ },
+ {
+  "id": "osm_way_171410587",
+  "osm_label": "energy.transmission.substation",
+  "action": "confirm",
+  "label": "energy.transmission.substation",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_171410587",
+   "action": "confirm",
+   "confidence": 0.97,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_171410587:naip",
+    "osm_way_171410587:sentinel2",
+    "osm_way_171410587:osm",
+    "osm_way_171410587:sources"
+   ],
+   "reason": "Very large 345/138 kV yard with many bays, lattice towers and numerous lines leaving."
+  },
+  "reviewer": {
+   "id": "osm_way_171410587",
+   "action": "classify",
+   "label": "energy.transmission.substation",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_171410587:naip",
+    "osm_way_171410587:sentinel2"
+   ],
+   "reason": "Large multi-bay yard with many lattice lines converging."
+  }
+ },
+ {
+  "id": "osm_way_1071756814",
+  "osm_label": "energy.distribution.other",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1071756814",
+   "action": "relabel",
+   "label": "energy.distribution.substation",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1071756814:naip",
+    "osm_way_1071756814:osm",
+    "osm_way_1071756814:sources",
+    "osm_way_1071756814:footprint"
+   ],
+   "reason": "Small (~1000 m2) urban PREPA yard with a few pieces of equipment beside the highway and no transmission line within 300 m, so most likely a 38/13.2 kV distribution substation rather than an untyped one; equipment hard to resolve."
+  },
+  "reviewer": {
+   "id": "osm_way_1071756814",
+   "action": "classify",
+   "label": "energy.distribution.other",
+   "confidence": 0.25,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1071756814:naip",
+    "osm_way_1071756814:sentinel2"
+   ],
+   "reason": "Dense urban block by highway; small utility building possible, unclear."
+  }
+ },
+ {
+  "id": "osm_way_156954114",
+  "osm_label": "water.wastewater.plant",
+  "action": "confirm",
+  "label": "water.wastewater.plant",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_156954114",
+   "action": "confirm",
+   "confidence": 0.98,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_156954114:naip",
+    "osm_way_156954114:sentinel2",
+    "osm_way_156954114:osm"
+   ],
+   "reason": "Large sewage works with round clarifiers, long aeration tanks and digesters on the river."
+  },
+  "reviewer": {
+   "id": "osm_way_156954114",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.97,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_156954114:naip",
+    "osm_way_156954114:sentinel2"
+   ],
+   "reason": "Many round clarifiers, aeration tanks, digesters on riverside."
+  }
+ },
+ {
+  "id": "osm_way_858035513",
+  "osm_label": "energy.generation.power_plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_858035513",
+   "action": "confirm",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_858035513:naip",
+    "osm_way_858035513:sentinel2",
+    "osm_way_858035513:osm",
+    "osm_way_858035513:sources"
+   ],
+   "reason": "Waste-to-energy combustion plant: tipping hall, boiler house and stack with ash/fuel yards; EIA matches McKay Bay (biomass/waste, 18-22 MW)."
+  },
+  "reviewer": {
+   "id": "osm_way_858035513",
+   "action": "classify",
+   "label": "energy.generation.power_plant",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_858035513:naip",
+    "osm_way_858035513:sentinel2"
+   ],
+   "reason": "Industrial plant with boiler hall, stack and fuel yard (likely waste-to-energy)."
+  }
+ },
+ {
+  "id": "osm_way_1160584569",
+  "osm_label": "energy.generation.solar_farm",
+  "action": "confirm",
+  "label": "energy.generation.solar_farm",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_1160584569",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1160584569:naip",
+    "osm_way_1160584569:sentinel2",
+    "osm_way_1160584569:osm"
+   ],
+   "reason": "Fenced block of ground-mounted PV rows at the centre, with another array to the south."
+  },
+  "reviewer": {
+   "id": "osm_way_1160584569",
+   "action": "classify",
+   "label": "energy.generation.solar_farm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1160584569:naip",
+    "osm_way_1160584569:sentinel2"
+   ],
+   "reason": "Rows of panels at centre."
+  }
+ },
+ {
+  "id": "osm_way_1202988262",
+  "osm_label": "water.storage_tank",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1202988262",
+   "action": "confirm",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1202988262:naip",
+    "osm_way_1202988262:osm",
+    "osm_way_1202988262:footprint"
+   ],
+   "reason": "Two small round tanks on a hilltop pad above rural homes at the centre; a small water tank."
+  },
+  "reviewer": {
+   "id": "osm_way_1202988262",
+   "action": "classify",
+   "label": "water.storage_tank",
+   "confidence": 0.7,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1202988262:naip",
+    "osm_way_1202988262:sentinel2"
+   ],
+   "reason": "Small round tanks beside a track on hillside."
+  }
+ },
+ {
+  "id": "osm_way_1089779497",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1089779497",
+   "action": "relabel",
+   "label": "energy.transmission.substation",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1089779497:naip",
+    "osm_way_1089779497:sentinel2",
+    "osm_way_1089779497:osm",
+    "osm_way_1089779497:sources",
+    "osm_way_1089779497:footprint"
+   ],
+   "reason": "Small rural gravel yard (~1700 m2), but HIFLD has three 69 kV lines ending here (one named for the station), which makes it a subtransmission junction under the 3+ lines rule; imagery alone would suggest a distribution station."
+  },
+  "reviewer": {
+   "id": "osm_way_1089779497",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.65,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1089779497:naip",
+    "osm_way_1089779497:sentinel2"
+   ],
+   "reason": "Small fenced gravel yard with one transformer bank on a road."
+  }
+ },
+ {
+  "id": "osm_way_226754718",
+  "osm_label": "transport.airport",
+  "action": "confirm",
+  "label": "transport.airport",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_226754718",
+   "action": "confirm",
+   "confidence": 0.98,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_226754718:naip",
+    "osm_way_226754718:sentinel2",
+    "osm_way_226754718:osm",
+    "osm_way_226754718:sources"
+   ],
+   "reason": "Paved runway, taxiway and apron at the centre; FAA record matches Yellowstone Airport."
+  },
+  "reviewer": {
+   "id": "osm_way_226754718",
+   "action": "classify",
+   "label": "transport.airport",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_226754718:naip",
+    "osm_way_226754718:sentinel2"
+   ],
+   "reason": "Runway, taxiway and apron."
+  }
+ },
+ {
+  "id": "osm_way_1150848346",
+  "osm_label": "energy.transmission.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1150848346",
+   "action": "confirm",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1150848346:naip",
+    "osm_way_1150848346:sentinel2",
+    "osm_way_1150848346:osm",
+    "osm_way_1150848346:sources"
+   ],
+   "reason": "Fenced TVA yard with transformers and several line corridors, adjoining smaller yards; tagged 161/69 kV with 6 HIFLD line ends, so it feeds subtransmission."
+  },
+  "reviewer": {
+   "id": "osm_way_1150848346",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.6,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1150848346:naip",
+    "osm_way_1150848346:sentinel2"
+   ],
+   "reason": "Compact fenced yard with transformers; second small yard nearby."
+  }
+ },
+ {
+  "id": "osm_way_237171648",
+  "osm_label": "water.storage_tank",
+  "action": "confirm",
+  "label": "water.storage_tank",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_237171648",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_237171648:naip",
+    "osm_way_237171648:sentinel2",
+    "osm_way_237171648:osm"
+   ],
+   "reason": "Round white water storage tank at the centre of the residential block."
+  },
+  "reviewer": {
+   "id": "osm_way_237171648",
+   "action": "classify",
+   "label": "water.storage_tank",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_237171648:naip",
+    "osm_way_237171648:sentinel2"
+   ],
+   "reason": "Elevated water tower in town."
+  }
+ },
+ {
+  "id": "osm_way_589947376",
+  "osm_label": "water.wastewater.plant",
+  "action": "confirm",
+  "label": "water.wastewater.plant",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_589947376",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_589947376:naip",
+    "osm_way_589947376:sentinel2",
+    "osm_way_589947376:osm",
+    "osm_way_589947376:footprint"
+   ],
+   "reason": "Treatment works with aeration tanks, round clarifiers, digesters and older tanks; the polygon covers the whole plant."
+  },
+  "reviewer": {
+   "id": "osm_way_589947376",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_589947376:naip",
+    "osm_way_589947376:sentinel2"
+   ],
+   "reason": "Clarifiers, aeration tanks, digester, settling basins."
+  }
+ },
+ {
+  "id": "osm_way_984953813",
+  "osm_label": "telecom.data_center",
+  "action": "confirm",
+  "label": "telecom.data_center",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_984953813",
+   "action": "confirm",
+   "confidence": 0.92,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_984953813:naip",
+    "osm_way_984953813:sentinel2",
+    "osm_way_984953813:osm"
+   ],
+   "reason": "Large windowless hall with a long row of cooling/generator units along one side, beside a sister building; tagged AWS IAD-174."
+  },
+  "reviewer": {
+   "id": "osm_way_984953813",
+   "action": "classify",
+   "label": "telecom.data_center",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_984953813:naip",
+    "osm_way_984953813:sentinel2"
+   ],
+   "reason": "Huge windowless white-roof buildings with rooftop cooling."
+  }
+ },
+ {
+  "id": "osm_way_164475618",
+  "osm_label": "energy.generation.power_plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_164475618",
+   "action": "confirm",
+   "confidence": 0.97,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_164475618:naip",
+    "osm_way_164475618:sentinel2",
+    "osm_way_164475618:osm",
+    "osm_way_164475618:sources"
+   ],
+   "reason": "Combined-cycle gas plant: rows of gas turbines with HRSGs and cooling-fan banks beside its switchyard; EIA matches Union Power Station."
+  },
+  "reviewer": {
+   "id": "osm_way_164475618",
+   "action": "classify",
+   "label": "energy.generation.power_plant",
+   "confidence": 0.7,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_164475618:naip",
+    "osm_way_164475618:sentinel2"
+   ],
+   "reason": "Rows of gas turbine units with cooling banks beside a switchyard."
+  }
+ },
+ {
+  "id": "osm_node_356852556",
+  "osm_label": "water.storage_tank",
+  "action": "confirm",
+  "label": "water.storage_tank",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_node_356852556",
+   "action": "confirm",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_356852556:naip",
+    "osm_node_356852556:sentinel2",
+    "osm_node_356852556:osm"
+   ],
+   "reason": "Elevated water tower with a long shadow beside the road at the centre; operated by a water supply company."
+  },
+  "reviewer": {
+   "id": "osm_node_356852556",
+   "action": "classify",
+   "label": "water.storage_tank",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_356852556:naip",
+    "osm_node_356852556:sentinel2"
+   ],
+   "reason": "White standpipe/tank beside road in rural area."
+  }
+ },
+ {
+  "id": "osm_way_182041776",
+  "osm_label": "energy.transmission.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_182041776",
+   "action": "confirm",
+   "confidence": 0.88,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_182041776:naip",
+    "osm_way_182041776:sentinel2",
+    "osm_way_182041776:osm",
+    "osm_way_182041776:sources",
+    "osm_way_182041776:footprint"
+   ],
+   "reason": "Centre is the plant's large separately mapped switchyard (many bays, lattice structures), not the power blocks to the west; it connects at 500/230 kV with 7 HIFLD lines, so transmission per the switchyard rule."
+  },
+  "reviewer": {
+   "id": "osm_way_182041776",
+   "action": "classify",
+   "label": "energy.transmission.substation",
+   "confidence": 0.8,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_182041776:naip",
+    "osm_way_182041776:sentinel2"
+   ],
+   "reason": "Very large switchyard with many bays next to a gas plant."
+  }
+ },
+ {
+  "id": "osm_way_275282973",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_275282973",
+   "action": "relabel",
+   "label": "energy.transmission.substation",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_275282973:naip",
+    "osm_way_275282973:osm",
+    "osm_way_275282973:sources",
+    "osm_way_275282973:footprint"
+   ],
+   "reason": "Indoor substation in a large building; tagged 345/138/13.2 kV, and being fed at 345 kV makes it transmission even though tagged distribution. Cables are underground, so HIFLD shows no line ends; equipment not visible from above."
+  },
+  "reviewer": {
+   "id": "osm_way_275282973",
+   "action": "classify",
+   "label": "energy.distribution.other",
+   "confidence": 0.25,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_275282973:naip",
+    "osm_way_275282973:sentinel2"
+   ],
+   "reason": "Dense urban area by highway and rail; possible utility building, unclear."
+  }
+ },
+ {
+  "id": "osm_way_991637805",
+  "osm_label": "energy.generation.solar_farm",
+  "action": "confirm",
+  "label": "energy.generation.solar_farm",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_991637805",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_991637805:naip",
+    "osm_way_991637805:sentinel2",
+    "osm_way_991637805:osm",
+    "osm_way_991637805:sources"
+   ],
+   "reason": "Two blocks of ground-mounted PV rows at the centre with further arrays to the south; EIA matches Rockford solar."
+  },
+  "reviewer": {
+   "id": "osm_way_991637805",
+   "action": "classify",
+   "label": "energy.generation.solar_farm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_991637805:naip",
+    "osm_way_991637805:sentinel2"
+   ],
+   "reason": "Rows of panels across the centre."
+  }
+ },
+ {
+  "id": "osm_way_1475136427",
+  "osm_label": "energy.generation.solar_farm",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1475136427",
+   "action": "confirm",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1475136427:naip",
+    "osm_way_1475136427:sentinel2",
+    "osm_way_1475136427:osm"
+   ],
+   "reason": "Both NAIP (2023) and Sentinel-2 (2024) show only an empty grass field; OSM gives start date 2025-09, an EIA id and a fence, so the array was built after the imagery and keeps the solar class."
+  },
+  "reviewer": {
+   "id": "osm_way_1475136427",
+   "action": "classify",
+   "label": "not_infrastructure",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1475136427:naip",
+    "osm_way_1475136427:sentinel2"
+   ],
+   "reason": "Open meadow at the centre, no visible facility."
+  }
+ },
+ {
+  "id": "osm_way_164632294",
+  "osm_label": "energy.transmission.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_164632294",
+   "action": "confirm",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_164632294:naip",
+    "osm_way_164632294:sentinel2",
+    "osm_way_164632294:osm",
+    "osm_way_164632294:sources"
+   ],
+   "reason": "Gravel yard with transformers and steel structures between the railway and the river; ITC 161/115 kV with 4 HIFLD line ends."
+  },
+  "reviewer": {
+   "id": "osm_way_164632294",
+   "action": "classify",
+   "label": "energy.transmission.substation",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_164632294:naip",
+    "osm_way_164632294:sentinel2"
+   ],
+   "reason": "Mid-size yard on a spit among rail lines next to an industrial plant."
+  }
+ },
+ {
+  "id": "osm_way_147936725",
+  "osm_label": "water.wastewater.plant",
+  "action": "confirm",
+  "label": "water.wastewater.plant",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_147936725",
+   "action": "confirm",
+   "confidence": 0.97,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_147936725:naip",
+    "osm_way_147936725:sentinel2",
+    "osm_way_147936725:osm",
+    "osm_way_147936725:footprint"
+   ],
+   "reason": "Very large treatment works: banks of aeration basins, round clarifiers and storage basins within a 1.4 km2 site."
+  },
+  "reviewer": {
+   "id": "osm_way_147936725",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_147936725:naip",
+    "osm_way_147936725:sentinel2"
+   ],
+   "reason": "Large plant with bioreactor basins and round clarifiers."
+  }
+ },
+ {
+  "id": "osm_way_86141865",
+  "osm_label": "energy.transmission.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_86141865",
+   "action": "confirm",
+   "confidence": 0.7,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_86141865:naip",
+    "osm_way_86141865:sentinel2",
+    "osm_way_86141865:osm",
+    "osm_way_86141865:sources"
+   ],
+   "reason": "Narrow yard with steel structures and transformers behind a big-box store; HIFLD has 3 lines ending here including 115 kV, so a transmission node."
+  },
+  "reviewer": {
+   "id": "osm_way_86141865",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.35,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_86141865:naip",
+    "osm_way_86141865:sentinel2"
+   ],
+   "reason": "Small equipment yard beside a big-box store in dense housing."
+  }
+ },
+ {
+  "id": "osm_node_6394823103",
+  "osm_label": "water.storage_tank",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_node_6394823103",
+   "action": "confirm",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_6394823103:naip",
+    "osm_node_6394823103:osm"
+   ],
+   "reason": "Small round white tank (~8 m) beside a track near the centre in a rural village, matching a 38,000 gal community drinking-water tank."
+  },
+  "reviewer": {
+   "id": "osm_node_6394823103",
+   "action": "classify",
+   "label": "water.storage_tank",
+   "confidence": 0.3,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_6394823103:naip",
+    "osm_node_6394823103:sentinel2"
+   ],
+   "reason": "Small tank-like object near centre in a sparse rural settlement; unclear."
+  }
+ },
+ {
+  "id": "osm_way_833168315",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_833168315",
+   "action": "confirm",
+   "confidence": 0.8,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_833168315:naip",
+    "osm_way_833168315:sentinel2",
+    "osm_way_833168315:osm",
+    "osm_way_833168315:sources",
+    "osm_way_833168315:footprint"
+   ],
+   "reason": "Compact fenced yard in town fed by a single 161 kV line (radial spur) with distribution feeders; an electric co-op distribution substation."
+  },
+  "reviewer": {
+   "id": "osm_way_833168315",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.7,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_833168315:naip",
+    "osm_way_833168315:sentinel2"
+   ],
+   "reason": "Compact fenced yard with transformers in a small town."
+  }
+ },
+ {
+  "id": "osm_way_29231740",
+  "osm_label": "water.wastewater.plant",
+  "action": "confirm",
+  "label": "water.wastewater.plant",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_29231740",
+   "action": "confirm",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_29231740:naip",
+    "osm_way_29231740:sentinel2",
+    "osm_way_29231740:osm"
+   ],
+   "reason": "Fenced works beside fields with three round clarifiers with arms, rectangular basins and a green filter/aeration channel: a sewage treatment plant, as tagged."
+  },
+  "reviewer": {
+   "id": "osm_way_29231740",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_29231740:naip"
+   ],
+   "reason": "Round clarifiers and rectangular tanks in fenced works at centre."
+  }
+ },
+ {
+  "id": "osm_way_699108818",
+  "osm_label": "transport.train_station",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_699108818",
+   "action": "confirm",
+   "confidence": 0.92,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_699108818:naip",
+    "osm_way_699108818:osm",
+    "osm_way_699108818:sources"
+   ],
+   "reason": "Two-track rail line through a town centre with platforms and commuter parking at the centre; NJ Transit Allendale station, matched by the NARN station node 6 m away."
+  },
+  "reviewer": {
+   "id": "osm_way_699108818",
+   "action": "classify",
+   "label": "transport.train_station",
+   "confidence": 0.4,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_699108818:naip"
+   ],
+   "reason": "Rail line through town centre with long building and parking beside the tracks."
+  }
+ },
+ {
+  "id": "osm_way_191655977",
+  "osm_label": "telecom.data_center",
+  "action": "confirm",
+  "label": "telecom.data_center",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_191655977",
+   "action": "confirm",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_191655977:naip",
+    "osm_way_191655977:sentinel2",
+    "osm_way_191655977:osm",
+    "osm_way_191655977:footprint"
+   ],
+   "reason": "Large plain windowless hall with long rows of yard cooling units/generators on both sides and its own dedicated substation to the north-west: a data centre."
+  },
+  "reviewer": {
+   "id": "osm_way_191655977",
+   "action": "classify",
+   "label": "telecom.data_center",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_191655977:naip"
+   ],
+   "reason": "Large windowless building with rooftop and yard cooling, generator rows, adjacent substation."
+  }
+ },
+ {
+  "id": "osm_way_501857707",
+  "osm_label": "energy.distribution.other",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_501857707",
+   "action": "relabel",
+   "label": "energy.distribution.substation",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_501857707:naip",
+    "osm_way_501857707:osm",
+    "osm_way_501857707:sources",
+    "osm_way_501857707:footprint"
+   ],
+   "reason": "Small chain-link fenced gravel yard (~27 m) with equipment in a clearing off a road near an airfield; tagged 69 kV minor_distribution, which as a real fenced yard reads as a small distribution substation. No HIFLD line nearby and equipment is too small to type firmly."
+  },
+  "reviewer": {
+   "id": "osm_way_501857707",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_501857707:naip"
+   ],
+   "reason": "Small fenced equipment yard in a field with a spur road."
+  }
+ },
+ {
+  "id": "osm_way_1140724812",
+  "osm_label": "water.treatment.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1140724812",
+   "action": "relabel",
+   "label": "water.storage_tank",
+   "confidence": 0.6,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1140724812:naip",
+    "osm_way_1140724812:osm",
+    "osm_way_1140724812:footprint"
+   ],
+   "reason": "Tagged water_works, but the lot at the centre holds only a spherical elevated water tower, a small shed and a radio mast in a residential area; no settling basins, filters or treatment building. The real asset is the water tank."
+  },
+  "reviewer": {
+   "id": "osm_way_1140724812",
+   "action": "classify",
+   "label": "water.storage_tank",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1140724812:naip"
+   ],
+   "reason": "White elevated water tower in a lot in a residential area."
+  }
+ },
+ {
+  "id": "osm_way_1157943981",
+  "osm_label": "energy.generation.solar_farm",
+  "action": "confirm",
+  "label": "energy.generation.solar_farm",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_1157943981",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1157943981:naip",
+    "osm_way_1157943981:sentinel2",
+    "osm_way_1157943981:sources"
+   ],
+   "reason": "Rows of ground-mounted PV panels fill the tile; the cautioned Blythe gas plant is about 1 km away and not in view at the centre."
+  },
+  "reviewer": {
+   "id": "osm_way_1157943981",
+   "action": "classify",
+   "label": "energy.generation.solar_farm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1157943981:naip"
+   ],
+   "reason": "Large rows of ground-mounted panels."
+  }
+ },
+ {
+  "id": "osm_way_542055644",
+  "osm_label": "energy.generation.solar_farm",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_542055644",
+   "action": "confirm",
+   "confidence": 0.8,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_542055644:naip",
+    "osm_way_542055644:osm",
+    "osm_way_542055644:sources"
+   ],
+   "reason": "Fenced ground-mounted PV array beside the Pfizer pharmaceutical plant; matches EIA Pfizer Vega Baja solar (3 MW). Small but a dedicated ground array."
+  },
+  "reviewer": {
+   "id": "osm_way_542055644",
+   "action": "classify",
+   "label": "energy.generation.solar_farm",
+   "confidence": 0.4,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_542055644:naip"
+   ],
+   "reason": "Panel array (carport-style) beside an industrial plant; centre is at the plant edge."
+  }
+ },
+ {
+  "id": "osm_way_1007173904",
+  "osm_label": "energy.distribution.other",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1007173904",
+   "action": "relabel",
+   "label": "energy.distribution.substation",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1007173904:naip",
+    "osm_way_1007173904:osm",
+    "osm_way_1007173904:sources",
+    "osm_way_1007173904:footprint"
+   ],
+   "reason": "Compact fenced gravel yard with equipment on a village edge; Port Austin Substation (DTE) tagged distribution at 40/4.8 kV, i.e. it feeds 4.8 kV distribution, and no transmission line nearby. Type is determinable, so distribution substation rather than other."
+  },
+  "reviewer": {
+   "id": "osm_way_1007173904",
+   "action": "classify",
+   "label": "energy.distribution.other",
+   "confidence": 0.25,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1007173904:naip"
+   ],
+   "reason": "Small gravel pad with equipment and sheds south of a road; unclear."
+  }
+ },
+ {
+  "id": "osm_way_172359352",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_172359352",
+   "action": "confirm",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_172359352:naip",
+    "osm_way_172359352:osm",
+    "osm_way_172359352:sources",
+    "osm_way_172359352:footprint"
+   ],
+   "reason": "Large graded pad with only a small cluster of equipment, tapped off a lattice-tower corridor passing just north. HIFLD 345/69 kV line ends are OSM-traced and conflict with the 138 kV tag; the sparse yard looks like a 138 kV distribution substation. Low confidence: if a 345 kV line truly terminates here it would be transmission."
+  },
+  "reviewer": {
+   "id": "osm_way_172359352",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.4,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_172359352:naip"
+   ],
+   "reason": "Gravel yard with few visible transformers; power lines pass to the north."
+  }
+ },
+ {
+  "id": "osm_way_818970459",
+  "osm_label": "energy.generation.power_plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_818970459",
+   "action": "relabel",
+   "label": "water.storage_tank",
+   "confidence": 0.6,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_818970459:naip",
+    "osm_way_818970459:osm",
+    "osm_way_818970459:sources",
+    "osm_way_818970459:footprint"
+   ],
+   "reason": "Tagged power plant with no name and no EIA plant within 1.5 km; the small compound in a subdivision holds two large cone-roofed ground storage tanks and pump equipment, typical of a district water plant, not a power station."
+  },
+  "reviewer": {
+   "id": "osm_way_818970459",
+   "action": "classify",
+   "label": "water.storage_tank",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_818970459:naip"
+   ],
+   "reason": "Two white ground tanks in a small fenced yard in a subdivision."
+  }
+ },
+ {
+  "id": "osm_way_1014503821",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1014503821",
+   "action": "relabel",
+   "label": "energy.transmission.substation",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1014503821:naip",
+    "osm_way_1014503821:osm",
+    "osm_way_1014503821:sources",
+    "osm_way_1014503821:footprint"
+   ],
+   "reason": "Compact fenced yard on a rural road with lines leaving in several directions; HIFLD has three 69 kV lines ending here (two OSM-traced), so it appears to be a 69 kV subtransmission junction, which counts as transmission. Yard is small, so it could be a distribution sub with a loop-through."
+  },
+  "reviewer": {
+   "id": "osm_way_1014503821",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1014503821:naip"
+   ],
+   "reason": "Compact fenced yard with a few transformers beside a road."
+  }
+ },
+ {
+  "id": "osm_way_1098155107",
+  "osm_label": "water.wastewater.plant",
+  "action": "confirm",
+  "label": "water.wastewater.plant",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_1098155107",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1098155107:naip",
+    "osm_way_1098155107:sentinel2",
+    "osm_way_1098155107:osm"
+   ],
+   "reason": "Four round clarifiers with arms, rectangular basins, a large holding pond and drying beds: a wastewater treatment works."
+  },
+  "reviewer": {
+   "id": "osm_way_1098155107",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1098155107:naip"
+   ],
+   "reason": "Round clarifiers, aeration basins and a lagoon."
+  }
+ },
+ {
+  "id": "osm_way_889783878",
+  "osm_label": "water.storage_tank",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_889783878",
+   "action": "confirm",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_889783878:naip",
+    "osm_way_889783878:osm",
+    "osm_way_889783878:footprint"
+   ],
+   "reason": "Small round structure (~9 m) beside a dirt track in juniper scrub, consistent with a ranch water tank; tagged content=water. Small object, so moderate confidence."
+  },
+  "reviewer": {
+   "id": "osm_way_889783878",
+   "action": "classify",
+   "label": "not_infrastructure",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_889783878:naip"
+   ],
+   "reason": "Only a tiny structure on a track in open scrub."
+  }
+ },
+ {
+  "id": "osm_way_45776988",
+  "osm_label": "telecom.data_center",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_45776988",
+   "action": "confirm",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_45776988:naip",
+    "osm_way_45776988:osm"
+   ],
+   "reason": "Long windowless building at the centre with a continuous row of generator/cooling units along one side and rooftop plant; named Amazon IAD-7 data centre."
+  },
+  "reviewer": {
+   "id": "osm_way_45776988",
+   "action": "classify",
+   "label": "not_infrastructure",
+   "confidence": 0.4,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_45776988:naip"
+   ],
+   "reason": "Warehouses with loading docks; no data centre cooling or generators evident."
+  }
+ },
+ {
+  "id": "osm_way_336976538",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_336976538",
+   "action": "confirm",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_336976538:naip",
+    "osm_way_336976538:osm",
+    "osm_way_336976538:sources"
+   ],
+   "reason": "Fenced substation yard on a rural edge with two 138 kV line ends (loop-through) and 13.8/12.5 kV distribution output; the adjacent battery containers are the separate Prospect Storage site, not this asset."
+  },
+  "reviewer": {
+   "id": "osm_way_336976538",
+   "action": "classify",
+   "label": "energy.transmission.substation",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_336976538:naip"
+   ],
+   "reason": "Large yard with many bays and lines entering, plus a fenced unit pad next to it."
+  }
+ },
+ {
+  "id": "osm_way_519686395",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_519686395",
+   "action": "confirm",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_519686395:naip",
+    "osm_way_519686395:osm",
+    "osm_way_519686395:sources",
+    "osm_way_519686395:footprint"
+   ],
+   "reason": "Very small gravel pad with a single equipment rack by a rural road, tapped from a 69 kV line passing nearby and feeding a pole line east: a small AEP distribution substation. Tiny footprint keeps confidence moderate."
+  },
+  "reviewer": {
+   "id": "osm_way_519686395",
+   "action": "classify",
+   "label": "not_infrastructure",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_519686395:naip"
+   ],
+   "reason": "Small gravel well pad beside a road in pasture."
+  }
+ },
+ {
+  "id": "osm_way_1454570265",
+  "osm_label": "energy.distribution.other",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1454570265",
+   "action": "relabel",
+   "label": "energy.transmission.substation",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1454570265:naip",
+    "osm_way_1454570265:osm",
+    "osm_way_1454570265:footprint"
+   ],
+   "reason": "Large new graded yard (~110 m) with bays of compensation equipment and H-frame lines approaching from several sides; a 138 kV reactive compensation station serves the transmission network, so its type is determinable. HIFLD lacks the lines, likely because the site is new."
+  },
+  "reviewer": {
+   "id": "osm_way_1454570265",
+   "action": "classify",
+   "label": "energy.transmission.substation",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1454570265:naip"
+   ],
+   "reason": "Large graded yard with several transformers and multiple lines entering."
+  }
+ },
+ {
+  "id": "osm_way_581419027",
+  "osm_label": "energy.distribution.other",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_581419027",
+   "action": "confirm",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_581419027:naip",
+    "osm_way_581419027:osm",
+    "osm_way_581419027:sources",
+    "osm_way_581419027:footprint"
+   ],
+   "reason": "Small pad at the end of a cleared line corridor south of a substation; tagged a 115 kV overhead-underground transition with riser line ends in HIFLD. A cable riser is neither a transforming distribution nor a full transmission substation, so distribution.other fits best."
+  },
+  "reviewer": {
+   "id": "osm_way_581419027",
+   "action": "classify",
+   "label": "not_infrastructure",
+   "confidence": 0.35,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_581419027:naip"
+   ],
+   "reason": "Centre is a cleared line corridor with a tower in forest; a substation yard lies to the north-west."
+  }
+ },
+ {
+  "id": "osm_way_311054077",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_311054077",
+   "action": "confirm",
+   "confidence": 0.8,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_311054077:naip",
+    "osm_way_311054077:osm",
+    "osm_way_311054077:sources"
+   ],
+   "reason": "Compact urban fenced yard with a few transformer bays; Georgia Power 115/12 kV with two 115 kV line ends: a distribution substation."
+  },
+  "reviewer": {
+   "id": "osm_way_311054077",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.65,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_311054077:naip"
+   ],
+   "reason": "Compact fenced yard with transformers in an urban area."
+  }
+ },
+ {
+  "id": "osm_way_528511966",
+  "osm_label": "water.wastewater.plant",
+  "action": "confirm",
+  "label": "water.wastewater.plant",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_528511966",
+   "action": "confirm",
+   "confidence": 0.88,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_528511966:naip",
+    "osm_way_528511966:sentinel2",
+    "osm_way_528511966:osm"
+   ],
+   "reason": "Four round clarifiers with arms, rectangular aeration tanks and four domed digesters: a sewage treatment plant (PRASA)."
+  },
+  "reviewer": {
+   "id": "osm_way_528511966",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_528511966:naip"
+   ],
+   "reason": "Round clarifiers, settling basins and digesters."
+  }
+ },
+ {
+  "id": "osm_way_1489707265",
+  "osm_label": "energy.generation.solar_farm",
+  "action": "confirm",
+  "label": "energy.generation.solar_farm",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_1489707265",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1489707265:naip",
+    "osm_way_1489707265:sentinel2",
+    "osm_way_1489707265:sources"
+   ],
+   "reason": "Fenced blocks of ground-mounted PV rows with access roads; matches EIA Silver Creek solar (5 MW)."
+  },
+  "reviewer": {
+   "id": "osm_way_1489707265",
+   "action": "classify",
+   "label": "energy.generation.solar_farm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1489707265:naip"
+   ],
+   "reason": "Rows of ground-mounted panels in several blocks."
+  }
+ },
+ {
+  "id": "osm_way_1485094950",
+  "osm_label": "energy.distribution.other",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1485094950",
+   "action": "relabel",
+   "label": "energy.transmission.substation",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1485094950:naip",
+    "osm_way_1485094950:osm",
+    "osm_way_1485094950:sources",
+    "osm_way_1485094950:footprint"
+   ],
+   "reason": "Compact (possibly partly enclosed) substation at the centre in a suburban area; HIFLD has three 69 kV lines ending here (to Sunnyside and Miguel), making it a 69 kV subtransmission node, which counts as transmission. Untyped in OSM and the structure is hard to read, so low confidence."
+  },
+  "reviewer": {
+   "id": "osm_way_1485094950",
+   "action": "classify",
+   "label": "not_infrastructure",
+   "confidence": 0.3,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1485094950:naip"
+   ],
+   "reason": "Ordinary building in suburban surroundings; no infrastructure features."
+  }
+ },
+ {
+  "id": "osm_way_1332923545",
+  "osm_label": "water.wastewater.plant",
+  "action": "confirm",
+  "label": "water.wastewater.plant",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_1332923545",
+   "action": "confirm",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1332923545:naip",
+    "osm_way_1332923545:sentinel2",
+    "osm_way_1332923545:osm"
+   ],
+   "reason": "Fenced chain of lined stabilisation ponds (three small cells and a larger one) with a control shed, set in woods: a small-town wastewater lagoon system."
+  },
+  "reviewer": {
+   "id": "osm_way_1332923545",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1332923545:naip"
+   ],
+   "reason": "Small lagoon cells with green and dark water and a control building."
+  }
+ },
+ {
+  "id": "osm_way_832392590",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_832392590",
+   "action": "confirm",
+   "confidence": 0.8,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_832392590:naip",
+    "osm_way_832392590:osm",
+    "osm_way_832392590:sources"
+   ],
+   "reason": "Small fenced gravel yard by a rural road; Putney Substation (GMP) at 69 kV with a single line ending here (name matches): a radial distribution substation."
+  },
+  "reviewer": {
+   "id": "osm_way_832392590",
+   "action": "classify",
+   "label": "energy.generation.solar_farm",
+   "confidence": 0.3,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_832392590:naip"
+   ],
+   "reason": "Centre is a small pad with a shed; a small panel array lies to the west."
+  }
+ },
+ {
+  "id": "osm_way_1346487341",
+  "osm_label": "water.wastewater.plant",
+  "action": "confirm",
+  "label": "water.wastewater.plant",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_1346487341",
+   "action": "confirm",
+   "confidence": 0.88,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1346487341:naip",
+    "osm_way_1346487341:osm"
+   ],
+   "reason": "Fenced works with a round clarifier/digester, rectangular basins and drying beds: Superior town sewage plant."
+  },
+  "reviewer": {
+   "id": "osm_way_1346487341",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1346487341:naip"
+   ],
+   "reason": "Round clarifier with tanks and drying beds in a fenced site."
+  }
+ },
+ {
+  "id": "osm_way_1286539069",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1286539069",
+   "action": "confirm",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1286539069:naip",
+    "osm_way_1286539069:osm",
+    "osm_way_1286539069:sources"
+   ],
+   "reason": "Compact fenced yard in a field with a single transformer bay, tapped from a 69 kV line passing nearby: a distribution substation."
+  },
+  "reviewer": {
+   "id": "osm_way_1286539069",
+   "action": "classify",
+   "label": "energy.distribution.other",
+   "confidence": 0.4,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1286539069:naip"
+   ],
+   "reason": "Small fenced gravel pad with equipment alone in a field."
+  }
+ },
+ {
+  "id": "osm_way_295549310",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_295549310",
+   "action": "confirm",
+   "confidence": 0.6,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_295549310:naip",
+    "osm_way_295549310:osm",
+    "osm_way_295549310:sources"
+   ],
+   "reason": "Mid-size fenced yard with a few bays in an industrial park, with two line ends (loop-through) and feeders to the surrounding warehouses; the Lake Side gas plant is 657 m away and not this asset. Voltage tag (138 kV) and HIFLD (115 kV) disagree but both suggest a distribution sub."
+  },
+  "reviewer": {
+   "id": "osm_way_295549310",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_295549310:naip"
+   ],
+   "reason": "Compact yard with transformers and structures in an industrial park."
+  }
+ },
+ {
+  "id": "osm_way_1032669567",
+  "osm_label": "energy.generation.solar_farm",
+  "action": "confirm",
+  "label": "energy.generation.solar_farm",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_1032669567",
+   "action": "confirm",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1032669567:naip",
+    "osm_way_1032669567:sentinel2",
+    "osm_way_1032669567:osm"
+   ],
+   "reason": "Fenced ground-mounted PV array beside school sports fields; tagged Letchworth Solar Project with an EIA ref. Missing EIA proximity match is not negative evidence."
+  },
+  "reviewer": {
+   "id": "osm_way_1032669567",
+   "action": "classify",
+   "label": "energy.generation.solar_farm",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1032669567:naip"
+   ],
+   "reason": "Ground-mounted panel rows beside a school sports field."
+  }
+ },
+ {
+  "id": "osm_way_669603982",
+  "osm_label": "energy.distribution.other",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_669603982",
+   "action": "confirm",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_669603982:naip",
+    "osm_way_669603982:osm",
+    "osm_way_669603982:sources",
+    "osm_way_669603982:footprint"
+   ],
+   "reason": "Small fenced equipment yard by a town street; tagged a 13.2 kV switching station with two line ends of unknown voltage. Distribution-level switchgear without clear transformation, so distribution.other fits."
+  },
+  "reviewer": {
+   "id": "osm_way_669603982",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.4,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_669603982:naip"
+   ],
+   "reason": "Small equipment yard near the centre in a town."
+  }
+ },
+ {
+  "id": "osm_way_1361863116",
+  "osm_label": "water.wastewater.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1361863116",
+   "action": "confirm",
+   "confidence": 0.88,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1361863116:naip",
+    "osm_way_1361863116:osm"
+   ],
+   "reason": "Small works with a round clarifier, rectangular tanks and two brown sludge/holding ponds at a town edge: a wastewater treatment plant."
+  },
+  "reviewer": {
+   "id": "osm_way_1361863116",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.8,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1361863116:naip"
+   ],
+   "reason": "Settling lagoons, clarifier and plant buildings."
+  }
+ },
+ {
+  "id": "osm_way_1422847171",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1422847171",
+   "action": "relabel",
+   "label": "energy.transmission.substation",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1422847171:naip",
+    "osm_way_1422847171:osm",
+    "osm_way_1422847171:sources",
+    "osm_way_1422847171:footprint"
+   ],
+   "reason": "Small gravel substation yard inside a residential block; HIFLD records three 115 kV lines ending here, which by the line-count rule makes it a transmission node. The compact yard looks like a distribution sub, so low confidence."
+  },
+  "reviewer": {
+   "id": "osm_way_1422847171",
+   "action": "classify",
+   "label": "energy.distribution.other",
+   "confidence": 0.35,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1422847171:naip"
+   ],
+   "reason": "Small fenced pad with equipment among houses."
+  }
+ },
+ {
+  "id": "osm_node_2031079188",
+  "osm_label": "energy.generation.power_plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_node_2031079188",
+   "action": "confirm",
+   "confidence": 0.6,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_2031079188:naip",
+    "osm_node_2031079188:sentinel2",
+    "osm_node_2031079188:osm",
+    "osm_node_2031079188:sources"
+   ],
+   "reason": "Centre is a river dam with a powerhouse block at its north abutment, impoundment held and power lines crossing nearby; the surrounding mill is partly demolished but the dam/powerhouse look intact. EIA gap is not negative evidence."
+  },
+  "reviewer": {
+   "id": "osm_node_2031079188",
+   "action": "classify",
+   "label": "energy.generation.power_plant",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_2031079188:naip"
+   ],
+   "reason": "Dam and powerhouse across river beside derelict mill buildings, lines leaving."
+  }
+ },
+ {
+  "id": "osm_way_1426192219",
+  "osm_label": "energy.distribution.other",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1426192219",
+   "action": "relabel",
+   "label": "energy.transmission.substation",
+   "confidence": 0.65,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1426192219:naip",
+    "osm_way_1426192219:sentinel2",
+    "osm_way_1426192219:osm",
+    "osm_way_1426192219:sources",
+    "osm_way_1426192219:footprint"
+   ],
+   "reason": "Centre is a small equipment yard (~27 m) beside the Tenkiller Ferry dam powerhouse, i.e. the plant's switchyard mapped on its own; it connects at 161 kV with two HIFLD lines ending here, so by the switchyard rule it is a transmission substation."
+  },
+  "reviewer": {
+   "id": "osm_way_1426192219",
+   "action": "classify",
+   "label": "energy.generation.power_plant",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1426192219:naip"
+   ],
+   "reason": "Hydro powerhouse with tailrace below dam."
+  }
+ },
+ {
+  "id": "osm_way_794147654",
+  "osm_label": "telecom.data_center",
+  "action": "confirm",
+  "label": "telecom.data_center",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_794147654",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_794147654:naip",
+    "osm_way_794147654:sentinel2",
+    "osm_way_794147654:osm",
+    "osm_way_794147654:footprint"
+   ],
+   "reason": "Large windowless building with dense rooftop cooling arrays and its own adjacent HV substation in the Ashburn data centre cluster; named CloudHQ LC1 data centre."
+  },
+  "reviewer": {
+   "id": "osm_way_794147654",
+   "action": "classify",
+   "label": "telecom.data_center",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_794147654:naip"
+   ],
+   "reason": "Large windowless building with rooftop cooling arrays and adjacent substation."
+  }
+ },
+ {
+  "id": "osm_way_1149728975",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1149728975",
+   "action": "confirm",
+   "confidence": 0.65,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1149728975:naip",
+    "osm_way_1149728975:sentinel2",
+    "osm_way_1149728975:osm",
+    "osm_way_1149728975:sources",
+    "osm_way_1149728975:footprint"
+   ],
+   "reason": "Small fenced gravel yard (~25 m) with equipment beside a rural road; tagged 46 kV distribution and no transmission line nearby, consistent with a compact distribution substation."
+  },
+  "reviewer": {
+   "id": "osm_way_1149728975",
+   "action": "classify",
+   "label": "energy.distribution.other",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1149728975:naip"
+   ],
+   "reason": "Small fenced utility building in pasture beside road."
+  }
+ },
+ {
+  "id": "osm_way_183162077",
+  "osm_label": "water.wastewater.plant",
+  "action": "confirm",
+  "label": "water.wastewater.plant",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_183162077",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_183162077:naip",
+    "osm_way_183162077:sentinel2",
+    "osm_way_183162077:osm"
+   ],
+   "reason": "Two round clarifiers, rectangular aeration basins and an expansion under construction; named Geronimo Creek Wastewater Treatment Plant."
+  },
+  "reviewer": {
+   "id": "osm_way_183162077",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_183162077:naip"
+   ],
+   "reason": "Round clarifiers, oxidation ditch and aeration tanks, plant under expansion."
+  }
+ },
+ {
+  "id": "osm_way_1243555994",
+  "osm_label": "energy.distribution.other",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1243555994",
+   "action": "confirm",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1243555994:naip",
+    "osm_way_1243555994:osm",
+    "osm_way_1243555994:sources",
+    "osm_way_1243555994:footprint"
+   ],
+   "reason": "Tiny (~14 m) structure at the centre beside a commercial/industrial building and car park; tagged 38 kV industrial substation, a customer substation whose type cannot be confirmed from imagery, so distribution.other fits."
+  },
+  "reviewer": {
+   "id": "osm_way_1243555994",
+   "action": "classify",
+   "label": "not_infrastructure",
+   "confidence": 0.3,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1243555994:naip"
+   ],
+   "reason": "Commercial/industrial buildings and parking beside highway; no clear infrastructure at centre."
+  }
+ },
+ {
+  "id": "osm_way_262754999",
+  "osm_label": "water.wastewater.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_262754999",
+   "action": "confirm",
+   "confidence": 0.8,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_262754999:naip",
+    "osm_way_262754999:sentinel2",
+    "osm_way_262754999:osm",
+    "osm_way_262754999:footprint"
+   ],
+   "reason": "Lined lagoon with algae-green water at the centre plus two further lagoons with an aerator and a small control building: a stabilisation-pond wastewater works."
+  },
+  "reviewer": {
+   "id": "osm_way_262754999",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.7,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_262754999:naip"
+   ],
+   "reason": "Lined lagoons with green water, aerated cell, small control buildings."
+  }
+ },
+ {
+  "id": "osm_way_807317321",
+  "osm_label": "water.storage_tank",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_807317321",
+   "action": "confirm",
+   "confidence": 0.3,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_807317321:naip",
+    "osm_way_807317321:sentinel2",
+    "osm_way_807317321:osm",
+    "osm_way_807317321:footprint"
+   ],
+   "reason": "Mapped as a 2 m water tank but the centre is unbroken forest canopy and no tank or house is visible; kept as tagged with low confidence because a tank this small could be hidden under trees."
+  },
+  "reviewer": {
+   "id": "osm_way_807317321",
+   "action": "classify",
+   "label": "not_infrastructure",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_807317321:naip"
+   ],
+   "reason": "Dense forest canopy, nothing visible at centre."
+  }
+ },
+ {
+  "id": "osm_way_419360381",
+  "osm_label": "water.wastewater.plant",
+  "action": "confirm",
+  "label": "water.wastewater.plant",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_419360381",
+   "action": "confirm",
+   "confidence": 0.92,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_419360381:naip",
+    "osm_way_419360381:sentinel2",
+    "osm_way_419360381:osm",
+    "osm_way_419360381:footprint"
+   ],
+   "reason": "Compact treatment works beside a marsh with circular clarifiers, a ring-type tank and a block of rectangular basin cells: wastewater plant."
+  },
+  "reviewer": {
+   "id": "osm_way_419360381",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_419360381:naip"
+   ],
+   "reason": "Clarifiers, spiral aeration tank and basins in fenced compound."
+  }
+ },
+ {
+  "id": "osm_way_990537858",
+  "osm_label": "telecom.data_center",
+  "action": "confirm",
+  "label": "telecom.data_center",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_990537858",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_990537858:naip",
+    "osm_way_990537858:sentinel2",
+    "osm_way_990537858:osm",
+    "osm_way_990537858:footprint"
+   ],
+   "reason": "Large plain building lined with rows of generators/cooling units and a dedicated HV substation next door; named CyrusOne Sterling IX data centre."
+  },
+  "reviewer": {
+   "id": "osm_way_990537858",
+   "action": "classify",
+   "label": "telecom.data_center",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_990537858:naip"
+   ],
+   "reason": "Large white building with rooftop cooling, generator rows, adjacent substation."
+  }
+ },
+ {
+  "id": "osm_way_181288373",
+  "osm_label": "transport.airport",
+  "action": "confirm",
+  "label": "transport.airport",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_181288373",
+   "action": "confirm",
+   "confidence": 0.97,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_181288373:naip",
+    "osm_way_181288373:sentinel2",
+    "osm_way_181288373:osm",
+    "osm_way_181288373:sources"
+   ],
+   "reason": "Paved runway with parallel taxiway, apron with aircraft and T-hangars; FAA record matches Grand Haven Memorial Airpark."
+  },
+  "reviewer": {
+   "id": "osm_way_181288373",
+   "action": "classify",
+   "label": "transport.airport",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_181288373:naip"
+   ],
+   "reason": "Runway, taxiways and rows of hangars."
+  }
+ },
+ {
+  "id": "osm_way_1372377202",
+  "osm_label": "water.wastewater.plant",
+  "action": "confirm",
+  "label": "water.wastewater.plant",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_1372377202",
+   "action": "confirm",
+   "confidence": 0.88,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1372377202:naip",
+    "osm_way_1372377202:sentinel2",
+    "osm_way_1372377202:osm",
+    "osm_way_1372377202:footprint"
+   ],
+   "reason": "Small plant by the river with a round clarifier and smaller round tanks plus a control building: municipal wastewater works."
+  },
+  "reviewer": {
+   "id": "osm_way_1372377202",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1372377202:naip"
+   ],
+   "reason": "Small round clarifiers and tanks at town edge by river."
+  }
+ },
+ {
+  "id": "osm_way_1486752301",
+  "osm_label": "energy.generation.power_plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1486752301",
+   "action": "confirm",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1486752301:naip",
+    "osm_way_1486752301:sentinel2",
+    "osm_way_1486752301:osm",
+    "osm_way_1486752301:sources",
+    "osm_way_1486752301:footprint"
+   ],
+   "reason": "NAIP (Oct 2024) shows only a freshly graded gravel pad (~135 m) beside a transmission line, no battery containers yet, and the S2 composite shows nothing; consistent with a battery storage site built after the imagery, so kept as tagged with low confidence."
+  },
+  "reviewer": {
+   "id": "osm_way_1486752301",
+   "action": "classify",
+   "label": "energy.transmission.substation",
+   "confidence": 0.25,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1486752301:naip"
+   ],
+   "reason": "Bare white graded gravel pad under construction beside a power line; no equipment yet."
+  }
+ },
+ {
+  "id": "osm_way_548462777",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_548462777",
+   "action": "relabel",
+   "label": "energy.transmission.substation",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_548462777:naip",
+    "osm_way_548462777:sentinel2",
+    "osm_way_548462777:osm",
+    "osm_way_548462777:sources",
+    "osm_way_548462777:footprint"
+   ],
+   "reason": "Mid-sized fenced yard (~70 m) with several bays in farmland; HIFLD shows a 138 kV and a 69 kV line ending here, implying 138/69 kV subtransmission transformation, which outranks any distribution role."
+  },
+  "reviewer": {
+   "id": "osm_way_548462777",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.6,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_548462777:naip"
+   ],
+   "reason": "Small fenced yard with a few transformers in a field."
+  }
+ },
+ {
+  "id": "osm_node_6309491951",
+  "osm_label": "transport.train_station",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_node_6309491951",
+   "action": "confirm",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_6309491951:naip",
+    "osm_node_6309491951:sentinel2",
+    "osm_node_6309491951:osm",
+    "osm_node_6309491951:sources"
+   ],
+   "reason": "Light rail platform with canopy in the freeway median at the centre, with park-and-ride lots beside it; VTA Capitol light rail station. NARN gap is expected for light rail."
+  },
+  "reviewer": {
+   "id": "osm_node_6309491951",
+   "action": "classify",
+   "label": "transport.train_station",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_node_6309491951:naip"
+   ],
+   "reason": "Elevated platform structure in a freeway median at an interchange."
+  }
+ },
+ {
+  "id": "osm_way_1015714905",
+  "osm_label": "water.storage_tank",
+  "action": "relabel",
+  "label": "water.wastewater.plant",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_1015714905",
+   "action": "relabel",
+   "label": "water.wastewater.plant",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1015714905:naip",
+    "osm_way_1015714905:sentinel2",
+    "osm_way_1015714905:osm",
+    "osm_way_1015714905:footprint"
+   ],
+   "reason": "The mapped ~32 m tank is one of four domed digester-type tanks inside a wastewater works with aeration basins, round clarifiers and sludge drying beds; a part of the site takes the site's class."
+  },
+  "reviewer": {
+   "id": "osm_way_1015714905",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.92,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1015714905:naip"
+   ],
+   "reason": "Digesters, clarifiers, aeration basins and filter beds."
+  }
+ },
+ {
+  "id": "osm_way_75128129",
+  "osm_label": "water.wastewater.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_75128129",
+   "action": "relabel",
+   "label": "not_infrastructure",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_75128129:naip",
+    "osm_way_75128129:sentinel2",
+    "osm_way_75128129:osm",
+    "osm_way_75128129:footprint"
+   ],
+   "reason": "A single small green pond at a field corner beside the road ditch, NHD-imported; no treatment structures, consistent with an agricultural tailwater/irrigation pond rather than a wastewater works."
+  },
+  "reviewer": {
+   "id": "osm_way_75128129",
+   "action": "classify",
+   "label": "not_infrastructure",
+   "confidence": 0.4,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_75128129:naip"
+   ],
+   "reason": "Small green pond by a field road; farm yard nearby."
+  }
+ },
+ {
+  "id": "osm_way_1259682526",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1259682526",
+   "action": "relabel",
+   "label": "energy.transmission.substation",
+   "confidence": 0.6,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1259682526:naip",
+    "osm_way_1259682526:sentinel2",
+    "osm_way_1259682526:osm",
+    "osm_way_1259682526:sources",
+    "osm_way_1259682526:footprint"
+   ],
+   "reason": "Fenced yard (~89 m) in a residential area; HIFLD shows three 69 kV lines ending here, so it is a 69 kV junction feeding other substations (subtransmission), which counts as transmission."
+  },
+  "reviewer": {
+   "id": "osm_way_1259682526",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.7,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1259682526:naip"
+   ],
+   "reason": "Compact fenced yard with a few transformers inside a residential neighbourhood."
+  }
+ },
+ {
+  "id": "osm_way_1004052522",
+  "osm_label": "energy.generation.solar_farm",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1004052522",
+   "action": "confirm",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1004052522:naip",
+    "osm_way_1004052522:sentinel2",
+    "osm_way_1004052522:osm",
+    "osm_way_1004052522:footprint"
+   ],
+   "reason": "Fenced block of ground-mounted PV rows (~117 m) next to water tanks at the centre: a ground-mounted solar array. EIA gap is not negative."
+  },
+  "reviewer": {
+   "id": "osm_way_1004052522",
+   "action": "classify",
+   "label": "energy.generation.solar_farm",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1004052522:naip"
+   ],
+   "reason": "Small ground-mounted solar array at centre beside three water tanks."
+  }
+ },
+ {
+  "id": "osm_way_1419221212",
+  "osm_label": "water.wastewater.plant",
+  "action": "confirm",
+  "label": "water.wastewater.plant",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_1419221212",
+   "action": "confirm",
+   "confidence": 0.93,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1419221212:naip",
+    "osm_way_1419221212:sentinel2",
+    "osm_way_1419221212:osm",
+    "osm_way_1419221212:footprint"
+   ],
+   "reason": "Round clarifiers with arms, oval oxidation ditches, drying beds and large effluent ponds: wastewater treatment works."
+  },
+  "reviewer": {
+   "id": "osm_way_1419221212",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1419221212:naip"
+   ],
+   "reason": "Clarifiers, oxidation ditches, aeration basins and large ponds."
+  }
+ },
+ {
+  "id": "osm_way_234112050",
+  "osm_label": "transport.airport",
+  "action": "confirm",
+  "label": "transport.airport",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_234112050",
+   "action": "confirm",
+   "confidence": 0.97,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_234112050:naip",
+    "osm_way_234112050:sentinel2",
+    "osm_way_234112050:osm",
+    "osm_way_234112050:sources"
+   ],
+   "reason": "Paved runway with taxiway, hangar rows and parked aircraft; FAA record matches Friedman Memorial (SUN)."
+  },
+  "reviewer": {
+   "id": "osm_way_234112050",
+   "action": "classify",
+   "label": "transport.airport",
+   "confidence": 0.92,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_234112050:naip"
+   ],
+   "reason": "Runway with hangars and parked aircraft."
+  }
+ },
+ {
+  "id": "osm_way_421834984",
+  "osm_label": "water.wastewater.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_421834984",
+   "action": "confirm",
+   "confidence": 0.88,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_421834984:naip",
+    "osm_way_421834984:sentinel2",
+    "osm_way_421834984:osm",
+    "osm_way_421834984:footprint"
+   ],
+   "reason": "Domed digesters, rectangular treatment tanks and process buildings by a creek; named Brush Creek Wastewater Treatment Plant."
+  },
+  "reviewer": {
+   "id": "osm_way_421834984",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_421834984:naip"
+   ],
+   "reason": "Domed digesters, rectangular tanks and a clarifier; a large round tank and substation nearby."
+  }
+ },
+ {
+  "id": "osm_way_1376753790",
+  "osm_label": "water.wastewater.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1376753790",
+   "action": "confirm",
+   "confidence": 0.93,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1376753790:naip",
+    "osm_way_1376753790:sentinel2",
+    "osm_way_1376753790:osm",
+    "osm_way_1376753790:footprint"
+   ],
+   "reason": "Concentric aeration/clarifier tank blocks and three round clarifiers with arms: wastewater treatment works."
+  },
+  "reviewer": {
+   "id": "osm_way_1376753790",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.8,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1376753790:naip"
+   ],
+   "reason": "Aeration trains, round clarifiers and digesters."
+  }
+ },
+ {
+  "id": "osm_way_1144951057",
+  "osm_label": "energy.generation.power_plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1144951057",
+   "action": "confirm",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1144951057:naip",
+    "osm_way_1144951057:sentinel2",
+    "osm_way_1144951057:osm",
+    "osm_way_1144951057:sources",
+    "osm_way_1144951057:footprint"
+   ],
+   "reason": "Small powerhouse building at the river edge of the tissue mill, with a dam/spillway downstream and a small substation across the river; EIA lists the Cheboygan hydro plant 109 m away."
+  },
+  "reviewer": {
+   "id": "osm_way_1144951057",
+   "action": "classify",
+   "label": "energy.generation.power_plant",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1144951057:naip"
+   ],
+   "reason": "Dam with spillway and powerhouse-like mill building on river; small substation nearby."
+  }
+ },
+ {
+  "id": "osm_way_873137563",
+  "osm_label": "telecom.data_center",
+  "action": "confirm",
+  "label": "telecom.data_center",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_873137563",
+   "action": "confirm",
+   "confidence": 0.92,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_873137563:naip",
+    "osm_way_873137563:sentinel2",
+    "osm_way_873137563:osm",
+    "osm_way_873137563:footprint"
+   ],
+   "reason": "Long plain windowless building ringed by rows of backup generators, with a substation nearby and similar campus buildings: data centre."
+  },
+  "reviewer": {
+   "id": "osm_way_873137563",
+   "action": "classify",
+   "label": "telecom.data_center",
+   "confidence": 0.92,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_873137563:naip"
+   ],
+   "reason": "Large white building with generator and chiller rows, utility yard."
+  }
+ },
+ {
+  "id": "osm_way_362113392",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_362113392",
+   "action": "confirm",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_362113392:naip",
+    "osm_way_362113392:sentinel2",
+    "osm_way_362113392:osm",
+    "osm_way_362113392:sources",
+    "osm_way_362113392:footprint"
+   ],
+   "reason": "Compact gravel yard (~45 m) with a few transformers in a rural field, one 69 kV line ending here (radial spur): distribution substation."
+  },
+  "reviewer": {
+   "id": "osm_way_362113392",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_362113392:naip"
+   ],
+   "reason": "Small fenced yard with few transformers in pasture."
+  }
+ },
+ {
+  "id": "osm_way_1058338313",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1058338313",
+   "action": "confirm",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1058338313:naip",
+    "osm_way_1058338313:sentinel2",
+    "osm_way_1058338313:osm",
+    "osm_way_1058338313:sources",
+    "osm_way_1058338313:footprint"
+   ],
+   "reason": "Small gravel pad (~27 m) beside the road partly hidden by trees; tagged 46 kV distribution, and two of the three HIFLD line ends are OSM-traced, so a small distribution substation is the best fit."
+  },
+  "reviewer": {
+   "id": "osm_way_1058338313",
+   "action": "classify",
+   "label": "not_infrastructure",
+   "confidence": 0.3,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1058338313:naip"
+   ],
+   "reason": "Rural roadside houses and ponds; no clear facility at centre."
+  }
+ },
+ {
+  "id": "osm_way_231502894",
+  "osm_label": "transport.airport",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_231502894",
+   "action": "confirm",
+   "confidence": 0.97,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_231502894:naip",
+    "osm_way_231502894:sentinel2",
+    "osm_way_231502894:osm",
+    "osm_way_231502894:sources"
+   ],
+   "reason": "Runway 26R with markings and parallel taxiway at the centre; FAA record matches Pueblo Memorial Airport."
+  },
+  "reviewer": {
+   "id": "osm_way_231502894",
+   "action": "classify",
+   "label": "transport.airport",
+   "confidence": 0.6,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_231502894:naip"
+   ],
+   "reason": "Runway and taxiway below the centre; a marker circle at the airfield edge."
+  }
+ },
+ {
+  "id": "osm_way_1151287099",
+  "osm_label": "water.treatment.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1151287099",
+   "action": "relabel",
+   "label": "water.storage_tank",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1151287099:naip",
+    "osm_way_1151287099:sentinel2",
+    "osm_way_1151287099:osm",
+    "osm_way_1151287099:footprint"
+   ],
+   "reason": "The small (~67 m) water_works site is an elevated water tower with a utility building/yard; no settling basins, filters or large treatment building, so the identifiable asset is the water tank."
+  },
+  "reviewer": {
+   "id": "osm_way_1151287099",
+   "action": "classify",
+   "label": "water.storage_tank",
+   "confidence": 0.8,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1151287099:naip"
+   ],
+   "reason": "Water tower at centre of small town yard."
+  }
+ },
+ {
+  "id": "osm_way_597876721",
+  "osm_label": "telecom.data_center",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_597876721",
+   "action": "confirm",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_597876721:naip",
+    "osm_way_597876721:sentinel2",
+    "osm_way_597876721:osm",
+    "osm_way_597876721:footprint"
+   ],
+   "reason": "Flat windowless building with heavy rooftop cooling and a row of generators, in a cluster of similar buildings with a substation; named Digital Realty DFW17."
+  },
+  "reviewer": {
+   "id": "osm_way_597876721",
+   "action": "classify",
+   "label": "telecom.data_center",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_597876721:naip"
+   ],
+   "reason": "Cluster of large buildings with rooftop cooling units and generators next to a substation."
+  }
+ },
+ {
+  "id": "osm_way_104351355",
+  "osm_label": "energy.transmission.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_104351355",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_104351355:naip",
+    "osm_way_104351355:sentinel2",
+    "osm_way_104351355:osm",
+    "osm_way_104351355:sources",
+    "osm_way_104351355:footprint"
+   ],
+   "reason": "Large gravel yard with multiple breaker bays and H-frame structures, many HV lines entering; 230 kV with HIFLD showing 8 line ends: transmission switching station."
+  },
+  "reviewer": {
+   "id": "osm_way_104351355",
+   "action": "classify",
+   "label": "energy.transmission.substation",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_104351355:naip"
+   ],
+   "reason": "Gravel yard with a grid of breakers and several lines entering from north and south."
+  }
+ },
+ {
+  "id": "osm_way_431106339",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_431106339",
+   "action": "relabel",
+   "label": "energy.transmission.substation",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_431106339:naip",
+    "osm_way_431106339:osm",
+    "osm_way_431106339:sources"
+   ],
+   "reason": "Large yard with many bays and gantries; tagged 138/69/23 kV and HIFLD has 5 lines (138 kV) ending here, so it is a 138/69 kV hub, which is transmission despite the distribution tag."
+  },
+  "reviewer": {
+   "id": "osm_way_431106339",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.4,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_431106339:naip"
+   ],
+   "reason": "Fenced yard with bays and a control building in town beside rail."
+  }
+ },
+ {
+  "id": "osm_way_1304357577",
+  "osm_label": "telecom.data_center",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1304357577",
+   "action": "confirm",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1304357577:naip",
+    "osm_way_1304357577:sentinel2",
+    "osm_way_1304357577:osm"
+   ],
+   "reason": "NAIP 2023 shows a cleared construction pad with foundations; the 2024 Sentinel-2 shows a large bright roofed building on it. Named Iron Mountain VA-6 data centre, so labelled by what is there now."
+  },
+  "reviewer": {
+   "id": "osm_way_1304357577",
+   "action": "classify",
+   "label": "telecom.data_center",
+   "confidence": 0.3,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1304357577:naip"
+   ],
+   "reason": "Cleared construction pad with slab and site traffic; likely a building under construction."
+  }
+ },
+ {
+  "id": "osm_way_400540223",
+  "osm_label": "telecom.data_center",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_400540223",
+   "action": "confirm",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_400540223:naip",
+    "osm_way_400540223:sentinel2",
+    "osm_way_400540223:osm"
+   ],
+   "reason": "Large plain windowless building with a row of yard equipment along one side and its own large substation next door; named Walmart data centre."
+  },
+  "reviewer": {
+   "id": "osm_way_400540223",
+   "action": "classify",
+   "label": "telecom.data_center",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_400540223:naip"
+   ],
+   "reason": "Large white-roofed windowless building with yard and adjacent substation."
+  }
+ },
+ {
+  "id": "osm_way_89623986",
+  "osm_label": "transport.airport",
+  "action": "confirm",
+  "label": "transport.airport",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_89623986",
+   "action": "confirm",
+   "confidence": 0.97,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_89623986:naip",
+    "osm_way_89623986:sentinel2",
+    "osm_way_89623986:sources"
+   ],
+   "reason": "Runways, taxiways, apron and hangars; FAA register matches Franklin airport."
+  },
+  "reviewer": {
+   "id": "osm_way_89623986",
+   "action": "classify",
+   "label": "transport.airport",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_89623986:naip"
+   ],
+   "reason": "Taxiway and runway pavement with hangars at the edge."
+  }
+ },
+ {
+  "id": "osm_way_1068409827",
+  "osm_label": "water.treatment.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1068409827",
+   "action": "confirm",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1068409827:naip",
+    "osm_way_1068409827:osm",
+    "osm_way_1068409827:footprint"
+   ],
+   "reason": "Small plant with two round clarifier-type units with radial launders and a bank of rectangular cells, consistent with a small water works, but the same layout could be a small sewage plant (trickling filter, drying beds); kept the OSM type."
+  },
+  "reviewer": {
+   "id": "osm_way_1068409827",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.88,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1068409827:naip"
+   ],
+   "reason": "Round clarifiers and rectangular tanks at the centre."
+  }
+ },
+ {
+  "id": "osm_way_1343761104",
+  "osm_label": "telecom.data_center",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1343761104",
+   "action": "confirm",
+   "confidence": 0.65,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1343761104:naip",
+    "osm_way_1343761104:sentinel2",
+    "osm_way_1343761104:osm"
+   ],
+   "reason": "In 2023 NAIP the mapped square is a data-hall foundation slab under construction, beside an operating data centre with rooftop cooling and a new dedicated substation; 2024 Sentinel-2 does not yet clearly show a roof, so completion is unverified."
+  },
+  "reviewer": {
+   "id": "osm_way_1343761104",
+   "action": "classify",
+   "label": "telecom.data_center",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1343761104:naip"
+   ],
+   "reason": "Large building slab under construction with a substation next to it and a finished data-hall style building."
+  }
+ },
+ {
+  "id": "osm_way_628789432",
+  "osm_label": "water.treatment.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_628789432",
+   "action": "confirm",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_628789432:naip",
+    "osm_way_628789432:osm",
+    "osm_way_628789432:footprint"
+   ],
+   "reason": "Two large rectangular basins with green water, a treatment building with two round storage tanks and small dark sludge or backwash ponds; fits a rural water plant with raw-water storage, though the ponds alone could be sewage lagoons."
+  },
+  "reviewer": {
+   "id": "osm_way_628789432",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_628789432:naip"
+   ],
+   "reason": "Two lined rectangular ponds with small plant buildings at a rural site."
+  }
+ },
+ {
+  "id": "osm_way_391115682",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_391115682",
+   "action": "relabel",
+   "label": "energy.transmission.substation",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_391115682:naip",
+    "osm_way_391115682:osm",
+    "osm_way_391115682:sources"
+   ],
+   "reason": "Compact fenced yard, but HIFLD has 3 independent 138 kV lines ending here, which meets the 3+ HV lines rule for transmission; it may only be a 138 kV customer or distribution station with a loop, hence low confidence."
+  },
+  "reviewer": {
+   "id": "osm_way_391115682",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_391115682:naip"
+   ],
+   "reason": "Small fenced gravel yard with few structures beside road and rail."
+  }
+ },
+ {
+  "id": "osm_way_865477647",
+  "osm_label": "water.wastewater.plant",
+  "action": "confirm",
+  "label": "water.wastewater.plant",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_865477647",
+   "action": "confirm",
+   "confidence": 0.92,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_865477647:naip",
+    "osm_way_865477647:sentinel2"
+   ],
+   "reason": "Round clarifiers, rectangular tanks and holding ponds with green and dark water next to a canal: a sewage treatment works."
+  },
+  "reviewer": {
+   "id": "osm_way_865477647",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_865477647:naip"
+   ],
+   "reason": "Clarifiers, aeration tank and ponds in a small works."
+  }
+ },
+ {
+  "id": "osm_way_1237053584",
+  "osm_label": "water.wastewater.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1237053584",
+   "action": "relabel",
+   "label": "not_infrastructure",
+   "confidence": 0.7,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1237053584:naip",
+    "osm_way_1237053584:sentinel2",
+    "osm_way_1237053584:footprint"
+   ],
+   "reason": "The centre is a wooded patch with a grassy clearing between a road and an office park; no tanks, basins or plant buildings in NAIP 2025 or Sentinel-2 2024."
+  },
+  "reviewer": {
+   "id": "osm_way_1237053584",
+   "action": "classify",
+   "label": "not_infrastructure",
+   "confidence": 0.4,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1237053584:naip"
+   ],
+   "reason": "Wooded green patch by a roundabout among hotel and offices; no clear facility."
+  }
+ },
+ {
+  "id": "osm_way_1108310524",
+  "osm_label": "water.wastewater.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1108310524",
+   "action": "confirm",
+   "confidence": 0.45,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1108310524:naip",
+    "osm_way_1108310524:sentinel2",
+    "osm_way_1108310524:osm",
+    "osm_way_1108310524:footprint"
+   ],
+   "reason": "The polygon is named for both the Bustamante (sewage) and Rogers plants; round clarifiers with arms at bottom right are sewage works, but the centre shows filter cells, settling basins and raw-water ponds that look like a drinking-water plant, so the class is ambiguous."
+  },
+  "reviewer": {
+   "id": "osm_way_1108310524",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1108310524:naip"
+   ],
+   "reason": "Large ponds, aeration basins and round clarifiers."
+  }
+ },
+ {
+  "id": "osm_way_510873683",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_510873683",
+   "action": "confirm",
+   "confidence": 0.65,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_510873683:naip",
+    "osm_way_510873683:osm",
+    "osm_way_510873683:sources",
+    "osm_way_510873683:footprint"
+   ],
+   "reason": "A tiny equipment pad by the village road, with 38 kV lines ending here; a 38 kV PREPA station feeding local distribution is a distribution substation."
+  },
+  "reviewer": {
+   "id": "osm_way_510873683",
+   "action": "classify",
+   "label": "energy.distribution.other",
+   "confidence": 0.25,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_510873683:naip"
+   ],
+   "reason": "Small structure on a hillside village road; type unclear."
+  }
+ },
+ {
+  "id": "osm_way_405404451",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_405404451",
+   "action": "confirm",
+   "confidence": 0.7,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_405404451:naip",
+    "osm_way_405404451:osm",
+    "osm_way_405404451:sources"
+   ],
+   "reason": "Compact fenced rural yard of a distribution co-op, with two 115 kV lines (a loop) and feeders out; a 115 kV distribution substation."
+  },
+  "reviewer": {
+   "id": "osm_way_405404451",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_405404451:naip"
+   ],
+   "reason": "Compact fenced yard with transformers and a control house in a rural field."
+  }
+ },
+ {
+  "id": "osm_way_401619458",
+  "osm_label": "energy.distribution.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_401619458",
+   "action": "relabel",
+   "label": "energy.transmission.substation",
+   "confidence": 0.88,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_401619458:naip",
+    "osm_way_401619458:osm",
+    "osm_way_401619458:sources"
+   ],
+   "reason": "161/69 kV with 10 HIFLD lines ending here; a large yard by the river at a former power-plant site. A 161/69 kV hub is transmission."
+  },
+  "reviewer": {
+   "id": "osm_way_401619458",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.4,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_401619458:naip"
+   ],
+   "reason": "Small fenced switch yard and a long building by a river."
+  }
+ },
+ {
+  "id": "osm_way_817430412",
+  "osm_label": "water.wastewater.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_817430412",
+   "action": "confirm",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_817430412:naip",
+    "osm_way_817430412:sentinel2",
+    "osm_way_817430412:osm"
+   ],
+   "reason": "Two fenced stabilisation pond cells with gravel berms and algae-green water, with an access road and a small shed: a municipal lagoon system."
+  },
+  "reviewer": {
+   "id": "osm_way_817430412",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.7,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_817430412:naip"
+   ],
+   "reason": "Two lined lagoon cells with access track in farmland."
+  }
+ },
+ {
+  "id": "osm_way_529710720",
+  "osm_label": "water.wastewater.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_529710720",
+   "action": "confirm",
+   "confidence": 0.4,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_529710720:naip",
+    "osm_way_529710720:osm",
+    "osm_way_529710720:footprint"
+   ],
+   "reason": "The small 440 m2 outline sits beside a large cross-shaped building in rural Puerto Rico; there may be a small round tank near the centre, consistent with a package plant serving the building, but no clarifier is clearly visible."
+  },
+  "reviewer": {
+   "id": "osm_way_529710720",
+   "action": "classify",
+   "label": "not_infrastructure",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_529710720:naip"
+   ],
+   "reason": "Farm buildings in pasture; no clear utility facility."
+  }
+ },
+ {
+  "id": "osm_way_1222065028",
+  "osm_label": "energy.generation.solar_farm",
+  "action": "confirm",
+  "label": "energy.generation.solar_farm",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_1222065028",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1222065028:naip",
+    "osm_way_1222065028:osm",
+    "osm_way_1222065028:sources"
+   ],
+   "reason": "Ground-mounted solar array at the centre; EIA lists 1 MW Rivercrest SD solar 40 m away."
+  },
+  "reviewer": {
+   "id": "osm_way_1222065028",
+   "action": "classify",
+   "label": "energy.generation.solar_farm",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1222065028:naip"
+   ],
+   "reason": "Rows of panels in a field."
+  }
+ },
+ {
+  "id": "osm_way_439967094",
+  "osm_label": "water.wastewater.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_439967094",
+   "action": "confirm",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_439967094:naip",
+    "osm_way_439967094:sentinel2"
+   ],
+   "reason": "Small sewage works in a valley: drying beds, a round aeration or oxidation unit and two small round clarifiers."
+  },
+  "reviewer": {
+   "id": "osm_way_439967094",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.75,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_439967094:naip"
+   ],
+   "reason": "Small works with round clarifier and drying beds."
+  }
+ },
+ {
+  "id": "osm_way_1101016649",
+  "osm_label": "energy.distribution.other",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1101016649",
+   "action": "confirm",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1101016649:naip",
+    "osm_way_1101016649:osm",
+    "osm_way_1101016649:sources",
+    "osm_way_1101016649:footprint"
+   ],
+   "reason": "A 109 m2 untyped substation at the edge of a factory building, with no transmission line within 300 m; a customer transformer or service yard, so distribution.other fits."
+  },
+  "reviewer": {
+   "id": "osm_way_1101016649",
+   "action": "classify",
+   "label": "not_infrastructure",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1101016649:naip"
+   ],
+   "reason": "Large factory or warehouse building with loading yard."
+  }
+ },
+ {
+  "id": "osm_way_1020877488",
+  "osm_label": "telecom.data_center",
+  "action": "confirm",
+  "label": "telecom.data_center",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_1020877488",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1020877488:naip",
+    "osm_way_1020877488:sentinel2",
+    "osm_way_1020877488:osm"
+   ],
+   "reason": "Large windowless halls with dense rooftop cooling, rows of generators and a nearby substation; named AWS IAD-162."
+  },
+  "reviewer": {
+   "id": "osm_way_1020877488",
+   "action": "classify",
+   "label": "telecom.data_center",
+   "confidence": 0.92,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1020877488:naip"
+   ],
+   "reason": "Large windowless buildings with rooftop and yard cooling and generators."
+  }
+ },
+ {
+  "id": "osm_way_1428895195",
+  "osm_label": "water.wastewater.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1428895195",
+   "action": "relabel",
+   "label": "water.treatment.plant",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1428895195:naip",
+    "osm_way_1428895195:sentinel2",
+    "osm_way_1428895195:footprint"
+   ],
+   "reason": "Plant in a hillside residential area with long rectangular settling basins, dark filter-type basins and several large flat covered round tanks that look like clear-water reservoirs; there are no open clarifiers or aeration tanks, so it looks like drinking-water treatment rather than sewage."
+  },
+  "reviewer": {
+   "id": "osm_way_1428895195",
+   "action": "classify",
+   "label": "water.treatment.plant",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1428895195:naip"
+   ],
+   "reason": "Long filter or settling basins, circular tanks and a treatment building in a suburb."
+  }
+ },
+ {
+  "id": "osm_way_1317325803",
+  "osm_label": "energy.transmission.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_1317325803",
+   "action": "confirm",
+   "confidence": 0.6,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1317325803:naip",
+    "osm_way_1317325803:osm",
+    "osm_way_1317325803:sources"
+   ],
+   "reason": "Small fenced rural yard with a pole line leaving north; HIFLD shows 4 lines (69 kV) ending here, so it is a 69 kV subtransmission node, which counts as transmission. The yard is small, so confidence is moderate."
+  },
+  "reviewer": {
+   "id": "osm_way_1317325803",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1317325803:naip"
+   ],
+   "reason": "Small fenced yard with a control building beside a farm road."
+  }
+ },
+ {
+  "id": "osm_way_79588204",
+  "osm_label": "water.wastewater.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_79588204",
+   "action": "relabel",
+   "label": "not_infrastructure",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_79588204:naip",
+    "osm_way_79588204:sentinel2",
+    "osm_way_79588204:osm"
+   ],
+   "reason": "The centre is an orchard road junction with no pond or plant; the old 2010 NHD reservoir is gone, and a small farm pond would not count anyway."
+  },
+  "reviewer": {
+   "id": "osm_way_79588204",
+   "action": "classify",
+   "label": "not_infrastructure",
+   "confidence": 0.6,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_79588204:naip"
+   ],
+   "reason": "Orchard rows and tracks only; no facility at the centre."
+  }
+ },
+ {
+  "id": "osm_way_889380546",
+  "osm_label": "transport.airport",
+  "action": "confirm",
+  "label": "transport.airport",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_889380546",
+   "action": "confirm",
+   "confidence": 0.97,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_889380546:naip",
+    "osm_way_889380546:sentinel2",
+    "osm_way_889380546:sources"
+   ],
+   "reason": "Runway, parallel taxiway, apron, hangars and a helipad; FAA register matches Winchester airport."
+  },
+  "reviewer": {
+   "id": "osm_way_889380546",
+   "action": "classify",
+   "label": "transport.airport",
+   "confidence": 0.92,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_889380546:naip"
+   ],
+   "reason": "Runway, taxiway, apron and hangars."
+  }
+ },
+ {
+  "id": "osm_way_497934609",
+  "osm_label": "transport.port_terminal",
+  "action": "confirm",
+  "label": "transport.port_terminal",
+  "reason": "independent agents agree above the routing threshold",
+  "investigator": {
+   "id": "osm_way_497934609",
+   "action": "confirm",
+   "confidence": 0.95,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_497934609:naip",
+    "osm_way_497934609:sentinel2",
+    "osm_way_497934609:osm"
+   ],
+   "reason": "Deep-water quay with ship-to-shore container cranes, a moored ship and a large container yard."
+  },
+  "reviewer": {
+   "id": "osm_way_497934609",
+   "action": "classify",
+   "label": "transport.port_terminal",
+   "confidence": 0.92,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_497934609:naip"
+   ],
+   "reason": "Container quay with gantry cranes, ship and stacking yard."
+  }
+ },
+ {
+  "id": "osm_way_753574636",
+  "osm_label": "energy.transmission.substation",
+  "action": "request_review",
+  "label": "",
+  "reason": "agent_disagreement, low_confidence",
+  "investigator": {
+   "id": "osm_way_753574636",
+   "action": "confirm",
+   "confidence": 0.9,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_753574636:naip",
+    "osm_way_753574636:osm",
+    "osm_way_753574636:sources"
+   ],
+   "reason": "Fenced HV yard with H-frame lines; tagged 230 kV and HIFLD shows 3 named 230/138 kV lines ending here."
+  },
+  "reviewer": {
+   "id": "osm_way_753574636",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.55,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_753574636:naip"
+   ],
+   "reason": "Compact fenced yard with transformers and a control hut in a field."
+  }
+ },
+ {
+  "id": "osm_way_891608278",
+  "osm_label": "water.wastewater.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_891608278",
+   "action": "confirm",
+   "confidence": 0.85,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_891608278:naip",
+    "osm_way_891608278:osm"
+   ],
+   "reason": "Small fenced works with a round clarifier and tanks beside the plant buildings; named Betterton Wastewater Treatment Plant. Sentinel-2 is noisy but NAIP is clear."
+  },
+  "reviewer": {
+   "id": "osm_way_891608278",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.3,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_891608278:naip"
+   ],
+   "reason": "Small compound with a round tank and buildings at a wooded edge of town; unclear."
+  }
+ },
+ {
+  "id": "osm_way_1361863524",
+  "osm_label": "water.wastewater.plant",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1361863524",
+   "action": "confirm",
+   "confidence": 0.88,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1361863524:naip",
+    "osm_way_1361863524:sentinel2"
+   ],
+   "reason": "Riverside works with paired round clarifiers, a domed digester, a large covered tank building and drying or biosolids areas: a sewage treatment works."
+  },
+  "reviewer": {
+   "id": "osm_way_1361863524",
+   "action": "classify",
+   "label": "water.wastewater.plant",
+   "confidence": 0.8,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1361863524:naip"
+   ],
+   "reason": "Round clarifiers, aeration tank, buildings and sludge area by a river."
+  }
+ },
+ {
+  "id": "osm_way_1433191499",
+  "osm_label": "energy.distribution.other",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1433191499",
+   "action": "relabel",
+   "label": "energy.distribution.substation",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1433191499:naip",
+    "osm_way_1433191499:osm",
+    "osm_way_1433191499:sources",
+    "osm_way_1433191499:footprint"
+   ],
+   "reason": "A compact fenced yard of electrical structures among town commercial lots, tagged 69 kV, with no HV lines in HIFLD; most likely a 69 kV town distribution substation, though the type is not certain."
+  },
+  "reviewer": {
+   "id": "osm_way_1433191499",
+   "action": "classify",
+   "label": "energy.distribution.substation",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1433191499:naip"
+   ],
+   "reason": "Small fenced equipment yard among commercial lots in town."
+  }
+ },
+ {
+  "id": "osm_way_1226864777",
+  "osm_label": "water.storage_tank",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_1226864777",
+   "action": "confirm",
+   "confidence": 0.8,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1226864777:naip",
+    "osm_way_1226864777:osm"
+   ],
+   "reason": "A single small white round tank with a tree and track in the desert wash, tagged content=water: a small water storage tank."
+  },
+  "reviewer": {
+   "id": "osm_way_1226864777",
+   "action": "classify",
+   "label": "water.storage_tank",
+   "confidence": 0.8,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_1226864777:naip"
+   ],
+   "reason": "Small white round tank at the centre in desert wash terrain."
+  }
+ },
+ {
+  "id": "osm_way_451971372",
+  "osm_label": "transport.port_terminal",
+  "action": "request_review",
+  "label": "",
+  "reason": "low_confidence",
+  "investigator": {
+   "id": "osm_way_451971372",
+   "action": "relabel",
+   "label": "not_infrastructure",
+   "confidence": 0.6,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_451971372:naip",
+    "osm_way_451971372:sentinel2",
+    "osm_way_451971372:osm"
+   ],
+   "reason": "A leisure marina of floating pontoons packed with pleasure boats; no cargo or passenger quays or terminal, so not a port terminal."
+  },
+  "reviewer": {
+   "id": "osm_way_451971372",
+   "action": "classify",
+   "label": "not_infrastructure",
+   "confidence": 0.5,
+   "image_quality": "adequate",
+   "evidence_ids": [
+    "osm_way_451971372:naip"
+   ],
+   "reason": "Marina with boat slips and docks, no commercial quays."
+  }
+ }
+]

@@ -422,3 +422,38 @@ class TestWorldBankLayers(unittest.TestCase):
             self._write(tmp, g.WB_SCHEMATIC["World Bank MENA"].rsplit("/", 1)[-1], feats)
             pts = g._wb_schematic("World Bank MENA")()
         self.assertEqual(pts.detail.tolist(), ["a grid node at Fes (city) on 400 kV lines"])
+
+
+class TestTwoAgentBatches(unittest.TestCase):
+    def test_batches_merge_back_in_finalize(self):
+        from curation.review import two_agent as t
+        with tempfile.TemporaryDirectory() as tmp:
+            role = Path(tmp) / "investigator"
+            for k, ids in enumerate((["a", "b"], ["c"]), 1):
+                d = role / f"batch_{k:02d}"; d.mkdir(parents=True)
+                (d / "packet.json").write_text(json.dumps([{"id": i} for i in ids]), encoding="utf-8")
+                (d / "decisions.json").write_text(json.dumps([{"id": i, "action": "confirm"} for i in ids]), encoding="utf-8")
+            packet, rows = t._role_files(role)
+            self.assertEqual([p["id"] for p in packet], ["a", "b", "c"])
+            self.assertEqual([r["id"] for r in rows], ["a", "b", "c"])
+            (role / "batch_02" / "decisions.json").unlink()
+            with self.assertRaises(FileNotFoundError):
+                t._role_files(role)
+
+    def test_sentinel_only_task_says_so(self):
+        from curation.review import two_agent as t
+        self.assertIn("Sentinel-2 only", t._task("investigator", ["x"], naip=False))
+        self.assertIn("(10 m) only", t._task("reviewer", ["x"], naip=False))
+        self.assertIn("NAIP aerial imagery for US tiles", t._task("investigator", ["x"], naip=True))
+
+
+class TestRoutedThreshold(unittest.TestCase):
+    def test_routing_matches_the_rule(self):
+        from curation.review import two_agent as t
+        a = {"action": "confirm", "confidence": 0.9, "image_quality": "adequate"}
+        b = {"action": "classify", "label": "x", "confidence": 0.8, "image_quality": "adequate"}
+        self.assertEqual(t._routed(a, b, "x", 0.75), ("confirm", "x"))
+        self.assertEqual(t._routed(a, b, "x", 0.85), ("request_review", ""))   # b below threshold
+        self.assertEqual(t._routed(a, {**b, "label": "y"}, "x", 0.5), ("request_review", ""))
+        self.assertEqual(t._routed({**a, "action": "relabel", "label": "y"}, {**b, "label": "y"}, "x", 0.5), ("relabel", "y"))
+        self.assertEqual(t._routed(a, {**b, "image_quality": "poor"}, "x", 0.5), ("request_review", ""))

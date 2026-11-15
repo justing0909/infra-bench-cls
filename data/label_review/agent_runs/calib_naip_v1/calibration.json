@@ -1,0 +1,199 @@
+{
+ "run": "calib_naip_v1",
+ "target_error": 0.05,
+ "chosen_threshold": 0.55,
+ "calibration_sweep": {
+  "0.5": {
+   "tiles": 60,
+   "automatic": 30,
+   "coverage": 0.5,
+   "wrong": 5,
+   "selective_error": 0.167
+  },
+  "0.55": {
+   "tiles": 60,
+   "automatic": 23,
+   "coverage": 0.383,
+   "wrong": 1,
+   "selective_error": 0.043
+  },
+  "0.6": {
+   "tiles": 60,
+   "automatic": 20,
+   "coverage": 0.333,
+   "wrong": 0,
+   "selective_error": 0.0
+  },
+  "0.65": {
+   "tiles": 60,
+   "automatic": 20,
+   "coverage": 0.333,
+   "wrong": 0,
+   "selective_error": 0.0
+  },
+  "0.7": {
+   "tiles": 60,
+   "automatic": 17,
+   "coverage": 0.283,
+   "wrong": 0,
+   "selective_error": 0.0
+  },
+  "0.75": {
+   "tiles": 60,
+   "automatic": 15,
+   "coverage": 0.25,
+   "wrong": 0,
+   "selective_error": 0.0
+  },
+  "0.8": {
+   "tiles": 60,
+   "automatic": 13,
+   "coverage": 0.217,
+   "wrong": 0,
+   "selective_error": 0.0
+  },
+  "0.85": {
+   "tiles": 60,
+   "automatic": 10,
+   "coverage": 0.167,
+   "wrong": 0,
+   "selective_error": 0.0
+  },
+  "0.9": {
+   "tiles": 60,
+   "automatic": 5,
+   "coverage": 0.083,
+   "wrong": 0,
+   "selective_error": 0.0
+  },
+  "0.95": {
+   "tiles": 60,
+   "automatic": 1,
+   "coverage": 0.017,
+   "wrong": 0,
+   "selective_error": 0.0
+  },
+  "1.0": {
+   "tiles": 60,
+   "automatic": 0,
+   "coverage": 0.0,
+   "wrong": 0,
+   "selective_error": null
+  }
+ },
+ "heldout": {
+  "tiles": 64,
+  "automatic": 36,
+  "coverage": 0.562,
+  "wrong": 1,
+  "selective_error": 0.028
+ },
+ "heldout_by_class": {
+  "energy.distribution.other": {
+   "tiles": 3,
+   "automatic": 0,
+   "coverage": 0.0,
+   "wrong": 0,
+   "selective_error": null
+  },
+  "energy.distribution.substation": {
+   "tiles": 9,
+   "automatic": 3,
+   "coverage": 0.333,
+   "wrong": 0,
+   "selective_error": 0.0
+  },
+  "energy.generation.power_plant": {
+   "tiles": 4,
+   "automatic": 1,
+   "coverage": 0.25,
+   "wrong": 0,
+   "selective_error": 0.0
+  },
+  "energy.generation.solar_farm": {
+   "tiles": 6,
+   "automatic": 5,
+   "coverage": 0.833,
+   "wrong": 0,
+   "selective_error": 0.0
+  },
+  "energy.transmission.substation": {
+   "tiles": 4,
+   "automatic": 1,
+   "coverage": 0.25,
+   "wrong": 0,
+   "selective_error": 0.0
+  },
+  "telecom.data_center": {
+   "tiles": 9,
+   "automatic": 6,
+   "coverage": 0.667,
+   "wrong": 0,
+   "selective_error": 0.0
+  },
+  "transport.airport": {
+   "tiles": 3,
+   "automatic": 3,
+   "coverage": 1.0,
+   "wrong": 0,
+   "selective_error": 0.0
+  },
+  "water.storage_tank": {
+   "tiles": 7,
+   "automatic": 5,
+   "coverage": 0.714,
+   "wrong": 1,
+   "selective_error": 0.2
+  },
+  "water.treatment.plant": {
+   "tiles": 3,
+   "automatic": 1,
+   "coverage": 0.333,
+   "wrong": 0,
+   "selective_error": 0.0
+  },
+  "water.wastewater.plant": {
+   "tiles": 16,
+   "automatic": 11,
+   "coverage": 0.688,
+   "wrong": 0,
+   "selective_error": 0.0
+  }
+ },
+ "heldout_by_region": {
+  "central-america": {
+   "tiles": 3,
+   "automatic": 1,
+   "coverage": 0.333,
+   "wrong": 0,
+   "selective_error": 0.0
+  },
+  "north-america": {
+   "tiles": 61,
+   "automatic": 35,
+   "coverage": 0.574,
+   "wrong": 1,
+   "selective_error": 0.029
+  }
+ },
+ "disputes": [
+  {
+   "id": "osm_way_1015714905",
+   "half": "heldout",
+   "osm": "water.storage_tank",
+   "human": "water.storage_tank",
+   "agents": "water.wastewater.plant",
+   "investigator": "The mapped ~32 m tank is one of four domed digester-type tanks inside a wastewater works with aeration basins, round clarifiers and sludge drying beds; a part of the site takes the site's class.",
+   "reviewer": "Digesters, clarifiers, aeration basins and filter beds."
+  },
+  {
+   "id": "osm_way_1428895195",
+   "half": "calibration",
+   "osm": "water.wastewater.plant",
+   "human": "water.wastewater.plant",
+   "agents": "water.treatment.plant",
+   "investigator": "Plant in a hillside residential area with long rectangular settling basins, dark filter-type basins and several large flat covered round tanks that look like clear-water reservoirs; there are no open clarifiers or aeration tanks, so it looks like drinking-water treatment rather than sewage.",
+   "reviewer": "Long filter or settling basins, circular tanks and a treatment building in a suburb."
+  }
+ ]
+}
