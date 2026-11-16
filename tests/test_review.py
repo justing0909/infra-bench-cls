@@ -473,7 +473,10 @@ class TestLabelStatus(unittest.TestCase):
         with mock.patch.object(ls.pd, "read_csv", return_value=q), \
              mock.patch.object(ls.decisions, "load", return_value=latest), \
              mock.patch.object(ls, "_agent_rows", return_value=agent):
-            df = ls.build().set_index("asset_id")
+            df = ls.build(excluded=set()).set_index("asset_id")
+            dropped = ls.build(excluded={"h", "n"})
+        self.assertNotIn("h", set(dropped.asset_id))   # excluded tiles leave the results
+        self.assertEqual(len(dropped), 4)
         self.assertEqual(df.loc["h", ["screened_label", "checked_by"]].tolist(), ["y", "human"])
         self.assertEqual(df.loc["u", ["screened_label", "checked_by"]].tolist(), ["x", "human_unsure"])
         self.assertEqual(df.loc["s", ["screened_label", "checked_by"]].tolist(), ["x", "official_source"])  # source beats agent

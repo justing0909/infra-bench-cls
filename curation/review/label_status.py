@@ -39,6 +39,9 @@ THRESHOLD = 0.65
 SCREEN_RUN = "screen_s2_v1"
 REVIEWER = "justin"
 OUT = REVIEW_DIR / "label_status_v1.csv"
+# tiles kept in the data but left out of results (e.g. cable landing stations
+# tagged as data centres). The list lives in the git-excluded private/ folder.
+EXCLUDED = REVIEW_DIR.parents[1] / "private" / "excluded_tiles.csv"
 COLUMNS = ["asset_id", "region", "split", "original_label", "screened_label", "checked_by",
            "confidence", "detail"]
 
@@ -55,8 +58,14 @@ def _agent_rows(run: str) -> dict:
     return out
 
 
-def build(run: str = SCREEN_RUN, threshold: float = THRESHOLD) -> pd.DataFrame:
+def excluded_ids(path=EXCLUDED) -> set:
+    """asset ids left out of results; empty when the private list is absent."""
+    return set(pd.read_csv(path, keep_default_na=False).asset_id) if path.exists() else set()
+
+
+def build(run: str = SCREEN_RUN, threshold: float = THRESHOLD, excluded: set = None) -> pd.DataFrame:
     q = pd.read_csv(REVIEW_QUEUE, keep_default_na=False)
+    q = q[~q.asset_id.isin(excluded_ids() if excluded is None else excluded)]
     latest = decisions.load()
     agent = _agent_rows(run)
     rows = []
