@@ -1,0 +1,4419 @@
+[
+ {
+  "id": "osm_way_738230730",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_738230730_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_738230730:sentinel2",
+   "osm_way_738230730:osm",
+   "osm_way_738230730:sources",
+   "osm_way_738230730:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "\u6c5f\u82cf\u5f90\u77ff\u7efc\u5408\u5229\u7528\u53d1\u7535\u6709\u9650\u516c\u53f8",
+    "tags": {
+     "landuse": "industrial",
+     "name": "\u6c5f\u82cf\u5f90\u77ff\u7efc\u5408\u5229\u7528\u53d1\u7535\u6709\u9650\u516c\u53f8",
+     "name:en": "Xuzhou Mine power station",
+     "operator": "\u5f90\u77ff\u80fd\u6e90-\u82cf\u80fd\u80a1\u4efd/\u6c5f\u82cf\u56fd\u4fe1\u96c6\u56e2",
+     "plant:method": "combustion",
+     "plant:output:electricity": "600 MW",
+     "plant:source": "coal",
+     "power": "plant",
+     "source": "https://www.gem.wiki/Xuzhou_Mine_power_station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1159.6,
+     "area_m2": 369132.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1483426136",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1483426136_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1483426136:sentinel2",
+   "osm_way_1483426136:osm",
+   "osm_way_1483426136:sources",
+   "osm_way_1483426136:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "frequency": "50",
+     "operator": "Ergon Energy",
+     "operator:wikidata": "Q5385825",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "diesel",
+     "power": "plant",
+     "ref": "GUNU",
+     "substation": "generation",
+     "voltage": "415"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 68.2,
+     "area_m2": 4472.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_848671102",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_848671102_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_848671102:sentinel2",
+   "osm_way_848671102:osm",
+   "osm_way_848671102:sources",
+   "osm_way_848671102:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Mackay Gas Turbine",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Mackay Gas Turbine",
+     "operator": "Stanwell Corporation Limited (",
+     "plant:method": "combustion",
+     "plant:output:electricity": "34 MW",
+     "plant:source": "oil",
+     "power": "plant",
+     "wikipedia": "en:Mackay Gas Turbine"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 159.9,
+     "area_m2": 6880.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_498864709",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_498864709_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_498864709:sentinel2",
+   "osm_way_498864709:osm",
+   "osm_way_498864709:sources",
+   "osm_way_498864709:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "\u0645\u062d\u0637\u0629 \u0643\u0647\u0631\u0628\u0627\u0621 \u062f\u0645\u064a\u0627\u0637 \u0627\u0644\u062c\u062f\u064a\u062f\u0629",
+    "tags": {
+     "landuse": "industrial",
+     "name": "\u0645\u062d\u0637\u0629 \u0643\u0647\u0631\u0628\u0627\u0621 \u062f\u0645\u064a\u0627\u0637 \u0627\u0644\u062c\u062f\u064a\u062f\u0629",
+     "name:ar": "\u0645\u062d\u0637\u0629 \u0643\u0647\u0631\u0628\u0627\u0621 \u062f\u0645\u064a\u0627\u0637 \u0627\u0644\u062c\u062f\u064a\u062f\u0629",
+     "name:en": "West Damietta Power Station",
+     "operator": "East Delta Electricity Production Company",
+     "plant:method": "combustion",
+     "plant:output:electricity": "1500 MW",
+     "plant:source": "gas",
+     "plant:type": "combined_cycle",
+     "power": "plant",
+     "source": "http://www.moee.gov.eg/english_new/EEHC_Rep/2017-2018en.pdf",
+     "start_date": "2012",
+     "wikidata": "Q56359716"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 902.5,
+     "area_m2": 339015.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_374036050",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_374036050_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_374036050:sentinel2",
+   "osm_way_374036050:osm",
+   "osm_way_374036050:sources",
+   "osm_way_374036050:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Medupi Power Station",
+    "tags": {
+     "alt_name": "Medupi",
+     "landuse": "industrial",
+     "name": "Medupi Power Station",
+     "operator": "Eskom",
+     "operator:wikidata": "Q1367885",
+     "plant:method": "combustion",
+     "plant:output:electricity": "4764 MW",
+     "plant:source": "coal",
+     "power": "plant",
+     "start_date": "2015",
+     "wikidata": "Q2944693"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3521.6,
+     "area_m2": 4666576.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1423854357",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1423854357_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1423854357:sentinel2",
+   "osm_way_1423854357:osm",
+   "osm_way_1423854357:sources",
+   "osm_way_1423854357:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Hidroelectrica La Damas",
+    "tags": {
+     "name": "Hidroelectrica La Damas",
+     "plant:output:electricity": "7.5 MW",
+     "plant:source": "hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 44.9,
+     "area_m2": 1200.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_171555418",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_171555418_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_171555418:sentinel2",
+   "osm_way_171555418:osm",
+   "osm_way_171555418:sources",
+   "osm_way_171555418:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Termoel\u00e9ctrica de Felton \"Lidio Ram\u00f3n P\u00e9rez\"",
+    "tags": {
+     "barrier": "wall",
+     "landuse": "industrial",
+     "name": "Termoel\u00e9ctrica de Felton \"Lidio Ram\u00f3n P\u00e9rez\"",
+     "name:en": "Lidio Ram\u00f3n P\u00e9rez (Felton) Power Plant",
+     "operator": "UNE \u2013 SEN",
+     "phone": "+5324594331",
+     "plant:method": "combustion",
+     "plant:output:electricity": "500 MW",
+     "plant:source": "oil",
+     "power": "plant",
+     "source": "https://www.powermag.com/current-generation-capacity-future-investment-plans-and-photovoltaic-projects-of-the-cuban-energy-industry/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 788.9,
+     "area_m2": 214193.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_375095190",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_375095190_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_375095190:sentinel2",
+   "osm_way_375095190:osm",
+   "osm_way_375095190:sources",
+   "osm_way_375095190:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Bater\u00eda Grupo Electr\u00f3geno Ram\u00f3n Balboa",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Bater\u00eda Grupo Electr\u00f3geno Ram\u00f3n Balboa",
+     "operator": "UNE \u2013 SEN",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "diesel",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 46.2,
+     "area_m2": 1425.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_965308049",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_965308049_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_965308049:sentinel2",
+   "osm_way_965308049:osm",
+   "osm_way_965308049:sources",
+   "osm_way_965308049:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "\u559c\u6cb3\u6c34\u7535\u7ad9",
+    "tags": {
+     "name": "\u559c\u6cb3\u6c34\u7535\u7ad9",
+     "name:en": "Xihe Hydro Power Station",
+     "name:zh": "\u559c\u6cb3\u6c34\u7535\u7ad9",
+     "plant:output:electricity": "180 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "source:name": "wikipedia",
+     "wikidata": "Q19398782"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 110.9,
+     "area_m2": 3331.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1174454390",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1174454390_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1174454390:sentinel2",
+   "osm_way_1174454390:osm",
+   "osm_way_1174454390:sources",
+   "osm_way_1174454390:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Dokouheh Power Plant",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Dokouheh Power Plant",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "gas",
+     "power": "plant",
+     "source": "https://www.gem.wiki/Dokouheh_power_station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1297.2,
+     "area_m2": 506070.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_524481884",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_524481884_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_524481884:sentinel2",
+   "osm_way_524481884:osm",
+   "osm_way_524481884:sources",
+   "osm_way_524481884:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Bater\u00eda Grupo Electr\u00f3geno F\u00e1brica de Ox\u00edgeno",
+    "tags": {},
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_1462735414",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1462735414_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1462735414:sentinel2",
+   "osm_way_1462735414:osm",
+   "osm_way_1462735414:sources",
+   "osm_way_1462735414:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Central Hidroel\u00e9ctrica Milingo",
+    "tags": {
+     "name": "Central Hidroel\u00e9ctrica Milingo",
+     "operator": "CEC, S.A. de C.V.",
+     "plant:method": "run-of-the-river",
+     "plant:output:electricity": "yes",
+     "plant:source": "hydro",
+     "power": "plant",
+     "start_date": "01-05-1915"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 40.3,
+     "area_m2": 540.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_209852608",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_209852608_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_209852608:sentinel2",
+   "osm_way_209852608:osm",
+   "osm_way_209852608:sources",
+   "osm_way_209852608:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Flinders Island Power Station",
+    "tags": {
+     "barrier": "fence",
+     "landuse": "industrial",
+     "name": "Flinders Island Power Station",
+     "operator": "Hydro Tasmania",
+     "plant:method": "combustion",
+     "plant:output:electricity": "3 MW",
+     "plant:source": "diesel",
+     "power": "plant",
+     "start_date": "1984",
+     "voltage": "11000;440"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 95.6,
+     "area_m2": 7862.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_848901561",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_848901561_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_848901561:sentinel2",
+   "osm_way_848901561:osm",
+   "osm_way_848901561:sources",
+   "osm_way_848901561:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Centrale hydro\u00e9lectrique de Zongo II",
+    "tags": {
+     "name": "Centrale hydro\u00e9lectrique de Zongo II",
+     "name:en": "Zongo 2 Hydroelectric Power Plant",
+     "operator": "SNEL",
+     "plant:method": "run-of-the-river",
+     "plant:output:electricity": "150 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "start_date": "2018",
+     "wikidata": "Q56373702"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 146.8,
+     "area_m2": 5605.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1086683249",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1086683249_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1086683249:sentinel2",
+   "osm_way_1086683249:osm",
+   "osm_way_1086683249:sources",
+   "osm_way_1086683249:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Taft Hydro Energy",
+    "tags": {
+     "addr:city": "Taft",
+     "area": "yes",
+     "fixme": "Area Boundary is only assumed until full satellite imagery is available.",
+     "name": "Taft Hydro Energy",
+     "operator": "Taft Hydro Energy",
+     "plant:method": "run-of-the-river",
+     "plant:output:electricity": "yes",
+     "plant:source": "hydro",
+     "power": "plant",
+     "type": "site"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 250.9,
+     "area_m2": 27458.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_696527449",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_696527449_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_696527449:sentinel2",
+   "osm_way_696527449:osm",
+   "osm_way_696527449:sources",
+   "osm_way_696527449:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Centrale \u00e9lectrique de Kossodo",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Centrale \u00e9lectrique de Kossodo",
+     "operator": "SONABEL",
+     "plant:method": "combustion",
+     "plant:output:electricity": "64 MW",
+     "plant:source": "oil",
+     "power": "plant",
+     "source": "https://rise.esmap.org/data/files/library/burkina-faso/2017%20Burkina%20Faso/Energy%20Access/EA1.1_BF_2017_RAPPORT%20PLAN%20%20DIRECTEUR_Version%20finale.pdf"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 421.4,
+     "area_m2": 91735.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1475136394",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1475136394_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1475136394:sentinel2",
+   "osm_way_1475136394:osm",
+   "osm_way_1475136394:sources",
+   "osm_way_1475136394:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Regis Carrizo Springs",
+    "tags": {
+     "barrier": "fence",
+     "landuse": "industrial",
+     "name": "Regis Carrizo Springs",
+     "operator": "Regis Carrizo Springs LLC",
+     "plant:output:electricity": "9.9 MW",
+     "plant:source": "battery",
+     "power": "plant",
+     "start_date": "2025-12"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA: no plant within 1.5 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 37.9,
+     "area_m2": 1361.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_327576998",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_327576998_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_327576998:sentinel2",
+   "osm_way_327576998:osm",
+   "osm_way_327576998:sources",
+   "osm_way_327576998:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Haina TG",
+    "tags": {
+     "building": "industrial",
+     "landuse": "industrial",
+     "name": "Haina TG",
+     "operator": "EgeHaina",
+     "plant:method": "combustion",
+     "plant:output:electricity": "100 MW",
+     "plant:source": "diesel",
+     "power": "plant",
+     "start_date": "1998",
+     "website": "https://www.egehaina.com/Centrales?name=Haina%20TG"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 33.0,
+     "area_m2": 442.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_24004345",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_24004345_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_24004345:sentinel2",
+   "osm_way_24004345:osm",
+   "osm_way_24004345:sources",
+   "osm_way_24004345:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "\u0421\u0435\u0432\u0435\u0440\u043e-\u0417\u0430\u043f\u0430\u0434\u043d\u0430\u044f \u0422\u042d\u0426",
+    "tags": {
+     "alt_name": "North-West Thermal Power Plant",
+     "barrier": "wall",
+     "generator:source": "gas",
+     "landuse": "industrial",
+     "name": "\u0421\u0435\u0432\u0435\u0440\u043e-\u0417\u0430\u043f\u0430\u0434\u043d\u0430\u044f \u0422\u042d\u0426",
+     "name:en": "Severo-Zapadnaya Thermal Power Plant",
+     "name:ru": "\u0421\u0435\u0432\u0435\u0440\u043e-\u0417\u0430\u043f\u0430\u0434\u043d\u0430\u044f \u0422\u042d\u0426",
+     "name:uk": "\u041f\u0456\u0432\u043d\u0456\u0447\u043d\u043e-\u0417\u0430\u0445\u0456\u0434\u043d\u0430 \u0422\u0415\u0426",
+     "operator": "\u0418\u041d\u0422\u0415\u0420 \u0420\u0410\u041e \u0415\u042d\u0421",
+     "operator:en": "Inter RAO UES",
+     "operator:ru": "\u0418\u041d\u0422\u0415\u0420 \u0420\u0410\u041e \u0415\u042d\u0421",
+     "operator:wikidata": "Q1963801",
+     "plant:method": "combustion",
+     "plant:output:electricity": "900 MW",
+     "plant:output:hot_water": "814 MW",
+     "plant:source": "gas",
+     "power": "plant",
+     "start_date": "2000-12-22",
+     "website": "https://irao-generation.ru/stations/sztecg/",
+     "wikidata": "Q4412466",
+     "wikipedia": "ru:\u0421\u0435\u0432\u0435\u0440\u043e-\u0417\u0430\u043f\u0430\u0434\u043d\u0430\u044f \u0422\u042d\u0426"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1096.5,
+     "area_m2": 555725.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_83656868",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_83656868_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_83656868:sentinel2",
+   "osm_way_83656868:osm",
+   "osm_way_83656868:sources",
+   "osm_way_83656868:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Pelican Point Power Station",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Pelican Point Power Station",
+     "plant:method": "combustion",
+     "plant:output:electricity": "485 MW",
+     "plant:source": "gas",
+     "plant:type": "combined_cycle",
+     "power": "plant",
+     "wikidata": "Q7161425",
+     "wikipedia": "en:Pelican Point Power Station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 413.2,
+     "area_m2": 82253.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_160913416",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_160913416_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_160913416:sentinel2",
+   "osm_way_160913416:osm",
+   "osm_way_160913416:sources",
+   "osm_way_160913416:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Tarong Power Station",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Tarong Power Station",
+     "operator": "Stanwell",
+     "plant:method": "combustion",
+     "plant:output:electricity": "1400 MW",
+     "plant:source": "coal",
+     "power": "plant",
+     "start_date": "1984",
+     "website": "https://www.stanwell.com/home-stanwell/",
+     "wikidata": "Q2944709",
+     "wikipedia": "en:Tarong Power Station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1397.7,
+     "area_m2": 1078999.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_935526383",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_935526383_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_935526383:sentinel2",
+   "osm_way_935526383:osm",
+   "osm_way_935526383:sources",
+   "osm_way_935526383:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Generadora de Electricidad Itabo S.A.",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Generadora de Electricidad Itabo S.A.",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "coal",
+     "power": "plant",
+     "source": "https://www.gem.wiki/Itabo_power_station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 191.5,
+     "area_m2": 27504.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_699967329",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_699967329_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_699967329:sentinel2",
+   "osm_way_699967329:osm",
+   "osm_way_699967329:sources",
+   "osm_way_699967329:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "\u548c\u6797\u683c\u5c14\u53bf\u76db\u4e50\u56ed\u533a\u4e30\u534e\u751f\u7269\u8d28\u70ed\u7535\u6709\u9650\u516c\u53f8",
+    "tags": {
+     "landuse": "industrial",
+     "name": "\u548c\u6797\u683c\u5c14\u53bf\u76db\u4e50\u56ed\u533a\u4e30\u534e\u751f\u7269\u8d28\u70ed\u7535\u6709\u9650\u516c\u53f8",
+     "note": "\u73af\u8bc4\u53d8\u66f4\u4e3a\u71c3\u7164",
+     "plant:method": "combustion",
+     "plant:output:electricity": "18 MW",
+     "plant:source": "coal",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 537.4,
+     "area_m2": 218648.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_444377135",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_444377135_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_444377135:sentinel2",
+   "osm_way_444377135:osm",
+   "osm_way_444377135:sources",
+   "osm_way_444377135:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Bater\u00eda Grupo Electr\u00f3geno Cruces",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Bater\u00eda Grupo Electr\u00f3geno Cruces",
+     "operator": "UNE \u2013 SEN",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "diesel",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 133.3,
+     "area_m2": 10940.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1023691194",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1023691194_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1023691194:sentinel2",
+   "osm_way_1023691194:osm",
+   "osm_way_1023691194:sources",
+   "osm_way_1023691194:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "plant:method": "combustion",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 398.8,
+     "area_m2": 110284.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1462682491",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1462682491_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1462682491:sentinel2",
+   "osm_way_1462682491:osm",
+   "osm_way_1462682491:sources",
+   "osm_way_1462682491:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Centrale hydro\u00e9lectrique d\u2019Ambwe",
+    "tags": {
+     "addr:city": "Kailo",
+     "name": "Centrale hydro\u00e9lectrique d\u2019Ambwe",
+     "plant:method": "water-storage",
+     "plant:output:electricity": "4MW",
+     "plant:source": "hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 19.8,
+     "area_m2": 382.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_435076400",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_435076400_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_435076400:sentinel2",
+   "osm_way_435076400:osm",
+   "osm_way_435076400:sources",
+   "osm_way_435076400:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Bater\u00eda Grupo Electr\u00f3geno Di\u00e9sel Nicaro-Levisa",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Bater\u00eda Grupo Electr\u00f3geno Di\u00e9sel Nicaro - Levisa",
+     "operator": "UNE \u2013 SEN",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "diesel",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 171.5,
+     "area_m2": 14727.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_108180682",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_108180682_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_108180682:sentinel2",
+   "osm_way_108180682:osm",
+   "osm_way_108180682:sources",
+   "osm_way_108180682:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Planta Las Brisas",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Planta Las Brisas",
+     "note": "Name from NE corner entrance sign",
+     "operator": "Enel",
+     "operator:wikidata": "Q651222",
+     "operator:wikipedia": "en:Enel",
+     "plant:method": "combustion",
+     "plant:output:electricity": "65 MW",
+     "plant:source": "oil",
+     "power": "plant",
+     "source": "Imagerie Maxar"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 201.3,
+     "area_m2": 30872.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_169562938",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_169562938_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_169562938:sentinel2",
+   "osm_way_169562938:osm",
+   "osm_way_169562938:sources",
+   "osm_way_169562938:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Gattar Station",
+    "tags": {
+     "barrier": "fence",
+     "generator:method": "combustion",
+     "generator:source": "oil",
+     "landuse": "industrial",
+     "name": "Gattar Station",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "oil",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 186.6,
+     "area_m2": 29312.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1470371266",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1470371266_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1470371266:sentinel2",
+   "osm_way_1470371266:osm",
+   "osm_way_1470371266:sources",
+   "osm_way_1470371266:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Cocais Grande",
+    "tags": {
+     "name": "Cocais Grande",
+     "plant:source": "hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 67.1,
+     "area_m2": 1402.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_656052712",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_656052712_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_656052712:sentinel2",
+   "osm_way_656052712:osm",
+   "osm_way_656052712:sources",
+   "osm_way_656052712:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Central Termica Magdalena",
+    "tags": {
+     "generator:type": "reciprocating_engine",
+     "landuse": "industrial",
+     "name": "Central Termica Magdalena",
+     "plant:method": "combustion",
+     "plant:output:electricity": "25 MW",
+     "plant:source": "oil",
+     "power": "plant",
+     "ref:AR:CAMMESA": "MAGD",
+     "source": "Direcci\u00f3n Nacional de Informaci\u00f3n Energ\u00e9tica - Generaci\u00f3n El\u00e9ctrica - Centrales de generaci\u00f3n - 2020"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 150.0,
+     "area_m2": 19408.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_388331455",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_388331455_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_388331455:sentinel2",
+   "osm_way_388331455:osm",
+   "osm_way_388331455:sources",
+   "osm_way_388331455:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Lubudi Hydroelectric Powerstation",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Lubudi Hydroelectric Powerstation",
+     "operator": "Cimenterie du Katanga (Cimentkat)",
+     "plant:method": "run-of-the-river",
+     "plant:output:electricity": "1 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "start_date": "1923"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 29.4,
+     "area_m2": 462.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_991781734",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_991781734_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_991781734:sentinel2",
+   "osm_way_991781734:osm",
+   "osm_way_991781734:sources",
+   "osm_way_991781734:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Orzunil",
+    "tags": {
+     "name": "Orzunil",
+     "plant:output:electricity": "24 MW",
+     "plant:source": "geothermal",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 223.2,
+     "area_m2": 17965.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1240045662",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1240045662_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1240045662:sentinel2",
+   "osm_way_1240045662:osm",
+   "osm_way_1240045662:sources",
+   "osm_way_1240045662:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Alberto Echandi Hydroelectric Station Costa Rica",
+    "tags": {
+     "building": "yes",
+     "name": "Alberto Echandi Hydroelectric Station Costa Rica",
+     "plant:source": "hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 39.7,
+     "area_m2": 1174.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_807413255",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_807413255_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_807413255:sentinel2",
+   "osm_way_807413255:osm",
+   "osm_way_807413255:sources",
+   "osm_way_807413255:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "\u0645\u062d\u0637\u0629 \u062a\u0648\u0644\u064a\u062f \u0643\u0647\u0631\u0628\u0627\u0621 \u063a\u0631\u0628 \u0623\u0633\u064a\u0648\u0637",
+    "tags": {
+     "barrier": "wall",
+     "name": "\u0645\u062d\u0637\u0629 \u062a\u0648\u0644\u064a\u062f \u0643\u0647\u0631\u0628\u0627\u0621 \u063a\u0631\u0628 \u0623\u0633\u064a\u0648\u0637",
+     "name:en": "West Assiut Power Plant",
+     "operator": "Upper Egypt Electricity Production Company",
+     "plant:method": "combustion",
+     "plant:output:electricity": "1500 MW",
+     "plant:source": "gas",
+     "plant:type": "combined_cycle",
+     "power": "plant",
+     "source": "http://www.moee.gov.eg/english_new/EEHC_Rep/2017-2018en.pdf",
+     "start_date": "2015",
+     "wikidata": "Q56360050"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 657.2,
+     "area_m2": 374869.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1304812350",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1304812350_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1304812350:sentinel2",
+   "osm_way_1304812350:osm",
+   "osm_way_1304812350:sources",
+   "osm_way_1304812350:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "CHE Punutuma",
+    "tags": {
+     "building": "industrial",
+     "name": "CHE Punutuma",
+     "plant:output:electricity": "yes",
+     "plant:source": "hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 49.5,
+     "area_m2": 910.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_403005270",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_403005270_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_403005270:sentinel2",
+   "osm_way_403005270:osm",
+   "osm_way_403005270:sources",
+   "osm_way_403005270:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Coleridge Power Station",
+    "tags": {
+     "building": "yes",
+     "layer": "1",
+     "name": "Coleridge Power Station",
+     "operator": "Trustpower",
+     "operator:wikidata": "Q2456640",
+     "operator:wikipedia": "en:Trustpower",
+     "plant:output:electricity": "39 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "wikidata": "Q5144632",
+     "wikipedia": "en:Coleridge Power Station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 101.7,
+     "area_m2": 1672.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_506142348",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_506142348_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_506142348:sentinel2",
+   "osm_way_506142348:osm",
+   "osm_way_506142348:sources",
+   "osm_way_506142348:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Iatan Generating Station",
+    "tags": {
+     "addr:city": "Weston",
+     "addr:housenumber": "20250",
+     "addr:postcode": "64098",
+     "addr:state": "MO",
+     "addr:street": "MO 45",
+     "landuse": "industrial",
+     "name": "Iatan Generating Station",
+     "operator": "Evergy",
+     "operator:wikidata": "Q7987107",
+     "plant:method": "combustion",
+     "plant:output:electricity": "1725 MW",
+     "plant:source": "coal",
+     "power": "plant",
+     "ref:US:EIA": "6065",
+     "source": "U.S. Energy Information Administration - EIA-860 - 2021",
+     "start_date": "1980-05",
+     "wikidata": "Q11976755"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: Iatan (coal, 1602 MW) 1312 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 6777.7,
+     "area_m2": 13242300.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_357484873",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_357484873_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_357484873:sentinel2",
+   "osm_way_357484873:osm",
+   "osm_way_357484873:sources",
+   "osm_way_357484873:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Centrale hydro\u00e9lectrique de F\u00e9lou",
+    "tags": {
+     "building": "yes",
+     "name": "Centrale hydro\u00e9lectrique de F\u00e9lou",
+     "operator": "ESKOM",
+     "plant:method": "run-of-the-river",
+     "plant:output:electricity": "63 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "start_date": "1927",
+     "wikidata": "Q18712236",
+     "wikipedia": "en:F\u00e9lou Hydroelectric Plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 69.1,
+     "area_m2": 2687.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_528212892",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_528212892_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_528212892:sentinel2",
+   "osm_way_528212892:osm",
+   "osm_way_528212892:sources",
+   "osm_way_528212892:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Plantel Hidroel\u00e9ctrico Pe\u00f1as Blancas",
+    "tags": {
+     "name": "Plantel Hidroel\u00e9ctrico Pe\u00f1as Blancas",
+     "operator": "ICE",
+     "operator:wikidata": "Q3431114",
+     "operator:wikipedia": "en:Instituto Costarricense de Electricidad",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 468.9,
+     "area_m2": 70553.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1118120311",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1118120311_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1118120311:sentinel2",
+   "osm_way_1118120311:osm",
+   "osm_way_1118120311:sources",
+   "osm_way_1118120311:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "\u5c71\u4e1c\u7701\u8398\u53bf\u68ee\u6e90\u5b9e\u4e1a\u6709\u9650\u516c\u53f8",
+    "tags": {
+     "landuse": "industrial",
+     "name": "\u5c71\u4e1c\u7701\u8398\u53bf\u68ee\u6e90\u5b9e\u4e1a\u6709\u9650\u516c\u53f8",
+     "plant:method": "combustion",
+     "plant:output:electricity": "48 MW",
+     "plant:source": "coal",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 421.0,
+     "area_m2": 116777.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_862825576",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_862825576_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_862825576:sentinel2",
+   "osm_way_862825576:osm",
+   "osm_way_862825576:sources",
+   "osm_way_862825576:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Anlima Energy Chattogram power plant",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Anlima Energy Chattogram power plant",
+     "operator": "Anlima Energy",
+     "plant:method": "combustion",
+     "plant:output:electricity": "116 MW",
+     "plant:source": "oil",
+     "power": "plant",
+     "wikidata": "Q111265837"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 529.6,
+     "area_m2": 63399.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1462359478",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1462359478_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1462359478:sentinel2",
+   "osm_way_1462359478:osm",
+   "osm_way_1462359478:sources",
+   "osm_way_1462359478:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "plant:source": "hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 42.9,
+     "area_m2": 1086.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_218599913",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_218599913_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_218599913:sentinel2",
+   "osm_way_218599913:osm",
+   "osm_way_218599913:sources",
+   "osm_way_218599913:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Usina Primera \"Santiago Filz Simon\"",
+    "tags": {
+     "building": "yes",
+     "landuse": "industrial",
+     "name": "Usina Primera \"Santiago Filz Simon\"",
+     "operator": "Empresa Provincial de Energ\u00eda de C\u00f3rdoba (EPEC)",
+     "plant:method": "water-storage",
+     "plant:output:electricity": "10.5 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "source": "https://web.epec.com.ar/generacion_central_h_fitz-simon.html"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 25.4,
+     "area_m2": 370.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_441605807",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_441605807_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_441605807:sentinel2",
+   "osm_way_441605807:osm",
+   "osm_way_441605807:sources",
+   "osm_way_441605807:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "building:levels": "6",
+     "layer": "1",
+     "operator": "Equinix",
+     "operator:website": "https://www.equinix.com",
+     "operator:wikidata": "Q851641",
+     "ref:bag": "0363100012238998",
+     "roof:shape": "flat",
+     "source": "BAG",
+     "source:date": "2017-03-24",
+     "start_date": "2015"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 107.4,
+     "area_m2": 6354.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_35973814",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_35973814_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_35973814:sentinel2",
+   "osm_way_35973814:osm",
+   "osm_way_35973814:sources",
+   "osm_way_35973814:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "\u00dej\u00f3\u00f0braut 838",
+    "tags": {
+     "addr:housenumber": "838",
+     "addr:postcode": "262",
+     "addr:street": "\u00dej\u00f3\u00f0braut",
+     "building": "data_center",
+     "name": "\u00dej\u00f3\u00f0braut 838",
+     "ref:HNITNUM": "10116929",
+     "source": "http://www.asbru.is/resources/Files/asbru_skilti_kort_v6.pdf",
+     "source:addr": "Sta\u00f0fangaskr\u00e1",
+     "start_date": "1954"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 34.0,
+     "area_m2": 949.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_102453433",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_102453433_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_102453433:sentinel2",
+   "osm_way_102453433:osm",
+   "osm_way_102453433:sources",
+   "osm_way_102453433:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "OPCORE DC6-6",
+    "tags": {
+     "building": "data_center",
+     "name": "OPCORE DC6-6",
+     "operator": "OPCORE",
+     "source": "cadastre-dgi-fr source : Direction G\u00e9n\u00e9rale des Imp\u00f4ts - Cadastre. Mise \u00e0 jour : 2011"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 85.8,
+     "area_m2": 5809.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_364289073",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_364289073_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_364289073:sentinel2",
+   "osm_way_364289073:osm",
+   "osm_way_364289073:sources",
+   "osm_way_364289073:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Microsoft",
+    "tags": {
+     "addr:city": "San Antonio",
+     "addr:country": "US",
+     "addr:housenumber": "3823",
+     "addr:postcode": "78251",
+     "addr:state": "TX",
+     "addr:street": "Wiseman Boulevard",
+     "building": "data_center",
+     "name": "Microsoft",
+     "operator": "Microsoft",
+     "operator:wikidata": "Q2283",
+     "operator:wikipedia": "en:Microsoft",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 182.3,
+     "area_m2": 24070.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_300163074",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_300163074_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_300163074:sentinel2",
+   "osm_way_300163074:osm",
+   "osm_way_300163074:sources",
+   "osm_way_300163074:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Centersquare IAD4-B",
+    "tags": {
+     "addr:city": "Ashburn",
+     "addr:housenumber": "21571",
+     "addr:postcode": "20147",
+     "addr:state": "VA",
+     "addr:street": "Beaumeade Circle",
+     "building": "data_center",
+     "input:electricity": "12 MW",
+     "name": "Centersquare IAD4-B",
+     "operator": "Centersquare",
+     "operator:wikidata": "Q127304226",
+     "ref": "IAD4",
+     "telecom": "data_center",
+     "website": "https://centersquaredc.com/data-centers/northern-virginia#ashburn-iad4"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 192.6,
+     "area_m2": 8375.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1030901315",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1030901315_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1030901315:sentinel2",
+   "osm_way_1030901315:osm",
+   "osm_way_1030901315:sources",
+   "osm_way_1030901315:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Centre de donn\u00e9es MAIF",
+    "tags": {
+     "building": "data_center",
+     "description": "Centre de donn\u00e9es.",
+     "name": "Centre de donn\u00e9es MAIF",
+     "operator": "MAIF;DARVA",
+     "operator:wikidata": "Q3331029;Q3016604",
+     "owner": "MAIF",
+     "owner:wikidata": "Q3331029",
+     "ref:FR:RNB": "AF67M93Y1EJZ",
+     "source": "survey",
+     "source:geometry": "cadastre-dgi-fr source : Direction G\u00e9n\u00e9rale des Imp\u00f4ts - Cadastre. Mise \u00e0 jour : 2021",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 44.6,
+     "area_m2": 1260.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_27756169",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_27756169_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_27756169:sentinel2",
+   "osm_way_27756169:osm",
+   "osm_way_27756169:sources",
+   "osm_way_27756169:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Digital Realty LHR13",
+    "tags": {
+     "building": "data_center",
+     "name": "Digital Realty LHR13",
+     "operator": "Digital Realty",
+     "operator:wikidata": "Q5275969",
+     "ref": "LHR13",
+     "telecom": "data_center",
+     "website": "https://www.digitalrealty.co.uk/data-centers/emea/london/lhr13",
+     "wikidata": "Q138426847"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 128.5,
+     "area_m2": 6556.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_701924669",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_701924669_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_701924669:sentinel2",
+   "osm_way_701924669:osm",
+   "osm_way_701924669:sources",
+   "osm_way_701924669:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Amazon IAD92",
+    "tags": {
+     "addr:city": "Sterling",
+     "addr:housenumber": "45950",
+     "addr:postcode": "20166",
+     "addr:state": "VA",
+     "addr:street": "Pathfinder Plaza",
+     "building": "data_center",
+     "input:electricity": "45 MW",
+     "name": "Amazon IAD-92",
+     "operator": "Amazon Web Services",
+     "operator:short": "AWS",
+     "operator:wikidata": "Q456157",
+     "ref": "IAD-92",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 239.1,
+     "area_m2": 13942.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_744491691",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_744491691_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_744491691:sentinel2",
+   "osm_way_744491691:osm",
+   "osm_way_744491691:sources",
+   "osm_way_744491691:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Amazon IAD145",
+    "tags": {
+     "addr:city": "Sterling",
+     "addr:housenumber": "22916",
+     "addr:postcode": "20166",
+     "addr:state": "VA",
+     "addr:street": "International Drive",
+     "building": "data_center",
+     "input:electricity": "50 MW",
+     "name": "Amazon IAD-145",
+     "operator": "Amazon Web Services",
+     "operator:short": "AWS",
+     "operator:wikidata": "Q456157",
+     "ref": "IAD-145",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 154.6,
+     "area_m2": 9644.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1303852315",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1303852315_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1303852315:sentinel2",
+   "osm_way_1303852315:osm",
+   "osm_way_1303852315:sources",
+   "osm_way_1303852315:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "addr:city": "Brandon",
+     "addr:locality": "RAF Lakenheath",
+     "addr:postcode": "IP7 9PN",
+     "building": "data_center",
+     "operator": "US Air Force",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 26.8,
+     "area_m2": 480.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_460010262",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_460010262_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_460010262:sentinel2",
+   "osm_way_460010262:osm",
+   "osm_way_460010262:sources",
+   "osm_way_460010262:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Pulsant Milton Keynes SE-1",
+    "tags": {
+     "addr:city": "Milton Keynes",
+     "addr:housenumber": "5",
+     "addr:street": "Rockingham Drive",
+     "building": "data_center",
+     "name": "Pulsant Milton Keynes SE-1",
+     "operator": "Pulsant",
+     "ref": "SE-1",
+     "telecom": "data_center",
+     "website": "https://www.pulsant.com/colocation-milton-keynes-datacentre"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 73.0,
+     "area_m2": 2208.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_128499684",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_128499684_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_128499684:sentinel2",
+   "osm_way_128499684:osm",
+   "osm_way_128499684:sources",
+   "osm_way_128499684:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Digital Realty CH1",
+    "tags": {
+     "addr:city": "Elk Grove Village",
+     "addr:housenumber": "2200",
+     "addr:postcode": "60007",
+     "addr:state": "IL",
+     "addr:street": "Busse Road",
+     "building": "data_center",
+     "building:levels": "3",
+     "building:use": "industrial",
+     "name": "Digital Realty CH1",
+     "operator": "Digital Realty",
+     "operator:wikidata": "Q5275969",
+     "ref": "CH1",
+     "source": "bing",
+     "telecom": "data_center",
+     "website": "https://www.digitalrealty.com/data-centers/americas/chicago/ch1"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 278.0,
+     "area_m2": 43803.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_138260136",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_138260136_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_138260136:sentinel2",
+   "osm_way_138260136:osm",
+   "osm_way_138260136:sources",
+   "osm_way_138260136:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "NCSA Petascale Computing Facility",
+    "tags": {
+     "addr:city": "Champaign",
+     "addr:housenumber": "1725",
+     "addr:postcode": "61820",
+     "addr:state": "IL",
+     "addr:street": "South Oak Street",
+     "alt_name": "Blue Waters",
+     "building": "data_center",
+     "name": "NCSA Petascale Computing Facility",
+     "short_name": "NPCF",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 108.7,
+     "area_m2": 4243.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_845775548",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_845775548_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_845775548:sentinel2",
+   "osm_way_845775548:osm",
+   "osm_way_845775548:sources",
+   "osm_way_845775548:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "JPMorgan Chase",
+    "tags": {
+     "addr:city": "Broomfield",
+     "addr:housenumber": "2701",
+     "addr:postcode": "80023",
+     "addr:state": "CO",
+     "addr:street": "West 160th Avenue",
+     "building": "data_center",
+     "name": "JPMorgan Chase",
+     "operator": "JPMorgan Chase",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 199.5,
+     "area_m2": 17501.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_273579842",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_273579842_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_273579842:sentinel2",
+   "osm_way_273579842:osm",
+   "osm_way_273579842:sources",
+   "osm_way_273579842:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": null,
+    "available": false
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_63979423",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_63979423_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_63979423:sentinel2",
+   "osm_way_63979423:osm",
+   "osm_way_63979423:sources",
+   "osm_way_63979423:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Interxion PAR3",
+    "tags": {
+     "addr:city": "Saint-Denis",
+     "addr:housenumber": "7;9",
+     "addr:postcode": "93200",
+     "addr:street": "Avenue des Arts et M\u00e9tiers",
+     "building": "data_center",
+     "name": "Interxion PAR3",
+     "operator": "Digital Realty",
+     "operator:wikidata": "Q5275969",
+     "source": "cadastre-dgi-fr source : Direction G\u00e9n\u00e9rale des Imp\u00f4ts - Cadastre. Mise \u00e0 jour : 2010",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 80.2,
+     "area_m2": 3101.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_657222646",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_657222646_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_657222646:sentinel2",
+   "osm_way_657222646:osm",
+   "osm_way_657222646:sources",
+   "osm_way_657222646:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Turkcell Kartal Veri Merkezi",
+    "tags": {
+     "building": "data_center",
+     "building:levels": "1",
+     "name": "Turkcell Kartal Veri Merkezi",
+     "operator": "Turkcell",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 64.2,
+     "area_m2": 3658.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_260883600",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_260883600_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_260883600:sentinel2",
+   "osm_way_260883600:osm",
+   "osm_way_260883600:sources",
+   "osm_way_260883600:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Metas datacenter i Lule\u00e5",
+    "tags": {
+     "building": "data_center",
+     "name": "Metas datacenter i Lule\u00e5",
+     "name:en": "Meta\u2019s Lule\u00e5 Data Centre",
+     "operator": "Meta",
+     "operator:wikidata": "Q380",
+     "telecom": "data_center",
+     "website": "https://www.facebook.com/LuleaDataCenter"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 316.6,
+     "area_m2": 25637.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_432584964",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_432584964_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_432584964:sentinel2",
+   "osm_way_432584964:osm",
+   "osm_way_432584964:sources",
+   "osm_way_432584964:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "building:levels": "1",
+     "roof:levels": "1",
+     "roof:shape": "skillion"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 152.6,
+     "area_m2": 3486.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1062506403",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1062506403_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1062506403:sentinel2",
+   "osm_way_1062506403:osm",
+   "osm_way_1062506403:sources",
+   "osm_way_1062506403:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "building:colour": "gray",
+     "building:material": "metal",
+     "height": "9.0",
+     "roof:colour": "gray",
+     "roof:direction": "228.62",
+     "roof:height": "5.00",
+     "roof:material": "metal",
+     "roof:shape": "skillion"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 182.5,
+     "area_m2": 4032.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1432337898",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1432337898_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1432337898:sentinel2",
+   "osm_way_1432337898:osm",
+   "osm_way_1432337898:sources",
+   "osm_way_1432337898:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "source": "Sentinel and https://www.youtube.com/watch?v=n2b0ljMXyEg -  can be refined if better images are available",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 185.0,
+     "area_m2": 21321.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_269230406",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_269230406_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_269230406:sentinel2",
+   "osm_way_269230406:osm",
+   "osm_way_269230406:sources",
+   "osm_way_269230406:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Gebouw 59",
+    "tags": {
+     "building": "data_center",
+     "name": "Gebouw 59",
+     "ref:bag": "0394100001021963",
+     "source": "BAG",
+     "source:date": "2018-04-10",
+     "start_date": "2005"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 67.6,
+     "area_m2": 3537.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_47924345",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_47924345_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_47924345:sentinel2",
+   "osm_way_47924345:osm",
+   "osm_way_47924345:sources",
+   "osm_way_47924345:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "note": "Possibly AWS?",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 56.3,
+     "area_m2": 3159.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_304647589",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_304647589_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_304647589:sentinel2",
+   "osm_way_304647589:osm",
+   "osm_way_304647589:sources",
+   "osm_way_304647589:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Centrum Technologii ICM UW",
+    "tags": {
+     "addr:city": "Warszawa",
+     "addr:city:simc": "0918123",
+     "addr:housenumber": "32",
+     "addr:postcode": "03-046",
+     "addr:street": "Kupiecka",
+     "building": "data_center",
+     "contact:website": "http://ocean.icm.edu.pl",
+     "name": "Centrum Technologii ICM UW",
+     "source:addr": "mapa.um.warszawa.pl",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 85.5,
+     "area_m2": 3344.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_418593276",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_418593276_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_418593276:sentinel2",
+   "osm_way_418593276:osm",
+   "osm_way_418593276:sources",
+   "osm_way_418593276:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Datov\u00e9 centrum Kokura",
+    "tags": {
+     "building": "data_center",
+     "building:levels": "2",
+     "building:ruian:type": "19",
+     "name": "Datov\u00e9 centrum Kokura",
+     "ref": "ko",
+     "ref:ruian:building": "79559743",
+     "source": "cuzk:ruian",
+     "start_date": "2015-03-02",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 95.3,
+     "area_m2": 3705.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1088203906",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1088203906_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1088203906:sentinel2",
+   "osm_way_1088203906:osm",
+   "osm_way_1088203906:sources",
+   "osm_way_1088203906:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Amazon Web Services",
+    "tags": {
+     "addr:city": "Ashburn",
+     "addr:housenumber": "21320",
+     "addr:postcode": "20147",
+     "addr:state": "VA",
+     "addr:street": "Beaumeade Circle",
+     "building": "data_center",
+     "input:electricity": "45 MW",
+     "name": "Amazon IAD-169",
+     "operator": "Amazon Web Services",
+     "operator:short": "AWS",
+     "operator:wikidata": "Q456157",
+     "ref": "IAD-169",
+     "start_date": "2022",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 134.4,
+     "area_m2": 8966.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_393243674",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_393243674_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_393243674:sentinel2",
+   "osm_way_393243674:osm",
+   "osm_way_393243674:sources",
+   "osm_way_393243674:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Iron Mountain London LON-1",
+    "tags": {
+     "addr:city": "Slough",
+     "addr:postcode": "SL1 4JU",
+     "addr:street": "Dundee Road",
+     "building": "data_center",
+     "description": "Formerly Credit Suisse Data Centre",
+     "name": "Iron Mountain London LON-1",
+     "operator": "Iron Mountain",
+     "telecom": "data_center",
+     "website": "https://www.ironmountain.com/data-centers/locations/london-data-center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 231.6,
+     "area_m2": 14736.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_57853387",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_57853387_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_57853387:sentinel2",
+   "osm_way_57853387:osm",
+   "osm_way_57853387:sources",
+   "osm_way_57853387:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "height": "15",
+     "ref:bag": "0363100012117661",
+     "source": "BAG",
+     "source:date": "2014-05-07",
+     "source:height": "3DBAG",
+     "source:height:date": "2025-09-03",
+     "start_date": "1984"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 54.5,
+     "area_m2": 1970.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_214499225",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_214499225_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_214499225:sentinel2",
+   "osm_way_214499225:osm",
+   "osm_way_214499225:sources",
+   "osm_way_214499225:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "addr:city": "Hafnarfj\u00f6r\u00f0ur",
+     "addr:housenumber": "10",
+     "addr:postcode": "221",
+     "addr:street": "Steinhella",
+     "building": "data_center",
+     "start_date": "2006"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 72.3,
+     "area_m2": 2260.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1222498765",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1222498765_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1222498765:sentinel2",
+   "osm_way_1222498765:osm",
+   "osm_way_1222498765:sources",
+   "osm_way_1222498765:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Data Center Bilbao Arasur",
+    "tags": {
+     "building": "data_center",
+     "building:levels": "3",
+     "name": "Data Center Bilbao Arasur",
+     "operator": "Merlin Properties",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 109.9,
+     "area_m2": 9101.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_225909390",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_225909390_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_225909390:sentinel2",
+   "osm_way_225909390:osm",
+   "osm_way_225909390:sources",
+   "osm_way_225909390:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Equinix LD4",
+    "tags": {
+     "addr:city": "Slough",
+     "addr:housenumber": "2",
+     "addr:postcode": "SL1 4NB",
+     "addr:street": "Buckingham Avenue",
+     "building": "data_center",
+     "name": "Equinix LD4",
+     "operator": "Equinix",
+     "operator:wikidata": "Q851641",
+     "ref": "LD4",
+     "telecom": "data_center",
+     "website": "https://www.equinix.com/data-centers/europe-colocation/united-kingdom-colocation/london-data-centers/ld4",
+     "wikidata": "Q138393192"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 116.6,
+     "area_m2": 7387.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1432337899",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1432337899_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1432337899:sentinel2",
+   "osm_way_1432337899:osm",
+   "osm_way_1432337899:sources",
+   "osm_way_1432337899:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "source": "Sentinel and https://www.youtube.com/watch?v=n2b0ljMXyEg -  can be refined if better images are available",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 226.5,
+     "area_m2": 23097.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_23750778",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_23750778_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_23750778:sentinel2",
+   "osm_way_23750778:osm",
+   "osm_way_23750778:sources",
+   "osm_way_23750778:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Equinix DB3",
+    "tags": {
+     "addr:housename": "Unit 2",
+     "addr:street": "Northwest Business Park",
+     "building": "data_center",
+     "name": "Equinix DB3",
+     "operator": "Equinix",
+     "operator:wikidata": "Q851641",
+     "operator:wikipedia": "en:Equinix",
+     "ref": "DB3",
+     "telecom": "data_center",
+     "website": "https://www.equinix.co.uk/locations/ireland-colocation/dublin-data-centers/db3/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 101.8,
+     "area_m2": 5344.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_538906747",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_538906747_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_538906747:sentinel2",
+   "osm_way_538906747:osm",
+   "osm_way_538906747:sources",
+   "osm_way_538906747:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Microsoft DUB07",
+    "tags": {
+     "building": "data_center",
+     "name": "Microsoft DUB07",
+     "operator": "Microsoft",
+     "operator:wikidata": "Q2283",
+     "ref": "DUB07",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 225.9,
+     "area_m2": 17253.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1432337885",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1432337885_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1432337885:sentinel2",
+   "osm_way_1432337885:osm",
+   "osm_way_1432337885:sources",
+   "osm_way_1432337885:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "source": "Sentinel and https://www.youtube.com/watch?v=n2b0ljMXyEg -  can be refined if better images are available",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 120.3,
+     "area_m2": 9260.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_80148463",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_80148463_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_80148463:sentinel2",
+   "osm_way_80148463:osm",
+   "osm_way_80148463:sources",
+   "osm_way_80148463:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "OVHcloud Roubaix - RBX5",
+    "tags": {
+     "building": "data_center",
+     "name": "OVHcloud Roubaix - RBX5",
+     "operator": "OVHcloud",
+     "operator:wikidata": "Q568183",
+     "source": "cadastre-dgi-fr source : Direction G\u00e9n\u00e9rale des Imp\u00f4ts - Cadastre. Mise \u00e0 jour : 2010",
+     "telecom": "data_center",
+     "wall": "no"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 39.6,
+     "area_m2": 1010.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_48242814",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_48242814_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_48242814:sentinel2",
+   "osm_way_48242814:osm",
+   "osm_way_48242814:sources",
+   "osm_way_48242814:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Amazon IAD10",
+    "tags": {
+     "addr:city": "Sterling",
+     "addr:housenumber": "45360",
+     "addr:postcode": "20166",
+     "addr:state": "VA",
+     "addr:street": "West Severn Way",
+     "building": "data_center",
+     "input:electricity": "31 MW",
+     "name": "Amazon IAD-10",
+     "operator": "Amazon Web Services",
+     "operator:short": "AWS",
+     "operator:wikidata": "Q456157",
+     "ref": "IAD-10",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 125.7,
+     "area_m2": 10487.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1000784035",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1000784035_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1000784035:sentinel2",
+   "osm_way_1000784035:osm",
+   "osm_way_1000784035:sources",
+   "osm_way_1000784035:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Amazon Web Services",
+    "tags": {
+     "addr:city": "Manassas",
+     "addr:housenumber": "9750",
+     "addr:postcode": "20109",
+     "addr:state": "VA",
+     "addr:street": "Hornbaker Road",
+     "building": "data_center",
+     "building:levels": "2",
+     "name": "STACK NVA02A",
+     "operator": "Amazon Web Services",
+     "operator:short": "AWS",
+     "operator:wikidata": "Q456157",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 156.8,
+     "area_m2": 10467.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_459188722",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_459188722_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_459188722:sentinel2",
+   "osm_way_459188722:osm",
+   "osm_way_459188722:sources",
+   "osm_way_459188722:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Apollo Cable Landing Station",
+    "tags": {
+     "building": "data_center",
+     "name": "Manasquan Cable Landing Station (Apollo)",
+     "operator": "Vodafone",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 75.1,
+     "area_m2": 2409.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_414767154",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_414767154_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_414767154:sentinel2",
+   "osm_way_414767154:osm",
+   "osm_way_414767154:sources",
+   "osm_way_414767154:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Polcom Data Center Alwernia",
+    "tags": {
+     "addr:city": "Grojec",
+     "addr:housenumber": "21",
+     "addr:postcode": "32-566",
+     "addr:street": "Zamkowa",
+     "building": "data_center",
+     "name": "Polcom Data Center Alwernia",
+     "operator": "Polcom",
+     "start_date": "2015-12"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 42.2,
+     "area_m2": 1777.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_74475616",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_74475616_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_74475616:sentinel2",
+   "osm_way_74475616:osm",
+   "osm_way_74475616:sources",
+   "osm_way_74475616:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Global Switch",
+    "tags": {
+     "addr:housenumber": "7-9",
+     "building": "data_center",
+     "name": "Global Switch",
+     "operator": "Global Switch",
+     "source": "extraction vectorielle v1 cadastre-dgi-fr source : Direction G\u00e9n\u00e9rale des Imp\u00f4ts - Cadas. Mise \u00e0 jour : 2010",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 160.5,
+     "area_m2": 4792.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_509611426",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_509611426_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_509611426:sentinel2",
+   "osm_way_509611426:osm",
+   "osm_way_509611426:sources",
+   "osm_way_509611426:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "operator": "CHRISTUS Health",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 98.0,
+     "area_m2": 4550.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1443922528",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1443922528_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1443922528:sentinel2",
+   "osm_way_1443922528:osm",
+   "osm_way_1443922528:sources",
+   "osm_way_1443922528:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "addr:housenumber": "20680",
+     "addr:street": "Celtic Park Drive",
+     "building": "data_center",
+     "name": "Amazon IAD-667",
+     "operator": "Amazon Web Services",
+     "operator:wikidata": "Q95",
+     "ref": "IAD-667",
+     "source": "Piedmont Environmental Council, Virginia Data Centers",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 152.4,
+     "area_m2": 9894.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1188680253",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1188680253_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1188680253:sentinel2",
+   "osm_way_1188680253:osm",
+   "osm_way_1188680253:sources",
+   "osm_way_1188680253:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "QTS Ashburn Lockridge",
+    "tags": {
+     "addr:city": "Sterling",
+     "addr:housenumber": "44675",
+     "addr:postcode": "20166",
+     "addr:state": "VA",
+     "addr:street": "Quality Tech Lane",
+     "building": "data_center",
+     "input:electricity": "72 MW",
+     "name": "QTS Ashburn 2 DC1",
+     "operator": "Quality Technology Services",
+     "operator:short": "QTS",
+     "operator:wikidata": "Q18392800",
+     "ref": "DC1",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 257.6,
+     "area_m2": 14257.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_81633700",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_81633700_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_81633700:sentinel2",
+   "osm_way_81633700:osm",
+   "osm_way_81633700:sources",
+   "osm_way_81633700:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Rackspace London Slough (LON3)",
+    "tags": {
+     "addr:housenumber": "115",
+     "addr:street": "Buckingham Avenue",
+     "building": "data_center",
+     "name": "Rackspace London Slough (LON3)",
+     "operator": "Rackspace",
+     "ref": "LON3",
+     "telecom": "data_center",
+     "website": "https://www.rackspace.com/about/data-centers/london-lon3"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 70.2,
+     "area_m2": 4324.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_509611423",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_509611423_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_509611423:sentinel2",
+   "osm_way_509611423:osm",
+   "osm_way_509611423:sources",
+   "osm_way_509611423:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Lowe's Data Center",
+    "tags": {
+     "building": "data_center",
+     "name": "Lowe's Data Center",
+     "operator": "Lowe's",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 154.3,
+     "area_m2": 8788.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_701930921",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_701930921_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_701930921:sentinel2",
+   "osm_way_701930921:osm",
+   "osm_way_701930921:sources",
+   "osm_way_701930921:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Amazon IAD99",
+    "tags": {
+     "addr:city": "Sterling",
+     "addr:housenumber": "45305",
+     "addr:postcode": "20166",
+     "addr:state": "VA",
+     "addr:street": "West Severn Way",
+     "building": "data_center",
+     "input:electricity": "37 MW",
+     "name": "Amazon IAD-99",
+     "operator": "Amazon Web Services",
+     "operator:short": "AWS",
+     "operator:wikidata": "Q456157",
+     "owner": "COPT",
+     "ref": "IAD-99",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 238.2,
+     "area_m2": 14030.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1319637945",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1319637945_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1319637945:sentinel2",
+   "osm_way_1319637945:osm",
+   "osm_way_1319637945:sources",
+   "osm_way_1319637945:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "addr:housenumber": "24171",
+     "addr:street": "Youngwood Lane",
+     "building": "data_center",
+     "name": "Yondr Allegro South",
+     "operator": "Yondr",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 310.2,
+     "area_m2": 30812.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_868570931",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_868570931_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_868570931:sentinel2",
+   "osm_way_868570931:osm",
+   "osm_way_868570931:sources",
+   "osm_way_868570931:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Conova Communications",
+    "tags": {
+     "addr:city": "Hallein",
+     "addr:country": "AT",
+     "addr:housenumber": "70",
+     "addr:postcode": "5400",
+     "addr:street": "Solvay-Halvic-Stra\u00dfe",
+     "building": "data_center",
+     "name": "Conova Communications",
+     "telecom": "data_center",
+     "website": "https://www.conova.com/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 49.6,
+     "area_m2": 1277.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_188467640",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_188467640_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_188467640:sentinel2",
+   "osm_way_188467640:osm",
+   "osm_way_188467640:sources",
+   "osm_way_188467640:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Centro de datos Triara Quer\u00e9taro",
+    "tags": {
+     "building": "data_center",
+     "name": "Centro de datos Triara Quer\u00e9taro",
+     "operator": "Triara",
+     "source": "https://triara.com/web/empresas/contactanos",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 144.6,
+     "area_m2": 20184.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_473164326",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_473164326_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_473164326:sentinel2",
+   "osm_way_473164326:osm",
+   "osm_way_473164326:sources",
+   "osm_way_473164326:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Mediterranean Nautilus Telekomunikasyon Hizmetleri Ticaret A.\u015e. Veri Merkezi",
+    "tags": {
+     "addr:city": "\u0130stanbul",
+     "addr:country": "TR",
+     "addr:district": "Yenibosna",
+     "addr:housenumber": "30",
+     "addr:postcode": "34196",
+     "addr:street": "K\u0131m\u0131z Sokak",
+     "addr:suburb": "\u00c7oban\u00e7e\u015fme Mahallesi",
+     "alt_name": "MedNautilus T\u00fcrkiye Veri Merkezi",
+     "building": "data_center",
+     "building:levels": "5",
+     "name": "Mediterranean Nautilus Telekomunikasyon Hizmetleri Ticaret A.\u015e. Veri Merkezi",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 33.0,
+     "area_m2": 552.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_683115027",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_683115027_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_683115027:sentinel2",
+   "osm_way_683115027:osm",
+   "osm_way_683115027:sources",
+   "osm_way_683115027:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Meta Clonee 3 Data Center",
+    "tags": {
+     "building": "data_center",
+     "name": "Meta Clonee 3 Data Center",
+     "operator": "Meta",
+     "operator:wikidata": "Q380",
+     "ref": "CLN3",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 374.2,
+     "area_m2": 28703.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_300969614",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_300969614_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_300969614:sentinel2",
+   "osm_way_300969614:osm",
+   "osm_way_300969614:sources",
+   "osm_way_300969614:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Digital Realty Northern Virginia IAD14",
+    "tags": {
+     "addr:city": "Ashburn",
+     "addr:housename": "Building D",
+     "addr:housenumber": "43791",
+     "addr:postcode": "20147",
+     "addr:state": "VA",
+     "addr:street": "Devin Shafron Drive",
+     "building": "data_center",
+     "input:electricity": "18 MW",
+     "it_power": "6.9 MW",
+     "name": "Digital Realty IAD14",
+     "operator": "Digital Realty",
+     "operator:wikidata": "Q5275969",
+     "owner": "Digital Realty",
+     "ref": "IAD14",
+     "telecom": "data_center",
+     "website": "https://www.digitalrealty.com/data-centers/americas/northern-virginia/iad14"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 136.7,
+     "area_m2": 12513.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1470640263",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1470640263_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1470640263:sentinel2",
+   "osm_way_1470640263:osm",
+   "osm_way_1470640263:sources",
+   "osm_way_1470640263:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Ovio",
+    "tags": {
+     "addr:city": "\u0531\u0562\u0578\u057e\u0575\u0561\u0576",
+     "addr:housenumber": "7",
+     "addr:street": "\u053f\u0561\u0580\u0574\u056b\u0580 \u0532\u0561\u0576\u0561\u056f\u056b \u0583\u0578\u0572\u0578\u0581",
+     "brand": "Ovio",
+     "brand:en": "Ovio",
+     "building": "data_center",
+     "name": "Ovio",
+     "name:en": "Ovio",
+     "name:hy": "\u0555\u057e\u056b\u0578",
+     "operator": "GNC-Alfa",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 32.4,
+     "area_m2": 972.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_695690130",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_695690130_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_695690130:sentinel2",
+   "osm_way_695690130:osm",
+   "osm_way_695690130:sources",
+   "osm_way_695690130:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 119.3,
+     "area_m2": 10717.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_918873142",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_918873142_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_918873142:sentinel2",
+   "osm_way_918873142:osm",
+   "osm_way_918873142:sources",
+   "osm_way_918873142:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Flexential Portland - Hillsboro 3",
+    "tags": {
+     "addr:city": "Hillsboro",
+     "addr:housenumber": "5419",
+     "addr:postcode": "97124",
+     "addr:state": "OR",
+     "addr:street": "Northeast Starr Boulevard",
+     "building": "data_center",
+     "name": "Flexential Portland - Hillsboro 3",
+     "operator": "Flexential",
+     "operator:wikidata": "Q115417504",
+     "source": "https://www.hillsboro-oregon.gov/home/showdocument?id=23349",
+     "telecom": "data_center",
+     "website": "https://www.flexential.com/data-centers/or/portland/hillsboro3-data-center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 201.9,
+     "area_m2": 31330.4
+    },
+    "available": true
+   }
+  }
+ }
+]

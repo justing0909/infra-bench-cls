@@ -166,10 +166,24 @@ def _naip(lat: float, lon: float, out: Path) -> dict | None:
     return None
 
 
+FOOTPRINT_CACHE = DATA_DIR / "asset_footprints" / "overpass"
+
+
 def _osm_tags(ids: list) -> dict:
-    parts = pd.Series(ids).str.extract(r"osm_(node|way|relation)_(\d+)")
+    """current OSM tags per asset: from the local footprint cache where it has
+    them, the rest from Overpass in chunks, so a large run stays light on it."""
     out = {}
-    for kind, g in parts.groupby(0):
+    if FOOTPRINT_CACHE.exists():
+        wanted = set(ids)
+        for f in FOOTPRINT_CACHE.glob("*.json"):
+            for el in json.loads(f.read_text(encoding="utf-8")).get("elements", []):
+                k = f"osm_{el['type']}_{el['id']}"
+                if k in wanted and "tags" in el:
+                    out[k] = el["tags"]
+    rest = [i for i in ids if i not in out]
+    parts = pd.Series(rest, dtype=str).str.extract(r"osm_(node|way|relation)_(\d+)")
+    chunks = [(kind, g.iloc[i:i + 500]) for kind, g in parts.groupby(0) for i in range(0, len(g), 500)]
+    for kind, g in chunks:
         query = f"[out:json][timeout:120];{kind}(id:{','.join(g[1])});out tags;"
         # Overpass is busy at times (502/504): retry, then try a mirror
         for attempt, url in enumerate(["https://overpass-api.de/api/interpreter"] * 3 +

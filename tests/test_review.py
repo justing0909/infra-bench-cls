@@ -457,3 +457,26 @@ class TestRoutedThreshold(unittest.TestCase):
         self.assertEqual(t._routed(a, {**b, "label": "y"}, "x", 0.5), ("request_review", ""))
         self.assertEqual(t._routed({**a, "action": "relabel", "label": "y"}, {**b, "label": "y"}, "x", 0.5), ("relabel", "y"))
         self.assertEqual(t._routed(a, {**b, "image_quality": "poor"}, "x", 0.5), ("request_review", ""))
+
+
+class TestLabelStatus(unittest.TestCase):
+    def test_status_precedence_and_fallback(self):
+        from curation.review import label_status as ls
+        q = pd.DataFrame({"asset_id": ["h", "u", "s", "a", "lo", "n"], "asset_type": ["x"] * 6,
+                          "region": ["r"] * 6, "split": ["test"] * 6})
+        latest = {"h": {"justin": {"decision": "relabel", "label": "y", "note": "n1"}},
+                  "u": {"justin": {"decision": "unsure", "label": "", "note": ""}},
+                  "s": {"source": {"decision": "accept", "label": "x", "note": "auto"}}}
+        agent = {"a": {"id": "a", "action": "relabel", "label": "z", "confidence": 0.9, "reason": "r"},
+                 "lo": {"id": "lo", "action": "relabel", "label": "z", "confidence": 0.4, "reason": "r"},
+                 "s": {"id": "s", "action": "relabel", "label": "z", "confidence": 0.99, "reason": "r"}}
+        with mock.patch.object(ls.pd, "read_csv", return_value=q), \
+             mock.patch.object(ls.decisions, "load", return_value=latest), \
+             mock.patch.object(ls, "_agent_rows", return_value=agent):
+            df = ls.build().set_index("asset_id")
+        self.assertEqual(df.loc["h", ["screened_label", "checked_by"]].tolist(), ["y", "human"])
+        self.assertEqual(df.loc["u", ["screened_label", "checked_by"]].tolist(), ["x", "human_unsure"])
+        self.assertEqual(df.loc["s", ["screened_label", "checked_by"]].tolist(), ["x", "official_source"])  # source beats agent
+        self.assertEqual(df.loc["a", ["screened_label", "checked_by"]].tolist(), ["z", "agent"])
+        self.assertEqual(df.loc["lo", ["screened_label", "checked_by"]].tolist(), ["x", "agent_unsure"])   # OSM kept
+        self.assertEqual(df.loc["n", "checked_by"], "unscreened")

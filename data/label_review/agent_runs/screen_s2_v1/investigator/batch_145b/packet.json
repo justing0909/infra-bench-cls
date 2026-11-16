@@ -1,0 +1,2095 @@
+[
+ {
+  "id": "osm_node_13806339330",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_13806339330_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_13806339330:sentinel2",
+   "osm_node_13806339330:osm",
+   "osm_node_13806339330:sources",
+   "osm_node_13806339330:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Maza",
+    "tags": {
+     "name": "Maza",
+     "railway": "station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_5123249936",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_5123249936_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_5123249936:sentinel2",
+   "osm_node_5123249936:osm",
+   "osm_node_5123249936:sources",
+   "osm_node_5123249936:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Delta",
+    "tags": {
+     "light_rail": "yes",
+     "name": "Delta",
+     "network": "Mitre",
+     "operator": "Trenes Argentinos",
+     "public_transport": "station",
+     "railway": "station",
+     "start_date": "1896",
+     "station": "light_rail",
+     "wikidata": "Q5841900",
+     "wikipedia": "es:Estaci\u00f3n Delta (Buenos Aires)"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_975450868",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_975450868_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_975450868:sentinel2",
+   "osm_way_975450868:osm",
+   "osm_way_975450868:sources",
+   "osm_way_975450868:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Esta\u00e7\u00e3o Para\u00edba do Sul",
+    "tags": {
+     "building": "yes",
+     "name": "Esta\u00e7\u00e3o Para\u00edba do Sul",
+     "old_name": "Parahyba do Sul;Duas Pontes",
+     "public_transport": "station",
+     "railway": "station",
+     "train": "yes"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 48.3,
+     "area_m2": 611.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_node_249333168",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_249333168_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_249333168:sentinel2",
+   "osm_node_249333168:osm",
+   "osm_node_249333168:sources",
+   "osm_node_249333168:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Robertson",
+    "tags": {
+     "name": "Robertson",
+     "public_transport": "station",
+     "railway": "station",
+     "sagns_id": "73699",
+     "source": "sagns"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_2842254191",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_2842254191_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_2842254191:sentinel2",
+   "osm_node_2842254191:osm",
+   "osm_node_2842254191:sources",
+   "osm_node_2842254191:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Jiguan\u00ed",
+    "tags": {
+     "name": "Jiguan\u00ed",
+     "public_transport": "stop_position",
+     "railway": "station",
+     "train": "yes"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "NARN: nothing within 0.6 km",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_1563064953",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_1563064953_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_1563064953:sentinel2",
+   "osm_node_1563064953:osm",
+   "osm_node_1563064953:sources",
+   "osm_node_1563064953:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Cebollar",
+    "tags": {
+     "name": "Cebollar",
+     "operator": "FCAB",
+     "public_transport": "station",
+     "railway": "station",
+     "train": "yes"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_1875312434",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_1875312434_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_1875312434:sentinel2",
+   "osm_node_1875312434:osm",
+   "osm_node_1875312434:sources",
+   "osm_node_1875312434:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Gawler Oval",
+    "tags": {
+     "name": "Gawler Oval",
+     "network": "Adelaide Metro",
+     "network:wikidata": "Q4681753",
+     "operator": "Adelaide Metro",
+     "public_transport": "station",
+     "railway": "station",
+     "source": "bing",
+     "train": "yes",
+     "wikidata": "Q5528460"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "GA: nothing within 0.6 km",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_247326125",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_247326125_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_247326125:sentinel2",
+   "osm_node_247326125:osm",
+   "osm_node_247326125:sources",
+   "osm_node_247326125:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Ida",
+    "tags": {
+     "disused": "yes",
+     "name": "Ida",
+     "railway": "station",
+     "sagns_id": "80660",
+     "source": "sagns"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_10152177809",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_10152177809_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_10152177809:sentinel2",
+   "osm_node_10152177809:osm",
+   "osm_node_10152177809:sources",
+   "osm_node_10152177809:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Antigua Estaci\u00f3n de Ferrocarril de Yecaplixtla",
+    "tags": {
+     "disused:railway": "station",
+     "name": "Antigua Estaci\u00f3n de Ferrocarril de Yecapixtla"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "NARN: nothing within 0.6 km",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_4099430327",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_4099430327_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_4099430327:sentinel2",
+   "osm_node_4099430327:osm",
+   "osm_node_4099430327:sources",
+   "osm_node_4099430327:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Kuelei",
+    "tags": {
+     "name": "Kuelei",
+     "railway": "station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_247325470",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_247325470_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_247325470:sentinel2",
+   "osm_node_247325470:osm",
+   "osm_node_247325470:sources",
+   "osm_node_247325470:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Holfontein",
+    "tags": {
+     "disused": "yes",
+     "name": "Holfontein",
+     "railway": "station",
+     "ref": "HLF",
+     "sagns_id": "81272",
+     "source": "sagns"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_10598591181",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_10598591181_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_10598591181:sentinel2",
+   "osm_node_10598591181:osm",
+   "osm_node_10598591181:sources",
+   "osm_node_10598591181:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "\u0645\u062d\u0637\u0629 \u0633\u062e\u0627",
+    "tags": {
+     "name": "\u0645\u062d\u0637\u0629 \u0633\u062e\u0627",
+     "public_transport": "station",
+     "railway": "station",
+     "train": "yes"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_449441757",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_449441757_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_449441757:sentinel2",
+   "osm_node_449441757:osm",
+   "osm_node_449441757:sources",
+   "osm_node_449441757:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "uMzumbe",
+    "tags": {
+     "disused": "yes",
+     "name": "uMzumbe",
+     "railway": "station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_6872828850",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_6872828850_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_6872828850:sentinel2",
+   "osm_node_6872828850:osm",
+   "osm_node_6872828850:sources",
+   "osm_node_6872828850:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Gingin",
+    "tags": {
+     "name": "Gingin",
+     "public_transport": "station",
+     "railway": "station",
+     "train": "yes"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Caution: GA: GINGIN (GA station, abandoned, WA) 3 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_1652977642",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_1652977642_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_1652977642:sentinel2",
+   "osm_node_1652977642:osm",
+   "osm_node_1652977642:sources",
+   "osm_node_1652977642:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Malta",
+    "tags": {
+     "name": "Malta",
+     "operator": "Transnordestina Log\u00edstica SA",
+     "railway": "station",
+     "source": "Known place",
+     "wikidata": "Q28679972",
+     "wikipedia": "pt:Esta\u00e7\u00e3o Ferrovi\u00e1ria de Malta"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_1806556401",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_1806556401_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_1806556401:sentinel2",
+   "osm_node_1806556401:osm",
+   "osm_node_1806556401:sources",
+   "osm_node_1806556401:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Eldoret",
+    "tags": {
+     "name": "Eldoret",
+     "operator": "Kenya Railways",
+     "public_transport": "station",
+     "railway": "station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_1212646495",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1212646495_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1212646495:sentinel2",
+   "osm_way_1212646495:osm",
+   "osm_way_1212646495:sources",
+   "osm_way_1212646495:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Jalisco 200 A\u00f1os",
+    "tags": {
+     "building": "train_station",
+     "light_rail": "yes",
+     "name": "Jalisco 200 A\u00f1os",
+     "network": "L\u00ednea 4 del Tren El\u00e9ctrico Urbano de Guadalajara",
+     "operator": "SITEUR",
+     "operator:wikidata": "Q2309232",
+     "public_transport": "station",
+     "railway": "station",
+     "station": "light_rail"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "NARN: nothing within 0.6 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 114.7,
+     "area_m2": 531.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_node_9454964845",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_9454964845_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_9454964845:sentinel2",
+   "osm_node_9454964845:osm",
+   "osm_node_9454964845:sources",
+   "osm_node_9454964845:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "\u548c\u5e73\u95e8",
+    "tags": {
+     "name": "\u548c\u5e73\u95e8",
+     "name:en": "Hepingmen",
+     "name:zh": "\u548c\u5e73\u95e8",
+     "network": "\u897f\u5b89\u5730\u94c1",
+     "public_transport": "station",
+     "railway": "station",
+     "station": "subway",
+     "subway": "yes",
+     "wheelchair": "yes",
+     "wikidata": "Q60675219"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_29272317",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_29272317_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_29272317:sentinel2",
+   "osm_node_29272317:osm",
+   "osm_node_29272317:sources",
+   "osm_node_29272317:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Bosmanstraat",
+    "tags": {
+     "name": "Bosmanstraat",
+     "network": "Metrorail Gauteng",
+     "network:wikidata": "Q12061746",
+     "public_transport": "station",
+     "railway": "station",
+     "train": "yes",
+     "wikidata": "Q124425249"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_3456062991",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_3456062991_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_3456062991:sentinel2",
+   "osm_node_3456062991:osm",
+   "osm_node_3456062991:sources",
+   "osm_node_3456062991:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Ituzaing\u00f3",
+    "tags": {
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Ituzaing\u00f3",
+     "network": "Sarmiento",
+     "operator": "Trenes Argentinos",
+     "platforms": "1",
+     "public_transport": "station",
+     "railway": "station",
+     "railway:position": "24.8",
+     "start_date": "1872-12-18",
+     "train": "yes",
+     "wikidata": "Q5491467",
+     "wikipedia": "es:Estaci\u00f3n Ituzaing\u00f3"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_4170354060",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_4170354060_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_4170354060:sentinel2",
+   "osm_node_4170354060:osm",
+   "osm_node_4170354060:sources",
+   "osm_node_4170354060:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Vila Clarice",
+    "tags": {},
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_838853825",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_838853825_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_838853825:sentinel2",
+   "osm_way_838853825:osm",
+   "osm_way_838853825:sources",
+   "osm_way_838853825:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Tlaquepaque Centro",
+    "tags": {
+     "addr:city": "Tlaquepaque",
+     "building": "yes",
+     "internet_access": "yes",
+     "internet_access:fee": "no",
+     "layer": "1",
+     "location": "overhead",
+     "name": "Tlaquepaque Centro",
+     "network": "Mi Tren",
+     "nohousenumber": "yes",
+     "operator": "SITEUR",
+     "public_transport": "station",
+     "railway": "station",
+     "roof:levels": "1",
+     "station": "subway",
+     "subway": "yes",
+     "wheelchair": "yes",
+     "wikidata": "Q28175042",
+     "wikipedia": "es:Estaci\u00f3n Tlaquepaque Centro"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "NARN: nothing within 0.6 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 96.9,
+     "area_m2": 1775.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_node_2319272595",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_2319272595_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_2319272595:sentinel2",
+   "osm_node_2319272595:osm",
+   "osm_node_2319272595:sources",
+   "osm_node_2319272595:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "\u0411\u043e\u0436\u0443\u0440\u0438\u0446\u0430",
+    "tags": {
+     "name": "\u0411\u043e\u0436\u0443\u0440\u0438\u0446\u0430",
+     "public_transport": "station",
+     "railway": "station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_449101841",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_449101841_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_449101841:sentinel2",
+   "osm_node_449101841:osm",
+   "osm_node_449101841:sources",
+   "osm_node_449101841:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "F\u00fcrstenzell",
+    "tags": {
+     "name": "F\u00fcrstenzell",
+     "network": "VLP",
+     "operator": "DB RegioNetz Infrastruktur GmbH;S\u00fcdostbayernbahn",
+     "public_transport": "station",
+     "railway": "station",
+     "railway:ref": "MFZL",
+     "railway:station_category": "SOB",
+     "uic_name": "F\u00fcrstenzell",
+     "uic_ref": "8002146",
+     "wheelchair": "limited"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "DB: nothing within 0.6 km",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_6448763951",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_6448763951_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_6448763951:sentinel2",
+   "osm_node_6448763951:osm",
+   "osm_node_6448763951:sources",
+   "osm_node_6448763951:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "59th Street\u2013Columbus Circle",
+    "tags": {
+     "addr:city": "New York",
+     "addr:state": "NY",
+     "gtfs_stop_code": "A24",
+     "level": "-3",
+     "name": "59th Street\u2013Columbus Circle",
+     "name:en": "59th Street\u2013Columbus Circle",
+     "name:es": "Calle 59\u2013Columbus Circle",
+     "name:ko": "59\ubc88\uac00-\ucf5c\ub7fc\ubc84\uc2a4 \uc11c\ud074",
+     "name:ru": "59-\u044f \u0441\u0442\u0440\u0438\u0442 \u2014 \u041a\u043e\u043b\u0443\u043c\u0431\u0443\u0441-\u0441\u0451\u0440\u043a\u043b",
+     "network": "NYC Subway",
+     "network:wikidata": "Q7733",
+     "opening_hours": "24/7",
+     "operator": "New York City Transit Authority",
+     "operator:wikidata": "Q1325591",
+     "owner": "City of New York",
+     "owner:wikidata": "Q60",
+     "payment:omny": "yes",
+     "platforms": "3",
+     "public_transport": "station",
+     "railway": "station",
+     "railway:ref": "161",
+     "short_name": "59 St\u2013Columbus Circle",
+     "start_date": "1932-09-10",
+     "station": "subway",
+     "subway": "yes",
+     "wheelchair": "yes",
+     "wikidata": "Q2982354",
+     "wikipedia": "en:59th Street\u2013Columbus Circle station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "NARN: nothing within 0.6 km",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_8254355263",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_8254355263_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_8254355263:sentinel2",
+   "osm_node_8254355263:osm",
+   "osm_node_8254355263:sources",
+   "osm_node_8254355263:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "\u80a5\u5f8c\u4e8c\u898b",
+    "tags": {
+     "name": "\u80a5\u5f8c\u4e8c\u898b",
+     "name:en": "Higo-Futami",
+     "name:ja": "\u80a5\u5f8c\u4e8c\u898b",
+     "name:ko": "\ud788\uace0\ud6c4\ud0c0\ubbf8",
+     "name:zh": "\u80a5\u5f8c\u4e8c\u898b",
+     "public_transport": "station",
+     "railway": "station",
+     "source": "Bing",
+     "wikidata": "Q11611562",
+     "wikipedia": "ja:\u80a5\u5f8c\u4e8c\u898b\u99c5"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_8280175964",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_8280175964_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_8280175964:sentinel2",
+   "osm_node_8280175964:osm",
+   "osm_node_8280175964:sources",
+   "osm_node_8280175964:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Tonsley",
+    "tags": {
+     "name": "Tonsley",
+     "network": "Adelaide Metro",
+     "network:wikidata": "Q4681753",
+     "operator": "Adelaide Metro",
+     "public_transport": "station",
+     "railway": "station",
+     "train": "yes",
+     "wikidata": "Q7821677"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "GA: nothing within 0.6 km",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_3302030444",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_3302030444_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_3302030444:sentinel2",
+   "osm_node_3302030444:osm",
+   "osm_node_3302030444:sources",
+   "osm_node_3302030444:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Ngondji",
+    "tags": {
+     "name": "Ngondji",
+     "old_name": "Patra",
+     "railway": "station",
+     "source_date": "2010",
+     "source_type": "GPS"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_3474069527",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_3474069527_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_3474069527:sentinel2",
+   "osm_node_3474069527:osm",
+   "osm_node_3474069527:sources",
+   "osm_node_3474069527:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Pl\u00e1tanos",
+    "tags": {
+     "name": "Pl\u00e1tanos",
+     "network": "Roca",
+     "old_name": "Godoy",
+     "operator": "Trenes Argentinos",
+     "platforms": "2",
+     "public_transport": "station",
+     "railway": "station",
+     "railway:position": "27.7",
+     "start_date": "1872",
+     "train": "yes",
+     "wikidata": "Q5844264",
+     "wikipedia": "es:Estaci\u00f3n Pl\u00e1tanos"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_29056622",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_29056622_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_29056622:sentinel2",
+   "osm_node_29056622:osm",
+   "osm_node_29056622:sources",
+   "osm_node_29056622:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Wartberg an der Krems",
+    "tags": {
+     "name": "Wartberg an der Krems",
+     "operator": "\u00d6BB-Infrastruktur AG",
+     "public_transport": "station",
+     "railway": "station",
+     "railway:ref": "Wak",
+     "ref:ibnr": "8101742",
+     "uic_name": "Wartberg a. d. Krems",
+     "uic_ref": "8101614"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "DB: nothing within 0.6 km",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_26675207",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_26675207_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_26675207:sentinel2",
+   "osm_way_26675207:osm",
+   "osm_way_26675207:sources",
+   "osm_way_26675207:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Swanson",
+    "tags": {
+     "area": "yes",
+     "fare_gates": "no",
+     "name": "Swanson",
+     "name:en": "Swanson",
+     "name:mi": "Waiwhauwhaupaku",
+     "platforms": "2",
+     "public_transport": "station",
+     "railway": "station",
+     "ref:linz:place_id": "59633",
+     "wikidata": "Q7653741",
+     "wikipedia": "en:Swanson railway station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 155.2,
+     "area_m2": 2869.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_node_3671722999",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_3671722999_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_3671722999:sentinel2",
+   "osm_node_3671722999:osm",
+   "osm_node_3671722999:sources",
+   "osm_node_3671722999:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "\u6842",
+    "tags": {
+     "KSJ2:LIN": "\u4eac\u90fd\u7dda",
+     "KSJ2:STN": "\u6842",
+     "contact:website": "https://www.hankyu.co.jp/station/katsura.html",
+     "name": "\u6842",
+     "name:en": "Katsura",
+     "name:ja": "\u6842",
+     "name:ja-Hira": "\u304b\u3064\u3089",
+     "name:ja-Latn": "Katsura",
+     "name:ko": "\uac00\uc4f0\ub77c",
+     "network": "\u962a\u6025\u96fb\u9244",
+     "network:en": "Hankyu Railway",
+     "network:ja": "\u962a\u6025\u96fb\u9244",
+     "network:wikidata": "Q473058",
+     "note": "National-Land Numerical Information (Railway) 2007, MLIT Japan",
+     "note:ja": "\u56fd\u571f\u6570\u5024\u60c5\u5831\uff08\u9244\u9053\u30c7\u30fc\u30bf\uff09\u5e73\u621019\u5e74 \u56fd\u571f\u4ea4\u901a\u7701",
+     "operator": "\u962a\u6025\u96fb\u9244",
+     "public_transport": "station",
+     "railway": "station",
+     "ref": "HK81",
+     "source": "KSJ2",
+     "source_ref": "http://nlftp.mlit.go.jp/ksj/jpgis/datalist/KsjTmplt-N02-v1_1.html",
+     "train": "yes",
+     "wikidata": "Q944556",
+     "wikipedia": "ja:\u6842\u99c5"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_256374120",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_256374120_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_256374120:sentinel2",
+   "osm_node_256374120:osm",
+   "osm_node_256374120:sources",
+   "osm_node_256374120:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Las Torres",
+    "tags": {
+     "name": "Las Torres",
+     "network": "Metro de Santiago",
+     "operator": "Metro S.A.",
+     "public_transport": "station",
+     "railway": "station",
+     "start_date": "2006-03-02",
+     "station": "subway",
+     "subway": "yes",
+     "wheelchair": "yes",
+     "wikidata": "Q9020552",
+     "wikipedia": "es:Las Torres (estaci\u00f3n del Metro de Santiago)"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_678499747",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_678499747_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_678499747:sentinel2",
+   "osm_node_678499747:osm",
+   "osm_node_678499747:sources",
+   "osm_node_678499747:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Correa",
+    "tags": {
+     "ele": "72",
+     "name": "Correa",
+     "network": "Mitre",
+     "operator": "Trenes Argentinos",
+     "railway": "station",
+     "railway:position": "353.1",
+     "start_date": "1886",
+     "wikidata": "Q5841802",
+     "wikipedia": "es:Estaci\u00f3n Correa"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_1026430430",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_1026430430_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_1026430430:sentinel2",
+   "osm_node_1026430430:osm",
+   "osm_node_1026430430:sources",
+   "osm_node_1026430430:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Forres",
+    "tags": {
+     "name": "Forres",
+     "network": "Mitre",
+     "operator": "Trenes Argentinos",
+     "railway": "station",
+     "railway:position": "978.1",
+     "wikidata": "Q18635070",
+     "wikipedia": "es:Estaci\u00f3n Forres"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_30274072",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_30274072_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_30274072:sentinel2",
+   "osm_node_30274072:osm",
+   "osm_node_30274072:sources",
+   "osm_node_30274072:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "New Brighton",
+    "tags": {
+     "name": "New Brighton",
+     "network": "Metrorail Eastern Cape",
+     "network:wikidata": "Q6825370",
+     "operator": "PRASA",
+     "public_transport": "station",
+     "railway": "station",
+     "train": "yes",
+     "wikidata": "Q124413638"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_8603327860",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_8603327860_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_8603327860:sentinel2",
+   "osm_node_8603327860:osm",
+   "osm_node_8603327860:sources",
+   "osm_node_8603327860:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Galeria",
+    "tags": {
+     "addr:city": "Bras\u00edlia",
+     "addr:state": "Distrito Federal",
+     "addr:street": "Galeria dos Estados",
+     "internet_access": "no",
+     "level": "-1",
+     "name": "Galeria",
+     "operator": "Metr\u00f4-DF",
+     "payment:cash": "yes",
+     "payment:credit_cards": "yes",
+     "payment:debit_cards": "yes",
+     "public_transport": "station",
+     "railway": "station",
+     "station": "subway",
+     "subway": "yes",
+     "wheelchair": "yes",
+     "wikidata": "Q10275820",
+     "wikipedia": "pt:Esta\u00e7\u00e3o Galeria"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_1619245532",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_1619245532_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_1619245532:sentinel2",
+   "osm_node_1619245532:osm",
+   "osm_node_1619245532:sources",
+   "osm_node_1619245532:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Camb\u00e9",
+    "tags": {
+     "name": "Camb\u00e9",
+     "public_transport": "station",
+     "railway": "station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_13057948217",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_13057948217_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_13057948217:sentinel2",
+   "osm_node_13057948217:osm",
+   "osm_node_13057948217:sources",
+   "osm_node_13057948217:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "\u795e\u673a\u8425",
+    "tags": {
+     "name": "\u795e\u673a\u8425",
+     "name:en": "Shenjiying",
+     "network": "\u5357\u4eac\u5730\u94c1",
+     "network:en": "Nanjing Metro",
+     "network:wikidata": "Q429366",
+     "network:zh": "\u5357\u4eac\u5730\u94c1",
+     "public_transport": "station",
+     "railway": "station",
+     "station": "subway",
+     "subway": "yes",
+     "wikidata": "Q132712280"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_712849029",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_712849029_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_712849029:sentinel2",
+   "osm_node_712849029:osm",
+   "osm_node_712849029:sources",
+   "osm_node_712849029:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Pra\u00e7a Onze",
+    "tags": {
+     "addr:city": "Rio de Janeiro",
+     "bench": "yes",
+     "name": "Pra\u00e7a Onze",
+     "old_name": "Cidade Nova",
+     "opening_hours": "Mo-Sa 05:00-00:00; Su 07:00-23:00; PH 07:00-23:00",
+     "operator": "Metr\u00f4 Rio",
+     "public_transport": "station",
+     "railway": "station",
+     "railway:ref": "POZ",
+     "start_date": "19790305",
+     "station": "subway",
+     "subway": "yes",
+     "timetable": "real_time",
+     "wikidata": "Q10276064",
+     "wikimedia_commons": "Category:Esta\u00e7\u00e3o Pra\u00e7a Onze",
+     "wikipedia": "pt:Esta\u00e7\u00e3o Pra\u00e7a Onze"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_4319691406",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_4319691406_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_4319691406:sentinel2",
+   "osm_node_4319691406:osm",
+   "osm_node_4319691406:sources",
+   "osm_node_4319691406:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Rokytnice v Orlick\u00fdch hor\u00e1ch",
+    "tags": {
+     "ele": "650",
+     "name": "Rokytnice v Orlick\u00fdch hor\u00e1ch",
+     "operator": "cz:S\u017dDC",
+     "public_transport": "station",
+     "railway": "station",
+     "railway:ref": "541409",
+     "start_date": "1906-10-15",
+     "train": "yes",
+     "uic_ref": "5454140",
+     "wikidata": "Q18180492",
+     "wikipedia": "cs:Rokytnice v Orlick\u00fdch hor\u00e1ch (n\u00e1dra\u017e\u00ed)"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_4330206518",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_4330206518_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_4330206518:sentinel2",
+   "osm_node_4330206518:osm",
+   "osm_node_4330206518:sources",
+   "osm_node_4330206518:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Manguito",
+    "tags": {
+     "name": "Manguito",
+     "public_transport": "stop_position",
+     "railway": "station",
+     "train": "yes"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "NARN: nothing within 0.6 km",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_648895277",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_648895277_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_648895277:sentinel2",
+   "osm_node_648895277:osm",
+   "osm_node_648895277:sources",
+   "osm_node_648895277:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Buz\u0103u Sud",
+    "tags": {
+     "name": "Buz\u0103u Sud",
+     "operator": "CFR",
+     "public_transport": "station",
+     "railway": "station",
+     "train": "yes",
+     "uic_ref": "5372120",
+     "wikidata": "Q12728803"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_5881815171",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_5881815171_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_5881815171:sentinel2",
+   "osm_node_5881815171:osm",
+   "osm_node_5881815171:sources",
+   "osm_node_5881815171:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "\ucc9c\ub9c8\uc0b0",
+    "tags": {
+     "name": "\ucc9c\ub9c8\uc0b0",
+     "name:en": "Cheonmasan",
+     "name:ja": "\u5929\u6469\u5c71",
+     "name:ja-Hira": "\u30c1\u30e7\u30f3\u30de\u30b5\u30f3",
+     "name:ko": "\ucc9c\ub9c8\uc0b0",
+     "operator": "\ud55c\uad6d\ucca0\ub3c4\uacf5\uc0ac",
+     "operator:en": "Korea Railroad Corporation",
+     "operator:ko": "\ud55c\uad6d\ucca0\ub3c4\uacf5\uc0ac",
+     "operator:short": "KORAIL",
+     "operator:type": "public",
+     "operator:wikidata": "Q18169",
+     "operator:wikipedia": "en:Korail",
+     "public_transport": "station",
+     "railway": "station",
+     "railway:ref": "\ucc9c\ub9c8\uc0b0",
+     "station": "train",
+     "train": "yes",
+     "wheelchair": "yes",
+     "wikidata": "Q11500343"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_8242938519",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_8242938519_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_8242938519:sentinel2",
+   "osm_node_8242938519:osm",
+   "osm_node_8242938519:sources",
+   "osm_node_8242938519:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "\u0e41\u0e04\u0e27\u0e19\u0e49\u0e2d\u0e22",
+    "tags": {
+     "name": "\u0e41\u0e04\u0e27\u0e19\u0e49\u0e2d\u0e22",
+     "name:en": "Khwae Noi",
+     "name:th": "\u0e41\u0e04\u0e27\u0e19\u0e49\u0e2d\u0e22",
+     "network": "\u0e01\u0e32\u0e23\u0e23\u0e16\u0e44\u0e1f\u0e41\u0e2b\u0e48\u0e07\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+     "network:en": "State Railway of Thailand",
+     "network:th": "\u0e01\u0e32\u0e23\u0e23\u0e16\u0e44\u0e1f\u0e41\u0e2b\u0e48\u0e07\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+     "network:wikidata": "Q2165702",
+     "operator": "\u0e01\u0e32\u0e23\u0e23\u0e16\u0e44\u0e1f\u0e41\u0e2b\u0e48\u0e07\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+     "public_transport": "station",
+     "railway": "station",
+     "railway:ref": "\u0e04\u0e19",
+     "railway:station_category": "4",
+     "ref": "\u0e04\u0e19.",
+     "ref:station": "1122",
+     "train": "yes"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_26116434",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_26116434_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_26116434:sentinel2",
+   "osm_node_26116434:osm",
+   "osm_node_26116434:sources",
+   "osm_node_26116434:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Fish Hoek",
+    "tags": {
+     "name": "Fish Hoek",
+     "name:af": "Vishoek",
+     "name:en": "Fish Hoek",
+     "operator": "Metrorail",
+     "public_transport": "station",
+     "railway": "station",
+     "ref": "VSK",
+     "wikidata": "Q92619860",
+     "wikimedia_commons": "Category:Vishoek station",
+     "wikipedia": "en:Fish Hoek railway station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_2512780551",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_2512780551_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_2512780551:sentinel2",
+   "osm_node_2512780551:osm",
+   "osm_node_2512780551:sources",
+   "osm_node_2512780551:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Sarola",
+    "tags": {
+     "internet_access": "no",
+     "name": "Sarola",
+     "network": "IR",
+     "operator": "CR",
+     "public_transport": "station",
+     "railway": "station",
+     "ref": "SRL",
+     "train": "yes",
+     "wikidata": "Q61360622"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_6813636290",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_6813636290_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_6813636290:sentinel2",
+   "osm_node_6813636290:osm",
+   "osm_node_6813636290:sources",
+   "osm_node_6813636290:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "\uc815\ub3c4",
+    "tags": {
+     "name": "\uc815\ub3c4",
+     "name:en": "J\u014fngdo",
+     "name:ko": "\uc815\ub3c4",
+     "name:ko-Hani": "\u9f0e\u5cf6",
+     "name:zh": "\u9f0e\u5cf6",
+     "name:zh-Hans": "\u9f0e\u5c9b",
+     "name:zh-Hant": "\u9f0e\u5cf6",
+     "public_transport": "station",
+     "railway": "station",
+     "train": "yes"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_6205410527",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_6205410527_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_6205410527:sentinel2",
+   "osm_node_6205410527:osm",
+   "osm_node_6205410527:sources",
+   "osm_node_6205410527:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Cardup",
+    "tags": {
+     "description": "Cardup Station",
+     "historic:railway": "station_site",
+     "internet_access": "no",
+     "name": "Cardup",
+     "network": "Australind Railway",
+     "operator": "Transwa",
+     "public_transport": "station",
+     "railway": "station",
+     "train": "yes"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Caution: GA: CARDUP (GA station, abandoned, WA) 195 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_node_616049251",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_616049251_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_616049251:sentinel2",
+   "osm_node_616049251:osm",
+   "osm_node_616049251:sources",
+   "osm_node_616049251:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.train_station",
+    "name": "Bernardo Larroud\u00e9",
+    "tags": {
+     "name": "Bernardo Larroud\u00e9",
+     "railway": "station",
+     "short_name": "B. Larroud\u00e9"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ }
+]

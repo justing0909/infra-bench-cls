@@ -1,0 +1,4465 @@
+[
+ {
+  "id": "osm_way_61123230",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_61123230_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_61123230:sentinel2",
+   "osm_way_61123230:osm",
+   "osm_way_61123230:sources",
+   "osm_way_61123230:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Edinburgh SC-2",
+    "tags": {
+     "addr:city": "Edinburgh",
+     "addr:housenumber": "7",
+     "addr:postcode": "EH11 4BY",
+     "addr:street": "Bankhead Medway",
+     "building": "data_center",
+     "check_date": "2024-10-27",
+     "name": "Edinburgh SC-2",
+     "operator": "Pulsant",
+     "ref": "SC-2",
+     "telecom": "data_center",
+     "website": "https://www.pulsant.com/colocation-medway-datacentre"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 53.0,
+     "area_m2": 2446.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_377876206",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_377876206_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_377876206:sentinel2",
+   "osm_way_377876206:osm",
+   "osm_way_377876206:sources",
+   "osm_way_377876206:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "\u5357\u5927\u5dbc\u5c71\u6d77\u5e95\u96fb\u7e9c\u7ad9 South Lantau Submarine Cable Station",
+    "tags": {
+     "building": "data_center",
+     "name": "\u5357\u5927\u5dbc\u5c71\u6d77\u5e95\u96fb\u7e9c\u7ad9 South Lantau Submarine Cable Station",
+     "name:en": "South Lantau Submarine Cable Station",
+     "name:zh": "\u5357\u5927\u5dbc\u5c71\u6d77\u5e95\u96fb\u7e9c\u7ad9",
+     "name:zh-Hans": "\u5357\u5927\u5c7f\u5c71\u6d77\u5e95\u7535\u7f06\u7ad9",
+     "name:zh-Hant": "\u5357\u5927\u5dbc\u5c71\u6d77\u5e95\u96fb\u7e9c\u7ad9",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 52.5,
+     "area_m2": 1112.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_72995274",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_72995274_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_72995274:sentinel2",
+   "osm_way_72995274:osm",
+   "osm_way_72995274:sources",
+   "osm_way_72995274:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Orange - Aubervilliers",
+    "tags": {
+     "building": "data_center",
+     "name": "Orange - Aubervilliers",
+     "operator": "Orange",
+     "source": "extraction vectorielle v1 cadastre-dgi-fr source : Direction G\u00e9n\u00e9rale des Imp\u00f4ts - Cadas. Mise \u00e0 jour : 2010",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 138.0,
+     "area_m2": 7669.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_23750729",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_23750729_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_23750729:sentinel2",
+   "osm_way_23750729:osm",
+   "osm_way_23750729:sources",
+   "osm_way_23750729:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Equinix DB4",
+    "tags": {
+     "addr:postcode": "D15 E205",
+     "addr:unit": "14",
+     "building": "data_center",
+     "name": "Equinix DB4",
+     "operator": "Equinix",
+     "operator:wikidata": "Q851641",
+     "operator:wikipedia": "en:Equinix",
+     "ref": "DB4",
+     "telecom": "data_center",
+     "website": "https://www.equinix.co.uk/locations/ireland-colocation/dublin-data-centers/db4/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 70.0,
+     "area_m2": 3444.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1011480755",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1011480755_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1011480755:sentinel2",
+   "osm_way_1011480755:osm",
+   "osm_way_1011480755:sources",
+   "osm_way_1011480755:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Korbank",
+    "tags": {
+     "building": "data_center",
+     "building:levels": "5",
+     "image": "https://datacenter.korbank.pl/wp-content/uploads/2022/05/006-1536x1152.jpg",
+     "image:2": "https://datacenter.korbank.pl/wp-content/uploads/2022/05/005-1536x1152.jpg",
+     "name": "Korbank",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 25.2,
+     "area_m2": 566.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_713340741",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_713340741_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_713340741:sentinel2",
+   "osm_way_713340741:osm",
+   "osm_way_713340741:sources",
+   "osm_way_713340741:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 121.9,
+     "area_m2": 11102.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_315703772",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_315703772_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_315703772:sentinel2",
+   "osm_way_315703772:osm",
+   "osm_way_315703772:sources",
+   "osm_way_315703772:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 67.9,
+     "area_m2": 3565.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_830931210",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_830931210_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_830931210:sentinel2",
+   "osm_way_830931210:osm",
+   "osm_way_830931210:sources",
+   "osm_way_830931210:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Facebook Altoona Data Center 5",
+    "tags": {
+     "building": "data_center",
+     "name": "Facebook Altoona Data Center 5",
+     "operator": "Meta",
+     "operator:wikidata": "Q380",
+     "operator:wikipedia": "en:Meta Platforms",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 378.1,
+     "area_m2": 58390.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1134911640",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1134911640_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1134911640:sentinel2",
+   "osm_way_1134911640:osm",
+   "osm_way_1134911640:sources",
+   "osm_way_1134911640:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "AWS IAD105",
+    "tags": {
+     "addr:city": "Manassas",
+     "addr:housenumber": "9650",
+     "addr:postcode": "20110",
+     "addr:state": "VA",
+     "addr:street": "Innovation Drive",
+     "building": "data_center",
+     "name": "Amazon IAD-105",
+     "operator": "Amazon Web Services",
+     "operator:short": "AWS",
+     "operator:wikidata": "Q456157",
+     "ref": "IAD-105",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 305.5,
+     "area_m2": 19935.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_57852902",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_57852902_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_57852902:sentinel2",
+   "osm_way_57852902:osm",
+   "osm_way_57852902:sources",
+   "osm_way_57852902:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "addr:city": "Amsterdam",
+     "building": "data_center",
+     "ref": "AM1",
+     "ref:bag": "0363100012131452",
+     "source": "BAG",
+     "source:date": "2021-08-08",
+     "start_date": "1984"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 102.4,
+     "area_m2": 5968.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_780262194",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_780262194_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_780262194:sentinel2",
+   "osm_way_780262194:osm",
+   "osm_way_780262194:sources",
+   "osm_way_780262194:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Centro de Procesamiento de Datos del Gobierno de Cantabria",
+    "tags": {
+     "addr:city": "Santander",
+     "addr:housenumber": "81A",
+     "addr:postcode": "39006",
+     "addr:street": "Paseo de Altamira",
+     "alt_name": "Centro de Proceso de Datos del Gobierno de Cantabria",
+     "building": "data_center",
+     "building:levels": "1",
+     "name": "Centro de Procesamiento de Datos del Gobierno de Cantabria",
+     "old_addr:street": "Paseo del General D\u00e1vila",
+     "operator": "Gobienro de Cantabria",
+     "short_name": "CPD del Gobierno de Cantabria",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 31.7,
+     "area_m2": 531.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1276518684",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1276518684_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1276518684:sentinel2",
+   "osm_way_1276518684:osm",
+   "osm_way_1276518684:sources",
+   "osm_way_1276518684:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Aligned IAD03",
+    "tags": {
+     "addr:city": "Sterling",
+     "addr:housenumber": "22715",
+     "addr:postcode": "20166",
+     "addr:state": "VA",
+     "addr:street": "Relocation Drive",
+     "building": "data_center",
+     "input:electricity": "126 MW",
+     "it_power": "72 MW",
+     "name": "Aligned IAD-03",
+     "operator": "Aligned",
+     "ref": "IAD-03",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 153.6,
+     "area_m2": 10716.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_191842525",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_191842525_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_191842525:sentinel2",
+   "osm_way_191842525:osm",
+   "osm_way_191842525:sources",
+   "osm_way_191842525:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Digital Realty LHR19",
+    "tags": {
+     "addr:city": "London",
+     "addr:country": "GB",
+     "addr:housename": "Cloud House",
+     "addr:housenumber": "47",
+     "addr:postcode": "E14 9TR",
+     "addr:street": "Millharbour",
+     "building": "data_center",
+     "building:levels": "5",
+     "building:material": "brick",
+     "name": "Digital Realty LHR19",
+     "operator": "Digital Realty",
+     "operator:wikidata": "Q5275969",
+     "ref": "LHR19",
+     "source": "Bing;survey",
+     "telecom": "data_center",
+     "website": "https://www.digitalrealty.com/data-centers/emea/london/lhr19",
+     "wikidata": "Q138427019"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 25.7,
+     "area_m2": 465.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1287260553",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1287260553_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1287260553:sentinel2",
+   "osm_way_1287260553:osm",
+   "osm_way_1287260553:sources",
+   "osm_way_1287260553:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Google",
+    "tags": {
+     "building": "data_center",
+     "name": "Google Mango Farm",
+     "operator": "Google",
+     "operator:wikidata": "Q95",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 269.2,
+     "area_m2": 26946.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1280344151",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1280344151_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1280344151:sentinel2",
+   "osm_way_1280344151:osm",
+   "osm_way_1280344151:sources",
+   "osm_way_1280344151:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Amazon Web Services",
+    "tags": {
+     "addr:city": "Umatilla",
+     "addr:postcode": "97882",
+     "addr:state": "OR",
+     "addr:street": "Wanapa Road",
+     "building": "data_center",
+     "name": "Amazon Web Services",
+     "operator": "Amazon Web Services",
+     "operator:short": "AWS",
+     "operator:wikidata": "Q456157",
+     "operator:wikipedia": "en:Amazon Web Services",
+     "owner": "Vadata Inc",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 58.1,
+     "area_m2": 1252.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_990537857",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_990537857_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_990537857:sentinel2",
+   "osm_way_990537857:osm",
+   "osm_way_990537857:sources",
+   "osm_way_990537857:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Amazon IAD122",
+    "tags": {
+     "addr:city": "Sterling",
+     "addr:housenumber": "23845",
+     "addr:postcode": "20166",
+     "addr:state": "VA",
+     "addr:street": "Erins Run Drive",
+     "building": "data_center",
+     "name": "Amazon IAD-122",
+     "operator": "Amazon Web Services",
+     "operator:short": "AWS",
+     "operator:wikidata": "Q456157",
+     "ref": "IAD-122",
+     "start_date": "2019",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 239.3,
+     "area_m2": 14259.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_293211683",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_293211683_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_293211683:sentinel2",
+   "osm_way_293211683:osm",
+   "osm_way_293211683:sources",
+   "osm_way_293211683:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Intergate Seattle East Building 5",
+    "tags": {
+     "addr:city": "Tukwila",
+     "addr:housenumber": "3355",
+     "addr:postcode": "98168",
+     "addr:state": "WA",
+     "addr:street": "South 120th Place",
+     "building": "data_center",
+     "name": "Intergate Seattle East Building 5",
+     "operator": "Sabey Data Centers",
+     "operator:wikidata": "Q104864464",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 149.9,
+     "area_m2": 18581.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_79145624",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_79145624_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_79145624:sentinel2",
+   "osm_way_79145624:osm",
+   "osm_way_79145624:sources",
+   "osm_way_79145624:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Colt Paris 3",
+    "tags": {
+     "addr:city": "Les Ulis",
+     "addr:housenumber": "15",
+     "addr:postcode": "91400",
+     "addr:street": "Avenue du Cap Horn",
+     "building": "data_center",
+     "name": "Colt Paris 3",
+     "operator": "Colt",
+     "source": "cadastre-dgi-fr source : Direction G\u00e9n\u00e9rale des Imp\u00f4ts - Cadastre. Mise \u00e0 jour : 2009",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 131.9,
+     "area_m2": 8983.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_45776978",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_45776978_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_45776978:sentinel2",
+   "osm_way_45776978:osm",
+   "osm_way_45776978:sources",
+   "osm_way_45776978:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Amazon IAD11",
+    "tags": {
+     "addr:city": "Manassas",
+     "addr:housenumber": "7510",
+     "addr:postcode": "20109",
+     "addr:state": "VA",
+     "addr:street": "Mason King Court",
+     "building": "data_center",
+     "name": "Amazon IAD-11",
+     "operator": "Amazon Web Services",
+     "operator:short": "AWS",
+     "operator:wikidata": "Q456157",
+     "ref": "Amazon IAD11",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 185.2,
+     "area_m2": 11394.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_217612507",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_217612507_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_217612507:sentinel2",
+   "osm_way_217612507:osm",
+   "osm_way_217612507:sources",
+   "osm_way_217612507:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "addr:city": "R\u012bga",
+     "addr:country": "LV",
+     "addr:housenumber": "17",
+     "addr:postcode": "LV-1063",
+     "addr:street": "\u010cuibes iela",
+     "building": "data_center",
+     "old_addr:housenumber": "459",
+     "old_addr:street": "Maskavas iela",
+     "ref:LV:addr": "104743498"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 122.2,
+     "area_m2": 3879.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1443922535",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1443922535_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1443922535:sentinel2",
+   "osm_way_1443922535:osm",
+   "osm_way_1443922535:sources",
+   "osm_way_1443922535:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "addr:housenumber": "19275",
+     "addr:street": "Compass Creek Parkway SE",
+     "building": "data_center",
+     "it_power": "48 MW",
+     "name": "STACK NVA06",
+     "operator": "Stack Infrastructure",
+     "operator:wikidata": "Q115477173",
+     "ref": "NVA06",
+     "source": "Piedmont Environmental Council, Virginia Data Centers",
+     "telecom": "data_center",
+     "website": "https://www.stackinfra.com/locations/americas/northern-virginia/nva06/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 225.8,
+     "area_m2": 18674.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_224100721",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_224100721_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_224100721:sentinel2",
+   "osm_way_224100721:osm",
+   "osm_way_224100721:sources",
+   "osm_way_224100721:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "COPT Data Center",
+    "tags": {
+     "addr:city": "Manassas",
+     "addr:housenumber": "9651",
+     "addr:postcode": "20109",
+     "addr:state": "VA",
+     "addr:street": "Hornbaker Road",
+     "building": "data_center",
+     "name": "COPT DC-6",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 148.9,
+     "area_m2": 11905.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1188691868",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1188691868_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1188691868:sentinel2",
+   "osm_way_1188691868:osm",
+   "osm_way_1188691868:sources",
+   "osm_way_1188691868:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "NTT Ashburn VA8 Data Centre",
+    "tags": {
+     "addr:city": "Ashburn",
+     "addr:housenumber": "44710",
+     "addr:postcode": "20147",
+     "addr:state": "VA",
+     "addr:street": "Gigabit Plaza",
+     "building": "data_center",
+     "name": "NTT VA9",
+     "operator": "NTT",
+     "operator:wikidata": "Q1054787",
+     "ref": "VA9",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 158.3,
+     "area_m2": 10349.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1276518687",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1276518687_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1276518687:sentinel2",
+   "osm_way_1276518687:osm",
+   "osm_way_1276518687:sources",
+   "osm_way_1276518687:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Digital Realty IAD55",
+    "tags": {
+     "addr:city": "Sterling",
+     "addr:housenumber": "22588",
+     "addr:postcode": "20166",
+     "addr:state": "VA",
+     "addr:street": "Fitness Court",
+     "building": "data_center",
+     "input:electricity": "60 MW",
+     "it_power": "20 MW",
+     "name": "Digital Realty IAD55",
+     "operator": "Digital Realty",
+     "operator:wikidata": "Q5275969",
+     "ref": "IAD55",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 112.7,
+     "area_m2": 7937.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_28352285",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_28352285_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_28352285:sentinel2",
+   "osm_way_28352285:osm",
+   "osm_way_28352285:sources",
+   "osm_way_28352285:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 79.4,
+     "area_m2": 4342.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_73008524",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_73008524_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_73008524:sentinel2",
+   "osm_way_73008524:osm",
+   "osm_way_73008524:sources",
+   "osm_way_73008524:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Equinix PA6",
+    "tags": {
+     "addr:housenumber": "10",
+     "addr:street": "Rue Waldeck Rochet",
+     "building": "data_center",
+     "name": "Equinix PA6",
+     "operator": "Equinix",
+     "operator:wikidata": "Q851641",
+     "ref": "PA6",
+     "source": "cadastre-dgi-fr source : Direction G\u00e9n\u00e9rale des Imp\u00f4ts - Cadastre. Mise \u00e0 jour : 2020",
+     "telecom": "data_center",
+     "website": "https://www.equinix.com/data-centers/europe-colocation/france-colocation/paris-data-centers/pa6",
+     "wikidata:operator": "Q851641"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 94.7,
+     "area_m2": 7476.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_34332155",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_34332155_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_34332155:sentinel2",
+   "osm_way_34332155:osm",
+   "osm_way_34332155:sources",
+   "osm_way_34332155:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "addr:housenumber": "15\u0411 \u04412",
+     "addr:street": "\u0443\u043b\u0438\u0446\u0430 \u041f\u043e\u0434\u043e\u043b\u044c\u0441\u043a\u0438\u0445 \u041a\u0443\u0440\u0441\u0430\u043d\u0442\u043e\u0432",
+     "building": "data_center",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 103.8,
+     "area_m2": 3259.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_65551099",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_65551099_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_65551099:sentinel2",
+   "osm_way_65551099:osm",
+   "osm_way_65551099:sources",
+   "osm_way_65551099:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Sartera",
+    "tags": {
+     "building": "data_center",
+     "name": "Sartera",
+     "operator": "Sartel",
+     "source": "cadastre-dgi-fr source : Direction G\u00e9n\u00e9rale des Imp\u00f4ts - Cadastre. Mise \u00e0 jour : 2010",
+     "telecom": "data_center",
+     "website": "https://sartel.fr/sartera"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 44.7,
+     "area_m2": 1120.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_460212563",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_460212563_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_460212563:sentinel2",
+   "osm_way_460212563:osm",
+   "osm_way_460212563:sources",
+   "osm_way_460212563:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "ele": "220.3",
+     "height": "11.2",
+     "lacounty:ain": "2466022046",
+     "lacounty:bld_id": "457732895303",
+     "operator": "Centurylink",
+     "owner": "Digital Realty",
+     "start_date": "1990",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 67.5,
+     "area_m2": 4017.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_37947315",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_37947315_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_37947315:sentinel2",
+   "osm_way_37947315:osm",
+   "osm_way_37947315:sources",
+   "osm_way_37947315:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Layer42 Santa Clara",
+    "tags": {
+     "addr:housenumber": "3080",
+     "addr:street": "Raymond Street",
+     "building": "data_center",
+     "name": "Santa Clara Data Center (SJC3)",
+     "operator": "Evocative",
+     "operator:wikidata": "Q136332656",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 58.2,
+     "area_m2": 2329.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_665480341",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_665480341_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_665480341:sentinel2",
+   "osm_way_665480341:osm",
+   "osm_way_665480341:sources",
+   "osm_way_665480341:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 265.0,
+     "area_m2": 25764.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_209077298",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_209077298_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_209077298:sentinel2",
+   "osm_way_209077298:osm",
+   "osm_way_209077298:sources",
+   "osm_way_209077298:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Lumen",
+    "tags": {
+     "addr:housenumber": "870",
+     "addr:street": "Duane Avenue",
+     "building": "data_center",
+     "name": "Lumen",
+     "operator": "Lumen Technologies",
+     "operator:wikidata": "Q5063092",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 46.7,
+     "area_m2": 1474.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1093408399",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1093408399_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1093408399:sentinel2",
+   "osm_way_1093408399:osm",
+   "osm_way_1093408399:sources",
+   "osm_way_1093408399:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Microsoft MAD01",
+    "tags": {
+     "building": "data_center",
+     "landuse": "industrial",
+     "name": "Microsoft MAD01",
+     "operator": "Microsoft"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 171.2,
+     "area_m2": 10235.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_460050155",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_460050155_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_460050155:sentinel2",
+   "osm_way_460050155:osm",
+   "osm_way_460050155:sources",
+   "osm_way_460050155:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Equinix Ashburn DC10",
+    "tags": {
+     "addr:city": "Ashburn",
+     "addr:housenumber": "21551",
+     "addr:postcode": "20147",
+     "addr:state": "VA",
+     "addr:street": "Beaumeade Circle",
+     "building": "data_center",
+     "input:electricity": "22 MW",
+     "name": "Equinix DC10",
+     "operator": "Equinix",
+     "operator:wikidata": "Q851641",
+     "owner": "Digital Realty",
+     "ref": "DC10",
+     "telecom": "data_center",
+     "website": "https://www.equinix.com/data-centers/americas-colocation/united-states-colocation/washington-dc-data-centers/dc10"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 174.0,
+     "area_m2": 14178.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_190297843",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_190297843_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_190297843:sentinel2",
+   "osm_way_190297843:osm",
+   "osm_way_190297843:sources",
+   "osm_way_190297843:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Cable & Wireless Data Centre",
+    "tags": {
+     "building": "data_center",
+     "building:levels": "2",
+     "layer": "1",
+     "name": "Cable & Wireless Data Centre",
+     "operator": "Cable & Wireless",
+     "roof:shape": "flat",
+     "source": "Bing",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 33.8,
+     "area_m2": 377.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_383545769",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_383545769_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_383545769:sentinel2",
+   "osm_way_383545769:osm",
+   "osm_way_383545769:sources",
+   "osm_way_383545769:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Skybox Chicago I",
+    "tags": {
+     "addr:city": "Elk Grove Village",
+     "addr:housenumber": "800",
+     "addr:postcode": "60007",
+     "addr:state": "IL",
+     "addr:street": "Devon Avenue",
+     "building": "data_center",
+     "building:levels": "3",
+     "name": "Skybox Chicago I",
+     "operator": "Skybox",
+     "ref": "Chicago I",
+     "telecom": "data_center",
+     "website": "https://www.skyboxdatacenters.com/locations/skybox-chicago"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 241.8,
+     "area_m2": 16230.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_424945736",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_424945736_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_424945736:sentinel2",
+   "osm_way_424945736:osm",
+   "osm_way_424945736:sources",
+   "osm_way_424945736:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "addr:city": "El Segundo",
+     "addr:housenumber": "200",
+     "addr:postcode": "90245",
+     "addr:state": "CA",
+     "addr:street": "North Nash Street",
+     "building": "data_center",
+     "ele": "40.9",
+     "height": "8.5",
+     "lacounty:ain": "4138003046",
+     "lacounty:bld_id": "444460792673",
+     "operator": "Centurylink",
+     "owner": "Digital Realty",
+     "start_date": "1976",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 134.1,
+     "area_m2": 6659.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1319724559",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1319724559_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1319724559:sentinel2",
+   "osm_way_1319724559:osm",
+   "osm_way_1319724559:sources",
+   "osm_way_1319724559:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "addr:city": "Delaware",
+     "addr:housenumber": "306",
+     "addr:postcode": "43015",
+     "addr:state": "OH",
+     "addr:street": "Greif Parkway",
+     "building": "data_center",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 233.4,
+     "area_m2": 28613.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_191603111",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_191603111_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_191603111:sentinel2",
+   "osm_way_191603111:osm",
+   "osm_way_191603111:sources",
+   "osm_way_191603111:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "RBS Data Centre",
+    "tags": {
+     "building": "data_center",
+     "name": "RBS Data Centre",
+     "operator": "NatWest Group",
+     "planned": "https://pa.eastlothian.gov.uk/online-applications/applicationDetails.do?activeTab=documents&keyVal=KIRC4AGN07S00",
+     "source": "The Royal Bank of Scotland Group",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 163.4,
+     "area_m2": 11763.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_574135471",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_574135471_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_574135471:sentinel2",
+   "osm_way_574135471:osm",
+   "osm_way_574135471:sources",
+   "osm_way_574135471:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Ark Data Centres",
+    "tags": {
+     "addr:housename": "SQ17",
+     "addr:postcode": "SN13 9GB",
+     "building": "data_center",
+     "name": "Ark Data Centres",
+     "operator": "Ark Data Centres",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 96.9,
+     "area_m2": 4591.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1003253890",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1003253890_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1003253890:sentinel2",
+   "osm_way_1003253890:osm",
+   "osm_way_1003253890:sources",
+   "osm_way_1003253890:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 101.7,
+     "area_m2": 5004.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_280128049",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_280128049_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_280128049:sentinel2",
+   "osm_way_280128049:osm",
+   "osm_way_280128049:sources",
+   "osm_way_280128049:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "industrial",
+     "ref:bag": "0034100000072323",
+     "source": "BAG",
+     "source:date": "2014-03-24",
+     "start_date": "2007"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 103.1,
+     "area_m2": 7420.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1251320341",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1251320341_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1251320341:sentinel2",
+   "osm_way_1251320341:osm",
+   "osm_way_1251320341:sources",
+   "osm_way_1251320341:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "addr:city": "Ludwigsfelde",
+     "addr:housenumber": "6",
+     "addr:postcode": "14974",
+     "addr:street": "Uferring",
+     "addr:suburb": "Genshagen",
+     "building": "data_center",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 88.7,
+     "area_m2": 5677.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1442781502",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1442781502_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1442781502:sentinel2",
+   "osm_way_1442781502:osm",
+   "osm_way_1442781502:sources",
+   "osm_way_1442781502:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "building:levels": "5",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 93.1,
+     "area_m2": 3593.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_68337136",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_68337136_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_68337136:sentinel2",
+   "osm_way_68337136:osm",
+   "osm_way_68337136:sources",
+   "osm_way_68337136:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Amazon Web Services",
+    "tags": {
+     "building": "data_center",
+     "name": "Amazon Web Services",
+     "operator": "Amazon Web Services",
+     "operator:short": "AWS",
+     "operator:wikidata": "Q456157",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 245.2,
+     "area_m2": 13776.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_318922312",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_318922312_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_318922312:sentinel2",
+   "osm_way_318922312:osm",
+   "osm_way_318922312:sources",
+   "osm_way_318922312:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 37.9,
+     "area_m2": 693.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_204460950",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_204460950_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_204460950:sentinel2",
+   "osm_way_204460950:osm",
+   "osm_way_204460950:sources",
+   "osm_way_204460950:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Digital Realty New York EWR11",
+    "tags": {
+     "addr:city": "Piscataway Township",
+     "addr:housenumber": "3",
+     "addr:postcode": "08854",
+     "addr:state": "NJ",
+     "addr:street": "Corporate Place",
+     "building": "data_center",
+     "name": "Digital Realty New York EWR11",
+     "operator": "Digital Realty",
+     "operator:wikidata": "Q5275969",
+     "ref": "EWR11",
+     "source": "Bing",
+     "telecom": "data_center",
+     "website": "https://www.digitalrealty.com/data-centers/americas/new-york/ewr11"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 125.4,
+     "area_m2": 8938.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_538103967",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_538103967_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_538103967:sentinel2",
+   "osm_way_538103967:osm",
+   "osm_way_538103967:sources",
+   "osm_way_538103967:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Digital Realty Dublin DUB3",
+    "tags": {
+     "building": "data_center",
+     "email": "infodub@interxion.com",
+     "fax": "+353 1 434 4999",
+     "name": "Digital Realty Dublin DUB3",
+     "operator": "Digital Realty",
+     "operator:wikidata": "Q5275969",
+     "ref": "DUB3",
+     "telecom": "data_center",
+     "website": "https://www.digitalrealty.com/data-centers/emea/dublin/dub3"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 79.3,
+     "area_m2": 4149.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_661951723",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_661951723_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_661951723:sentinel2",
+   "osm_way_661951723:osm",
+   "osm_way_661951723:sources",
+   "osm_way_661951723:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Equinix TR6",
+    "tags": {
+     "addr:city": "Brampton",
+     "addr:housenumber": "30",
+     "addr:postcode": "L6S 5Z7",
+     "addr:province": "ON",
+     "addr:street": "Bramtree Court",
+     "building": "data_center",
+     "name": "Equinix TR6",
+     "operator": "Equinix",
+     "operator:wikidata": "Q851641",
+     "ref": "TR6",
+     "telecom": "data_center",
+     "website": "https://www.equinix.com/data-centers/americas-colocation/canada-colocation/toronto-data-centers/tr6"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 226.5,
+     "area_m2": 22246.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_758138835",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_758138835_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_758138835:sentinel2",
+   "osm_way_758138835:osm",
+   "osm_way_758138835:sources",
+   "osm_way_758138835:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "name": "CyrusOne Amsterdam I",
+     "operator": "CyrusOne",
+     "ref:bag": "0393100000004254",
+     "source": "BAG",
+     "source:date": "2024-10-04",
+     "start_date": "2020"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 163.1,
+     "area_m2": 9873.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1028687251",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1028687251_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1028687251:sentinel2",
+   "osm_way_1028687251:osm",
+   "osm_way_1028687251:sources",
+   "osm_way_1028687251:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "ref:bygningsnr": "300783262"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 63.5,
+     "area_m2": 3172.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_196783604",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_196783604_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_196783604:sentinel2",
+   "osm_way_196783604:osm",
+   "osm_way_196783604:sources",
+   "osm_way_196783604:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Global Switch London North",
+    "tags": {
+     "addr:city": "London",
+     "addr:country": "GB",
+     "addr:housename": "East India Dock House",
+     "addr:postcode": "E14 9YY",
+     "addr:street": "East India Dock Road",
+     "building": "data_center",
+     "building:levels": "3",
+     "name": "Global Switch London North",
+     "operator": "Global Switch",
+     "source": "Bing;survey",
+     "telecom": "data_center",
+     "wikidata": "Q26263559",
+     "wikipedia": "en:East India Dock House"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 145.7,
+     "area_m2": 7524.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_863162820",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_863162820_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_863162820:sentinel2",
+   "osm_way_863162820:osm",
+   "osm_way_863162820:sources",
+   "osm_way_863162820:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Stream Chicago II",
+    "tags": {
+     "addr:city": "Elk Grove Village",
+     "addr:housenumber": "1925",
+     "addr:postcode": "60007",
+     "addr:state": "IL",
+     "addr:street": "Busse Road",
+     "building": "data_center",
+     "name": "Stream Chicago II",
+     "operator": "Stream",
+     "ref": "Chicago II",
+     "telecom": "data_center",
+     "website": "https://www.streamdatacenters.com/datacenters/chicago-ii/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 200.6,
+     "area_m2": 19808.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_438078069",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_438078069_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_438078069:sentinel2",
+   "osm_way_438078069:osm",
+   "osm_way_438078069:sources",
+   "osm_way_438078069:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Facebook Altoona Data Center 1",
+    "tags": {
+     "building": "data_center",
+     "name": "Facebook Altoona Data Center 1",
+     "operator": "Meta",
+     "operator:wikidata": "Q380",
+     "operator:wikipedia": "en:Meta Platforms",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 393.3,
+     "area_m2": 29324.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_459600829",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_459600829_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_459600829:sentinel2",
+   "osm_way_459600829:osm",
+   "osm_way_459600829:sources",
+   "osm_way_459600829:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Lumen",
+    "tags": {
+     "addr:housenumber": "394",
+     "addr:street": "Edinburgh Avenue",
+     "building": "data_center",
+     "name": "Lumen",
+     "operator": "Lumen Technologies",
+     "operator:wikidata": "Q5063092",
+     "ref:GB:uprn": "10026010481",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 57.7,
+     "area_m2": 2421.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_788027103",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_788027103_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_788027103:sentinel2",
+   "osm_way_788027103:osm",
+   "osm_way_788027103:sources",
+   "osm_way_788027103:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Facebook Altoona Data Center 4",
+    "tags": {
+     "building": "data_center",
+     "name": "Facebook Altoona Data Center 4",
+     "operator": "Meta",
+     "operator:wikidata": "Q380",
+     "operator:wikipedia": "en:Meta Platforms",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 375.8,
+     "area_m2": 56433.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_649365751",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_649365751_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_649365751:sentinel2",
+   "osm_way_649365751:osm",
+   "osm_way_649365751:sources",
+   "osm_way_649365751:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "NTT Ashburn VA3 Data Center",
+    "tags": {
+     "addr:city": "Ashburn",
+     "addr:housenumber": "44245",
+     "addr:postcode": "20147",
+     "addr:state": "VA",
+     "addr:street": "Gigabit Plaza",
+     "building": "data_center",
+     "input:electricity": "33 MW",
+     "it_power": "16 MW",
+     "name": "NTT VA3",
+     "operator": "NTT",
+     "operator:wikidata": "Q1054787",
+     "ref": "VA3",
+     "start_date": "2018",
+     "telecom": "data_center",
+     "website": "https://www.nttdata.com/en-us/services/global-data-centers/global-locations/americas/northern-virginia-data-centers/ashburn-va-3-data-center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 177.3,
+     "area_m2": 21576.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1042260902",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1042260902_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1042260902:sentinel2",
+   "osm_way_1042260902:osm",
+   "osm_way_1042260902:sources",
+   "osm_way_1042260902:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "addr:city": "Benson",
+     "addr:housenumber": "401",
+     "addr:postcode": "85602",
+     "addr:state": "AZ",
+     "addr:street": "Direct Way",
+     "building": "data_center",
+     "operator": "DirecTV",
+     "operator:wikidata": "Q1056839",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 31.5,
+     "area_m2": 702.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1294595615",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1294595615_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1294595615:sentinel2",
+   "osm_way_1294595615:osm",
+   "osm_way_1294595615:sources",
+   "osm_way_1294595615:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Meta Gallatin Data Center",
+    "tags": {
+     "building": "data_center",
+     "name": "Meta Gallatin Data Center",
+     "operator": "Meta",
+     "operator:wikidata": "Q380",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 380.0,
+     "area_m2": 58327.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_207145308",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_207145308_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_207145308:sentinel2",
+   "osm_way_207145308:osm",
+   "osm_way_207145308:sources",
+   "osm_way_207145308:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "IXcellerate North MOS 1",
+    "tags": {
+     "addr:housenumber": "33\u0413",
+     "addr:street": "\u0410\u043b\u0442\u0443\u0444\u044c\u0435\u0432\u0441\u043a\u043e\u0435 \u0448\u043e\u0441\u0441\u0435",
+     "building": "data_center",
+     "contact:email": "info@ixcellerate.ru",
+     "contact:phone": "+7 495 8000911",
+     "contact:website": "https://www.ixcellerate.com/data-centers/moscow-north-campus/#mos1",
+     "name": "IXcellerate North MOS 1",
+     "operator": "IXcellerate",
+     "owner": "IXcellerate",
+     "ref": "MOS 1",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 97.8,
+     "area_m2": 5321.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_996899489",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_996899489_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_996899489:sentinel2",
+   "osm_way_996899489:osm",
+   "osm_way_996899489:sources",
+   "osm_way_996899489:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "CloudHQ MCC2",
+    "tags": {
+     "addr:city": "Manassas",
+     "addr:housenumber": "10100",
+     "addr:postcode": "20110",
+     "addr:state": "VA",
+     "addr:street": "Harry J Parrish Boulevard",
+     "building": "data_center",
+     "name": "CloudHQ MCC2",
+     "operator": "CloudHQ",
+     "operator:wikidata": "Q136332516",
+     "ref": "MCC2",
+     "telecom": "data_center",
+     "website": "https://cloudhq.com/location/mcc-campus/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 231.5,
+     "area_m2": 32665.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_358455179",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_358455179_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_358455179:sentinel2",
+   "osm_way_358455179:osm",
+   "osm_way_358455179:sources",
+   "osm_way_358455179:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Digital Realty Silicon Valley SC1",
+    "tags": {
+     "addr:city": "Santa Clara",
+     "addr:housenumber": "2220",
+     "addr:state": "CA",
+     "addr:street": "De La Cruz Boulevard",
+     "addr:unit": "1",
+     "building": "data_center",
+     "name": "Digital Realty Silicon Valley SC1",
+     "operator": "Digital Realty",
+     "operator:wikidata": "Q5275969",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 335.1,
+     "area_m2": 27729.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_209076412",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_209076412_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_209076412:sentinel2",
+   "osm_way_209076412:osm",
+   "osm_way_209076412:sources",
+   "osm_way_209076412:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Digital Realty Silicon Valley SJC11",
+    "tags": {
+     "addr:city": "Santa Clara",
+     "addr:housenumber": "3011",
+     "addr:postcode": "95054",
+     "addr:state": "CA",
+     "addr:street": "Lafayette Street",
+     "building": "data_center",
+     "name": "Digital Realty Silicon Valley SJC11",
+     "note": "Apparently, \"leased to a social networking company\"",
+     "operator": "Digital Realty",
+     "operator:wikidata": "Q5275969",
+     "ref": "SJC11",
+     "telecom": "data_center",
+     "website": "https://www.digitalrealty.com/data-centers/americas/silicon-valley/sjc11"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 108.9,
+     "area_m2": 4097.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_204460903",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_204460903_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_204460903:sentinel2",
+   "osm_way_204460903:osm",
+   "osm_way_204460903:sources",
+   "osm_way_204460903:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Digital Realty New York EWR12",
+    "tags": {
+     "addr:city": "Piscataway Township",
+     "addr:housenumber": "365",
+     "addr:postcode": "08854",
+     "addr:state": "NJ",
+     "addr:street": "South Randolphville Road",
+     "building": "data_center",
+     "name": "Digital Realty New York EWR12",
+     "operator": "Digital Realty",
+     "operator:wikidata": "Q5275969",
+     "ref": "EWR12",
+     "source": "Bing",
+     "telecom": "data_center",
+     "website": "https://www.digitalrealty.com/data-centers/americas/new-york/ewr12"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 197.3,
+     "area_m2": 28160.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1188691869",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1188691869_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1188691869:sentinel2",
+   "osm_way_1188691869:osm",
+   "osm_way_1188691869:sources",
+   "osm_way_1188691869:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "DataBank Ashburn IAD3",
+    "tags": {
+     "addr:city": "Ashburn",
+     "addr:housenumber": "21630",
+     "addr:postcode": "20147",
+     "addr:state": "VA",
+     "addr:street": "Red Rum Drive",
+     "building": "data_center",
+     "input:electricity": "75 MW",
+     "it_power": "40 MW",
+     "name": "DataBank IAD3",
+     "operator": "DataBank",
+     "operator:wikidata": "Q117314439",
+     "ref": "IAD3",
+     "telecom": "data_center",
+     "website": "https://www.databank.com/data-centers/northern-virginia/ashburn-campus/iad3/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 163.0,
+     "area_m2": 13604.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_545396372",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_545396372_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_545396372:sentinel2",
+   "osm_way_545396372:osm",
+   "osm_way_545396372:sources",
+   "osm_way_545396372:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Amazon IAD62",
+    "tags": {
+     "addr:city": "Sterling",
+     "addr:housenumber": "42949",
+     "addr:postcode": "20166",
+     "addr:state": "VA",
+     "addr:street": "Fadeley Lane",
+     "building": "data_center",
+     "name": "Amazon IAD-62",
+     "operator": "Amazon Web Services",
+     "operator:short": "AWS",
+     "operator:wikidata": "Q456157",
+     "ref": "IAD-62",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 238.9,
+     "area_m2": 13950.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_271576404",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_271576404_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_271576404:sentinel2",
+   "osm_way_271576404:osm",
+   "osm_way_271576404:sources",
+   "osm_way_271576404:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "ref:bag": "0358100021491470",
+     "source": "BAG",
+     "source:date": "2014-03-24",
+     "start_date": "2008"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 92.6,
+     "area_m2": 6846.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_313739698",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_313739698_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_313739698:sentinel2",
+   "osm_way_313739698:osm",
+   "osm_way_313739698:sources",
+   "osm_way_313739698:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Lands End Cable Landing Station",
+    "tags": {
+     "building": "cable_landing_station",
+     "name": "Lands End Cable Landing Station",
+     "operator": "BT",
+     "roof:shape": "flat",
+     "telecom": "cable_landing_station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 75.5,
+     "area_m2": 1527.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_723864747",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_723864747_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_723864747:sentinel2",
+   "osm_way_723864747:osm",
+   "osm_way_723864747:sources",
+   "osm_way_723864747:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "ref:bag": "1911100000587652",
+     "source": "BAG",
+     "source:date": "2021-06-19",
+     "start_date": "2020"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 542.0,
+     "area_m2": 31037.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_697020849",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_697020849_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_697020849:sentinel2",
+   "osm_way_697020849:osm",
+   "osm_way_697020849:sources",
+   "osm_way_697020849:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Amazon IAD58",
+    "tags": {
+     "addr:city": "Sterling",
+     "addr:housenumber": "22745",
+     "addr:postcode": "20166",
+     "addr:state": "VA",
+     "addr:street": "Relocation Drive",
+     "building": "data_center",
+     "input:electricity": "36 MW",
+     "name": "Amazon IAD-58",
+     "operator": "Amazon Web Services",
+     "operator:short": "AWS",
+     "operator:wikidata": "Q456157",
+     "ref": "IAD-58",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 263.6,
+     "area_m2": 12724.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_540895898",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_540895898_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_540895898:sentinel2",
+   "osm_way_540895898:osm",
+   "osm_way_540895898:sources",
+   "osm_way_540895898:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "\u0411\u0438\u0442\u0440\u0438\u0432\u0435\u0440 \u0420\u0443\u0441",
+    "tags": {
+     "addr:housenumber": "11\u0411",
+     "addr:street": "\u043f\u0440\u043e\u0435\u0437\u0434 \u0421\u0442\u0440\u043e\u0439\u0438\u043d\u0434\u0443\u0441\u0442\u0440\u0438\u0438",
+     "building": "data_center",
+     "name": "\u0411\u0438\u0442\u0440\u0438\u0432\u0435\u0440 \u0420\u0443\u0441",
+     "name:en": "Bitriver Rus",
+     "name:ru": "\u0411\u0438\u0442\u0440\u0438\u0432\u0435\u0440 \u0420\u0443\u0441",
+     "office": "company",
+     "opening_hours": "Mo-Fr 08:00-17:00",
+     "phone": "+7 (3953) 34-83-93",
+     "telecom": "data_center",
+     "website": "https://bitriver.farm/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 214.6,
+     "area_m2": 14210.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1298979786",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1298979786_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1298979786:sentinel2",
+   "osm_way_1298979786:osm",
+   "osm_way_1298979786:sources",
+   "osm_way_1298979786:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "AWS Asia Pacific (Sydney) Region Data Centre",
+    "tags": {
+     "addr:housenumber": "33",
+     "addr:postcode": "2113",
+     "addr:state": "NSW",
+     "addr:street": "Talavera Road",
+     "addr:suburb": "Macquarie Park",
+     "building": "data_center",
+     "height": "39",
+     "name": "AWS Asia Pacific (Sydney) Region Data Centre",
+     "operator": "Amazon Web Services",
+     "operator:short": "AWS",
+     "operator:wikidata": "Q456157",
+     "owner": "Stockland",
+     "ref": "SYD066",
+     "source_ref": "https://majorprojects.planningportal.nsw.gov.au/prweb/PRRestService/mp/01/getContent?AttachRef=SSD-10467%2120201113T032926.702%20GMT;https://www.stockland.com.au/~/media/leasing/logistic-and-business-parks/nsw/m-park/construction-community-documents/20092",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 135.9,
+     "area_m2": 5276.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1133544548",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1133544548_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1133544548:sentinel2",
+   "osm_way_1133544548:osm",
+   "osm_way_1133544548:sources",
+   "osm_way_1133544548:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 54.3,
+     "area_m2": 2430.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_694602725",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_694602725_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_694602725:sentinel2",
+   "osm_way_694602725:osm",
+   "osm_way_694602725:sources",
+   "osm_way_694602725:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Vantage WA12",
+    "tags": {
+     "building": "data_center",
+     "name": "Vantage WA12",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 249.1,
+     "area_m2": 11578.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_234722720",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_234722720_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_234722720:sentinel2",
+   "osm_way_234722720:osm",
+   "osm_way_234722720:sources",
+   "osm_way_234722720:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "H5 Data Centers Ashburn",
+    "tags": {
+     "addr:city": "Ashburn",
+     "addr:housenumber": "21800",
+     "addr:postcode": "20147",
+     "addr:state": "VA",
+     "addr:street": "Beaumeade Circle",
+     "building": "data_center",
+     "input:electricity": "78 MW",
+     "it_power": "42 MW",
+     "name": "H5 Ashburn",
+     "operator": "H5 Data Centers",
+     "operator:wikidata": "Q136332488",
+     "ref": "Ashburn",
+     "telecom": "data_center",
+     "website": "https://h5datacenters.com/ashburn-data-center.html"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 110.1,
+     "area_m2": 7783.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1003348567",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1003348567_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1003348567:sentinel2",
+   "osm_way_1003348567:osm",
+   "osm_way_1003348567:sources",
+   "osm_way_1003348567:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "QTS Ashburn-Shellhorn DC1",
+    "tags": {
+     "addr:city": "Ashburn",
+     "addr:housenumber": "22291",
+     "addr:postcode": "20147",
+     "addr:state": "VA",
+     "addr:street": "Shellhorn Road",
+     "building": "data_center",
+     "input:electricity": "80 MW",
+     "it_power": "42 MW",
+     "name": "QTS Ashburn 3 DC1",
+     "operator": "Quality Technology Services",
+     "operator:short": "QTS",
+     "operator:wikidata": "Q18392800",
+     "ref": "DC1",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 257.3,
+     "area_m2": 14588.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_289620443",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_289620443_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_289620443:sentinel2",
+   "osm_way_289620443:osm",
+   "osm_way_289620443:sources",
+   "osm_way_289620443:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Digital Realty San Francisco SFO10",
+    "tags": {
+     "addr:city": "San Francisco",
+     "addr:housenumber": "200",
+     "addr:state": "CA",
+     "addr:street": "Paul Avenue",
+     "building": "data_center",
+     "clli": "SNFCCAMM",
+     "height": "16",
+     "name": "Digital Realty San Francisco SFO10",
+     "operator": "Digital Realty",
+     "operator:wikidata": "Q5275969",
+     "ref": "SFO10",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 133.4,
+     "area_m2": 9759.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1060567996",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1060567996_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1060567996:sentinel2",
+   "osm_way_1060567996:osm",
+   "osm_way_1060567996:sources",
+   "osm_way_1060567996:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Equinix",
+    "tags": {
+     "addr:housenumber": "39",
+     "addr:street": "Rue de Strasbourg",
+     "building": "data_center",
+     "name": "Equinix",
+     "operator": "Equinix",
+     "operator:wikidata": "Q851641",
+     "ref": "BX1",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 106.9,
+     "area_m2": 6288.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_513703429",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_513703429_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_513703429:sentinel2",
+   "osm_way_513703429:osm",
+   "osm_way_513703429:sources",
+   "osm_way_513703429:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Microsoft DUB06",
+    "tags": {
+     "building": "data_center",
+     "name": "Microsoft DUB06",
+     "operator": "Microsoft",
+     "operator:wikidata": "Q2283",
+     "ref": "DUB06",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 163.5,
+     "area_m2": 21864.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_37596447",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_37596447_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_37596447:sentinel2",
+   "osm_way_37596447:osm",
+   "osm_way_37596447:sources",
+   "osm_way_37596447:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Amazon Web Services",
+    "tags": {
+     "building": "data_center",
+     "name": "Amazon Web Services",
+     "operator": "Amazon Web Services",
+     "operator:short": "AWS",
+     "operator:wikidata": "Q456157",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 164.7,
+     "area_m2": 17450.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_379736049",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_379736049_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_379736049:sentinel2",
+   "osm_way_379736049:osm",
+   "osm_way_379736049:sources",
+   "osm_way_379736049:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "itQ Data Center",
+    "tags": {
+     "addr:city": "Wroc\u0142aw",
+     "addr:housenumber": "283b",
+     "addr:postcode": "50-558",
+     "addr:street": "Borowska",
+     "building": "data_center",
+     "name": "itQ Data Center",
+     "telecom": "data_center",
+     "website": "http://itqdatacenter.pl/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 49.2,
+     "area_m2": 1495.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_86528807",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_86528807_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_86528807:sentinel2",
+   "osm_way_86528807:osm",
+   "osm_way_86528807:sources",
+   "osm_way_86528807:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Equinix LD5",
+    "tags": {
+     "addr:city": "Slough",
+     "addr:country": "GB",
+     "addr:housenumber": "8",
+     "addr:postcode": "SL1 4AX",
+     "addr:street": "Buckingham Avenue",
+     "building": "data_center",
+     "name": "Equinix LD5",
+     "operator": "Equinix",
+     "operator:wikidata": "Q851641",
+     "ref": "LD5",
+     "source": "Yahoo",
+     "telecom": "data_center",
+     "website": "https://www.equinix.com/data-centers/europe-colocation/united-kingdom-colocation/london-data-centers/ld5",
+     "wikidata": "Q138393321"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 162.1,
+     "area_m2": 14418.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1432337902",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1432337902_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1432337902:sentinel2",
+   "osm_way_1432337902:osm",
+   "osm_way_1432337902:sources",
+   "osm_way_1432337902:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "source": "Sentinel and https://www.youtube.com/watch?v=n2b0ljMXyEg -  can be refined if better images are available",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 239.2,
+     "area_m2": 23078.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_458603047",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_458603047_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_458603047:sentinel2",
+   "osm_way_458603047:osm",
+   "osm_way_458603047:sources",
+   "osm_way_458603047:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "cable_landing_station",
+     "operator": "Verizon",
+     "source": "https://www.youtube.com/watch?v=K_nnUbX7uuQ",
+     "telecom": "cable_landing_station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 24.4,
+     "area_m2": 360.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_190868312",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_190868312_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_190868312:sentinel2",
+   "osm_way_190868312:osm",
+   "osm_way_190868312:sources",
+   "osm_way_190868312:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "RagingWire CA3",
+    "tags": {
+     "addr:city": "Sacramento",
+     "addr:housenumber": "1625",
+     "addr:postcode": "95834",
+     "addr:state": "CA",
+     "addr:street": "National Driveq",
+     "building": "data_center",
+     "name": "RagingWire CA3",
+     "operator": "NTT",
+     "operator:wikidata": "Q1054787",
+     "ref": "CA3",
+     "telecom": "data_center",
+     "website": "https://services.global.ntt/en-us/services-and-products/global-data-centers/global-locations/americas/sacramento-data-centers"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 147.2,
+     "area_m2": 14083.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1441542602",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1441542602_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1441542602:sentinel2",
+   "osm_way_1441542602:osm",
+   "osm_way_1441542602:sources",
+   "osm_way_1441542602:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Southern Highlands Data Campus",
+    "tags": {
+     "addr:housenumber": "30",
+     "addr:postcode": "2577",
+     "addr:state": "NSW",
+     "addr:street": "Douglas Road",
+     "addr:suburb": "Moss Vale",
+     "building": "data_center",
+     "name": "Southern Highlands Data Campus",
+     "operator": "Cloud Carrier",
+     "ref": "DB1",
+     "telecom": "data_center",
+     "website": "https://cloudcarrier.com/db1/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 125.5,
+     "area_m2": 3907.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1460776174",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1460776174_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1460776174:sentinel2",
+   "osm_way_1460776174:osm",
+   "osm_way_1460776174:sources",
+   "osm_way_1460776174:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "addr:city": "Leesburg",
+     "addr:housenumber": "20480",
+     "addr:postcode": "20175",
+     "addr:state": "VA",
+     "addr:street": "Goose Landing Lane",
+     "building": "data_center",
+     "name": "Google Leesburg Building 3",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 271.9,
+     "area_m2": 28235.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_731157740",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_731157740_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_731157740:sentinel2",
+   "osm_way_731157740:osm",
+   "osm_way_731157740:sources",
+   "osm_way_731157740:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Centro de Datos Win Santa Catalina",
+    "tags": {
+     "addr:city": "Lima",
+     "addr:district": "La Victoria",
+     "addr:housenumber": "663",
+     "addr:postcode": "15034",
+     "addr:street": "Avenida Santa Catalina",
+     "building": "data_center",
+     "name": "Centro de Datos Win Santa Catalina",
+     "operator": "Win",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 19.5,
+     "area_m2": 244.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_389875923",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_389875923_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_389875923:sentinel2",
+   "osm_way_389875923:osm",
+   "osm_way_389875923:sources",
+   "osm_way_389875923:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Datacenter Burcht",
+    "tags": {
+     "addr:housenumber": "211;213;215;217;219;221;223",
+     "addr:street": "Antwerpsesteenweg",
+     "building": "data_center",
+     "name": "Datacenter Burcht",
+     "operator": "Datacenter United / DCstar nv",
+     "phone": "+32 3 291 02 50",
+     "ref": "DCB",
+     "source:geometry:date": "2016-11-21",
+     "source:geometry:ref": "Gbg/5764613",
+     "telecom": "data_center",
+     "website": "https://datacenterunited.com/datacenters/datacenter-burcht"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 168.6,
+     "area_m2": 14602.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_133868759",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_133868759_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_133868759:sentinel2",
+   "osm_way_133868759:osm",
+   "osm_way_133868759:sources",
+   "osm_way_133868759:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "iomart Glasgow Data Centre",
+    "tags": {
+     "addr:housenumber": "88",
+     "addr:street": "Middlesex Street",
+     "building": "data_center",
+     "name": "iomart Glasgow Data Centre",
+     "operator": "iomart",
+     "roof:colour": "#c0bcb3",
+     "roof:shape": "gabled",
+     "telecom": "data_center",
+     "website": "https://www.iomart.com/uk-data-centres/glasgow-data-centre"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 35.4,
+     "area_m2": 1017.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_68996550",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_68996550_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_68996550:sentinel2",
+   "osm_way_68996550:osm",
+   "osm_way_68996550:sources",
+   "osm_way_68996550:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Cork Internet Exchange (CIX)",
+    "tags": {
+     "addr:city": "Cork",
+     "addr:postcode": "T23 R68N",
+     "building": "data_center",
+     "building:levels": "2",
+     "contact:website": "http://www.cix.ie",
+     "name": "Cork Internet Exchange (CIX)",
+     "operator": "Cork Internet Exchange (CIX)",
+     "phone": "+353 21 237 3050",
+     "telecom": "data_center",
+     "website": "https://www.cloudcix.com/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 91.5,
+     "area_m2": 2393.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_51335423",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_51335423_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_51335423:sentinel2",
+   "osm_way_51335423:osm",
+   "osm_way_51335423:sources",
+   "osm_way_51335423:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Eir Hosting Services",
+    "tags": {
+     "addr:city": "Citywest",
+     "addr:housenumber": "4050",
+     "addr:postal_district": "D24",
+     "addr:postcode": "D24 YX53",
+     "addr:street": "Kingswood Avenue",
+     "building": "data_center",
+     "name": "Eir Hosting Services",
+     "operator": "Eir",
+     "operator:website": "https://www.eir.ie",
+     "operator:wikidata": "Q3049473",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 61.7,
+     "area_m2": 2446.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_59541005",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_59541005_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_59541005:sentinel2",
+   "osm_way_59541005:osm",
+   "osm_way_59541005:sources",
+   "osm_way_59541005:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Domicilium",
+    "tags": {
+     "addr:city": "Ballasalla",
+     "addr:country": "IM",
+     "addr:housename": "The Isle of Man Datacentre",
+     "addr:place": "Ronaldsway Industrial Estate",
+     "addr:postcode": "IM9 2RS",
+     "building": "data_center",
+     "name": "Domicilium",
+     "operator": "Domicilium",
+     "source": "Isle of Man Government aerial imagery (2001)",
+     "telecom": "data_center",
+     "website": "https://www.domicilium.com/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 65.6,
+     "area_m2": 2459.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_886028872",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_886028872_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_886028872:sentinel2",
+   "osm_way_886028872:osm",
+   "osm_way_886028872:sources",
+   "osm_way_886028872:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Amazon IAD129",
+    "tags": {
+     "addr:city": "Sterling",
+     "addr:housenumber": "21710",
+     "addr:postcode": "20166",
+     "addr:state": "VA",
+     "addr:street": "Charles View Drive",
+     "building": "data_center",
+     "input:electricity": "50 MW",
+     "name": "Amazon IAD-129",
+     "operator": "Amazon Web Services",
+     "operator:short": "AWS",
+     "operator:wikidata": "Q456157",
+     "ref": "IAD-129",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 159.8,
+     "area_m2": 9837.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_35973807",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_35973807_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_35973807:sentinel2",
+   "osm_way_35973807:osm",
+   "osm_way_35973807:sources",
+   "osm_way_35973807:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Verne Gagnaver",
+    "tags": {
+     "addr:housenumber": "868",
+     "addr:postcode": "262",
+     "addr:street": "Valhallarbraut",
+     "building": "data_center",
+     "name": "Verne Gagnaver",
+     "name:en": "Verne Global Datacenter",
+     "operator": "Verne Global",
+     "ref:HNITNUM": "10094706",
+     "source": "http://www.asbru.is/resources/Files/asbru_skilti_kort_v6.pdf",
+     "source:addr": "Sta\u00f0fangaskr\u00e1",
+     "start_date": "1955",
+     "telecom": "data_center",
+     "website": "https://verneglobal.com/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 154.3,
+     "area_m2": 9456.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_666285028",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_666285028_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_666285028:sentinel2",
+   "osm_way_666285028:osm",
+   "osm_way_666285028:sources",
+   "osm_way_666285028:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "DC 11.11",
+    "tags": {
+     "addr:city": "Warszawa",
+     "addr:city:simc": "0918123",
+     "addr:housenumber": "23A",
+     "addr:postcode": "03-446",
+     "addr:street": "11 Listopada",
+     "building": "data_center",
+     "building:levels": "1",
+     "name": "DC 11.11",
+     "operator": "NASK S.A.",
+     "ref": "DC 11.11",
+     "source": "www.geoportal.gov.pl",
+     "source:addr": "gugik.gov.pl",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 46.2,
+     "area_m2": 912.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_53189075",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_53189075_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_53189075:sentinel2",
+   "osm_way_53189075:osm",
+   "osm_way_53189075:sources",
+   "osm_way_53189075:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Centrale TIM Trento Nord",
+    "tags": {
+     "building": "data_center",
+     "name": "Centrale TIM Trento Nord",
+     "operator": "TIM",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 35.9,
+     "area_m2": 622.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_63996094",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_63996094_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_63996094:sentinel2",
+   "osm_way_63996094:osm",
+   "osm_way_63996094:sources",
+   "osm_way_63996094:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "Datacenter Vega",
+    "tags": {
+     "building": "data_center",
+     "name": "Datacenter Vega",
+     "operator": "Natixis",
+     "ref": "VEGA",
+     "source": "cadastre-dgi-fr source : Direction G\u00e9n\u00e9rale des Imp\u00f4ts - Cadastre. Mise \u00e0 jour : 2010",
+     "telecom": "data_center",
+     "wikidata": "Q571156",
+     "wikipedia": "fr:Natixis"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 142.0,
+     "area_m2": 12345.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_456832369",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_456832369_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_456832369:sentinel2",
+   "osm_way_456832369:osm",
+   "osm_way_456832369:sources",
+   "osm_way_456832369:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "yes",
+     "ref:bag": "0394100001025240",
+     "source": "BAG",
+     "source:date": "2017-03-08",
+     "start_date": "2016"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 137.0,
+     "area_m2": 13666.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_456509334",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_456509334_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_456509334:sentinel2",
+   "osm_way_456509334:osm",
+   "osm_way_456509334:sources",
+   "osm_way_456509334:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "telecom.data_center",
+    "name": "",
+    "tags": {
+     "building": "data_center",
+     "building:levels": "5",
+     "telecom": "data_center"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 39.2,
+     "area_m2": 1043.7
+    },
+    "available": true
+   }
+  }
+ }
+]

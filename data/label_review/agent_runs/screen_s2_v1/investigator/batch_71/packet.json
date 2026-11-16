@@ -1,0 +1,4247 @@
+[
+ {
+  "id": "osm_way_551066345",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_551066345_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_551066345:sentinel2",
+   "osm_way_551066345:osm",
+   "osm_way_551066345:sources",
+   "osm_way_551066345:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "frequency": "60",
+     "location": "outdoor",
+     "operator": "E.E. Norte",
+     "power": "substation",
+     "rating": "12,5 MVA",
+     "ref": "Subestaci\u00f3n San Agust\u00edn",
+     "substation": "distribution",
+     "voltage": "69000;13800"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 50.3,
+     "area_m2": 2495.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_237316768",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_237316768_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_237316768:sentinel2",
+   "osm_way_237316768:osm",
+   "osm_way_237316768:sources",
+   "osm_way_237316768:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Glen Waverley Zone Substation",
+    "tags": {
+     "location": "outdoor",
+     "name": "Glen Waverley Zone Substation",
+     "operator": "United Energy",
+     "operator:wikidata": "Q48790747",
+     "power": "substation",
+     "ref": "GW",
+     "substation": "distribution",
+     "voltage": "66000;22000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Geoscience Australia: no substation within 500 m | Vicmap: no substation within 500 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 133.3,
+     "area_m2": 10998.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_410762859",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_410762859_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_410762859:sentinel2",
+   "osm_way_410762859:osm",
+   "osm_way_410762859:sources",
+   "osm_way_410762859:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Leader Substation",
+    "tags": {
+     "name": "Leader Substation",
+     "note": "being upgraded to 66kV",
+     "operator": "MainPower",
+     "operator:wikidata": "Q6735890",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "33000;11000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Transpower: no substation within 500 m | Transpower lines: no line ends within 250 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 21.2,
+     "area_m2": 240.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_159784561",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_159784561_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_159784561:sentinel2",
+   "osm_way_159784561:osm",
+   "osm_way_159784561:sources",
+   "osm_way_159784561:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Wansley Pump Station Substation",
+    "tags": {
+     "barrier": "fence",
+     "name": "Wansley Pump Station Substation",
+     "operator": "Georgia Power",
+     "operator:wikidata": "Q5547666",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "115000;1247;400"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 2 line(s) end here (115 kV, 2 traced from OSM) | Caution: 3 of these HIFLD lines were traced from OSM, so they don't count as independent",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 52.3,
+     "area_m2": 2295.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_648545471",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_648545471_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_648545471:sentinel2",
+   "osm_way_648545471:osm",
+   "osm_way_648545471:sources",
+   "osm_way_648545471:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "\u0428\u0435\u0439\u0431\u0443\u0445\u0442\u0430",
+    "tags": {
+     "barrier": "fence",
+     "branch": "\u041f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0435 \u043e\u0442\u0434\u0435\u043b\u0435\u043d\u0438\u0435 \u0412\u043e\u043b\u043e\u0433\u043e\u0434\u0441\u043a\u0438\u0435 \u044d\u043b\u0435\u043a\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0441\u0435\u0442\u0438",
+     "frequency": "50",
+     "location": "outdoor",
+     "name": "\u0428\u0435\u0439\u0431\u0443\u0445\u0442\u0430",
+     "operator": "\u041f\u0410\u041e \"\u041c\u0420\u0421\u041a \u0421\u0435\u0432\u0435\u0440\u043e-\u0417\u0430\u043f\u0430\u0434\u0430\"",
+     "power": "substation",
+     "rating": "5 MVA",
+     "start_date": "1991",
+     "substation": "distribution",
+     "voltage": "35000;10000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 31.7,
+     "area_m2": 848.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_540035802",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_540035802_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_540035802:sentinel2",
+   "osm_way_540035802:osm",
+   "osm_way_540035802:sources",
+   "osm_way_540035802:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o Batatais",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e3o Batatais",
+     "operator": "CPFL Paulista",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "138000;13800"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 93.6,
+     "area_m2": 8100.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_551938789",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_551938789_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_551938789:sentinel2",
+   "osm_way_551938789:osm",
+   "osm_way_551938789:sources",
+   "osm_way_551938789:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o Osasco",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e3o Osasco",
+     "old_operator": "AES Eletropaulo",
+     "operator": "Enel Distribui\u00e7\u00e3o S\u00e3o Paulo",
+     "operator:wikidata": "Q1328247",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 88.6,
+     "area_m2": 4958.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1246024456",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1246024456_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1246024456:sentinel2",
+   "osm_way_1246024456:osm",
+   "osm_way_1246024456:sources",
+   "osm_way_1246024456:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "operator": "Puerto Rico Electric Power Authority",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "38000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 3 line(s) end here (38 kV)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 21.3,
+     "area_m2": 292.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_942756169",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_942756169_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_942756169:sentinel2",
+   "osm_way_942756169:osm",
+   "osm_way_942756169:sources",
+   "osm_way_942756169:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "\u0421\u0438\u0431\u0438\u0440\u0441\u043a\u0430\u044f \u043c\u043e\u043d\u0435\u0442\u0430",
+    "tags": {
+     "barrier": "fence",
+     "location": "outdoor",
+     "name": "\u0421\u0438\u0431\u0438\u0440\u0441\u043a\u0430\u044f \u043c\u043e\u043d\u0435\u0442\u0430",
+     "official_short_type": "\u041f\u0421",
+     "power": "substation",
+     "start_date": "2020",
+     "substation": "distribution",
+     "voltage": "110000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 109.8,
+     "area_m2": 9726.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1134433925",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1134433925_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1134433925:sentinel2",
+   "osm_way_1134433925:osm",
+   "osm_way_1134433925:sources",
+   "osm_way_1134433925:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "\u6f64\u4e95\u6238\u5909\u96fb\u6240",
+    "tags": {
+     "name": "\u6f64\u4e95\u6238\u5909\u96fb\u6240",
+     "operator": "\u6771\u4eac\u96fb\u529b\u30d1\u30ef\u30fc\u30b0\u30ea\u30c3\u30c9",
+     "operator:en": "TEPCO Power Grid",
+     "operator:ja": "\u6771\u4eac\u96fb\u529b\u30d1\u30ef\u30fc\u30b0\u30ea\u30c3\u30c9",
+     "operator:wikidata": "Q21032324",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "66000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 66.3,
+     "area_m2": 2554.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1172878524",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1172878524_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1172878524:sentinel2",
+   "osm_way_1172878524:osm",
+   "osm_way_1172878524:sources",
+   "osm_way_1172878524:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Greenvale",
+    "tags": {
+     "barrier": "fence",
+     "frequency": "50",
+     "location": "outdoor",
+     "name": "Greenvale",
+     "operator": "Ergon Energy",
+     "operator:wikidata": "Q5385825",
+     "power": "substation",
+     "ref": "GREN",
+     "substation": "distribution",
+     "voltage": "66000;11000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Geoscience Australia: no substation within 500 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 47.5,
+     "area_m2": 1462.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_562566048",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_562566048_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_562566048:sentinel2",
+   "osm_way_562566048:osm",
+   "osm_way_562566048:sources",
+   "osm_way_562566048:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o Jes\u00fapolis",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e3o Jes\u00fapolis",
+     "operator": "Equatorial",
+     "operator:wikidata": "Q18474582",
+     "operator:wikipedia": "pt:Equatorial Energia",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 69.9,
+     "area_m2": 3173.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_221494095",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_221494095_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_221494095:sentinel2",
+   "osm_way_221494095:osm",
+   "osm_way_221494095:sources",
+   "osm_way_221494095:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Pennyville Substation",
+    "tags": {
+     "barrier": "fence",
+     "location": "outdoor",
+     "name": "Pennyville Substation",
+     "power": "substation",
+     "source": "Bing;local knowledge",
+     "substation": "distribution",
+     "voltage": "88000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 71.1,
+     "area_m2": 4593.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_270128025",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_270128025_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_270128025:sentinel2",
+   "osm_way_270128025:osm",
+   "osm_way_270128025:sources",
+   "osm_way_270128025:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Hohenwald Substation",
+    "tags": {
+     "barrier": "fence",
+     "name": "Hohenwald Substation",
+     "operator": "Tennessee Valley Authority",
+     "operator:short": "TVA",
+     "operator:wikidata": "Q1367577",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "161000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 1 line(s) end here (161 kV) | HIFLD line ends named: HOHENWALD (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 75.2,
+     "area_m2": 4085.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_863624125",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_863624125_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_863624125:sentinel2",
+   "osm_way_863624125:osm",
+   "osm_way_863624125:sources",
+   "osm_way_863624125:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "100000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 3 line(s) end here (3 unknown voltage)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 50.8,
+     "area_m2": 1389.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_923922082",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_923922082_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_923922082:sentinel2",
+   "osm_way_923922082:osm",
+   "osm_way_923922082:sources",
+   "osm_way_923922082:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "11KVA",
+    "tags": {
+     "building": "yes",
+     "building:levels": "1",
+     "name": "11KVA",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "11000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Schematic map (World Bank MENA): a grid node at Bani Waled (town) on 400/225 kV lines about 1.3 km away; digitised from a PDF map, so positions can be off by kilometres and this only hints at what is nearby",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 10.7,
+     "area_m2": 68.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_544726343",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_544726343_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_544726343:sentinel2",
+   "osm_way_544726343:osm",
+   "osm_way_544726343:sources",
+   "osm_way_544726343:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o Cachoeira",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e3o Cachoeira",
+     "operator": "CPFL Leste Paulista",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 38.9,
+     "area_m2": 1139.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_444702832",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_444702832_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_444702832:sentinel2",
+   "osm_way_444702832:osm",
+   "osm_way_444702832:sources",
+   "osm_way_444702832:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Secretar\u00eda de Energ\u00eda: no substation within 600 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 37.9,
+     "area_m2": 1145.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1046525608",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1046525608_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1046525608:sentinel2",
+   "osm_way_1046525608:osm",
+   "osm_way_1046525608:sources",
+   "osm_way_1046525608:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "11KVA",
+    "tags": {
+     "building": "yes",
+     "name": "11KVA",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "11000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Schematic map (World Bank MENA): a grid node at Tripoli (city) on 225 kV lines about 3.4 km away; digitised from a PDF map, so positions can be off by kilometres and this only hints at what is nearby",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 11.1,
+     "area_m2": 108.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_871789431",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_871789431_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_871789431:sentinel2",
+   "osm_way_871789431:osm",
+   "osm_way_871789431:sources",
+   "osm_way_871789431:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Founders zone substation",
+    "tags": {
+     "name": "Founders Substation",
+     "operator": "Network Tasman",
+     "operator:wikidata": "Q108403115",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "33000;11000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Transpower: no substation within 500 m | Transpower lines: no line ends within 250 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 32.8,
+     "area_m2": 770.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_527004921",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_527004921_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_527004921:sentinel2",
+   "osm_way_527004921:osm",
+   "osm_way_527004921:sources",
+   "osm_way_527004921:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Springvale South Zone Substation",
+    "tags": {
+     "location": "indoor",
+     "name": "Springvale South Zone Substation",
+     "operator": "United Energy",
+     "operator:wikidata": "Q48790747",
+     "power": "substation",
+     "ref": "SS",
+     "substation": "distribution",
+     "voltage": "66000;22000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Geoscience Australia: no substation within 500 m | Vicmap: no substation within 500 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 60.4,
+     "area_m2": 2349.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_550248831",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_550248831_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_550248831:sentinel2",
+   "osm_way_550248831:osm",
+   "osm_way_550248831:sources",
+   "osm_way_550248831:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subestaci\u00f3n Pedro Carbo",
+    "tags": {
+     "landuse": "industrial",
+     "location": "outdoor",
+     "name": "Subestaci\u00f3n Pedro Carbo",
+     "operator": "CNEL-Guayas Los Rios",
+     "power": "substation",
+     "ref": "Subestaci\u00f3n Pedro Carbo",
+     "substation": "distribution",
+     "utility": "power",
+     "voltage": "69000;13800"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "OSINERGMIN: no substation within 100 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 41.5,
+     "area_m2": 1667.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_590161979",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_590161979_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_590161979:sentinel2",
+   "osm_way_590161979:osm",
+   "osm_way_590161979:sources",
+   "osm_way_590161979:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7ao Rio Branco",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7ao Rio Branco",
+     "operator": "Coelba",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "138000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 197.4,
+     "area_m2": 38953.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_401425953",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_401425953_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_401425953:sentinel2",
+   "osm_way_401425953:osm",
+   "osm_way_401425953:sources",
+   "osm_way_401425953:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Lac La Biche Substation",
+    "tags": {
+     "barrier": "fence",
+     "name": "Lac La Biche Substation",
+     "power": "substation",
+     "ref": "157S",
+     "substation": "distribution",
+     "voltage": "138000;24940"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 69.6,
+     "area_m2": 4582.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1091497307",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1091497307_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1091497307:sentinel2",
+   "osm_way_1091497307:osm",
+   "osm_way_1091497307:sources",
+   "osm_way_1091497307:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "\u041f\u0435\u0440\u0432\u043e\u043c\u0430\u0439\u0441\u043a\u0430\u044f",
+    "tags": {
+     "barrier": "fence",
+     "name": "\u041f\u0435\u0440\u0432\u043e\u043c\u0430\u0439\u0441\u043a\u0430\u044f",
+     "operator": "\u0424\u0438\u043b\u0438\u0430\u043b \"\u0420\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u0441\u0435\u0442\u0438\" \u041f\u0410\u041e \u0421\u0430\u0445\u0430\u043b\u0438\u043d\u044d\u043d\u0435\u0440\u0433\u043e\"",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "35000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 39.6,
+     "area_m2": 1377.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1383324372",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1383324372_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1383324372:sentinel2",
+   "osm_way_1383324372:osm",
+   "osm_way_1383324372:sources",
+   "osm_way_1383324372:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Bushnell Substation",
+    "tags": {
+     "barrier": "fence",
+     "name": "Bushnell Substation",
+     "operator": "Otter Tail Power Company",
+     "operator:wikidata": "Q7109415",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "41600"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: no line ends here; 1 pass within 300 m (41 kV)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 15.6,
+     "area_m2": 77.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_334604646",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_334604646_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_334604646:sentinel2",
+   "osm_way_334604646:osm",
+   "osm_way_334604646:sources",
+   "osm_way_334604646:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "landuse": "industrial",
+     "location": "outdoor",
+     "operator": "UNE \u2013 SEN",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "110000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 85.1,
+     "area_m2": 4047.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_284451508",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_284451508_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_284451508:sentinel2",
+   "osm_way_284451508:osm",
+   "osm_way_284451508:sources",
+   "osm_way_284451508:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o 03",
+    "tags": {
+     "location": "indoor",
+     "name": "Subesta\u00e7\u00e3o 03",
+     "operator": "Neoenergia",
+     "operator:wikidata": "Q10336225",
+     "operator:wikipedia": "pt:Neoenergia Bras\u00edlia",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "34500;13800"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 80.8,
+     "area_m2": 5617.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_550248913",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_550248913_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_550248913:sentinel2",
+   "osm_way_550248913:osm",
+   "osm_way_550248913:sources",
+   "osm_way_550248913:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subestacion Electrica Lotes con Servicio Alegr\u00eda",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subestaci\u00f3n Electrica Lotes con Servicio Alegr\u00eda",
+     "operator": "CNEL-Guayaquil",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "69000;13800"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "OSINERGMIN: no substation within 100 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 40.6,
+     "area_m2": 1181.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_553897035",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_553897035_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_553897035:sentinel2",
+   "osm_way_553897035:osm",
+   "osm_way_553897035:sources",
+   "osm_way_553897035:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o Panamericana",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e3o Panamericana",
+     "operator": "Light",
+     "operator:wikidata": "Q3238450",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 78.1,
+     "area_m2": 2961.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_463185313",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_463185313_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_463185313:sentinel2",
+   "osm_way_463185313:osm",
+   "osm_way_463185313:sources",
+   "osm_way_463185313:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Moturoa zone substation",
+    "tags": {
+     "name": "Moturoa zone substation",
+     "operator": "Powerco",
+     "operator:wikidata": "Q7236675",
+     "operator:wikipedia": "en:Powerco",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "33000;11000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Transpower: no substation within 500 m | Transpower lines: no line ends within 250 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 41.0,
+     "area_m2": 985.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1323897823",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1323897823_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1323897823:sentinel2",
+   "osm_way_1323897823:osm",
+   "osm_way_1323897823:sources",
+   "osm_way_1323897823:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "frequency": "60",
+     "location": "outdoor",
+     "operator": "UNE",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "110000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 60.4,
+     "area_m2": 1117.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_99818304",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_99818304_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_99818304:sentinel2",
+   "osm_way_99818304:osm",
+   "osm_way_99818304:sources",
+   "osm_way_99818304:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Poste de Thetford",
+    "tags": {
+     "name": "Poste de Thetford",
+     "operator": "Hydro-Qu\u00e9bec",
+     "operator:wikidata": "Q167840",
+     "operator:wikipedia": "fr:Hydro-Qu\u00e9bec",
+     "power": "substation",
+     "source": "NRCan-CanVec-7.0",
+     "substation": "distribution",
+     "voltage": "230000;120000;69000;25000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: no transmission line within 300 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 239.8,
+     "area_m2": 33281.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1363657945",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1363657945_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1363657945:sentinel2",
+   "osm_way_1363657945:osm",
+   "osm_way_1363657945:sources",
+   "osm_way_1363657945:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "circuits": "1",
+     "operator": "MidAmerican Energy",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "69000",
+     "wires": "single"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 3 line(s) end here (69 kV) | EIA plant: POET Biorefining - Hudson (natural gas, 4 MW) 584 m away",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 56.0,
+     "area_m2": 1411.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_250771502",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_250771502_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_250771502:sentinel2",
+   "osm_way_250771502:osm",
+   "osm_way_250771502:sources",
+   "osm_way_250771502:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Rabkavi",
+    "tags": {
+     "name": "Rabkavi",
+     "name:kn": "\u0cb0\u0cac\u0c95\u0cb5\u0cbf",
+     "operator": "KPTCL",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "110000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 102.0,
+     "area_m2": 6286.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_984950114",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_984950114_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_984950114:sentinel2",
+   "osm_way_984950114:osm",
+   "osm_way_984950114:sources",
+   "osm_way_984950114:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "operator": "Georgia Power",
+     "operator:wikidata": "Q5547666",
+     "operator:wikipedia": "en:Georgia Power",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "115000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 2 line(s) end here (115 kV) | HIFLD line ends named: NORCROSS | Caution: 3 of these HIFLD lines were traced from OSM, so they don't count as independent",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 48.8,
+     "area_m2": 2239.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1098794188",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1098794188_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1098794188:sentinel2",
+   "osm_way_1098794188:osm",
+   "osm_way_1098794188:sources",
+   "osm_way_1098794188:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "46000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: no line ends here; 1 pass within 300 m (115 kV, 1 traced from OSM) | Caution: 1 of these HIFLD lines were traced from OSM, so they don't count as independent",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 28.3,
+     "area_m2": 604.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_553897029",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_553897029_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_553897029:sentinel2",
+   "osm_way_553897029:osm",
+   "osm_way_553897029:sources",
+   "osm_way_553897029:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o Areia Branca",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e3o Areia Branca",
+     "operator": "Light",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "138000;13800"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 102.2,
+     "area_m2": 6755.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_337986987",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_337986987_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_337986987:sentinel2",
+   "osm_way_337986987:osm",
+   "osm_way_337986987:sources",
+   "osm_way_337986987:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Tanglewood Substation",
+    "tags": {
+     "frequency": "60",
+     "location": "outdoor",
+     "name": "Tanglewood Substation",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "69000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 2 line(s) end here (69 kV, 2 traced from OSM) | Caution: 2 of these HIFLD lines were traced from OSM, so they don't count as independent | EIA plant: HEB00048 (natural gas, 1 MW) 1245 m away",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 51.8,
+     "area_m2": 2391.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_218014388",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_218014388_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_218014388:sentinel2",
+   "osm_way_218014388:osm",
+   "osm_way_218014388:sources",
+   "osm_way_218014388:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Southbank Zone Substation",
+    "tags": {
+     "addr:housenumber": "121-125",
+     "addr:postcode": "3006",
+     "addr:state": "VIC",
+     "addr:street": "Kavanagh Street",
+     "addr:suburb": "Southbank",
+     "building": "yes",
+     "height": "10",
+     "location": "indoor",
+     "name": "Southbank Zone Substation",
+     "operator": "Citipower",
+     "power": "substation",
+     "ref": "SB",
+     "source": "Vicmap Address",
+     "substation": "distribution",
+     "voltage": "66000;11000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Geoscience Australia: no substation within 500 m | Vicmap: no substation within 500 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 54.3,
+     "area_m2": 1991.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1411841957",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1411841957_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1411841957:sentinel2",
+   "osm_way_1411841957:osm",
+   "osm_way_1411841957:sources",
+   "osm_way_1411841957:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "KPLC: no substation within 600 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 83.7,
+     "area_m2": 3945.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_770078960",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_770078960_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_770078960:sentinel2",
+   "osm_way_770078960:osm",
+   "osm_way_770078960:sources",
+   "osm_way_770078960:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Bermagui",
+    "tags": {
+     "name": "Bermagui",
+     "operator": "Essential Energy",
+     "operator:wikidata": "Q17003842",
+     "power": "substation",
+     "ref": "BER",
+     "substation": "distribution",
+     "voltage": "33000;11000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Geoscience Australia: no substation within 500 m | NSW Spatial Services: BERMAGUI ZONE SUBSTATION (NSW Features of Interest) 1 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 22.8,
+     "area_m2": 483.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_280490069",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_280490069_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_280490069:sentinel2",
+   "osm_way_280490069:osm",
+   "osm_way_280490069:sources",
+   "osm_way_280490069:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o Tiradentes",
+    "tags": {
+     "frequency": "60",
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e3o Tiradentes",
+     "old_operator": "Eletronorte",
+     "operator": "Energisa Rond\u00f4nia",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 131.4,
+     "area_m2": 11027.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_60382588",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_60382588_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_60382588:sentinel2",
+   "osm_way_60382588:osm",
+   "osm_way_60382588:sources",
+   "osm_way_60382588:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "operator": "Puerto Rico Electric Power Authority",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "38000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 2 line(s) end here (38 kV) | HIFLD line ends named: CIDRA PUEBLO, CAYEY TC, COMERIO TC",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 25.2,
+     "area_m2": 516.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_739649530",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_739649530_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_739649530:sentinel2",
+   "osm_way_739649530:osm",
+   "osm_way_739649530:sources",
+   "osm_way_739649530:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "operator": "Georgia Transmission Corporation",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "69000;12470"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 3 line(s) end here (69 kV, 1 unknown voltage)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 61.4,
+     "area_m2": 3758.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_166860246",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_166860246_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_166860246:sentinel2",
+   "osm_way_166860246:osm",
+   "osm_way_166860246:sources",
+   "osm_way_166860246:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subestaci\u00f3n ANDE",
+    "tags": {
+     "barrier": "fence",
+     "name": "Subestaci\u00f3n ANDE",
+     "operator": "ANDE",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Secretar\u00eda de Energ\u00eda: no substation within 600 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 251.9,
+     "area_m2": 37274.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_531734793",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_531734793_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_531734793:sentinel2",
+   "osm_way_531734793:osm",
+   "osm_way_531734793:sources",
+   "osm_way_531734793:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "operator": "Puerto Rico Electric Power Authority",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "38000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: no transmission line within 300 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 13.6,
+     "area_m2": 153.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_413550986",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_413550986_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_413550986:sentinel2",
+   "osm_way_413550986:osm",
+   "osm_way_413550986:sources",
+   "osm_way_413550986:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Cobb substation",
+    "tags": {
+     "name": "Cobb substation",
+     "operator": "Network Tasman",
+     "operator:wikidata": "Q108403115",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "66000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Transpower: no substation within 500 m | Transpower lines: no line ends within 250 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 21.3,
+     "area_m2": 365.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_515869180",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_515869180_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_515869180:sentinel2",
+   "osm_way_515869180:osm",
+   "osm_way_515869180:sources",
+   "osm_way_515869180:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Bay City Substation",
+    "tags": {
+     "barrier": "fence",
+     "frequency": "60",
+     "name": "Bay City Substation",
+     "operator": "South Texas Electric Cooperative",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "69000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 3 line(s) end here (138/69 kV)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 55.2,
+     "area_m2": 2529.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1314675431",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1314675431_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1314675431:sentinel2",
+   "osm_way_1314675431:osm",
+   "osm_way_1314675431:sources",
+   "osm_way_1314675431:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Gardu Induk Suzuki",
+    "tags": {
+     "location": "outdoor",
+     "name": "Gardu Induk Suzuki",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "150000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 64.6,
+     "area_m2": 3766.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_100759602",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_100759602_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_100759602:sentinel2",
+   "osm_way_100759602:osm",
+   "osm_way_100759602:sources",
+   "osm_way_100759602:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Station 129",
+    "tags": {
+     "barrier": "fence",
+     "location": "outdoor",
+     "name": "Station 129",
+     "operator": "National Grid",
+     "operator:wikidata": "Q1465461",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "115000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 3 line(s) end here (115 kV, 3 traced from OSM) | HIFLD line ends named: HUNTLEY | Caution: 5 of these HIFLD lines were traced from OSM, so they don't count as independent",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 30.4,
+     "area_m2": 324.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_181211145",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_181211145_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_181211145:sentinel2",
+   "osm_way_181211145:osm",
+   "osm_way_181211145:sources",
+   "osm_way_181211145:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "115000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 3 line(s) end here (115 kV, 1 traced from OSM) | Caution: 1 of these HIFLD lines were traced from OSM, so they don't count as independent",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 58.7,
+     "area_m2": 2588.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_615837153",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_615837153_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_615837153:sentinel2",
+   "osm_way_615837153:osm",
+   "osm_way_615837153:sources",
+   "osm_way_615837153:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o Aracati",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e3o Aracati",
+     "operator": "Enel Distribui\u00e7\u00e3o Cear\u00e1",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 149.1,
+     "area_m2": 14277.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_180534229",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_180534229_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_180534229:sentinel2",
+   "osm_way_180534229:osm",
+   "osm_way_180534229:sources",
+   "osm_way_180534229:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Te Anau Substation",
+    "tags": {
+     "name": "Te Anau Substation",
+     "operator": "The Power Company",
+     "operator:wikidata": "Q132614469",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "66000;11000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Transpower: no substation within 500 m | Transpower lines: no line ends within 250 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 72.2,
+     "area_m2": 3574.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_579985608",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_579985608_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_579985608:sentinel2",
+   "osm_way_579985608:osm",
+   "osm_way_579985608:sources",
+   "osm_way_579985608:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e0o Miguel Burnier",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e0o Miguel Burnier",
+     "operator": "Cemig",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 100.2,
+     "area_m2": 5203.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_383055668",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_383055668_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_383055668:sentinel2",
+   "osm_way_383055668:osm",
+   "osm_way_383055668:sources",
+   "osm_way_383055668:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Fisher Road Substation",
+    "tags": {
+     "frequency": "60",
+     "location": "outdoor",
+     "name": "Fisher Road Substation",
+     "operator": "Eversource",
+     "operator:wikidata": "Q3344199",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "115000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 1 line(s) end here (115 kV) | HIFLD line ends named: FISHER ROAD (matches OSM name) | EIA plant: Fisher Road Solar (solar, 5 MW) 1137 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 40.7,
+     "area_m2": 1325.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1085991259",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1085991259_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1085991259:sentinel2",
+   "osm_way_1085991259:osm",
+   "osm_way_1085991259:sources",
+   "osm_way_1085991259:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Laguna Quays Substation",
+    "tags": {
+     "name": "Laguna Quays Substation",
+     "operator": "Ergon Energy",
+     "operator:wikidata": "Q5385825",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "66000;11000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Geoscience Australia: no substation within 500 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 55.2,
+     "area_m2": 2501.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1490115121",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1490115121_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1490115121:sentinel2",
+   "osm_way_1490115121:osm",
+   "osm_way_1490115121:sources",
+   "osm_way_1490115121:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Campamento Mora",
+    "tags": {
+     "name": "Campamento Mora",
+     "operator": "Luma Energy",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 4 line(s) end here (4 unknown voltage, 1 traced from OSM) | HIFLD line ends named: MORA TC, CAMPAMENTO MORA 7502 (matches OSM name) | Caution: 1 of these HIFLD lines were traced from OSM, so they don't count as independent",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 40.8,
+     "area_m2": 919.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_515547489",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_515547489_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_515547489:sentinel2",
+   "osm_way_515547489:osm",
+   "osm_way_515547489:sources",
+   "osm_way_515547489:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Dandenong Valley Zone Substation",
+    "tags": {
+     "location": "outdoor",
+     "name": "Dandenong Valley Zone Substation",
+     "operator": "United Energy",
+     "operator:wikidata": "Q48790747",
+     "power": "substation",
+     "ref": "DVY",
+     "substation": "distribution",
+     "voltage": "66000;22000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Geoscience Australia: no substation within 500 m | Vicmap: no substation within 500 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 70.1,
+     "area_m2": 2215.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_69812320",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_69812320_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_69812320:sentinel2",
+   "osm_way_69812320:osm",
+   "osm_way_69812320:sources",
+   "osm_way_69812320:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "North Seaford Substation",
+    "tags": {
+     "barrier": "fence",
+     "check_date": "2022-11-17",
+     "fence_type": "chain_link",
+     "location": "outdoor",
+     "name": "North Seaford Substation",
+     "note": "Refer to source 1 on page 3 map. Substation mapped via Bing Maps Aerial 2022. Street level photos confirm the operator and map indicates name.",
+     "operator": "Delmarva Power",
+     "operator:wikidata": "Q33127799",
+     "power": "substation",
+     "source": "https://www.pjm.com/-/media/DotCom/committees-groups/committees/srrtep-ma/2022/20221117/item-05---dpl-supplemental-projects.ashx;Bing Maps Aerial 5/29/2022 to 7/3/2022",
+     "substation": "distribution",
+     "voltage": "138000;69000;12470"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 4 line(s) end here (138/69 kV, 2 traced from OSM) | HIFLD line ends named: WHARTON | Caution: 2 of these HIFLD lines were traced from OSM, so they don't count as independent",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 145.7,
+     "area_m2": 20430.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1034838310",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1034838310_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1034838310:sentinel2",
+   "osm_way_1034838310:osm",
+   "osm_way_1034838310:sources",
+   "osm_way_1034838310:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Wards Corner Substation",
+    "tags": {
+     "barrier": "fence",
+     "name": "Wards Corner Substation",
+     "operator": "Four County EMC",
+     "operator:wikidata": "Q114366906",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "69000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 3 line(s) end here (3 unknown voltage)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 64.5,
+     "area_m2": 1861.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_276433117",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_276433117_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_276433117:sentinel2",
+   "osm_way_276433117:osm",
+   "osm_way_276433117:sources",
+   "osm_way_276433117:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o de Charqueadas",
+    "tags": {
+     "name": "Subesta\u00e7\u00e3o de Charqueadas",
+     "operator": "CEEE",
+     "operator:wikidata": "Q10291701",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 84.5,
+     "area_m2": 2832.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_164546270",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_164546270_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_164546270:sentinel2",
+   "osm_way_164546270:osm",
+   "osm_way_164546270:sources",
+   "osm_way_164546270:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o Tarum\u00e3",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e3o Tarum\u00e3",
+     "operator": "Copel",
+     "operator:wikidata": "Q1130970",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 159.2,
+     "area_m2": 12671.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_128825607",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_128825607_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_128825607:sentinel2",
+   "osm_way_128825607:osm",
+   "osm_way_128825607:sources",
+   "osm_way_128825607:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "building": "yes",
+     "location": "indoor",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "220000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 97.3,
+     "area_m2": 4071.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1344685216",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1344685216_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1344685216:sentinel2",
+   "osm_way_1344685216:osm",
+   "osm_way_1344685216:sources",
+   "osm_way_1344685216:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "69000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: no line ends here; 1 pass within 300 m (69 kV)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 40.7,
+     "area_m2": 854.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_309167362",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_309167362_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_309167362:sentinel2",
+   "osm_way_309167362:osm",
+   "osm_way_309167362:sources",
+   "osm_way_309167362:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Powercor Ballarat South Zone Substation",
+    "tags": {
+     "location": "outdoor",
+     "name": "Powercor Ballarat South Zone Substation",
+     "operator": "Powercor",
+     "power": "substation",
+     "ref": "BAS",
+     "source": "Bing",
+     "substation": "distribution",
+     "voltage": "66000;22000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Geoscience Australia: no substation within 500 m | Vicmap: no substation within 500 m | NSW Spatial Services: no substation within 500 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 125.8,
+     "area_m2": 12163.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_288437170",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_288437170_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_288437170:sentinel2",
+   "osm_way_288437170:osm",
+   "osm_way_288437170:sources",
+   "osm_way_288437170:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "\u672c\u7530\u5909\u96fb\u6240 (Honden Substation)",
+    "tags": {
+     "building": "yes",
+     "frequency": "60",
+     "height": "19.0",
+     "location": "indoor",
+     "name": "\u672c\u7530\u5909\u96fb\u6240 (Honden Substation)",
+     "name:en": "Honden Substation",
+     "name:ja": "\u672c\u7530\u5909\u96fb\u6240",
+     "name:ja_rm": "Honden Hendensho",
+     "operator": "\u95a2\u897f\u96fb\u529b",
+     "operator:en": "KEPCO",
+     "operator:ja": "\u95a2\u897f\u96fb\u529b",
+     "power": "substation",
+     "ref": "\u672c\u7530",
+     "source:height": "MLIT_PLATEAU",
+     "substation": "distribution",
+     "voltage": "154000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 48.1,
+     "area_m2": 1267.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1077578025",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1077578025_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1077578025:sentinel2",
+   "osm_way_1077578025:osm",
+   "osm_way_1077578025:sources",
+   "osm_way_1077578025:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Bob Cooper Substation",
+    "tags": {
+     "barrier": "fence",
+     "name": "Bob Cooper Substation",
+     "operator": "Santee Electric Cooperative",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "115000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 1 line(s) end here (115 kV)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 61.1,
+     "area_m2": 3625.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1051160591",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1051160591_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1051160591:sentinel2",
+   "osm_way_1051160591:osm",
+   "osm_way_1051160591:sources",
+   "osm_way_1051160591:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "138000;69000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 4 line(s) end here (138/69 kV, 2 traced from OSM) | HIFLD line ends named: SOFT SHELL SUBSTATION | Caution: 2 of these HIFLD lines were traced from OSM, so they don't count as independent",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 115.5,
+     "area_m2": 3119.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_166905111",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_166905111_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_166905111:sentinel2",
+   "osm_way_166905111:osm",
+   "osm_way_166905111:sources",
+   "osm_way_166905111:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "230000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: no line ends here; 2 pass within 300 m (230 kV, 2 traced from OSM) | Caution: 2 of these HIFLD lines were traced from OSM, so they don't count as independent",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 80.8,
+     "area_m2": 5769.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1456739173",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1456739173_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1456739173:sentinel2",
+   "osm_way_1456739173:osm",
+   "osm_way_1456739173:sources",
+   "osm_way_1456739173:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "138000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: no line ends here; 1 pass within 300 m (138 kV, 1 traced from OSM) | Caution: 1 of these HIFLD lines were traced from OSM, so they don't count as independent",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 58.9,
+     "area_m2": 2558.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_500744955",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_500744955_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_500744955:sentinel2",
+   "osm_way_500744955:osm",
+   "osm_way_500744955:sources",
+   "osm_way_500744955:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o Ca\u00e7ador Castelhano",
+    "tags": {
+     "name": "Subesta\u00e7\u00e3o Ca\u00e7ador Castelhano",
+     "operator": "Celesc",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "138000;23000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 106.0,
+     "area_m2": 7979.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_458613834",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_458613834_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_458613834:sentinel2",
+   "osm_way_458613834:osm",
+   "osm_way_458613834:sources",
+   "osm_way_458613834:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "operator": "Energex",
+     "operator:wikidata": "Q5376841",
+     "phone:AU": "13 12 53",
+     "power": "substation",
+     "ref": "BDT",
+     "substation": "distribution",
+     "voltage": "33000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Geoscience Australia: no substation within 500 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 89.2,
+     "area_m2": 4443.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_706520376",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_706520376_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_706520376:sentinel2",
+   "osm_way_706520376:osm",
+   "osm_way_706520376:sources",
+   "osm_way_706520376:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Pocono Substation",
+    "tags": {
+     "location": "outdoor",
+     "name": "Pocono Substation",
+     "note": "Pg. 12",
+     "operator": "PPL",
+     "operator:wikidata": "Q2044512",
+     "power": "substation",
+     "source": "https://www.puc.pa.gov/pcdocs/1206705.pdf",
+     "substation": "distribution",
+     "voltage": "230000;69000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 5 line(s) end here (230/69 kV, 1 unknown voltage)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 270.8,
+     "area_m2": 31052.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_802345731",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_802345731_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_802345731:sentinel2",
+   "osm_way_802345731:osm",
+   "osm_way_802345731:sources",
+   "osm_way_802345731:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Fort St. John Substation",
+    "tags": {
+     "addr:housenumber": "7820",
+     "addr:street": "86 Street",
+     "barrier": "fence",
+     "name": "Fort St. John Substation",
+     "operator": "BC Hydro",
+     "operator:wikidata": "Q795720",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "138000;25000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 131.0,
+     "area_m2": 12903.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_618053381",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_618053381_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_618053381:sentinel2",
+   "osm_way_618053381:osm",
+   "osm_way_618053381:sources",
+   "osm_way_618053381:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o Nazar\u00e9",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e3o Nazar\u00e9",
+     "old_operator": "Cepisa",
+     "operator": "Equatorial Energia PI",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 79.4,
+     "area_m2": 4881.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_603457423",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_603457423_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_603457423:sentinel2",
+   "osm_way_603457423:osm",
+   "osm_way_603457423:sources",
+   "osm_way_603457423:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o S\u00e3o Caetano",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e3o S\u00e3o Caetano",
+     "operator": "Celpe",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 62.1,
+     "area_m2": 3123.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_188549934",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_188549934_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_188549934:sentinel2",
+   "osm_way_188549934:osm",
+   "osm_way_188549934:sources",
+   "osm_way_188549934:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Geelong East Zone Substation",
+    "tags": {
+     "location": "outdoor",
+     "name": "Geelong East Zone Substation",
+     "operator": "Powercor",
+     "operator:wikidata": "Q7236677",
+     "power": "substation",
+     "ref": "GLE",
+     "substation": "distribution",
+     "voltage": "66000;22000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Geoscience Australia: no substation within 500 m | Vicmap: no substation within 500 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 129.3,
+     "area_m2": 7207.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_182670571",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_182670571_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_182670571:sentinel2",
+   "osm_way_182670571:osm",
+   "osm_way_182670571:sources",
+   "osm_way_182670571:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "North Brighton Zone Substation",
+    "tags": {
+     "location": "outdoor",
+     "name": "North Brighton Zone Substation",
+     "operator": "United Energy",
+     "operator:wikidata": "Q48790747",
+     "power": "substation",
+     "ref": "NB",
+     "substation": "distribution",
+     "voltage": "66000;11000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Geoscience Australia: no substation within 500 m | Vicmap: no substation within 500 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 37.8,
+     "area_m2": 1094.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_876135539",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_876135539_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_876135539:sentinel2",
+   "osm_way_876135539:osm",
+   "osm_way_876135539:sources",
+   "osm_way_876135539:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "\u0e2a\u0e16\u0e32\u0e19\u0e35\u0e44\u0e1f\u0e1f\u0e49\u0e32\u0e41\u0e23\u0e07\u0e2a\u0e39\u0e07\u0e2a\u0e38\u0e23\u0e32\u0e29\u0e0f\u0e23\u0e4c\u0e18\u0e32\u0e19\u0e35 2",
+    "tags": {
+     "construction": "yes",
+     "name": "\u0e2a\u0e16\u0e32\u0e19\u0e35\u0e44\u0e1f\u0e1f\u0e49\u0e32\u0e41\u0e23\u0e07\u0e2a\u0e39\u0e07\u0e2a\u0e38\u0e23\u0e32\u0e29\u0e0f\u0e23\u0e4c\u0e18\u0e32\u0e19\u0e35 2",
+     "operator": "EGAT",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "500000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 377.9,
+     "area_m2": 104382.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1121203543",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1121203543_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1121203543:sentinel2",
+   "osm_way_1121203543:osm",
+   "osm_way_1121203543:sources",
+   "osm_way_1121203543:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "\u0425\u0430\u0431\u0435\u0437",
+    "tags": {
+     "name": "\u0425\u0430\u0431\u0435\u0437",
+     "power": "substation",
+     "ref": "\u0425\u0430\u0431\u0435\u0437",
+     "substation": "distribution",
+     "voltage": "110000;10000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 42.3,
+     "area_m2": 1451.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_224176610",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_224176610_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_224176610:sentinel2",
+   "osm_way_224176610:osm",
+   "osm_way_224176610:sources",
+   "osm_way_224176610:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "location": "outdoor",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 41.1,
+     "area_m2": 1202.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_227641297",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_227641297_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_227641297:sentinel2",
+   "osm_way_227641297:osm",
+   "osm_way_227641297:sources",
+   "osm_way_227641297:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "location": "outdoor",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "88000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 109.1,
+     "area_m2": 8466.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_315982659",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_315982659_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_315982659:sentinel2",
+   "osm_way_315982659:osm",
+   "osm_way_315982659:sources",
+   "osm_way_315982659:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Otjongava Substation",
+    "tags": {
+     "barrier": "fence",
+     "name": "Otjongava Substation",
+     "operator": "NamPower",
+     "operator:wikidata": "Q1964276",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "NamPower MV lines: 1 line(s) end here (max 33 kV)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 68.6,
+     "area_m2": 2484.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_479757346",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_479757346_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_479757346:sentinel2",
+   "osm_way_479757346:osm",
+   "osm_way_479757346:sources",
+   "osm_way_479757346:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "\u0406\u043d\u0434\u0443\u0441\u0442\u0440\u0456\u044f",
+    "tags": {
+     "barrier": "fence",
+     "name": "\u0406\u043d\u0434\u0443\u0441\u0442\u0440\u0456\u044f",
+     "name:uk": "\u0406\u043d\u0434\u0443\u0441\u0442\u0440\u0456\u044f",
+     "operator": "\u041b\u0443\u0433\u0430\u043d\u0441\u044c\u043a\u0435 \u0435\u043d\u0435\u0440\u0433\u0435\u0442\u0438\u0447\u043d\u0435 \u043e\u0431'\u0454\u0434\u043d\u0430\u043d\u043d\u044f",
+     "power": "substation",
+     "rating": "6.4 MVA",
+     "substation": "distribution",
+     "voltage": "35000;10000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 47.1,
+     "area_m2": 1815.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_254747989",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_254747989_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_254747989:sentinel2",
+   "osm_way_254747989:osm",
+   "osm_way_254747989:sources",
+   "osm_way_254747989:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Ellerslie Zone Substation",
+    "tags": {
+     "location": "outdoor",
+     "name": "Ellerslie Zone Substation",
+     "operator": "Essential Energy",
+     "operator:wikidata": "Q17003842",
+     "power": "substation",
+     "source": "Bing, survey",
+     "substation": "distribution",
+     "voltage": "66000;22000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Geoscience Australia: no substation within 500 m | NSW Spatial Services: no substation within 500 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 77.0,
+     "area_m2": 2986.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1158510430",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1158510430_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1158510430:sentinel2",
+   "osm_way_1158510430:osm",
+   "osm_way_1158510430:sources",
+   "osm_way_1158510430:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Camp Silbert Substation",
+    "tags": {
+     "barrier": "fence",
+     "name": "Camp Silbert Substation",
+     "operator": "Alabama Power",
+     "operator:wikidata": "Q4705296",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "46000;12470"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: no transmission line within 300 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 18.3,
+     "area_m2": 324.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_389710012",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_389710012_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_389710012:sentinel2",
+   "osm_way_389710012:osm",
+   "osm_way_389710012:sources",
+   "osm_way_389710012:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o Registro",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e3o Registro",
+     "operator": "CTEEP",
+     "operator:wikidata": "Q3063934",
+     "operator:wikipedia": "pt:ISA CTEEP",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "138000;34500;13800"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 248.6,
+     "area_m2": 23463.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_882673119",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_882673119_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_882673119:sentinel2",
+   "osm_way_882673119:osm",
+   "osm_way_882673119:sources",
+   "osm_way_882673119:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Kawakawa Substation",
+    "tags": {
+     "frequency": "50",
+     "landuse": "industrial",
+     "name": "Kawakawa Substation",
+     "operator": "Top Energy",
+     "operator:wikidata": "Q28182690",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "33000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Transpower: no substation within 500 m | Transpower lines: no line ends within 250 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 34.8,
+     "area_m2": 954.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_563357320",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_563357320_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_563357320:sentinel2",
+   "osm_way_563357320:osm",
+   "osm_way_563357320:sources",
+   "osm_way_563357320:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o Lages",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e3o Lages",
+     "operator": "Equatorial",
+     "operator:wikidata": "Q18474582",
+     "operator:wikipedia": "pt:Equatorial Energia",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 67.7,
+     "area_m2": 2957.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1207820806",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1207820806_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1207820806:sentinel2",
+   "osm_way_1207820806:osm",
+   "osm_way_1207820806:sources",
+   "osm_way_1207820806:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "operator": "Tippah Electric Power Association",
+     "power": "substation",
+     "start_date": "2001",
+     "substation": "distribution",
+     "voltage": "161000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 1 line(s) end here (161 kV) | HIFLD line ends named: MIDDLETON",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 60.9,
+     "area_m2": 3307.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_550248889",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_550248889_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_550248889:sentinel2",
+   "osm_way_550248889:osm",
+   "osm_way_550248889:sources",
+   "osm_way_550248889:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subestaci\u00f3n Mucho Lote - CNEL",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subestaci\u00f3n Mucho Lote - CNEL",
+     "operator": "CNEL-Guayaquil",
+     "power": "substation",
+     "ref": "Subestaci\u00f3n Mucho Lote",
+     "substation": "distribution",
+     "voltage": "69000;13800"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "OSINERGMIN: no substation within 100 m",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 47.4,
+     "area_m2": 1794.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_45801585",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_45801585_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_45801585:sentinel2",
+   "osm_way_45801585:osm",
+   "osm_way_45801585:sources",
+   "osm_way_45801585:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o Itapeba",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e3o Itapeba",
+     "operator": "Light",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "138000;13800"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 137.9,
+     "area_m2": 9207.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1011141115",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1011141115_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1011141115:sentinel2",
+   "osm_way_1011141115:osm",
+   "osm_way_1011141115:sources",
+   "osm_way_1011141115:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "River Run",
+    "tags": {
+     "name": "River Run",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "69000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 3 line(s) end here (69 kV) | HIFLD line ends named: BERLIN, RIVER RUN (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 41.7,
+     "area_m2": 1212.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_234007732",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_234007732_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_234007732:sentinel2",
+   "osm_way_234007732:osm",
+   "osm_way_234007732:sources",
+   "osm_way_234007732:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "addr:county": "Hancock County",
+     "addr:state": "OH",
+     "addr:street": "Township Road 180",
+     "barrier": "fence",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "138000;34500"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 1 line(s) end here (1 unknown voltage)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 90.5,
+     "area_m2": 7482.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_581405239",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_581405239_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_581405239:sentinel2",
+   "osm_way_581405239:osm",
+   "osm_way_581405239:sources",
+   "osm_way_581405239:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o Cambuquira",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e3o Cambuquira",
+     "operator": "Cemig",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "138000;69000;13800"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 171.0,
+     "area_m2": 11862.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_428933691",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_428933691_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_428933691:sentinel2",
+   "osm_way_428933691:osm",
+   "osm_way_428933691:sources",
+   "osm_way_428933691:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "115000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 3 line(s) end here (3 unknown voltage)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 48.0,
+     "area_m2": 1640.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1087645561",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1087645561_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1087645561:sentinel2",
+   "osm_way_1087645561:osm",
+   "osm_way_1087645561:sources",
+   "osm_way_1087645561:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "44000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "HIFLD: 3 line(s) end here (3 unknown voltage)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 45.1,
+     "area_m2": 2009.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_172191647",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_172191647_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_172191647:sentinel2",
+   "osm_way_172191647:osm",
+   "osm_way_172191647:sources",
+   "osm_way_172191647:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o Jarinu 1",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e3o Jarinu 1",
+     "operator": "Elektro",
+     "power": "substation",
+     "substation": "distribution",
+     "voltage": "138000;13800"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 169.9,
+     "area_m2": 13644.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_620399608",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_620399608_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_620399608:sentinel2",
+   "osm_way_620399608:osm",
+   "osm_way_620399608:sources",
+   "osm_way_620399608:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.distribution.substation",
+    "name": "Subesta\u00e7\u00e3o Barra do Corda",
+    "tags": {
+     "location": "outdoor",
+     "name": "Subesta\u00e7\u00e3o Barra do Corda",
+     "old_operator": "Cemar",
+     "operator": "Equatorial Energia MA",
+     "power": "substation",
+     "substation": "distribution"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 142.6,
+     "area_m2": 11033.5
+    },
+    "available": true
+   }
+  }
+ }
+]

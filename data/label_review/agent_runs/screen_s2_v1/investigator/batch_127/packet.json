@@ -1,0 +1,4603 @@
+[
+ {
+  "id": "osm_way_391304689",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_391304689_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_391304689:sentinel2",
+   "osm_way_391304689:osm",
+   "osm_way_391304689:sources",
+   "osm_way_391304689:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeroclub Los Toldos",
+    "tags": {
+     "aeroway": "aerodrome",
+     "anac": "GNV",
+     "name": "Aeroclub Los Toldos"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1203.5,
+     "area_m2": 1157586.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1155793753",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1155793753_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1155793753:sentinel2",
+   "osm_way_1155793753:osm",
+   "osm_way_1155793753:sources",
+   "osm_way_1155793753:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "\u062d\u0642\u0644 \u0628\u0644\u0628\u064a\u0633 \u0644\u0644\u0637\u064a\u0631\u0627\u0646",
+    "tags": {
+     "aeroway": "aerodrome",
+     "alt_name": "\u062d\u0642\u0644 \u0628\u0644\u0628\u064a\u0633 \u0644\u0644\u0637\u064a\u0631\u0627\u0646",
+     "barrier": "fence",
+     "landuse": "military",
+     "military": "airfield",
+     "name": "\u062d\u0642\u0644 \u0628\u0644\u0628\u064a\u0633 \u0644\u0644\u0637\u064a\u0631\u0627\u0646",
+     "name:ar": "\u062d\u0642\u0644 \u0628\u0644\u0628\u064a\u0633 \u0644\u0644\u0637\u064a\u0631\u0627\u0646",
+     "name:de": "Flugplatz Bilbeis",
+     "name:en": "Bilbeis Airfield",
+     "name:fr": "A\u00e9rodrome de Bilb\u00e9is",
+     "source": "ourairports.com"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 6085.4,
+     "area_m2": 21722129.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_609350336",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_609350336_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_609350336:sentinel2",
+   "osm_way_609350336:osm",
+   "osm_way_609350336:sources",
+   "osm_way_609350336:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aerodromo de Santa Mar\u00eda",
+    "tags": {
+     "aeroway": "aerodrome",
+     "anac": "SMC",
+     "name": "Aerodromo de Santa Mar\u00eda",
+     "wikidata": "Q58821687"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2255.3,
+     "area_m2": 654875.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_216110357",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_216110357_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_216110357:sentinel2",
+   "osm_way_216110357:osm",
+   "osm_way_216110357:sources",
+   "osm_way_216110357:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Darwin International Airport",
+    "tags": {
+     "aerodrome": "international",
+     "aerodrome:type": "public",
+     "aeroway": "aerodrome",
+     "closest_town": "Darwin, Northern Territory",
+     "ele": "31",
+     "iata": "DRW",
+     "icao": "YPDN",
+     "name": "Darwin International Airport",
+     "name:de": "Internationaler Flughafen Darwin",
+     "name:ja": "\u30c0\u30fc\u30a6\u30a3\u30f3\u56fd\u969b\u7a7a\u6e2f",
+     "name:zh": "\u8fbe\u5c14\u6587\u56fd\u9645\u673a\u573a",
+     "name:zh-Hant": "\u9054\u723e\u6587\u570b\u969b\u6a5f\u5834",
+     "operator": "Darwin International Airport / RAAF Darwin",
+     "passengers": "1700000",
+     "source": "wikipedia",
+     "source:passengers": "wikipedia",
+     "website": "https://www.darwinairport.com.au/",
+     "wikidata": "Q17609",
+     "wikipedia": "en:Darwin International Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 5529.1,
+     "area_m2": 13786410.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_125269760",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_125269760_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_125269760:sentinel2",
+   "osm_way_125269760:osm",
+   "osm_way_125269760:sources",
+   "osm_way_125269760:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Newcastle Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "iata": "NCS",
+     "icao": "FANC",
+     "ifr": "yes",
+     "licensed:sacaa": "yes",
+     "name": "Newcastle Airport",
+     "source": "bing",
+     "wikidata": "Q7017363",
+     "wikipedia": "en:Newcastle Airport (South Africa)"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2230.7,
+     "area_m2": 604611.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1205086237",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1205086237_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1205086237:sentinel2",
+   "osm_way_1205086237:osm",
+   "osm_way_1205086237:sources",
+   "osm_way_1205086237:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "White Cliffs Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "icao": "YWHC",
+     "name": "White Cliffs Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1611.0,
+     "area_m2": 1214893.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1235808264",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1235808264_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1235808264:sentinel2",
+   "osm_way_1235808264:osm",
+   "osm_way_1235808264:sources",
+   "osm_way_1235808264:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Roebourne Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "ele": "11",
+     "iata": "RBU",
+     "icao": "YROE",
+     "name": "Roebourne Airport",
+     "wikidata": "Q21924021"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2077.5,
+     "area_m2": 1790310.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_860274042",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_860274042_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_860274042:sentinel2",
+   "osm_way_860274042:osm",
+   "osm_way_860274042:sources",
+   "osm_way_860274042:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "\u6e05\u6c34\u7a7a\u519b\u57fa\u5730",
+    "tags": {
+     "aeroway": "aerodrome",
+     "landuse": "military",
+     "military": "airfield",
+     "military_service": "air_force",
+     "name": "\u6e05\u6c34\u7a7a\u519b\u57fa\u5730",
+     "name:en": "Qingshui Air Base",
+     "name:zh": "\u6e05\u6c34\u7a7a\u519b\u57fa\u5730"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 4941.2,
+     "area_m2": 5871080.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_953259684",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_953259684_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_953259684:sentinel2",
+   "osm_way_953259684:osm",
+   "osm_way_953259684:sources",
+   "osm_way_953259684:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "RAAF Base Tindal",
+    "tags": {
+     "aeroway": "aerodrome",
+     "closest_town": "Katherine, Northern Territory",
+     "ele": "145",
+     "iata": "KTR",
+     "icao": "YPTN",
+     "landuse": "military",
+     "military": "airfield",
+     "name": "RAAF Base Tindal",
+     "operator": "RAAF / Katherine Town Council",
+     "source": "wikipedia",
+     "start_date": "1942",
+     "wikidata": "Q1551495",
+     "wikipedia": "en:RAAF Base Tindal"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 5370.4,
+     "area_m2": 7632019.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1005466669",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1005466669_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1005466669:sentinel2",
+   "osm_way_1005466669:osm",
+   "osm_way_1005466669:sources",
+   "osm_way_1005466669:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "\u0645\u0637\u0627\u0631 \u0645\u0631\u0633\u0649 \u0627\u0644\u0628\u0631\u064a\u0642\u0629",
+    "tags": {
+     "aeroway": "aerodrome",
+     "ele": "15",
+     "iata": "LMQ",
+     "icao": "HLMB",
+     "name": "\u0645\u0637\u0627\u0631 \u0645\u0631\u0633\u0649 \u0627\u0644\u0628\u0631\u064a\u0642\u0629",
+     "name:ar": "\u0645\u0637\u0627\u0631 \u0645\u0631\u0633\u0649 \u0627\u0644\u0628\u0631\u064a\u0642\u0629",
+     "name:en": "Marsa Brega Airport",
+     "source": "wikipedia",
+     "wikidata": "Q651511",
+     "wikipedia": "en:Marsa Brega Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2355.3,
+     "area_m2": 1432521.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1071641911",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1071641911_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1071641911:sentinel2",
+   "osm_way_1071641911:osm",
+   "osm_way_1071641911:sources",
+   "osm_way_1071641911:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "A\u00e9roport international Montr\u00e9al\u2013Mirabel",
+    "tags": {
+     "aeroway": "aerodrome",
+     "iata": "YMX",
+     "icao": "CYMX",
+     "name": "A\u00e9roport international Montr\u00e9al\u2013Mirabel",
+     "name:en": "Montr\u00e9al\u2013Mirabel International Airport",
+     "name:fi": "Montr\u00e9al-Mirabelin kansainv\u00e4linen lentoasema",
+     "name:fr": "A\u00e9roport international Montr\u00e9al\u2013Mirabel",
+     "wikidata": "Q794552",
+     "wikipedia": "fr:A\u00e9roport international Montr\u00e9al-Mirabel"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: nothing within 4 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 11044.8,
+     "area_m2": 20008515.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1111254942",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1111254942_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1111254942:sentinel2",
+   "osm_way_1111254942:osm",
+   "osm_way_1111254942:sources",
+   "osm_way_1111254942:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Ginbata Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "description": "Regional airport",
+     "ele": "429",
+     "iata": "GBW",
+     "icao": "YGIA",
+     "name": "Ginbata Airport",
+     "wikidata": "Q21960952"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2842.0,
+     "area_m2": 1176016.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_161243829",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_161243829_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_161243829:sentinel2",
+   "osm_way_161243829:osm",
+   "osm_way_161243829:sources",
+   "osm_way_161243829:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Sioux Falls Regional Airport",
+    "tags": {
+     "addr:city": "Sioux Falls",
+     "addr:housenumber": "2801",
+     "addr:postcode": "57104",
+     "addr:state": "SD",
+     "addr:street": "North Jaycee Lane",
+     "aeroway": "aerodrome",
+     "alt_name": "Joe Foss Field",
+     "closest_town": "Sioux Falls, South Dakota",
+     "ele": "434",
+     "gnis:feature_id": "1259302",
+     "iata": "FSD",
+     "icao": "KFSD",
+     "name": "Sioux Falls Regional Airport",
+     "name:en": "Sioux Falls Regional Airport",
+     "name_1": "Joe Foss Field",
+     "operator": "Sioux Falls Regional Airport Authority",
+     "operator:type": "public",
+     "ref": "FSD",
+     "source": "wikipedia",
+     "source_ref": "geonames.usgs.gov",
+     "wikidata": "Q2876127",
+     "wikipedia": "en:Sioux Falls Regional Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: JOE FOSS FLD (FAA FSD, public, O) 71 m away",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3087.7,
+     "area_m2": 4982819.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_43991884",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_43991884_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_43991884:sentinel2",
+   "osm_way_43991884:osm",
+   "osm_way_43991884:sources",
+   "osm_way_43991884:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto Internacional de Posadas Libertador General Jos\u00e9 de San Mart\u00edn",
+    "tags": {
+     "addr:city": "Posadas",
+     "addr:postcode": "3300",
+     "addr:street": "Avenida Ulises L\u00f3pez",
+     "aerodrome:type": "international",
+     "aeroway": "aerodrome",
+     "alt_name": "Aeropuerto de Posadas",
+     "anac": "POS",
+     "ele": "131",
+     "iata": "PSS",
+     "icao": "SARP",
+     "length": "2252",
+     "name": "Aeropuerto Internacional de Posadas Libertador General Jos\u00e9 de San Mart\u00edn",
+     "name:en": "Libertador General Jos\u00e9 de San Mart\u00edn Airport",
+     "nat_name": "Aeropuerto General Jos\u00e9 de San Mart\u00edn",
+     "operator": "Aeropuertos Argentina 2000",
+     "width": "30",
+     "wikidata": "Q3498918",
+     "wikipedia": "es:Aeropuerto Internacional de Posadas Libertador General Jos\u00e9 de San Mart\u00edn"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3201.6,
+     "area_m2": 2731251.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_279767440",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_279767440_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_279767440:sentinel2",
+   "osm_way_279767440:osm",
+   "osm_way_279767440:sources",
+   "osm_way_279767440:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto Internacional General Gregorio Luper\u00f3n",
+    "tags": {
+     "aerodrome:type": "international",
+     "aeroway": "aerodrome",
+     "alt_name": "Gregorio Luper\u00f3n International Airport",
+     "ele": "5",
+     "iata": "POP",
+     "icao": "MDPP",
+     "name": "Aeropuerto Internacional General Gregorio Luper\u00f3n",
+     "name:de": "Flughafen Puerto Plata",
+     "name:en": "Gregorio Luper\u00f3n International Airport",
+     "name:es": "Aeropuerto Internacional General Gregorio Luper\u00f3n",
+     "operator": "Aeropuertos Dominicanos Siglo XXI S.A. (Aerodom)",
+     "ref": "POP",
+     "wikidata": "Q766356",
+     "wikipedia": "es:Aeropuerto Internacional Gregorio Luper\u00f3n"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: nothing within 4 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3443.7,
+     "area_m2": 2752042.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_176051887",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_176051887_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_176051887:sentinel2",
+   "osm_way_176051887:osm",
+   "osm_way_176051887:sources",
+   "osm_way_176051887:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Wanaka Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "alt_name": "Wanaka Aerodrome",
+     "iata": "WKA",
+     "icao": "NZWF",
+     "name": "Wanaka Airport",
+     "wikidata": "Q7967043",
+     "wikipedia": "en:Wanaka Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1712.7,
+     "area_m2": 528440.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_88410712",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_88410712_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_88410712:sentinel2",
+   "osm_way_88410712:osm",
+   "osm_way_88410712:sources",
+   "osm_way_88410712:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aer\u00f3dromo de La Coloma",
+    "tags": {
+     "aeroway": "aerodrome",
+     "iata": "LCL",
+     "name": "Aer\u00f3dromo de La Coloma",
+     "usage": "military",
+     "wikidata": "Q6461892"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: nothing within 4 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2249.4,
+     "area_m2": 1201852.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1448147357",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1448147357_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1448147357:sentinel2",
+   "osm_way_1448147357:osm",
+   "osm_way_1448147357:sources",
+   "osm_way_1448147357:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Nullabor Motel Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "ele": "67",
+     "iata": "NUR",
+     "icao": "YNUB",
+     "name": "Nullarbor Motel Airport",
+     "operator": "Nullarbor Pty Ltd",
+     "source": "ourairports.com;Australian AIP-ERSA"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2371.9,
+     "area_m2": 2164444.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_823882032",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_823882032_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_823882032:sentinel2",
+   "osm_way_823882032:osm",
+   "osm_way_823882032:sources",
+   "osm_way_823882032:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "\u0645\u0637\u0627\u0631 \u0632\u0644\u0629 \u0627\u0644\u0646\u0641\u0637\u064a",
+    "tags": {
+     "aeroway": "aerodrome",
+     "alt_name": "\u0645\u0637\u0627\u0631 \u0632\u064a\u0644\u0627 74",
+     "alt_name:en": "Zella 74 Airport",
+     "icao": "HLZA",
+     "name": "\u0645\u0637\u0627\u0631 \u0632\u0644\u0629 \u0627\u0644\u0646\u0641\u0637\u064a",
+     "name:ar": "\u0645\u0637\u0627\u0631 \u0632\u0644\u0629 \u0627\u0644\u0646\u0641\u0637\u064a",
+     "name:en": "Zalla Oil Airport",
+     "source": "ourairports.com"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3188.4,
+     "area_m2": 1824277.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_29194764",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_29194764_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_29194764:sentinel2",
+   "osm_way_29194764:osm",
+   "osm_way_29194764:sources",
+   "osm_way_29194764:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto Internacional Jardines del Rey",
+    "tags": {
+     "aerodrome:type": "international",
+     "aeroway": "aerodrome",
+     "ele": "4",
+     "iata": "CCC",
+     "icao": "MUCC",
+     "internet_access": "yes",
+     "is_in": "Ciego de \u00c1vila, Cuba",
+     "name": "Aeropuerto Internacional Jardines del Rey",
+     "name:en": "Jardines del Rey Airport",
+     "name:ru": "\u041c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0439 \u0410\u044d\u0440\u043e\u043f\u043e\u0440\u0442 \u0425\u0430\u0440\u0434\u0438\u043d\u0435\u0441-\u0434\u0435\u043b\u044c-\u0420\u0435\u0439",
+     "operator": "ECASA",
+     "wikidata": "Q2895532",
+     "wikipedia": "en:Jardines del Rey Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: nothing within 4 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 4997.5,
+     "area_m2": 3320993.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_205111086",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_205111086_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_205111086:sentinel2",
+   "osm_way_205111086:osm",
+   "osm_way_205111086:sources",
+   "osm_way_205111086:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "King Mswati III International Airport",
+    "tags": {
+     "aerodrome:type": "international;public",
+     "aeroway": "aerodrome",
+     "ele": "324",
+     "iata": "SHO",
+     "icao": "FDSK",
+     "name": "King Mswati III International Airport",
+     "name:de": "Internationaler Flughafen King Mswati III",
+     "name:en": "King Mswati III International Airport",
+     "name:source": "Wikipedia",
+     "official_name": "King Mswati III International Airport",
+     "wikidata": "Q2285574",
+     "wikipedia": "en:King Mswati III International Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 5848.3,
+     "area_m2": 3973323.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_949398426",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_949398426_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_949398426:sentinel2",
+   "osm_way_949398426:osm",
+   "osm_way_949398426:sources",
+   "osm_way_949398426:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Christmas Creek Station Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "barrier": "fence",
+     "iata": "CXQ",
+     "icao": "YCRK",
+     "name": "Christmas Creek Station Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1822.2,
+     "area_m2": 810438.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_969726606",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_969726606_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_969726606:sentinel2",
+   "osm_way_969726606:osm",
+   "osm_way_969726606:sources",
+   "osm_way_969726606:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Evetts Field",
+    "tags": {
+     "aeroway": "aerodrome",
+     "name": "Evetts Field",
+     "operator": "Australian Department of Defence",
+     "operator:type": "government"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2595.0,
+     "area_m2": 2429093.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_103639159",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_103639159_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_103639159:sentinel2",
+   "osm_way_103639159:osm",
+   "osm_way_103639159:sources",
+   "osm_way_103639159:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "\u0645\u0637\u0627\u0631 \u0627\u0644\u0642\u0631\u0636\u0627\u0628\u064a\u0629 \u0627\u0644\u062f\u0648\u0644\u064a",
+    "tags": {
+     "addr:city": "\u0633\u0631\u062a",
+     "addr:state": "\u0628\u0644\u062f\u064a\u0629 \u0633\u0631\u062a",
+     "aeroway": "aerodrome",
+     "iata": "SRX",
+     "icao": "HLGD",
+     "name": "\u0645\u0637\u0627\u0631 \u0627\u0644\u0642\u0631\u0636\u0627\u0628\u064a\u0629 \u0627\u0644\u062f\u0648\u0644\u064a",
+     "name:ar": "\u0645\u0637\u0627\u0631 \u0627\u0644\u0642\u0631\u0636\u0627\u0628\u064a\u0629 \u0627\u0644\u062f\u0648\u0644\u064a",
+     "name:en": "Alqurthabia International Airport",
+     "operator": "LCAA",
+     "source": "https://www.world-airport-codes.com",
+     "wikidata": "Q33130",
+     "wikipedia": "en:Ghardabiya Airbase"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 7190.9,
+     "area_m2": 29327655.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1182630486",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1182630486_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1182630486:sentinel2",
+   "osm_way_1182630486:osm",
+   "osm_way_1182630486:sources",
+   "osm_way_1182630486:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Morondava Airport",
+    "tags": {
+     "GNS:id": "-219651",
+     "aeroway": "aerodrome",
+     "ele": "9",
+     "iata": "MOQ",
+     "icao": "FMMV",
+     "name": "Morondava Airport",
+     "source": "ourairports.com",
+     "wikidata": "Q3606079",
+     "wikipedia": "en:Morondava Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2216.2,
+     "area_m2": 836191.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_50415871",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_50415871_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_50415871:sentinel2",
+   "osm_way_50415871:osm",
+   "osm_way_50415871:sources",
+   "osm_way_50415871:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Yarrawonga Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "icao": "YYWG",
+     "name": "Yarrawonga Airport",
+     "source": "nearmap",
+     "wikidata": "Q8049558",
+     "wikipedia": "en:Yarrawonga Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1607.4,
+     "area_m2": 1174779.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_274719750",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_274719750_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_274719750:sentinel2",
+   "osm_way_274719750:osm",
+   "osm_way_274719750:sources",
+   "osm_way_274719750:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Bram Fischer International Airport",
+    "tags": {
+     "aerodrome:type": "international",
+     "aeroway": "aerodrome",
+     "alt_name": "Bloemfontein Internasionale Lughawe",
+     "alt_name:af": "Bloemfontein Internasionale Lughawe",
+     "alt_name:de": "Internationaler Flughafen Bloemfontein",
+     "alt_name:es": "Aeropuerto Internacional de Bloemfontein",
+     "alt_name:ja": "\u30d6\u30eb\u30fc\u30e0\u30d5\u30a9\u30f3\u30c6\u30fc\u30f3\u56fd\u969b\u7a7a\u6e2f",
+     "iata": "BFN",
+     "icao": "FABL",
+     "ifr": "yes",
+     "licensed:sacaa": "yes",
+     "name": "Bram Fischer International Airport",
+     "name:af": "Bram Fischer Internasionale Lughawe",
+     "name:de": "Internationaler Flughafen Bram Fischer",
+     "name:en": "Bram Fischer International Airport",
+     "name:es": "Aeropuerto Internacional Bram Fischer",
+     "name:ja": "\u30d6\u30e9\u30e0\u30fb\u30d5\u30a3\u30c3\u30b7\u30e3\u30fc\u56fd\u969b\u7a7a\u6e2f",
+     "wikidata": "Q598282"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3322.9,
+     "area_m2": 4356809.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_56158503",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_56158503_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_56158503:sentinel2",
+   "osm_way_56158503:osm",
+   "osm_way_56158503:sources",
+   "osm_way_56158503:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Deniliquin Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "iata": "DNQ",
+     "icao": "YDLQ",
+     "name": "Deniliquin Airport",
+     "source": "nearmap",
+     "source:name": "wikipedia"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1719.7,
+     "area_m2": 2275731.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_390950065",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_390950065_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_390950065:sentinel2",
+   "osm_way_390950065:osm",
+   "osm_way_390950065:sources",
+   "osm_way_390950065:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Charters Towers Aerodrome",
+    "tags": {
+     "aeroway": "aerodrome",
+     "comment": "was military in WW2. Now charter/general aviation.",
+     "iata": "CXT",
+     "icao": "YCHT",
+     "name": "Charters Towers Aerodrome",
+     "was:military": "airfield"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2605.7,
+     "area_m2": 3067627.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_199155560",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_199155560_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_199155560:sentinel2",
+   "osm_way_199155560:osm",
+   "osm_way_199155560:sources",
+   "osm_way_199155560:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Tamworth Regional Airport",
+    "tags": {
+     "addr:postcode": "2340",
+     "addr:state": "NSW",
+     "addr:street": "Basil Brown Drive",
+     "addr:suburb": "Westdale",
+     "aerodrome:type": "public",
+     "aeroway": "aerodrome",
+     "closest_town": "Tamworth, New South Wales",
+     "iata": "TMW",
+     "icao": "YSTW",
+     "internet_access": "yes",
+     "name": "Tamworth Regional Airport",
+     "name:en": "Tamworth Regional Airport",
+     "operator": "Tamworth Regional Council",
+     "operator:type": "government",
+     "source": "wikipedia",
+     "wikidata": "Q17584",
+     "wikipedia": "en:Tamworth Regional Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3197.4,
+     "area_m2": 2620782.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_197708896",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_197708896_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_197708896:sentinel2",
+   "osm_way_197708896:osm",
+   "osm_way_197708896:sources",
+   "osm_way_197708896:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeroclub Salta",
+    "tags": {
+     "aeroway": "aerodrome",
+     "anac": "GBL",
+     "name": "Aeroclub Salta",
+     "source": "ourairports.com"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1481.2,
+     "area_m2": 1425064.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_175970201",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_175970201_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_175970201:sentinel2",
+   "osm_way_175970201:osm",
+   "osm_way_175970201:sources",
+   "osm_way_175970201:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Kaitaia Aerodrome",
+    "tags": {
+     "LINZ:source_version": "2012-06-06",
+     "aeroway": "aerodrome",
+     "attribution": "http://wiki.osm.org/wiki/Attribution#LINZ",
+     "iata": "KAT",
+     "icao": "NZKT",
+     "name": "Kaitaia Aerodrome",
+     "source_ref": "http://www.linz.govt.nz/topography/topo-maps/",
+     "wikidata": "Q6348587",
+     "wikipedia": "en:Kaitaia Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1629.1,
+     "area_m2": 644886.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_32952011",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_32952011_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_32952011:sentinel2",
+   "osm_way_32952011:osm",
+   "osm_way_32952011:sources",
+   "osm_way_32952011:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Columbus Air Force Base",
+    "tags": {
+     "aeroway": "aerodrome",
+     "faa": "CBM",
+     "gnis:feature_id": "2402790",
+     "iata": "CBM",
+     "icao": "KCBM",
+     "landuse": "military",
+     "military": "airfield",
+     "name": "Columbus Air Force Base",
+     "place": "locality",
+     "source": "TIGER/Line\u00ae 2008 Place Shapefiles (http://www.census.gov/geo/www/tiger/)",
+     "wikidata": "Q1657653",
+     "wikipedia": "en:Columbus Air Force Base"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: COLUMBUS AFB (FAA CBM, private, O) 589 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 5583.9,
+     "area_m2": 18270233.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1486417420",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1486417420_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1486417420:sentinel2",
+   "osm_way_1486417420:osm",
+   "osm_way_1486417420:sources",
+   "osm_way_1486417420:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "",
+    "tags": null,
+    "available": false
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_108744692",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_108744692_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_108744692:sentinel2",
+   "osm_way_108744692:osm",
+   "osm_way_108744692:sources",
+   "osm_way_108744692:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Somerset East Airport",
+    "tags": {
+     "addr:city": "KwaNojoli",
+     "aeroway": "aerodrome",
+     "barrier": "fence",
+     "icao": "FAST",
+     "name": "KwaNojoli Airport",
+     "wikidata": "Q20464428"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1764.4,
+     "area_m2": 1695528.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_397729817",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_397729817_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_397729817:sentinel2",
+   "osm_way_397729817:osm",
+   "osm_way_397729817:sources",
+   "osm_way_397729817:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto Ituzaing\u00f3 - Yacyret\u00e1",
+    "tags": {
+     "addr:city": "Ituzaing\u00f3",
+     "addr:country": "AR",
+     "addr:postcode": "W3302",
+     "addr:province": "Corrientes",
+     "aeroway": "aerodrome",
+     "ele": "119",
+     "icao": "SARO",
+     "name": "Aeropuerto Ituzaing\u00f3 - Yacyret\u00e1",
+     "name:en": "Ituzaing\u00f3 Yacireta Airport",
+     "source:url": "http://aerobaticsweb.org/cgi-bin/search_apt?SARO",
+     "wikidata": "Q16892744",
+     "wikipedia": "en:Ituzaing\u00f3 Yacireta Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3732.5,
+     "area_m2": 4856496.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_22888427",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_22888427_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_22888427:sentinel2",
+   "osm_way_22888427:osm",
+   "osm_way_22888427:sources",
+   "osm_way_22888427:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Norman Manley International Airport",
+    "tags": {
+     "aerodrome": "international",
+     "aerodrome:type": "public",
+     "aeroway": "aerodrome",
+     "ele": "3",
+     "iata": "KIN",
+     "icao": "MKJP",
+     "name": "Norman Manley International Airport",
+     "name:ar": "\u0645\u0637\u0627\u0631 \u0646\u0648\u0631\u0645\u0627\u0646 \u0645\u0627\u0646\u0644\u064a \u0627\u0644\u062f\u0648\u0644\u064a",
+     "name:de": "Flughafen Norman Manley International",
+     "name:en": "Norman Manley International Airport",
+     "name:es": "Aeropuerto Internacional Norman Manley",
+     "name:etymology": "Norman Manley",
+     "name:etymology:wikidata": "Q1397508",
+     "name:etymology:wikipedia": "en:Norman Manley",
+     "name:fa": "\u0641\u0631\u0648\u062f\u06af\u0627\u0647 \u0628\u06cc\u0646\u200c\u0627\u0644\u0645\u0644\u0644\u06cc \u0646\u0648\u0631\u0645\u0646 \u0645\u0627\u0646\u0644\u06cc",
+     "name:ja": "\u30ce\u30fc\u30de\u30f3\u30fb\u30de\u30f3\u30ec\u30fc\u56fd\u969b\u7a7a\u6e2f",
+     "operator": "NMIA Airports Limited",
+     "source": "wikipedia",
+     "wikidata": "Q1432206"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: nothing within 4 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3349.2,
+     "area_m2": 1644640.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_27715191",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_27715191_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_27715191:sentinel2",
+   "osm_way_27715191:osm",
+   "osm_way_27715191:sources",
+   "osm_way_27715191:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "",
+    "tags": {},
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: nothing within 4 km",
+    "available": true
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_47795802",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_47795802_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_47795802:sentinel2",
+   "osm_way_47795802:osm",
+   "osm_way_47795802:sources",
+   "osm_way_47795802:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "\u041d\u043e\u0432\u043e\u0430\u043b\u0435\u043a\u0441\u0435\u0435\u0432\u0441\u043a\u0430\u044f",
+    "tags": {
+     "aerodrome:type": "airfield",
+     "aeroway": "aerodrome",
+     "name": "\u041d\u043e\u0432\u043e\u0430\u043b\u0435\u043a\u0441\u0435\u0435\u0432\u0441\u043a\u0430\u044f",
+     "name:en": "Novoalekseyevskaya",
+     "name:ru": "\u041d\u043e\u0432\u043e\u0430\u043b\u0435\u043a\u0441\u0435\u0435\u0432\u0441\u043a\u0430\u044f",
+     "ref:aopa:en": "ZC5K"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1494.0,
+     "area_m2": 631845.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1497499216",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1497499216_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1497499216:sentinel2",
+   "osm_way_1497499216:osm",
+   "osm_way_1497499216:sources",
+   "osm_way_1497499216:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Noumbi Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "ele": "12",
+     "icao": "FCPN",
+     "name": "Noumbi Airport",
+     "source": "ourairports.com",
+     "wikidata": "Q12694205"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1759.8,
+     "area_m2": 592884.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_445890228",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_445890228_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_445890228:sentinel2",
+   "osm_way_445890228:osm",
+   "osm_way_445890228:sources",
+   "osm_way_445890228:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Mount Gambier Airport",
+    "tags": {
+     "aerodrome:type": "public",
+     "aeroway": "aerodrome",
+     "ele": "64",
+     "iata": "MGB",
+     "icao": "YMTG",
+     "internet_access": "wlan",
+     "name": "Mount Gambier Airport",
+     "operator": "District Council of Grant",
+     "ref": "MGB",
+     "wikipedia": "en:Mount Gambier Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1993.0,
+     "area_m2": 1849054.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_640410376",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_640410376_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_640410376:sentinel2",
+   "osm_way_640410376:osm",
+   "osm_way_640410376:sources",
+   "osm_way_640410376:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto M\u00e1ximo G\u00f3mez B\u00e1ez",
+    "tags": {
+     "aerodrome:type": "regional",
+     "aeroway": "aerodrome",
+     "iata": "AVI",
+     "icao": "MUCA",
+     "name": "Aeropuerto M\u00e1ximo G\u00f3mez B\u00e1ez",
+     "source": "UN-ICAO"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: nothing within 4 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 4097.6,
+     "area_m2": 1790502.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_949229106",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_949229106_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_949229106:sentinel2",
+   "osm_way_949229106:osm",
+   "osm_way_949229106:sources",
+   "osm_way_949229106:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Derby Airport",
+    "tags": {
+     "aerodrome": "regional",
+     "aerodrome:type": "public",
+     "aeroway": "aerodrome",
+     "ele": "7",
+     "iata": "DRB",
+     "icao": "YDBY",
+     "name": "Derby Airport",
+     "operator": "Shire of Derby/West Kimberley",
+     "wikidata": "Q5261416",
+     "wikipedia": "en:Derby Airport (Australia)"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2057.0,
+     "area_m2": 1230827.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_36981183",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_36981183_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_36981183:sentinel2",
+   "osm_way_36981183:osm",
+   "osm_way_36981183:sources",
+   "osm_way_36981183:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aer\u00f3dromo Eulogio S\u00e1nchez Err\u00e1zuriz",
+    "tags": {
+     "addr:city": "La Reina",
+     "addr:housenumber": "7941",
+     "addr:street": "Avenida Alcalde Fernando Castillo Vel\u00e1sco",
+     "aeroway": "aerodrome",
+     "alt_name": "Aer\u00f3dromo Tobalaba",
+     "ele": "629",
+     "icao": "SCTB",
+     "name": "Aer\u00f3dromo Eulogio S\u00e1nchez Err\u00e1zuriz",
+     "wikidata": "Q5409457",
+     "wikipedia": "es:Aer\u00f3dromo Eulogio S\u00e1nchez"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1372.4,
+     "area_m2": 539118.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_656068316",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_656068316_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_656068316:sentinel2",
+   "osm_way_656068316:osm",
+   "osm_way_656068316:sources",
+   "osm_way_656068316:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeroporto Albano Machado",
+    "tags": {
+     "aeroway": "aerodrome",
+     "alt_name": "Aeroporto do Huambo",
+     "ele": "1704",
+     "iata": "NOV",
+     "icao": "FNHU",
+     "name": "Aeroporto Albano Machado",
+     "name:de": "Albano Machado Flughafen",
+     "name:el": "\u0391\u03b5\u03c1\u03bf\u03b4\u03c1\u03cc\u03bc\u03b9\u03bf \u00ab\u0391\u03bb\u03bc\u03c0\u03ac\u03bd\u03bf \u039c\u03b1\u03c3\u03ac\u03bd\u03c4\u03bf\u00bb",
+     "name:es": "Aeropuerto de Albano Machado",
+     "name:fr": "A\u00e9roport Albano Machado",
+     "name:it": "Aeroporto di Albano Machado",
+     "name:nl": "Albano Machado Luchthaven",
+     "name:pl": "Port Lotnisko Albano Machado",
+     "name:pt": "Aeroporto Albano Machado",
+     "name:ru": "\u0410\u044d\u0440\u043e\u043f\u043e\u0440\u0442 \u0410\u043b\u0431\u0430\u043d\u043e \u041c\u0430\u0447\u0430\u0434\u043e",
+     "old_name": "Aeroporto Nova Lisboa",
+     "wikidata": "Q2231318"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3287.5,
+     "area_m2": 4127116.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_33542871",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_33542871_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_33542871:sentinel2",
+   "osm_way_33542871:osm",
+   "osm_way_33542871:sources",
+   "osm_way_33542871:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Moorabbin Airport",
+    "tags": {
+     "addr:housenumber": "66",
+     "addr:street": "Bundora Parade",
+     "aerodrome": "regional",
+     "aerodrome:type": "public",
+     "aeroway": "aerodrome",
+     "alt_name": "Harry Hawker Airport",
+     "city_served": "Melbourne",
+     "ele": "17",
+     "iata": "MBW",
+     "icao": "YMMB",
+     "name": "Moorabbin Airport",
+     "name:en": "Moorabbin Airport",
+     "operator": "Moorabbin Airport Corporation",
+     "operator:type": "private",
+     "owner": "Goodman Group",
+     "phone": "+61 3 8587 8000",
+     "source": "wikipedia",
+     "start_date": "1949",
+     "website": "https://www.moorabbinairport.com.au/",
+     "wikidata": "Q1232433",
+     "wikipedia": "en:Moorabbin Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1849.7,
+     "area_m2": 1587448.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_240949332",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_240949332_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_240949332:sentinel2",
+   "osm_way_240949332:osm",
+   "osm_way_240949332:sources",
+   "osm_way_240949332:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Bandar Udara Internasional Mopah",
+    "tags": {
+     "aerodrome:type": "international",
+     "aeroway": "aerodrome",
+     "ele": "3",
+     "iata": "MKQ",
+     "icao": "WAKK",
+     "name": "Bandar Udara Internasional Mopah",
+     "name:en": "Mopah International Airport",
+     "operator": "Unit Penyelenggara Bandar Udara",
+     "short_name": "Bandara Internasional Mopah",
+     "wikidata": "Q3613163",
+     "wikipedia": "id:Bandar Udara Mopah"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3500.8,
+     "area_m2": 1321651.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_256341994",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_256341994_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_256341994:sentinel2",
+   "osm_way_256341994:osm",
+   "osm_way_256341994:sources",
+   "osm_way_256341994:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Base C\u00f3ndor",
+    "tags": {
+     "aeroway": "aerodrome",
+     "disused:iata": "MAE",
+     "disused:name": "Aerodromo de Mendoza",
+     "name": "Base C\u00f3ndor",
+     "opening_hours": "24/7",
+     "operator": "Unidad Aeron\u00e1utica Policial",
+     "wikidata": "Q16890371"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2137.8,
+     "area_m2": 688776.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1431683583",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1431683583_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1431683583:sentinel2",
+   "osm_way_1431683583:osm",
+   "osm_way_1431683583:sources",
+   "osm_way_1431683583:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Mount Holland Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "name": "Mount Holland Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2428.5,
+     "area_m2": 861741.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_90086525",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_90086525_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_90086525:sentinel2",
+   "osm_way_90086525:osm",
+   "osm_way_90086525:sources",
+   "osm_way_90086525:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Base A\u00e9rea de San Juli\u00e1n",
+    "tags": {
+     "aeroway": "aerodrome",
+     "iata": "SNJ",
+     "icao": "MUSJ",
+     "name": "Base A\u00e9rea de San Juli\u00e1n",
+     "operator": "Ministerio de las Fuerzas Armadas Revolucionarias",
+     "ref": "08/26",
+     "surface": "concrete",
+     "usage": "military",
+     "wikidata": "Q7414659"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: nothing within 4 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3057.5,
+     "area_m2": 1646207.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_301177958",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_301177958_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_301177958:sentinel2",
+   "osm_way_301177958:osm",
+   "osm_way_301177958:sources",
+   "osm_way_301177958:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Milyakburra Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "iata": "BCZ",
+     "name": "Milyakburra Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2799.2,
+     "area_m2": 585682.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_260724224",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_260724224_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_260724224:sentinel2",
+   "osm_way_260724224:osm",
+   "osm_way_260724224:sources",
+   "osm_way_260724224:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "A\u00e9roport International de Lubumbashi Luano",
+    "tags": {
+     "aerodrome:type": "international;public",
+     "aeroway": "aerodrome",
+     "ele": "1307,6",
+     "iata": "FBM",
+     "icao": "FZQA",
+     "name": "A\u00e9roport International de Lubumbashi Luano",
+     "name:en": "Lubumbashi International Airport",
+     "name:fr": "A\u00e9roport international de Lubumbashi Luano",
+     "source": "wikipedia",
+     "wikidata": "Q738866",
+     "wikipedia": "en:Lubumbashi International Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 4565.7,
+     "area_m2": 1157764.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_588575203",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_588575203_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_588575203:sentinel2",
+   "osm_way_588575203:osm",
+   "osm_way_588575203:sources",
+   "osm_way_588575203:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeroporto de Fernando de Noronha",
+    "tags": {
+     "aerodrome:type": "regional",
+     "aeroway": "aerodrome",
+     "iata": "FEN",
+     "icao": "SBFN",
+     "internet_access": "yes",
+     "name": "Aeroporto de Fernando de Noronha",
+     "name:en": "Fernando de Noronha Airport",
+     "operator": "Infraero",
+     "wikidata": "Q3312795",
+     "wikipedia": "pt:Aeroporto de Fernando de Noronha"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2266.1,
+     "area_m2": 511574.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_175985084",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_175985084_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_175985084:sentinel2",
+   "osm_way_175985084:osm",
+   "osm_way_175985084:sources",
+   "osm_way_175985084:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Hamilton Airport",
+    "tags": {
+     "aerodrome:type": "public",
+     "aeroway": "aerodrome",
+     "alt_name": "Hamilton International Airport",
+     "alt_name:cs": "Mezin\u00e1rodn\u00ed leti\u0161t\u011b Hamilton",
+     "alt_name:en": "Hamilton International Airport",
+     "alt_name:mi": "Taunga Rererangi Taiao o Kirikiriroa",
+     "closest_town": "Hamilton, New Zealand",
+     "ele": "52",
+     "iata": "HLZ",
+     "icao": "NZHN",
+     "name": "Hamilton Airport",
+     "name:cs": "Leti\u0161t\u011b Hamilton",
+     "name:en": "Hamilton Airport",
+     "name:ja": "\u30cf\u30df\u30eb\u30c8\u30f3\u56fd\u969b\u7a7a\u6e2f",
+     "name:mi": "Taunga Rererangi o Kirikiriroa",
+     "operator": "Hamilton International Airport",
+     "source": "LINZ;wikipedia",
+     "website": "https://www.hamiltonairport.co.nz/",
+     "wikidata": "Q1368739",
+     "wikipedia": "en:Hamilton Airport (New Zealand)"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2780.1,
+     "area_m2": 1210818.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_221890857",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_221890857_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_221890857:sentinel2",
+   "osm_way_221890857:osm",
+   "osm_way_221890857:sources",
+   "osm_way_221890857:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeroporto de Concei\u00e7\u00e3o do Araguaia - Bendito Roque",
+    "tags": {
+     "aerodrome:type": "public",
+     "aeroway": "aerodrome",
+     "iata": "CDJ",
+     "icao": "SBAA",
+     "name": "Aeroporto de Concei\u00e7\u00e3o do Araguaia - Bendito Roque",
+     "name:en": "Concei\u00e7\u00e3o do Araguaia Airport",
+     "short_name": "Aeroporto de Concei\u00e7\u00e3o do Aragu\u00e1ia",
+     "wikipedia": "pt:Aeroporto de Concei\u00e7\u00e3o do Araguaia"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2307.5,
+     "area_m2": 802148.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_229426818",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_229426818_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_229426818:sentinel2",
+   "osm_way_229426818:osm",
+   "osm_way_229426818:sources",
+   "osm_way_229426818:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto Internacional de Tocumen",
+    "tags": {
+     "aerodrome:type": "public",
+     "aeroway": "aerodrome",
+     "alt_name": "Aeropuerto Internacional de Tocumen;Tocumen Intl",
+     "city_served": "Panama City",
+     "ele": "41",
+     "iata": "PTY",
+     "icao": "MPTO",
+     "int_name": "Tocumen International Airport",
+     "name": "Aeropuerto Internacional de Tocumen",
+     "name:en": "Tocumen International Airport",
+     "name:ja": "\u30c8\u30af\u30e1\u30f3\u56fd\u969b\u7a7a\u6e2f",
+     "name:ru": "\u0410\u044d\u0440\u043e\u043f\u043e\u0440\u0442 \u0418\u043d\u0442\u0435\u0440\u043d\u0430\u0441\u044c\u043e\u043d\u0430\u043b\u044c \u0434\u0435 \u0422\u043e\u043a\u0443\u043c\u0435\u043d",
+     "name:zh": "\u6258\u5e93\u95e8\u56fd\u9645\u673a\u573a",
+     "name:zh-Hans": "\u6258\u5e93\u95e8\u56fd\u9645\u673a\u573a",
+     "name:zh-Hant": "\u6258\u5eab\u9580\u570b\u969b\u6a5f\u5834",
+     "old_name": "General Omar Torrijos Herrera Internaional Airport (1981-1990)",
+     "operator": "Tocumen S.A.",
+     "ref": "PTY",
+     "source": "wikipedia",
+     "website": "https://www.tocumenpanama.aero/",
+     "wikidata": "Q1420178",
+     "wikipedia": "en:Tocumen International Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 6939.0,
+     "area_m2": 9356890.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_820395928",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_820395928_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_820395928:sentinel2",
+   "osm_way_820395928:osm",
+   "osm_way_820395928:sources",
+   "osm_way_820395928:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Balranald Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "iata": "BZD",
+     "icao": "YBRN",
+     "name": "Balranald Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2033.5,
+     "area_m2": 1287574.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_866803537",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_866803537_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_866803537:sentinel2",
+   "osm_way_866803537:osm",
+   "osm_way_866803537:sources",
+   "osm_way_866803537:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "\u5f53\u96c4\u673a\u573a",
+    "tags": {
+     "MUCD": "95561",
+     "aeroway": "aerodrome",
+     "alt_name": "\u7576\u96c4\u6a5f\u5834;\u62c9\u8428\u5f53\u96c4\u673a\u573a",
+     "landuse": "military",
+     "name": "\u5f53\u96c4\u673a\u573a",
+     "name:en": "Damxung Airport",
+     "name:zh": "\u5f53\u96c4\u673a\u573a",
+     "operator": "95561\u90e8\u961f",
+     "wikidata": "Q30946176",
+     "wikipedia": "zh:\u62c9\u8428\u5f53\u96c4\u673a\u573a"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 6057.0,
+     "area_m2": 6882406.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1448407506",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1448407506_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1448407506:sentinel2",
+   "osm_way_1448407506:osm",
+   "osm_way_1448407506:sources",
+   "osm_way_1448407506:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "South Galway Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "ele": "111",
+     "iata": "ZGL",
+     "icao": "YSGW",
+     "name": "South Galway Airport",
+     "wikidata": "Q21923472"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1551.8,
+     "area_m2": 525014.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_400062197",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_400062197_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_400062197:sentinel2",
+   "osm_way_400062197:osm",
+   "osm_way_400062197:sources",
+   "osm_way_400062197:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aer\u00f3dromo do Maio",
+    "tags": {
+     "aerodrome:type": "public",
+     "aeroway": "aerodrome",
+     "ele": "11",
+     "iata": "MMO",
+     "icao": "GVMA",
+     "name": "Aer\u00f3dromo do Maio",
+     "name:ar": "\u0645\u0637\u0627\u0631 \u0645\u0627\u064a\u0648",
+     "name:en": "Maio Airport",
+     "operator": "Aeroportos e Seguranca Aerea (ASA)",
+     "source": "ourairports.com",
+     "website": "https://www.asa.cv/aerodromos/aerodromo-do-maio/",
+     "wikidata": "Q2011846",
+     "wikipedia": "en:Maio Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1609.5,
+     "area_m2": 525552.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_117563036",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_117563036_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_117563036:sentinel2",
+   "osm_way_117563036:osm",
+   "osm_way_117563036:sources",
+   "osm_way_117563036:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "RGIA Phase II",
+    "tags": {
+     "aeroway": "aerodrome",
+     "iata": "HYD",
+     "icao": "VOHS",
+     "name": "RGIA Phase II"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 6644.7,
+     "area_m2": 7679915.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_60211516",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_60211516_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_60211516:sentinel2",
+   "osm_way_60211516:osm",
+   "osm_way_60211516:sources",
+   "osm_way_60211516:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Collingwood Regional Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "class": "indefinite",
+     "landuse": "airport",
+     "name": "Collingwood Regional Airport",
+     "operator": "Town of Collingwood",
+     "source": "CanVec_Import_2009",
+     "website": "https://cny3.ca",
+     "wikidata": "Q1655336"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: nothing within 4 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1757.1,
+     "area_m2": 1026300.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_290293723",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_290293723_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_290293723:sentinel2",
+   "osm_way_290293723:osm",
+   "osm_way_290293723:sources",
+   "osm_way_290293723:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeroclube de Passo Fundo",
+    "tags": {
+     "addr:city": "Passo Fundo",
+     "aerodrome": "airsport",
+     "aeroway": "aerodrome",
+     "ele": "600",
+     "icao": "SSAQ",
+     "name": "Aeroclube de Passo Fundo",
+     "name:en": "Passo Fundo Aero Club",
+     "operator": "Aeroclube de Passo Fundo",
+     "phone": "+55 54 3311-1564",
+     "website": "http://www.aeroclubepassofundo.com/",
+     "wikidata": "Q9585317",
+     "wikipedia": "pt:Aeroclube de Passo Fundo"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1588.0,
+     "area_m2": 1364923.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_100583610",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_100583610_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_100583610:sentinel2",
+   "osm_way_100583610:osm",
+   "osm_way_100583610:sources",
+   "osm_way_100583610:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto Internacional Daniel Oduber Quir\u00f3s",
+    "tags": {
+     "addr:city": "Liberia",
+     "addr:street": "Ruta Nacional 21",
+     "aeroway": "aerodrome",
+     "iata": "LIR",
+     "icao": "MRLB",
+     "int_name": "Daniel Oduber Quir\u00f3s International Airport",
+     "internet_access:fee": "no",
+     "name": "Aeropuerto Internacional Daniel Oduber Quir\u00f3s",
+     "operator": "Direcci\u00f3n General de Aviaci\u00f3n Civil",
+     "ref": "07/25",
+     "wikidata": "Q1708765"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3718.2,
+     "area_m2": 2456572.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_998130396",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_998130396_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_998130396:sentinel2",
+   "osm_way_998130396:osm",
+   "osm_way_998130396:sources",
+   "osm_way_998130396:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "A\u00e9roport de Kananga",
+    "tags": {
+     "aerodrome:type": "public",
+     "aeroway": "aerodrome",
+     "closest_town": "Kananga",
+     "ele": "652",
+     "iata": "KGA",
+     "icao": "FZUA",
+     "name": "A\u00e9roport de Kananga",
+     "name:en": "Kananga Airport",
+     "name:fr": "A\u00e9roport de Kananga",
+     "operator": "Civil Government",
+     "source": "wikipedia",
+     "wikidata": "Q2443546",
+     "wikipedia": "en:Kananga Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2946.3,
+     "area_m2": 1178847.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_820423431",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_820423431_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_820423431:sentinel2",
+   "osm_way_820423431:osm",
+   "osm_way_820423431:sources",
+   "osm_way_820423431:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Brobenah Airfield",
+    "tags": {
+     "aeroway": "aerodrome",
+     "name": "Brobenah Airfield"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1660.7,
+     "area_m2": 1516054.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_564376279",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_564376279_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_564376279:sentinel2",
+   "osm_way_564376279:osm",
+   "osm_way_564376279:sources",
+   "osm_way_564376279:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto Aviador Carlos Campos",
+    "tags": {
+     "aeroway": "aerodrome",
+     "alt_name": "Aeropuerto Chapelco",
+     "iata": "CPC",
+     "icao": "SAZY",
+     "internet_access": "yes",
+     "internet_access:fee": "no",
+     "internet_access:ssid": "Cotesma",
+     "name": "Aeropuerto Aviador Carlos Campos",
+     "wikidata": "Q2900990",
+     "wikipedia": "es:Aeropuerto Chapelco"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3045.7,
+     "area_m2": 1627083.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1005531988",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1005531988_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1005531988:sentinel2",
+   "osm_way_1005531988:osm",
+   "osm_way_1005531988:sources",
+   "osm_way_1005531988:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeroporto do Lichinga",
+    "tags": {
+     "aeroway": "aerodrome",
+     "ele": "1368",
+     "iata": "VXC",
+     "icao": "FQLC",
+     "name": "Aeroporto do Lichinga",
+     "name:en": "Lichinga Airport",
+     "wikidata": "Q11824536"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3457.1,
+     "area_m2": 1898494.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_946198448",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_946198448_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_946198448:sentinel2",
+   "osm_way_946198448:osm",
+   "osm_way_946198448:sources",
+   "osm_way_946198448:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Saint James Municipal Airport",
+    "tags": {
+     "addr:city": "St. James",
+     "addr:county": "Watonwan",
+     "addr:housenumber": "75751",
+     "addr:postcode": "56081",
+     "addr:state": "MN",
+     "addr:street": "Airport Lane",
+     "aeroway": "aerodrome",
+     "elevation": "325",
+     "icao": "KJYG",
+     "name": "Saint James Municipal Airport",
+     "note": "not necessarily official boundary",
+     "source": "Esri",
+     "wikidata": "Q35305790",
+     "wikipedia": "en:St. James Municipal Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: ST JAMES MUNI (FAA JYG, public, O) 202 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2034.4,
+     "area_m2": 603915.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_820786045",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_820786045_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_820786045:sentinel2",
+   "osm_way_820786045:osm",
+   "osm_way_820786045:sources",
+   "osm_way_820786045:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Buffalo",
+    "tags": {
+     "addr:housenumber": "385",
+     "addr:street": "Buffalo-Stony Creek Road",
+     "aeroway": "aerodrome",
+     "name": "Buffalo"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1821.9,
+     "area_m2": 951034.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_39249110",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_39249110_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_39249110:sentinel2",
+   "osm_way_39249110:osm",
+   "osm_way_39249110:sources",
+   "osm_way_39249110:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto Internacional Augusto C\u00e9sar Sandino",
+    "tags": {
+     "aerodrome:type": "military/public",
+     "aeroway": "aerodrome",
+     "alt_name": "Aeropuerto de Managua",
+     "alt_name:ja": "\u30de\u30ca\u30b0\u30a2\u56fd\u969b\u7a7a\u6e2f",
+     "ele": "59",
+     "iata": "MGA",
+     "icao": "MNMG",
+     "name": "Aeropuerto Internacional Augusto C\u00e9sar Sandino",
+     "name:en": "Augusto C\u00e9sar Sandino International Airport",
+     "name:es": "Aeropuerto Internacional Augusto C. Sandino",
+     "name:ja": "\u30a2\u30a6\u30b0\u30b9\u30c8\u30fbC\u30fb\u30b5\u30f3\u30c7\u30a3\u30fc\u30ce\u56fd\u969b\u7a7a\u6e2f",
+     "owner": "Republica de Nicaragua",
+     "source": "wikipedia",
+     "website": "https://www.eaai.com.ni/",
+     "wikidata": "Q530773",
+     "wikipedia": "en:Augusto C. Sandino International Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3346.1,
+     "area_m2": 2010826.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_955274548",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_955274548_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_955274548:sentinel2",
+   "osm_way_955274548:osm",
+   "osm_way_955274548:sources",
+   "osm_way_955274548:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aer\u00f3dromo Curuz\u00fa Cuati\u00e1",
+    "tags": {
+     "aeroway": "aerodrome",
+     "anac": "CCA",
+     "ele": "70",
+     "iata": "UZU",
+     "icao": "SATU",
+     "name": "Aer\u00f3dromo Curuz\u00fa Cuati\u00e1",
+     "operator:type": "public",
+     "source": "ourairports.com; https://datos.gob.ar/dataset/transporte-lista-aeropuertos",
+     "wikidata": "Q5196040",
+     "wikipedia": "es:Aeropuerto de Curuz\u00fa Cuati\u00e1"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3001.7,
+     "area_m2": 1126406.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_194451939",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_194451939_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_194451939:sentinel2",
+   "osm_way_194451939:osm",
+   "osm_way_194451939:sources",
+   "osm_way_194451939:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Cosmo Newberry Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "barrier": "fence",
+     "name": "Cosmo Newberry Airport",
+     "ref": "YCOS",
+     "source": "ourairports.com"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1673.3,
+     "area_m2": 1305151.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_829611825",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_829611825_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_829611825:sentinel2",
+   "osm_way_829611825:osm",
+   "osm_way_829611825:sources",
+   "osm_way_829611825:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aer\u00f3dromo Mar\u00eda Dolores",
+    "tags": {
+     "aeroway": "aerodrome",
+     "iata": "LSQ",
+     "icao": "SCGE",
+     "name": "Aer\u00f3dromo Mar\u00eda Dolores",
+     "name:en": "Mar\u00eda Dolores Airport",
+     "source": "ourairports.com",
+     "wikidata": "Q5659049",
+     "wikipedia": "es:Aer\u00f3dromo Mar\u00eda Dolores"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2081.9,
+     "area_m2": 1423788.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_469345716",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_469345716_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_469345716:sentinel2",
+   "osm_way_469345716:osm",
+   "osm_way_469345716:sources",
+   "osm_way_469345716:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto Internacional Toncont\u00edn",
+    "tags": {
+     "addr:city": "Tegucigalpa",
+     "addr:street": "Bulevar Comunidad Econ\u00f3mica Europea",
+     "aerodrome:type": "military/public",
+     "aeroway": "aerodrome",
+     "iata": "TGU",
+     "icao": "MHTG",
+     "internet_access": "yes",
+     "internet_access:fee": "yes",
+     "name": "Aeropuerto Internacional Toncont\u00edn",
+     "name:en": "Toncontin International Airport",
+     "name:ja": "\u30c8\u30f3\u30b3\u30f3\u30c6\u30a3\u30f3\u56fd\u969b\u7a7a\u6e2f",
+     "source": "wikipedia",
+     "wikidata": "Q930733",
+     "wikipedia": "es:Aeropuerto Internacional Toncont\u00edn"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2852.8,
+     "area_m2": 1041139.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_259858576",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_259858576_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_259858576:sentinel2",
+   "osm_way_259858576:osm",
+   "osm_way_259858576:sources",
+   "osm_way_259858576:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "",
+    "tags": {
+     "aeroway": "aerodrome"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: nothing within 4 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2105.1,
+     "area_m2": 853663.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_568042462",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_568042462_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_568042462:sentinel2",
+   "osm_way_568042462:osm",
+   "osm_way_568042462:sources",
+   "osm_way_568042462:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto El Cara\u00f1o",
+    "tags": {
+     "aeroway": "aerodrome",
+     "alt_name": "Aeropuerto \u00c1lvaro Rey Zu\u00f1iga",
+     "iata": "UIB",
+     "icao": "SKUI",
+     "internet_access": "yes",
+     "name": "Aeropuerto El Cara\u00f1o",
+     "name:en": "El Cara\u00f1o Airport",
+     "wikidata": "Q1322374",
+     "wikipedia": "es:Aeropuerto El Cara\u00f1o"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2235.1,
+     "area_m2": 609321.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_196334461",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_196334461_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_196334461:sentinel2",
+   "osm_way_196334461:osm",
+   "osm_way_196334461:sources",
+   "osm_way_196334461:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "A\u00e9roport de Toamasina",
+    "tags": {
+     "GNS:id": "-222056",
+     "aeroway": "aerodrome",
+     "ele": "7",
+     "iata": "TMM",
+     "icao": "FMMT",
+     "name": "A\u00e9roport de Toamasina",
+     "name:en": "Toamasina Airport",
+     "source": "ourairports.com",
+     "wikidata": "Q2006710"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3981.5,
+     "area_m2": 1813911.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_290293690",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_290293690_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_290293690:sentinel2",
+   "osm_way_290293690:osm",
+   "osm_way_290293690:sources",
+   "osm_way_290293690:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeroporto Gaud\u00eancio Machado Ramos",
+    "tags": {
+     "addr:city": "Alegrete",
+     "addr:housename": "Km 591",
+     "addr:street": "BR-290",
+     "aerodrome": "regional",
+     "aeroway": "aerodrome",
+     "alt_name": "Aeroporto Alegrete Novo",
+     "ele": "125",
+     "iata": "ALQ",
+     "icao": "SSLT",
+     "name": "Aeroporto Gaud\u00eancio Machado Ramos",
+     "name:en": "Gaud\u00eancio Machado Ramos Airport",
+     "official_name": "Aeroporto Regional Gaud\u00eancio Machado Ramos",
+     "ref:CIAD": "RS0022",
+     "wikidata": "Q4714404",
+     "wikipedia": "pt:Aeroporto Regional de Alegrete"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2881.0,
+     "area_m2": 1307372.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_475706440",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_475706440_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_475706440:sentinel2",
+   "osm_way_475706440:osm",
+   "osm_way_475706440:sources",
+   "osm_way_475706440:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "",
+    "tags": {
+     "aerodrome:type": "airfield",
+     "aeroway": "aerodrome"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3151.2,
+     "area_m2": 786443.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1041194858",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1041194858_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1041194858:sentinel2",
+   "osm_way_1041194858:osm",
+   "osm_way_1041194858:sources",
+   "osm_way_1041194858:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "\u0e17\u0e48\u0e32\u0e2d\u0e32\u0e01\u0e32\u0e28\u0e22\u0e32\u0e19\u0e19\u0e32\u0e19\u0e32\u0e0a\u0e32\u0e15\u0e34\u0e2b\u0e32\u0e14\u0e43\u0e2b\u0e0d\u0e48",
+    "tags": {
+     "addr:city": "\u0e04\u0e25\u0e2d\u0e07\u0e2b\u0e25\u0e32",
+     "addr:housenumber": "99",
+     "addr:postcode": "90115",
+     "addr:street": "\u0e2b\u0e21\u0e39\u0e48 3",
+     "aerodrome": "international",
+     "aerodrome:type": "public",
+     "aeroway": "aerodrome",
+     "ele": "27",
+     "iata": "HDY",
+     "icao": "VTSS",
+     "name": "\u0e17\u0e48\u0e32\u0e2d\u0e32\u0e01\u0e32\u0e28\u0e22\u0e32\u0e19\u0e19\u0e32\u0e19\u0e32\u0e0a\u0e32\u0e15\u0e34\u0e2b\u0e32\u0e14\u0e43\u0e2b\u0e0d\u0e48",
+     "name:en": "Hat Yai International Airport",
+     "name:th": "\u0e17\u0e48\u0e32\u0e2d\u0e32\u0e01\u0e32\u0e28\u0e22\u0e32\u0e19\u0e19\u0e32\u0e19\u0e32\u0e0a\u0e32\u0e15\u0e34\u0e2b\u0e32\u0e14\u0e43\u0e2b\u0e0d\u0e48",
+     "operator": "Airports of Thailand",
+     "passengers": "1869000",
+     "phone": "+66 74 227 000",
+     "source": "wikipedia",
+     "website": "https://bio.site/hdy_airport",
+     "wikidata": "Q912583",
+     "wikipedia": "en:Hat Yai International Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 4690.5,
+     "area_m2": 8953501.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_523668832",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_523668832_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_523668832:sentinel2",
+   "osm_way_523668832:osm",
+   "osm_way_523668832:sources",
+   "osm_way_523668832:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Mercer County Regional Airport",
+    "tags": {
+     "addr:state": "ND",
+     "aeroway": "aerodrome",
+     "closest_town": "Hazen, North Dakota",
+     "ele": "550",
+     "faa": "HZE",
+     "gnis:feature_id": "1033484",
+     "icao": "KHZE",
+     "name": "Mercer County Regional Airport",
+     "name:en": "Mercer County Regional Airport",
+     "name_1": "Hazen Municipal Airport",
+     "operator": "Mercer County Regional Airport Authority",
+     "operator:type": "public",
+     "source": "ESRI;approximation",
+     "source_ref": "geonames.usgs.gov",
+     "wikidata": "Q651629",
+     "wikipedia": "en:Mercer County Regional Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: MERCER COUNTY RGNL (FAA HZE, public, O) 307 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2025.7,
+     "area_m2": 1050456.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_120745055",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_120745055_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_120745055:sentinel2",
+   "osm_way_120745055:osm",
+   "osm_way_120745055:sources",
+   "osm_way_120745055:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto Internacional Xoxocotl\u00e1n",
+    "tags": {
+     "aerodrome:type": "public",
+     "aeroway": "aerodrome",
+     "alt_name": "Aeropuerto Internacional de Oaxaca",
+     "closest_town": "Oaxaca, Oaxaca",
+     "ele": "1521",
+     "iata": "OAX",
+     "icao": "MMOX",
+     "int_name": "Xoxocotl\u00e1n International Airport",
+     "name": "Aeropuerto Internacional Xoxocotl\u00e1n",
+     "name:es": "Aeropuerto Internacional Xoxocotl\u00e1n",
+     "name:pl": "Port lotniczy Oaxaca-Xoxocotl\u00e1n",
+     "operator": "Aeropurertos del Sureste (ASUR)",
+     "phone": "+529515016440",
+     "ref": "OAX",
+     "source": "wikipedia",
+     "website": "www.asur.com.mx/Contenido/Oaxaca",
+     "wikidata": "Q1432218",
+     "wikipedia": "es:Aeropuerto Internacional Xoxocotl\u00e1n"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3196.3,
+     "area_m2": 1836248.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_245746196",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_245746196_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_245746196:sentinel2",
+   "osm_way_245746196:osm",
+   "osm_way_245746196:sources",
+   "osm_way_245746196:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto Internacional del Caribe Santiago Mari\u00f1o",
+    "tags": {
+     "addr:city": "Porlamar",
+     "addr:country": "VE",
+     "addr:postcode": "6320",
+     "addr:state": "Nueva Esparta",
+     "aerodrome": "international",
+     "aerodrome:type": "public",
+     "aeroway": "aerodrome",
+     "alt_name": "Del Caribe Santiago Marino International Airport",
+     "closest_town": "Porlamar",
+     "ele": "23",
+     "gnis:feature_type": "airport",
+     "iata": "PMV",
+     "icao": "SVMG",
+     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/International_Airport_Santiago_Mari%C3%B1o.jpg/275px-International_Airport_Santiago_Mari%C3%B1o.jpg",
+     "image:0": "https://photos.google.com/search/DSC02583/photo/AF1QipO4jLrFs3J243gv3MkuzZMY-hIHEMkf9bjYNjov",
+     "internet_access": "yes",
+     "internet_access:fee": "no",
+     "name": "Aeropuerto Internacional del Caribe Santiago Mari\u00f1o",
+     "name:en": "Santiago Mari\u00f1o Caribbean International Airport",
+     "name:ru": "\u0410\u044d\u0440\u043e\u043f\u043e\u0440\u0442 \u0418\u043d\u0442\u0435\u0440\u043d\u0430\u0441\u044c\u043e\u043d\u0430\u043b\u044c \u0425\u0435\u043d\u0435\u0440\u0430\u043b\u044c \u044d\u043d \u0425\u0435\u0444\u0435 \u0421\u0430\u043d\u0442\u044c\u044f\u0433\u043e \u041c\u0430\u0440\u0438\u043d\u044c\u043e",
+     "operator": "Servicio Aut\u00f3nomo de Aeropuertos del Estado Nueva Esparta",
+     "phone": "+58 295 4005050",
+     "source": "wikipedia",
+     "type": "civil",
+     "url": "https://youtu.be/fVeszfgZUGM",
+     "website": "https://www.aeropuertos.net/aeropuerto-internacional-del-caribe-santiago-marino/",
+     "wheelchair": "yes",
+     "wikidata": "Q1655978",
+     "wikipedia": "es:Aeropuerto Internacional del Caribe Santiago Mari\u00f1o"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 4043.0,
+     "area_m2": 2589479.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_408989868",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_408989868_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_408989868:sentinel2",
+   "osm_way_408989868:osm",
+   "osm_way_408989868:sources",
+   "osm_way_408989868:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto Antoine de Saint-Exup\u00e9ry",
+    "tags": {
+     "aeroway": "aerodrome",
+     "ele": "26",
+     "iata": "OES",
+     "icao": "SAVN",
+     "name": "Aeropuerto Antoine de Saint-Exup\u00e9ry",
+     "name:en": "Antoine de Saint Exup\u00e9ry Airport",
+     "wikidata": "Q65335",
+     "wikipedia": "es:Aeropuerto Antoine de Saint-Exup\u00e9ry"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3237.1,
+     "area_m2": 4528913.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_150560836",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_150560836_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_150560836:sentinel2",
+   "osm_way_150560836:osm",
+   "osm_way_150560836:sources",
+   "osm_way_150560836:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Bandar Udara Frans Kaisiepo",
+    "tags": {
+     "aerodrome:type": "international",
+     "aeroway": "aerodrome",
+     "ele": "14",
+     "iata": "BIK",
+     "icao": "WABB",
+     "name": "Bandar Udara Frans Kaisiepo",
+     "name:en": "Frans Kaisiepo International Airport",
+     "name:etymology:wikidata": "Q3083011",
+     "name:etymology:wikipedia": "id:Frans Kaisiepo",
+     "operator": "PT. Angkasa Pura I",
+     "short_name": "Bandara Frans Kaisiepo",
+     "wikidata": "Q2134812",
+     "wikipedia": "id:Bandar Udara Internasional Frans Kaisiepo"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 4678.4,
+     "area_m2": 2230592.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_117655728",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_117655728_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_117655728:sentinel2",
+   "osm_way_117655728:osm",
+   "osm_way_117655728:sources",
+   "osm_way_117655728:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto Internacional Sierra Maestra",
+    "tags": {
+     "aerodrome:type": "international",
+     "aeroway": "aerodrome",
+     "alt_name": "Aeropuerto de Manzanillo",
+     "iata": "MZO",
+     "icao": "MUMZ",
+     "name": "Aeropuerto Internacional Sierra Maestra",
+     "name:en": "Sierra Maestra International Airport",
+     "name:ru": "\u041c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0439 \u0410\u044d\u0440\u043e\u043f\u043e\u0440\u0442 \u0421\u044c\u0435\u0440\u0440\u0430 \u041c\u0430\u044d\u0441\u0442\u0440\u0430 (\u041c\u0430\u043d\u0441\u0430\u043d\u0438\u043b\u044c\u043e)",
+     "operator": "ECASA",
+     "type": "civil",
+     "wikidata": "Q3498090",
+     "wikipedia": "en:Sierra Maestra Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: nothing within 4 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 4259.7,
+     "area_m2": 1280378.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_264304755",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_264304755_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_264304755:sentinel2",
+   "osm_way_264304755:osm",
+   "osm_way_264304755:sources",
+   "osm_way_264304755:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "A\u00e9roport de Cayenne - F\u00e9lix \u00c9bou\u00e9",
+    "tags": {
+     "aeroway": "aerodrome",
+     "ele": "8",
+     "iata": "CAY",
+     "icao": "SOCA",
+     "name": "A\u00e9roport de Cayenne - F\u00e9lix \u00c9bou\u00e9",
+     "name:en": "Cayenne - F\u00e9lix \u00c9bou\u00e9 Airport",
+     "name:etymology:wikidata": "Q989568",
+     "name:fr": "A\u00e9roport de Cayenne - F\u00e9lix \u00c9bou\u00e9",
+     "name:ja": "\u30ab\u30a4\u30a8\u30f3\u30cc\u30fb\u30d5\u30a7\u30ea\u30c3\u30af\u30b9\u30fb\u30a8\u30d6\u30a8\u7a7a\u6e2f",
+     "operator": "Soci\u00e9t\u00e9 Concessionnaire de l\u2019A\u00e9roport de Cayenne",
+     "source": "Union europ\u00e9enne - SOeS, CORINE Land Cover, 2012;wikipedia",
+     "website": "https://www.guyane.aeroport.fr",
+     "wikidata": "Q794542",
+     "wikipedia": "fr:A\u00e9roport international F\u00e9lix-\u00c9bou\u00e9"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 4658.1,
+     "area_m2": 2777570.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_27798095",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_27798095_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_27798095:sentinel2",
+   "osm_way_27798095:osm",
+   "osm_way_27798095:sources",
+   "osm_way_27798095:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "A\u00e9roport International de Ouagadougou",
+    "tags": {
+     "aerodrome:type": "international",
+     "aeroway": "aerodrome",
+     "alt_name": "Ouagadougou Airport",
+     "alt_name:ar": "\u0645\u0637\u0627\u0631 \u0648\u0627\u063a\u0627\u062f\u0648\u063a\u0648",
+     "ele": "316",
+     "iata": "OUA",
+     "icao": "DFFD",
+     "is_in:iso_3166_2": "BF-03",
+     "name": "A\u00e9roport International de Ouagadougou",
+     "name:ar": "\u0645\u0637\u0627\u0631 \u0648\u0627\u063a\u0627\u062f\u0648\u063a\u0648 \u0627\u0644\u062f\u0648\u0644\u064a",
+     "name:br": "Aerborzh Etrebroadel Ouagadougou",
+     "name:de": "Internationaler Flughafen Ouagadougou",
+     "name:en": "Ouagadougou International Airport",
+     "wikidata": "Q773547",
+     "wikipedia": "fr:A\u00e9roport international de Ouagadougou",
+     "wikipedia:ar": "\u0645\u0637\u0627\u0631 \u0648\u0627\u063a\u0627\u062f\u0648\u063a\u0648"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 4494.6,
+     "area_m2": 3882150.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_218812045",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_218812045_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_218812045:sentinel2",
+   "osm_way_218812045:osm",
+   "osm_way_218812045:sources",
+   "osm_way_218812045:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Albury Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "ele": "164",
+     "iata": "ABX",
+     "icao": "YMAY",
+     "name": "Albury Airport",
+     "website": "https://www.alburycity.nsw.gov.au/www/html/310-albury-airport.asp",
+     "wikidata": "Q17440",
+     "wikipedia": "en:Albury Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2750.1,
+     "area_m2": 1325054.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_591417777",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_591417777_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_591417777:sentinel2",
+   "osm_way_591417777:osm",
+   "osm_way_591417777:sources",
+   "osm_way_591417777:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeroporto Nacional De Barreirinhas - Senadora Roseana Sarney",
+    "tags": {
+     "aeroway": "aerodrome",
+     "iata": "BRB",
+     "icao": "SSRS",
+     "name": "Aeroporto Nacional De Barreirinhas - Senadora Roseana Sarney",
+     "name:en": "Barreirinhas Airport",
+     "source": "KDS",
+     "wikidata": "Q13581295",
+     "wikipedia": "pt:Aeroporto de Barreirinhas"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2224.4,
+     "area_m2": 1137634.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_616837990",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_616837990_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_616837990:sentinel2",
+   "osm_way_616837990:osm",
+   "osm_way_616837990:sources",
+   "osm_way_616837990:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Marfa Municipal Airport",
+    "tags": {
+     "addr:city": "Marfa",
+     "addr:housenumber": "45101",
+     "addr:postcode": "79843",
+     "addr:state": "TX",
+     "addr:street": "State Highway 17",
+     "aeroway": "aerodrome",
+     "ele": "1475",
+     "faa": "MRF",
+     "gnis:feature_id": "1387150",
+     "iata": "MRF",
+     "icao": "KMRF",
+     "name": "Marfa Municipal Airport",
+     "name:es": "Aeropuerto Municipal de Marfa",
+     "operator": "Presidio County",
+     "operator:es": "Condado de Presidio",
+     "source_ref": "geonames.usgs.gov",
+     "wikidata": "Q1031391"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: MARFA MUNI (FAA MRF, public, O) 82 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2301.8,
+     "area_m2": 2698792.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_462399206",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_462399206_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_462399206:sentinel2",
+   "osm_way_462399206:osm",
+   "osm_way_462399206:sources",
+   "osm_way_462399206:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "\u0645\u0637\u0627\u0631 \u0645\u0635\u0631\u0627\u062a\u0629 \u0627\u0644\u062f\u0648\u0644\u064a",
+    "tags": {
+     "aeroway": "aerodrome",
+     "ele": "10",
+     "iata": "MRA",
+     "icao": "HLMS",
+     "name": "\u0645\u0637\u0627\u0631 \u0645\u0635\u0631\u0627\u062a\u0629 \u0627\u0644\u062f\u0648\u0644\u064a",
+     "name:ar": "\u0645\u0637\u0627\u0631 \u0645\u0635\u0631\u0627\u062a\u0629 \u0627\u0644\u062f\u0648\u0644\u064a",
+     "name:en": "Misrata International Airport",
+     "operator": "LCAA",
+     "source": "https://www.world-airport-codes.com",
+     "wikidata": "Q41292"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 5604.2,
+     "area_m2": 7666657.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_367419479",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_367419479_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_367419479:sentinel2",
+   "osm_way_367419479:osm",
+   "osm_way_367419479:sources",
+   "osm_way_367419479:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Berseba Airfield",
+    "tags": {
+     "aeroway": "aerodrome",
+     "icao": "FYBR",
+     "name": "Berseba Airfield"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1812.1,
+     "area_m2": 812825.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_670263104",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_670263104_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_670263104:sentinel2",
+   "osm_way_670263104:osm",
+   "osm_way_670263104:sources",
+   "osm_way_670263104:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto Regional de Guerrero Negro",
+    "tags": {
+     "aerodrome:type": "regional",
+     "aeroway": "aerodrome",
+     "closest_town": "Guerrero Negro",
+     "ele": "18",
+     "faa": "MM58",
+     "fixme": "Carlos Fiesta",
+     "fuel": "none",
+     "iata": "GUB",
+     "icao": "MMGR",
+     "name": "Aeropuerto Regional de Guerrero Negro",
+     "name:en": "Guerrero Negro Airport",
+     "name_1": "Guerrero Negro",
+     "note": "parking, south east end",
+     "obstructions": "none",
+     "operator": "Exportadora de Sal S.A de C.V (ESSA), Military of Mexico",
+     "services": "hotel half mile",
+     "source": "wikipedia",
+     "surface": "rough paved",
+     "town": "one mile",
+     "wikidata": "Q430333",
+     "wikipedia": "es:Aeropuerto Regional de Guerrero Negro"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "FAA: nothing within 4 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2677.3,
+     "area_m2": 770861.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_216684886",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_216684886_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_216684886:sentinel2",
+   "osm_way_216684886:osm",
+   "osm_way_216684886:sources",
+   "osm_way_216684886:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "",
+    "tags": {
+     "aeroway": "aerodrome"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3921.3,
+     "area_m2": 973222.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1220642531",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1220642531_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1220642531:sentinel2",
+   "osm_way_1220642531:osm",
+   "osm_way_1220642531:sources",
+   "osm_way_1220642531:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto de Cutral C\u00f3",
+    "tags": {
+     "aeroway": "aerodrome",
+     "iata": "CUT",
+     "icao": "SAZW",
+     "name": "Aeropuerto de Cutral C\u00f3",
+     "name:en": "Cutral Co Airport",
+     "wikidata": "Q1656218",
+     "wikipedia": "es:Aeropuerto de Cutral C\u00f3"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1878.9,
+     "area_m2": 597160.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_874644536",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_874644536_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_874644536:sentinel2",
+   "osm_way_874644536:osm",
+   "osm_way_874644536:sources",
+   "osm_way_874644536:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto Internacional Cap. Scarlet Mart\u00ednez",
+    "tags": {
+     "aeroway": "aerodrome",
+     "iata": "RIH",
+     "icao": "MPSM",
+     "loc_name": "R\u00edo Hato",
+     "name": "Aeropuerto Internacional Cap. Scarlet Mart\u00ednez",
+     "note": "the local name is really the only name people refer to this airport.",
+     "source": "ourairports.com",
+     "wikidata": "Q7386320"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3189.7,
+     "area_m2": 1339616.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_292649086",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_292649086_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_292649086:sentinel2",
+   "osm_way_292649086:osm",
+   "osm_way_292649086:sources",
+   "osm_way_292649086:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Aeropuerto Internacional Capit\u00e1n FAP Carlos Mart\u00ednez de Pinillos",
+    "tags": {
+     "addr:street": "Ruta al Aeropuerto 104, Huanchaco",
+     "aerodrome:type": "international",
+     "aeroway": "aerodrome",
+     "closest_town": "Trujillo",
+     "contact:email": "mbarrueto@corpac.gob.pe;maria.cipriano@adp.com.pe",
+     "contact:fax": "+51 44 464147; +51 44 464224",
+     "contact:phone": "+51 44 464224; +51 44 464013; +51 44 464147",
+     "contact:website": "http://www.corpac.gob.pe/",
+     "ele": "32",
+     "iata": "TRU",
+     "icao": "SPRU",
+     "name": "Aeropuerto Internacional Capit\u00e1n FAP Carlos Mart\u00ednez de Pinillos",
+     "name:ceb": "Capit\u00e1n FAP Carlos Mart\u00ednez de Pinillos International Airport",
+     "name:en": "Capitan FAP Carlos Martinez De Pinillos International Airport",
+     "name:es": "Aeropuerto Internacional Capit\u00e1n FAP Carlos Mart\u00ednez de Pinillos",
+     "name:fa": "\u0641\u0631\u0648\u062f\u06af\u0627\u0647 \u0628\u06cc\u0646\u200c\u0627\u0644\u0645\u0644\u0644\u06cc \u06a9\u067e. \u0641\u0627\u067e \u06a9\u0627\u0631\u0644\u0648\u0648\u0633 \u0645\u0627\u0631\u062a\u06cc\u0646\u0632 \u062f\u0627 \u067e\u06cc\u0646\u06cc\u0644\u0648\u0633",
+     "name:fr": "A\u00e9roport international Capit\u00e1n FAP Carlos Martinez de Pinillos",
+     "name:ms": "Lapangan Terbang Cap Carlos Martinez De Pinillo",
+     "name:pl": "Port lotniczy Trujillo-Capitan FAP Carlos Martinez de Pinillos",
+     "name:pt": "Aeroporto Internacional Capit\u00e1n FAP Carlos Mart\u00ednez de Pinillos",
+     "name:tg": "\u0424\u0443\u0440\u0443\u0434\u0433\u043e\u04b3\u0438 \u0431\u0438\u043d\u200c\u0430\u043b\u043c\u0438\u043b\u0430\u043b\u04e3 \u043a\u043f. \u0444\u043e\u043f \u043a\u043e\u0440\u043b\u0443\u0432\u0441 \u043c\u043e\u0440\u0442\u0438\u043d\u0437 \u0434\u043e \u043f\u0438\u043d\u0438\u043b\u0443\u0441",
+     "name:vi": "S\u00e2n bay qu\u1ed1c t\u1ebf Cap. FAP Carlos Mart\u00ednez de Pinillos",
+     "operator": "Aeropuertos del Per\u00fa",
+     "owner": "CORPAC S.A.",
+     "source": "wikipedia",
+     "type": "public",
+     "website": "https://www.adp.com.pe/es/sede/trujillo",
+     "wikidata": "Q1433108",
+     "wikipedia": "es:Aeropuerto Internacional Capit\u00e1n FAP Carlos Mart\u00ednez de Pinillos"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 3393.9,
+     "area_m2": 1441170.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1393114494",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1393114494_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1393114494:sentinel2",
+   "osm_way_1393114494:osm",
+   "osm_way_1393114494:sources",
+   "osm_way_1393114494:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "transport.airport",
+    "name": "Tropicana Airport",
+    "tags": {
+     "aeroway": "aerodrome",
+     "icao": "YTRA",
+     "name": "Tropicana Airport"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2678.2,
+     "area_m2": 542696.8
+    },
+    "available": true
+   }
+  }
+ }
+]

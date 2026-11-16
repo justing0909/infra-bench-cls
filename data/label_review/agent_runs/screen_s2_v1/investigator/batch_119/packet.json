@@ -1,0 +1,4332 @@
+[
+ {
+  "id": "osm_way_331516078",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_331516078_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_331516078:sentinel2",
+   "osm_way_331516078:osm",
+   "osm_way_331516078:sources",
+   "osm_way_331516078:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Lusiwasi Lower Hydroelectric Power Station",
+    "tags": {
+     "building": "yes",
+     "landuse": "industrial",
+     "name": "Lusiwasi Lower Hydroelectric Power Station",
+     "operator": "ZESCO",
+     "operator:wikidata": "Q8063035",
+     "plant:method": "run-of-the-river",
+     "plant:output:electricity": "86 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "start_date": "1973"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 48.4,
+     "area_m2": 612.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1396157904",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1396157904_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1396157904:sentinel2",
+   "osm_way_1396157904:osm",
+   "osm_way_1396157904:sources",
+   "osm_way_1396157904:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Rosslyn Brewery CHP",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Rosslyn Brewery CHP",
+     "plant:method": "combustion",
+     "plant:output:electricity": "6 MW",
+     "plant:output:steam": "yes",
+     "plant:source": "gas",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 48.8,
+     "area_m2": 688.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_133972914",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_133972914_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_133972914:sentinel2",
+   "osm_way_133972914:osm",
+   "osm_way_133972914:sources",
+   "osm_way_133972914:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Yallourn W Power Station",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Yallourn W Power Station",
+     "plant:method": "combustion",
+     "plant:output:electricity": "1450 MW",
+     "plant:source": "coal",
+     "power": "plant",
+     "source": "Bing",
+     "wikidata": "Q8047501"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 588.1,
+     "area_m2": 231340.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_node_3110145145",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_3110145145_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_3110145145:sentinel2",
+   "osm_node_3110145145:osm",
+   "osm_node_3110145145:sources",
+   "osm_node_3110145145:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "abandoned": "yes",
+     "description": "Per information in 2013 this mini hydro had not been operational for some time .. but it was possibly still staffed?",
+     "generator:method": "water-storage",
+     "generator:source": "hydro",
+     "generator:type": "unknown",
+     "operator:type": "public",
+     "plant:type": "mini_hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_991781735",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_991781735_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_991781735:sentinel2",
+   "osm_way_991781735:osm",
+   "osm_way_991781735:sources",
+   "osm_way_991781735:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Geoplatanares",
+    "tags": {
+     "name": "Geoplatanares",
+     "operator": "Geoplatanares",
+     "plant:method": "thermal",
+     "plant:output:electricity": "35 MW",
+     "plant:source": "geothermal",
+     "power": "plant",
+     "source": "http://www.geoplatanares.hn/",
+     "website": "http://www.geoplatanares.hn/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 385.6,
+     "area_m2": 38435.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_252632829",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_252632829_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_252632829:sentinel2",
+   "osm_way_252632829:osm",
+   "osm_way_252632829:sources",
+   "osm_way_252632829:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Bater\u00eda Grupo Electr\u00f3geno Santiago Este",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Bater\u00eda Grupo Electr\u00f3geno Santiago Este",
+     "operator": "UNE \u2013 SEN",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "diesel",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 111.6,
+     "area_m2": 7453.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1187233450",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1187233450_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1187233450:sentinel2",
+   "osm_way_1187233450:osm",
+   "osm_way_1187233450:sources",
+   "osm_way_1187233450:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Jenema Gas Networks - Flemington",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Jenema Gas Networks - Flemington",
+     "operator": "Jenema",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "gas",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 33.1,
+     "area_m2": 230.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_330647382",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_330647382_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_330647382:sentinel2",
+   "osm_way_330647382:osm",
+   "osm_way_330647382:sources",
+   "osm_way_330647382:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Central Hidroel\u00e9ctrica Est\u00ed",
+    "tags": {
+     "building": "yes",
+     "name": "Central Hidroel\u00e9ctrica Est\u00ed",
+     "plant:output:electricity": "120 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "wikidata": "Q61448192"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 40.4,
+     "area_m2": 866.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_878259247",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_878259247_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_878259247:sentinel2",
+   "osm_way_878259247:osm",
+   "osm_way_878259247:sources",
+   "osm_way_878259247:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Bater\u00eda Grupo Electr\u00f3geno Refiner\u00eda Cienfuegos",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Bater\u00eda Grupo Electr\u00f3geno Refiner\u00eda Cienfuegos",
+     "operator": "UNE \u2013 SEN",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "oil",
+     "power": "plant",
+     "source": "https://www.unionelectrica.cu/1535-2/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 421.1,
+     "area_m2": 30250.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_131267165",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_131267165_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_131267165:sentinel2",
+   "osm_way_131267165:osm",
+   "osm_way_131267165:sources",
+   "osm_way_131267165:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Centrale Thermique de Jorf Lasfar",
+    "tags": {
+     "barrier": "wall",
+     "landuse": "industrial",
+     "name": "Centrale Thermique de Jorf Lasfar",
+     "name:en": "Jorf Lasfar Power Plant",
+     "name:fr": "Centrale Thermique de Jorf Lasfar",
+     "operator": "TAQA Morocco",
+     "plant:method": "combustion",
+     "plant:output:electricity": "2056 MW",
+     "plant:source": "coal",
+     "power": "plant",
+     "website": "https://www.taqamorocco.ma",
+     "wikidata": "Q20828761"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2315.4,
+     "area_m2": 731213.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1423854358",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1423854358_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1423854358:sentinel2",
+   "osm_way_1423854358:osm",
+   "osm_way_1423854358:sources",
+   "osm_way_1423854358:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Central Hidroelectrica Palomino",
+    "tags": {
+     "name": "Central Hidroelectrica Palomino",
+     "plant:source": "hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 128.7,
+     "area_m2": 4360.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_677718467",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_677718467_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_677718467:sentinel2",
+   "osm_way_677718467:osm",
+   "osm_way_677718467:sources",
+   "osm_way_677718467:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Bater\u00eda Grupo Electr\u00f3geno Santo Domingo",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Bater\u00eda Grupo Electr\u00f3geno Santo Domingo",
+     "operator": "UNE \u2013 SEN",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "diesel",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 102.2,
+     "area_m2": 4655.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_231177815",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_231177815_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_231177815:sentinel2",
+   "osm_way_231177815:osm",
+   "osm_way_231177815:sources",
+   "osm_way_231177815:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Planta Energas Puerto Escondido",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Planta Energas Puerto Escondido",
+     "operator": "Energas",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "gas",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 279.3,
+     "area_m2": 60971.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_366249341",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_366249341_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_366249341:sentinel2",
+   "osm_way_366249341:osm",
+   "osm_way_366249341:sources",
+   "osm_way_366249341:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Pindari Power Station",
+    "tags": {
+     "frequency": "50",
+     "generator:type": "francis_turbine",
+     "landuse": "industrial",
+     "name": "Pindari Power Station",
+     "operator": "AGL Energy",
+     "operator:wikidata": "Q292374",
+     "operator:wikipedia": "en:AGL Energy",
+     "plant:method": "water-storage",
+     "plant:output:electricity": "5.5 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "start_date": "2001"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 10.9,
+     "area_m2": 46.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1232514946",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1232514946_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1232514946:sentinel2",
+   "osm_way_1232514946:osm",
+   "osm_way_1232514946:sources",
+   "osm_way_1232514946:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "\u10d1\u10dd\u10d3\u10dd\u10e0\u10dc\u10d0 \u10f0\u10d4\u10e1\u10d8",
+    "tags": {
+     "landuse": "industrial",
+     "name": "\u10d1\u10dd\u10d3\u10dd\u10e0\u10dc\u10d0 \u10f0\u10d4\u10e1\u10d8",
+     "name:en": "Bodorna HPP",
+     "name:ka": "\u10d1\u10dd\u10d3\u10dd\u10e0\u10dc\u10d0 \u10f0\u10d4\u10e1\u10d8",
+     "operator": "\u10e8\u10de\u10e1 \"\u10ef\u10dd\u10e0\u10ef\u10d8\u10d0\u10dc \u10e3\u10dd\u10d7\u10d4\u10e0 \u10d4\u10dc\u10d3 \u10e4\u10d0\u10e3\u10d4\u10e0\u10d8\"",
+     "operator:en": "Georgian Water and Power LTD.",
+     "operator:phone": "+995 322 93 11 11",
+     "operator:ru": "\u041e\u041e\u041e \"\u0414\u0436\u043e\u0440\u0434\u0436\u0438\u0430\u043d \u0423\u043e\u0442\u0435\u0440 \u044d\u043d\u0434 \u041f\u0430\u0443\u044d\u0440\"",
+     "operator:twitter": "https://x.com/GeorgianWater",
+     "operator:type": "private",
+     "operator:website": "https://www.gwp.ge",
+     "operator:wikidata": "Q131340190",
+     "operator:youtube": "https://www.youtube.com/channel/UCqEjIwurRPKAXFp33EuM0ww",
+     "plant:method": "water-storage",
+     "plant:output:electricity": "2.5 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "source": "https://web.archive.org/web/20241128074356/https://www.gwp.ge/storage/wysiwygs/files/BodornaESIA_Georgian_V05.pdf",
+     "start_date": "2018-10-02",
+     "waterway": "dam"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 34.4,
+     "area_m2": 714.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_522802866",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_522802866_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_522802866:sentinel2",
+   "osm_way_522802866:osm",
+   "osm_way_522802866:sources",
+   "osm_way_522802866:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Termoel\u00e9ctrica Ernesto Guevara de la Serna",
+    "tags": {
+     "addr:street": "V\u00eda Blanca",
+     "landuse": "industrial",
+     "name": "Termoel\u00e9ctrica Ernesto Guevara de la Serna",
+     "nat_name": "Termoel\u00e9ctrica de Santa Cruz del Norte",
+     "operator": "UNE \u2013 SEN",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "oil",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2069.4,
+     "area_m2": 857005.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1425913527",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1425913527_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1425913527:sentinel2",
+   "osm_way_1425913527:osm",
+   "osm_way_1425913527:sources",
+   "osm_way_1425913527:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "landuse": "industrial",
+     "name:en": "Viralcool Castilho power station",
+     "plant:source": "biomass",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 197.6,
+     "area_m2": 31496.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_835627722",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_835627722_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_835627722:sentinel2",
+   "osm_way_835627722:osm",
+   "osm_way_835627722:sources",
+   "osm_way_835627722:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Central Los Molles",
+    "tags": {
+     "building": "industrial",
+     "name": "Central Los Molles",
+     "operator": "Enel",
+     "operator:wikidata": "Q651222",
+     "plant:method": "run-of-the-river",
+     "plant:output:electricity": "18 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "source": "https://infotecnica.coordinador.cl/",
+     "start_date": "1952-01-01"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 39.0,
+     "area_m2": 517.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_38748537",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_38748537_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_38748537:sentinel2",
+   "osm_way_38748537:osm",
+   "osm_way_38748537:sources",
+   "osm_way_38748537:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Termoel\u00e9ctrica Mariel M\u00e1ximo G\u00f3mez",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Termoel\u00e9ctrica Mariel M\u00e1ximo G\u00f3mez",
+     "name:en": "M\u00e1ximo G\u00f3mez Power Plant",
+     "operator": "UNE \u2013 SEN",
+     "plant:method": "combustion",
+     "plant:output:electricity": "400 MW",
+     "plant:source": "oil",
+     "power": "plant",
+     "short_name": "CTE M\u00e1ximo G\u00f3mez"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 619.4,
+     "area_m2": 123062.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1313567930",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1313567930_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1313567930:sentinel2",
+   "osm_way_1313567930:osm",
+   "osm_way_1313567930:sources",
+   "osm_way_1313567930:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "PLTMG MPP Manokwari",
+    "tags": {
+     "name": "PLTMG MPP Manokwari",
+     "plant:method": "combustion",
+     "plant:output:electricity": "20 MW",
+     "plant:source": "gas",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 109.3,
+     "area_m2": 10508.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_686049728",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_686049728_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_686049728:sentinel2",
+   "osm_way_686049728:osm",
+   "osm_way_686049728:sources",
+   "osm_way_686049728:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Owen Springs Power Station",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Owen Springs Power Station",
+     "operator": "Territory Generation",
+     "plant:method": "combustion",
+     "plant:output:electricity": "77 MW",
+     "plant:source": "gas",
+     "power": "plant",
+     "start_date": "2011",
+     "wikidata": "Q11994524"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 406.4,
+     "area_m2": 63235.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1498022018",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1498022018_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1498022018:sentinel2",
+   "osm_way_1498022018:osm",
+   "osm_way_1498022018:sources",
+   "osm_way_1498022018:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Cenetur",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Cenetur",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 221.9,
+     "area_m2": 42846.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_399357846",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_399357846_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_399357846:sentinel2",
+   "osm_way_399357846:osm",
+   "osm_way_399357846:sources",
+   "osm_way_399357846:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Termopuerto",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Termopuerto",
+     "plant:method": "combustion",
+     "plant:output:electricity": "73.7 MW",
+     "plant:source": "oil",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 303.4,
+     "area_m2": 60156.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1485906137",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1485906137_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1485906137:sentinel2",
+   "osm_way_1485906137:osm",
+   "osm_way_1485906137:sources",
+   "osm_way_1485906137:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "operator": "Instituto Costarricense de Electricidad",
+     "operator:short": "ICE",
+     "operator:wikidata": "Q3431114",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 27.5,
+     "area_m2": 341.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_87324834",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_87324834_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_87324834:sentinel2",
+   "osm_way_87324834:osm",
+   "osm_way_87324834:sources",
+   "osm_way_87324834:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Liapootah Power Station",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Liapootah Power Station",
+     "operator": "Hydro Tasmania",
+     "plant:output:electricity": "87.3 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "voltage": "11000",
+     "wikidata": "Q6540173"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 79.9,
+     "area_m2": 1686.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_node_4234617732",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_4234617732_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_4234617732:sentinel2",
+   "osm_node_4234617732:osm",
+   "osm_node_4234617732:sources",
+   "osm_node_4234617732:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_1011063818",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1011063818_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1011063818:sentinel2",
+   "osm_way_1011063818:osm",
+   "osm_way_1011063818:sources",
+   "osm_way_1011063818:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Casa de For\u00e7a da Pequena Central Hidrel\u00e9trica Vi\u00e7osa",
+    "tags": {
+     "addr:city": "Concei\u00e7\u00e3o do Castelo",
+     "addr:suburb": "Bicame",
+     "landuse": "industrial",
+     "name": "Casa de For\u00e7a da Pequena Central Hidrel\u00e9trica Vi\u00e7osa",
+     "operator": "STATKRAFT Energias Renov\u00e1veis S.A.",
+     "plant:method": "water-storage",
+     "plant:output:electricity": "4.5 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "start_date": "2001"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 28.7,
+     "area_m2": 423.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1464115570",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1464115570_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1464115570:sentinel2",
+   "osm_way_1464115570:osm",
+   "osm_way_1464115570:sources",
+   "osm_way_1464115570:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Palin II",
+    "tags": {
+     "name": "Palin II",
+     "plant:source": "hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 45.5,
+     "area_m2": 1542.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1068817277",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1068817277_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1068817277:sentinel2",
+   "osm_way_1068817277:osm",
+   "osm_way_1068817277:sources",
+   "osm_way_1068817277:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 23.1,
+     "area_m2": 510.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_835627709",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_835627709_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_835627709:sentinel2",
+   "osm_way_835627709:osm",
+   "osm_way_835627709:sources",
+   "osm_way_835627709:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Central Hidroel\u00e9ctrica Rucatayo",
+    "tags": {
+     "building": "industrial",
+     "name": "Central Hidroel\u00e9ctrica Rucatayo",
+     "operator": "Statkraft Chile",
+     "plant:method": "run-of-the-river",
+     "plant:output:electricity": "59.5 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "source": "https://infotecnica.coordinador.cl/",
+     "start_date": "2012-12-15",
+     "website": "https://www.statkraft.com/about-statkraft/where-we-operate/chile/rucatayo-hydropower-plant/",
+     "wikidata": "Q56374804",
+     "wikipedia": "es:Central hidroel\u00e9ctrica Rucatayo"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 55.6,
+     "area_m2": 1603.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1429084280",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1429084280_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1429084280:sentinel2",
+   "osm_way_1429084280:osm",
+   "osm_way_1429084280:sources",
+   "osm_way_1429084280:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "landuse": "industrial",
+     "name:en": "Usina Alto Alegre Floresta power station",
+     "plant:source": "biomass",
+     "power": "plant",
+     "source": "https://www.altoalegre.com.br/unidades/unidade-floresta/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 174.8,
+     "area_m2": 20394.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_586115388",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_586115388_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_586115388:sentinel2",
+   "osm_way_586115388:osm",
+   "osm_way_586115388:sources",
+   "osm_way_586115388:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "\u9ec4\u6cb3\u897f\u5b81\u70ed\u7535\u6709\u9650\u8d23\u4efb\u516c\u53f8",
+    "tags": {
+     "landuse": "industrial",
+     "name": "\u9ec4\u6cb3\u897f\u5b81\u70ed\u7535\u6709\u9650\u8d23\u4efb\u516c\u53f8",
+     "name:en": "Huaneng Xining power station",
+     "operator": "\u56fd\u5bb6\u7535\u6295-\u9ec4\u6cb3\u6c34\u7535",
+     "plant:method": "combustion",
+     "plant:output:electricity": "700 MW",
+     "plant:source": "coal",
+     "power": "plant",
+     "source": "https://www.gem.wiki/Huaneng_Xining_power_station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 690.1,
+     "area_m2": 217367.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1378064141",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1378064141_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1378064141:sentinel2",
+   "osm_way_1378064141:osm",
+   "osm_way_1378064141:sources",
+   "osm_way_1378064141:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "\u0413\u0422\u042d\u0421-96 \u042f\u0440\u0430\u043a\u0442\u0438\u043d\u0441\u043a\u043e\u0433\u043e \u043c\u0435\u0441\u0442\u043e\u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f",
+    "tags": {
+     "description": "\u041e\u0441\u043d\u043e\u0432\u043d\u043e\u0435 \u0442\u043e\u043f\u043b\u0438\u0432\u043e \u043f\u043e\u043f\u0443\u0442\u043d\u044b\u0439 \u043d\u0435\u0444\u0442\u044f\u043d\u043e\u0439 \u0433\u0430\u0437 \u0412\u0441\u043f\u043e\u043c\u043e\u0433\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u0442\u043e\u043f\u043b\u0438\u0432\u043e \u0434\u0438\u0437\u0435\u043b\u044c\u043d\u043e\u0435 \u0442\u043e\u043f\u043b\u0438\u0432\u043e",
+     "landuse": "industrial",
+     "name": "\u0413\u0422\u042d\u0421-96 \u042f\u0440\u0430\u043a\u0442\u0438\u043d\u0441\u043a\u043e\u0433\u043e \u043c\u0435\u0441\u0442\u043e\u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f",
+     "plant:method": "combustion",
+     "plant:output:electricity": "96 MW",
+     "plant:source": "gas",
+     "power": "plant",
+     "source:url": "https://energybase.ru/power-plant/energycenter-yaraktinskogo-oilfield",
+     "start_date": "2017"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 273.9,
+     "area_m2": 41849.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_31394853",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_31394853_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_31394853:sentinel2",
+   "osm_way_31394853:osm",
+   "osm_way_31394853:sources",
+   "osm_way_31394853:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "fixme": "does the plant extend further south or is that another power plant?",
+     "landuse": "industrial",
+     "operator": "Electricidad de Cortes (ELCOSA)",
+     "plant:source": "oil",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 260.5,
+     "area_m2": 51802.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_175890437",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_175890437_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_175890437:sentinel2",
+   "osm_way_175890437:osm",
+   "osm_way_175890437:sources",
+   "osm_way_175890437:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Centrale hydro\u00e9lectrique d'El Kansara",
+    "tags": {
+     "name": "Centrale hydro\u00e9lectrique d'El Kansara",
+     "plant:method": "water-storage",
+     "plant:output:electricity": "14 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "source": "http://www.masen.ma/fr/projets",
+     "start_date": "1935"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 97.7,
+     "area_m2": 3109.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_634994429",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_634994429_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_634994429:sentinel2",
+   "osm_way_634994429:osm",
+   "osm_way_634994429:sources",
+   "osm_way_634994429:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Pequena Central Hidrel\u00e9trica Rondon",
+    "tags": {
+     "building": "service",
+     "name": "Pequena Central Hidrel\u00e9trica Rondon",
+     "plant:source": "hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 39.4,
+     "area_m2": 632.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_598538099",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_598538099_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_598538099:sentinel2",
+   "osm_way_598538099:osm",
+   "osm_way_598538099:sources",
+   "osm_way_598538099:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Port Lincoln Power Station",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Port Lincoln Power Station",
+     "operator": "Synergen Power Pty Limited",
+     "plant:method": "combustion",
+     "plant:output:electricity": "73 MW",
+     "plant:source": "diesel",
+     "power": "plant",
+     "ref": "PORTLCN"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 200.1,
+     "area_m2": 8691.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1352626540",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1352626540_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1352626540:sentinel2",
+   "osm_way_1352626540:osm",
+   "osm_way_1352626540:sources",
+   "osm_way_1352626540:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Centrale Hydro\u00e9lectrique de Kayenzi",
+    "tags": {
+     "building": "industrial",
+     "name": "Centrale Hydro\u00e9lectrique de Kayenzi",
+     "name:en": "Kayenzi Hydroelectric Power Station",
+     "operator": "REGIDESO",
+     "plant:method": "run-of-the-river",
+     "plant:output:electricity": "0.85 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "start_date": "1984",
+     "wikidata": "Q130218631"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 18.6,
+     "area_m2": 244.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_846106319",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_846106319_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_846106319:sentinel2",
+   "osm_way_846106319:osm",
+   "osm_way_846106319:sources",
+   "osm_way_846106319:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Imangara Power Station",
+    "tags": {
+     "barrier": "fence",
+     "landuse": "industrial",
+     "name": "Imangara Power Station",
+     "operator": "Power and Water",
+     "operator:wikidata": "Q7236467",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "diesel",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 40.2,
+     "area_m2": 1596.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_224224091",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_224224091_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_224224091:sentinel2",
+   "osm_way_224224091:osm",
+   "osm_way_224224091:sources",
+   "osm_way_224224091:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Neerabup Power Station",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Neerabup Power Station",
+     "plant:method": "combustion",
+     "plant:output:electricity": "330 MW",
+     "plant:source": "gas",
+     "power": "plant",
+     "wikidata": "Q11991074"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 249.6,
+     "area_m2": 25538.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1093238758",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1093238758_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1093238758:sentinel2",
+   "osm_way_1093238758:osm",
+   "osm_way_1093238758:sources",
+   "osm_way_1093238758:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "building": "yes",
+     "plant:source": "biomass",
+     "power": "plant",
+     "source": "Nordrhein-Westfalen digitales Orthophoto"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 24.3,
+     "area_m2": 464.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_174435064",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_174435064_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_174435064:sentinel2",
+   "osm_way_174435064:osm",
+   "osm_way_174435064:sources",
+   "osm_way_174435064:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Devils Gate Power Station",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Devils Gate Power Station",
+     "operator": "Hydro Tasmania",
+     "plant:output:electricity": "63 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "ref": "DG",
+     "voltage": "110000;11000",
+     "wikidata": "Q5267403"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 34.4,
+     "area_m2": 689.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_node_9466552931",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_node_9466552931_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_node_9466552931:sentinel2",
+   "osm_node_9466552931:osm",
+   "osm_node_9466552931:sources",
+   "osm_node_9466552931:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Central Hidroel\u00e9ctrica Edwin F\u00e1brega",
+    "tags": {
+     "alt_name": "Central Hidroel\u00e9ctrica Fortuna",
+     "building": "industrial",
+     "layer": "-1",
+     "location": "underground",
+     "name": "Central Hidroel\u00e9ctrica Edwin F\u00e1brega",
+     "plant:output:electricity": "300 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "wikidata": "Q11966580"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_241542794",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_241542794_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_241542794:sentinel2",
+   "osm_way_241542794:osm",
+   "osm_way_241542794:sources",
+   "osm_way_241542794:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Centrale hydro\u00e9lectrique de Bagr\u00e9",
+    "tags": {
+     "building": "yes",
+     "landuse": "industrial",
+     "name": "Centrale hydro\u00e9lectrique de Bagr\u00e9",
+     "plant:output:electricity": "16 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "wikidata": "Q20089011"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 35.9,
+     "area_m2": 861.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_738223019",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_738223019_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_738223019:sentinel2",
+   "osm_way_738223019:osm",
+   "osm_way_738223019:sources",
+   "osm_way_738223019:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "\u6c5f\u82cf\u961a\u5c71\u53d1\u7535\u6709\u9650\u516c\u53f8",
+    "tags": {
+     "landuse": "industrial",
+     "name": "\u6c5f\u82cf\u961a\u5c71\u53d1\u7535\u6709\u9650\u516c\u53f8",
+     "name:en": "Kanshan power station",
+     "operator": "\u56fd\u5bb6\u80fd\u6e90-\u4e0a\u6d77\u7535\u529b/\u6c5f\u82cf\u56fd\u4fe1/\u5f90\u5dde\u77ff\u52a1",
+     "plant:method": "combustion",
+     "plant:output:electricity": "1200 MW",
+     "plant:source": "coal",
+     "power": "plant",
+     "source": "https://www.gem.wiki/Kanshan_power_station",
+     "wikidata": "Q11980069"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 969.6,
+     "area_m2": 656977.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_429375110",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_429375110_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_429375110:sentinel2",
+   "osm_way_429375110:osm",
+   "osm_way_429375110:sources",
+   "osm_way_429375110:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Energuapi",
+    "tags": {
+     "barrier": "wall",
+     "generator:type": "reciprocating_engine",
+     "height": "2",
+     "landuse": "industrial",
+     "name": "Energuapi",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "diesel",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 50.3,
+     "area_m2": 1435.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_677517434",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_677517434_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_677517434:sentinel2",
+   "osm_way_677517434:osm",
+   "osm_way_677517434:sources",
+   "osm_way_677517434:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "landuse": "industrial",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "oil",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 22.7,
+     "area_m2": 425.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1082331532",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1082331532_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1082331532:sentinel2",
+   "osm_way_1082331532:osm",
+   "osm_way_1082331532:sources",
+   "osm_way_1082331532:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Central Hidroelectrica Mirolindo",
+    "tags": {
+     "addr:city": "Ibague",
+     "name": "Central Hidroelectrica Mirolindo",
+     "plant:method": "run-of-the-river",
+     "plant:output:electricity": "yes",
+     "plant:source": "hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 25.3,
+     "area_m2": 383.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1115089006",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1115089006_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1115089006:sentinel2",
+   "osm_way_1115089006:osm",
+   "osm_way_1115089006:sources",
+   "osm_way_1115089006:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Falcondo Nickel Mine Power Station",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Falcondo Nickel Mine Power Station",
+     "plant:method": "combustion",
+     "plant:output:electricity": "198 MW",
+     "plant:source": "oil",
+     "power": "plant",
+     "source": "https://incal.cummins.com/www/literature/casehistories/F-1580-Falcondo-en.pdf"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 253.2,
+     "area_m2": 54694.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_30903917",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_30903917_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_30903917:sentinel2",
+   "osm_way_30903917:osm",
+   "osm_way_30903917:sources",
+   "osm_way_30903917:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "\u51e4\u6ee9\u6c34\u7535\u7ad9",
+    "tags": {
+     "name": "\u51e4\u6ee9\u6c34\u7535\u7ad9",
+     "name:en": "Fengtan Dam",
+     "plant:output:electricity": "800 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "waterway": "dam",
+     "wikidata": "Q3376645"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 395.2,
+     "area_m2": 22158.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_664766246",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_664766246_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_664766246:sentinel2",
+   "osm_way_664766246:osm",
+   "osm_way_664766246:sources",
+   "osm_way_664766246:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Central de Ondjiva",
+    "tags": {
+     "name": "Central de Ondjiva",
+     "plant:method": "combustion",
+     "plant:output:electricity": "10.5 MW",
+     "plant:source": "diesel",
+     "power": "plant",
+     "source": "http://www.rnt.co.ao/pt/rede-de-transporte-de-electricidade/mapa-da-rede/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 101.1,
+     "area_m2": 10201.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_867575049",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_867575049_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_867575049:sentinel2",
+   "osm_way_867575049:osm",
+   "osm_way_867575049:sources",
+   "osm_way_867575049:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "landuse": "industrial",
+     "plant:output:electricity": "yes",
+     "plant:source": "hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 19.6,
+     "area_m2": 115.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1113456647",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1113456647_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1113456647:sentinel2",
+   "osm_way_1113456647:osm",
+   "osm_way_1113456647:sources",
+   "osm_way_1113456647:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "PMGD TER Curauma",
+    "tags": {
+     "landuse": "industrial",
+     "name": "PMGD TER Curauma",
+     "operator": "Tecnored S.A.",
+     "plant:method": "combustion",
+     "plant:output:electricity": "2.5 MW",
+     "plant:source": "diesel",
+     "power": "plant",
+     "source": "https://infotecnica.coordinador.cl/instalaciones/centrales",
+     "start_date": "2007-04-14"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 167.7,
+     "area_m2": 6603.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1067671126",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1067671126_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1067671126:sentinel2",
+   "osm_way_1067671126:osm",
+   "osm_way_1067671126:sources",
+   "osm_way_1067671126:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "\u901a\u8fbd\u970d\u6797\u6cb3\u5751\u53e3\u53d1\u7535\u6709\u9650\u8d23\u4efb\u516c\u53f8",
+    "tags": {
+     "landuse": "industrial",
+     "name": "\u901a\u8fbd\u970d\u6797\u6cb3\u5751\u53e3\u53d1\u7535\u6709\u9650\u8d23\u4efb\u516c\u53f8",
+     "name:en": "Tongliao Huolinhe Pithead Power Plant",
+     "operator": "\u56fd\u5bb6\u7535\u6295-\u7535\u6295\u80fd\u6e90",
+     "plant:method": "combustion",
+     "plant:output:electricity": "1200 MW",
+     "plant:source": "coal",
+     "power": "plant",
+     "source": "https://www.gem.wiki/Huolinhe_power_station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 784.4,
+     "area_m2": 334996.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1352909432",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1352909432_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1352909432:sentinel2",
+   "osm_way_1352909432:osm",
+   "osm_way_1352909432:sources",
+   "osm_way_1352909432:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Farahantsana 1",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Farahantsana 1",
+     "operator": "Tozzigreen",
+     "plant:method": "run-of-the-river",
+     "plant:output:electricity": "28 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "source:plant:output:electricity": "https://www.madagascar-tribune.com/La-centrale-hydroelectrique-de,27850"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 67.5,
+     "area_m2": 1388.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_980497741",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_980497741_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_980497741:sentinel2",
+   "osm_way_980497741:osm",
+   "osm_way_980497741:sources",
+   "osm_way_980497741:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Peepimenarti Power Station",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Peepimenarti Power Station",
+     "operator": "Power and Water",
+     "operator:wikidata": "Q7236467",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "diesel",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 61.6,
+     "area_m2": 1255.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1423854371",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1423854371_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1423854371:sentinel2",
+   "osm_way_1423854371:osm",
+   "osm_way_1423854371:sources",
+   "osm_way_1423854371:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Planta Hidroelectrica Constanza Rio Grande",
+    "tags": {
+     "name": "Planta Hidroelectrica Constanza Rio Grande",
+     "plant:source": "hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 45.3,
+     "area_m2": 1363.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1315306569",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1315306569_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1315306569:sentinel2",
+   "osm_way_1315306569:osm",
+   "osm_way_1315306569:sources",
+   "osm_way_1315306569:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Hazlewood BESS",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Hazlewood BESS",
+     "plant:method": "battery-storage",
+     "plant:output:electricity": "150 MW",
+     "plant:source": "battery",
+     "plant:storage": "150 MWh",
+     "plant:type": "lithium_ion",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 208.1,
+     "area_m2": 21456.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_766393167",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_766393167_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_766393167:sentinel2",
+   "osm_way_766393167:osm",
+   "osm_way_766393167:sources",
+   "osm_way_766393167:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Gjesing Varmev\u00e6rk",
+    "tags": {
+     "barrier": "fence",
+     "landuse": "industrial",
+     "name": "Gjesing Varmev\u00e6rk",
+     "operator": "DINforsyning",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:output:hot_water": "28 MW",
+     "plant:source": "oil",
+     "power": "plant",
+     "start_date": "1963",
+     "website": "https://dinforsyning.dk/da-dk/varme/om-vores-varme"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 106.5,
+     "area_m2": 5334.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_632700977",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_632700977_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_632700977:sentinel2",
+   "osm_way_632700977:osm",
+   "osm_way_632700977:sources",
+   "osm_way_632700977:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Central hidroel\u00e9ctrica La Guaca",
+    "tags": {
+     "name": "Central hidroel\u00e9ctrica La Guaca",
+     "operator": "Enel",
+     "operator:wikidata": "Q651222",
+     "plant:output:electricity": "324 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "source": "BING;https://www.enel.com.co/es/conoce-enel/enel-generacion/centrales-electricas.html",
+     "wikidata": "Q19378687"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 314.8,
+     "area_m2": 54229.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1365860022",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1365860022_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1365860022:sentinel2",
+   "osm_way_1365860022:osm",
+   "osm_way_1365860022:sources",
+   "osm_way_1365860022:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Glennies Creek Power Station",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Glennies Creek Power Station",
+     "note": "Coal mine waste gas.",
+     "operator": "EDL",
+     "plant:method": "combustion",
+     "plant:output:electricity": "13 MW",
+     "plant:source": "gas",
+     "power": "plant",
+     "start_date": "2008",
+     "website": "https://edlenergy.com/what-we-do/waste-coal-mine-gas/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 107.9,
+     "area_m2": 7105.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1278640425",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1278640425_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1278640425:sentinel2",
+   "osm_way_1278640425:osm",
+   "osm_way_1278640425:sources",
+   "osm_way_1278640425:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "\ubc15\ub2ec\ud558\uc218\ucc98\ub9ac\uc7a5 \ubc14\uc774\uc624",
+    "tags": {
+     "landuse": "industrial",
+     "name": "\ubc15\ub2ec\ud558\uc218\ucc98\ub9ac\uc7a5 \ubc14\uc774\uc624",
+     "operator": "\uc548\uc591\uc2dc",
+     "plant:method": "anaerobic_digestion",
+     "plant:output:electricity": "2.664 MW",
+     "plant:source": "biogas",
+     "power": "plant",
+     "source": "survey;aerial imagery",
+     "start_date": "2016-12-01"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 156.7,
+     "area_m2": 21048.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1429074600",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1429074600_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1429074600:sentinel2",
+   "osm_way_1429074600:osm",
+   "osm_way_1429074600:sources",
+   "osm_way_1429074600:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "landuse": "industrial",
+     "name:en": "Da Mata 2 power station",
+     "plant:source": "biomass",
+     "power": "plant",
+     "source": "https://www.gem.wiki/Da_Mata_2_power_station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 325.3,
+     "area_m2": 92342.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_599967436",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_599967436_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_599967436:sentinel2",
+   "osm_way_599967436:osm",
+   "osm_way_599967436:sources",
+   "osm_way_599967436:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "\u534e\u80fd\u56fd\u9645\u7535\u529b\u80a1\u4efd\u6709\u9650\u516c\u53f8\u4e39\u4e1c\u7535\u5382",
+    "tags": {
+     "landuse": "industrial",
+     "name": "\u534e\u80fd\u56fd\u9645\u7535\u529b\u80a1\u4efd\u6709\u9650\u516c\u53f8\u4e39\u4e1c\u7535\u5382",
+     "name:en": "Huaneng Dandong power station",
+     "operator": "\u4e2d\u56fd\u534e\u80fd-\u534e\u80fd\u56fd\u9645",
+     "plant:method": "combustion",
+     "plant:output:electricity": "700 MW",
+     "plant:source": "coal",
+     "power": "plant",
+     "source": "https://www.gem.wiki/Dandong_power_station",
+     "wikidata": "Q11975978"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1383.1,
+     "area_m2": 450013.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_696407973",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_696407973_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_696407973:sentinel2",
+   "osm_way_696407973:osm",
+   "osm_way_696407973:sources",
+   "osm_way_696407973:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Termorio",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Termorio",
+     "old_name": "UTE Governador Leonel Brizola",
+     "operator": "Petroleo Brasileiro S.A",
+     "plant:method": "combustion",
+     "plant:output:electricity": "1058 MW",
+     "plant:source": "gas",
+     "power": "plant",
+     "source": "https://www.gem.wiki/Governador_Leonel_Brizola_power_station",
+     "wikidata": "Q12005580"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 496.7,
+     "area_m2": 102790.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_972982998",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_972982998_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_972982998:sentinel2",
+   "osm_way_972982998:osm",
+   "osm_way_972982998:sources",
+   "osm_way_972982998:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Mahanagdong-B",
+    "tags": {
+     "name": "Mahanagdong-B",
+     "operator": "Energy Development Corporation",
+     "plant:output:electricity": "60 MW",
+     "plant:source": "geothermal",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 175.1,
+     "area_m2": 24683.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_750538486",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_750538486_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_750538486:sentinel2",
+   "osm_way_750538486:osm",
+   "osm_way_750538486:sources",
+   "osm_way_750538486:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "barrier": "wall",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 506.2,
+     "area_m2": 115712.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_755269694",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_755269694_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_755269694:sentinel2",
+   "osm_way_755269694:osm",
+   "osm_way_755269694:sources",
+   "osm_way_755269694:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "building": "yes",
+     "plant:source": "hydro",
+     "power": "plant",
+     "source": "maxar Premium"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 44.0,
+     "area_m2": 793.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1472071376",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1472071376_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1472071376:sentinel2",
+   "osm_way_1472071376:osm",
+   "osm_way_1472071376:sources",
+   "osm_way_1472071376:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "landuse": "industrial",
+     "name:en": "Tesla Kemerton power station",
+     "operator": "Tesla Kemerton Pty Ltd",
+     "plant:source": "diesel",
+     "power": "plant",
+     "website": "https://www.teslacorp.com.au/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 97.0,
+     "area_m2": 3362.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1321731663",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1321731663_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1321731663:sentinel2",
+   "osm_way_1321731663:osm",
+   "osm_way_1321731663:sources",
+   "osm_way_1321731663:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "\u0ec0\u0e82\u0eb7\u0ec8\u0ead\u0e99\u0ec4\u0e9f\u0e9f\u0ec9\u0eb2\u0e99\u0ecd\u0eb2\u0e87\u0ebd\u0e9a1 (\u0e9d\u0eb2\u0e8d\u0e97\u0e94\u0e99\u0ecd\u0eb2\u0ea5\u0ec9 \u0ec8 \u0ea1\u0ec0\u0e82\u0eb7\u0ec8\u0ead\u0e99)",
+    "tags": {
+     "name": "\u0ec0\u0e82\u0eb7\u0ec8\u0ead\u0e99\u0ec4\u0e9f\u0e9f\u0ec9\u0eb2\u0e99\u0ecd\u0eb2\u0e87\u0ebd\u0e9a1 (\u0e9d\u0eb2\u0e8d\u0e97\u0e94\u0e99\u0ecd\u0eb2\u0ea5\u0ec9 \u0ec8 \u0ea1\u0ec0\u0e82\u0eb7\u0ec8\u0ead\u0e99)",
+     "name:en": "Nam Ngiep1 (Copper Dam at the tail race)",
+     "plant:output:electricity": "18 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "start_date": "2019"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 44.7,
+     "area_m2": 1140.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_463732741",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_463732741_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_463732741:sentinel2",
+   "osm_way_463732741:osm",
+   "osm_way_463732741:sources",
+   "osm_way_463732741:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Harrington Generating Station",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Harrington Generating Station",
+     "operator": "Southwestern Public Service Co",
+     "plant:method": "combustion",
+     "plant:output:electricity": "1080 MW",
+     "plant:source": "coal",
+     "power": "plant",
+     "ref:US:EIA": "6193",
+     "source": "U.S. Energy Information Administration - EIA-860 - 2021",
+     "start_date": "1976-01",
+     "wikidata": "Q11974356"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: Harrington (coal, 1018 MW) 554 m away (matches OSM name)",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1621.4,
+     "area_m2": 2607805.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_841974996",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_841974996_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_841974996:sentinel2",
+   "osm_way_841974996:osm",
+   "osm_way_841974996:sources",
+   "osm_way_841974996:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Central Hidroel\u00e9ctrica Cochea",
+    "tags": {
+     "building": "yes",
+     "name": "Central Hidroel\u00e9ctrica Cochea",
+     "plant:output:electricity": "15.5 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "source": "https://www.hidromet.com.pa/es/cuencas-hidro-energeticas"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 39.7,
+     "area_m2": 684.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1429129221",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1429129221_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1429129221:sentinel2",
+   "osm_way_1429129221:osm",
+   "osm_way_1429129221:sources",
+   "osm_way_1429129221:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "landuse": "industrial",
+     "name:en": "Paranapanema Umoe Bioenergy power station",
+     "plant:source": "biomass",
+     "power": "plant",
+     "source": "https://www.gem.wiki/Paranapanema_power_station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 262.6,
+     "area_m2": 31935.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_192815999",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_192815999_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_192815999:sentinel2",
+   "osm_way_192815999:osm",
+   "osm_way_192815999:sources",
+   "osm_way_192815999:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Windorah Power Station",
+    "tags": {
+     "barrier": "fence",
+     "frequency": "50",
+     "landuse": "industrial",
+     "location": "outdoor",
+     "name": "Windorah Power Station",
+     "operator": "Ergon Energy",
+     "operator:wikidata": "Q5385825",
+     "plant:method": "combustion",
+     "plant:output:electricity": "750 kW",
+     "plant:source": "diesel",
+     "power": "plant",
+     "ref": "WIND",
+     "substation": "distribution",
+     "voltage": "22000"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 79.0,
+     "area_m2": 3911.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_533670872",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_533670872_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_533670872:sentinel2",
+   "osm_way_533670872:osm",
+   "osm_way_533670872:sources",
+   "osm_way_533670872:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "building": "yes",
+     "landuse": "industrial",
+     "operator": "LUMA Energy",
+     "plant:method": "combustion",
+     "plant:output:electricity": "42 MW",
+     "plant:source": "oil",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: Vega Baja (petroleum, 42 MW) 32 m away",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 28.3,
+     "area_m2": 441.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_653797047",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_653797047_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_653797047:sentinel2",
+   "osm_way_653797047:osm",
+   "osm_way_653797047:sources",
+   "osm_way_653797047:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "\u041a\u0430\u0446\u0435\u043b\u044c\u043d\u044f",
+    "tags": {
+     "building": "industrial",
+     "name": "\u041a\u0430\u0446\u0435\u043b\u044c\u043d\u044f",
+     "name:be": "\u041a\u0430\u0446\u0435\u043b\u044c\u043d\u044f",
+     "name:ru": "\u041a\u043e\u0442\u0435\u043b\u044c\u043d\u0430\u044f",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 30.7,
+     "area_m2": 313.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_727177390",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_727177390_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_727177390:sentinel2",
+   "osm_way_727177390:osm",
+   "osm_way_727177390:sources",
+   "osm_way_727177390:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Centrale hydro\u00e9lectrique de la Morge",
+    "tags": {
+     "building": "yes",
+     "name": "Centrale hydro\u00e9lectrique de la Morge",
+     "plant:method": "run-of-the-river",
+     "plant:output:electricity": "4.7 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "ref:EU:ENTSOE_EIC": "17W000000012298U",
+     "source": "Registre national des installations de production d'\u00e9lectricit\u00e9 et de stockage 2018"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 19.9,
+     "area_m2": 273.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1011323195",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1011323195_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1011323195:sentinel2",
+   "osm_way_1011323195:osm",
+   "osm_way_1011323195:sources",
+   "osm_way_1011323195:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Usina Hidrel\u00e9trica de Marimbondo",
+    "tags": {
+     "building": "industrial",
+     "name": "Usina Hidrel\u00e9trica de Marimbondo",
+     "operator": "Furnas Centrais El\u00e9tricas",
+     "plant:method": "water-storage",
+     "plant:output:electricity": "1440 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "source": "https://www.furnas.com.br/subsecao/125",
+     "wikidata": "Q10388425"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 250.4,
+     "area_m2": 5959.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_313930688",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_313930688_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_313930688:sentinel2",
+   "osm_way_313930688:osm",
+   "osm_way_313930688:sources",
+   "osm_way_313930688:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Bater\u00eda Grupo Electr\u00f3geno Agramonte",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Bater\u00eda Grupo Electr\u00f3geno Agramonte",
+     "operator": "UNE \u2013 SEN",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "oil",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 200.1,
+     "area_m2": 24129.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_855691270",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_855691270_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_855691270:sentinel2",
+   "osm_way_855691270:osm",
+   "osm_way_855691270:sources",
+   "osm_way_855691270:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Lunzua Hydroelectric Power Station",
+    "tags": {
+     "building": "industrial",
+     "name": "Lunzua Hydroelectric Power Station",
+     "operator": "ZESCO",
+     "operator:wikidata": "Q8063035",
+     "plant:method": "run-of-the-river",
+     "plant:output:electricity": "14.8 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "start_date": "1960"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 40.7,
+     "area_m2": 1116.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1156837628",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1156837628_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1156837628:sentinel2",
+   "osm_way_1156837628:osm",
+   "osm_way_1156837628:sources",
+   "osm_way_1156837628:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "The Nest Power Station",
+    "tags": {
+     "name": "The Nest Power Station",
+     "operator": "JPS",
+     "plant:method": "combustion",
+     "plant:output:electricity": "10 MW",
+     "plant:output:hot_water": "yes",
+     "plant:source": "gas",
+     "power": "plant",
+     "wikidata": "Q117270719"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 109.1,
+     "area_m2": 3970.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1102864054",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1102864054_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1102864054:sentinel2",
+   "osm_way_1102864054:osm",
+   "osm_way_1102864054:sources",
+   "osm_way_1102864054:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "addr:housenumber": "4 \u04411",
+     "addr:street": "\u0443\u043b\u0438\u0446\u0430 \u0410\u043d\u0430\u0442\u043e\u043b\u0438\u044f \u041a\u043b\u0438\u043d\u0434\u044e\u043a\u0430",
+     "building": "industrial",
+     "building:levels": "1",
+     "plant:output:heat": "yes",
+     "plant:source": "gas",
+     "power": "plant",
+     "source:addr": "\u0415\u0413\u0420\u041d",
+     "start_date": "2022"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 16.8,
+     "area_m2": 279.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1470289164",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1470289164_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1470289164:sentinel2",
+   "osm_way_1470289164:osm",
+   "osm_way_1470289164:sources",
+   "osm_way_1470289164:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Piranhas",
+    "tags": {
+     "name": "Piranhas",
+     "plant:source": "hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 49.2,
+     "area_m2": 1310.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_697463387",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_697463387_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_697463387:sentinel2",
+   "osm_way_697463387:osm",
+   "osm_way_697463387:sources",
+   "osm_way_697463387:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Centrale Diesel BOUJDOUR ONEE",
+    "tags": {
+     "industrial": "oil",
+     "landuse": "industrial",
+     "name": "Centrale Diesel BOUJDOUR ONEE",
+     "operator": "ONEE - Branche Eau",
+     "operator:ar": "\u0627\u0644\u0645\u0643\u062a\u0628 \u0627\u0644\u0648\u0637\u0646\u064a \u0644\u0644\u0645\u0627\u0621 \u0627\u0644\u0635\u0627\u0644\u062d \u0644\u0644\u0634\u0631\u0628",
+     "operator:en": "National Office for Drinking Water",
+     "operator:fr": "Office national de l'eau potable",
+     "operator:wikidata": "Q3349648",
+     "operator:wikipedia": "ar:\u0627\u0644\u0645\u0643\u062a\u0628 \u0627\u0644\u0648\u0637\u0646\u064a \u0644\u0644\u0645\u0627\u0621 \u0627\u0644\u0635\u0627\u0644\u062d \u0644\u0644\u0634\u0631\u0628",
+     "plant:method": "combustion",
+     "plant:output:electricity": "3 MW",
+     "plant:source": "oil",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 240.4,
+     "area_m2": 43483.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_127867730",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_127867730_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_127867730:sentinel2",
+   "osm_way_127867730:osm",
+   "osm_way_127867730:sources",
+   "osm_way_127867730:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Planta Hidroelectrica Nuestro Amo",
+    "tags": {
+     "name": "Planta Hidroelectrica Nuestro Amo",
+     "plant:output:electricity": "yes",
+     "plant:source": "hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 27.0,
+     "area_m2": 368.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_315641722",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_315641722_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_315641722:sentinel2",
+   "osm_way_315641722:osm",
+   "osm_way_315641722:sources",
+   "osm_way_315641722:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Planta Palamara",
+    "tags": {
+     "alt_name": "Generadora Palamara",
+     "name": "Planta Palamara",
+     "operator": "Generadora Palamara - La Vega",
+     "plant:method": "combustion",
+     "plant:output:electricity": "106 MW",
+     "plant:source": "oil",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 289.4,
+     "area_m2": 38397.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_30841752",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_30841752_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_30841752:sentinel2",
+   "osm_way_30841752:osm",
+   "osm_way_30841752:sources",
+   "osm_way_30841752:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Planta Termoel\u00e9ctrica Bah\u00eda Las Minas",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Planta Termoel\u00e9ctrica Bah\u00eda Las Minas",
+     "operator": "Celsia",
+     "plant:method": "combustion",
+     "plant:output:electricity": "207 MW",
+     "plant:source": "coal;oil",
+     "power": "plant",
+     "source": "https://www.gem.wiki/Bah%C3%ADa_las_Minas_power_station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 657.2,
+     "area_m2": 186020.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_330685761",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_330685761_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_330685761:sentinel2",
+   "osm_way_330685761:osm",
+   "osm_way_330685761:sources",
+   "osm_way_330685761:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Planta Termoel\u00e9ctrica Pacora",
+    "tags": {
+     "generator:source": "oil",
+     "landuse": "industrial",
+     "name": "Planta Termoel\u00e9ctrica Pacora",
+     "name:en": "Pedregal Power Plant",
+     "operator": "Pedregal Power Company",
+     "plant:method": "combustion",
+     "plant:output:electricity": "52.5 MW",
+     "plant:source": "oil",
+     "power": "plant",
+     "start_date": "2003-01-01"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 279.5,
+     "area_m2": 53871.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_204836050",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_204836050_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_204836050:sentinel2",
+   "osm_way_204836050:osm",
+   "osm_way_204836050:sources",
+   "osm_way_204836050:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "landuse": "industrial",
+     "plant:method": "combustion",
+     "plant:output:electricity": "10.9 MW",
+     "plant:source": "oil",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 144.9,
+     "area_m2": 7126.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_969926777",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_969926777_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_969926777:sentinel2",
+   "osm_way_969926777:osm",
+   "osm_way_969926777:sources",
+   "osm_way_969926777:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "AES Gas Natural Atlantico",
+    "tags": {
+     "alt_name": "Central Costa Norte",
+     "landuse": "industrial",
+     "name": "AES Gas Natural Atlantico",
+     "operator": "AES",
+     "operator:wikidata": "Q291508",
+     "plant:method": "combustion",
+     "plant:output:electricity": "381 MW",
+     "plant:source": "gas",
+     "plant:type": "combined_cycle",
+     "power": "plant",
+     "source": "https://www.aespanama.com/en/global-x-local;https://www.gem.wiki/AES_Col%C3%B3n_power_station",
+     "wikidata": "Q30973074"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 274.1,
+     "area_m2": 48232.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1245603880",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1245603880_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1245603880:sentinel2",
+   "osm_way_1245603880:osm",
+   "osm_way_1245603880:sources",
+   "osm_way_1245603880:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "landuse": "industrial",
+     "operator": "Puerto Rico Electric Power Authority",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "oil",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA plant: Daguao (petroleum, 42 MW) 509 m away",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 96.8,
+     "area_m2": 5786.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_300070656",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_300070656_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_300070656:sentinel2",
+   "osm_way_300070656:osm",
+   "osm_way_300070656:sources",
+   "osm_way_300070656:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Central hidroel\u00e9ctrica Renace",
+    "tags": {
+     "building": "yes",
+     "name": "Central hidroel\u00e9ctrica Renace",
+     "plant:method": "water-storage",
+     "plant:output:electricity": "68.1 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "wikidata": "Q61448214"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 42.4,
+     "area_m2": 894.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_667236053",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_667236053_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_667236053:sentinel2",
+   "osm_way_667236053:osm",
+   "osm_way_667236053:sources",
+   "osm_way_667236053:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Hidroel\u00e9ctrica Bueycito",
+    "tags": {
+     "name": "Hidroel\u00e9ctrica Bueycito",
+     "operator": "UNE",
+     "plant:method": "water-storage",
+     "plant:output:electricity": "1.46 MW",
+     "plant:source": "hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 106.4,
+     "area_m2": 5802.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_768778622",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_768778622_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_768778622:sentinel2",
+   "osm_way_768778622:osm",
+   "osm_way_768778622:sources",
+   "osm_way_768778622:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Planta Central Alvorada",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Planta Central Alvorada",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "oil",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 296.9,
+     "area_m2": 43711.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1339362415",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1339362415_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1339362415:sentinel2",
+   "osm_way_1339362415:osm",
+   "osm_way_1339362415:sources",
+   "osm_way_1339362415:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Whitford Landfill Gas Power Station",
+    "tags": {
+     "generator:source": "biogas",
+     "landuse": "industrial",
+     "name": "Whitford Landfill Gas Power Station",
+     "plant:method": "combustion",
+     "plant:output:electricity": "yes",
+     "plant:source": "waste",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 61.2,
+     "area_m2": 2206.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_311267740",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_311267740_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_311267740:sentinel2",
+   "osm_way_311267740:osm",
+   "osm_way_311267740:sources",
+   "osm_way_311267740:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Ron Goodin Power Plant",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Ron Goodin Power Plant",
+     "operator": "Territory Generation",
+     "plant:method": "combustion",
+     "plant:output:electricity": "45 MW",
+     "plant:source": "gas",
+     "power": "plant",
+     "source": "https://www.industryabout.com/country-territories-3/1332-australia/fossil-fuels-energy/18974-ron-goodin-gas-power-plant",
+     "wikidata": "Q55888012"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 385.9,
+     "area_m2": 33584.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_102252987",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_102252987_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_102252987:sentinel2",
+   "osm_way_102252987:osm",
+   "osm_way_102252987:sources",
+   "osm_way_102252987:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Central hidroel\u00e9ctrica R\u00edo Macho",
+    "tags": {
+     "landuse": "industrial",
+     "name": "Central hidroel\u00e9ctrica R\u00edo Macho",
+     "operator": "ICE",
+     "operator:wikidata": "Q3431114",
+     "operator:wikipedia": "en:Instituto Costarricense de Electricidad",
+     "plant:output:electricity": "140 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "start_date": "1963",
+     "wikidata": "Q19387189"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 240.6,
+     "area_m2": 43828.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1156837625",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1156837625_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1156837625:sentinel2",
+   "osm_way_1156837625:osm",
+   "osm_way_1156837625:sources",
+   "osm_way_1156837625:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Rio Bueno Hydro Power Station",
+    "tags": {
+     "name": "Rio Bueno Hydro Power Station",
+     "operator": "JPS",
+     "plant:output:electricity": "yes",
+     "plant:source": "hydro",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 66.9,
+     "area_m2": 1758.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1396132163",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1396132163_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1396132163:sentinel2",
+   "osm_way_1396132163:osm",
+   "osm_way_1396132163:sources",
+   "osm_way_1396132163:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "",
+    "tags": {
+     "plant:method": "combustion",
+     "plant:source": "coal",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 561.1,
+     "area_m2": 89188.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1348059271",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1348059271_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1348059271:sentinel2",
+   "osm_way_1348059271:osm",
+   "osm_way_1348059271:sources",
+   "osm_way_1348059271:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.power_plant",
+    "name": "Central Geradora Hidrel\u00e9trica de Machado Mineiro",
+    "tags": {
+     "addr:city": "\u00c1guas Vermelhas",
+     "addr:suburb": "Machado Mineiro",
+     "name": "Central Geradora Hidrel\u00e9trica de Machado Mineiro",
+     "operator": "Cemig",
+     "plant:method": "run-of-the-river",
+     "plant:output:electricity": "1,72 MW",
+     "plant:source": "hydro",
+     "power": "plant",
+     "start_date": "1992"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 31.7,
+     "area_m2": 600.9
+    },
+    "available": true
+   }
+  }
+ }
+]

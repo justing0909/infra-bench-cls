@@ -1,0 +1,4094 @@
+[
+ {
+  "id": "osm_way_1272547761",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1272547761_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1272547761:sentinel2",
+   "osm_way_1272547761:osm",
+   "osm_way_1272547761:sources",
+   "osm_way_1272547761:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 182.9,
+     "area_m2": 10050.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_945768612",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_945768612_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_945768612:sentinel2",
+   "osm_way_945768612:osm",
+   "osm_way_945768612:sources",
+   "osm_way_945768612:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 83.3,
+     "area_m2": 3213.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1444714639",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1444714639_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1444714639:sentinel2",
+   "osm_way_1444714639:osm",
+   "osm_way_1444714639:sources",
+   "osm_way_1444714639:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 39.3,
+     "area_m2": 858.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_997700369",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_997700369_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_997700369:sentinel2",
+   "osm_way_997700369:osm",
+   "osm_way_997700369:sources",
+   "osm_way_997700369:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA: no plant within 1.5 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 49.0,
+     "area_m2": 1029.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_827012131",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_827012131_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_827012131:sentinel2",
+   "osm_way_827012131:osm",
+   "osm_way_827012131:sources",
+   "osm_way_827012131:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Kintore Solar Farm",
+    "tags": {
+     "barrier": "fence",
+     "name": "Kintore Solar Farm",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 153.9,
+     "area_m2": 10942.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_763975388",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_763975388_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_763975388:sentinel2",
+   "osm_way_763975388:osm",
+   "osm_way_763975388:sources",
+   "osm_way_763975388:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "old_ref:EU:ENTSOE_EIC": "17W000000034112B",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "0.633 MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "ref:EU:ENTSOE_EIC": "17W0000023445841",
+     "source": "Registre national des installations de production d'\u00e9lectricit\u00e9 et de stockage 2025",
+     "start_date": "2011-11-23"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 169.7,
+     "area_m2": 9391.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1356185111",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1356185111_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1356185111:sentinel2",
+   "osm_way_1356185111:osm",
+   "osm_way_1356185111:sources",
+   "osm_way_1356185111:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 237.0,
+     "area_m2": 15632.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1180681373",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1180681373_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1180681373:sentinel2",
+   "osm_way_1180681373:osm",
+   "osm_way_1180681373:sources",
+   "osm_way_1180681373:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 46.3,
+     "area_m2": 813.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1049633704",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1049633704_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1049633704:sentinel2",
+   "osm_way_1049633704:osm",
+   "osm_way_1049633704:sources",
+   "osm_way_1049633704:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Blue Grass Solar Farm",
+    "tags": {
+     "name": "Blue Grass Solar Farm",
+     "operator": "X-ELIO",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "148 MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "website": "https://x-elio.com/project/bluegrass/"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 2512.0,
+     "area_m2": 5274009.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1089956449",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1089956449_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1089956449:sentinel2",
+   "osm_way_1089956449:osm",
+   "osm_way_1089956449:sources",
+   "osm_way_1089956449:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 25.3,
+     "area_m2": 339.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1297672675",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1297672675_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1297672675:sentinel2",
+   "osm_way_1297672675:osm",
+   "osm_way_1297672675:sources",
+   "osm_way_1297672675:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Solar S\u00e3o Francisco",
+    "tags": {
+     "name": "Solar S\u00e3o Francisco",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 296.8,
+     "area_m2": 73094.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1197060066",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1197060066_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1197060066:sentinel2",
+   "osm_way_1197060066:osm",
+   "osm_way_1197060066:sources",
+   "osm_way_1197060066:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 229.2,
+     "area_m2": 20349.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_906980663",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_906980663_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_906980663:sentinel2",
+   "osm_way_906980663:osm",
+   "osm_way_906980663:sources",
+   "osm_way_906980663:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Caution: EIA plant: Harbec Energy (wind, 2 MW) 90 m away, not what solar_farm implies",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 127.4,
+     "area_m2": 4124.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1209431403",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1209431403_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1209431403:sentinel2",
+   "osm_way_1209431403:osm",
+   "osm_way_1209431403:sources",
+   "osm_way_1209431403:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Nh\u00e0 m\u00e1y \u0110i\u1ec7n M\u1eb7t tr\u1eddi Long Th\u00e0nh 1",
+    "tags": {
+     "barrier": "fence",
+     "name": "Nh\u00e0 m\u00e1y \u0110i\u1ec7n M\u1eb7t tr\u1eddi Long Th\u00e0nh 1",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "50 MWp",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1313.7,
+     "area_m2": 608185.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1056233804",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1056233804_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1056233804:sentinel2",
+   "osm_way_1056233804:osm",
+   "osm_way_1056233804:sources",
+   "osm_way_1056233804:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "PMGD PFV San Carlos Solar",
+    "tags": {
+     "name": "PMGD PFV San Carlos Solar",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 495.1,
+     "area_m2": 68679.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1413870878",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1413870878_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1413870878:sentinel2",
+   "osm_way_1413870878:osm",
+   "osm_way_1413870878:sources",
+   "osm_way_1413870878:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 98.4,
+     "area_m2": 5010.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1456780428",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1456780428_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1456780428:sentinel2",
+   "osm_way_1456780428:osm",
+   "osm_way_1456780428:sources",
+   "osm_way_1456780428:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 355.8,
+     "area_m2": 57625.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1330153418",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1330153418_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1330153418:sentinel2",
+   "osm_way_1330153418:osm",
+   "osm_way_1330153418:sources",
+   "osm_way_1330153418:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 80.6,
+     "area_m2": 3948.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1108047180",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1108047180_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1108047180:sentinel2",
+   "osm_way_1108047180:osm",
+   "osm_way_1108047180:sources",
+   "osm_way_1108047180:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Complexo Solar Jana\u00faba",
+    "tags": {
+     "barrier": "fence",
+     "name": "Complexo Solar Jana\u00faba",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1724.7,
+     "area_m2": 2032350.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1136172057",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1136172057_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1136172057:sentinel2",
+   "osm_way_1136172057:osm",
+   "osm_way_1136172057:sources",
+   "osm_way_1136172057:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 225.8,
+     "area_m2": 16383.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_430266023",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_430266023_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_430266023:sentinel2",
+   "osm_way_430266023:osm",
+   "osm_way_430266023:sources",
+   "osm_way_430266023:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "landuse": "industrial",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 158.2,
+     "area_m2": 9967.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1450158222",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1450158222_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1450158222:sentinel2",
+   "osm_way_1450158222:osm",
+   "osm_way_1450158222:sources",
+   "osm_way_1450158222:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA: no plant within 1.5 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 198.0,
+     "area_m2": 16789.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_770468764",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_770468764_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_770468764:sentinel2",
+   "osm_way_770468764:osm",
+   "osm_way_770468764:sources",
+   "osm_way_770468764:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "landuse": "industrial",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1974.7,
+     "area_m2": 974497.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_537536039",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_537536039_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_537536039:sentinel2",
+   "osm_way_537536039:osm",
+   "osm_way_537536039:sources",
+   "osm_way_537536039:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "frequency": "50",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 703.3,
+     "area_m2": 406781.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_928016374",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_928016374_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_928016374:sentinel2",
+   "osm_way_928016374:osm",
+   "osm_way_928016374:sources",
+   "osm_way_928016374:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "PFV Sol del Desierto",
+    "tags": {
+     "barrier": "fence",
+     "landuse": "industrial",
+     "name": "PFV Sol del Desierto",
+     "operator": "Parque Solar Fotovoltaico Sol del Desierto SpA",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "225.51 MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "source": "https://infotecnica.coordinador.cl/instalaciones/centrales",
+     "start_date": "2022-01-18"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 6462.3,
+     "area_m2": 4653532.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1312716446",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1312716446_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1312716446:sentinel2",
+   "osm_way_1312716446:osm",
+   "osm_way_1312716446:sources",
+   "osm_way_1312716446:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Batchelor Solar Farm",
+    "tags": {
+     "name": "Batchelor Solar Farm",
+     "operator": "ENI Australia",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 633.6,
+     "area_m2": 177319.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_974405239",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_974405239_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_974405239:sentinel2",
+   "osm_way_974405239:osm",
+   "osm_way_974405239:sources",
+   "osm_way_974405239:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "addr:city": "Dummerston",
+     "addr:postcode": "05301",
+     "addr:state": "VT",
+     "addr:street": "Stickney Brook Road",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant",
+     "ref:vcgi:esiteid": "1051190",
+     "source": "esri/Vermont_US_Addresses",
+     "vcgi:e911-addresses:esiteid": "1051190"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA: no plant within 1.5 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 124.6,
+     "area_m2": 5678.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_528932134",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_528932134_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_528932134:sentinel2",
+   "osm_way_528932134:osm",
+   "osm_way_528932134:sources",
+   "osm_way_528932134:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 278.4,
+     "area_m2": 42965.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1494567921",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1494567921_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1494567921:sentinel2",
+   "osm_way_1494567921:osm",
+   "osm_way_1494567921:sources",
+   "osm_way_1494567921:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "floating": "yes",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 116.3,
+     "area_m2": 6111.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1435037276",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1435037276_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1435037276:sentinel2",
+   "osm_way_1435037276:osm",
+   "osm_way_1435037276:sources",
+   "osm_way_1435037276:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 52.3,
+     "area_m2": 1462.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1023691174",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1023691174_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1023691174:sentinel2",
+   "osm_way_1023691174:osm",
+   "osm_way_1023691174:sources",
+   "osm_way_1023691174:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "EDESOLAR",
+    "tags": {
+     "barrier": "fence",
+     "codigo": "2020",
+     "name": "EDESOLAR",
+     "operator": "Grupo EDECSA",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "2.7 MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "start_date": "2020-02-01"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 355.2,
+     "area_m2": 66823.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1353491005",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1353491005_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1353491005:sentinel2",
+   "osm_way_1353491005:osm",
+   "osm_way_1353491005:sources",
+   "osm_way_1353491005:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Prieska",
+    "tags": {
+     "name": "Prieska",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 146.0,
+     "area_m2": 14470.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1432763190",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1432763190_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1432763190:sentinel2",
+   "osm_way_1432763190:osm",
+   "osm_way_1432763190:sources",
+   "osm_way_1432763190:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1764.5,
+     "area_m2": 833133.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1023691167",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1023691167_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1023691167:sentinel2",
+   "osm_way_1023691167:osm",
+   "osm_way_1023691167:sources",
+   "osm_way_1023691167:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Planta Fotovoltaica \"AURINKO\"",
+    "tags": {
+     "name": "Planta Fotovoltaica \"AURINKO\"",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 544.7,
+     "area_m2": 152105.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1274643602",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1274643602_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1274643602:sentinel2",
+   "osm_way_1274643602:osm",
+   "osm_way_1274643602:sources",
+   "osm_way_1274643602:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 102.4,
+     "area_m2": 5184.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1334294935",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1334294935_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1334294935:sentinel2",
+   "osm_way_1334294935:osm",
+   "osm_way_1334294935:sources",
+   "osm_way_1334294935:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 138.4,
+     "area_m2": 9737.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1265920887",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1265920887_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1265920887:sentinel2",
+   "osm_way_1265920887:osm",
+   "osm_way_1265920887:sources",
+   "osm_way_1265920887:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 172.2,
+     "area_m2": 26941.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1119250369",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1119250369_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1119250369:sentinel2",
+   "osm_way_1119250369:osm",
+   "osm_way_1119250369:sources",
+   "osm_way_1119250369:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Parque Fotovoltaico Caguagua",
+    "tags": {
+     "description": "8 800 paneles",
+     "name": "Parque Solar Fotovoltaico Caguagua",
+     "operator": "UNE \u2013 EMFRE",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "2.2 MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "ref": "PSFV"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 627.3,
+     "area_m2": 107679.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1513582586",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1513582586_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1513582586:sentinel2",
+   "osm_way_1513582586:osm",
+   "osm_way_1513582586:sources",
+   "osm_way_1513582586:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 128.9,
+     "area_m2": 6321.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_563499483",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_563499483_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_563499483:sentinel2",
+   "osm_way_563499483:osm",
+   "osm_way_563499483:sources",
+   "osm_way_563499483:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Parque Fotovoltaico Centro de Estudios de Energ\u00eda Solar",
+    "tags": {
+     "barrier": "fance",
+     "name": "Parque Solar Fotovoltaico Centro de Estudios de Energ\u00eda Solar",
+     "operator": "UNE \u2013 EMFRE",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "plant:type": "solar_photovoltaic_panel",
+     "power": "plant",
+     "ref": "PSFV"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 349.8,
+     "area_m2": 39317.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_857893405",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_857893405_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_857893405:sentinel2",
+   "osm_way_857893405:osm",
+   "osm_way_857893405:sources",
+   "osm_way_857893405:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Parque Fotovoltaico Rodas",
+    "tags": {
+     "name": "Parque Solar Fotovoltaico Rodas",
+     "operator": "UNE \u2013 EMFRE",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "2.4MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "ref": "PSFV"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 197.0,
+     "area_m2": 32085.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1322495616",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1322495616_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1322495616:sentinel2",
+   "osm_way_1322495616:osm",
+   "osm_way_1322495616:sources",
+   "osm_way_1322495616:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 58.9,
+     "area_m2": 2093.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1279066899",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1279066899_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1279066899:sentinel2",
+   "osm_way_1279066899:osm",
+   "osm_way_1279066899:sources",
+   "osm_way_1279066899:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 16.7,
+     "area_m2": 142.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_764880347",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_764880347_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_764880347:sentinel2",
+   "osm_way_764880347:osm",
+   "osm_way_764880347:sources",
+   "osm_way_764880347:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Coober Pedy Hybrid Renewable Power Station (Solar)",
+    "tags": {
+     "barrier": "fence",
+     "name": "Coober Pedy Hybrid Renewable Power Station (Solar)",
+     "operator": "EDL Energy",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "1 MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "start_date": "2019",
+     "website": "https://edlenergy.com/project/coober-pedy/",
+     "wikidata": "Q5166801",
+     "wikipedia": "en:Coober Pedy Solar Power Station"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 230.3,
+     "area_m2": 51114.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1009032007",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1009032007_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1009032007:sentinel2",
+   "osm_way_1009032007:osm",
+   "osm_way_1009032007:sources",
+   "osm_way_1009032007:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "description": "74210",
+     "landuse": "industrial",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "plant:type": "solar_photovoltaic_panel",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 360.4,
+     "area_m2": 93555.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1424668861",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1424668861_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1424668861:sentinel2",
+   "osm_way_1424668861:osm",
+   "osm_way_1424668861:sources",
+   "osm_way_1424668861:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1195.7,
+     "area_m2": 615660.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1513582582",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1513582582_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1513582582:sentinel2",
+   "osm_way_1513582582:osm",
+   "osm_way_1513582582:sources",
+   "osm_way_1513582582:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 133.6,
+     "area_m2": 4932.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1243084888",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1243084888_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1243084888:sentinel2",
+   "osm_way_1243084888:osm",
+   "osm_way_1243084888:sources",
+   "osm_way_1243084888:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 44.1,
+     "area_m2": 1765.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1369665610",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1369665610_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1369665610:sentinel2",
+   "osm_way_1369665610:osm",
+   "osm_way_1369665610:sources",
+   "osm_way_1369665610:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 28.8,
+     "area_m2": 707.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1349604268",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1349604268_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1349604268:sentinel2",
+   "osm_way_1349604268:osm",
+   "osm_way_1349604268:sources",
+   "osm_way_1349604268:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA: no plant within 1.5 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 246.6,
+     "area_m2": 36076.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1093503188",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1093503188_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1093503188:sentinel2",
+   "osm_way_1093503188:osm",
+   "osm_way_1093503188:sources",
+   "osm_way_1093503188:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA: no plant within 1.5 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 68.1,
+     "area_m2": 3369.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_506484527",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_506484527_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_506484527:sentinel2",
+   "osm_way_506484527:osm",
+   "osm_way_506484527:sources",
+   "osm_way_506484527:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 259.4,
+     "area_m2": 52546.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1510988470",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1510988470_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1510988470:sentinel2",
+   "osm_way_1510988470:osm",
+   "osm_way_1510988470:sources",
+   "osm_way_1510988470:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 50.9,
+     "area_m2": 2200.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1347715824",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1347715824_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1347715824:sentinel2",
+   "osm_way_1347715824:osm",
+   "osm_way_1347715824:sources",
+   "osm_way_1347715824:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Oro Solar",
+    "tags": {
+     "name": "Oro Solar",
+     "operator": "Oro Solar, S.A.",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "5 MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "start_date": "2022"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 868.0,
+     "area_m2": 140842.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1284301765",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1284301765_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1284301765:sentinel2",
+   "osm_way_1284301765:osm",
+   "osm_way_1284301765:sources",
+   "osm_way_1284301765:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 38.9,
+     "area_m2": 352.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1148117516",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1148117516_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1148117516:sentinel2",
+   "osm_way_1148117516:osm",
+   "osm_way_1148117516:sources",
+   "osm_way_1148117516:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Parque Solar Recoleta",
+    "tags": {
+     "barrier": "fence",
+     "landuse": "industrial",
+     "name": "Parque Solar Recoleta",
+     "operator": "Diego Almagro Solar 3 S.A",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "9 MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "start_date": "2022-06-29"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 435.5,
+     "area_m2": 95109.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1499689483",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1499689483_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1499689483:sentinel2",
+   "osm_way_1499689483:osm",
+   "osm_way_1499689483:sources",
+   "osm_way_1499689483:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "floating": "yes",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "24 kW",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 24.9,
+     "area_m2": 293.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_726956901",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_726956901_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_726956901:sentinel2",
+   "osm_way_726956901:osm",
+   "osm_way_726956901:sources",
+   "osm_way_726956901:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "PMGD Parque Fotovoltaico Panquehue 2",
+    "tags": {
+     "landuse": "industrial",
+     "name": "PMGD Parque Fotovoltaico Panquehue 2",
+     "operator": "GR Lingue SpA",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "6 MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "source": "https://infotecnica.coordinador.cl/instalaciones/centrales",
+     "start_date": "2017-10-18"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 687.1,
+     "area_m2": 121170.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_467985888",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_467985888_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_467985888:sentinel2",
+   "osm_way_467985888:osm",
+   "osm_way_467985888:sources",
+   "osm_way_467985888:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "frequency": "50",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 1489.9,
+     "area_m2": 984795.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1382103437",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1382103437_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1382103437:sentinel2",
+   "osm_way_1382103437:osm",
+   "osm_way_1382103437:sources",
+   "osm_way_1382103437:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 358.0,
+     "area_m2": 97776.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1233253780",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1233253780_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1233253780:sentinel2",
+   "osm_way_1233253780:osm",
+   "osm_way_1233253780:sources",
+   "osm_way_1233253780:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 18.7,
+     "area_m2": 232.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1422163953",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1422163953_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1422163953:sentinel2",
+   "osm_way_1422163953:osm",
+   "osm_way_1422163953:sources",
+   "osm_way_1422163953:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 205.6,
+     "area_m2": 9431.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1436338974",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1436338974_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1436338974:sentinel2",
+   "osm_way_1436338974:osm",
+   "osm_way_1436338974:sources",
+   "osm_way_1436338974:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 301.0,
+     "area_m2": 53682.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1459245460",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1459245460_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1459245460:sentinel2",
+   "osm_way_1459245460:osm",
+   "osm_way_1459245460:sources",
+   "osm_way_1459245460:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 166.5,
+     "area_m2": 13196.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1355577182",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1355577182_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1355577182:sentinel2",
+   "osm_way_1355577182:osm",
+   "osm_way_1355577182:sources",
+   "osm_way_1355577182:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 111.2,
+     "area_m2": 3599.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1172613050",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1172613050_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1172613050:sentinel2",
+   "osm_way_1172613050:osm",
+   "osm_way_1172613050:sources",
+   "osm_way_1172613050:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": null,
+    "available": false
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": null,
+    "available": false
+   }
+  }
+ },
+ {
+  "id": "osm_way_887668120",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_887668120_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_887668120:sentinel2",
+   "osm_way_887668120:osm",
+   "osm_way_887668120:sources",
+   "osm_way_887668120:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 130.7,
+     "area_m2": 8308.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1077395129",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1077395129_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1077395129:sentinel2",
+   "osm_way_1077395129:osm",
+   "osm_way_1077395129:sources",
+   "osm_way_1077395129:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "landuse": "industrial",
+     "operator": "Sonelgaz",
+     "operator:wikidata": "Q3490327",
+     "plant:method": "photovoltaic",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 354.9,
+     "area_m2": 101119.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_843572026",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_843572026_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_843572026:sentinel2",
+   "osm_way_843572026:osm",
+   "osm_way_843572026:sources",
+   "osm_way_843572026:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 55.7,
+     "area_m2": 2753.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1154176787",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1154176787_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1154176787:sentinel2",
+   "osm_way_1154176787:osm",
+   "osm_way_1154176787:sources",
+   "osm_way_1154176787:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant",
+     "source": "Maxar Premium"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 143.5,
+     "area_m2": 6245.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1159500036",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1159500036_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1159500036:sentinel2",
+   "osm_way_1159500036:osm",
+   "osm_way_1159500036:sources",
+   "osm_way_1159500036:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant",
+     "ref:US:EIA": "61659"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "Caution: EIA plant: Janssen Ortho LLC (petroleum, 19 MW) 638 m away, not what solar_farm implies",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 342.9,
+     "area_m2": 37615.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_580987489",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_580987489_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_580987489:sentinel2",
+   "osm_way_580987489:osm",
+   "osm_way_580987489:sources",
+   "osm_way_580987489:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Newsboro 4",
+    "tags": {
+     "name": "Newsboro 4",
+     "operator": "SunEdison",
+     "plant:output:electricity": "10 MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "start_date": "2014"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA: no plant within 1.5 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 818.5,
+     "area_m2": 430688.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_882002328",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_882002328_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_882002328:sentinel2",
+   "osm_way_882002328:osm",
+   "osm_way_882002328:sources",
+   "osm_way_882002328:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Parque Fotovoltaico R\u00edo Grande",
+    "tags": {
+     "barrier": "fence",
+     "name": "Parque Solar Fotovoltaico R\u00edo Grande",
+     "operator": "UNE \u2013 EMFRE",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "plant:type": "solar_photovoltaic_panel",
+     "power": "plant",
+     "ref": "PSFV"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 302.5,
+     "area_m2": 63606.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1110763882",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1110763882_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1110763882:sentinel2",
+   "osm_way_1110763882:osm",
+   "osm_way_1110763882:sources",
+   "osm_way_1110763882:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 152.9,
+     "area_m2": 5194.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1498368600",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1498368600_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1498368600:sentinel2",
+   "osm_way_1498368600:osm",
+   "osm_way_1498368600:sources",
+   "osm_way_1498368600:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Parque Solar Fotovoltaico Cumbre",
+    "tags": {
+     "name": "Parque Solar Fotovoltaico Cumbre",
+     "note": "approximate outline",
+     "operator": "UNE - EMFRE",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "21.875 MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "ref": "PSFV Cumbre",
+     "source": "https://www.ecured.cu/Parque_Solar_Fotovoltaico_Cumbre",
+     "start_date": "2026-1-16"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 957.5,
+     "area_m2": 300469.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_779991688",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_779991688_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_779991688:sentinel2",
+   "osm_way_779991688:osm",
+   "osm_way_779991688:sources",
+   "osm_way_779991688:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Usina Fontes Solar I",
+    "tags": {
+     "name": "Usina Fontes Solar I",
+     "operator": "Enel Solu\u00e7\u00f5es Energ\u00e9ticas Ltda.",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "10 MW",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 560.5,
+     "area_m2": 160417.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_788662097",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_788662097_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_788662097:sentinel2",
+   "osm_way_788662097:osm",
+   "osm_way_788662097:sources",
+   "osm_way_788662097:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA: no plant within 1.5 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 40.8,
+     "area_m2": 1261.5
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1458915645",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1458915645_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1458915645:sentinel2",
+   "osm_way_1458915645:osm",
+   "osm_way_1458915645:sources",
+   "osm_way_1458915645:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "landuse": "industrial",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 469.6,
+     "area_m2": 119515.4
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1467495460",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1467495460_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1467495460:sentinel2",
+   "osm_way_1467495460:osm",
+   "osm_way_1467495460:sources",
+   "osm_way_1467495460:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 634.2,
+     "area_m2": 131859.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1306353121",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1306353121_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1306353121:sentinel2",
+   "osm_way_1306353121:osm",
+   "osm_way_1306353121:sources",
+   "osm_way_1306353121:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "PMGD PFV Roma",
+    "tags": {
+     "landuse": "industrial",
+     "name": "PMGD PFV Roma",
+     "operator": "Parque Solar Roma",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "2.8 MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "source": "https://infotecnica.coordinador.cl/instalaciones/centrales",
+     "start_date": "2024-04-22"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 226.9,
+     "area_m2": 38019.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1268858015",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1268858015_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1268858015:sentinel2",
+   "osm_way_1268858015:osm",
+   "osm_way_1268858015:sources",
+   "osm_way_1268858015:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 292.0,
+     "area_m2": 69692.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1336281931",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1336281931_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1336281931:sentinel2",
+   "osm_way_1336281931:osm",
+   "osm_way_1336281931:sources",
+   "osm_way_1336281931:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "location": "surface",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 50.2,
+     "area_m2": 850.1
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1139057250",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1139057250_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1139057250:sentinel2",
+   "osm_way_1139057250:osm",
+   "osm_way_1139057250:sources",
+   "osm_way_1139057250:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Parque Fotovoltaico Solaris",
+    "tags": {
+     "name": "Parque Fotovoltaico Solaris",
+     "operator": "ENATREL",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "12 MW",
+     "plant:source": "solar",
+     "power": "plant",
+     "start_date": "2017"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 707.3,
+     "area_m2": 211908.0
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1499442504",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1499442504_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1499442504:sentinel2",
+   "osm_way_1499442504:osm",
+   "osm_way_1499442504:sources",
+   "osm_way_1499442504:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 122.3,
+     "area_m2": 11235.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_784002296",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_784002296_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_784002296:sentinel2",
+   "osm_way_784002296:osm",
+   "osm_way_784002296:sources",
+   "osm_way_784002296:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 125.8,
+     "area_m2": 1276.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1253459327",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1253459327_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1253459327:sentinel2",
+   "osm_way_1253459327:osm",
+   "osm_way_1253459327:sources",
+   "osm_way_1253459327:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "Parque Fotovoltaico Yab\u00fa 4",
+    "tags": {
+     "name": "Parque Solar Fotovoltaico Yab\u00fa 4",
+     "operator": "UNE \u2013 EMFRE",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant",
+     "ref": "PSFV"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 42.9,
+     "area_m2": 749.3
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_961074676",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_961074676_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_961074676:sentinel2",
+   "osm_way_961074676:osm",
+   "osm_way_961074676:sources",
+   "osm_way_961074676:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 59.9,
+     "area_m2": 1771.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1081210721",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1081210721_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1081210721:sentinel2",
+   "osm_way_1081210721:osm",
+   "osm_way_1081210721:sources",
+   "osm_way_1081210721:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "barrier": "fence",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA: no plant within 1.5 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 191.0,
+     "area_m2": 19994.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1120183132",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1120183132_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1120183132:sentinel2",
+   "osm_way_1120183132:osm",
+   "osm_way_1120183132:sources",
+   "osm_way_1120183132:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA: no plant within 1.5 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 154.7,
+     "area_m2": 16523.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1508774055",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1508774055_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1508774055:sentinel2",
+   "osm_way_1508774055:osm",
+   "osm_way_1508774055:sources",
+   "osm_way_1508774055:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "operator": "Comisi\u00f3n Federal de Electricidad",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 102.7,
+     "area_m2": 10148.8
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1203383117",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1203383117_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1203383117:sentinel2",
+   "osm_way_1203383117:osm",
+   "osm_way_1203383117:sources",
+   "osm_way_1203383117:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 136.7,
+     "area_m2": 8220.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1333561581",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1333561581_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1333561581:sentinel2",
+   "osm_way_1333561581:osm",
+   "osm_way_1333561581:sources",
+   "osm_way_1333561581:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 71.9,
+     "area_m2": 2462.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1375771475",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1375771475_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1375771475:sentinel2",
+   "osm_way_1375771475:osm",
+   "osm_way_1375771475:sources",
+   "osm_way_1375771475:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 49.5,
+     "area_m2": 968.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1015382929",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1015382929_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1015382929:sentinel2",
+   "osm_way_1015382929:osm",
+   "osm_way_1015382929:sources",
+   "osm_way_1015382929:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "\u03a6\u03c9\u03c4\u03bf\u03b2\u03bf\u03bb\u03c4\u03b1\u03ca\u03ba\u03cc \u03c0\u03ac\u03c1\u03ba\u03bf",
+    "tags": {
+     "name": "\u03a6\u03c9\u03c4\u03bf\u03b2\u03bf\u03bb\u03c4\u03b1\u03ca\u03ba\u03cc \u03c0\u03ac\u03c1\u03ba\u03bf",
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 176.1,
+     "area_m2": 7529.7
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_931911456",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_931911456_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_931911456:sentinel2",
+   "osm_way_931911456:osm",
+   "osm_way_931911456:sources",
+   "osm_way_931911456:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 67.6,
+     "area_m2": 1911.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_910630356",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_910630356_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_910630356:sentinel2",
+   "osm_way_910630356:osm",
+   "osm_way_910630356:sources",
+   "osm_way_910630356:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "EIA: no plant within 1.5 km",
+    "available": true
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 58.7,
+     "area_m2": 1647.6
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1193607314",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1193607314_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1193607314:sentinel2",
+   "osm_way_1193607314:osm",
+   "osm_way_1193607314:sources",
+   "osm_way_1193607314:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 199.1,
+     "area_m2": 11121.2
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1458709592",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1458709592_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1458709592:sentinel2",
+   "osm_way_1458709592:osm",
+   "osm_way_1458709592:sources",
+   "osm_way_1458709592:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 217.1,
+     "area_m2": 13669.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1441913270",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1441913270_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1441913270:sentinel2",
+   "osm_way_1441913270:osm",
+   "osm_way_1441913270:sources",
+   "osm_way_1441913270:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:method": "photovoltaic",
+     "plant:output:electricity": "yes",
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 320.5,
+     "area_m2": 61666.9
+    },
+    "available": true
+   }
+  }
+ },
+ {
+  "id": "osm_way_1424667956",
+  "imagery": {
+   "sentinel2": {
+    "path": "C:\\Users\\j.guthrie\\Downloads\\RESEARCH\\infra-bench-cls\\data\\label_review\\agent_runs\\screen_s2_v1\\images\\osm_way_1424667956_sentinel2.png",
+    "resolution_m": 10,
+    "date": "2024 composite"
+   }
+  },
+  "evidence_ids": [
+   "osm_way_1424667956:sentinel2",
+   "osm_way_1424667956:osm",
+   "osm_way_1424667956:sources",
+   "osm_way_1424667956:footprint"
+  ],
+  "evidence": {
+   "osm": {
+    "label": "energy.generation.solar_farm",
+    "name": "",
+    "tags": {
+     "plant:source": "solar",
+     "power": "plant"
+    },
+    "available": true
+   },
+   "sources": {
+    "text": "",
+    "available": false
+   },
+   "footprint": {
+    "value": {
+     "extent_m": 499.5,
+     "area_m2": 87778.6
+    },
+    "available": true
+   }
+  }
+ }
+]
